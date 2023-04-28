@@ -1,0 +1,68 @@
+//
+//  ScrollByPlace.swift
+//  MyLibrary
+//
+//  Created by Javier Rodríguez Gómez on 10/12/22.
+//
+
+import SwiftUI
+
+struct ScrollByPlace: View {
+    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var bmodel: BooksModel
+    @State private var showingAddPlace = false
+    
+    var places: [String] {
+        var tempPlaces = model.myPlaces
+        tempPlaces.removeAll(where: { $0 == soldText })
+        tempPlaces.removeAll(where: { $0 == donatedText })
+        return tempPlaces
+    }
+    
+    var body: some View {
+        if !places.isEmpty {
+            ScrollView(.horizontal) {
+                HStack(spacing: 5) {
+                    ForEach(places, id: \.self) { place in
+                        NavigationLink(destination: BookList(place: place)) {
+                            VStack {
+                                Text(place)
+                                    .font(.title3.bold())
+                                Text("\(bmodel.numAtPlace(place)) libros")
+                                    .font(.caption)
+                            }
+                        }
+                        .padding()
+                        .background {
+                            ButtonBackground()
+                        }
+                    }
+                }
+            }
+        } else {
+            VStack {
+                Text("No existe ninguna ubicación. Pulsa para crear una nueva.")
+                Button("Crear ubicación") {
+                    showingAddPlace.toggle()
+                }
+                .foregroundColor(.blue)
+                .buttonStyle(.bordered)
+            }
+            .padding()
+            .background(ButtonBackground())
+            .sheet(isPresented: $showingAddPlace) {
+                NavigationStack {
+                    EditPlaces()
+                }
+            }
+        }
+    }
+}
+
+struct ScrollByPlace_Previews: PreviewProvider {
+    static var previews: some View {
+        ScrollByPlace()
+            .environmentObject(UserViewModel())
+            .environmentObject(BooksModel())
+    }
+}

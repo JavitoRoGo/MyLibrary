@@ -1,0 +1,46 @@
+//
+//  RDList.swift
+//  MyLibrary
+//
+//  Created by Javier Rodríguez Gómez on 3/1/22.
+//
+
+import SwiftUI
+
+struct RDList: View {
+    @EnvironmentObject var model: RDModel
+    var year: Year? = nil
+    
+    var body: some View {
+        List {
+            if let year {
+                Section("\(String(year.rawValue)) - \(model.numPerYear(year, filterBy: .all)) libros") {
+                    ForEach(model.rdataPerYear(year, filterBy: .all)) { rdata in
+                        NavigationLink(destination: RDDetail(rdata: rdata)) {
+                            RDRow(rdata: rdata)
+                        }
+                    }
+                }
+            } else {
+                ForEach(Year.allCases.reversed()) { year in
+                    Section("\(String(year.rawValue)) - \(model.numPerYear(year, filterBy: .all)) libros") {
+                        ForEach(model.rdataPerYear(year, filterBy: .all)) { rdata in
+                            NavigationLink(destination: RDDetail(rdata: rdata)) {
+                                RDRow(rdata: rdata)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .navigationTitle("Lecturas")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct RDList_Previews: PreviewProvider {
+    static var previews: some View {
+        RDList()
+            .environmentObject(RDModel())
+    }
+}
