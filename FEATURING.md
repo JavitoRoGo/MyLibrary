@@ -18,6 +18,12 @@
 
 ## Descarga de imágenes de portada de OpenLibrary API.
 
-* La idea es descargar la imagen al crear el registro en la lista de espera y guardarla en local.
-* Usar la función que ya existe para crear el nombre de la imagen.
-* Añadir botón o confirmationDialog para elegir entre descargar la imagen o elegirla del carrete como hasta ahora.
+La idea es descargar la imagen al crear el registro en la lista de espera y guardarla en local.
+
+* ~~Usar la función que ya existe para crear el nombre de la imagen.~~
+* ~~Añadir botón o confirmationDialog para elegir entre descargar la imagen o elegirla del carrete como hasta ahora.~~
+* Añadir progressview mientras se descarga la imagen.
+
+## Modificar UserMainView.
+
+* Añadir confirmationDialog para elegir entre carrete o cámara para la foto de perfil.
