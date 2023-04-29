@@ -65,6 +65,7 @@
 		44523D3A29855CA80046E0B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44523D3929855CA80046E0B5 /* Extensions.swift */; };
 		44523D3D29855ED60046E0B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44523D3929855CA80046E0B5 /* Extensions.swift */; };
 		44523D412985646C0046E0B5 /* EachMainViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */; };
+		4456FB3829FD756600C955B9 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4456FB3729FD756600C955B9 /* CameraPicker.swift */; };
 		445B62B3298C43560036D140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445B6291298C23540036D140 /* Assets.xcassets */; };
 		445B62B4298C43560036D140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445B6291298C23540036D140 /* Assets.xcassets */; };
 		445B62BC298C43E10036D140 /* MyLibraryForWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B62BB298C43E10036D140 /* MyLibraryForWatchApp.swift */; };
@@ -259,6 +260,7 @@
 		444B00FC2780CFA300530FEC /* AddBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBook.swift; sourceTree = "<group>"; };
 		444C3C8427D43C6200C61D36 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		44523D3929855CA80046E0B5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4456FB3729FD756600C955B9 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		445B6291298C23540036D140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		445B62B9298C43E10036D140 /* MyLibraryForWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyLibraryForWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		445B62BB298C43E10036D140 /* MyLibraryForWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryForWatchApp.swift; sourceTree = "<group>"; };
@@ -594,6 +596,8 @@
 				4482141F28F720500037BE9F /* AnimateChartsHelper.swift */,
 				44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */,
 				44F471D82993EE7D0047080A /* KeychainHelper.swift */,
+				440D9BDD281F42960072C484 /* ImagePicker.swift */,
+				4456FB3729FD756600C955B9 /* CameraPicker.swift */,
 				44730E21298F2283005CFCAF /* SharedAppGroup.swift */,
 				441A84E8299025C800D5F1EB /* ConnectivityManager.swift */,
 				44741ECC29CA6DB800138691 /* LocationManager.swift */,
@@ -755,7 +759,6 @@
 				44BE5EDE27EF6B010006285A /* ProgressRing */,
 				4486010027C85814004E84B0 /* ReadingSessions */,
 				44B1E50827D1258B00EF6D40 /* AddReading.swift */,
-				440D9BDD281F42960072C484 /* ImagePicker.swift */,
 			);
 			path = ReadingList;
 			sourceTree = "<group>";
@@ -1069,6 +1072,7 @@
 				446C35AA2790ECD900532EF9 /* Bundle-Decode.swift in Sources */,
 				44A01F372961003600E34FA8 /* UserViewModel.swift in Sources */,
 				442851C12842DDA0008730F0 /* EncodeToJson.swift in Sources */,
+				4456FB3829FD756600C955B9 /* CameraPicker.swift in Sources */,
 				44718DD0297F20C50029DBC8 /* RollingText.swift in Sources */,
 				447692A82786266C001A01A7 /* BookStats.swift in Sources */,
 				44EF94D727CEB5D200998C27 /* ActualReadingDetail.swift in Sources */,
@@ -1284,6 +1288,7 @@
 				DEVELOPMENT_TEAM = CHK25YBYJC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Usa la cámara para capturar la portada del libro";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Usa FaceID para identificarte y acceder a la app.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Usa tu posición para localizar dónde has leído los libros.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1320,6 +1325,7 @@
 				DEVELOPMENT_TEAM = CHK25YBYJC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Usa la cámara para capturar la portada del libro";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Usa FaceID para identificarte y acceder a la app.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Usa tu posición para localizar dónde has leído los libros.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
