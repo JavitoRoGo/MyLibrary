@@ -317,7 +317,7 @@ final class BookCoverFromAPI {
     var image: UIImage?
     private var subscribers = Set<AnyCancellable>()
     
-    enum SomeError: Error {
+    enum SomeError: Error, Equatable {
         case none
         case general(String)
         case timeout(String)

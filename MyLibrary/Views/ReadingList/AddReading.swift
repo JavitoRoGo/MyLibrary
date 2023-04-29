@@ -19,6 +19,7 @@ struct AddReading: View {
     @State var formatt: Formatt
     @State private var image: Image?
     @State private var inputImage: UIImage?
+    @State private var isbn = 0
     
     var isDisabled: Bool {
         guard bookTitle.isEmpty || firstPage == 0 || lastPage == 0 || firstPage >= lastPage ||
@@ -28,11 +29,14 @@ struct AddReading: View {
     
     @State private var showingSearchResults = false
     @State private var showingSearchAlert = false
-    @State private var showingImagePicker = false
     @State private var searchResultsTitle = ""
     @State private var searchResultsMessage = ""
     @State private var searchResults = 0
     @State private var searchArray = [String]()
+    
+    @State private var showingImageSelector = false
+    @State private var showingImagePicker = false
+    @State private var showingCameraPicker = false
     
     var body: some View {
         Form {
@@ -68,7 +72,7 @@ struct AddReading: View {
                     .frame(width: 350, height: 200)
                 VStack {
                     Button("Añadir portada") {
-                        showingImagePicker = true
+                        showingImageSelector = true
                     }
                     .buttonStyle(.borderless)
                     
@@ -119,8 +123,38 @@ struct AddReading: View {
         } message: {
             Text(searchResultsMessage)
         }
+        .confirmationDialog("Selecciona una opción para la portada:", isPresented: $showingImageSelector, titleVisibility: .visible) {
+            Button("Canclear", role: .cancel) { }
+            Button("Seleccionar foto") {
+                showingImagePicker = true
+            }
+            Button("Hacer foto") {
+                showingCameraPicker = true
+            }
+            Button("Descargar imagen") {
+                if let book = BooksModel().books.filter({ $0.bookTitle == bookTitle }).first {
+                    let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
+                    let stringisbn = isbnArray.map{ String($0) }.reduce("",+)
+                    isbn = Int(stringisbn)!
+                    let apiCover = BookCoverFromAPI(from: isbn)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        if apiCover.error != .none {
+                            inputImage = UIImage(systemName: "exclamationmark.triangle")!
+                            print(apiCover.error)
+                        }
+                        inputImage = apiCover.image
+                    }
+                } else {
+                    inputImage = UIImage(systemName: "exclamationmark.triangle")!
+                }
+            }
+            .disabled(bookTitle.isEmpty || formatt == .kindle)
+        }
         .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: $inputImage)
+        }
+        .sheet(isPresented: $showingCameraPicker) {
+            CameraPicker(image: $inputImage)
         }
         .onChange(of: inputImage) { _ in loadImage() }
         .disableAutocorrection(true)
