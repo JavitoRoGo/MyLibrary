@@ -37,6 +37,7 @@ struct AddReading: View {
     @State private var showingImageSelector = false
     @State private var showingImagePicker = false
     @State private var showingCameraPicker = false
+    @State private var showingProgressView = false
     
     var body: some View {
         Form {
@@ -76,14 +77,20 @@ struct AddReading: View {
                     }
                     .buttonStyle(.borderless)
                     
-                    if let image = image {
-                        image
-                            .resizable()
-                            .frame(width: 100, height: 140)
-                    } else {
-                        Image(systemName: "questionmark.diamond")
-                            .resizable()
+                    
+                    if showingProgressView {
+                        ProgressView()
                             .frame(width: 120, height: 120)
+                    } else {
+                        if let image = image {
+                            image
+                                .resizable()
+                                .frame(width: 100, height: 140)
+                        } else {
+                            Image(systemName: "questionmark.diamond")
+                                .resizable()
+                                .frame(width: 120, height: 120)
+                        }
                     }
                 }
             }
@@ -178,11 +185,13 @@ struct AddReading: View {
     
     func downloadCover() {
         if let book = BooksModel().books.filter({ $0.bookTitle == bookTitle }).first {
+            showingProgressView.toggle()
             let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
             let stringisbn = isbnArray.map{ String($0) }.reduce("",+)
             isbn = Int(stringisbn)!
             let apiCover = BookCoverFromAPI(from: isbn)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                showingProgressView.toggle()
                 if apiCover.error != .none {
                     inputImage = UIImage(systemName: "exclamationmark.triangle")!
                     print(apiCover.error)
