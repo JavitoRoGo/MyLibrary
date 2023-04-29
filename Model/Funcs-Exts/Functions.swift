@@ -313,7 +313,7 @@ func getUserImage(from user: String) -> Image? {
 }
 
 // Función dentro de una clase para obtener la imagen de portada mediante ISBN usando OpenLibrary y Combine
-final class BookCover {
+final class BookCoverFromAPI {
     var image: UIImage?
     private var subscribers = Set<AnyCancellable>()
     
