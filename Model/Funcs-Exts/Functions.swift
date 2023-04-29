@@ -402,7 +402,7 @@ final class BookCoverFromAPI {
         Publishers.Zip(bookPublisher, coverPublisher)
             .sink { completion in
                 if case .failure = completion {
-                    self.image = UIImage(systemName: "questionmark.diamond")!
+                    self.image = UIImage(systemName: "exclamationmark.triangle")!
                 }
             } receiveValue: { _, cover in
                 self.image = cover
