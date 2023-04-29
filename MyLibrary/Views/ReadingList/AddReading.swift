@@ -132,21 +132,7 @@ struct AddReading: View {
                 showingCameraPicker = true
             }
             Button("Descargar imagen") {
-                if let book = BooksModel().books.filter({ $0.bookTitle == bookTitle }).first {
-                    let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
-                    let stringisbn = isbnArray.map{ String($0) }.reduce("",+)
-                    isbn = Int(stringisbn)!
-                    let apiCover = BookCoverFromAPI(from: isbn)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        if apiCover.error != .none {
-                            inputImage = UIImage(systemName: "exclamationmark.triangle")!
-                            print(apiCover.error)
-                        }
-                        inputImage = apiCover.image
-                    }
-                } else {
-                    inputImage = UIImage(systemName: "exclamationmark.triangle")!
-                }
+                downloadCover()
             }
             .disabled(bookTitle.isEmpty || formatt == .kindle)
         }
@@ -188,6 +174,24 @@ struct AddReading: View {
     func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
+    }
+    
+    func downloadCover() {
+        if let book = BooksModel().books.filter({ $0.bookTitle == bookTitle }).first {
+            let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
+            let stringisbn = isbnArray.map{ String($0) }.reduce("",+)
+            isbn = Int(stringisbn)!
+            let apiCover = BookCoverFromAPI(from: isbn)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                if apiCover.error != .none {
+                    inputImage = UIImage(systemName: "exclamationmark.triangle")!
+                    print(apiCover.error)
+                }
+                inputImage = apiCover.image
+            }
+        } else {
+            inputImage = UIImage(systemName: "exclamationmark.triangle")!
+        }
     }
 }
 
