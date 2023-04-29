@@ -22,7 +22,8 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 
 * ~~Usar la función que ya existe para crear el nombre de la imagen.~~
 * ~~Añadir botón o confirmationDialog para elegir entre descargar la imagen o elegirla del carrete como hasta ahora.~~
-* Añadir progressview mientras se descarga la imagen.
+* ~~Añadir progressview mientras se descarga la imagen.~~
+* Añadir confirmationDialog para elegir entre carrete o cámara en ActualReadingEdit. ¿También aquí que se descargue? Ya debería estar descargada al crear el registro en AddReading.
 
 ## Modificar UserMainView.
 
