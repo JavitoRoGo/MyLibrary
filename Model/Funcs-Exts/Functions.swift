@@ -5,7 +5,6 @@
 //  Created by Javier Rodríguez Gómez on 4/4/22.
 //
 
-import Combine
 import Foundation
 import SwiftUI
 
@@ -310,105 +309,6 @@ func getUserImage(from user: String) -> Image? {
         }
     }
     return userToShow
-}
-
-// Función dentro de una clase para obtener la imagen de portada mediante ISBN usando OpenLibrary y Combine
-final class BookCoverFromAPI {
-    var image: UIImage?
-    private var subscribers = Set<AnyCancellable>()
-    
-    enum SomeError: Error, Equatable {
-        case none
-        case general(String)
-        case timeout(String)
-        case notFound(String)
-        case badConnection(String)
-    }
-    var error: SomeError = .none
-    
-    private struct Book: Codable {
-        let covers: [Int]
-    }
-    
-    init(from isbn: Int) {
-        getCover(from: isbn)
-    }
-    
-    private func getCover(from isbn: Int) {
-        guard let url = URL(string: "https://openlibrary.org/isbn/\(isbn).json") else { return }
-        let bookPublisher = URLSession.shared
-            .dataTaskPublisher(for: url)
-            .mapError { error -> SomeError in
-                if error.errorCode == -1001 {
-                    self.error = .timeout(error.localizedDescription)
-                    return self.error
-                } else {
-                    self.error = .general(error.localizedDescription)
-                    return self.error
-                }
-            }
-            .tryMap { data, response in
-                if let response = response as? HTTPURLResponse {
-                    if response.statusCode == 200 {
-                        return data
-                    } else {
-                        self.error = SomeError.notFound("Status code \(response.statusCode)")
-                        throw self.error
-                    }
-                } else {
-                    self.error = SomeError.badConnection("Conexión errónea")
-                    throw self.error
-                }
-            }
-            .decode(type: Book.self, decoder: JSONDecoder())
-            .compactMap { $0.covers.first }
-            .eraseToAnyPublisher()
-        
-        func getCoverPublisher(book: Int) -> AnyPublisher<UIImage, Error> {
-            let url = URL(string: "https://covers.openlibrary.org/b/id/\(book)-L.jpg")!
-            return URLSession.shared
-                .dataTaskPublisher(for: url)
-                .mapError { error -> SomeError in
-                    if error.errorCode == -1001 {
-                        self.error = .timeout(error.localizedDescription)
-                        return self.error
-                    } else {
-                        self.error = .general(error.localizedDescription)
-                        return self.error
-                    }
-                }
-                .tryMap { data, response in
-                    if let response = response as? HTTPURLResponse {
-                        if response.statusCode == 200 {
-                            return data
-                        } else {
-                            self.error = SomeError.notFound("Status code \(response.statusCode)")
-                            throw self.error
-                        }
-                    } else {
-                        self.error = SomeError.badConnection("Conexión errónea")
-                        throw self.error
-                    }
-                }
-                .compactMap { UIImage(data: $0) }
-                .eraseToAnyPublisher()
-        }
-        
-        let coverPublisher = bookPublisher
-            .flatMap { book in
-                getCoverPublisher(book: book)
-            }
-        
-        Publishers.Zip(bookPublisher, coverPublisher)
-            .sink { completion in
-                if case .failure = completion {
-                    self.image = UIImage(systemName: "exclamationmark.triangle")!
-                }
-            } receiveValue: { _, cover in
-                self.image = cover
-            }
-            .store(in: &subscribers)
-    }
 }
 
 // Dejo estas operaciones para macOS a modo de ejemplo de cómo se hace
