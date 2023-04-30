@@ -19,7 +19,6 @@ struct AddReading: View {
     @State var formatt: Formatt
     @State private var image: Image?
     @State private var inputImage: UIImage?
-    @State private var isbn = 0
     
     var isDisabled: Bool {
         guard bookTitle.isEmpty || firstPage == 0 || lastPage == 0 || firstPage >= lastPage ||
@@ -188,18 +187,30 @@ struct AddReading: View {
             showingProgressView.toggle()
             let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
             let stringisbn = isbnArray.map{ String($0) }.reduce("",+)
-            isbn = Int(stringisbn)!
-            let apiCover = BookCoverFromAPI(from: isbn)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let isbn = Int(stringisbn)!
+            
+            URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")!) { data, response, error in
                 showingProgressView.toggle()
-                if apiCover.error != .none {
-                    inputImage = UIImage(systemName: "exclamationmark.triangle")!
-                    print(apiCover.error)
+                if error != nil {
+                    print(error!.localizedDescription)
+                    image = Image(systemName: "exclamationmark.triangle")
                 }
-                inputImage = apiCover.image
-            }
+                if let response = response as? HTTPURLResponse {
+                    if response.statusCode != 200 {
+                        print(response.statusCode.description)
+                        image = Image(systemName: "exclamationmark.triangle")
+                    }
+                }
+                if let data {
+                    if data.count > 1000 {
+                        inputImage = UIImage(data: data)
+                    } else {
+                        image = Image(systemName: "exclamationmark.triangle")
+                    }
+                }
+            }.resume()
         } else {
-            inputImage = UIImage(systemName: "exclamationmark.triangle")!
+            image = Image(systemName: "exclamationmark.triangle")
         }
     }
 }
