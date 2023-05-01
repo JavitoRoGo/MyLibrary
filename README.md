@@ -34,4 +34,6 @@ ConnectivityManager para conectar con iOS.
 
 #
 
+# v1.1
 
+* Se añade funcionalidad para poder descargar la portada del libro en lectura, tanto al añadirlo a lista de espera como desde la vista de edición de ese libro. Opción activa solo para libros en papel, porque la descarga se hace desde OpenLibrary API con ISBN.
