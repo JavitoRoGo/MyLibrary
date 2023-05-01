@@ -15,7 +15,9 @@ struct UserMainView: View {
     @State private var showingClosingAlert = false
     @State private var showingEditUser = false
     
+    @State private var showingSelectorPicker = false
     @State private var showingImagePicker = false
+    @State private var showingCameraPicker = false
     @State private var image: Image?
     @State private var inputImage: UIImage?
     
@@ -33,7 +35,7 @@ struct UserMainView: View {
                                 .foregroundColor(.secondary)
                             HStack(spacing: 25) {
                                 Button("Editar") {
-                                    showingImagePicker = true
+                                    showingSelectorPicker = true
                                 }
                                 Button("Borrar") {
                                     self.image = nil
@@ -48,7 +50,7 @@ struct UserMainView: View {
                                 .frame(width: geo.size.height/6, height: geo.size.height/6)
                                 .foregroundColor(.secondary)
                             Button("Editar") {
-                                showingImagePicker = true
+                                showingSelectorPicker = true
                             }
                             .offset(y: -10)
                         }
@@ -121,8 +123,20 @@ struct UserMainView: View {
                     isUnlocked = false
                 }
             }
+            .confirmationDialog("Elige una opción para la imagen:", isPresented: $showingSelectorPicker) {
+                Button("Canclear", role: .cancel) { }
+                Button("Seleccionar foto") {
+                    showingImagePicker = true
+                }
+                Button("Hacer foto") {
+                    showingCameraPicker = true
+                }
+            }
             .sheet(isPresented: $showingImagePicker) {
                 ImagePicker(image: $inputImage)
+            }
+            .sheet(isPresented: $showingCameraPicker) {
+                CameraPicker(image: $inputImage)
             }
             .onChange(of: inputImage) { newValue in
                 loadImage()

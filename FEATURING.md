@@ -28,4 +28,4 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 
 ## Modificar UserMainView.
 
-* Añadir confirmationDialog para elegir entre carrete o cámara para la foto de perfil.
+* ~~Añadir confirmationDialog para elegir entre carrete o cámara para la foto de perfil.~~
