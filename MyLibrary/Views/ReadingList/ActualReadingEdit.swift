@@ -24,7 +24,10 @@ struct ActualReadingEdit: View {
     @State private var comment: String = ""
     @State private var location: RDLocation?
     
+    @State private var showingImageSelector = false
     @State private var showingImagePicker = false
+    @State private var showingCameraPicker = false
+    @State private var showingProgressView = false
     @State private var showingMapSelection = false
     var coverButtonTitle: String {
         let uiImage = UIImage(systemName: "questionmark")!
@@ -62,17 +65,22 @@ struct ActualReadingEdit: View {
                 HStack {
                     VStack {
                         Button(coverButtonTitle) {
-                            showingImagePicker = true
+                            showingImageSelector = true
                         }
                         
-                        if let image = image {
-                            image
-                                .resizable()
-                                .frame(width: 100, height: 140)
-                        } else {
-                            Image(systemName: "questionmark.diamond")
-                                .resizable()
+                        if showingProgressView {
+                            ProgressView()
                                 .frame(width: 120, height: 120)
+                        } else {
+                            if let image = image {
+                                image
+                                    .resizable()
+                                    .frame(width: 100, height: 140)
+                            } else {
+                                Image(systemName: "questionmark.diamond")
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                            }
                         }
                     }
                     Spacer()
@@ -127,8 +135,24 @@ struct ActualReadingEdit: View {
                 }
             }
         }
+        .confirmationDialog("Selecciona una opción para la portada:", isPresented: $showingImageSelector, titleVisibility: .visible) {
+            Button("Canclear", role: .cancel) { }
+            Button("Seleccionar foto") {
+                showingImagePicker = true
+            }
+            Button("Hacer foto") {
+                showingCameraPicker = true
+            }
+            Button("Descargar imagen") {
+                downloadCover()
+            }
+            .disabled(bookTitle.isEmpty || book.formatt == .kindle)
+        }
         .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: $inputImage)
+        }
+        .sheet(isPresented: $showingCameraPicker) {
+            CameraPicker(image: $inputImage)
         }
         .sheet(isPresented: $showingMapSelection) {
             EditRDMapView(location: $location)
@@ -156,6 +180,38 @@ struct ActualReadingEdit: View {
     func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
+    }
+    
+    func downloadCover() {
+        if let book = BooksModel().books.filter({ $0.bookTitle == bookTitle }).first {
+            showingProgressView.toggle()
+            let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
+            let stringisbn = isbnArray.map{ String($0) }.reduce("",+)
+            let isbn = Int(stringisbn)!
+            
+            URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")!) { data, response, error in
+                showingProgressView.toggle()
+                if error != nil {
+                    print(error!.localizedDescription)
+                    image = Image(systemName: "exclamationmark.triangle")
+                }
+                if let response = response as? HTTPURLResponse {
+                    if response.statusCode != 200 {
+                        print(response.statusCode.description)
+                        image = Image(systemName: "exclamationmark.triangle")
+                    }
+                }
+                if let data {
+                    if data.count > 1000 {
+                        inputImage = UIImage(data: data)
+                    } else {
+                        image = Image(systemName: "exclamationmark.triangle")
+                    }
+                }
+            }.resume()
+        } else {
+            image = Image(systemName: "exclamationmark.triangle")
+        }
     }
 }
 
