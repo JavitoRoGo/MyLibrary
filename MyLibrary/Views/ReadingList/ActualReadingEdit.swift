@@ -29,6 +29,7 @@ struct ActualReadingEdit: View {
     @State private var showingCameraPicker = false
     @State private var showingProgressView = false
     @State private var showingMapSelection = false
+    @State private var downloadError = ""
     var coverButtonTitle: String {
         let uiImage = UIImage(systemName: "questionmark")!
         if inputImage == uiImage {
@@ -72,14 +73,18 @@ struct ActualReadingEdit: View {
                             ProgressView()
                                 .frame(width: 120, height: 120)
                         } else {
-                            if let image = image {
-                                image
-                                    .resizable()
-                                    .frame(width: 100, height: 140)
-                            } else {
-                                Image(systemName: "questionmark.diamond")
-                                    .resizable()
-                                    .frame(width: 120, height: 120)
+                            ZStack {
+                                if let image = image {
+                                    image
+                                        .resizable()
+                                        .frame(width: 100, height: 140)
+                                } else {
+                                    Image(systemName: "questionmark.diamond")
+                                        .resizable()
+                                        .frame(width: 120, height: 120)
+                                }
+                                Text(downloadError)
+                                    .foregroundColor(.secondary)
                             }
                         }
                     }
@@ -194,23 +199,28 @@ struct ActualReadingEdit: View {
                 if error != nil {
                     print(error!.localizedDescription)
                     image = Image(systemName: "exclamationmark.triangle")
+                    downloadError = "No se encuentra la imagen"
                 }
                 if let response = response as? HTTPURLResponse {
                     if response.statusCode != 200 {
                         print(response.statusCode.description)
                         image = Image(systemName: "exclamationmark.triangle")
+                        downloadError = "No se encuentra la imagen"
                     }
                 }
                 if let data {
                     if data.count > 1000 {
                         inputImage = UIImage(data: data)
+                        downloadError = ""
                     } else {
                         image = Image(systemName: "exclamationmark.triangle")
+                        downloadError = "No se encuentra la imagen"
                     }
                 }
             }.resume()
         } else {
             image = Image(systemName: "exclamationmark.triangle")
+            downloadError = "No se encuentra la imagen"
         }
     }
 }
