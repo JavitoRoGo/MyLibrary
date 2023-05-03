@@ -36,8 +36,7 @@ struct AddReading: View {
     @State private var showingImageSelector = false
     @State private var showingImagePicker = false
     @State private var showingCameraPicker = false
-    @State private var showingProgressView = false
-    @State private var downloadError = ""
+    @State private var showingDownloadPage = false
     
     var body: some View {
         Form {
@@ -78,23 +77,14 @@ struct AddReading: View {
                     .buttonStyle(.borderless)
                     
                     
-                    if showingProgressView {
-                        ProgressView()
-                            .frame(width: 120, height: 120)
+                    if let image = image {
+                        image
+                            .resizable()
+                            .frame(width: 100, height: 140)
                     } else {
-                        ZStack {
-                            if let image = image {
-                                image
-                                    .resizable()
-                                    .frame(width: 100, height: 140)
-                            } else {
-                                Image(systemName: "questionmark.diamond")
-                                    .resizable()
-                                    .frame(width: 120, height: 120)
-                            }
-                            Text(downloadError)
-                                .foregroundColor(.secondary)
-                        }
+                        Image(systemName: "questionmark.diamond")
+                            .resizable()
+                            .frame(width: 120, height: 120)
                     }
                 }
             }
@@ -143,15 +133,17 @@ struct AddReading: View {
                 showingCameraPicker = true
             }
             Button("Descargar imagen") {
-                downloadCover()
+                showingDownloadPage = true
             }
-            .disabled(bookTitle.isEmpty || formatt == .kindle)
         }
         .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: $inputImage)
         }
         .sheet(isPresented: $showingCameraPicker) {
             CameraPicker(image: $inputImage)
+        }
+        .sheet(isPresented: $showingDownloadPage) {
+             DownloadCoverView()
         }
         .onChange(of: inputImage) { _ in loadImage() }
         .disableAutocorrection(true)
@@ -185,43 +177,6 @@ struct AddReading: View {
     func loadImage() {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
-    }
-    
-    func downloadCover() {
-        if let book = BooksModel().books.filter({ $0.bookTitle == bookTitle }).first {
-            showingProgressView.toggle()
-            let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
-            let stringisbn = isbnArray.map{ String($0) }.reduce("",+)
-            let isbn = Int(stringisbn)!
-            
-            URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")!) { data, response, error in
-                showingProgressView.toggle()
-                if error != nil {
-                    print(error!.localizedDescription)
-                    image = Image(systemName: "exclamationmark.triangle")
-                    downloadError = "No se encuentra la imagen"
-                }
-                if let response = response as? HTTPURLResponse {
-                    if response.statusCode != 200 {
-                        print(response.statusCode.description)
-                        image = Image(systemName: "exclamationmark.triangle")
-                        downloadError = "No se encuentra la imagen"
-                    }
-                }
-                if let data {
-                    if data.count > 1000 {
-                        inputImage = UIImage(data: data)
-                        downloadError = ""
-                    } else {
-                        image = Image(systemName: "exclamationmark.triangle")
-                        downloadError = "No se encuentra la imagen"
-                    }
-                }
-            }.resume()
-        } else {
-            image = Image(systemName: "exclamationmark.triangle")
-            downloadError = "No se encuentra la imagen"
-        }
     }
 }
 
