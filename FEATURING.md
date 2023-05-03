@@ -25,6 +25,7 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 * ~~Añadir progressview mientras se descarga la imagen.~~
 * ~~Añadir confirmationDialog para elegir entre carrete o cámara en ActualReadingEdit. ¿También aquí que se descargue? Ya debería estar descargada al crear el registro en AddReading.~~
 * ~~¿Mostrar alerta informando por qué no se encuentra la imagen?~~
+* En AddReading añadir opción de búsqueda de portada por autor, título o isbn si está en la base de datos.
 
 ## Modificar UserMainView.
 
