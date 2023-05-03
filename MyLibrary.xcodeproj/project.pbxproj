@@ -600,7 +600,6 @@
 				44F471D82993EE7D0047080A /* KeychainHelper.swift */,
 				440D9BDD281F42960072C484 /* ImagePicker.swift */,
 				4456FB3729FD756600C955B9 /* CameraPicker.swift */,
-				442920942A02D86D00DAE7EE /* DownloadCoverView.swift */,
 				44730E21298F2283005CFCAF /* SharedAppGroup.swift */,
 				441A84E8299025C800D5F1EB /* ConnectivityManager.swift */,
 				44741ECC29CA6DB800138691 /* LocationManager.swift */,
@@ -762,6 +761,7 @@
 				44BE5EDE27EF6B010006285A /* ProgressRing */,
 				4486010027C85814004E84B0 /* ReadingSessions */,
 				44B1E50827D1258B00EF6D40 /* AddReading.swift */,
+				442920942A02D86D00DAE7EE /* DownloadCoverView.swift */,
 			);
 			path = ReadingList;
 			sourceTree = "<group>";

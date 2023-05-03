@@ -143,7 +143,7 @@ struct AddReading: View {
             CameraPicker(image: $inputImage)
         }
         .sheet(isPresented: $showingDownloadPage) {
-             DownloadCoverView()
+            DownloadCoverView(selectedImage: $inputImage)
         }
         .onChange(of: inputImage) { _ in loadImage() }
         .disableAutocorrection(true)
