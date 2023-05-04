@@ -84,11 +84,9 @@ struct DownloadCoverView: View {
         showingProgressView = true
         
         if pickerSelection == 0 {
-            
-        } else if pickerSelection == 1 {
-            
-        } else {
-            URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(searchText)-L.jpg")!) { data, response, error in
+            let searchNoSpaces = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let titleUrl = URL(string: "https://openlibrary.org/search.json?title=\(searchNoSpaces)&fields=isbn.json")!
+            URLSession.shared.dataTask(with: titleUrl) { data, response, error in
                 showingProgressView = false
                 if error != nil {
                     print(error!.localizedDescription)
@@ -100,16 +98,40 @@ struct DownloadCoverView: View {
                         resultImages = [errorImage]
                     }
                 }
-                if let data, let uiimage = UIImage(data: data) {
-                    if data.count > 1000 {
-                        resultImages = [uiimage]
+                if let data {
+                    //decodificar los datos para obtener el isbn y buscar la portada con eso
+                }
+            }.resume()
+        } else if pickerSelection == 1 {
+            
+        } else {
+            if searchText.contains(" ") {
+                showingProgressView = false
+                resultImages = [errorImage]
+            } else {
+                URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(searchText)-L.jpg")!) { data, response, error in
+                    showingProgressView = false
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        resultImages = [errorImage]
+                    }
+                    if let response = response as? HTTPURLResponse {
+                        if response.statusCode != 200 {
+                            print(response.statusCode.description)
+                            resultImages = [errorImage]
+                        }
+                    }
+                    if let data, let uiimage = UIImage(data: data) {
+                        if data.count > 1000 {
+                            resultImages = [uiimage]
+                        } else {
+                            resultImages = [errorImage]
+                        }
                     } else {
                         resultImages = [errorImage]
                     }
-                } else {
-                    resultImages = [errorImage]
-                }
-            }.resume()
+                }.resume()
+            }
         }
     }
 }
