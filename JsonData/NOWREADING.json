@@ -1,9 +1,70 @@
 [
   {
+    "location" : {
+      "id" : "57165C96-5F6B-4B72-965F-2ECFEE1B10B3",
+      "longitude" : -17.91606990968506,
+      "latitude" : 28.658165980185856
+    },
     "lastPage" : 733,
     "bookTitle" : "sabiduría de las multitudes, La",
     "isFinished" : false,
     "sessions" : [
+      {
+        "duration" : "0h 2min",
+        "id" : "7113ABA3-4C0C-4A56-A599-0FE538440E08",
+        "startingPage" : 398,
+        "endingPage" : 398,
+        "minPerPag" : "2min 0s",
+        "date" : 704890800
+      },
+      {
+        "duration" : "0h 11min",
+        "id" : "E2746161-3FA1-46EC-984C-736A15520C24",
+        "startingPage" : 392,
+        "endingPage" : 397,
+        "minPerPag" : "1min 50s",
+        "date" : 704804400
+      },
+      {
+        "duration" : "0h 49min",
+        "id" : "C13382F9-0178-4824-B0DD-EDF0A291A7A1",
+        "startingPage" : 367,
+        "endingPage" : 391,
+        "minPerPag" : "1min 58s",
+        "date" : 704718000
+      },
+      {
+        "duration" : "0h 24min",
+        "id" : "B8F6F8FD-CCF2-4521-97E2-8DCEB3E38BA3",
+        "startingPage" : 357,
+        "endingPage" : 366,
+        "minPerPag" : "2min 24s",
+        "date" : 704631600
+      },
+      {
+        "duration" : "0h 50min",
+        "id" : "EB1806B1-EAC7-4F4D-99AA-7E67CD1B6278",
+        "startingPage" : 329,
+        "endingPage" : 356,
+        "minPerPag" : "1min 47s",
+        "date" : 704545200
+      },
+      {
+        "duration" : "0h 26min",
+        "id" : "D58DFA7A-CC6E-409E-8C34-A2D0A61D890D",
+        "startingPage" : 313,
+        "endingPage" : 328,
+        "minPerPag" : "1min 38s",
+        "date" : 704458800
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "D222CC5A-A66B-47C4-9B0E-85AE7807301E",
+        "startingPage" : 312,
+        "endingPage" : 312,
+        "minPerPag" : "2min 0s",
+        "date" : 704372400
+      },
       {
         "duration" : "0h 45min",
         "id" : "40499BEB-C33A-4BBF-B244-2D8DE1B1C4F4",
