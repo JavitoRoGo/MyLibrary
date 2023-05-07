@@ -26,6 +26,7 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 * ~~Añadir confirmationDialog para elegir entre carrete o cámara en ActualReadingEdit. ¿También aquí que se descargue? Ya debería estar descargada al crear el registro en AddReading.~~
 * ~~¿Mostrar alerta informando por qué no se encuentra la imagen?~~
 * ~~En AddReading añadir opción de búsqueda de portada por autor, título o isbn si está en la base de datos.~~
+* Cambiar la lógica de descarga de imagen en ActualReadingEdit por AsyncImage.
 
 
 ## DownloadCoverView.
@@ -33,9 +34,9 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 * La vista está prácticamente terminada.
 * ~~Implementar la lógica para buscar en la API por título y/o autor. Obtener el id o isbn de esos resultados para buscar las covers.~~
 * ~~Implementar la lógica de búsqueda directa de cover por isbn.~~
-* Eliminar la búsqueda por autor. Poner la búsqueda por isbn como primera opción por funcionar mejor.
-* Pasar la función de descarga a otra página (Functions?) e intentar factorizarla.
-* ¿Quitar de la función la parte de response solo por simplificar? Igual no si lo paso a otra página.
+* ~~Eliminar la búsqueda por autor. Poner la búsqueda por isbn como primera opción por funcionar mejor.~~
+* ~~Pasar la función de descarga a otra página (Functions?) e intentar factorizarla.~~
+* A modo de prueba, volver a implementar la función de descarga en la propia vista para ver si da mejores resultados en la primera búsqueda o también hay que buscar varias veces.
 
 
 ## Modificar UserMainView.

@@ -11,11 +11,10 @@ struct DownloadCoverView: View {
     @Environment(\.dismiss) var dismiss
     
     let columns = [GridItem(.adaptive(minimum: 90))]
-    let errorImage = UIImage(systemName: "exclamationmark.triangle")!
     @Binding var selectedImage: UIImage?
     @State private var resultImages = [UIImage]()
     
-    let pickerTitles = ["Título", "Autor", "ISBN"]
+    let pickerTitles = ["ISBN", "Título"]
     @State private var pickerSelection = 0
     @State private var searchText = ""
     
@@ -36,8 +35,15 @@ struct DownloadCoverView: View {
                 }
                 Section {
                     Button {
+                        resultImages = []
+//                        showingProgressView = true
                         showingResults = true
-                        downloadCover()
+                        Task {
+                            resultImages = await downloadCoverFromAPI(selection: pickerSelection, searchText: searchText)
+                        }
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.1) {
+//                            showingProgressView = false
+//                        }
                     } label: {
                         HStack {
                             Spacer()
@@ -76,101 +82,6 @@ struct DownloadCoverView: View {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button("Cancelar") { dismiss() }
                 }
-            }
-        }
-    }
-    
-    func downloadCover() {
-        resultImages = []
-        showingProgressView = true
-        
-        if pickerSelection == 0 {
-            struct Titles: Codable {
-                let docs: [Doc]
-            }
-            struct Doc: Codable {
-                let isbn: [String]
-            }
-            let searchNoSpaces = searchText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-            let titleUrl = URL(string: "https://openlibrary.org/search.json?title=\(searchNoSpaces)&fields=isbn")!
-            URLSession.shared.dataTask(with: titleUrl) { data, response, error in
-                showingProgressView = false
-                if error != nil {
-                    print(error!.localizedDescription)
-                    resultImages = [errorImage]
-                }
-                if let response = response as? HTTPURLResponse {
-                    if response.statusCode != 200 {
-                        print(response.statusCode.description)
-                        resultImages = [errorImage]
-                    }
-                }
-                if let data {
-                    guard let titles = try? JSONDecoder().decode(Titles.self, from: data) else {
-                        print("No decodifica")
-                        return}
-                    var isbnArray = [String]()
-                    print("data", data.count)
-                    titles.docs.forEach { doc in
-                        for isbn in doc.isbn where isbn.hasPrefix("97884") {
-                            isbnArray.append(isbn)
-                        }
-                    }
-                    isbnArray.forEach { isbn in
-                        URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")!) { data, response, error in
-                            showingProgressView = false
-                            if error != nil {
-                                print(error!.localizedDescription)
-                                resultImages = [errorImage]
-                            }
-                            if let response = response as? HTTPURLResponse {
-                                if response.statusCode != 200 {
-                                    print(response.statusCode.description)
-                                    resultImages = [errorImage]
-                                }
-                            }
-                            if let data, let uiimage = UIImage(data: data) {
-                                if data.count > 1000 {
-                                    resultImages.append(uiimage)
-                                } else {
-                                    resultImages.append(errorImage)
-                                }
-                            } else {
-                                resultImages = [errorImage]
-                            }
-                        }.resume()
-                    }
-                }
-            }.resume()
-        } else if pickerSelection == 1 {
-            
-        } else {
-            if searchText.contains(" ") {
-                showingProgressView = false
-                resultImages = [errorImage]
-            } else {
-                URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(searchText)-L.jpg")!) { data, response, error in
-                    showingProgressView = false
-                    if error != nil {
-                        print(error!.localizedDescription)
-                        resultImages = [errorImage]
-                    }
-                    if let response = response as? HTTPURLResponse {
-                        if response.statusCode != 200 {
-                            print(response.statusCode.description)
-                            resultImages = [errorImage]
-                        }
-                    }
-                    if let data, let uiimage = UIImage(data: data) {
-                        if data.count > 1000 {
-                            resultImages = [uiimage]
-                        } else {
-                            resultImages = [errorImage]
-                        }
-                    } else {
-                        resultImages = [errorImage]
-                    }
-                }.resume()
             }
         }
     }
