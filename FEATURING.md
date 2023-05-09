@@ -36,7 +36,7 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 * ~~Implementar la lógica de búsqueda directa de cover por isbn.~~
 * ~~Eliminar la búsqueda por autor. Poner la búsqueda por isbn como primera opción por funcionar mejor.~~
 * ~~Pasar la función de descarga a otra página (Functions?) e intentar factorizarla.~~
-* A modo de prueba, volver a implementar la función de descarga en la propia vista para ver si da mejores resultados en la primera búsqueda o también hay que buscar varias veces.
+* ~~A modo de prueba, volver a implementar la función de descarga en la propia vista para ver si da mejores resultados en la primera búsqueda o también hay que buscar varias veces.~~Cambiado porque funciona mejor.
 
 
 ## Modificar UserMainView.

@@ -1,5 +1,37 @@
 [
   {
+    "duration" : "0h 24min",
+    "id" : "DB532442-F64D-4454-B9E6-DBE02B21252B",
+    "startingPage" : 474,
+    "endingPage" : 485,
+    "minPerPag" : "2min 0s",
+    "date" : 705236400
+  },
+  {
+    "duration" : "0h 38min",
+    "id" : "401886F0-802D-4D57-A362-CD96AA9A36FB",
+    "startingPage" : 449,
+    "endingPage" : 473,
+    "minPerPag" : "1min 31s",
+    "date" : 705150000
+  },
+  {
+    "duration" : "1h 7min",
+    "id" : "0D5C1A7D-2BD0-4EB9-8224-2BD7613536AA",
+    "startingPage" : 417,
+    "endingPage" : 448,
+    "minPerPag" : "2min 6s",
+    "date" : 705063600
+  },
+  {
+    "duration" : "0h 32min",
+    "id" : "5F4484FB-CCBC-4ECC-A48A-6085E25F4F03",
+    "startingPage" : 399,
+    "endingPage" : 416,
+    "minPerPag" : "1min 47s",
+    "date" : 704977200
+  },
+  {
     "duration" : "0h 2min",
     "id" : "7113ABA3-4C0C-4A56-A599-0FE538440E08",
     "startingPage" : 398,

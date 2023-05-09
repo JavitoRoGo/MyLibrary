@@ -35,15 +35,8 @@ struct DownloadCoverView: View {
                 }
                 Section {
                     Button {
-                        resultImages = []
-//                        showingProgressView = true
                         showingResults = true
-                        Task {
-                            resultImages = await downloadCoverFromAPI(selection: pickerSelection, searchText: searchText)
-                        }
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.1) {
-//                            showingProgressView = false
-//                        }
+                        downloadCoverFromAPI()
                     } label: {
                         HStack {
                             Spacer()
@@ -76,6 +69,7 @@ struct DownloadCoverView: View {
                     }
                 }
             }
+            .textInputAutocapitalization(.never)
             .navigationTitle("Descarga la portada")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -85,6 +79,106 @@ struct DownloadCoverView: View {
             }
         }
     }
+    
+    func downloadCoverFromAPI() {
+        let errorImage = UIImage(systemName: "exclamationmark.triangle")!
+        resultImages = []
+        showingProgressView = true
+        
+        if pickerSelection == 0 {
+            // Búsqueda por ISBN
+            if searchText.contains(" ") {
+                resultImages = [errorImage]
+                showingProgressView = false
+            } else {
+                URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(searchText)-L.jpg")!) { data, response, error in
+                    showingProgressView = false
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        resultImages = [errorImage]
+                    }
+                    if let response = response as? HTTPURLResponse {
+                        if response.statusCode != 200 {
+                            print(response.statusCode.description)
+                            resultImages = [errorImage]
+                        }
+                    }
+                    if let data, let uiimage = UIImage(data: data) {
+                        if data.count > 1000 {
+                            resultImages = [uiimage]
+                        } else {
+                            resultImages = [errorImage]
+                        }
+                    } else {
+                        resultImages = [errorImage]
+                    }
+                }.resume()
+            }
+        } else {
+            // Búsqueda por título
+            let searchNoSpaces = searchText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let titleUrl = URL(string: "https://openlibrary.org/search.json?title=\(searchNoSpaces)&fields=isbn")!
+            URLSession.shared.dataTask(with: titleUrl) { data, response, error in
+                showingProgressView = false
+                if error != nil {
+                    print(error!.localizedDescription)
+                    resultImages = [errorImage]
+                }
+                if let response = response as? HTTPURLResponse {
+                    if response.statusCode != 200 {
+                        print(response.statusCode.description)
+                        resultImages = [errorImage]
+                    }
+                }
+                if let data {
+                    struct Titles: Decodable {
+                        let docs: [Doc]
+                    }
+                    struct Doc: Decodable {
+                        let isbn: [String]?
+                    }
+
+                   guard let titles = try? JSONDecoder().decode(Titles.self, from: data) else {
+                        print("No decodifica")
+                        resultImages = [errorImage]
+                        return
+                    }
+                    var isbnArray = [String]()
+                    titles.docs.forEach { doc in
+                        if let array = doc.isbn {
+                            for isbn in array where isbn.hasPrefix("97884") {
+                                isbnArray.append(isbn)
+                            }
+                        }
+                    }
+                    isbnArray.forEach { isbn in
+                        URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")!) { data, response, error in
+                            if error != nil {
+                                print(error!.localizedDescription)
+                                resultImages = [errorImage]
+                            }
+                            if let response = response as? HTTPURLResponse {
+                                if response.statusCode != 200 {
+                                    print(response.statusCode.description)
+                                    resultImages = [errorImage]
+                                }
+                            }
+                            if let data, let uiimage = UIImage(data: data) {
+                                if data.count > 1000 {
+                                    resultImages.append(uiimage)
+                                } else {
+                                    resultImages.append(errorImage)
+                                }
+                            } else {
+                                resultImages = [errorImage]
+                            }
+                        }.resume()
+                    }
+                }
+            }.resume()
+        }
+    }
+
 }
 
 struct DownloadCoverView_Previews: PreviewProvider {

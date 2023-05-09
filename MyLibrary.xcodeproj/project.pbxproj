@@ -101,7 +101,6 @@
 		447446AE29678CF40002689B /* AddQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447446AD29678CF40002689B /* AddQuoteView.swift */; };
 		447692A82786266C001A01A7 /* BookStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447692A72786266C001A01A7 /* BookStats.swift */; };
 		44801F4D28144F84006FC06C /* ReadingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44801F4C28144F83006FC06C /* ReadingTimer.swift */; };
-		4481E5292A07CEB50089A7FB /* CoverAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4481E5282A07CEB50089A7FB /* CoverAPIHelper.swift */; };
 		4482142028F720500037BE9F /* AnimateChartsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482141F28F720500037BE9F /* AnimateChartsHelper.swift */; };
 		4482142328F724900037BE9F /* MaxAndMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482142228F724900037BE9F /* MaxAndMin.swift */; };
 		4482D5792964AE99004D0EB8 /* UserMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482D5782964AE99004D0EB8 /* UserMainView.swift */; };
@@ -296,7 +295,6 @@
 		447446AD29678CF40002689B /* AddQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteView.swift; sourceTree = "<group>"; };
 		447692A72786266C001A01A7 /* BookStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStats.swift; sourceTree = "<group>"; };
 		44801F4C28144F83006FC06C /* ReadingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTimer.swift; sourceTree = "<group>"; };
-		4481E5282A07CEB50089A7FB /* CoverAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverAPIHelper.swift; sourceTree = "<group>"; };
 		4482141F28F720500037BE9F /* AnimateChartsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateChartsHelper.swift; sourceTree = "<group>"; };
 		4482142228F724900037BE9F /* MaxAndMin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxAndMin.swift; sourceTree = "<group>"; };
 		4482D5782964AE99004D0EB8 /* UserMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainView.swift; sourceTree = "<group>"; };
@@ -605,7 +603,6 @@
 				44730E21298F2283005CFCAF /* SharedAppGroup.swift */,
 				441A84E8299025C800D5F1EB /* ConnectivityManager.swift */,
 				44741ECC29CA6DB800138691 /* LocationManager.swift */,
-				4481E5282A07CEB50089A7FB /* CoverAPIHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1042,7 +1039,6 @@
 				44C6A6262801E0D700EF035A /* GraphMenu.swift in Sources */,
 				44210FD0294FAC06009764A3 /* ChangeBooksOwner.swift in Sources */,
 				446C35A82790B8EA00532EF9 /* RDCell.swift in Sources */,
-				4481E5292A07CEB50089A7FB /* CoverAPIHelper.swift in Sources */,
 				442B619529562FA00003537E /* RDStatsMainView.swift in Sources */,
 				44EF94CF27CE851300998C27 /* RDSessions.swift in Sources */,
 				44C0AE0327C9AE9D0046E32F /* AddRS.swift in Sources */,
