@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ActualReadingEdit: View {
     @EnvironmentObject var model: NowReadingModel
+    @EnvironmentObject var bmodel: BooksModel
     @EnvironmentObject var manager: LocationManager
     @Environment(\.dismiss) var dismiss
     
@@ -23,13 +24,13 @@ struct ActualReadingEdit: View {
     @State private var inputImage: UIImage?
     @State private var comment: String = ""
     @State private var location: RDLocation?
+    @State private var isbn: String = ""
     
     @State private var showingImageSelector = false
     @State private var showingImagePicker = false
     @State private var showingCameraPicker = false
-    @State private var showingProgressView = false
+    @State private var showingDownloadedImage = false
     @State private var showingMapSelection = false
-    @State private var downloadError = ""
     var coverButtonTitle: String {
         let uiImage = UIImage(systemName: "questionmark")!
         if inputImage == uiImage {
@@ -69,22 +70,29 @@ struct ActualReadingEdit: View {
                             showingImageSelector = true
                         }
                         
-                        if showingProgressView {
-                            ProgressView()
-                                .frame(width: 120, height: 120)
-                        } else {
-                            ZStack {
-                                if let image = image {
-                                    image
+                        if showingDownloadedImage {
+                            AsyncImage(url: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")) { phase in
+                                if let apiImage = phase.image {
+                                    apiImage
                                         .resizable()
                                         .frame(width: 100, height: 140)
-                                } else {
-                                    Image(systemName: "questionmark.diamond")
+                                } else if phase.error != nil {
+                                    Image(systemName: "exclamationmark.triangle")
                                         .resizable()
                                         .frame(width: 120, height: 120)
+                                } else {
+                                    ProgressView()
                                 }
-                                Text(downloadError)
-                                    .foregroundColor(.secondary)
+                            }
+                        } else {
+                            if let image = image {
+                                image
+                                    .resizable()
+                                    .frame(width: 100, height: 140)
+                            } else {
+                                Image(systemName: "questionmark.diamond")
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
                             }
                         }
                     }
@@ -149,7 +157,13 @@ struct ActualReadingEdit: View {
                 showingCameraPicker = true
             }
             Button("Descargar imagen") {
-                downloadCover()
+                if let book = bmodel.books.filter({ $0.bookTitle == bookTitle }).first {
+                    let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
+                    let isbnString = isbnArray.map { String($0) }.reduce("",+)
+                    isbn = isbnString
+                }
+                
+                showingDownloadedImage = true
             }
             .disabled(bookTitle.isEmpty || book.formatt == .kindle)
         }
@@ -164,8 +178,6 @@ struct ActualReadingEdit: View {
         }
         .onAppear {
             loadData()
-            inputImage = getCoverImage(from: imageCoverName(from: book.bookTitle))
-                image = Image(uiImage: inputImage!)
         }
         .onChange(of: inputImage) { _ in loadImage() }
         .disableAutocorrection(true)
@@ -176,6 +188,8 @@ struct ActualReadingEdit: View {
         firstPage = book.firstPage
         lastPage = book.lastPage
         synopsis = book.synopsis
+        inputImage = getCoverImage(from: imageCoverName(from: book.bookTitle))
+        image = Image(uiImage: inputImage!)
         if let comment = book.comment {
             self.comment = comment
         }
@@ -186,43 +200,6 @@ struct ActualReadingEdit: View {
         guard let inputImage = inputImage else { return }
         image = Image(uiImage: inputImage)
     }
-    
-    func downloadCover() {
-        if let book = BooksModel().books.filter({ $0.bookTitle == bookTitle }).first {
-            showingProgressView.toggle()
-            let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
-            let stringisbn = isbnArray.map{ String($0) }.reduce("",+)
-            let isbn = Int(stringisbn)!
-            
-            URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")!) { data, response, error in
-                showingProgressView.toggle()
-                if error != nil {
-                    print(error!.localizedDescription)
-                    image = Image(systemName: "exclamationmark.triangle")
-                    downloadError = "No se encuentra la imagen"
-                }
-                if let response = response as? HTTPURLResponse {
-                    if response.statusCode != 200 {
-                        print(response.statusCode.description)
-                        image = Image(systemName: "exclamationmark.triangle")
-                        downloadError = "No se encuentra la imagen"
-                    }
-                }
-                if let data {
-                    if data.count > 1000 {
-                        inputImage = UIImage(data: data)
-                        downloadError = ""
-                    } else {
-                        image = Image(systemName: "exclamationmark.triangle")
-                        downloadError = "No se encuentra la imagen"
-                    }
-                }
-            }.resume()
-        } else {
-            image = Image(systemName: "exclamationmark.triangle")
-            downloadError = "No se encuentra la imagen"
-        }
-    }
 }
 
 struct ActualReadingEdit_Previews: PreviewProvider {
@@ -232,6 +209,7 @@ struct ActualReadingEdit_Previews: PreviewProvider {
         NavigationView {
             ActualReadingEdit(book: .constant(example))
                 .environmentObject(NowReadingModel())
+                .environmentObject(BooksModel())
                 .environmentObject(LocationManager())
         }
     }

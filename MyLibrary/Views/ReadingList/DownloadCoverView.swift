@@ -31,7 +31,7 @@ struct DownloadCoverView: View {
                         }
                     }
                     .pickerStyle(.segmented)
-                    TextField("Escribe aquí el título, autor o ISBN", text: $searchText)
+                    TextField("Escribe el ISBN o título a buscar", text: $searchText)
                 }
                 Section {
                     Button {
