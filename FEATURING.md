@@ -35,9 +35,16 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 * ~~Implementar la lógica de búsqueda directa de cover por isbn.~~
 * ~~Eliminar la búsqueda por autor. Poner la búsqueda por isbn como primera opción por funcionar mejor.~~
 * ~~Pasar la función de descarga a otra página (Functions?) e intentar factorizarla.~~
-* ~~A modo de prueba, volver a implementar la función de descarga en la propia vista para ver si da mejores resultados en la primera búsqueda o también hay que buscar varias veces.~~Cambiado porque funciona mejor.
+* ~~A modo de prueba, volver a implementar la función de descarga en la propia vista para ver si da mejores resultados en la primera búsqueda o también hay que buscar varias veces.~~ Cambiado porque funciona mejor.
 
 
 ## Modificar UserMainView.
 
 * ~~Añadir confirmationDialog para elegir entre carrete o cámara para la foto de perfil.~~
+
+
+## Google Books API.
+
+* OJO, ya sé cómo usar Google Books API, y buscar por título, autor o isbn. El resultado que devuelve es más fácil de tratar, sobretodo la búsqueda por autor, y ya incluye la imagen.
+* ¿Sustituir la búsqueda de OpenLibrary por Google Books? ¿Añadir un botón al menú para usar las dos búsquedas?
+* En caso de optar por Google Books incluir la búsqueda por autor.
