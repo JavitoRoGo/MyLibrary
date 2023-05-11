@@ -14,7 +14,7 @@ struct DownloadCoverView: View {
     @Binding var selectedImage: UIImage?
     @State private var resultImages = [UIImage]()
     
-    let pickerTitles = ["ISBN", "Título"]
+    let pickerTitles = ["ISBN", "Título", "Autor"]
     @State private var pickerSelection = 0
     @State private var searchText = ""
     
@@ -31,7 +31,7 @@ struct DownloadCoverView: View {
                         }
                     }
                     .pickerStyle(.segmented)
-                    TextField("Escribe el ISBN o título a buscar", text: $searchText)
+                    TextField("Escribe el ISBN, título o autor a buscar", text: $searchText)
                 }
                 Section {
                     Button {
@@ -70,6 +70,7 @@ struct DownloadCoverView: View {
                 }
             }
             .textInputAutocapitalization(.never)
+            .autocorrectionDisabled()
             .navigationTitle("Descarga la portada")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -81,104 +82,75 @@ struct DownloadCoverView: View {
     }
     
     func downloadCoverFromAPI() {
+        // Tipos de datos de la API
+        struct ApiData: Codable {
+            let items: [Item]
+        }
+        struct Item: Codable {
+            let volumeInfo: VolumeInfo
+        }
+        struct VolumeInfo: Codable {
+            let imageLinks: ImageLinks?
+        }
+        struct ImageLinks: Codable {
+            let thumbnail: String
+        }
+        
         let errorImage = UIImage(systemName: "exclamationmark.triangle")!
+        var basicUrl = "https://www.googleapis.com/books/v1/volumes?q="
+        
         resultImages = []
         showingProgressView = true
         
+        let noSpacesText = searchText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         if pickerSelection == 0 {
             // Búsqueda por ISBN
-            if searchText.contains(" ") {
-                resultImages = [errorImage]
-                showingProgressView = false
-            } else {
-                URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(searchText)-L.jpg")!) { data, response, error in
-                    showingProgressView = false
-                    if error != nil {
-                        print(error!.localizedDescription)
-                        resultImages = [errorImage]
-                    }
-                    if let response = response as? HTTPURLResponse {
-                        if response.statusCode != 200 {
-                            print(response.statusCode.description)
-                            resultImages = [errorImage]
-                        }
-                    }
-                    if let data, let uiimage = UIImage(data: data) {
-                        if data.count > 1000 {
-                            resultImages = [uiimage]
-                        } else {
-                            resultImages = [errorImage]
-                        }
-                    } else {
-                        resultImages = [errorImage]
-                    }
-                }.resume()
-            }
-        } else {
+            basicUrl += "isbn:\(noSpacesText)"
+        } else if pickerSelection == 1 {
             // Búsqueda por título
-            let searchNoSpaces = searchText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-            let titleUrl = URL(string: "https://openlibrary.org/search.json?title=\(searchNoSpaces)&fields=isbn")!
-            URLSession.shared.dataTask(with: titleUrl) { data, response, error in
-                showingProgressView = false
-                if error != nil {
-                    print(error!.localizedDescription)
+            basicUrl += "intitle:\(noSpacesText)&printType=books&orderBy=newest&maxResults=20"
+        } else {
+            // Búsqueda por autor
+            basicUrl += "inauthor:\(noSpacesText)&printType=books&orderBy=newest&maxResults=20"
+        }
+        let url = URL(string: basicUrl)!
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            showingProgressView = false
+            if error != nil {
+                print(error!.localizedDescription)
+                resultImages = [errorImage]
+            }
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode != 200 {
+                    print(response.statusCode.description)
                     resultImages = [errorImage]
                 }
-                if let response = response as? HTTPURLResponse {
-                    if response.statusCode != 200 {
-                        print(response.statusCode.description)
-                        resultImages = [errorImage]
-                    }
-                }
-                if let data {
-                    struct Titles: Decodable {
-                        let docs: [Doc]
-                    }
-                    struct Doc: Decodable {
-                        let isbn: [String]?
-                    }
-
-                   guard let titles = try? JSONDecoder().decode(Titles.self, from: data) else {
-                        print("No decodifica")
-                        resultImages = [errorImage]
-                        return
-                    }
-                    var isbnArray = [String]()
-                    titles.docs.forEach { doc in
-                        if let array = doc.isbn {
-                            for isbn in array where isbn.hasPrefix("97884") {
-                                isbnArray.append(isbn)
+            }
+            if let data, let decoded = try? JSONDecoder().decode(ApiData.self, from: data) {
+                for item in decoded.items {
+                    guard let stringUrl = item.volumeInfo.imageLinks?.thumbnail else { continue }
+                    let imageUrl = URL(string: stringUrl)!
+                    URLSession.shared.dataTask(with: imageUrl) { imageData, response, error in
+                        if error != nil {
+                            print(error!.localizedDescription)
+                            resultImages.append(errorImage)
+                        }
+                        if let response = response as? HTTPURLResponse {
+                            if response.statusCode != 200 {
+                                print(response.statusCode.description)
+                                resultImages.append(errorImage)
                             }
                         }
-                    }
-                    isbnArray.forEach { isbn in
-                        URLSession.shared.dataTask(with: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")!) { data, response, error in
-                            if error != nil {
-                                print(error!.localizedDescription)
-                                resultImages = [errorImage]
-                            }
-                            if let response = response as? HTTPURLResponse {
-                                if response.statusCode != 200 {
-                                    print(response.statusCode.description)
-                                    resultImages = [errorImage]
-                                }
-                            }
-                            if let data, let uiimage = UIImage(data: data) {
-                                if data.count > 1000 {
-                                    resultImages.append(uiimage)
-                                } else {
-                                    resultImages.append(errorImage)
-                                }
-                            } else {
-                                resultImages = [errorImage]
-                            }
-                        }.resume()
-                    }
+                        if let imageData, let decodedImage = UIImage(data: imageData) {
+                            resultImages.append(decodedImage)
+                        }
+                    }.resume()
                 }
-            }.resume()
-        }
+            } else {
+                resultImages = [errorImage]
+            }
+        }.resume()
     }
-
 }
 
 struct DownloadCoverView_Previews: PreviewProvider {
