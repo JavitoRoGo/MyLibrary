@@ -1,5 +1,93 @@
 [
   {
+    "duration" : "0h 24min",
+    "id" : "DB532442-F64D-4454-B9E6-DBE02B21252B",
+    "startingPage" : 474,
+    "endingPage" : 485,
+    "minPerPag" : "2min 0s",
+    "date" : 705236400
+  },
+  {
+    "duration" : "0h 38min",
+    "id" : "401886F0-802D-4D57-A362-CD96AA9A36FB",
+    "startingPage" : 449,
+    "endingPage" : 473,
+    "minPerPag" : "1min 31s",
+    "date" : 705150000
+  },
+  {
+    "duration" : "1h 7min",
+    "id" : "0D5C1A7D-2BD0-4EB9-8224-2BD7613536AA",
+    "startingPage" : 417,
+    "endingPage" : 448,
+    "minPerPag" : "2min 6s",
+    "date" : 705063600
+  },
+  {
+    "duration" : "0h 32min",
+    "id" : "5F4484FB-CCBC-4ECC-A48A-6085E25F4F03",
+    "startingPage" : 399,
+    "endingPage" : 416,
+    "minPerPag" : "1min 47s",
+    "date" : 704977200
+  },
+  {
+    "duration" : "0h 2min",
+    "id" : "7113ABA3-4C0C-4A56-A599-0FE538440E08",
+    "startingPage" : 398,
+    "endingPage" : 398,
+    "minPerPag" : "2min 0s",
+    "date" : 704890800
+  },
+  {
+    "duration" : "0h 11min",
+    "id" : "E2746161-3FA1-46EC-984C-736A15520C24",
+    "startingPage" : 392,
+    "endingPage" : 397,
+    "minPerPag" : "1min 50s",
+    "date" : 704804400
+  },
+  {
+    "duration" : "0h 49min",
+    "id" : "C13382F9-0178-4824-B0DD-EDF0A291A7A1",
+    "startingPage" : 367,
+    "endingPage" : 391,
+    "minPerPag" : "1min 58s",
+    "date" : 704718000
+  },
+  {
+    "duration" : "0h 24min",
+    "id" : "B8F6F8FD-CCF2-4521-97E2-8DCEB3E38BA3",
+    "startingPage" : 357,
+    "endingPage" : 366,
+    "minPerPag" : "2min 24s",
+    "date" : 704631600
+  },
+  {
+    "duration" : "0h 50min",
+    "id" : "EB1806B1-EAC7-4F4D-99AA-7E67CD1B6278",
+    "startingPage" : 329,
+    "endingPage" : 356,
+    "minPerPag" : "1min 47s",
+    "date" : 704545200
+  },
+  {
+    "duration" : "0h 26min",
+    "id" : "D58DFA7A-CC6E-409E-8C34-A2D0A61D890D",
+    "startingPage" : 313,
+    "endingPage" : 328,
+    "minPerPag" : "1min 38s",
+    "date" : 704458800
+  },
+  {
+    "duration" : "0h 2min",
+    "id" : "D222CC5A-A66B-47C4-9B0E-85AE7807301E",
+    "startingPage" : 312,
+    "endingPage" : 312,
+    "minPerPag" : "2min 0s",
+    "date" : 704372400
+  },
+  {
     "duration" : "0h 45min",
     "id" : "40499BEB-C33A-4BBF-B244-2D8DE1B1C4F4",
     "startingPage" : 284,
