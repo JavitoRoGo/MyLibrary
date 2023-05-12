@@ -129,7 +129,8 @@ struct DownloadCoverView: View {
             if let data, let decoded = try? JSONDecoder().decode(ApiData.self, from: data) {
                 for item in decoded.items {
                     guard let stringUrl = item.volumeInfo.imageLinks?.thumbnail else { continue }
-                    let imageUrl = URL(string: stringUrl)!
+                    let httpsUrl = "https" + stringUrl.dropFirst(4)
+                    let imageUrl = URL(string: httpsUrl)!
                     URLSession.shared.dataTask(with: imageUrl) { imageData, response, error in
                         if error != nil {
                             print(error!.localizedDescription)

@@ -48,4 +48,4 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 * OJO, ya sé cómo usar Google Books API, y buscar por título, autor o isbn. El resultado que devuelve es más fácil de tratar, sobretodo la búsqueda por autor, y ya incluye la imagen.
 * ~~¿Sustituir la búsqueda de OpenLibrary por Google Books? ¿Añadir un botón al menú para usar las dos búsquedas?~~ Se cambió toda la lógica para usar la API de Google books, y quedó todo más sencillo porque sólo hay una urlsession y la url se especifica con pickerselection.
 * ~~En caso de optar por Google Books incluir la búsqueda por autor.~~
-* Funciona pero no muestra las imágenes porque la url que se obtiene de cada libro no es https. Buscar cómo añadir una letra en una posición determinada de un string para pasar de http a https.
+* ~~Funciona pero no muestra las imágenes porque la url que se obtiene de cada libro no es https. Buscar cómo añadir una letra en una posición determinada de un string para pasar de http a https.~~
