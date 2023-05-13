@@ -108,10 +108,10 @@ struct DownloadCoverView: View {
             basicUrl += "isbn:\(noSpacesText)"
         } else if pickerSelection == 1 {
             // Búsqueda por título
-            basicUrl += "intitle:\(noSpacesText)&printType=books&orderBy=newest&maxResults=20"
+            basicUrl += "intitle:\(noSpacesText)&printType=books&orderBy=newest&maxResults=40"
         } else {
             // Búsqueda por autor
-            basicUrl += "inauthor:\(noSpacesText)&printType=books&orderBy=newest&maxResults=20"
+            basicUrl += "inauthor:\(noSpacesText)&printType=books&orderBy=newest&maxResults=40"
         }
         let url = URL(string: basicUrl)!
         URLSession.shared.dataTask(with: url) { data, response, error in
