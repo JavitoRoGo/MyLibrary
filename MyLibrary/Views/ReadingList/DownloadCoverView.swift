@@ -20,53 +20,80 @@ struct DownloadCoverView: View {
     
     @State private var showingResults = false
     @State private var showingProgressView = false
+    @State private var showingScaledImage = false
+    @State private var imageToZoomIn = UIImage()
     
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
-                    Picker("Búsqueda por", selection: $pickerSelection) {
-                        ForEach(pickerTitles.indices, id:\.self) { index in
-                            Text(pickerTitles[index])
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    TextField("Escribe el ISBN, título o autor a buscar", text: $searchText)
-                }
-                Section {
-                    Button {
-                        showingResults = true
-                        downloadCoverFromAPI()
-                    } label: {
-                        HStack {
-                            Spacer()
-                            Text("Buscar")
-                            Spacer()
-                        }
-                    }
-                }
-                if showingResults {
+            ZStack {
+                Form {
                     Section {
-                        if showingProgressView {
-                            ProgressView()
-                        } else {
-                            ScrollView {
-                                LazyVGrid(columns: columns) {
-                                    ForEach(resultImages, id: \.self) { uiimage in
-                                        Image(uiImage: uiimage)
-                                            .resizable()
-                                            .frame(width: 90, height: 120)
-                                            .onTapGesture {
-                                                selectedImage = uiimage
-                                                dismiss()
-                                            }
+                        Picker("Búsqueda por", selection: $pickerSelection) {
+                            ForEach(pickerTitles.indices, id:\.self) { index in
+                                Text(pickerTitles[index])
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        TextField("Escribe el ISBN, título o autor a buscar", text: $searchText)
+                    }
+                    Section {
+                        Button {
+                            showingResults = true
+                            downloadCoverFromAPI()
+                        } label: {
+                            HStack {
+                                Spacer()
+                                Text("Buscar")
+                                Spacer()
+                            }
+                        }
+                    }
+                    if showingResults {
+                        Section {
+                            if showingProgressView {
+                                ProgressView()
+                            } else {
+                                ScrollView {
+                                    LazyVGrid(columns: columns) {
+                                        ForEach(resultImages, id: \.self) { uiimage in
+                                            Image(uiImage: uiimage)
+                                                .resizable()
+                                                .frame(width: 90, height: 120)
+                                                .onTapGesture {
+                                                    withAnimation(.easeIn) {
+                                                        imageToZoomIn = uiimage
+                                                        showingScaledImage = true
+                                                    }
+                                                }
+                                                .onLongPressGesture {
+                                                    selectedImage = uiimage
+                                                    dismiss()
+                                                }
+                                        }
                                     }
                                 }
                             }
+                        } header: {
+                            Text("Toca la imagen para ampliarla y mantenla pulsada para seleccionarla")
                         }
-                    } header: {
-                        Text("Pulsa sobre la portada para seleccionarla")
                     }
+                }
+                
+                if showingScaledImage {
+                    VStack(spacing: 5) {
+                        Text("Toca la imagen para ocultarla")
+                            .foregroundColor(.secondary)
+                        Image(uiImage: imageToZoomIn)
+                            .resizable()
+                            .scaledToFit()
+                            .onTapGesture {
+                                showingScaledImage = false
+                            }
+                        Spacer()
+                    }
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(.ultraThinMaterial)
                 }
             }
             .textInputAutocapitalization(.never)
@@ -129,8 +156,11 @@ struct DownloadCoverView: View {
             if let data, let decoded = try? JSONDecoder().decode(ApiData.self, from: data) {
                 for item in decoded.items {
                     guard let stringUrl = item.volumeInfo.imageLinks?.thumbnail else { continue }
+                    // Sustituir http por https
                     let httpsUrl = "https" + stringUrl.dropFirst(4)
-                    let imageUrl = URL(string: httpsUrl)!
+                    // Sustituir "zoom=1" por "zoom=4" en la url para obtener la imagen grande
+                    let largeImageUrl = httpsUrl.replacingOccurrences(of: "zoom=1", with: "zoom=4")
+                    let imageUrl = URL(string: largeImageUrl)!
                     URLSession.shared.dataTask(with: imageUrl) { imageData, response, error in
                         if error != nil {
                             print(error!.localizedDescription)
