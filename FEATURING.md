@@ -35,7 +35,10 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 * ~~Implementar la lógica de búsqueda directa de cover por isbn.~~
 * ~~Eliminar la búsqueda por autor. Poner la búsqueda por isbn como primera opción por funcionar mejor.~~
 * ~~Pasar la función de descarga a otra página (Functions?) e intentar factorizarla.~~
-* ~~A modo de prueba, volver a implementar la función de descarga en la propia vista para ver si da mejores resultados en la primera búsqueda o también hay que buscar varias veces.~~ Cambiado porque funciona mejor.
+* ~~A modo de prueba, volver a implementar la función de descarga en la propia vista para ver si da mejores resultados en la primera búsqueda o también hay que buscar varias veces.~~ ~~Cambiado porque funciona mejor.~~
+* ~~Al pulsar la imagen que se muestre en grande, y que se oculte al pulsar sobre la ampliación.~~
+* ~~Hacer pulsación larga sobre la imagen para seleccionarla mostrando un botón. Modificar el header del grid.~~
+* ~~Revisar el funcionamamiento porque al cambiar a zoom=4 para imagen grande aparecen muchos fallos. Darle una vuelta para que en el grid use el thumbnail pero la imagen grande al ampliar.~~ Se queda con zoom=1.
 
 
 ## Modificar UserMainView.
@@ -46,5 +49,6 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 ## Google Books API.
 
 * OJO, ya sé cómo usar Google Books API, y buscar por título, autor o isbn. El resultado que devuelve es más fácil de tratar, sobretodo la búsqueda por autor, y ya incluye la imagen.
-* ¿Sustituir la búsqueda de OpenLibrary por Google Books? ¿Añadir un botón al menú para usar las dos búsquedas?
-* En caso de optar por Google Books incluir la búsqueda por autor.
+* ~~¿Sustituir la búsqueda de OpenLibrary por Google Books? ¿Añadir un botón al menú para usar las dos búsquedas?~~ Se cambió toda la lógica para usar la API de Google books, y quedó todo más sencillo porque sólo hay una urlsession y la url se especifica con pickerselection.
+* ~~En caso de optar por Google Books incluir la búsqueda por autor.~~
+* ~~Funciona pero no muestra las imágenes porque la url que se obtiene de cada libro no es https. Buscar cómo añadir una letra en una posición determinada de un string para pasar de http a https.~~
