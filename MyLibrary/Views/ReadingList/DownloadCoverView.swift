@@ -158,9 +158,7 @@ struct DownloadCoverView: View {
                     guard let stringUrl = item.volumeInfo.imageLinks?.thumbnail else { continue }
                     // Sustituir http por https
                     let httpsUrl = "https" + stringUrl.dropFirst(4)
-                    // Sustituir "zoom=1" por "zoom=4" en la url para obtener la imagen grande
-                    let largeImageUrl = httpsUrl.replacingOccurrences(of: "zoom=1", with: "zoom=4")
-                    let imageUrl = URL(string: largeImageUrl)!
+                    let imageUrl = URL(string: httpsUrl)!
                     URLSession.shared.dataTask(with: imageUrl) { imageData, response, error in
                         if error != nil {
                             print(error!.localizedDescription)

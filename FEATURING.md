@@ -38,7 +38,7 @@ La idea es descargar la imagen al crear el registro en la lista de espera y guar
 * ~~A modo de prueba, volver a implementar la función de descarga en la propia vista para ver si da mejores resultados en la primera búsqueda o también hay que buscar varias veces.~~ ~~Cambiado porque funciona mejor.~~
 * ~~Al pulsar la imagen que se muestre en grande, y que se oculte al pulsar sobre la ampliación.~~
 * ~~Hacer pulsación larga sobre la imagen para seleccionarla mostrando un botón. Modificar el header del grid.~~
-* Revisar el funcionamamiento porque al cambiar a zoom=4 para imagen grande aparecen muchos fallos. Darle una vuelta para que en el grid use el thumbnail pero la imagen grande al ampliar.
+* ~~Revisar el funcionamamiento porque al cambiar a zoom=4 para imagen grande aparecen muchos fallos. Darle una vuelta para que en el grid use el thumbnail pero la imagen grande al ampliar.~~ Se queda con zoom=1.
 
 
 ## Modificar UserMainView.

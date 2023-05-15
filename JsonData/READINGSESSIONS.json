@@ -1,5 +1,53 @@
 [
   {
+    "duration" : "0h 35min",
+    "id" : "7C17D51B-73C0-464A-A511-AAC392F4AFBF",
+    "startingPage" : 542,
+    "endingPage" : 559,
+    "minPerPag" : "1min 57s",
+    "date" : 705754800
+  },
+  {
+    "duration" : "0h 32min",
+    "id" : "DAC7DEED-5822-481A-A7E6-08E3C43EBDC9",
+    "startingPage" : 532,
+    "endingPage" : 541,
+    "minPerPag" : "3min 12s",
+    "date" : 705668400
+  },
+  {
+    "duration" : "0h 23min",
+    "id" : "00797D4D-2E48-4931-A06E-5320BC73A3C0",
+    "startingPage" : 518,
+    "endingPage" : 531,
+    "minPerPag" : "1min 39s",
+    "date" : 705582000
+  },
+  {
+    "duration" : "0h 13min",
+    "id" : "9C9903B8-D8AD-450B-B64C-EB6C2853571B",
+    "startingPage" : 510,
+    "endingPage" : 517,
+    "minPerPag" : "1min 38s",
+    "date" : 705495600
+  },
+  {
+    "duration" : "0h 33min",
+    "id" : "994112BF-F240-4BEC-9E03-4D10F7BF76C9",
+    "startingPage" : 491,
+    "endingPage" : 509,
+    "minPerPag" : "1min 44s",
+    "date" : 705409200
+  },
+  {
+    "duration" : "0h 6min",
+    "id" : "00BF8360-FF0D-4B82-8A54-DCDAF8B54182",
+    "startingPage" : 486,
+    "endingPage" : 490,
+    "minPerPag" : "1min 12s",
+    "date" : 705322800
+  },
+  {
     "duration" : "0h 24min",
     "id" : "DB532442-F64D-4454-B9E6-DBE02B21252B",
     "startingPage" : 474,
