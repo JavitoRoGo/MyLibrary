@@ -10,6 +10,46 @@
     "isFinished" : false,
     "sessions" : [
       {
+        "duration" : "0h 15min",
+        "id" : "3A8EF102-3061-479F-887B-25E41FAE558E",
+        "startingPage" : 600,
+        "endingPage" : 607,
+        "minPerPag" : "1min 53s",
+        "date" : 706186800
+      },
+      {
+        "duration" : "0h 15min",
+        "id" : "AEFFD7CF-A5A5-47D7-83C9-E9735B341810",
+        "startingPage" : 592,
+        "endingPage" : 599,
+        "minPerPag" : "1min 53s",
+        "date" : 706100400
+      },
+      {
+        "duration" : "0h 12min",
+        "id" : "C8EE062C-702A-47B5-A904-816285D05F38",
+        "startingPage" : 586,
+        "endingPage" : 591,
+        "minPerPag" : "2min 0s",
+        "date" : 706014000
+      },
+      {
+        "duration" : "0h 13min",
+        "id" : "F9FF2056-5A6E-4C0D-BF1E-4D983E404A5F",
+        "startingPage" : 579,
+        "endingPage" : 585,
+        "minPerPag" : "1min 51s",
+        "date" : 705927600
+      },
+      {
+        "duration" : "0h 42min",
+        "id" : "9BC5C0B3-7E60-421B-A0F1-F6308BD5D6D7",
+        "startingPage" : 560,
+        "endingPage" : 578,
+        "minPerPag" : "2min 13s",
+        "date" : 705841200
+      },
+      {
         "duration" : "0h 35min",
         "id" : "7C17D51B-73C0-464A-A511-AAC392F4AFBF",
         "startingPage" : 542,
