@@ -1,0 +1,75 @@
+//
+//  DownloadCoverHelper.swift
+//  MyLibrary
+//
+//  Created by Javier Rodríguez Gómez on 20/5/23.
+//
+
+import Foundation
+import UIKit
+
+// Tipos de datos de la API
+struct ApiData: Codable {
+    let items: [Item]
+}
+struct Item: Codable {
+    let volumeInfo: VolumeInfo
+}
+struct VolumeInfo: Codable {
+    let imageLinks: ImageLinks?
+}
+struct ImageLinks: Codable {
+    let thumbnail: String
+}
+
+func fetchApiData(url: URL) async -> ApiData {
+    do {
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decoded = try JSONDecoder().decode(ApiData.self, from: data)
+        return decoded
+    } catch {
+        return ApiData(items: [])
+    }
+}
+
+func fetchCover(from stringUrl: String) async -> UIImage {
+    let errorImage = UIImage(systemName: "exclamationmark.triangle")!
+    let httpsUrl = stringUrl.replacingOccurrences(of: "http", with: "https")
+    let imageUrl = URL(string: httpsUrl)!
+    do {
+        let (data, _) = try await URLSession.shared.data(from: imageUrl)
+        if let decodedImage = UIImage(data: data) {
+            return decodedImage
+        } else {
+            return errorImage
+        }
+    } catch {
+        return errorImage
+    }
+}
+
+func downloadCoverFromAPI(searchText: String, in selection: Int) async -> [UIImage] {
+    var basicUrl = "https://www.googleapis.com/books/v1/volumes?q="
+    var images = [UIImage]()
+    
+    let noSpacesText = searchText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+    if selection == 0 {
+        // Búsqueda por ISBN
+        basicUrl += "isbn:\(noSpacesText)"
+    } else if selection == 1 {
+        // Búsqueda por título
+        basicUrl += "intitle:\(noSpacesText)&printType=books&orderBy=newest&maxResults=40"
+    } else {
+        // Búsqueda por autor
+        basicUrl += "inauthor:\(noSpacesText)&printType=books&orderBy=newest&maxResults=40"
+    }
+    let url = URL(string: basicUrl)!
+    
+    let apiData = await fetchApiData(url: url)
+    for item in apiData.items {
+        guard let stringUrl = item.volumeInfo.imageLinks?.thumbnail else { continue }
+        let image = await fetchCover(from: stringUrl)
+        images.append(image)
+    }
+    return images
+}

@@ -38,8 +38,13 @@ struct DownloadCoverView: View {
                     }
                     Section {
                         Button {
+                            showingProgressView = true
+                            resultImages = []
                             showingResults = true
-                            downloadCoverFromAPI()
+                            Task {
+                                resultImages = await downloadCoverFromAPI(searchText: searchText, in: pickerSelection)
+                                showingProgressView = false
+                            }
                         } label: {
                             HStack {
                                 Spacer()
@@ -106,79 +111,6 @@ struct DownloadCoverView: View {
                 }
             }
         }
-    }
-    
-    func downloadCoverFromAPI() {
-        // Tipos de datos de la API
-        struct ApiData: Codable {
-            let items: [Item]
-        }
-        struct Item: Codable {
-            let volumeInfo: VolumeInfo
-        }
-        struct VolumeInfo: Codable {
-            let imageLinks: ImageLinks?
-        }
-        struct ImageLinks: Codable {
-            let thumbnail: String
-        }
-        
-        let errorImage = UIImage(systemName: "exclamationmark.triangle")!
-        var basicUrl = "https://www.googleapis.com/books/v1/volumes?q="
-        
-        resultImages = []
-        showingProgressView = true
-        
-        let noSpacesText = searchText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        if pickerSelection == 0 {
-            // Búsqueda por ISBN
-            basicUrl += "isbn:\(noSpacesText)"
-        } else if pickerSelection == 1 {
-            // Búsqueda por título
-            basicUrl += "intitle:\(noSpacesText)&printType=books&orderBy=newest&maxResults=40"
-        } else {
-            // Búsqueda por autor
-            basicUrl += "inauthor:\(noSpacesText)&printType=books&orderBy=newest&maxResults=40"
-        }
-        let url = URL(string: basicUrl)!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            showingProgressView = false
-            if error != nil {
-                print(error!.localizedDescription)
-                resultImages = [errorImage]
-            }
-            if let response = response as? HTTPURLResponse {
-                if response.statusCode != 200 {
-                    print(response.statusCode.description)
-                    resultImages = [errorImage]
-                }
-            }
-            if let data, let decoded = try? JSONDecoder().decode(ApiData.self, from: data) {
-                for item in decoded.items {
-                    guard let stringUrl = item.volumeInfo.imageLinks?.thumbnail else { continue }
-                    // Sustituir http por https
-                    let httpsUrl = "https" + stringUrl.dropFirst(4)
-                    let imageUrl = URL(string: httpsUrl)!
-                    URLSession.shared.dataTask(with: imageUrl) { imageData, response, error in
-                        if error != nil {
-                            print(error!.localizedDescription)
-                            resultImages.append(errorImage)
-                        }
-                        if let response = response as? HTTPURLResponse {
-                            if response.statusCode != 200 {
-                                print(response.statusCode.description)
-                                resultImages.append(errorImage)
-                            }
-                        }
-                        if let imageData, let decodedImage = UIImage(data: imageData) {
-                            resultImages.append(decodedImage)
-                        }
-                    }.resume()
-                }
-            } else {
-                resultImages = [errorImage]
-            }
-        }.resume()
     }
 }
 
