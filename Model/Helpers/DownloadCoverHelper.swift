@@ -22,15 +22,17 @@ struct ImageLinks: Codable {
     let thumbnail: String
 }
 
-func fetchApiData(url: URL) async -> ApiData {
-    do {
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let decoded = try JSONDecoder().decode(ApiData.self, from: data)
-        return decoded
-    } catch {
-        return ApiData(items: [])
-    }
-}
+// Función comentada para usar la alternativa con booksTask y coverTask
+
+//func fetchApiData(url: URL) async -> ApiData {
+//    do {
+//        let (data, _) = try await URLSession.shared.data(from: url)
+//        let decoded = try JSONDecoder().decode(ApiData.self, from: data)
+//        return decoded
+//    } catch {
+//        return ApiData(items: [])
+//    }
+//}
 
 func fetchCover(from stringUrl: String) async -> UIImage {
     let errorImage = UIImage(systemName: "exclamationmark.triangle")!
@@ -65,11 +67,22 @@ func downloadCoverFromAPI(searchText: String, in selection: Int) async -> [UIIma
     }
     let url = URL(string: basicUrl)!
     
-    let apiData = await fetchApiData(url: url)
-    for item in apiData.items {
-        guard let stringUrl = item.volumeInfo.imageLinks?.thumbnail else { continue }
-        let image = await fetchCover(from: stringUrl)
-        images.append(image)
+    let booksTask = Task { () -> ApiData in
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let decoded = try JSONDecoder().decode(ApiData.self, from: data)
+        return decoded
     }
+    
+    do {
+        let apiData = try await booksTask.value
+        for item in apiData.items {
+            guard let stringUrl = item.volumeInfo.imageLinks?.thumbnail else { continue }
+            let image = await fetchCover(from: stringUrl)
+            images.append(image)
+        }
+    } catch {
+        images = []
+    }
+    
     return images
 }
