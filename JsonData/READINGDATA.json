@@ -16086,5 +16086,385 @@
     "rating" : 5,
     "sessions" : 12,
     "finishDate" : 702817200
+  },
+  {
+    "minPerDay" : "0h 30min",
+    "location" : {
+      "id" : "57165C96-5F6B-4B72-965F-2ECFEE1B10B3",
+      "longitude" : -17.91606990968506,
+      "latitude" : 28.658165980185856
+    },
+    "pages" : 727,
+    "formatt" : "Papel",
+    "duration" : "22h 7min",
+    "synopsis" : "Algunos dicen que, para cambiar el mundo, primero hay que quemarlo. Esta idea se va a poner a prueba en el crisol de la revolución: los rompedores y los quemadores se hacen con el poder y el humo de los disturbios ha sustituido al de las fábricas. Todo ha de someterse a la sabiduría de las multitudes.\nEl ciudadano Brock ha decidido convertirse en un héroe de la nueva era y la ciudadana Savine tiene que reconducir su talento de la búsqueda del beneficio a la mera supervivencia. Orso va a descubrir que, cuando el mundo está bocabajo, nadie está en peor posición que un rey. Y en el sangriento Norte, Rikke y su frágil Protectorado se están quedando sin aliados… mientras Calder el Negro llama a sus fuerzas y trama venganza.\nEl sol de la Unión ha caído al barro y en la sombra, tras las bambalinas, los hilos del despiadado plan del Tejedor se van trenzando poco a poco…",
+    "over50" : 0,
+    "percentOver50" : 0,
+    "pagPerDay" : 16,
+    "cover" : "sabiduriadelasmultitudesla",
+    "minPerPag" : "1min 52s",
+    "id" : 151,
+    "readingSessions" : [
+      {
+        "duration" : "0h 42min",
+        "id" : "A415AA8E-8BB2-42CB-8FD8-7BB86E241ACA",
+        "startingPage" : 703,
+        "endingPage" : 733,
+        "minPerPag" : "1min 21s",
+        "date" : 706618800
+      },
+      {
+        "duration" : "0h 42min",
+        "id" : "5F82C887-9162-4AA1-A9F4-E49082993914",
+        "startingPage" : 681,
+        "endingPage" : 702,
+        "minPerPag" : "1min 55s",
+        "date" : 706532400
+      },
+      {
+        "duration" : "0h 34min",
+        "id" : "C9FC32D5-843E-4DFB-8436-76D813DDA21D",
+        "startingPage" : 663,
+        "endingPage" : 680,
+        "minPerPag" : "1min 53s",
+        "date" : 706446000
+      },
+      {
+        "duration" : "0h 43min",
+        "id" : "05C39398-D49B-47DD-8674-960DC63B50C9",
+        "startingPage" : 645,
+        "endingPage" : 662,
+        "minPerPag" : "2min 23s",
+        "date" : 706359600
+      },
+      {
+        "duration" : "1h 5min",
+        "id" : "F3C47AFE-0D9F-4720-9367-D94C16DC8F65",
+        "startingPage" : 608,
+        "endingPage" : 644,
+        "minPerPag" : "1min 45s",
+        "date" : 706273200
+      },
+      {
+        "duration" : "0h 15min",
+        "id" : "3A8EF102-3061-479F-887B-25E41FAE558E",
+        "startingPage" : 600,
+        "endingPage" : 607,
+        "minPerPag" : "1min 53s",
+        "date" : 706186800
+      },
+      {
+        "duration" : "0h 15min",
+        "id" : "AEFFD7CF-A5A5-47D7-83C9-E9735B341810",
+        "startingPage" : 592,
+        "endingPage" : 599,
+        "minPerPag" : "1min 53s",
+        "date" : 706100400
+      },
+      {
+        "duration" : "0h 12min",
+        "id" : "C8EE062C-702A-47B5-A904-816285D05F38",
+        "startingPage" : 586,
+        "endingPage" : 591,
+        "minPerPag" : "2min 0s",
+        "date" : 706014000
+      },
+      {
+        "duration" : "0h 13min",
+        "id" : "F9FF2056-5A6E-4C0D-BF1E-4D983E404A5F",
+        "startingPage" : 579,
+        "endingPage" : 585,
+        "minPerPag" : "1min 51s",
+        "date" : 705927600
+      },
+      {
+        "duration" : "0h 42min",
+        "id" : "9BC5C0B3-7E60-421B-A0F1-F6308BD5D6D7",
+        "startingPage" : 560,
+        "endingPage" : 578,
+        "minPerPag" : "2min 13s",
+        "date" : 705841200
+      },
+      {
+        "duration" : "0h 35min",
+        "id" : "7C17D51B-73C0-464A-A511-AAC392F4AFBF",
+        "startingPage" : 542,
+        "endingPage" : 559,
+        "minPerPag" : "1min 57s",
+        "date" : 705754800
+      },
+      {
+        "duration" : "0h 32min",
+        "id" : "DAC7DEED-5822-481A-A7E6-08E3C43EBDC9",
+        "startingPage" : 532,
+        "endingPage" : 541,
+        "minPerPag" : "3min 12s",
+        "date" : 705668400
+      },
+      {
+        "duration" : "0h 23min",
+        "id" : "00797D4D-2E48-4931-A06E-5320BC73A3C0",
+        "startingPage" : 518,
+        "endingPage" : 531,
+        "minPerPag" : "1min 39s",
+        "date" : 705582000
+      },
+      {
+        "duration" : "0h 13min",
+        "id" : "9C9903B8-D8AD-450B-B64C-EB6C2853571B",
+        "startingPage" : 510,
+        "endingPage" : 517,
+        "minPerPag" : "1min 38s",
+        "date" : 705495600
+      },
+      {
+        "duration" : "0h 33min",
+        "id" : "994112BF-F240-4BEC-9E03-4D10F7BF76C9",
+        "startingPage" : 491,
+        "endingPage" : 509,
+        "minPerPag" : "1min 44s",
+        "date" : 705409200
+      },
+      {
+        "duration" : "0h 6min",
+        "id" : "00BF8360-FF0D-4B82-8A54-DCDAF8B54182",
+        "startingPage" : 486,
+        "endingPage" : 490,
+        "minPerPag" : "1min 12s",
+        "date" : 705322800
+      },
+      {
+        "duration" : "0h 24min",
+        "id" : "DB532442-F64D-4454-B9E6-DBE02B21252B",
+        "startingPage" : 474,
+        "endingPage" : 485,
+        "minPerPag" : "2min 0s",
+        "date" : 705236400
+      },
+      {
+        "duration" : "0h 38min",
+        "id" : "401886F0-802D-4D57-A362-CD96AA9A36FB",
+        "startingPage" : 449,
+        "endingPage" : 473,
+        "minPerPag" : "1min 31s",
+        "date" : 705150000
+      },
+      {
+        "duration" : "1h 7min",
+        "id" : "0D5C1A7D-2BD0-4EB9-8224-2BD7613536AA",
+        "startingPage" : 417,
+        "endingPage" : 448,
+        "minPerPag" : "2min 6s",
+        "date" : 705063600
+      },
+      {
+        "duration" : "0h 32min",
+        "id" : "5F4484FB-CCBC-4ECC-A48A-6085E25F4F03",
+        "startingPage" : 399,
+        "endingPage" : 416,
+        "minPerPag" : "1min 47s",
+        "date" : 704977200
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "7113ABA3-4C0C-4A56-A599-0FE538440E08",
+        "startingPage" : 398,
+        "endingPage" : 398,
+        "minPerPag" : "2min 0s",
+        "date" : 704890800
+      },
+      {
+        "duration" : "0h 11min",
+        "id" : "E2746161-3FA1-46EC-984C-736A15520C24",
+        "startingPage" : 392,
+        "endingPage" : 397,
+        "minPerPag" : "1min 50s",
+        "date" : 704804400
+      },
+      {
+        "duration" : "0h 49min",
+        "id" : "C13382F9-0178-4824-B0DD-EDF0A291A7A1",
+        "startingPage" : 367,
+        "endingPage" : 391,
+        "minPerPag" : "1min 58s",
+        "date" : 704718000
+      },
+      {
+        "duration" : "0h 24min",
+        "id" : "B8F6F8FD-CCF2-4521-97E2-8DCEB3E38BA3",
+        "startingPage" : 357,
+        "endingPage" : 366,
+        "minPerPag" : "2min 24s",
+        "date" : 704631600
+      },
+      {
+        "duration" : "0h 50min",
+        "id" : "EB1806B1-EAC7-4F4D-99AA-7E67CD1B6278",
+        "startingPage" : 329,
+        "endingPage" : 356,
+        "minPerPag" : "1min 47s",
+        "date" : 704545200
+      },
+      {
+        "duration" : "0h 26min",
+        "id" : "D58DFA7A-CC6E-409E-8C34-A2D0A61D890D",
+        "startingPage" : 313,
+        "endingPage" : 328,
+        "minPerPag" : "1min 38s",
+        "date" : 704458800
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "D222CC5A-A66B-47C4-9B0E-85AE7807301E",
+        "startingPage" : 312,
+        "endingPage" : 312,
+        "minPerPag" : "2min 0s",
+        "date" : 704372400
+      },
+      {
+        "duration" : "0h 45min",
+        "id" : "40499BEB-C33A-4BBF-B244-2D8DE1B1C4F4",
+        "startingPage" : 284,
+        "endingPage" : 311,
+        "minPerPag" : "1min 36s",
+        "date" : 704286000
+      },
+      {
+        "duration" : "0h 38min",
+        "id" : "2379CF55-C5BF-4EF7-9565-F8E5D8C5B2EF",
+        "startingPage" : 264,
+        "endingPage" : 283,
+        "minPerPag" : "1min 54s",
+        "date" : 704199600
+      },
+      {
+        "duration" : "0h 30min",
+        "id" : "4E5001AA-A9D0-4221-8D93-3B38DCB5443D",
+        "startingPage" : 250,
+        "endingPage" : 263,
+        "minPerPag" : "2min 9s",
+        "date" : 704113200
+      },
+      {
+        "duration" : "0h 19min",
+        "id" : "D77C849E-9D38-498E-91F3-2396318A7E8F",
+        "startingPage" : 238,
+        "endingPage" : 249,
+        "minPerPag" : "1min 35s",
+        "date" : 704026800
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "C16C6D64-6438-463C-B551-76F777BA690F",
+        "startingPage" : 237,
+        "endingPage" : 237,
+        "minPerPag" : "2min 0s",
+        "date" : 703940400
+      },
+      {
+        "duration" : "0h 57min",
+        "id" : "3CA65D35-7480-4B36-A4C1-BE40EA4D5D85",
+        "startingPage" : 203,
+        "endingPage" : 236,
+        "minPerPag" : "1min 41s",
+        "date" : 703854000
+      },
+      {
+        "duration" : "0h 41min",
+        "id" : "D5873A02-EC5E-4970-B9B9-1FADD309FD18",
+        "startingPage" : 175,
+        "endingPage" : 202,
+        "minPerPag" : "1min 28s",
+        "date" : 703767600
+      },
+      {
+        "duration" : "0h 34min",
+        "id" : "A11120AF-FD1B-428C-AAF3-93BDD98BE1E6",
+        "startingPage" : 157,
+        "endingPage" : 174,
+        "minPerPag" : "1min 53s",
+        "date" : 703681200
+      },
+      {
+        "duration" : "0h 42min",
+        "id" : "C25EDE74-732D-40F8-AEBE-FA2E9EEFFF62",
+        "startingPage" : 132,
+        "endingPage" : 156,
+        "minPerPag" : "1min 41s",
+        "date" : 703594800
+      },
+      {
+        "duration" : "0h 29min",
+        "id" : "94790E5A-7875-4CD4-980F-03A7B7322A2B",
+        "startingPage" : 118,
+        "endingPage" : 131,
+        "minPerPag" : "2min 4s",
+        "date" : 703508400
+      },
+      {
+        "duration" : "0h 27min",
+        "id" : "E05084EC-93DF-4782-948C-CE80D5ECE226",
+        "startingPage" : 106,
+        "endingPage" : 117,
+        "minPerPag" : "2min 15s",
+        "date" : 703422000
+      },
+      {
+        "duration" : "0h 37min",
+        "id" : "E953D1C0-6DF0-4B15-BCD4-6B0082A5B2F9",
+        "startingPage" : 84,
+        "endingPage" : 105,
+        "minPerPag" : "1min 41s",
+        "date" : 703335600
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "5F6196A7-BDC2-4406-A2A0-4A3785C631DE",
+        "startingPage" : 83,
+        "endingPage" : 83,
+        "minPerPag" : "2min 0s",
+        "date" : 703249200
+      },
+      {
+        "duration" : "0h 45min",
+        "id" : "D3FDEBF2-714C-4B9A-86E3-233FE665998F",
+        "startingPage" : 59,
+        "endingPage" : 82,
+        "minPerPag" : "1min 53s",
+        "date" : 703162800
+      },
+      {
+        "duration" : "0h 32min",
+        "id" : "A01B5BA6-3BC2-4CB9-937A-A852D1B57E74",
+        "startingPage" : 42,
+        "endingPage" : 58,
+        "minPerPag" : "1min 53s",
+        "date" : 703076400
+      },
+      {
+        "duration" : "0h 31min",
+        "id" : "03001F54-5DDF-4E95-9ED3-B5F550022285",
+        "startingPage" : 24,
+        "endingPage" : 41,
+        "minPerPag" : "1min 43s",
+        "date" : 702990000
+      },
+      {
+        "duration" : "0h 26min",
+        "id" : "F11AE8D6-73BA-4EBD-9CDC-4C92D2158D5D",
+        "startingPage" : 7,
+        "endingPage" : 23,
+        "minPerPag" : "1min 32s",
+        "date" : 702903600
+      }
+    ],
+    "yearId" : 10,
+    "finishedInYear" : 2023,
+    "startDate" : 702903600,
+    "bookTitle" : "sabiduría de las multitudes, La",
+    "comment" : "Me gustó porque es Abercrombie, pero al leerlo poco a poco pierde un poco.",
+    "rating" : 4,
+    "sessions" : 44,
+    "finishDate" : 706618800
   }
 ]
