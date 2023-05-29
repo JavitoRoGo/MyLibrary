@@ -23,3 +23,4 @@ Con lo visto en *Concurrency ByExample* mejorar la descarga de imágenes de port
 * ~~Pasar la función de descarga a un archivo independiente creando una nueva función con valor de retorno para las imágenes descargadas.~~
 * ~~Sustituir URLSession.shared.dataTask por URLSession.shared.data, que sí es puro código async/await.~~
 * ~~Dividir la función en varias funciones que usen async. Como las nuevas funciones finales dependerán del resultado de las primeras, reunir los resultados en una última función también con async.~~
+* ~~Mejorar la lógica creando un TaskGroup con el bucle for-in dentro.~~
