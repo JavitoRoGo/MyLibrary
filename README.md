@@ -41,3 +41,7 @@ ConnectivityManager para conectar con iOS.
 ## v1.1.1
 
 * Se añade funcionalidad para descargar la portada buscando por título, autor o ISBN, tanto para papel como ebook. La descarga se hace desde la API de GoogleBooks.
+
+# v1.1.2
+
+* Se mejora y optimiza el código de descarga de portada mediante el uso de async/await con URLSession y TaskGroup.
