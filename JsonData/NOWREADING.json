@@ -1,37 +1,14 @@
 [
   {
-    "lastPage" : 329,
-    "bookTitle" : "forja de una rebelde, La",
+    "lastPage" : 573,
+    "bookTitle" : "gladiador, El",
     "isFinished" : false,
     "sessions" : [
-      {
-        "duration" : "0h 57min",
-        "id" : "E1EFF835-BFA7-40CB-888E-00EE80AA0455",
-        "startingPage" : 109,
-        "endingPage" : 157,
-        "minPerPag" : "1min 10s",
-        "date" : 706878000
-      },
-      {
-        "duration" : "1h 11min",
-        "id" : "3FA12198-3866-4819-87CF-14A6AA29C7F9",
-        "startingPage" : 49,
-        "endingPage" : 108,
-        "minPerPag" : "1min 11s",
-        "date" : 706791600
-      },
-      {
-        "duration" : "0h 44min",
-        "id" : "11DBF708-534D-4306-BFD1-16DB504EFE4D",
-        "startingPage" : 9,
-        "endingPage" : 48,
-        "minPerPag" : "1min 6s",
-        "date" : 706705200
-      }
+
     ],
     "formatt" : "Papel",
-    "synopsis" : "Desde el inicio de la alerta sanitaria, la inspectora de policía Manuela Mauri no ha tenido un respiro; sus hijos están irritables y agresivos, y a Alberto, su pareja, no le ha sentado nada bien la convivencia con ellos. Se siente desbordada. En medio del caos, un doble crimen en Alcalá de Henares le quitará el sueño: Carlota, una joven de diecinueve años, avisa a la policía al encontrar a su padre y a su madrastra asesinados a tiros. Una fiesta ilegal y el testimonio de diez jóvenes en guerra con la sociedad serán claves.\nUna novela policial que va mucho más allá de la investigación de un homicidio, porque no enfrenta a conflictos que conviven con el sujeto moderno: la infelicidad, la frustración, la ira y el odio como males de nuestro tiempo. En un Madrid sitiado por un virus, las diferencias generacionales de nuestra sociedad explotarán en este caso para recordarnos, a cada uno de nosotros, el peso de nuestra conciencia.",
+    "synopsis" : "Tras sus peripecias por Palmira, Macro y Cato regresan por mar a Roma cuando una inesperada y violentísima tormenta los lanza a un escenario dominado por el caos. Creta acaba de ser víctima de un terremoto devastador que ha acabado con casi toda autoridad romana en la isla, y sus habitantes intentan sobrevivir como pueden en un ambiente dominado por la miseria, la violencia y la anarquía. Cuando Macro y Cato intentan imponer un mínimo control sobre la situación, descubrirán que el hambre, el riesgo de epidemias y las carencias de personal sanitario suficiente son sólo males menores entre el desorden, un veterano gladiador ha encontrado una oportunidad excelente para liderar un levantamiento de esclavos que no tienen nada que perder y mucho que ganar…",
     "isOnReading" : true,
-    "firstPage" : 9
+    "firstPage" : 7
   }
 ]

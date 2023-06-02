@@ -16466,5 +16466,97 @@
     "rating" : 4,
     "sessions" : 44,
     "finishDate" : 706618800
+  },
+  {
+    "minPerDay" : "0h 49min",
+    "location" : {
+      "id" : "9C25ED27-1FD8-4682-BE15-BB57EA23C116",
+      "longitude" : -17.915686979621828,
+      "latitude" : 28.65813509957167
+    },
+    "pages" : 321,
+    "formatt" : "Papel",
+    "duration" : "6h 33min",
+    "synopsis" : "Desde el inicio de la alerta sanitaria, la inspectora de policía Manuela Mauri no ha tenido un respiro; sus hijos están irritables y agresivos, y a Alberto, su pareja, no le ha sentado nada bien la convivencia con ellos. Se siente desbordada. En medio del caos, un doble crimen en Alcalá de Henares le quitará el sueño: Carlota, una joven de diecinueve años, avisa a la policía al encontrar a su padre y a su madrastra asesinados a tiros. Una fiesta ilegal y el testimonio de diez jóvenes en guerra con la sociedad serán claves.\nUna novela policial que va mucho más allá de la investigación de un homicidio, porque no enfrenta a conflictos que conviven con el sujeto moderno: la infelicidad, la frustración, la ira y el odio como males de nuestro tiempo. En un Madrid sitiado por un virus, las diferencias generacionales de nuestra sociedad explotarán en este caso para recordarnos, a cada uno de nosotros, el peso de nuestra conciencia.",
+    "over50" : 2,
+    "percentOver50" : 25,
+    "pagPerDay" : 40,
+    "cover" : "forjadeunarebeldela",
+    "minPerPag" : "1min 15s",
+    "id" : 152,
+    "readingSessions" : [
+      {
+        "duration" : "1h 5min",
+        "id" : "0C4F8B6B-8AFC-4C8C-AAC5-55AE447EF658",
+        "startingPage" : 278,
+        "endingPage" : 329,
+        "minPerPag" : "1min 15s",
+        "date" : 707310000
+      },
+      {
+        "duration" : "0h 45min",
+        "id" : "BDD59A3E-AAB4-4A32-BA0E-35F5C6E3D130",
+        "startingPage" : 242,
+        "endingPage" : 277,
+        "minPerPag" : "1min 15s",
+        "date" : 707223600
+      },
+      {
+        "duration" : "0h 33min",
+        "id" : "DBEF7B1C-84DC-4D76-918A-4423CDD40E1C",
+        "startingPage" : 218,
+        "endingPage" : 241,
+        "minPerPag" : "1min 23s",
+        "date" : 707137200
+      },
+      {
+        "duration" : "0h 32min",
+        "id" : "85B4E3A6-63B5-4B5A-AF4E-CE02DA8B35DB",
+        "startingPage" : 194,
+        "endingPage" : 217,
+        "minPerPag" : "1min 20s",
+        "date" : 707050800
+      },
+      {
+        "duration" : "0h 46min",
+        "id" : "AE60D983-B9BB-45C9-A095-85AA75B370A5",
+        "startingPage" : 158,
+        "endingPage" : 193,
+        "minPerPag" : "1min 17s",
+        "date" : 706964400
+      },
+      {
+        "duration" : "0h 57min",
+        "id" : "E1EFF835-BFA7-40CB-888E-00EE80AA0455",
+        "startingPage" : 109,
+        "endingPage" : 157,
+        "minPerPag" : "1min 10s",
+        "date" : 706878000
+      },
+      {
+        "duration" : "1h 11min",
+        "id" : "3FA12198-3866-4819-87CF-14A6AA29C7F9",
+        "startingPage" : 49,
+        "endingPage" : 108,
+        "minPerPag" : "1min 11s",
+        "date" : 706791600
+      },
+      {
+        "duration" : "0h 44min",
+        "id" : "11DBF708-534D-4306-BFD1-16DB504EFE4D",
+        "startingPage" : 9,
+        "endingPage" : 48,
+        "minPerPag" : "1min 6s",
+        "date" : 706705200
+      }
+    ],
+    "yearId" : 11,
+    "finishedInYear" : 2023,
+    "startDate" : 706705200,
+    "bookTitle" : "forja de una rebelde, La",
+    "comment" : "El desarrollo de la investigación y la trama están bien pero el final lo vi flojo.",
+    "rating" : 4,
+    "sessions" : 8,
+    "finishDate" : 707310000
   }
 ]
