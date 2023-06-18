@@ -4,7 +4,134 @@
     "bookTitle" : "gladiador, El",
     "isFinished" : false,
     "sessions" : [
-
+      {
+        "duration" : "0h 36min",
+        "id" : "78F50788-2267-45AF-A27D-5C9A144C5DAC",
+        "startingPage" : 346,
+        "endingPage" : 374,
+        "minPerPag" : "1min 14s",
+        "date" : 708692400
+      },
+      {
+        "duration" : "0h 23min",
+        "id" : "0EFAEB42-083B-44C9-A94D-58A058731691",
+        "startingPage" : 330,
+        "endingPage" : 345,
+        "minPerPag" : "1min 26s",
+        "date" : 708606000
+      },
+      {
+        "duration" : "0h 4min",
+        "id" : "48992FB4-015C-40FF-B501-55E97DCD631C",
+        "startingPage" : 327,
+        "endingPage" : 329,
+        "minPerPag" : "1min 20s",
+        "date" : 708519600
+      },
+      {
+        "duration" : "0h 47min",
+        "id" : "C856525E-680E-40AE-85F3-42B80323FC13",
+        "startingPage" : 291,
+        "endingPage" : 326,
+        "minPerPag" : "1min 18s",
+        "date" : 708433200
+      },
+      {
+        "duration" : "0h 13min",
+        "id" : "801A871B-6249-4D4D-9540-938185014967",
+        "startingPage" : 280,
+        "endingPage" : 290,
+        "minPerPag" : "1min 11s",
+        "date" : 708346800
+      },
+      {
+        "duration" : "0h 31min",
+        "id" : "90CC9B38-BCB7-4D19-9209-A45EE1334909",
+        "startingPage" : 260,
+        "endingPage" : 279,
+        "minPerPag" : "1min 33s",
+        "date" : 708260400
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "C3FB380C-82FA-4773-B2BD-B8241F783FFE",
+        "startingPage" : 259,
+        "endingPage" : 259,
+        "minPerPag" : "2min 0s",
+        "date" : 708174000
+      },
+      {
+        "duration" : "0h 23min",
+        "id" : "72C22172-D65C-4739-B7C5-325979CD3869",
+        "startingPage" : 243,
+        "endingPage" : 258,
+        "minPerPag" : "1min 26s",
+        "date" : 708087600
+      },
+      {
+        "duration" : "0h 55min",
+        "id" : "6AFAC09F-BDD8-434D-AB5A-1F5E97BF158C",
+        "startingPage" : 199,
+        "endingPage" : 242,
+        "minPerPag" : "1min 15s",
+        "date" : 708001200
+      },
+      {
+        "duration" : "0h 22min",
+        "id" : "BB2EC37E-1520-4B04-981C-FD2D17F6EFC7",
+        "startingPage" : 185,
+        "endingPage" : 198,
+        "minPerPag" : "1min 34s",
+        "date" : 707914800
+      },
+      {
+        "duration" : "0h 34min",
+        "id" : "4ACA7E3E-CF90-4B70-80C0-CA766766D7D4",
+        "startingPage" : 158,
+        "endingPage" : 184,
+        "minPerPag" : "1min 16s",
+        "date" : 707828400
+      },
+      {
+        "duration" : "0h 35min",
+        "id" : "A661322B-38A7-472A-807B-3DACF0082942",
+        "startingPage" : 146,
+        "endingPage" : 157,
+        "minPerPag" : "2min 55s",
+        "date" : 707742000
+      },
+      {
+        "duration" : "0h 16min",
+        "id" : "A56D47A1-E7CB-48A4-81A6-4BDBFE40B347",
+        "startingPage" : 137,
+        "endingPage" : 145,
+        "minPerPag" : "1min 47s",
+        "date" : 707655600
+      },
+      {
+        "duration" : "0h 36min",
+        "id" : "CCD3CA76-1469-4134-BC58-17B257ABB6A1",
+        "startingPage" : 107,
+        "endingPage" : 136,
+        "minPerPag" : "1min 12s",
+        "date" : 707569200
+      },
+      {
+        "duration" : "1h 37min",
+        "id" : "72CDE7EF-1F0F-4634-9C22-EB1ACB4DFC91",
+        "startingPage" : 37,
+        "endingPage" : 106,
+        "minPerPag" : "1min 23s",
+        "date" : 707482800
+      },
+      {
+        "duration" : "0h 32min",
+        "id" : "EA973973-C2A8-44D6-977D-B27611C72005",
+        "startingPage" : 7,
+        "endingPage" : 36,
+        "minPerPag" : "1min 4s",
+        "date" : 707396400
+      }
     ],
     "formatt" : "Papel",
     "synopsis" : "Tras sus peripecias por Palmira, Macro y Cato regresan por mar a Roma cuando una inesperada y violentísima tormenta los lanza a un escenario dominado por el caos. Creta acaba de ser víctima de un terremoto devastador que ha acabado con casi toda autoridad romana en la isla, y sus habitantes intentan sobrevivir como pueden en un ambiente dominado por la miseria, la violencia y la anarquía. Cuando Macro y Cato intentan imponer un mínimo control sobre la situación, descubrirán que el hambre, el riesgo de epidemias y las carencias de personal sanitario suficiente son sólo males menores entre el desorden, un veterano gladiador ha encontrado una oportunidad excelente para liderar un levantamiento de esclavos que no tienen nada que perder y mucho que ganar…",
