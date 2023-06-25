@@ -1,9 +1,70 @@
 [
   {
+    "location" : {
+      "id" : "FFA66614-56F0-435C-993A-DCD79536F09D",
+      "longitude" : -17.915951,
+      "latitude" : 28.658266999999991
+    },
     "lastPage" : 573,
     "bookTitle" : "gladiador, El",
     "isFinished" : false,
     "sessions" : [
+      {
+        "duration" : "0h 36min",
+        "id" : "278D0948-A45E-4323-B7AA-3F4CDE48B376",
+        "startingPage" : 474,
+        "endingPage" : 500,
+        "minPerPag" : "1min 20s",
+        "date" : 709297200
+      },
+      {
+        "duration" : "0h 23min",
+        "id" : "1DB932CA-3A39-41C4-A4EA-1D2449883759",
+        "startingPage" : 457,
+        "endingPage" : 473,
+        "minPerPag" : "1min 21s",
+        "date" : 709210800
+      },
+      {
+        "duration" : "0h 13min",
+        "id" : "8FAF6C80-5253-4637-A6CA-4D52FE6AA1EF",
+        "startingPage" : 448,
+        "endingPage" : 456,
+        "minPerPag" : "1min 27s",
+        "date" : 709124400
+      },
+      {
+        "duration" : "0h 16min",
+        "id" : "6213DF18-BC81-418B-BEA5-BF33775B865B",
+        "startingPage" : 435,
+        "endingPage" : 447,
+        "minPerPag" : "1min 14s",
+        "date" : 709038000
+      },
+      {
+        "duration" : "1h 2min",
+        "id" : "ABBAF5B2-9145-44E3-BE50-7A799BFE00E7",
+        "startingPage" : 396,
+        "endingPage" : 434,
+        "minPerPag" : "1min 35s",
+        "date" : 708951600
+      },
+      {
+        "duration" : "0h 22min",
+        "id" : "EC99B4E3-99D8-4045-B824-D65169C81D2D",
+        "startingPage" : 388,
+        "endingPage" : 395,
+        "minPerPag" : "2min 45s",
+        "date" : 708865200
+      },
+      {
+        "duration" : "0h 18min",
+        "id" : "D2E007D1-8839-4FCD-B669-8C16F45ED969",
+        "startingPage" : 375,
+        "endingPage" : 387,
+        "minPerPag" : "1min 23s",
+        "date" : 708778800
+      },
       {
         "duration" : "0h 36min",
         "id" : "78F50788-2267-45AF-A27D-5C9A144C5DAC",
