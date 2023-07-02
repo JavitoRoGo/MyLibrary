@@ -1,201 +1,52 @@
 [
   {
-    "location" : {
-      "id" : "FFA66614-56F0-435C-993A-DCD79536F09D",
-      "longitude" : -17.915951,
-      "latitude" : 28.658266999999991
-    },
-    "lastPage" : 573,
-    "bookTitle" : "gladiador, El",
+    "lastPage" : 263,
+    "bookTitle" : "verano que murió Chavela, El ",
     "isFinished" : false,
     "sessions" : [
       {
-        "duration" : "0h 36min",
-        "id" : "278D0948-A45E-4323-B7AA-3F4CDE48B376",
-        "startingPage" : 474,
-        "endingPage" : 500,
-        "minPerPag" : "1min 20s",
-        "date" : 709297200
-      },
-      {
-        "duration" : "0h 23min",
-        "id" : "1DB932CA-3A39-41C4-A4EA-1D2449883759",
-        "startingPage" : 457,
-        "endingPage" : 473,
-        "minPerPag" : "1min 21s",
-        "date" : 709210800
-      },
-      {
-        "duration" : "0h 13min",
-        "id" : "8FAF6C80-5253-4637-A6CA-4D52FE6AA1EF",
-        "startingPage" : 448,
-        "endingPage" : 456,
-        "minPerPag" : "1min 27s",
-        "date" : 709124400
-      },
-      {
-        "duration" : "0h 16min",
-        "id" : "6213DF18-BC81-418B-BEA5-BF33775B865B",
-        "startingPage" : 435,
-        "endingPage" : 447,
-        "minPerPag" : "1min 14s",
-        "date" : 709038000
-      },
-      {
-        "duration" : "1h 2min",
-        "id" : "ABBAF5B2-9145-44E3-BE50-7A799BFE00E7",
-        "startingPage" : 396,
-        "endingPage" : 434,
-        "minPerPag" : "1min 35s",
-        "date" : 708951600
-      },
-      {
-        "duration" : "0h 22min",
-        "id" : "EC99B4E3-99D8-4045-B824-D65169C81D2D",
-        "startingPage" : 388,
-        "endingPage" : 395,
-        "minPerPag" : "2min 45s",
-        "date" : 708865200
-      },
-      {
-        "duration" : "0h 18min",
-        "id" : "D2E007D1-8839-4FCD-B669-8C16F45ED969",
-        "startingPage" : 375,
-        "endingPage" : 387,
-        "minPerPag" : "1min 23s",
-        "date" : 708778800
-      },
-      {
-        "duration" : "0h 36min",
-        "id" : "78F50788-2267-45AF-A27D-5C9A144C5DAC",
-        "startingPage" : 346,
-        "endingPage" : 374,
-        "minPerPag" : "1min 14s",
-        "date" : 708692400
-      },
-      {
-        "duration" : "0h 23min",
-        "id" : "0EFAEB42-083B-44C9-A94D-58A058731691",
-        "startingPage" : 330,
-        "endingPage" : 345,
+        "duration" : "0h 43min",
+        "id" : "79595FAE-FC3E-4064-BBE6-F3308C46BA02",
+        "startingPage" : 183,
+        "endingPage" : 212,
         "minPerPag" : "1min 26s",
-        "date" : 708606000
-      },
-      {
-        "duration" : "0h 4min",
-        "id" : "48992FB4-015C-40FF-B501-55E97DCD631C",
-        "startingPage" : 327,
-        "endingPage" : 329,
-        "minPerPag" : "1min 20s",
-        "date" : 708519600
-      },
-      {
-        "duration" : "0h 47min",
-        "id" : "C856525E-680E-40AE-85F3-42B80323FC13",
-        "startingPage" : 291,
-        "endingPage" : 326,
-        "minPerPag" : "1min 18s",
-        "date" : 708433200
-      },
-      {
-        "duration" : "0h 13min",
-        "id" : "801A871B-6249-4D4D-9540-938185014967",
-        "startingPage" : 280,
-        "endingPage" : 290,
-        "minPerPag" : "1min 11s",
-        "date" : 708346800
-      },
-      {
-        "duration" : "0h 31min",
-        "id" : "90CC9B38-BCB7-4D19-9209-A45EE1334909",
-        "startingPage" : 260,
-        "endingPage" : 279,
-        "minPerPag" : "1min 33s",
-        "date" : 708260400
-      },
-      {
-        "duration" : "0h 2min",
-        "id" : "C3FB380C-82FA-4773-B2BD-B8241F783FFE",
-        "startingPage" : 259,
-        "endingPage" : 259,
-        "minPerPag" : "2min 0s",
-        "date" : 708174000
-      },
-      {
-        "duration" : "0h 23min",
-        "id" : "72C22172-D65C-4739-B7C5-325979CD3869",
-        "startingPage" : 243,
-        "endingPage" : 258,
-        "minPerPag" : "1min 26s",
-        "date" : 708087600
+        "date" : 709902000
       },
       {
         "duration" : "0h 55min",
-        "id" : "6AFAC09F-BDD8-434D-AB5A-1F5E97BF158C",
-        "startingPage" : 199,
-        "endingPage" : 242,
-        "minPerPag" : "1min 15s",
-        "date" : 708001200
+        "id" : "16F40922-573E-4CCA-9D38-6B383AFE6892",
+        "startingPage" : 147,
+        "endingPage" : 182,
+        "minPerPag" : "1min 32s",
+        "date" : 709815600
       },
       {
-        "duration" : "0h 22min",
-        "id" : "BB2EC37E-1520-4B04-981C-FD2D17F6EFC7",
-        "startingPage" : 185,
-        "endingPage" : 198,
-        "minPerPag" : "1min 34s",
-        "date" : 707914800
+        "duration" : "2h 53min",
+        "id" : "26C6BFE1-73BB-40DA-BE28-56C49C416CB1",
+        "startingPage" : 40,
+        "endingPage" : 146,
+        "minPerPag" : "1min 37s",
+        "date" : 709729200
       },
       {
-        "duration" : "0h 34min",
-        "id" : "4ACA7E3E-CF90-4B70-80C0-CA766766D7D4",
-        "startingPage" : 158,
-        "endingPage" : 184,
-        "minPerPag" : "1min 16s",
-        "date" : 707828400
+        "duration" : "0h 25min",
+        "id" : "CCB7381F-6A73-4183-AC9C-515ACD34270D",
+        "startingPage" : 27,
+        "endingPage" : 39,
+        "minPerPag" : "1min 55s",
+        "date" : 709642800
       },
       {
-        "duration" : "0h 35min",
-        "id" : "A661322B-38A7-472A-807B-3DACF0082942",
-        "startingPage" : 146,
-        "endingPage" : 157,
-        "minPerPag" : "2min 55s",
-        "date" : 707742000
-      },
-      {
-        "duration" : "0h 16min",
-        "id" : "A56D47A1-E7CB-48A4-81A6-4BDBFE40B347",
-        "startingPage" : 137,
-        "endingPage" : 145,
-        "minPerPag" : "1min 47s",
-        "date" : 707655600
-      },
-      {
-        "duration" : "0h 36min",
-        "id" : "CCD3CA76-1469-4134-BC58-17B257ABB6A1",
-        "startingPage" : 107,
-        "endingPage" : 136,
-        "minPerPag" : "1min 12s",
-        "date" : 707569200
-      },
-      {
-        "duration" : "1h 37min",
-        "id" : "72CDE7EF-1F0F-4634-9C22-EB1ACB4DFC91",
-        "startingPage" : 37,
-        "endingPage" : 106,
-        "minPerPag" : "1min 23s",
-        "date" : 707482800
-      },
-      {
-        "duration" : "0h 32min",
-        "id" : "EA973973-C2A8-44D6-977D-B27611C72005",
+        "duration" : "0h 31min",
+        "id" : "E3A53E8F-4A4A-44D0-A2A1-8818FFCE415A",
         "startingPage" : 7,
-        "endingPage" : 36,
-        "minPerPag" : "1min 4s",
-        "date" : 707396400
+        "endingPage" : 26,
+        "minPerPag" : "1min 33s",
+        "date" : 709556400
       }
     ],
     "formatt" : "Papel",
-    "synopsis" : "Tras sus peripecias por Palmira, Macro y Cato regresan por mar a Roma cuando una inesperada y violentísima tormenta los lanza a un escenario dominado por el caos. Creta acaba de ser víctima de un terremoto devastador que ha acabado con casi toda autoridad romana en la isla, y sus habitantes intentan sobrevivir como pueden en un ambiente dominado por la miseria, la violencia y la anarquía. Cuando Macro y Cato intentan imponer un mínimo control sobre la situación, descubrirán que el hambre, el riesgo de epidemias y las carencias de personal sanitario suficiente son sólo males menores entre el desorden, un veterano gladiador ha encontrado una oportunidad excelente para liderar un levantamiento de esclavos que no tienen nada que perder y mucho que ganar…",
+    "synopsis" : "Todos los muertos deberían valer lo mismo. Sin embargo, en tiempo de crisis hay muertos y muertos. Cuando aparece en un callejón de La Isleta el cuerpo sin vida de un extranjero con un agujero de bala en la nuca la policía de Las Palmas de Gran Canaria no tiene por dónde empezar. Si, además, resulta que ese extranjero no es americano ni alemán ni inglés y que ese cuerpo no lo reclama nadie, la investigación se va ralentizando hasta casi el marasmo. Así que, tras una cena en la que la mujer del inspector Álvarez le lanza el guante, Ricardo Blanco regresa a la investigación de un crimen.\nPor el camino se topará con los restos de una guerra que se remonta a veinte años atrás entre bosnios y serbios. La identidad del muerto, la extraña voladura en una obra en construcción, la aparición de un viejo veterano del sitio de Sarajevo y la desaparición de un poeta libanés que asiste a un Congreso de Literatura son los ingredientes con los que José Luis Correa construye la séptima entrega de la saga de su detective canario. En esta ocasión, resurge la figura de una agente de policía que colaborará en la resolución del caso.",
     "isOnReading" : true,
     "firstPage" : 7
   }
