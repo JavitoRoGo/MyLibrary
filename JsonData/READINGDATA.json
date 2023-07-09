@@ -16786,5 +16786,89 @@
     "rating" : 3,
     "sessions" : 25,
     "finishDate" : 709470000
+  },
+  {
+    "minPerDay" : "0h 59min",
+    "location" : {
+      "id" : "6C550FAF-0A47-4D9D-928E-C04447CE2E3C",
+      "longitude" : -17.915951,
+      "latitude" : 28.658266999999991
+    },
+    "pages" : 257,
+    "formatt" : "Papel",
+    "duration" : "6h 56min",
+    "synopsis" : "Todos los muertos deberían valer lo mismo. Sin embargo, en tiempo de crisis hay muertos y muertos. Cuando aparece en un callejón de La Isleta el cuerpo sin vida de un extranjero con un agujero de bala en la nuca la policía de Las Palmas de Gran Canaria no tiene por dónde empezar. Si, además, resulta que ese extranjero no es americano ni alemán ni inglés y que ese cuerpo no lo reclama nadie, la investigación se va ralentizando hasta casi el marasmo. Así que, tras una cena en la que la mujer del inspector Álvarez le lanza el guante, Ricardo Blanco regresa a la investigación de un crimen.\nPor el camino se topará con los restos de una guerra que se remonta a veinte años atrás entre bosnios y serbios. La identidad del muerto, la extraña voladura en una obra en construcción, la aparición de un viejo veterano del sitio de Sarajevo y la desaparición de un poeta libanés que asiste a un Congreso de Literatura son los ingredientes con los que José Luis Correa construye la séptima entrega de la saga de su detective canario. En esta ocasión, resurge la figura de una agente de policía que colaborará en la resolución del caso.",
+    "over50" : 1,
+    "percentOver50" : 14.285714285714285,
+    "pagPerDay" : 36,
+    "cover" : "veranoquemuriochavelael",
+    "minPerPag" : "1min 39s",
+    "id" : 154,
+    "readingSessions" : [
+      {
+        "duration" : "0h 39min",
+        "id" : "D1124A0A-D063-444D-BA47-D78AE621F0C3",
+        "startingPage" : 239,
+        "endingPage" : 263,
+        "minPerPag" : "1min 34s",
+        "date" : 710074800
+      },
+      {
+        "duration" : "0h 50min",
+        "id" : "865F30F7-965D-479B-91D2-B613FB835414",
+        "startingPage" : 213,
+        "endingPage" : 238,
+        "minPerPag" : "1min 55s",
+        "date" : 709988400
+      },
+      {
+        "duration" : "0h 43min",
+        "id" : "79595FAE-FC3E-4064-BBE6-F3308C46BA02",
+        "startingPage" : 183,
+        "endingPage" : 212,
+        "minPerPag" : "1min 26s",
+        "date" : 709902000
+      },
+      {
+        "duration" : "0h 55min",
+        "id" : "16F40922-573E-4CCA-9D38-6B383AFE6892",
+        "startingPage" : 147,
+        "endingPage" : 182,
+        "minPerPag" : "1min 32s",
+        "date" : 709815600
+      },
+      {
+        "duration" : "2h 53min",
+        "id" : "26C6BFE1-73BB-40DA-BE28-56C49C416CB1",
+        "startingPage" : 40,
+        "endingPage" : 146,
+        "minPerPag" : "1min 37s",
+        "date" : 709729200
+      },
+      {
+        "duration" : "0h 25min",
+        "id" : "CCB7381F-6A73-4183-AC9C-515ACD34270D",
+        "startingPage" : 27,
+        "endingPage" : 39,
+        "minPerPag" : "1min 55s",
+        "date" : 709642800
+      },
+      {
+        "duration" : "0h 31min",
+        "id" : "E3A53E8F-4A4A-44D0-A2A1-8818FFCE415A",
+        "startingPage" : 7,
+        "endingPage" : 26,
+        "minPerPag" : "1min 33s",
+        "date" : 709556400
+      }
+    ],
+    "yearId" : 13,
+    "finishedInYear" : 2023,
+    "startDate" : 709556400,
+    "bookTitle" : "verano que murió Chavela, El ",
+    "comment" : "Buena historia y con varios toques de humor.",
+    "rating" : 4,
+    "sessions" : 7,
+    "finishDate" : 710074800
   }
 ]
