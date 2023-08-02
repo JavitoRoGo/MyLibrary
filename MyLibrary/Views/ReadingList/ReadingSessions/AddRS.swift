@@ -71,6 +71,11 @@ struct AddRS: View {
                     TextField("", value: $endingPage, format: .number)
                         .multilineTextAlignment(.trailing)
                         .focused($isFocused)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                isFocused = true
+                            }
+                        }
                 }
             }
             .keyboardType(.numberPad)
