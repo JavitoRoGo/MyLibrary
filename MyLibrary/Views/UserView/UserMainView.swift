@@ -12,12 +12,12 @@ struct UserMainView: View {
     @EnvironmentObject var model: UserViewModel
     @Binding var isUnlocked: Bool
     
-    @State private var showingClosingAlert = false
-    @State private var showingEditUser = false
+    @State var showingClosingAlert = false
+    @State var showingEditUser = false
     
-    @State private var showingSelectorPicker = false
-    @State private var showingImagePicker = false
-    @State private var showingCameraPicker = false
+    @State var showingSelectorPicker = false
+    @State var showingImagePicker = false
+    @State var showingCameraPicker = false
     @State var image: Image?
     @State var inputImage: UIImage?
     
@@ -114,30 +114,7 @@ struct UserMainView: View {
                 }
             }
             .navigationTitle("Hola, \(model.user.nickname).")
-            .sheet(isPresented: $showingEditUser) {
-                EditUserPasswordView()
-            }
-            .alert("¿Seguro que quieres cerrar la sesión?", isPresented: $showingClosingAlert) {
-                Button("Cancelar", role: .cancel) { }
-                Button("Cerrar", role: .destructive) {
-                    isUnlocked = false
-                }
-            }
-            .confirmationDialog("Elige una opción para la imagen:", isPresented: $showingSelectorPicker) {
-                Button("Canclear", role: .cancel) { }
-                Button("Seleccionar foto") {
-                    showingImagePicker = true
-                }
-                Button("Hacer foto") {
-                    showingCameraPicker = true
-                }
-            }
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $inputImage)
-            }
-            .sheet(isPresented: $showingCameraPicker) {
-                CameraPicker(image: $inputImage)
-            }
+            .modifier(MyModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, inputImage: $inputImage))
             .onChange(of: inputImage) { newValue in
                 loadImage()
                 if let newValue {

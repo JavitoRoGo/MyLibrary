@@ -48,4 +48,42 @@ extension UserMainView {
             try? FileManager.default.removeItem(at: path)
         }
     }
+    
+    struct MyModifier: ViewModifier {
+        @Binding var showingEditUser: Bool
+        @Binding var showingClosingAlert: Bool
+        @Binding var isUnlocked: Bool
+        @Binding var showingSelectorPicker: Bool
+        @Binding var showingImagePicker: Bool
+        @Binding var showingCameraPicker: Bool
+        @Binding var inputImage: UIImage?
+        
+        func body(content: Content) -> some View {
+            content
+                .sheet(isPresented: $showingEditUser) {
+                    EditUserPasswordView()
+                }
+                .alert("¿Seguro que quieres cerrar la sesión?", isPresented: $showingClosingAlert) {
+                    Button("Cancelar", role: .cancel) { }
+                    Button("Cerrar", role: .destructive) {
+                        isUnlocked = false
+                    }
+                }
+                .confirmationDialog("Elige una opción para la imagen:", isPresented: $showingSelectorPicker) {
+                    Button("Canclear", role: .cancel) { }
+                    Button("Seleccionar foto") {
+                        showingImagePicker = true
+                    }
+                    Button("Hacer foto") {
+                        showingCameraPicker = true
+                    }
+                }
+                .sheet(isPresented: $showingImagePicker) {
+                    ImagePicker(image: $inputImage)
+                }
+                .sheet(isPresented: $showingCameraPicker) {
+                    CameraPicker(image: $inputImage)
+                }
+        }
+    }
 }
