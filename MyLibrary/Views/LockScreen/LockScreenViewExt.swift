@@ -5,8 +5,8 @@
 //  Created by Javier Rodríguez Gómez on 8/8/23.
 //
 
-import Foundation
 import LocalAuthentication
+import SwiftUI
 
 extension LockScreenView {
     func authenticate() {
@@ -46,5 +46,39 @@ extension LockScreenView {
         model.user.nowWaiting = nrmodel.waitingList
         model.user.sessions = rsmodel.readingSessionList
         model.user.myPlaces = model.myPlaces
+    }
+    
+    struct LockScreenViewModifier: ViewModifier {
+        @Binding var showingFirstRunAlert: Bool
+        @Binding var showingCreateUser: Bool
+        @Binding var showingLoginPage: Bool
+        @Binding var showingAlert: Bool
+        @Binding var isUnlocked: Bool
+        @Binding var isFirstRun: Bool
+        
+        func body(content: Content) -> some View {
+            content
+                .alert("¡Bienvenido a esta fantástica app!\n😊😊😊", isPresented: $showingFirstRunAlert) {
+                    Button("Continuar") {
+                        isFirstRun = false
+                        showingCreateUser = true
+                    }
+                } message: {
+                    Text("\nCrea tu usuario y contraseña para comenzar\n©JRG")
+                }
+                .alert("Identificación no válida.", isPresented: $showingAlert) {
+                    Button("OK") {
+                        showingLoginPage = true
+                    }
+                } message: {
+                    Text("Debes identificarte correctamente para acceder al contenido de la app.")
+                }
+                .sheet(isPresented: $showingLoginPage) {
+                    LoginNoBiomView(isUnlocked: $isUnlocked)
+                }
+                .sheet(isPresented: $showingCreateUser) {
+                    CreateUserView(isUnlocked: $isUnlocked)
+                }
+        }
     }
 }

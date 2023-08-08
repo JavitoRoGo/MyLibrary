@@ -88,29 +88,9 @@ struct LockScreenView: View {
                         model.storedPassword = ""
                         showingFirstRunAlert = true
                     }
+                    saveDataToUser()
                 }
-                .alert("¡Bienvenido a esta fantástica app!\n😊😊😊", isPresented: $showingFirstRunAlert) {
-                    Button("Continuar") {
-                        isFirstRun = false
-                        showingCreateUser = true
-                    }
-                } message: {
-                    Text("\nCrea tu usuario y contraseña para comenzar\n©JRG")
-                }
-                .alert("Identificación no válida.", isPresented: $showingAlert) {
-                    Button("OK") {
-                        showingLoginPage = true
-                    }
-                } message: {
-                    Text("Debes identificarte correctamente para acceder al contenido de la app.")
-                }
-                .sheet(isPresented: $showingLoginPage) {
-                    LoginNoBiomView(isUnlocked: $isUnlocked)
-                }
-                .sheet(isPresented: $showingCreateUser) {
-                    CreateUserView(isUnlocked: $isUnlocked)
-                }
-                .onAppear(perform: saveDataToUser)
+                .modifier(LockScreenViewModifier(showingFirstRunAlert: $showingFirstRunAlert, showingCreateUser: $showingCreateUser, showingLoginPage: $showingLoginPage, showingAlert: $showingAlert, isUnlocked: $isUnlocked, isFirstRun: $isFirstRun))
             }
         }
     }
