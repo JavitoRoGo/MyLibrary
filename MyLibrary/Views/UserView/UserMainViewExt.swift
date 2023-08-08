@@ -49,7 +49,7 @@ extension UserMainView {
         }
     }
     
-    struct MyModifier: ViewModifier {
+    struct UserMainViewModifier: ViewModifier {
         @Binding var showingEditUser: Bool
         @Binding var showingClosingAlert: Bool
         @Binding var isUnlocked: Bool

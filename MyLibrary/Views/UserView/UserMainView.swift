@@ -114,7 +114,7 @@ struct UserMainView: View {
                 }
             }
             .navigationTitle("Hola, \(model.user.nickname).")
-            .modifier(MyModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, inputImage: $inputImage))
+            .modifier(UserMainViewModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, inputImage: $inputImage))
             .onChange(of: inputImage) { newValue in
                 loadImage()
                 if let newValue {
