@@ -22,6 +22,7 @@
 		440F68B6295FB1FB00F01C5F /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F68B5295FB1FB00F01C5F /* LockScreenView.swift */; };
 		440F83E32A82D0040079C421 /* LockScreenViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F83E22A82D0040079C421 /* LockScreenViewExt.swift */; };
 		440F83E52A82D2810079C421 /* SelectBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F83E42A82D2810079C421 /* SelectBookView.swift */; };
+		440F83E72A82D3590079C421 /* UserMainViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F83E62A82D3590079C421 /* UserMainViewExt.swift */; };
 		44102C852944D03F00F8E2F1 /* EBookMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C842944D03F00F8E2F1 /* EBookMainView.swift */; };
 		44102C892944F5D600F8E2F1 /* EachMainViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */; };
 		44102C8C294511C600F8E2F1 /* ScrollByPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C8B294511C600F8E2F1 /* ScrollByPlace.swift */; };
@@ -232,6 +233,7 @@
 		440F68B5295FB1FB00F01C5F /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
 		440F83E22A82D0040079C421 /* LockScreenViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenViewExt.swift; sourceTree = "<group>"; };
 		440F83E42A82D2810079C421 /* SelectBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookView.swift; sourceTree = "<group>"; };
+		440F83E62A82D3590079C421 /* UserMainViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewExt.swift; sourceTree = "<group>"; };
 		44102C842944D03F00F8E2F1 /* EBookMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookMainView.swift; sourceTree = "<group>"; };
 		44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachMainViewButton.swift; sourceTree = "<group>"; };
 		44102C8B294511C600F8E2F1 /* ScrollByPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollByPlace.swift; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 			isa = PBXGroup;
 			children = (
 				4482D5782964AE99004D0EB8 /* UserMainView.swift */,
+				440F83E62A82D3590079C421 /* UserMainViewExt.swift */,
 				4407D4EF29709715006FAC47 /* TargetsView */,
 				44EF88CE296CDAD50039632F /* AllQuotesCommentsView.swift */,
 				44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */,
@@ -989,6 +992,7 @@
 				44E8888F28843509009670D0 /* MainBookView.swift in Sources */,
 				4486010227C858F6004E84B0 /* RSList.swift in Sources */,
 				44D14F5C2812124200000BE9 /* LineChart.swift in Sources */,
+				440F83E72A82D3590079C421 /* UserMainViewExt.swift in Sources */,
 				442653A7277E1F120047D75C /* BookList.swift in Sources */,
 				4492F44227FB29F300103B6D /* AllEnums.swift in Sources */,
 				4492F44527FB2A8500103B6D /* Functions.swift in Sources */,
