@@ -20,6 +20,7 @@
 		440D13CB28038EA400C2C333 /* StatsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440D13CA28038EA400C2C333 /* StatsList.swift */; };
 		440D9BDE281F42960072C484 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440D9BDD281F42960072C484 /* ImagePicker.swift */; };
 		440F68B6295FB1FB00F01C5F /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F68B5295FB1FB00F01C5F /* LockScreenView.swift */; };
+		440F83E32A82D0040079C421 /* LockScreenViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F83E22A82D0040079C421 /* LockScreenViewExt.swift */; };
 		44102C852944D03F00F8E2F1 /* EBookMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C842944D03F00F8E2F1 /* EBookMainView.swift */; };
 		44102C892944F5D600F8E2F1 /* EachMainViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */; };
 		44102C8C294511C600F8E2F1 /* ScrollByPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C8B294511C600F8E2F1 /* ScrollByPlace.swift */; };
@@ -228,6 +229,7 @@
 		440D13CA28038EA400C2C333 /* StatsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsList.swift; sourceTree = "<group>"; };
 		440D9BDD281F42960072C484 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		440F68B5295FB1FB00F01C5F /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
+		440F83E22A82D0040079C421 /* LockScreenViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenViewExt.swift; sourceTree = "<group>"; };
 		44102C842944D03F00F8E2F1 /* EBookMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookMainView.swift; sourceTree = "<group>"; };
 		44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachMainViewButton.swift; sourceTree = "<group>"; };
 		44102C8B294511C600F8E2F1 /* ScrollByPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollByPlace.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				440F68B5295FB1FB00F01C5F /* LockScreenView.swift */,
+				440F83E22A82D0040079C421 /* LockScreenViewExt.swift */,
 				444504F3296327A2001AC434 /* LoginNoBiomView.swift */,
 				44A01F342960FE8300E34FA8 /* CreateUserView.swift */,
 				44265387277DF5020047D75C /* ContentView.swift */,
@@ -1024,6 +1027,7 @@
 				44BEBB842937C51300D0DD11 /* EditRDView.swift in Sources */,
 				444B00FD2780CFA300530FEC /* AddBook.swift in Sources */,
 				44FF97B3296DB62100EE1CBC /* AllCommentsView.swift in Sources */,
+				440F83E32A82D0040079C421 /* LockScreenViewExt.swift in Sources */,
 				4487BF7227822296003C6115 /* EBookDetail.swift in Sources */,
 				44B9FD6A295A1BCB00A11206 /* WidgetDataHelper.swift in Sources */,
 				440246192784B47D003D7338 /* RDScroll.swift in Sources */,
