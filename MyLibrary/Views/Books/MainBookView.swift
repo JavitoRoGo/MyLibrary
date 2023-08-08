@@ -10,8 +10,8 @@ import SwiftUI
 struct MainBookView: View {
     @EnvironmentObject var model: BooksModel
     
-    @State private var showingSold = false
-    @State private var showingDonated = false
+    @State var showingSold = false
+    @State var showingDonated = false
         
     var body: some View {
         NavigationStack {
@@ -61,44 +61,7 @@ struct MainBookView: View {
                     }
                 }
             }
-            .foregroundColor(.primary)
-            .padding(.horizontal, 20)
-            .background {
-                Color.secondary.opacity(0.1)
-                    .ignoresSafeArea()
-            }
-            .navigationTitle("Libros")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: BookConfigView()) {
-                        Label("Configuración", systemImage: "gearshape")
-                    }
-                }
-            }
-            .sheet(isPresented: $showingSold) {
-                NavigationView {
-                    BookList(place: soldText)
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarLeading) {
-                                Button("Volver") {
-                                    showingSold = false
-                                }
-                            }
-                        }
-                }
-            }
-            .sheet(isPresented: $showingDonated) {
-                NavigationView {
-                    BookList(place: donatedText)
-                        .toolbar {
-                            ToolbarItem(placement: .navigationBarLeading) {
-                                Button("Volver") {
-                                    showingDonated = false
-                                }
-                            }
-                        }
-                }
-            }
+            .modifier(MainBookViewModifier(showingSold: $showingSold, showingDonated: $showingDonated))
         }
     }
 }

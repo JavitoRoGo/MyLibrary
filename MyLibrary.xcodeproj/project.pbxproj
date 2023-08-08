@@ -23,6 +23,7 @@
 		440F83E32A82D0040079C421 /* LockScreenViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F83E22A82D0040079C421 /* LockScreenViewExt.swift */; };
 		440F83E52A82D2810079C421 /* SelectBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F83E42A82D2810079C421 /* SelectBookView.swift */; };
 		440F83E72A82D3590079C421 /* UserMainViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F83E62A82D3590079C421 /* UserMainViewExt.swift */; };
+		440F83E92A83019B0079C421 /* MainBookViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440F83E82A83019B0079C421 /* MainBookViewExt.swift */; };
 		44102C852944D03F00F8E2F1 /* EBookMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C842944D03F00F8E2F1 /* EBookMainView.swift */; };
 		44102C892944F5D600F8E2F1 /* EachMainViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */; };
 		44102C8C294511C600F8E2F1 /* ScrollByPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C8B294511C600F8E2F1 /* ScrollByPlace.swift */; };
@@ -234,6 +235,7 @@
 		440F83E22A82D0040079C421 /* LockScreenViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenViewExt.swift; sourceTree = "<group>"; };
 		440F83E42A82D2810079C421 /* SelectBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookView.swift; sourceTree = "<group>"; };
 		440F83E62A82D3590079C421 /* UserMainViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewExt.swift; sourceTree = "<group>"; };
+		440F83E82A83019B0079C421 /* MainBookViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBookViewExt.swift; sourceTree = "<group>"; };
 		44102C842944D03F00F8E2F1 /* EBookMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookMainView.swift; sourceTree = "<group>"; };
 		44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachMainViewButton.swift; sourceTree = "<group>"; };
 		44102C8B294511C600F8E2F1 /* ScrollByPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollByPlace.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 			children = (
 				44102C8A294511A600F8E2F1 /* MainViewHelper */,
 				44E8888E28843508009670D0 /* MainBookView.swift */,
+				440F83E82A83019B0079C421 /* MainBookViewExt.swift */,
 				44265399277DF6BA0047D75C /* PlaceList.swift */,
 				442653A4277E1B440047D75C /* PlaceRow.swift */,
 				442653A6277E1F120047D75C /* BookList.swift */,
@@ -1047,6 +1050,7 @@
 				4418D790277F91DA00F0501B /* BookEditing.swift in Sources */,
 				44C6A6242801E04A00EF035A /* GraphView.swift in Sources */,
 				44265388277DF5020047D75C /* ContentView.swift in Sources */,
+				440F83E92A83019B0079C421 /* MainBookViewExt.swift in Sources */,
 				4467B5E42971DC86008E4489 /* MonthlyTargetView.swift in Sources */,
 				44730E22298F2283005CFCAF /* SharedAppGroup.swift in Sources */,
 				444504F4296327A2001AC434 /* LoginNoBiomView.swift in Sources */,
