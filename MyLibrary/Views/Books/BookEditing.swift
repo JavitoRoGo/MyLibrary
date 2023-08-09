@@ -9,8 +9,6 @@ import SwiftUI
 
 struct BookEditing: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
-    @EnvironmentObject var nrmodel: NowReadingModel
     @Environment(\.dismiss) var dismiss
     
     @Binding var book: Books
@@ -20,9 +18,9 @@ struct BookEditing: View {
     @State var newPlace: String
     @State var newSynopsis: String
     
-    @State private var showingAlert = false
-    @State private var showingAddWaitingList = false
-    @State private var isOnWaitingList = false
+    @State var showingAlert = false
+    @State var showingAddWaitingList = false
+    @State var isOnWaitingList = false
     
     var body: some View {
         VStack {
@@ -108,31 +106,7 @@ struct BookEditing: View {
                 }
             }
         }
-        .alert("Se va a modificar este registro.", isPresented: $showingAlert) {
-            Button("No", role: .cancel) { }
-            Button("Sí") {
-                book.bookTitle = newBookTitle
-                book.status = newStatus
-                book.owner = newOwner
-                book.place = newPlace
-                if newPlace == soldText || newPlace == donatedText {
-                    book.isActive = false
-                }
-                book.synopsis = newSynopsis
-                dismiss()
-            }
-        } message: {
-            Text("¿Deseas guardar los nuevos datos?")
-        }
-        .sheet(isPresented: $showingAddWaitingList) {
-            NavigationView {
-                AddReading(bookTitle: newBookTitle, synopsis: newSynopsis, formatt: .paper)
-            }
-        }
-        .onAppear {
-            isOnWaitingList = nrmodel.readingList.contains(where: { $0.bookTitle == book.bookTitle }) ||
-            nrmodel.waitingList.contains(where: { $0.bookTitle == book.bookTitle })
-        }
+        .modifier(BookEditingModifier(book: $book, showingAlert: $showingAlert, showingAddWaitingList: $showingAddWaitingList, isOnWaitingList: $isOnWaitingList, newBookTitle: newBookTitle, newStatus: newStatus, newOwner: newOwner, newPlace: newPlace, newSynopsis: newSynopsis))
     }
 }
 
