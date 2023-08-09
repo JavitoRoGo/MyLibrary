@@ -154,6 +154,7 @@
 		44DDA87F2A83BDF4000104A1 /* BookDetailExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA87E2A83BDF4000104A1 /* BookDetailExt.swift */; };
 		44DDA8812A840D5C000104A1 /* BookEditingExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8802A840D5C000104A1 /* BookEditingExt.swift */; };
 		44DDA8832A8411FF000104A1 /* HBarGraphExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8822A8411FF000104A1 /* HBarGraphExt.swift */; };
+		44DDA8852A841405000104A1 /* AddBookExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8842A841405000104A1 /* AddBookExt.swift */; };
 		44E25ECD28ECD660008A76BA /* StatsLineSwiftChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E25ECC28ECD660008A76BA /* StatsLineSwiftChart.swift */; };
 		44E32D46295917F600E06425 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3422C27D2DC7A00DC82D5 /* WidgetKit.framework */; };
 		44E32D47295917F600E06425 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3422E27D2DC7A00DC82D5 /* SwiftUI.framework */; };
@@ -359,6 +360,7 @@
 		44DDA87E2A83BDF4000104A1 /* BookDetailExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailExt.swift; sourceTree = "<group>"; };
 		44DDA8802A840D5C000104A1 /* BookEditingExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditingExt.swift; sourceTree = "<group>"; };
 		44DDA8822A8411FF000104A1 /* HBarGraphExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBarGraphExt.swift; sourceTree = "<group>"; };
+		44DDA8842A841405000104A1 /* AddBookExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookExt.swift; sourceTree = "<group>"; };
 		44E25ECC28ECD660008A76BA /* StatsLineSwiftChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsLineSwiftChart.swift; sourceTree = "<group>"; };
 		44E32D45295917F600E06425 /* MyLibraryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyLibraryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E32D49295917F600E06425 /* MyLibraryWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryWidgetBundle.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 				44DDA8802A840D5C000104A1 /* BookEditingExt.swift */,
 				44C6A6222801DDE600EF035A /* Statistics */,
 				444B00FC2780CFA300530FEC /* AddBook.swift */,
+				44DDA8842A841405000104A1 /* AddBookExt.swift */,
 				44010744294E4D56000714B6 /* ConfigView */,
 			);
 			path = Books;
@@ -1011,6 +1014,7 @@
 				4492F44527FB2A8500103B6D /* Functions.swift in Sources */,
 				44B0409C284FBA4700C29E22 /* RSModel.swift in Sources */,
 				4482142028F720500037BE9F /* AnimateChartsHelper.swift in Sources */,
+				44DDA8852A841405000104A1 /* AddBookExt.swift in Sources */,
 				442653AB277E75AE0047D75C /* BookDetail.swift in Sources */,
 				4492AC7E28AAA502003CB125 /* EditPlaces.swift in Sources */,
 				449410FC28563DCC0055D833 /* RSBarGraph.swift in Sources */,
