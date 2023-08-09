@@ -8,24 +8,21 @@
 import SwiftUI
 
 struct EBookDetail: View {
-    @EnvironmentObject var emodel: EbooksModel
-    @EnvironmentObject var rdmodel: RDModel
     @EnvironmentObject var nrmodel: NowReadingModel
-    @Environment(\.dismiss) var dismiss
     
     @Binding var ebook: EBooks
     @State var newStatus: ReadingStatus
     
-    @State private var showingEditPage = false
-    @State private var showingInfoAlert = false
-    @State private var titleInfoAlert = ""
-    @State private var messageInfoAlert = ""
+    @State var showingEditPage = false
+    @State var showingInfoAlert = false
+    @State var titleInfoAlert = ""
+    @State var messageInfoAlert = ""
     
-    @State private var showingDeleteAlert = false
-    @State private var showingRDDetail = false
-    @State private var showingRSDetail = false
-    @State private var showingAddWaitingList = false
-    @State private var isOnWaitingList = false
+    @State var showingDeleteAlert = false
+    @State var showingRDDetail = false
+    @State var showingRSDetail = false
+    @State var showingAddWaitingList = false
+    @State var isOnWaitingList = false
     
     var body: some View {
         VStack {
@@ -107,80 +104,7 @@ struct EBookDetail: View {
                     }
                 }
             }
-            .navigationTitle("Detalle (\(ebook.id) de \(emodel.ebooks.count))")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                HStack {
-                    Button {
-                        showingDeleteAlert = true
-                    } label: {
-                        Image(systemName: "trash")
-                    }
-                    
-                    Button {
-                        showingEditPage = true
-                    } label: {
-                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
-                    }
-                    .disabled(showingEditPage)
-                }
-            }
-            .alert(titleInfoAlert, isPresented: $showingInfoAlert) {
-                if ebook.status == .registered {
-                    Button("Cancelar", role: .cancel) { }
-                    Button("Ver") {
-                        showingRDDetail = true
-                    }
-                } else if ebook.status == .reading {
-                    Button("Cancelar", role: .cancel) { }
-                    Button("Ver") {
-                        showingRSDetail = true
-                    }
-                } else {
-                    Button("Aceptar", role: .cancel) { }
-                }
-            } message: {
-                Text(messageInfoAlert)
-            }
-            .sheet(isPresented: $showingRDDetail) {
-                if let rdata = rdmodel.readingDatas.first(where: { $0.bookTitle == ebook.bookTitle }) {
-                    NavigationView {
-                        RDDetail(rdata: rdata)
-                            .toolbar {
-                                ToolbarItem(placement: .cancellationAction) {
-                                    Button("Cancelar") {
-                                        showingRDDetail = false
-                                    }
-                                }
-                            }
-                    }
-                }
-            }
-            .sheet(isPresented: $showingRSDetail) {
-                if let rsdata = nrmodel.readingList.first(where: { $0.bookTitle == ebook.bookTitle }) {
-                    NavigationView {
-                        ActualReadingDetail(book: rsdata)
-                            .toolbar {
-                                ToolbarItem(placement: .cancellationAction) {
-                                    Button("Cancelar") {
-                                        showingRSDetail = false
-                                    }
-                                }
-                            }
-                    }
-                }
-            }
-            .alert("¿Deseas eliminar este registro?", isPresented: $showingDeleteAlert) {
-                Button("Cancelar", role: .cancel) { }
-                Button("Eliminar", role: .destructive) {
-                    if let index = emodel.ebooks.firstIndex(of: ebook) {
-                        emodel.ebooks.remove(at: index)
-                        dismiss()
-                    }
-                }
-            } message: {
-                Text("Esta acción no podrá deshacerse.")
-            }
+            .modifier(EBookDetailModifier(showingDeleteAlert: $showingDeleteAlert, showingEditPage: $showingEditPage, showingInfoAlert: $showingInfoAlert, showingRDDetail: $showingRDDetail, showingRSDetail: $showingRDDetail, ebook: ebook, titleInfoAlert: titleInfoAlert, messageInfoAlert: messageInfoAlert))
             
             if showingEditPage {
                 VStack {
