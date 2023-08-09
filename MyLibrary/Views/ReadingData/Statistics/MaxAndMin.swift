@@ -11,34 +11,8 @@ import SwiftUI
 struct MaxAndMin: View {
     @EnvironmentObject var model: RDModel
     @Environment(\.colorScheme) var colorScheme
-    @State private var datas: [DataForMaxMinChart] = []
+    @State var datas: [DataForMaxMinChart] = []
     @State private var currentActiveItem: DataForMaxMinChart?
-    
-    var maxOfMax: Int {
-        datas.max { item1, item2 in
-            item2.maxValue > item1.maxValue
-        }?.maxValue ?? 0
-    }
-    var minOfMax: Int {
-        datas.min { item1, item2 in
-            item1.maxValue < item2.maxValue
-        }?.maxValue ?? 0
-    }
-    
-    var minOfMin: Int {
-        datas.min { item1, item2 in
-            item1.minValue < item2.minValue
-        }?.minValue ?? 0
-    }
-    var maxOfMin: Int {
-        datas.max { item1, item2 in
-            item2.minValue > item1.minValue
-        }?.minValue ?? 0
-    }
-    
-    var maxForXAxis: Int {
-        datas.count + 1
-    }
     
     var body: some View {
         VStack(spacing: 20) {
@@ -117,33 +91,10 @@ struct MaxAndMin: View {
                 }
             }
         }
-        .padding()
-        .background {
-            if colorScheme == .dark {
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(.gray.opacity(0.3).shadow(.drop(radius: 2)))
-            } else {
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(.white.shadow(.drop(radius: 2)))
-            }
-        }
-        .navigationTitle("Máximos y mínimos")
-        .navigationBarTitleDisplayMode(.inline)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .padding()
+        .modifier(MaxAndMinModifier())
         .task {
             datas = model.getMaxMinPerBook()
             animateGraph()
-        }
-    }
-    
-    func animateGraph() {
-        for (index, _) in datas.enumerated() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 0.02) {
-                withAnimation(.easeInOut(duration: 0.8)) {
-                    datas[index].animate = true
-                }
-            }
         }
     }
 }
