@@ -159,6 +159,7 @@
 		44DDA8892A84245B000104A1 /* EBookDetailExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8882A84245B000104A1 /* EBookDetailExt.swift */; };
 		44DDA88B2A8442C9000104A1 /* AddEBookExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */; };
 		44DDA88D2A844773000104A1 /* RDCoverModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA88C2A844773000104A1 /* RDCoverModifier.swift */; };
+		44DDA88F2A844BEF000104A1 /* RDDetailExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA88E2A844BEF000104A1 /* RDDetailExt.swift */; };
 		44E25ECD28ECD660008A76BA /* StatsLineSwiftChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E25ECC28ECD660008A76BA /* StatsLineSwiftChart.swift */; };
 		44E32D46295917F600E06425 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3422C27D2DC7A00DC82D5 /* WidgetKit.framework */; };
 		44E32D47295917F600E06425 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3422E27D2DC7A00DC82D5 /* SwiftUI.framework */; };
@@ -369,6 +370,7 @@
 		44DDA8882A84245B000104A1 /* EBookDetailExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookDetailExt.swift; sourceTree = "<group>"; };
 		44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEBookExt.swift; sourceTree = "<group>"; };
 		44DDA88C2A844773000104A1 /* RDCoverModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDCoverModifier.swift; sourceTree = "<group>"; };
+		44DDA88E2A844BEF000104A1 /* RDDetailExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDDetailExt.swift; sourceTree = "<group>"; };
 		44E25ECC28ECD660008A76BA /* StatsLineSwiftChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsLineSwiftChart.swift; sourceTree = "<group>"; };
 		44E32D45295917F600E06425 /* MyLibraryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyLibraryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E32D49295917F600E06425 /* MyLibraryWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryWidgetBundle.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 				441A930227836986006C4FD3 /* RDStars.swift */,
 				440246182784B47D003D7338 /* RDScroll.swift */,
 				4472DFD427832B2B0014CC1C /* RDDetail.swift */,
+				44DDA88E2A844BEF000104A1 /* RDDetailExt.swift */,
 				44EF94CE27CE851300998C27 /* RDSessions.swift */,
 				44BEBB832937C51300D0DD11 /* EditRDView.swift */,
 				4436FD0129CB48C4003BBA2C /* EditRDMapView.swift */,
@@ -1055,6 +1058,7 @@
 				4436FD0229CB48C4003BBA2C /* EditRDMapView.swift in Sources */,
 				44AB0300280A2E2800EAFE45 /* RingCircleArc.swift in Sources */,
 				4487BF702782191B003C6115 /* EBookRow.swift in Sources */,
+				44DDA88F2A844BEF000104A1 /* RDDetailExt.swift in Sources */,
 				440F68B6295FB1FB00F01C5F /* LockScreenView.swift in Sources */,
 				44EEC47628F19751000C1843 /* MonthChart.swift in Sources */,
 				44801F4D28144F84006FC06C /* ReadingTimer.swift in Sources */,

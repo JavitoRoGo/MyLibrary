@@ -11,18 +11,9 @@ struct RDDetail: View {
     @EnvironmentObject var model: RDModel
     
     @State var rdata: ReadingData
-    @State private var showingLocation = false
-    @State private var showingEditView = false
-    @State private var showingCommentAsAlert = false
-    
-    var isThereAComment: Bool {
-        guard (rdata.comment != nil) else { return false }
-        return true
-    }
-    var isThereALocation: Bool {
-        guard (rdata.location != nil) else { return false }
-        return true
-    }
+    @State var showingLocation = false
+    @State var showingEditView = false
+    @State var showingCommentsAlert = false
     
     var body: some View {
         VStack {
@@ -40,7 +31,7 @@ struct RDDetail: View {
                         Spacer()
                         if isThereAComment {
                             Button {
-                                showingCommentAsAlert = true
+                                showingCommentsAlert = true
                             } label: {
                                 Image(systemName: "quote.bubble")
                                     .font(.title3)
@@ -210,38 +201,7 @@ struct RDDetail: View {
                     Text(rdata.synopsis)
                 }
             }
-            .navigationTitle("Detalle (\(rdata.id) de \(model.readingDatas.count))")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack {
-                        Button {
-                            showingLocation = true
-                        } label: {
-                            Label("Show location", systemImage: "map")
-                        }
-                        .disabled(!isThereALocation)
-                        Button {
-                            showingEditView = true
-                        } label: {
-                            Label("Editar", systemImage: "rectangle.and.pencil.and.ellipsis")
-                        }
-                    }
-                }
-            }
-            .sheet(isPresented: $showingLocation) {
-                NavigationStack {
-                    RDMapView(pins: [rdata.location!])
-                }
-            }
-            .sheet(isPresented: $showingEditView) {
-                EditRDView(book: $rdata)
-            }
-            .alert("Comentarios del libro:", isPresented: $showingCommentAsAlert) {
-                Button("OK") { }
-            } message: {
-                Text(rdata.comment ?? "")
-            }
+            .modifier(RDDetailModifier(rdata: $rdata, showingLocation: $showingLocation, showingEditView: $showingEditView, showingCommentsAlert: $showingCommentsAlert, isThereALocation: isThereALocation))
         }
     }
 }
