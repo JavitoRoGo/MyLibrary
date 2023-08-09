@@ -153,6 +153,7 @@
 		44D28FD4296F376F00180ACE /* EBookConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D28FD3296F376F00180ACE /* EBookConfigView.swift */; };
 		44DDA87F2A83BDF4000104A1 /* BookDetailExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA87E2A83BDF4000104A1 /* BookDetailExt.swift */; };
 		44DDA8812A840D5C000104A1 /* BookEditingExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8802A840D5C000104A1 /* BookEditingExt.swift */; };
+		44DDA8832A8411FF000104A1 /* HBarGraphExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8822A8411FF000104A1 /* HBarGraphExt.swift */; };
 		44E25ECD28ECD660008A76BA /* StatsLineSwiftChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E25ECC28ECD660008A76BA /* StatsLineSwiftChart.swift */; };
 		44E32D46295917F600E06425 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3422C27D2DC7A00DC82D5 /* WidgetKit.framework */; };
 		44E32D47295917F600E06425 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3422E27D2DC7A00DC82D5 /* SwiftUI.framework */; };
@@ -357,6 +358,7 @@
 		44D28FD3296F376F00180ACE /* EBookConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookConfigView.swift; sourceTree = "<group>"; };
 		44DDA87E2A83BDF4000104A1 /* BookDetailExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailExt.swift; sourceTree = "<group>"; };
 		44DDA8802A840D5C000104A1 /* BookEditingExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditingExt.swift; sourceTree = "<group>"; };
+		44DDA8822A8411FF000104A1 /* HBarGraphExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBarGraphExt.swift; sourceTree = "<group>"; };
 		44E25ECC28ECD660008A76BA /* StatsLineSwiftChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsLineSwiftChart.swift; sourceTree = "<group>"; };
 		44E32D45295917F600E06425 /* MyLibraryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyLibraryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E32D49295917F600E06425 /* MyLibraryWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryWidgetBundle.swift; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 				44C6A6232801E04A00EF035A /* GraphView.swift */,
 				44C6A6252801E0D700EF035A /* GraphMenu.swift */,
 				44C6A6272801E48200EF035A /* HBarGraph.swift */,
+				44DDA8822A8411FF000104A1 /* HBarGraphExt.swift */,
 				44C6A6292802454F00EF035A /* AnimatedBarGraph.swift */,
 			);
 			path = ByPlace;
@@ -1078,6 +1081,7 @@
 				446430EA2A193BEF00013669 /* DownloadCoverHelper.swift in Sources */,
 				44741ECD29CA6DB800138691 /* LocationManager.swift in Sources */,
 				44A01F352960FE8300E34FA8 /* CreateUserView.swift in Sources */,
+				44DDA8832A8411FF000104A1 /* HBarGraphExt.swift in Sources */,
 				442B6197295635BE0003537E /* RDGlobalStats.swift in Sources */,
 				441A84E9299025C800D5F1EB /* ConnectivityManager.swift in Sources */,
 				440D13CB28038EA400C2C333 /* StatsList.swift in Sources */,
