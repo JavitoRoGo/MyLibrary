@@ -157,6 +157,7 @@
 		44DDA8852A841405000104A1 /* AddBookExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8842A841405000104A1 /* AddBookExt.swift */; };
 		44DDA8872A842356000104A1 /* EBookListExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8862A842356000104A1 /* EBookListExt.swift */; };
 		44DDA8892A84245B000104A1 /* EBookDetailExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8882A84245B000104A1 /* EBookDetailExt.swift */; };
+		44DDA88B2A8442C9000104A1 /* AddEBookExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */; };
 		44E25ECD28ECD660008A76BA /* StatsLineSwiftChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E25ECC28ECD660008A76BA /* StatsLineSwiftChart.swift */; };
 		44E32D46295917F600E06425 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3422C27D2DC7A00DC82D5 /* WidgetKit.framework */; };
 		44E32D47295917F600E06425 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A3422E27D2DC7A00DC82D5 /* SwiftUI.framework */; };
@@ -365,6 +366,7 @@
 		44DDA8842A841405000104A1 /* AddBookExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookExt.swift; sourceTree = "<group>"; };
 		44DDA8862A842356000104A1 /* EBookListExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookListExt.swift; sourceTree = "<group>"; };
 		44DDA8882A84245B000104A1 /* EBookDetailExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookDetailExt.swift; sourceTree = "<group>"; };
+		44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEBookExt.swift; sourceTree = "<group>"; };
 		44E25ECC28ECD660008A76BA /* StatsLineSwiftChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsLineSwiftChart.swift; sourceTree = "<group>"; };
 		44E32D45295917F600E06425 /* MyLibraryWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyLibraryWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E32D49295917F600E06425 /* MyLibraryWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryWidgetBundle.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				4487BF7127822296003C6115 /* EBookDetail.swift */,
 				44DDA8882A84245B000104A1 /* EBookDetailExt.swift */,
 				4487BF7527827727003C6115 /* AddEBook.swift */,
+				44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */,
 				44D28FD3296F376F00180ACE /* EBookConfigView.swift */,
 				44D28FD1296F27FA00180ACE /* EbookStatsView.swift */,
 				443C18A02975A1870027CCD0 /* EBooksStatsChartView.swift */,
@@ -1123,6 +1126,7 @@
 				4456FB3829FD756600C955B9 /* CameraPicker.swift in Sources */,
 				44718DD0297F20C50029DBC8 /* RollingText.swift in Sources */,
 				447692A82786266C001A01A7 /* BookStats.swift in Sources */,
+				44DDA88B2A8442C9000104A1 /* AddEBookExt.swift in Sources */,
 				44EF94D727CEB5D200998C27 /* ActualReadingDetail.swift in Sources */,
 				44265386277DF5020047D75C /* MyLibraryApp.swift in Sources */,
 				44741ECB29CA29B800138691 /* RDMapView.swift in Sources */,
