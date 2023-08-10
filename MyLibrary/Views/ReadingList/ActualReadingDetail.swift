@@ -11,6 +11,8 @@ import SwiftUI
 
 struct ActualReadingDetail: View {
     @EnvironmentObject var model: NowReadingModel
+	@EnvironmentObject var bmodel: BooksModel
+	@EnvironmentObject var emodel: EbooksModel
     @EnvironmentObject var rdmodel: RDModel
     
     @State var book: NowReading
