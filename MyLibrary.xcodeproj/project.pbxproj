@@ -148,6 +148,7 @@
 		44C6A62A2802454F00EF035A /* AnimatedBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6A6292802454F00EF035A /* AnimatedBarGraph.swift */; };
 		44C6A62D280256F800EF035A /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C6A62C280256F800EF035A /* StatsView.swift */; };
 		44CA18FA2A85733E00E9786A /* ActualReadingExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA18F92A85733E00E9786A /* ActualReadingExt.swift */; };
+		44CA18FC2A85753C00E9786A /* ActualReadingDetailExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CA18FB2A85753C00E9786A /* ActualReadingDetailExt.swift */; };
 		44CDF6762850F854005B25B0 /* DynamicStatsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CDF6752850F854005B25B0 /* DynamicStatsList.swift */; };
 		44D14F5C2812124200000BE9 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D14F5B2812124200000BE9 /* LineChart.swift */; };
 		44D28FD2296F27FA00180ACE /* EbookStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D28FD1296F27FA00180ACE /* EbookStatsView.swift */; };
@@ -366,6 +367,7 @@
 		44C6A6292802454F00EF035A /* AnimatedBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBarGraph.swift; sourceTree = "<group>"; };
 		44C6A62C280256F800EF035A /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		44CA18F92A85733E00E9786A /* ActualReadingExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingExt.swift; sourceTree = "<group>"; };
+		44CA18FB2A85753C00E9786A /* ActualReadingDetailExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingDetailExt.swift; sourceTree = "<group>"; };
 		44CDF6752850F854005B25B0 /* DynamicStatsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStatsList.swift; sourceTree = "<group>"; };
 		44D14F5B2812124200000BE9 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		44D28FD1296F27FA00180ACE /* EbookStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookStatsView.swift; sourceTree = "<group>"; };
@@ -813,6 +815,7 @@
 				44CA18F92A85733E00E9786A /* ActualReadingExt.swift */,
 				44EF94D027CE8B2D00998C27 /* ActualReadingRow.swift */,
 				44EF94D627CEB5D200998C27 /* ActualReadingDetail.swift */,
+				44CA18FB2A85753C00E9786A /* ActualReadingDetailExt.swift */,
 				449606392847C1C800D27055 /* ConfettiView.swift */,
 				448B2DF128315D1B00916906 /* ActualReadingEdit.swift */,
 				44BE5EDE27EF6B010006285A /* ProgressRing */,
@@ -1160,6 +1163,7 @@
 				440D13CB28038EA400C2C333 /* StatsList.swift in Sources */,
 				4487BF7627827727003C6115 /* AddEBook.swift in Sources */,
 				4407D4EC297087DC006FAC47 /* EditUserPasswordView.swift in Sources */,
+				44CA18FC2A85753C00E9786A /* ActualReadingDetailExt.swift in Sources */,
 				4487BF6D278212B6003C6115 /* EBookModel.swift in Sources */,
 				44D28FD4296F376F00180ACE /* EBookConfigView.swift in Sources */,
 				4407D4EE29708B46006FAC47 /* TargetsMainView.swift in Sources */,
