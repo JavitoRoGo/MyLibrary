@@ -32,13 +32,8 @@ struct ActualReadingDetail: View {
                     VStack {
                         Image(uiImage: getCoverImage(from: imageCoverName(from: book.bookTitle)))
                             .resizable()
-                            .frame(width: 120, height: 150)
-                            .clipShape(RoundedRectangle(cornerRadius: 30))
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .stroke(.white, lineWidth: 4)
-                            }
-                            .shadow(color: .gray, radius: 7)
+							.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+                            
                         Text(book.formatt.rawValue)
                             .foregroundColor(.gray)
                     }
