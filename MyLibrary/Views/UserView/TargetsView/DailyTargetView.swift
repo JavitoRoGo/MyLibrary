@@ -9,29 +9,11 @@ import SwiftUI
 
 struct DailyTargetView: View {
     @EnvironmentObject var model: UserViewModel
-    @Environment(\.dismiss) var dismiss
     
     @Binding var dailyTarget: DWTarget
-    @State private var pages = 40
-    @State private var hour = 1
-    @State private var minute = 0
-    
-    var duration: Double {
-        Double(hour) + Double(minute)/60
-    }
-    var isDisabled: Bool {
-        switch dailyTarget {
-        case .pages:
-            if pages != 0 {
-                return false
-            }
-        case .time:
-            if duration > 0 {
-                return false
-            }
-        }
-        return true
-    }
+    @State var pages = 40
+    @State var hour = 1
+    @State var minute = 0
     
     var body: some View {
         NavigationStack {
@@ -75,24 +57,7 @@ struct DailyTargetView: View {
                     .disabled(dailyTarget == .pages)
                 }
             }
-            .navigationTitle("Objetivo diario")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Guardar") {
-                        if dailyTarget == .pages {
-                            model.dailyPagesTarget = pages
-                        } else {
-                            model.dailyTimeTarget = duration
-                        }
-                        dismiss()
-                    }
-                    .disabled(isDisabled)
-                }
-            }
-            .task {
-                pages = model.dailyPagesTarget
-            }
+			.modifier(DailyTargetModifier(pages: $pages, dailyTarget: dailyTarget, duration: duration, isDisabled: isDisabled))
         }
     }
 }

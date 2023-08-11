@@ -93,6 +93,10 @@
 		445BBA302A865E5D0004B850 /* AddQuoteViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA2F2A865E5D0004B850 /* AddQuoteViewExt.swift */; };
 		445BBA322A8662A50004B850 /* AddReadingExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA312A8662A50004B850 /* AddReadingExt.swift */; };
 		445BBA342A8667360004B850 /* DynamicStatsLineChartExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA332A8667360004B850 /* DynamicStatsLineChartExt.swift */; };
+		445BBA362A86AF7A0004B850 /* DailyTargetViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA352A86AF7A0004B850 /* DailyTargetViewExt.swift */; };
+		445BBA382A86B1A20004B850 /* WeeklyTargetViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA372A86B1A20004B850 /* WeeklyTargetViewExt.swift */; };
+		445BBA3A2A86B3490004B850 /* MonthlyTargetViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA392A86B3490004B850 /* MonthlyTargetViewExt.swift */; };
+		445BBA3C2A86BE650004B850 /* YearlyTargetViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA3B2A86BE650004B850 /* YearlyTargetViewExt.swift */; };
 		446430EA2A193BEF00013669 /* DownloadCoverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446430E92A193BEF00013669 /* DownloadCoverHelper.swift */; };
 		44668E0928F0B06900738D32 /* WeekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44668E0828F0B06900738D32 /* WeekChart.swift */; };
 		4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */; };
@@ -320,6 +324,10 @@
 		445BBA2F2A865E5D0004B850 /* AddQuoteViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteViewExt.swift; sourceTree = "<group>"; };
 		445BBA312A8662A50004B850 /* AddReadingExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadingExt.swift; sourceTree = "<group>"; };
 		445BBA332A8667360004B850 /* DynamicStatsLineChartExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStatsLineChartExt.swift; sourceTree = "<group>"; };
+		445BBA352A86AF7A0004B850 /* DailyTargetViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTargetViewExt.swift; sourceTree = "<group>"; };
+		445BBA372A86B1A20004B850 /* WeeklyTargetViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTargetViewExt.swift; sourceTree = "<group>"; };
+		445BBA392A86B3490004B850 /* MonthlyTargetViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTargetViewExt.swift; sourceTree = "<group>"; };
+		445BBA3B2A86BE650004B850 /* YearlyTargetViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyTargetViewExt.swift; sourceTree = "<group>"; };
 		446430E92A193BEF00013669 /* DownloadCoverHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCoverHelper.swift; sourceTree = "<group>"; };
 		44668E0828F0B06900738D32 /* WeekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekChart.swift; sourceTree = "<group>"; };
 		4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTargetView.swift; sourceTree = "<group>"; };
@@ -480,9 +488,13 @@
 			children = (
 				4407D4ED29708B46006FAC47 /* TargetsMainView.swift */,
 				4407D4F029709BA0006FAC47 /* DailyTargetView.swift */,
+				445BBA352A86AF7A0004B850 /* DailyTargetViewExt.swift */,
 				4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */,
+				445BBA372A86B1A20004B850 /* WeeklyTargetViewExt.swift */,
 				4467B5E32971DC86008E4489 /* MonthlyTargetView.swift */,
+				445BBA392A86B3490004B850 /* MonthlyTargetViewExt.swift */,
 				4467B5E52971E936008E4489 /* YearlyTargetView.swift */,
+				445BBA3B2A86BE650004B850 /* YearlyTargetViewExt.swift */,
 				44718DCE297F209D0029DBC8 /* Helpers */,
 			);
 			path = TargetsView;
@@ -1104,6 +1116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44EF88CF296CDAD50039632F /* AllQuotesCommentsView.swift in Sources */,
+				445BBA362A86AF7A0004B850 /* DailyTargetViewExt.swift in Sources */,
 				44D28FD2296F27FA00180ACE /* EbookStatsView.swift in Sources */,
 				4482D5792964AE99004D0EB8 /* UserMainView.swift in Sources */,
 				445BBA2E2A865ADB0004B850 /* QuotesCommentViewExt.swift in Sources */,
@@ -1121,10 +1134,12 @@
 				44DDA87F2A83BDF4000104A1 /* BookDetailExt.swift in Sources */,
 				4492F44527FB2A8500103B6D /* Functions.swift in Sources */,
 				44B0409C284FBA4700C29E22 /* RSModel.swift in Sources */,
+				445BBA3A2A86B3490004B850 /* MonthlyTargetViewExt.swift in Sources */,
 				4482142028F720500037BE9F /* AnimateChartsHelper.swift in Sources */,
 				44DDA8852A841405000104A1 /* AddBookExt.swift in Sources */,
 				442653AB277E75AE0047D75C /* BookDetail.swift in Sources */,
 				4492AC7E28AAA502003CB125 /* EditPlaces.swift in Sources */,
+				445BBA382A86B1A20004B850 /* WeeklyTargetViewExt.swift in Sources */,
 				449410FC28563DCC0055D833 /* RSBarGraph.swift in Sources */,
 				44102C8C294511C600F8E2F1 /* ScrollByPlace.swift in Sources */,
 				442653A5277E1B440047D75C /* PlaceRow.swift in Sources */,
@@ -1173,6 +1188,7 @@
 				44FF97B3296DB62100EE1CBC /* AllCommentsView.swift in Sources */,
 				440F83E32A82D0040079C421 /* LockScreenViewExt.swift in Sources */,
 				445BBA302A865E5D0004B850 /* AddQuoteViewExt.swift in Sources */,
+				445BBA3C2A86BE650004B850 /* YearlyTargetViewExt.swift in Sources */,
 				4487BF7227822296003C6115 /* EBookDetail.swift in Sources */,
 				44B9FD6A295A1BCB00A11206 /* WidgetDataHelper.swift in Sources */,
 				440246192784B47D003D7338 /* RDScroll.swift in Sources */,
