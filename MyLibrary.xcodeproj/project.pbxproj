@@ -89,6 +89,7 @@
 		445BBA282A864F490004B850 /* OldBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA272A864F490004B850 /* OldBarGraph.swift */; };
 		445BBA2A2A8652610004B850 /* AddRSExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA292A8652610004B850 /* AddRSExt.swift */; };
 		445BBA2C2A86551A0004B850 /* ReadingTimerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA2B2A8655190004B850 /* ReadingTimerExt.swift */; };
+		445BBA2E2A865ADB0004B850 /* QuotesCommentViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA2D2A865ADB0004B850 /* QuotesCommentViewExt.swift */; };
 		446430EA2A193BEF00013669 /* DownloadCoverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446430E92A193BEF00013669 /* DownloadCoverHelper.swift */; };
 		44668E0928F0B06900738D32 /* WeekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44668E0828F0B06900738D32 /* WeekChart.swift */; };
 		4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */; };
@@ -312,6 +313,7 @@
 		445BBA272A864F490004B850 /* OldBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldBarGraph.swift; sourceTree = "<group>"; };
 		445BBA292A8652610004B850 /* AddRSExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRSExt.swift; sourceTree = "<group>"; };
 		445BBA2B2A8655190004B850 /* ReadingTimerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTimerExt.swift; sourceTree = "<group>"; };
+		445BBA2D2A865ADB0004B850 /* QuotesCommentViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCommentViewExt.swift; sourceTree = "<group>"; };
 		446430E92A193BEF00013669 /* DownloadCoverHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCoverHelper.swift; sourceTree = "<group>"; };
 		44668E0828F0B06900738D32 /* WeekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekChart.swift; sourceTree = "<group>"; };
 		4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTargetView.swift; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 			isa = PBXGroup;
 			children = (
 				447446AB29678CE50002689B /* QuotesCommentView.swift */,
+				445BBA2D2A865ADB0004B850 /* QuotesCommentViewExt.swift */,
 				447446AD29678CF40002689B /* AddQuoteView.swift */,
 			);
 			path = Quotes;
@@ -1094,6 +1097,7 @@
 				44EF88CF296CDAD50039632F /* AllQuotesCommentsView.swift in Sources */,
 				44D28FD2296F27FA00180ACE /* EbookStatsView.swift in Sources */,
 				4482D5792964AE99004D0EB8 /* UserMainView.swift in Sources */,
+				445BBA2E2A865ADB0004B850 /* QuotesCommentViewExt.swift in Sources */,
 				44C6A6282801E48200EF035A /* HBarGraph.swift in Sources */,
 				442920952A02D86D00DAE7EE /* DownloadCoverView.swift in Sources */,
 				445BBA282A864F490004B850 /* OldBarGraph.swift in Sources */,
