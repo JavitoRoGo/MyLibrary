@@ -49,15 +49,19 @@ extension LockScreenView {
     }
     
     struct LockScreenViewModifier: ViewModifier {
+		@EnvironmentObject var model: UserViewModel
+		
         @Binding var showingFirstRunAlert: Bool
         @Binding var showingCreateUser: Bool
         @Binding var showingLoginPage: Bool
         @Binding var showingAlert: Bool
         @Binding var isUnlocked: Bool
         @Binding var isFirstRun: Bool
+		let saveDataToUser: () -> ()
         
         func body(content: Content) -> some View {
             content
+				.navigationTitle("Login")
                 .alert("¡Bienvenido a esta fantástica app!\n😊😊😊", isPresented: $showingFirstRunAlert) {
                     Button("Continuar") {
                         isFirstRun = false
@@ -79,6 +83,14 @@ extension LockScreenView {
                 .sheet(isPresented: $showingCreateUser) {
                     CreateUserView(isUnlocked: $isUnlocked)
                 }
+				.onAppear {
+					if isFirstRun {
+						keychain.delete("storedPassword")
+						model.storedPassword = ""
+						showingFirstRunAlert = true
+					}
+					saveDataToUser()
+				}
         }
     }
 }

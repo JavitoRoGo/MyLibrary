@@ -18,11 +18,11 @@ struct LockScreenView: View {
     
     @State var isUnlocked = false
     @State var showingAlert = false
-    @State private var showingCreateUser = false
-    @State private var showingLoginPage = false
+    @State var showingCreateUser = false
+    @State var showingLoginPage = false
     
     @AppStorage("isFirstRun") var isFirstRun = true
-    @State private var showingFirstRunAlert = false
+    @State var showingFirstRunAlert = false
     
     var body: some View {
         if isUnlocked {
@@ -81,16 +81,7 @@ struct LockScreenView: View {
                     }
                     .padding(.horizontal, 35)
                 }
-                .navigationTitle("Login")
-                .onAppear {
-                    if isFirstRun {
-                        keychain.delete("storedPassword")
-                        model.storedPassword = ""
-                        showingFirstRunAlert = true
-                    }
-                    saveDataToUser()
-                }
-                .modifier(LockScreenViewModifier(showingFirstRunAlert: $showingFirstRunAlert, showingCreateUser: $showingCreateUser, showingLoginPage: $showingLoginPage, showingAlert: $showingAlert, isUnlocked: $isUnlocked, isFirstRun: $isFirstRun))
+                .modifier(LockScreenViewModifier(showingFirstRunAlert: $showingFirstRunAlert, showingCreateUser: $showingCreateUser, showingLoginPage: $showingLoginPage, showingAlert: $showingAlert, isUnlocked: $isUnlocked, isFirstRun: $isFirstRun, saveDataToUser: saveDataToUser))
             }
         }
     }
