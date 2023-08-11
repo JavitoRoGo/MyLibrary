@@ -107,6 +107,10 @@
 		445BBA4E2A86F6E20004B850 /* OtherPriceSectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA4D2A86F6E20004B850 /* OtherPriceSectionExt.swift */; };
 		445BBA502A86F72C0004B850 /* OtherThicknessSectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA4F2A86F72C0004B850 /* OtherThicknessSectionExt.swift */; };
 		445BBA522A86F7B20004B850 /* OtherWeightSectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA512A86F7B20004B850 /* OtherWeightSectionExt.swift */; };
+		445BBA552A86FC030004B850 /* AddBookAuthorSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA542A86FC030004B850 /* AddBookAuthorSection.swift */; };
+		445BBA572A86FC4F0004B850 /* AddBookPublisherSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA562A86FC4F0004B850 /* AddBookPublisherSection.swift */; };
+		445BBA592A86FCC20004B850 /* AddBookPhysicsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA582A86FCC20004B850 /* AddBookPhysicsSection.swift */; };
+		445BBA5B2A86FD680004B850 /* AddBookOwnerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA5A2A86FD680004B850 /* AddBookOwnerSection.swift */; };
 		446430EA2A193BEF00013669 /* DownloadCoverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446430E92A193BEF00013669 /* DownloadCoverHelper.swift */; };
 		44668E0928F0B06900738D32 /* WeekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44668E0828F0B06900738D32 /* WeekChart.swift */; };
 		4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */; };
@@ -348,6 +352,10 @@
 		445BBA4D2A86F6E20004B850 /* OtherPriceSectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPriceSectionExt.swift; sourceTree = "<group>"; };
 		445BBA4F2A86F72C0004B850 /* OtherThicknessSectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherThicknessSectionExt.swift; sourceTree = "<group>"; };
 		445BBA512A86F7B20004B850 /* OtherWeightSectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherWeightSectionExt.swift; sourceTree = "<group>"; };
+		445BBA542A86FC030004B850 /* AddBookAuthorSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookAuthorSection.swift; sourceTree = "<group>"; };
+		445BBA562A86FC4F0004B850 /* AddBookPublisherSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookPublisherSection.swift; sourceTree = "<group>"; };
+		445BBA582A86FCC20004B850 /* AddBookPhysicsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookPhysicsSection.swift; sourceTree = "<group>"; };
+		445BBA5A2A86FD680004B850 /* AddBookOwnerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookOwnerSection.swift; sourceTree = "<group>"; };
 		446430E92A193BEF00013669 /* DownloadCoverHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCoverHelper.swift; sourceTree = "<group>"; };
 		44668E0828F0B06900738D32 /* WeekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekChart.swift; sourceTree = "<group>"; };
 		4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTargetView.swift; sourceTree = "<group>"; };
@@ -629,8 +637,7 @@
 				4418D78F277F91DA00F0501B /* BookEditing.swift */,
 				44DDA8802A840D5C000104A1 /* BookEditingExt.swift */,
 				44C6A6222801DDE600EF035A /* Statistics */,
-				444B00FC2780CFA300530FEC /* AddBook.swift */,
-				44DDA8842A841405000104A1 /* AddBookExt.swift */,
+				445BBA532A86FABA0004B850 /* AddBook */,
 				44010744294E4D56000714B6 /* ConfigView */,
 			);
 			path = Books;
@@ -783,6 +790,19 @@
 				445BBA512A86F7B20004B850 /* OtherWeightSectionExt.swift */,
 			);
 			path = OtherStatsExts;
+			sourceTree = "<group>";
+		};
+		445BBA532A86FABA0004B850 /* AddBook */ = {
+			isa = PBXGroup;
+			children = (
+				444B00FC2780CFA300530FEC /* AddBook.swift */,
+				44DDA8842A841405000104A1 /* AddBookExt.swift */,
+				445BBA542A86FC030004B850 /* AddBookAuthorSection.swift */,
+				445BBA562A86FC4F0004B850 /* AddBookPublisherSection.swift */,
+				445BBA582A86FCC20004B850 /* AddBookPhysicsSection.swift */,
+				445BBA5A2A86FD680004B850 /* AddBookOwnerSection.swift */,
+			);
+			path = AddBook;
 			sourceTree = "<group>";
 		};
 		44668E0728F0AF7D00738D32 /* ChartsByDate */ = {
@@ -1190,6 +1210,7 @@
 				445BBA382A86B1A20004B850 /* WeeklyTargetViewExt.swift in Sources */,
 				449410FC28563DCC0055D833 /* RSBarGraph.swift in Sources */,
 				44102C8C294511C600F8E2F1 /* ScrollByPlace.swift in Sources */,
+				445BBA572A86FC4F0004B850 /* AddBookPublisherSection.swift in Sources */,
 				442653A5277E1B440047D75C /* PlaceRow.swift in Sources */,
 				442B619929565B1A0003537E /* RDGlobalStatsHelper.swift in Sources */,
 				447446AC29678CE50002689B /* QuotesCommentView.swift in Sources */,
@@ -1280,6 +1301,7 @@
 				441A84E9299025C800D5F1EB /* ConnectivityManager.swift in Sources */,
 				44DDA89E2A845581000104A1 /* RDGlobalStatsExt.swift in Sources */,
 				440D13CB28038EA400C2C333 /* StatsList.swift in Sources */,
+				445BBA592A86FCC20004B850 /* AddBookPhysicsSection.swift in Sources */,
 				4487BF7627827727003C6115 /* AddEBook.swift in Sources */,
 				4407D4EC297087DC006FAC47 /* EditUserPasswordView.swift in Sources */,
 				44CA18FC2A85753C00E9786A /* ActualReadingDetailExt.swift in Sources */,
@@ -1288,6 +1310,7 @@
 				4407D4EE29708B46006FAC47 /* TargetsMainView.swift in Sources */,
 				4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */,
 				44398EA82979CC49009E1D6A /* Entry.swift in Sources */,
+				445BBA5B2A86FD680004B850 /* AddBookOwnerSection.swift in Sources */,
 				442653A3277E175D0047D75C /* BookModel.swift in Sources */,
 				44F2578227F4B69300EC7A7A /* ProgressRingMini.swift in Sources */,
 				440D9BDE281F42960072C484 /* ImagePicker.swift in Sources */,
@@ -1298,6 +1321,7 @@
 				44FF97B5296DF37C00EE1CBC /* CheckingPasswordHelper.swift in Sources */,
 				44010746294E4D75000714B6 /* BookConfigView.swift in Sources */,
 				445BBA2A2A8652610004B850 /* AddRSExt.swift in Sources */,
+				445BBA552A86FC030004B850 /* AddBookAuthorSection.swift in Sources */,
 				44B1E50927D1258B00EF6D40 /* AddReading.swift in Sources */,
 				445BBA502A86F72C0004B850 /* OtherThicknessSectionExt.swift in Sources */,
 				44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */,
