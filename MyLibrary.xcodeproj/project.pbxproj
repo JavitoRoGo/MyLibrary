@@ -87,6 +87,7 @@
 		445BBA232A864E050004B850 /* RSEditExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA222A864E050004B850 /* RSEditExt.swift */; };
 		445BBA262A864F240004B850 /* NewBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA252A864F240004B850 /* NewBarGraph.swift */; };
 		445BBA282A864F490004B850 /* OldBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA272A864F490004B850 /* OldBarGraph.swift */; };
+		445BBA2A2A8652610004B850 /* AddRSExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA292A8652610004B850 /* AddRSExt.swift */; };
 		446430EA2A193BEF00013669 /* DownloadCoverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446430E92A193BEF00013669 /* DownloadCoverHelper.swift */; };
 		44668E0928F0B06900738D32 /* WeekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44668E0828F0B06900738D32 /* WeekChart.swift */; };
 		4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */; };
@@ -308,6 +309,7 @@
 		445BBA222A864E050004B850 /* RSEditExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSEditExt.swift; sourceTree = "<group>"; };
 		445BBA252A864F240004B850 /* NewBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBarGraph.swift; sourceTree = "<group>"; };
 		445BBA272A864F490004B850 /* OldBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldBarGraph.swift; sourceTree = "<group>"; };
+		445BBA292A8652610004B850 /* AddRSExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRSExt.swift; sourceTree = "<group>"; };
 		446430E92A193BEF00013669 /* DownloadCoverHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCoverHelper.swift; sourceTree = "<group>"; };
 		44668E0828F0B06900738D32 /* WeekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekChart.swift; sourceTree = "<group>"; };
 		4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTargetView.swift; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 				445BBA222A864E050004B850 /* RSEditExt.swift */,
 				445BBA242A864EFC0004B850 /* RSBarGraph */,
 				44C0AE0227C9AE9D0046E32F /* AddRS.swift */,
+				445BBA292A8652610004B850 /* AddRSExt.swift */,
 				44801F4C28144F83006FC06C /* ReadingTimer.swift */,
 				447446AA29678C9F0002689B /* Quotes */,
 			);
@@ -1205,6 +1208,7 @@
 				440882A02945444600DCA9E7 /* ScrollByOwner.swift in Sources */,
 				44FF97B5296DF37C00EE1CBC /* CheckingPasswordHelper.swift in Sources */,
 				44010746294E4D75000714B6 /* BookConfigView.swift in Sources */,
+				445BBA2A2A8652610004B850 /* AddRSExt.swift in Sources */,
 				44B1E50927D1258B00EF6D40 /* AddReading.swift in Sources */,
 				44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */,
 				445BBA262A864F240004B850 /* NewBarGraph.swift in Sources */,
