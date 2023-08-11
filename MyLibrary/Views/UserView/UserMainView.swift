@@ -113,18 +113,7 @@ struct UserMainView: View {
                     }
                 }
             }
-            .navigationTitle("Hola, \(model.user.nickname).")
-            .modifier(UserMainViewModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, inputImage: $inputImage))
-            .onChange(of: inputImage) { newValue in
-                loadImage()
-                if let newValue {
-                    saveJpg(newValue, title: model.user.nickname)
-                }
-            }
-            .onAppear {
-                let name = imageCoverName(from: model.user.nickname)
-                image = getUserImage(from: name)
-            }
+			.modifier(UserMainViewModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, image: $image, inputImage: $inputImage, loadImage: loadImage))
         }
     }
 }

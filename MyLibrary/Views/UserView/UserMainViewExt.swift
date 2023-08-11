@@ -50,16 +50,32 @@ extension UserMainView {
     }
     
     struct UserMainViewModifier: ViewModifier {
+		@EnvironmentObject var model: UserViewModel
+		
         @Binding var showingEditUser: Bool
         @Binding var showingClosingAlert: Bool
         @Binding var isUnlocked: Bool
         @Binding var showingSelectorPicker: Bool
         @Binding var showingImagePicker: Bool
         @Binding var showingCameraPicker: Bool
+		@Binding var image: Image?
         @Binding var inputImage: UIImage?
+		
+		let loadImage: () -> Void
         
         func body(content: Content) -> some View {
             content
+				.navigationTitle("Hola, \(model.user.nickname).")
+				.onChange(of: inputImage) { newValue in
+					loadImage()
+					if let newValue {
+						saveJpg(newValue, title: model.user.nickname)
+					}
+				}
+				.onAppear {
+					let name = imageCoverName(from: model.user.nickname)
+					image = getUserImage(from: name)
+				}
                 .sheet(isPresented: $showingEditUser) {
                     EditUserPasswordView()
                 }
