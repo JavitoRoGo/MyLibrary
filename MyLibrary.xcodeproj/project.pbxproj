@@ -85,6 +85,8 @@
 		445BBA1F2A8645FD0004B850 /* ActualReadingEditExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA1E2A8645FD0004B850 /* ActualReadingEditExt.swift */; };
 		445BBA212A864BF50004B850 /* RSListExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA202A864BF50004B850 /* RSListExt.swift */; };
 		445BBA232A864E050004B850 /* RSEditExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA222A864E050004B850 /* RSEditExt.swift */; };
+		445BBA262A864F240004B850 /* NewBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA252A864F240004B850 /* NewBarGraph.swift */; };
+		445BBA282A864F490004B850 /* OldBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA272A864F490004B850 /* OldBarGraph.swift */; };
 		446430EA2A193BEF00013669 /* DownloadCoverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446430E92A193BEF00013669 /* DownloadCoverHelper.swift */; };
 		44668E0928F0B06900738D32 /* WeekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44668E0828F0B06900738D32 /* WeekChart.swift */; };
 		4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */; };
@@ -304,6 +306,8 @@
 		445BBA1E2A8645FD0004B850 /* ActualReadingEditExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingEditExt.swift; sourceTree = "<group>"; };
 		445BBA202A864BF50004B850 /* RSListExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSListExt.swift; sourceTree = "<group>"; };
 		445BBA222A864E050004B850 /* RSEditExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSEditExt.swift; sourceTree = "<group>"; };
+		445BBA252A864F240004B850 /* NewBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBarGraph.swift; sourceTree = "<group>"; };
+		445BBA272A864F490004B850 /* OldBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldBarGraph.swift; sourceTree = "<group>"; };
 		446430E92A193BEF00013669 /* DownloadCoverHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCoverHelper.swift; sourceTree = "<group>"; };
 		44668E0828F0B06900738D32 /* WeekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekChart.swift; sourceTree = "<group>"; };
 		4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTargetView.swift; sourceTree = "<group>"; };
@@ -702,6 +706,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		445BBA242A864EFC0004B850 /* RSBarGraph */ = {
+			isa = PBXGroup;
+			children = (
+				449410FB28563DCC0055D833 /* RSBarGraph.swift */,
+				445BBA252A864F240004B850 /* NewBarGraph.swift */,
+				445BBA272A864F490004B850 /* OldBarGraph.swift */,
+			);
+			path = RSBarGraph;
+			sourceTree = "<group>";
+		};
 		44668E0728F0AF7D00738D32 /* ChartsByDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -752,7 +766,7 @@
 				44C0ADFC27C975CC0046E32F /* RSRow.swift */,
 				44AA171229A004A900944623 /* RSEdit.swift */,
 				445BBA222A864E050004B850 /* RSEditExt.swift */,
-				449410FB28563DCC0055D833 /* RSBarGraph.swift */,
+				445BBA242A864EFC0004B850 /* RSBarGraph */,
 				44C0AE0227C9AE9D0046E32F /* AddRS.swift */,
 				44801F4C28144F83006FC06C /* ReadingTimer.swift */,
 				447446AA29678C9F0002689B /* Quotes */,
@@ -1076,6 +1090,7 @@
 				4482D5792964AE99004D0EB8 /* UserMainView.swift in Sources */,
 				44C6A6282801E48200EF035A /* HBarGraph.swift in Sources */,
 				442920952A02D86D00DAE7EE /* DownloadCoverView.swift in Sources */,
+				445BBA282A864F490004B850 /* OldBarGraph.swift in Sources */,
 				44E8888F28843509009670D0 /* MainBookView.swift in Sources */,
 				44DDA8992A8450D1000104A1 /* OldLineGraphExt.swift in Sources */,
 				44DDA88D2A844773000104A1 /* RDCoverModifier.swift in Sources */,
@@ -1192,6 +1207,7 @@
 				44010746294E4D75000714B6 /* BookConfigView.swift in Sources */,
 				44B1E50927D1258B00EF6D40 /* AddReading.swift in Sources */,
 				44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */,
+				445BBA262A864F240004B850 /* NewBarGraph.swift in Sources */,
 				44102C892944F5D600F8E2F1 /* EachMainViewButton.swift in Sources */,
 				4472DFD327832B1C0014CC1C /* RDRow.swift in Sources */,
 				4467B5E82971F442008E4489 /* RingTargetView.swift in Sources */,
