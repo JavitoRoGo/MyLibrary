@@ -126,7 +126,7 @@
 		446C35AA2790ECD900532EF9 /* Bundle-Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A92790ECD900532EF9 /* Bundle-Decode.swift */; };
 		447189D02A87B97200BE66E5 /* EditOwnersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189CF2A87B97200BE66E5 /* EditOwnersSection.swift */; };
 		447189D22A87B9F500BE66E5 /* EditOwnersExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189D12A87B9F500BE66E5 /* EditOwnersExt.swift */; };
-		447189D42A87BD8A00BE66E5 /* ChageOwnerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189D32A87BD8A00BE66E5 /* ChageOwnerExt.swift */; };
+		447189D42A87BD8A00BE66E5 /* ChangeOwnerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189D32A87BD8A00BE66E5 /* ChangeOwnerExt.swift */; };
 		44718DD0297F20C50029DBC8 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44718DCF297F20C50029DBC8 /* RollingText.swift */; };
 		4472DFCE278323DB0014CC1C /* RDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472DFCD278323DB0014CC1C /* RDModel.swift */; };
 		4472DFD1278326F60014CC1C /* RDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472DFD0278326F60014CC1C /* RDList.swift */; };
@@ -376,7 +376,7 @@
 		446C35A92790ECD900532EF9 /* Bundle-Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decode.swift"; sourceTree = "<group>"; };
 		447189CF2A87B97200BE66E5 /* EditOwnersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOwnersSection.swift; sourceTree = "<group>"; };
 		447189D12A87B9F500BE66E5 /* EditOwnersExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOwnersExt.swift; sourceTree = "<group>"; };
-		447189D32A87BD8A00BE66E5 /* ChageOwnerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChageOwnerExt.swift; sourceTree = "<group>"; };
+		447189D32A87BD8A00BE66E5 /* ChangeOwnerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOwnerExt.swift; sourceTree = "<group>"; };
 		44718DCF297F20C50029DBC8 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 		4472DFCD278323DB0014CC1C /* RDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDModel.swift; sourceTree = "<group>"; };
 		4472DFD0278326F60014CC1C /* RDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDList.swift; sourceTree = "<group>"; };
@@ -842,7 +842,7 @@
 				447189CF2A87B97200BE66E5 /* EditOwnersSection.swift */,
 				447189D12A87B9F500BE66E5 /* EditOwnersExt.swift */,
 				44210FCF294FAC06009764A3 /* ChangeBooksOwner.swift */,
-				447189D32A87BD8A00BE66E5 /* ChageOwnerExt.swift */,
+				447189D32A87BD8A00BE66E5 /* ChangeOwnerExt.swift */,
 			);
 			path = EditOwners;
 			sourceTree = "<group>";
@@ -1358,7 +1358,7 @@
 				445BBA2A2A8652610004B850 /* AddRSExt.swift in Sources */,
 				445BBA552A86FC030004B850 /* AddBookAuthorSection.swift in Sources */,
 				44B1E50927D1258B00EF6D40 /* AddReading.swift in Sources */,
-				447189D42A87BD8A00BE66E5 /* ChageOwnerExt.swift in Sources */,
+				447189D42A87BD8A00BE66E5 /* ChangeOwnerExt.swift in Sources */,
 				445BBA502A86F72C0004B850 /* OtherThicknessSectionExt.swift in Sources */,
 				44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */,
 				445BBA262A864F240004B850 /* NewBarGraph.swift in Sources */,
