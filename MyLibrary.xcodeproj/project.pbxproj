@@ -111,6 +111,8 @@
 		445BBA572A86FC4F0004B850 /* AddBookPublisherSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA562A86FC4F0004B850 /* AddBookPublisherSection.swift */; };
 		445BBA592A86FCC20004B850 /* AddBookPhysicsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA582A86FCC20004B850 /* AddBookPhysicsSection.swift */; };
 		445BBA5B2A86FD680004B850 /* AddBookOwnerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA5A2A86FD680004B850 /* AddBookOwnerSection.swift */; };
+		445BBA5E2A87006B0004B850 /* EditPlacesSection1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA5D2A87006B0004B850 /* EditPlacesSection1.swift */; };
+		445BBA602A8701420004B850 /* EditPlacesExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BBA5F2A8701420004B850 /* EditPlacesExt.swift */; };
 		446430EA2A193BEF00013669 /* DownloadCoverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446430E92A193BEF00013669 /* DownloadCoverHelper.swift */; };
 		44668E0928F0B06900738D32 /* WeekChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44668E0828F0B06900738D32 /* WeekChart.swift */; };
 		4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */; };
@@ -356,6 +358,8 @@
 		445BBA562A86FC4F0004B850 /* AddBookPublisherSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookPublisherSection.swift; sourceTree = "<group>"; };
 		445BBA582A86FCC20004B850 /* AddBookPhysicsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookPhysicsSection.swift; sourceTree = "<group>"; };
 		445BBA5A2A86FD680004B850 /* AddBookOwnerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookOwnerSection.swift; sourceTree = "<group>"; };
+		445BBA5D2A87006B0004B850 /* EditPlacesSection1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlacesSection1.swift; sourceTree = "<group>"; };
+		445BBA5F2A8701420004B850 /* EditPlacesExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlacesExt.swift; sourceTree = "<group>"; };
 		446430E92A193BEF00013669 /* DownloadCoverHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCoverHelper.swift; sourceTree = "<group>"; };
 		44668E0828F0B06900738D32 /* WeekChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekChart.swift; sourceTree = "<group>"; };
 		4467B5E12971C36F008E4489 /* WeeklyTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTargetView.swift; sourceTree = "<group>"; };
@@ -503,8 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				44010745294E4D75000714B6 /* BookConfigView.swift */,
-				4492AC7D28AAA502003CB125 /* EditPlaces.swift */,
-				440882A129455AA700DCA9E7 /* ChangeBooksPlace.swift */,
+				445BBA5C2A86FFD80004B850 /* EditPlaces */,
 				44010747294E50EF000714B6 /* EditOwners.swift */,
 				44210FCF294FAC06009764A3 /* ChangeBooksOwner.swift */,
 			);
@@ -803,6 +806,17 @@
 				445BBA5A2A86FD680004B850 /* AddBookOwnerSection.swift */,
 			);
 			path = AddBook;
+			sourceTree = "<group>";
+		};
+		445BBA5C2A86FFD80004B850 /* EditPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				4492AC7D28AAA502003CB125 /* EditPlaces.swift */,
+				445BBA5D2A87006B0004B850 /* EditPlacesSection1.swift */,
+				445BBA5F2A8701420004B850 /* EditPlacesExt.swift */,
+				440882A129455AA700DCA9E7 /* ChangeBooksPlace.swift */,
+			);
+			path = EditPlaces;
 			sourceTree = "<group>";
 		};
 		44668E0728F0AF7D00738D32 /* ChartsByDate */ = {
@@ -1212,6 +1226,7 @@
 				44102C8C294511C600F8E2F1 /* ScrollByPlace.swift in Sources */,
 				445BBA572A86FC4F0004B850 /* AddBookPublisherSection.swift in Sources */,
 				442653A5277E1B440047D75C /* PlaceRow.swift in Sources */,
+				445BBA5E2A87006B0004B850 /* EditPlacesSection1.swift in Sources */,
 				442B619929565B1A0003537E /* RDGlobalStatsHelper.swift in Sources */,
 				447446AC29678CE50002689B /* QuotesCommentView.swift in Sources */,
 				445BBA232A864E050004B850 /* RSEditExt.swift in Sources */,
@@ -1228,6 +1243,7 @@
 				440F83E52A82D2810079C421 /* SelectBookView.swift in Sources */,
 				445BBA212A864BF50004B850 /* RSListExt.swift in Sources */,
 				445BBA2C2A86551A0004B850 /* ReadingTimerExt.swift in Sources */,
+				445BBA602A8701420004B850 /* EditPlacesExt.swift in Sources */,
 				445BBA4C2A86F68A0004B850 /* OtherPagesSectionExt.swift in Sources */,
 				443C18A12975A1870027CCD0 /* EBooksStatsChartView.swift in Sources */,
 				445BBA4A2A86F5F10004B850 /* OtherValuePickerExt.swift in Sources */,
