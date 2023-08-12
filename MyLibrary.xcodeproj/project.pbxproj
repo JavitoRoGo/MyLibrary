@@ -130,6 +130,8 @@
 		447189D72A87C2E600BE66E5 /* EBookDetailAuthorSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189D62A87C2E600BE66E5 /* EBookDetailAuthorSection.swift */; };
 		447189D92A87C33D00BE66E5 /* EBookDetailYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189D82A87C33D00BE66E5 /* EBookDetailYearSection.swift */; };
 		447189DB2A87C39500BE66E5 /* EBookDetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189DA2A87C39500BE66E5 /* EBookDetailEditView.swift */; };
+		447189DE2A87DC4500BE66E5 /* AddEBookAuthorSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189DD2A87DC4500BE66E5 /* AddEBookAuthorSection.swift */; };
+		447189E02A87DC8000BE66E5 /* AddEBookYearSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189DF2A87DC8000BE66E5 /* AddEBookYearSection.swift */; };
 		44718DD0297F20C50029DBC8 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44718DCF297F20C50029DBC8 /* RollingText.swift */; };
 		4472DFCE278323DB0014CC1C /* RDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472DFCD278323DB0014CC1C /* RDModel.swift */; };
 		4472DFD1278326F60014CC1C /* RDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472DFD0278326F60014CC1C /* RDList.swift */; };
@@ -383,6 +385,8 @@
 		447189D62A87C2E600BE66E5 /* EBookDetailAuthorSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookDetailAuthorSection.swift; sourceTree = "<group>"; };
 		447189D82A87C33D00BE66E5 /* EBookDetailYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookDetailYearSection.swift; sourceTree = "<group>"; };
 		447189DA2A87C39500BE66E5 /* EBookDetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookDetailEditView.swift; sourceTree = "<group>"; };
+		447189DD2A87DC4500BE66E5 /* AddEBookAuthorSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEBookAuthorSection.swift; sourceTree = "<group>"; };
+		447189DF2A87DC8000BE66E5 /* AddEBookYearSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEBookYearSection.swift; sourceTree = "<group>"; };
 		44718DCF297F20C50029DBC8 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 		4472DFCD278323DB0014CC1C /* RDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDModel.swift; sourceTree = "<group>"; };
 		4472DFD0278326F60014CC1C /* RDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDList.swift; sourceTree = "<group>"; };
@@ -665,8 +669,7 @@
 				44DDA8862A842356000104A1 /* EBookListExt.swift */,
 				4487BF6F2782191B003C6115 /* EBookRow.swift */,
 				447189D52A87C29800BE66E5 /* EBookDetail */,
-				4487BF7527827727003C6115 /* AddEBook.swift */,
-				44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */,
+				447189DC2A87DB6800BE66E5 /* AddEBook */,
 				44D28FD3296F376F00180ACE /* EBookConfigView.swift */,
 				44D28FD1296F27FA00180ACE /* EbookStatsView.swift */,
 				443C18A02975A1870027CCD0 /* EBooksStatsChartView.swift */,
@@ -862,6 +865,17 @@
 				44DDA8882A84245B000104A1 /* EBookDetailExt.swift */,
 			);
 			path = EBookDetail;
+			sourceTree = "<group>";
+		};
+		447189DC2A87DB6800BE66E5 /* AddEBook */ = {
+			isa = PBXGroup;
+			children = (
+				4487BF7527827727003C6115 /* AddEBook.swift */,
+				447189DD2A87DC4500BE66E5 /* AddEBookAuthorSection.swift */,
+				447189DF2A87DC8000BE66E5 /* AddEBookYearSection.swift */,
+				44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */,
+			);
+			path = AddEBook;
 			sourceTree = "<group>";
 		};
 		44718DCE297F209D0029DBC8 /* Helpers */ = {
@@ -1246,6 +1260,7 @@
 				44D14F5C2812124200000BE9 /* LineChart.swift in Sources */,
 				440F83E72A82D3590079C421 /* UserMainViewExt.swift in Sources */,
 				442653A7277E1F120047D75C /* BookList.swift in Sources */,
+				447189E02A87DC8000BE66E5 /* AddEBookYearSection.swift in Sources */,
 				4492F44227FB29F300103B6D /* AllEnums.swift in Sources */,
 				44DDA87F2A83BDF4000104A1 /* BookDetailExt.swift in Sources */,
 				4492F44527FB2A8500103B6D /* Functions.swift in Sources */,
@@ -1284,6 +1299,7 @@
 				44B6AAED28E9E4AB00D486AC /* OtherGraphs.swift in Sources */,
 				441A84E1298FED4D00D5F1EB /* ModelData.swift in Sources */,
 				4482142328F724900037BE9F /* MaxAndMin.swift in Sources */,
+				447189DE2A87DC4500BE66E5 /* AddEBookAuthorSection.swift in Sources */,
 				446C35A62790AF3E00532EF9 /* RDMain.swift in Sources */,
 				447189DB2A87C39500BE66E5 /* EBookDetailEditView.swift in Sources */,
 				440D13C928038BD300C2C333 /* RoundedGraphMenu.swift in Sources */,

@@ -38,12 +38,14 @@ extension AddEBook {
     }
     
     struct AddEBookModifier: ViewModifier {
+		@EnvironmentObject var emodel: EbooksModel
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingAddWaitingAlert: Bool
         @Binding var showingAddWaiting: Bool
         @Binding var showingSearchAlert: Bool
         @Binding var showingSearchResults: Bool
+		@Binding var showingAlert: Bool
         @Binding var newAuthor: String
         
         let newBookTitle: String
@@ -51,6 +53,7 @@ extension AddEBook {
         let searchResultsTitle: String
         let searchResultsMessage: String
         let searchArray: [String]
+		let createNewEBook: () -> EBooks
         
         func body(content: Content) -> some View {
             content
@@ -83,6 +86,16 @@ extension AddEBook {
                 } message: {
                     Text(searchResultsMessage)
                 }
+				.alert("¿Deseas añadir el nuevo registro?", isPresented: $showingAlert) {
+					Button("No", role: .cancel) { }
+					Button("Sí") {
+						let newEBook = createNewEBook()
+						emodel.ebooks.append(newEBook)
+						showingAddWaitingAlert = true
+					}
+				} message: {
+					Text(newBookTitle)
+				}
         }
     }
 }
