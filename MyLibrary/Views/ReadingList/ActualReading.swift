@@ -74,33 +74,7 @@ struct ActualReading: View {
                     }
                 }
             }
-            .navigationTitle("Leyendo... y en espera")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        shareButton()
-                    } label: {
-                        Label("Exportar", systemImage: "square.and.arrow.up")
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showingAddNewBook = true
-                    } label: {
-                        Label("Añadir libro", systemImage: "doc.badge.plus")
-                    }
-                }
-            }
-            .alert("¡Atención!\nEstás intentando borrar un libro con datos de lectura.", isPresented: $showingDeletingAlert) {
-                Button("Aceptar") { }
-            } message: {
-                Text("Esta acción no está permitida.")
-            }
-            .sheet(isPresented: $showingAddNewBook) {
-                NavigationView {
-                    AddReading(bookTitle: "", synopsis: "", formatt: .paper)
-                }
-            }
+			.modifier(ActualReadingModifer(showingDeletingAlert: $showingDeletingAlert, showingAddNewBook: $showingAddNewBook, shareButton: shareButton))
         }
     }
 }
