@@ -12,7 +12,6 @@ struct ActualReadingEdit: View {
     @EnvironmentObject var model: NowReadingModel
     @EnvironmentObject var bmodel: BooksModel
     @EnvironmentObject var manager: LocationManager
-	@Environment(\.dismiss) var dismiss
     
     @Binding var book: NowReading
     
@@ -31,15 +30,8 @@ struct ActualReadingEdit: View {
     @State var showingCameraPicker = false
     @State var showingDownloadedImage = false
     @State var showingMapSelection = false
-    var coverButtonTitle: String {
-        let uiImage = UIImage(systemName: "questionmark")!
-        if inputImage == uiImage {
-            return "Añadir portada"
-        }
-        return "Cambiar portada"
-    }
     
-    var body: some View {
+	var body: some View {
         Form {
             Section {
                 TextField(book.bookTitle, text: $bookTitle)
@@ -122,35 +114,7 @@ struct ActualReadingEdit: View {
                     .frame(width: 350, height: 150)
             }
         }
-		.modifier(AREditModifier(showingImageSelector: $showingImageSelector, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingMapSelection: $showingMapSelection, showingDownloadedImage: $showingDownloadedImage, inputImage: $inputImage, location: $location, isbn: $isbn, book: book, bookTitle: bookTitle))
-		.toolbar {
-			ToolbarItem(placement: .navigationBarLeading) {
-				Button("Cancelar", role: .cancel) {
-					dismiss()
-				}
-			}
-			ToolbarItem(placement: .navigationBarTrailing) {
-				Button("Modificar") {
-					let editedBook = NowReading(bookTitle: bookTitle, firstPage: firstPage, lastPage: lastPage, synopsis: synopsis, formatt: book.formatt, isOnReading: book.isOnReading, isFinished: book.isFinished, sessions: book.sessions, comment: comment.isEmpty ? nil : comment, location: location)
-					if let index = model.readingList.firstIndex(of: book) {
-						model.readingList[index] = editedBook
-						book = editedBook
-					}
-					if let index = model.waitingList.firstIndex(of: book) {
-						model.waitingList[index] = editedBook
-						book = editedBook
-					}
-					if let inputImage = inputImage {
-						saveJpg(inputImage, title: bookTitle)
-					}
-					dismiss()
-				}
-			}
-		}
-        .onAppear {
-            loadData()
-        }
-        .onChange(of: inputImage) { _ in loadImage() }
+		.modifier(AREditModifier(book: $book, showingImageSelector: $showingImageSelector, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingMapSelection: $showingMapSelection, showingDownloadedImage: $showingDownloadedImage, inputImage: $inputImage, location: $location, isbn: $isbn, bookTitle: bookTitle, loadData: loadData, loadImage: loadImage, createEditedBook: createEditedBook))
     }
 }
 

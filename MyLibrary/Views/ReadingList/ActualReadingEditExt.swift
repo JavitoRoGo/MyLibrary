@@ -8,6 +8,14 @@
 import SwiftUI
 
 extension ActualReadingEdit {
+	var coverButtonTitle: String {
+		let uiImage = UIImage(systemName: "questionmark")!
+		if inputImage == uiImage {
+			return "Añadir portada"
+		}
+		return "Cambiar portada"
+	}
+	
 	func loadData() {
 		bookTitle = book.bookTitle
 		firstPage = book.firstPage
@@ -26,10 +34,16 @@ extension ActualReadingEdit {
 		image = Image(uiImage: inputImage)
 	}
 	
+	func createEditedBook() -> NowReading {
+		return NowReading(bookTitle: bookTitle, firstPage: firstPage, lastPage: lastPage, synopsis: synopsis, formatt: book.formatt, isOnReading: book.isOnReading, isFinished: book.isFinished, sessions: book.sessions, comment: comment.isEmpty ? nil : comment, location: location)
+	}
+	
 	struct AREditModifier: ViewModifier {
 		@EnvironmentObject var model: NowReadingModel
 		@EnvironmentObject var bmodel: BooksModel
+		@Environment(\.dismiss) var dismiss
 		
+		@Binding var book: NowReading
 		@Binding var showingImageSelector: Bool
 		@Binding var showingImagePicker: Bool
 		@Binding var showingCameraPicker: Bool
@@ -39,8 +53,10 @@ extension ActualReadingEdit {
 		@Binding var location: RDLocation?
 		@Binding var isbn: String
 		
-		let book: NowReading
 		let bookTitle: String
+		let loadData: () -> Void
+		let loadImage: () -> Void
+		let createEditedBook: () -> NowReading
 		
 		func body(content: Content) -> some View {
 			content
@@ -75,6 +91,34 @@ extension ActualReadingEdit {
 				.sheet(isPresented: $showingMapSelection) {
 					EditRDMapView(location: $location)
 				}
+				.toolbar {
+					ToolbarItem(placement: .navigationBarLeading) {
+						Button("Cancelar", role: .cancel) {
+							dismiss()
+						}
+					}
+					ToolbarItem(placement: .navigationBarTrailing) {
+						Button("Modificar") {
+							let editedBook = createEditedBook()
+							if let index = model.readingList.firstIndex(of: book) {
+								model.readingList[index] = editedBook
+								book = editedBook
+							}
+							if let index = model.waitingList.firstIndex(of: book) {
+								model.waitingList[index] = editedBook
+								book = editedBook
+							}
+							if let inputImage = inputImage {
+								saveJpg(inputImage, title: bookTitle)
+							}
+							dismiss()
+						}
+					}
+				}
+				.onAppear {
+					loadData()
+				}
+				.onChange(of: inputImage) { _ in loadImage() }
 		}
 	}
 }
