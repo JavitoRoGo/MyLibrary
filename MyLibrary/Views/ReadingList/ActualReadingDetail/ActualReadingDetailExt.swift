@@ -90,10 +90,18 @@ extension ActualReadingDetail {
 	
 	struct ActualReadingDetailModifier: ViewModifier {
 		@EnvironmentObject var model: NowReadingModel
+		@EnvironmentObject var rdmodel: RDModel
 		
 		@Binding var book: NowReading
 		@Binding var showingEditBook: Bool
 		@Binding var showingFinalAlert: Bool
+		@Binding var showingRatingButtons: Bool
+		
+		let playSound: () -> Void
+		let playHaptics: () -> Void
+		let doAnimation: () -> Void
+		let prepareHaptics: () -> Void
+		let changeToRegistered: (_ book: NowReading) -> Void
 		
 		func body(content: Content) -> some View {
 			content
@@ -110,6 +118,51 @@ extension ActualReadingDetail {
 				.sheet(isPresented: $showingEditBook) {
 					NavigationView {
 						ActualReadingEdit(book: $book)
+					}
+				}
+				.toolbar {
+					if book.isFinished {
+						HStack {
+							Button {
+								playSound()
+								playHaptics()
+								doAnimation()
+							} label: {
+								Label("Repetir", systemImage: "arrow.clockwise")
+							}
+							Button {
+								showingRatingButtons = true
+							} label: {
+								Label("Terminado", systemImage: "checkmark.circle.fill")
+							}
+							.tint(.green)
+						}
+					} else {
+						Button("Editar") {
+							showingEditBook = true
+						}
+						.disabled(book.isFinished)
+					}
+				}
+				.confirmationDialog("Califica el libro:", isPresented: $showingRatingButtons, titleVisibility: .visible) {
+					Button("Cancelar", role: .cancel) { }
+					ForEach(1..<6) { rating in
+						Button {
+							let newRD = model.createNewRD(from: book, rating: rating)
+							rdmodel.add(newRD)
+							changeToRegistered(book)
+							showingFinalAlert = true
+						} label: {
+							Text(rating == 1 ? "1 estrella" : "\(rating) estrellas")
+						}
+					}
+				}
+				.onAppear {
+					prepareHaptics()
+					if book.isFinished {
+						playSound()
+						playHaptics()
+						doAnimation()
 					}
 				}
 		}
