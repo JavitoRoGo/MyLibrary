@@ -5,7 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 11/8/23.
 //
 
-import Foundation
+import SwiftUI
 
 extension RSEdit {
 	var sessionDuration: String {
@@ -123,6 +123,32 @@ extension RSEdit {
 		   let sessionIndex = rsmodel.readingSessionList.firstIndex(where: { $0.id == session.id }) {
 			nrmodel.readingList[index].sessions[bookSessionIndex] = session
 			rsmodel.readingSessionList[sessionIndex] = session
+		}
+	}
+	
+	struct RSEditModifier: ViewModifier {
+		@Environment(\.dismiss) var dismiss
+		
+		let hasChanged: Bool
+		let loadSessionData: () -> Void
+		let modifySession: () -> Void
+		
+		func body(content: Content) -> some View {
+			content
+				.navigationTitle("Modifica la sesión")
+				.navigationBarTitleDisplayMode(.inline)
+				.toolbar {
+					ToolbarItem(placement: .confirmationAction) {
+						Button("Modificar") {
+							modifySession()
+							dismiss()
+						}
+						.disabled(!hasChanged)
+					}
+				}
+				.onAppear {
+					loadSessionData()
+				}
 		}
 	}
 }

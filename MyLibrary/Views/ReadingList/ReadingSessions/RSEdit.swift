@@ -10,7 +10,6 @@ import SwiftUI
 struct RSEdit: View {
     @EnvironmentObject var nrmodel: NowReadingModel
     @EnvironmentObject var rsmodel: ReadingSessionModel
-    @Environment(\.dismiss) var dismiss
     
     @Binding var book: NowReading
     @Binding var session: ReadingSession
@@ -96,26 +95,7 @@ struct RSEdit: View {
                 }
             }
         }
-        .navigationTitle("Modifica la sesión")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Modificar") {
-                    modifySession()
-                    dismiss()
-                }
-                .disabled(!hasChanged)
-            }
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Listo") {
-                    isFocused = false
-                }
-            }
-        }
-        .onAppear {
-            loadSessionData()
-        }
+		.modifier(RSEditModifier(hasChanged: hasChanged, loadSessionData: loadSessionData, modifySession: modifySession))
     }
 }
 
