@@ -124,6 +124,9 @@
 		446C35A62790AF3E00532EF9 /* RDMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A52790AF3E00532EF9 /* RDMain.swift */; };
 		446C35A82790B8EA00532EF9 /* RDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A72790B8EA00532EF9 /* RDCell.swift */; };
 		446C35AA2790ECD900532EF9 /* Bundle-Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A92790ECD900532EF9 /* Bundle-Decode.swift */; };
+		447189D02A87B97200BE66E5 /* EditOwnersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189CF2A87B97200BE66E5 /* EditOwnersSection.swift */; };
+		447189D22A87B9F500BE66E5 /* EditOwnersExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189D12A87B9F500BE66E5 /* EditOwnersExt.swift */; };
+		447189D42A87BD8A00BE66E5 /* ChageOwnerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447189D32A87BD8A00BE66E5 /* ChageOwnerExt.swift */; };
 		44718DD0297F20C50029DBC8 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44718DCF297F20C50029DBC8 /* RollingText.swift */; };
 		4472DFCE278323DB0014CC1C /* RDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472DFCD278323DB0014CC1C /* RDModel.swift */; };
 		4472DFD1278326F60014CC1C /* RDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472DFD0278326F60014CC1C /* RDList.swift */; };
@@ -371,6 +374,9 @@
 		446C35A52790AF3E00532EF9 /* RDMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDMain.swift; sourceTree = "<group>"; };
 		446C35A72790B8EA00532EF9 /* RDCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDCell.swift; sourceTree = "<group>"; };
 		446C35A92790ECD900532EF9 /* Bundle-Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decode.swift"; sourceTree = "<group>"; };
+		447189CF2A87B97200BE66E5 /* EditOwnersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOwnersSection.swift; sourceTree = "<group>"; };
+		447189D12A87B9F500BE66E5 /* EditOwnersExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOwnersExt.swift; sourceTree = "<group>"; };
+		447189D32A87BD8A00BE66E5 /* ChageOwnerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChageOwnerExt.swift; sourceTree = "<group>"; };
 		44718DCF297F20C50029DBC8 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 		4472DFCD278323DB0014CC1C /* RDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDModel.swift; sourceTree = "<group>"; };
 		4472DFD0278326F60014CC1C /* RDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDList.swift; sourceTree = "<group>"; };
@@ -508,8 +514,7 @@
 			children = (
 				44010745294E4D75000714B6 /* BookConfigView.swift */,
 				445BBA5C2A86FFD80004B850 /* EditPlaces */,
-				44010747294E50EF000714B6 /* EditOwners.swift */,
-				44210FCF294FAC06009764A3 /* ChangeBooksOwner.swift */,
+				447189CE2A87B93800BE66E5 /* EditOwners */,
 			);
 			path = ConfigView;
 			sourceTree = "<group>";
@@ -828,6 +833,18 @@
 				44EEC47928F19FD7000C1843 /* TotalChart.swift */,
 			);
 			path = ChartsByDate;
+			sourceTree = "<group>";
+		};
+		447189CE2A87B93800BE66E5 /* EditOwners */ = {
+			isa = PBXGroup;
+			children = (
+				44010747294E50EF000714B6 /* EditOwners.swift */,
+				447189CF2A87B97200BE66E5 /* EditOwnersSection.swift */,
+				447189D12A87B9F500BE66E5 /* EditOwnersExt.swift */,
+				44210FCF294FAC06009764A3 /* ChangeBooksOwner.swift */,
+				447189D32A87BD8A00BE66E5 /* ChageOwnerExt.swift */,
+			);
+			path = EditOwners;
 			sourceTree = "<group>";
 		};
 		44718DCE297F209D0029DBC8 /* Helpers */ = {
@@ -1314,11 +1331,13 @@
 				44A01F352960FE8300E34FA8 /* CreateUserView.swift in Sources */,
 				44DDA8832A8411FF000104A1 /* HBarGraphExt.swift in Sources */,
 				442B6197295635BE0003537E /* RDGlobalStats.swift in Sources */,
+				447189D02A87B97200BE66E5 /* EditOwnersSection.swift in Sources */,
 				441A84E9299025C800D5F1EB /* ConnectivityManager.swift in Sources */,
 				44DDA89E2A845581000104A1 /* RDGlobalStatsExt.swift in Sources */,
 				440D13CB28038EA400C2C333 /* StatsList.swift in Sources */,
 				445BBA592A86FCC20004B850 /* AddBookPhysicsSection.swift in Sources */,
 				4487BF7627827727003C6115 /* AddEBook.swift in Sources */,
+				447189D22A87B9F500BE66E5 /* EditOwnersExt.swift in Sources */,
 				4407D4EC297087DC006FAC47 /* EditUserPasswordView.swift in Sources */,
 				44CA18FC2A85753C00E9786A /* ActualReadingDetailExt.swift in Sources */,
 				4487BF6D278212B6003C6115 /* EBookModel.swift in Sources */,
@@ -1339,6 +1358,7 @@
 				445BBA2A2A8652610004B850 /* AddRSExt.swift in Sources */,
 				445BBA552A86FC030004B850 /* AddBookAuthorSection.swift in Sources */,
 				44B1E50927D1258B00EF6D40 /* AddReading.swift in Sources */,
+				447189D42A87BD8A00BE66E5 /* ChageOwnerExt.swift in Sources */,
 				445BBA502A86F72C0004B850 /* OtherThicknessSectionExt.swift in Sources */,
 				44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */,
 				445BBA262A864F240004B850 /* NewBarGraph.swift in Sources */,
