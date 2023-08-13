@@ -10,7 +10,6 @@ import UIKit
 
 struct AddReading: View {
     @EnvironmentObject var model: NowReadingModel
-    @Environment(\.dismiss) var dismiss
     
     @State var bookTitle: String
     @State var firstPage: Int = 0
@@ -83,26 +82,7 @@ struct AddReading: View {
                 }
             }
         }
-		.modifier(AddReadingModifier(bookTitle: $bookTitle, inputImage: $inputImage, showingSearchResults: $showingSearchResults, showingSearchAlert: $showingSearchAlert, showingImageSelector: $showingImageSelector, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingDownloadPage: $showingDownloadPage, searchResultsTitle: searchResultsTitle, searchResultsMessage: searchResultsMessage, searchArray: searchArray))
-		.toolbar {
-			ToolbarItem(placement: .navigationBarLeading) {
-				Button("Cancelar", role: .cancel) {
-					dismiss()
-				}
-			}
-			ToolbarItem(placement: .navigationBarTrailing) {
-				Button("Guardar") {
-					let newBook = NowReading(bookTitle: bookTitle, firstPage: firstPage, lastPage: lastPage, synopsis: synopsis, formatt: formatt, isOnReading: false, isFinished: false, sessions: [])
-					model.waitingList.append(newBook)
-					if let inputImage = inputImage {
-						saveJpg(inputImage, title: bookTitle)
-					}
-					dismiss()
-				}
-				.disabled(isDisabled)
-			}
-		}
-        .onChange(of: inputImage) { _ in loadImage() }
+		.modifier(AddReadingModifier(bookTitle: $bookTitle, inputImage: $inputImage, showingSearchResults: $showingSearchResults, showingSearchAlert: $showingSearchAlert, showingImageSelector: $showingImageSelector, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingDownloadPage: $showingDownloadPage, searchResultsTitle: searchResultsTitle, searchResultsMessage: searchResultsMessage, searchArray: searchArray, isDisabled: isDisabled, loadImage: loadImage, createNewBook: createNewBook))
     }
 }
 

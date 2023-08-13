@@ -44,7 +44,14 @@ extension AddReading {
 		image = Image(uiImage: inputImage)
 	}
 	
+	func createNewBook() -> NowReading {
+		return NowReading(bookTitle: bookTitle, firstPage: firstPage, lastPage: lastPage, synopsis: synopsis, formatt: formatt, isOnReading: false, isFinished: false, sessions: [])
+	}
+	
 	struct AddReadingModifier: ViewModifier {
+		@EnvironmentObject var model: NowReadingModel
+		@Environment(\.dismiss) var dismiss
+		
 		@Binding var bookTitle: String
 		@Binding var inputImage: UIImage?
 		
@@ -58,6 +65,9 @@ extension AddReading {
 		let searchResultsTitle: String
 		let searchResultsMessage: String
 		let searchArray: [String]
+		let isDisabled: Bool
+		let loadImage: () -> Void
+		let createNewBook: () -> NowReading
 		
 		func body(content: Content) -> some View {
 			content
@@ -100,6 +110,25 @@ extension AddReading {
 				.sheet(isPresented: $showingDownloadPage) {
 					DownloadCoverView(selectedImage: $inputImage)
 				}
+				.toolbar {
+					ToolbarItem(placement: .navigationBarLeading) {
+						Button("Cancelar", role: .cancel) {
+							dismiss()
+						}
+					}
+					ToolbarItem(placement: .navigationBarTrailing) {
+						Button("Guardar") {
+							let newBook = createNewBook()
+							model.waitingList.append(newBook)
+							if let inputImage = inputImage {
+								saveJpg(inputImage, title: bookTitle)
+							}
+							dismiss()
+						}
+						.disabled(isDisabled)
+					}
+				}
+				.onChange(of: inputImage) { _ in loadImage() }
 		}
 	}
 }
