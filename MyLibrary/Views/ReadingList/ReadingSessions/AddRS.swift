@@ -108,26 +108,7 @@ struct AddRS: View {
                 }
             }
         }
-		.modifier(AddRSModifier(book: $book, hour: $hour, minute: $minute, existingTime: $existingTime, showingDailyAchivedAlert: $showingDailyAchivedAlert, showingWeeklyAchivedAlert: $showingWeeklyAchivedAlert, showingExistingTimeAlert: $showingExistingTimeAlert))
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancelar") {
-                    dismiss()
-                }
-            }
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Añadir") {
-                    addSession()
-                }
-                .disabled(isDisabled)
-            }
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Listo") {
-                    isFocused = false
-                }
-            }
-        }
+		.modifier(AddRSModifier(book: $book, hour: $hour, minute: $minute, existingTime: $existingTime, showingDailyAchivedAlert: $showingDailyAchivedAlert, showingWeeklyAchivedAlert: $showingWeeklyAchivedAlert, showingExistingTimeAlert: $showingExistingTimeAlert, isDisabled: isDisabled, addSession: addSession))
     }
 }
 

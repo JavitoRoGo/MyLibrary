@@ -73,6 +73,9 @@ extension AddRS {
 		@Binding var showingWeeklyAchivedAlert: Bool
 		@Binding var showingExistingTimeAlert: Bool
 		
+		let isDisabled: Bool
+		let addSession: () -> Void
+		
 		func body(content: Content) -> some View {
 			content
 				.navigationTitle(book.bookTitle)
@@ -103,6 +106,19 @@ extension AddRS {
 					existingTime = wcmodel.readingTime
 					if existingTime != 0 {
 						showingExistingTimeAlert = true
+					}
+				}
+				.toolbar {
+					ToolbarItem(placement: .cancellationAction) {
+						Button("Cancelar") {
+							dismiss()
+						}
+					}
+					ToolbarItem(placement: .confirmationAction) {
+						Button("Añadir") {
+							addSession()
+						}
+						.disabled(isDisabled)
 					}
 				}
 		}
