@@ -45,3 +45,7 @@ ConnectivityManager para conectar con iOS.
 ## v1.1.2
 
 * Se mejora y optimiza el código de descarga de portada mediante el uso de async/await con URLSession y TaskGroup.
+
+## v1.1.3
+
+* Cambios internos en la app. Se refactoriza todo el código para ordenarlo y evitar MVC (massive view controlers), mediante el uso de extensiones para métodos, propiedades calculadas y view modifiers.

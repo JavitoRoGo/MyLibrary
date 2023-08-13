@@ -16,9 +16,7 @@
 
 #
 
-# Refactoring
+# 
 
-## Refactorizar todo el código mediante el uso de extensiones.
+## 
 
-Uso de extensiones para las vistas en aquellos casos que merezca la pena, pasando a las extensiones propiedades calculadas, métodos y modificadores de vista.
-Solo en aquellos casos en los que aporte algo para reducir el archivo con la vista; si los modificadores o métodos son pocos o de pocas líneas, no pasarlos a una extensión.
