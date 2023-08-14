@@ -25,13 +25,7 @@ struct EditRDView: View {
                         .font(.title2)
                     Image(uiImage: getCoverImage(from: book.cover))
                         .resizable()
-                        .frame(width: 120, height: 150)
-                        .clipShape(RoundedRectangle(cornerRadius: 30))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 30)
-                                .stroke(.white, lineWidth: 4)
-                        }
-                        .shadow(color: .gray, radius: 7)
+                        .modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
                     RDStars(rating: $rating)
                         .font(.largeTitle)
                 }

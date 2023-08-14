@@ -9,25 +9,10 @@ import SwiftUI
 
 struct MonthlyTargetView: View {
     @EnvironmentObject var model: UserViewModel
-    @Environment(\.dismiss) var dismiss
     
     @Binding var monthlyTarget: MYTarget
-    @State private var books = 4
-    @State private var pages = 1000
-    
-    var isDisabled: Bool {
-        switch monthlyTarget {
-        case .pages:
-            if pages != 0 {
-                return false
-            }
-        case .books:
-            if books != 0 {
-                return false
-            }
-        }
-        return true
-    }
+    @State var books = 4
+    @State var pages = 1000
     
     var body: some View {
         NavigationStack {
@@ -62,25 +47,7 @@ struct MonthlyTargetView: View {
                     .disabled(monthlyTarget == .books)
                 }
             }
-            .navigationTitle("Objetivo mensual")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Guardar") {
-                        if monthlyTarget == .pages {
-                            model.monthlyPagesTarget = pages
-                        } else {
-                            model.monthlyBooksTarget = books
-                        }
-                        dismiss()
-                    }
-                    .disabled(isDisabled)
-                }
-            }
-            .task {
-                books = model.monthlyBooksTarget
-                pages = model.monthlyPagesTarget
-            }
+			.modifier(MonthlyTargetModifier(books: $books, pages: $pages, monthlyTarget: monthlyTarget, isDisabled: isDisabled))
         }
     }
 }

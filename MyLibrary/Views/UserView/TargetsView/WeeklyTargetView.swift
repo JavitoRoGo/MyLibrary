@@ -9,29 +9,11 @@ import SwiftUI
 
 struct WeeklyTargetView: View {
     @EnvironmentObject var model: UserViewModel
-    @Environment(\.dismiss) var dismiss
     
     @Binding var weeklyTarget: DWTarget
-    @State private var pages = 250
-    @State private var hour = 7
-    @State private var minute = 0
-    
-    var duration: Double {
-        Double(hour) + Double(minute)/60
-    }
-    var isDisabled: Bool {
-        switch weeklyTarget {
-        case .pages:
-            if pages != 0 {
-                return false
-            }
-        case .time:
-            if duration > 0 {
-                return false
-            }
-        }
-        return true
-    }
+    @State var pages = 250
+    @State var hour = 7
+    @State var minute = 0
     
     var body: some View {
         NavigationStack {
@@ -75,24 +57,7 @@ struct WeeklyTargetView: View {
                     .disabled(weeklyTarget == .pages)
                 }
             }
-            .navigationTitle("Objetivo semanal")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Guardar") {
-                        if weeklyTarget == .pages {
-                            model.weeklyPagesTarget = pages
-                        } else {
-                            model.weeklyTimeTarget = duration
-                        }
-                        dismiss()
-                    }
-                    .disabled(isDisabled)
-                }
-            }
-            .task {
-                pages = model.weeklyPagesTarget
-            }
+			.modifier(WeeklyTargetModifier(pages: $pages, weeklyTarget: weeklyTarget, duration: duration, isDisabled: isDisabled))
         }
     }
 }

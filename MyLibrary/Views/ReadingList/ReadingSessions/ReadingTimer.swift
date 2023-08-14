@@ -12,17 +12,17 @@ struct ReadingTimer: View {
     @Environment(\.scenePhase) var scenePhase
     
     @State var book: NowReading
-    @State private var hours: Int = 0
-    @State private var minutes: Int = 0
-    @State private var seconds: Int = 0
-    @State private var totalSeconds: Int = 0
+    @State var hours: Int = 0
+    @State var minutes: Int = 0
+    @State var seconds: Int = 0
+    @State var totalSeconds: Int = 0
     
-    @State private var timerIsRunning = false
-    @State private var timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
-    @State private var lastDateObserved: Date = Date()
+    @State var timerIsRunning = false
+    @State var timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    @State var lastDateObserved: Date = Date()
     
-    @State private var showingAddSession = false
-    @State private var showingAddQuote = false
+    @State var showingAddSession = false
+    @State var showingAddQuote = false
     
     var body: some View {
         VStack {
@@ -81,58 +81,7 @@ struct ReadingTimer: View {
             }
             Spacer()
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    timerIsRunning = false
-                    showingAddQuote = true
-                } label: {
-                    Image(systemName: "quote.bubble")
-                }
-            }
-        }
-        .sheet(isPresented: $showingAddSession) {
-            NavigationView {
-                AddRS(book: $book, startingPage: book.nextPage, hour: hours, minute: seconds >= 30 ? minutes + 1 : minutes)
-            }
-        }
-        .sheet(isPresented: $showingAddQuote) {
-            AddQuoteView(bookTitle: book.bookTitle)
-        }
-        .onAppear {
-            timerIsRunning = true
-            rsmodel.tempQuotesArray.removeAll()
-        }
-        .onReceive(timer) { _ in
-            if timerIsRunning {
-                if seconds == 59 {
-                    seconds = 0
-                    if minutes == 59 {
-                        minutes = 0
-                        hours += 1
-                    } else {
-                        minutes += 1
-                    }
-                } else {
-                    seconds += 1
-                }
-            }
-        }
-        .onChange(of: scenePhase) { phase in
-            if timerIsRunning {
-                if phase == .background {
-                    totalSeconds = hours * 3600 + minutes * 60 + seconds
-                    lastDateObserved = .now
-                }
-                if phase == .active {
-                    let accumulatedTime = Date().timeIntervalSince(lastDateObserved)
-                    totalSeconds += Int(accumulatedTime)
-                    hours = totalSeconds / 3600
-                    minutes = (totalSeconds / 60) % 60
-                    seconds = totalSeconds % 60
-                }
-            }
-        }
+		.modifier(ReadingTimerModifier(book: $book, hours: $hours, minutes: $minutes, seconds: $seconds, totalSeconds: $totalSeconds, timerIsRunning: $timerIsRunning, timer: $timer, lastDateObserved: $lastDateObserved, showingAddSession: $showingAddSession, showingAddQuote: $showingAddQuote))
     }
 }
 

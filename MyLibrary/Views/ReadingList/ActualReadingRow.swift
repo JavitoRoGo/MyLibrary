@@ -15,13 +15,8 @@ struct ActualReadingRow: View {
         HStack {
             image?
                 .resizable()
-                .frame(width: 35, height: 50)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(.white, lineWidth: 3)
-                }
-                .shadow(color: .gray, radius: 7)
+				.modifier(RDCoverModifier(width: 35, height: 50, cornerRadius: 5, lineWidth: 3))
+                
             VStack(alignment: .leading) {
                 Text(book.bookTitle)
                     .font(.title3)

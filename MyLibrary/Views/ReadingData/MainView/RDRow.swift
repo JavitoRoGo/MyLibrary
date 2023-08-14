@@ -23,13 +23,7 @@ struct RDRow: View {
             ZStack(alignment: .topTrailing) {
                 Image(uiImage: getCoverImage(from: rdata.cover))
                     .resizable()
-                    .frame(width: 60, height: 80)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.white, lineWidth: 4)
-                    }
-                    .shadow(color: .gray, radius: 7)
+                    .modifier(RDCoverModifier(width: 60, height: 80, cornerRadius: 10, lineWidth: 4))
                 VStack {
                     if isThereAComment {
                         Image(systemName: "quote.bubble")

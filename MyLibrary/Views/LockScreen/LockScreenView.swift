@@ -16,13 +16,13 @@ struct LockScreenView: View {
     @EnvironmentObject var nrmodel: NowReadingModel
     @EnvironmentObject var rsmodel: ReadingSessionModel
     
-    @State private var isUnlocked = false
-    @State private var showingAlert = false
-    @State private var showingCreateUser = false
-    @State private var showingLoginPage = false
+    @State var isUnlocked = false
+    @State var showingAlert = false
+    @State var showingCreateUser = false
+    @State var showingLoginPage = false
     
     @AppStorage("isFirstRun") var isFirstRun = true
-    @State private var showingFirstRunAlert = false
+    @State var showingFirstRunAlert = false
     
     var body: some View {
         if isUnlocked {
@@ -81,77 +81,9 @@ struct LockScreenView: View {
                     }
                     .padding(.horizontal, 35)
                 }
-                .navigationTitle("Login")
-                .onAppear {
-                    if isFirstRun {
-                        keychain.delete("storedPassword")
-                        model.storedPassword = ""
-                        showingFirstRunAlert = true
-                    }
-                }
-                .alert("¡Bienvenido a esta fantástica app!\n😊😊😊", isPresented: $showingFirstRunAlert) {
-                    Button("Continuar") {
-                        isFirstRun = false
-                        showingCreateUser = true
-                    }
-                } message: {
-                    Text("\nCrea tu usuario y contraseña para comenzar\n©JRG")
-                }
-                .alert("Identificación no válida.", isPresented: $showingAlert) {
-                    Button("OK") {
-                        showingLoginPage = true
-                    }
-                } message: {
-                    Text("Debes identificarte correctamente para acceder al contenido de la app.")
-                }
-                .sheet(isPresented: $showingLoginPage) {
-                    LoginNoBiomView(isUnlocked: $isUnlocked)
-                }
-                .sheet(isPresented: $showingCreateUser) {
-                    CreateUserView(isUnlocked: $isUnlocked)
-                }
-                .onAppear(perform: saveDataToUser)
+                .modifier(LockScreenViewModifier(showingFirstRunAlert: $showingFirstRunAlert, showingCreateUser: $showingCreateUser, showingLoginPage: $showingLoginPage, showingAlert: $showingAlert, isUnlocked: $isUnlocked, isFirstRun: $isFirstRun, saveDataToUser: saveDataToUser))
             }
         }
-    }
-    
-    func authenticate() {
-        let context = LAContext()
-        var error: NSError?
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reasonForTouchID = "Usa TouchID para identificarte y acceder a la app."
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reasonForTouchID) { success, error in
-                if success {
-                    // Matching with biometrics
-                    isUnlocked = true
-                } else {
-                    // No matching with biometrics
-                    showingAlert = true
-                }
-            }
-        } else {
-            // no autorización para biometrics
-            model.isBiometricsAllowed = false
-        }
-    }
-    
-    func getBioMetricStatus() -> Bool {
-        let scanner = LAContext()
-        if scanner.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: .none) {
-            return true
-        }
-        return false
-    }
-    
-    func saveDataToUser() {
-        model.user.books = bmodel.books
-        model.user.ebooks = emodel.ebooks
-        model.user.readingDatas = rdmodel.readingDatas
-        model.user.nowReading = nrmodel.readingList
-        model.user.nowWaiting = nrmodel.waitingList
-        model.user.sessions = rsmodel.readingSessionList
-        model.user.myPlaces = model.myPlaces
     }
 }
 

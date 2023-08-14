@@ -12,14 +12,14 @@ struct UserMainView: View {
     @EnvironmentObject var model: UserViewModel
     @Binding var isUnlocked: Bool
     
-    @State private var showingClosingAlert = false
-    @State private var showingEditUser = false
+    @State var showingClosingAlert = false
+    @State var showingEditUser = false
     
-    @State private var showingSelectorPicker = false
-    @State private var showingImagePicker = false
-    @State private var showingCameraPicker = false
-    @State private var image: Image?
-    @State private var inputImage: UIImage?
+    @State var showingSelectorPicker = false
+    @State var showingImagePicker = false
+    @State var showingCameraPicker = false
+    @State var image: Image?
+    @State var inputImage: UIImage?
     
     var body: some View {
         NavigationStack {
@@ -113,81 +113,7 @@ struct UserMainView: View {
                     }
                 }
             }
-            .navigationTitle("Hola, \(model.user.nickname).")
-            .sheet(isPresented: $showingEditUser) {
-                EditUserPasswordView()
-            }
-            .alert("¿Seguro que quieres cerrar la sesión?", isPresented: $showingClosingAlert) {
-                Button("Cancelar", role: .cancel) { }
-                Button("Cerrar", role: .destructive) {
-                    isUnlocked = false
-                }
-            }
-            .confirmationDialog("Elige una opción para la imagen:", isPresented: $showingSelectorPicker) {
-                Button("Canclear", role: .cancel) { }
-                Button("Seleccionar foto") {
-                    showingImagePicker = true
-                }
-                Button("Hacer foto") {
-                    showingCameraPicker = true
-                }
-            }
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $inputImage)
-            }
-            .sheet(isPresented: $showingCameraPicker) {
-                CameraPicker(image: $inputImage)
-            }
-            .onChange(of: inputImage) { newValue in
-                loadImage()
-                if let newValue {
-                    saveJpg(newValue, title: model.user.nickname)
-                }
-            }
-            .onAppear {
-                let name = imageCoverName(from: model.user.nickname)
-                image = getUserImage(from: name)
-            }
-        }
-    }
-    
-    func authenticate() {
-        let context = LAContext()
-        var error: NSError?
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reasonForTouchID = "Usa TouchID para identificarte y acceder a la app."
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reasonForTouchID) { success, error in
-                if success {
-                    // Matching with biometrics
-                    model.isBiometricsAllowed = true
-                } else {
-                    model.isBiometricsAllowed = false
-                }
-            }
-        } else {
-            // no autorización para biometrics
-            model.isBiometricsAllowed = false
-        }
-    }
-    
-    func getBioMetricStatus() -> Bool {
-        let scanner = LAContext()
-        if scanner.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: .none) {
-            return true
-        }
-        return false
-    }
-    
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
-    }
-    
-    func removeUserImage() {
-        let name = imageCoverName(from: model.user.nickname)
-        if let path = getDocumentDirectory()?.appendingPathComponent("\(name).jpg") {
-            try? FileManager.default.removeItem(at: path)
+			.modifier(UserMainViewModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, image: $image, inputImage: $inputImage, loadImage: loadImage))
         }
     }
 }

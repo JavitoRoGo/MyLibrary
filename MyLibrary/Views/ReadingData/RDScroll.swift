@@ -21,13 +21,7 @@ struct RDScroll: View {
         VStack {
             Image(uiImage: getCoverImage(from: rdata.cover))
                 .resizable()
-                .frame(width: 120, height: 150)
-                .clipShape(RoundedRectangle(cornerRadius: 30))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 30)
-                        .stroke(.white, lineWidth: 4)
-                }
-                .shadow(color: .gray, radius: 7)
+                .modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
                 .rotation3DEffect(.degrees(spinAmount), axis: (x: 0, y: 1, z: 0))
             
             ScrollViewReader { value in

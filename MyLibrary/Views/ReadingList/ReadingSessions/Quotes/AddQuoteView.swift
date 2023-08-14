@@ -12,11 +12,11 @@ struct AddQuoteView: View {
     @Environment(\.dismiss) var dismiss
     
     let bookTitle: String
-    @State private var date: Date = .now
-    @State private var page = 0
-    @State private var text = ""
+    @State var date: Date = .now
+    @State var page = 0
+    @State var text = ""
     
-    @State private var showingSavingAlert = false
+    @State var showingSavingAlert = false
     
     var body: some View {
         NavigationStack {
@@ -39,31 +39,7 @@ struct AddQuoteView: View {
                         .frame(height: 200)
                 }
             }
-            .navigationTitle("Crear cita")
-            .navigationBarTitleDisplayMode(.inline)
-            .autocorrectionDisabled(true)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancelar") {
-                        dismiss()
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Crear") {
-                        let newQuote = Quote(date: date, bookTitle: bookTitle, page: page, text: text)
-                        model.tempQuotesArray.insert(newQuote, at: 0)
-                        showingSavingAlert = true
-                    }
-                    .disabled(page == 0 || text.isEmpty)
-                }
-            }
-            .alert("La cita se ha creado correctamente.", isPresented: $showingSavingAlert) {
-                Button("OK") {
-                    dismiss()
-                }
-            } message: {
-                Text("Podrás ver todas las citas creadas al finalizar la sesión actual de lectura.")
-            }
+			.modifier(AddQuoteModifier(bookTitle: bookTitle, date: date, page: page, text: text))
         }
     }
 }

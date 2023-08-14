@@ -12,34 +12,26 @@ struct ActualReadingEdit: View {
     @EnvironmentObject var model: NowReadingModel
     @EnvironmentObject var bmodel: BooksModel
     @EnvironmentObject var manager: LocationManager
-    @Environment(\.dismiss) var dismiss
     
     @Binding var book: NowReading
     
-    @State private var bookTitle: String = ""
-    @State private var firstPage: Int = 0
-    @State private var lastPage: Int = 0
-    @State private var synopsis: String = ""
-    @State private var image: Image?
-    @State private var inputImage: UIImage?
-    @State private var comment: String = ""
-    @State private var location: RDLocation?
-    @State private var isbn: String = ""
+    @State var bookTitle: String = ""
+    @State var firstPage: Int = 0
+    @State var lastPage: Int = 0
+    @State var synopsis: String = ""
+    @State var image: Image?
+    @State var inputImage: UIImage?
+    @State var comment: String = ""
+    @State var location: RDLocation?
+    @State var isbn: String = ""
     
-    @State private var showingImageSelector = false
-    @State private var showingImagePicker = false
-    @State private var showingCameraPicker = false
-    @State private var showingDownloadedImage = false
-    @State private var showingMapSelection = false
-    var coverButtonTitle: String {
-        let uiImage = UIImage(systemName: "questionmark")!
-        if inputImage == uiImage {
-            return "Añadir portada"
-        }
-        return "Cambiar portada"
-    }
+    @State var showingImageSelector = false
+    @State var showingImagePicker = false
+    @State var showingCameraPicker = false
+    @State var showingDownloadedImage = false
+    @State var showingMapSelection = false
     
-    var body: some View {
+	var body: some View {
         Form {
             Section {
                 TextField(book.bookTitle, text: $bookTitle)
@@ -122,83 +114,7 @@ struct ActualReadingEdit: View {
                     .frame(width: 350, height: 150)
             }
         }
-        .navigationTitle("Editar...")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button("Cancelar", role: .cancel) {
-                    dismiss()
-                }
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Modificar") {
-                    let editedBook = NowReading(bookTitle: bookTitle, firstPage: firstPage, lastPage: lastPage, synopsis: synopsis, formatt: book.formatt, isOnReading: book.isOnReading, isFinished: book.isFinished, sessions: book.sessions, comment: comment.isEmpty ? nil : comment, location: location)
-                    if let index = model.readingList.firstIndex(of: book) {
-                        model.readingList[index] = editedBook
-                        book = editedBook
-                    }
-                    if let index = model.waitingList.firstIndex(of: book) {
-                        model.waitingList[index] = editedBook
-                        book = editedBook
-                    }
-                    if let inputImage = inputImage {
-                        saveJpg(inputImage, title: bookTitle)
-                    }
-                    dismiss()
-                }
-            }
-        }
-        .confirmationDialog("Selecciona una opción para la portada:", isPresented: $showingImageSelector, titleVisibility: .visible) {
-            Button("Canclear", role: .cancel) { }
-            Button("Seleccionar foto") {
-                showingImagePicker = true
-            }
-            Button("Hacer foto") {
-                showingCameraPicker = true
-            }
-            Button("Descargar imagen") {
-                if let book = bmodel.books.filter({ $0.bookTitle == bookTitle }).first {
-                    let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
-                    let isbnString = isbnArray.map { String($0) }.reduce("",+)
-                    isbn = isbnString
-                }
-                
-                showingDownloadedImage = true
-            }
-            .disabled(bookTitle.isEmpty || book.formatt == .kindle)
-        }
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(image: $inputImage)
-        }
-        .sheet(isPresented: $showingCameraPicker) {
-            CameraPicker(image: $inputImage)
-        }
-        .sheet(isPresented: $showingMapSelection) {
-            EditRDMapView(location: $location)
-        }
-        .onAppear {
-            loadData()
-        }
-        .onChange(of: inputImage) { _ in loadImage() }
-        .disableAutocorrection(true)
-    }
-    
-    func loadData() {
-        bookTitle = book.bookTitle
-        firstPage = book.firstPage
-        lastPage = book.lastPage
-        synopsis = book.synopsis
-        inputImage = getCoverImage(from: imageCoverName(from: book.bookTitle))
-        image = Image(uiImage: inputImage!)
-        if let comment = book.comment {
-            self.comment = comment
-        }
-        location = book.location
-    }
-        
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
+		.modifier(AREditModifier(book: $book, showingImageSelector: $showingImageSelector, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingMapSelection: $showingMapSelection, showingDownloadedImage: $showingDownloadedImage, inputImage: $inputImage, location: $location, isbn: $isbn, bookTitle: bookTitle, loadData: loadData, loadImage: loadImage, createEditedBook: createEditedBook))
     }
 }
 

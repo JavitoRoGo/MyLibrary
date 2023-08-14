@@ -29,7 +29,7 @@ struct ContentView: View {
                     Label("Registros", systemImage: "textformat.abc")
                 }
             
-            SelectBookView() // ver struct más abajo
+            SelectBookView()
                 .tabItem {
                     Label("Libros/eBooks", systemImage: "book")
                 }
@@ -46,33 +46,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(isUnlocked: .constant(true))
             .environmentObject(UserViewModel())
-    }
-}
-
-struct SelectBookView: View {
-    var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    NavigationLink(destination: MainBookView()) {
-                        HStack {
-                            Image(systemName: "books.vertical")
-                                .foregroundColor(.green)
-                            Text("Libros en papel")
-                        }
-                    }
-                }
-                Section {
-                    NavigationLink(destination: EBookMainView()) {
-                        HStack {
-                            Image(systemName: "book.circle")
-                                .foregroundColor(.pink)
-                            Text("eBooks")
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Libros / eBooks")
-        }
     }
 }
