@@ -16870,5 +16870,401 @@
     "rating" : 4,
     "sessions" : 7,
     "finishDate" : 710074800
+  },
+  {
+    "minPerDay" : "0h 28min",
+    "location" : {
+      "id" : "75BA8D9A-F301-4A1C-A973-3FB2093CAA6E",
+      "longitude" : -17.915816172041598,
+      "latitude" : 28.658157827753925
+    },
+    "pages" : 636,
+    "formatt" : "Papel",
+    "duration" : "21h 45min",
+    "synopsis" : "Nada es lo que parece en las estancias del Emperador, y el destino de la galaxia descansa sobre los hombros de una única mujer.\nEl Emperador ha reclutado a Harrowhark Nonagesimus, la última nigromante de la Novena Casa, para combatir en una guerra perdida de antemano. Harrow tendrá que aliarse con una rival detestable y perfeccionar sus habilidades para convertirse en un ángel de la no-muerte, pero su salud empieza a flaquear, su espada le da náuseas e incluso su mente amenaza con traicionarla.\nPresa en la gótica penumbra del Mitreo del Emperador con tres profesores nada amigables y perseguida por el fantasma demente de un planeta masacrado, Harrow deberá hacer frente a dos preguntas incómodas: ¿hay alguien que intenta matarla? Y, en caso de conseguirlo, ¿será el universo un lugar mejor?",
+    "over50" : 1,
+    "percentOver50" : 2.1739130434782608,
+    "pagPerDay" : 13,
+    "cover" : "harrowlanovena",
+    "minPerPag" : "2min 8s",
+    "id" : 155,
+    "readingSessions" : [
+      {
+        "duration" : "0h 44min",
+        "id" : "0F468CF4-8360-493C-BDF3-04542B6B67BC",
+        "startingPage" : 619,
+        "endingPage" : 642,
+        "minPerPag" : "1min 50s",
+        "date" : 714049200
+      },
+      {
+        "duration" : "0h 51min",
+        "id" : "C395602D-635C-4882-B84F-B903C6111BB1",
+        "startingPage" : 591,
+        "endingPage" : 618,
+        "minPerPag" : "1min 49s",
+        "date" : 713962800
+      },
+      {
+        "duration" : "2h 10min",
+        "id" : "122975F9-B091-43B9-9BBC-81E203F722B2",
+        "startingPage" : 524,
+        "endingPage" : 590,
+        "minPerPag" : "1min 56s",
+        "date" : 713876400
+      },
+      {
+        "duration" : "0h 24min",
+        "id" : "1B862619-92EC-40E1-A7DB-D920A7CBA57D",
+        "startingPage" : 512,
+        "endingPage" : 523,
+        "minPerPag" : "2min 0s",
+        "date" : 713790000
+      },
+      {
+        "duration" : "0h 41min",
+        "id" : "21DAEF45-9E71-4404-9D9C-2F13F1357913",
+        "startingPage" : 491,
+        "endingPage" : 511,
+        "minPerPag" : "1min 57s",
+        "date" : 713703600
+      },
+      {
+        "duration" : "0h 39min",
+        "id" : "0C480A47-D505-4D9E-A801-35313582C7FA",
+        "startingPage" : 470,
+        "endingPage" : 490,
+        "minPerPag" : "1min 51s",
+        "date" : 713617200
+      },
+      {
+        "duration" : "1h 10min",
+        "id" : "B869DE34-18CD-4BC7-A062-41CD1F94C50B",
+        "startingPage" : 445,
+        "endingPage" : 469,
+        "minPerPag" : "2min 48s",
+        "date" : 713530800
+      },
+      {
+        "duration" : "0h 16min",
+        "id" : "6739FF0E-38CC-40F5-9AB7-7CFB21CFFBAF",
+        "startingPage" : 437,
+        "endingPage" : 444,
+        "minPerPag" : "2min 0s",
+        "date" : 713444400
+      },
+      {
+        "duration" : "0h 34min",
+        "id" : "EA8C2AAC-7759-4215-8CD3-3936873FA7FB",
+        "startingPage" : 419,
+        "endingPage" : 436,
+        "minPerPag" : "1min 53s",
+        "date" : 713358000
+      },
+      {
+        "duration" : "0h 31min",
+        "id" : "ABCA1FED-CE12-4774-9951-64C8A63E9963",
+        "startingPage" : 403,
+        "endingPage" : 418,
+        "minPerPag" : "1min 56s",
+        "date" : 713271600
+      },
+      {
+        "duration" : "0h 34min",
+        "id" : "F44C5288-C70F-4104-9306-71CC5441AA70",
+        "startingPage" : 385,
+        "endingPage" : 402,
+        "minPerPag" : "1min 53s",
+        "date" : 713185200
+      },
+      {
+        "duration" : "0h 28min",
+        "id" : "F32FB479-9DF7-4E6A-A185-CBD1358322D3",
+        "startingPage" : 371,
+        "endingPage" : 384,
+        "minPerPag" : "2min 0s",
+        "date" : 713098800
+      },
+      {
+        "duration" : "0h 34min",
+        "id" : "6AFE5F04-5799-4202-AC18-8B36BA71FFC9",
+        "startingPage" : 353,
+        "endingPage" : 370,
+        "minPerPag" : "1min 53s",
+        "date" : 713012400
+      },
+      {
+        "duration" : "0h 25min",
+        "id" : "55830B1D-411D-4BD0-AC01-077AFA50160C",
+        "startingPage" : 338,
+        "endingPage" : 352,
+        "minPerPag" : "1min 40s",
+        "date" : 712926000
+      },
+      {
+        "duration" : "0h 23min",
+        "id" : "CB4D6C84-114C-4E8B-8204-CDB26FDFC6A8",
+        "startingPage" : 327,
+        "endingPage" : 337,
+        "minPerPag" : "2min 5s",
+        "date" : 712839600
+      },
+      {
+        "duration" : "0h 25min",
+        "id" : "4C8ECBCA-1E3A-49D5-9CEF-C95AE8368777",
+        "startingPage" : 314,
+        "endingPage" : 326,
+        "minPerPag" : "1min 55s",
+        "date" : 712753200
+      },
+      {
+        "duration" : "0h 7min",
+        "id" : "BEB93724-FF4E-47D2-A24A-050DC22D19CD",
+        "startingPage" : 311,
+        "endingPage" : 313,
+        "minPerPag" : "2min 20s",
+        "date" : 712666800
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "55C73491-DE76-48D7-9B0F-9CF4C79915DC",
+        "startingPage" : 310,
+        "endingPage" : 310,
+        "minPerPag" : "2min 0s",
+        "date" : 712580400
+      },
+      {
+        "duration" : "0h 23min",
+        "id" : "B84F0E5A-2201-4A6D-ABC3-FEC3245D5D42",
+        "startingPage" : 299,
+        "endingPage" : 309,
+        "minPerPag" : "2min 5s",
+        "date" : 712494000
+      },
+      {
+        "duration" : "0h 15min",
+        "id" : "39892584-E202-4331-A971-AD3294D505CB",
+        "startingPage" : 291,
+        "endingPage" : 298,
+        "minPerPag" : "1min 53s",
+        "date" : 712407600
+      },
+      {
+        "duration" : "0h 24min",
+        "id" : "1700D3A2-DADF-4221-8A29-36C9AE1DABE2",
+        "startingPage" : 281,
+        "endingPage" : 290,
+        "minPerPag" : "2min 24s",
+        "date" : 712321200
+      },
+      {
+        "duration" : "0h 17min",
+        "id" : "9C4284A1-E95C-4B55-B5CB-20847EAB5A5E",
+        "startingPage" : 272,
+        "endingPage" : 280,
+        "minPerPag" : "1min 53s",
+        "date" : 712234800
+      },
+      {
+        "duration" : "0h 38min",
+        "id" : "C747A9E4-BB7F-4A87-9C4A-49545975BD4C",
+        "startingPage" : 259,
+        "endingPage" : 271,
+        "minPerPag" : "2min 55s",
+        "date" : 712148400
+      },
+      {
+        "duration" : "0h 18min",
+        "id" : "D937112F-C0D3-4B36-8135-D3B7456834CA",
+        "startingPage" : 249,
+        "endingPage" : 258,
+        "minPerPag" : "1min 48s",
+        "date" : 712062000
+      },
+      {
+        "duration" : "0h 9min",
+        "id" : "D17208FD-7E0E-44F9-895B-4F12C595C7E2",
+        "startingPage" : 245,
+        "endingPage" : 248,
+        "minPerPag" : "2min 15s",
+        "date" : 711975600
+      },
+      {
+        "duration" : "0h 20min",
+        "id" : "86AC7CB2-1BAA-4D35-95BC-EED79BB39BFA",
+        "startingPage" : 237,
+        "endingPage" : 244,
+        "minPerPag" : "2min 30s",
+        "date" : 711889200
+      },
+      {
+        "duration" : "0h 7min",
+        "id" : "E157D734-FF5B-4D68-AA0F-C990E3207942",
+        "startingPage" : 234,
+        "endingPage" : 236,
+        "minPerPag" : "2min 20s",
+        "date" : 711802800
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "37452AB7-5AE9-46F7-AF2F-4DEA90C5E44F",
+        "startingPage" : 233,
+        "endingPage" : 233,
+        "minPerPag" : "2min 0s",
+        "date" : 711716400
+      },
+      {
+        "duration" : "0h 28min",
+        "id" : "2C85EBCD-AF28-43C1-91B7-2423389ED0D3",
+        "startingPage" : 219,
+        "endingPage" : 232,
+        "minPerPag" : "2min 0s",
+        "date" : 711630000
+      },
+      {
+        "duration" : "0h 9min",
+        "id" : "CF617AAC-F1C3-42B7-AEFF-55D7D76AD612",
+        "startingPage" : 213,
+        "endingPage" : 218,
+        "minPerPag" : "1min 30s",
+        "date" : 711543600
+      },
+      {
+        "duration" : "0h 20min",
+        "id" : "C9169498-BF13-46A9-AC37-79EA7FD42F5F",
+        "startingPage" : 205,
+        "endingPage" : 212,
+        "minPerPag" : "2min 30s",
+        "date" : 711457200
+      },
+      {
+        "duration" : "0h 7min",
+        "id" : "FA14733B-B864-4AF1-8FCB-30C3CDE7BB2E",
+        "startingPage" : 202,
+        "endingPage" : 204,
+        "minPerPag" : "2min 20s",
+        "date" : 711370800
+      },
+      {
+        "duration" : "0h 14min",
+        "id" : "94E0DA86-1C5F-4669-B621-FD13F89A246C",
+        "startingPage" : 198,
+        "endingPage" : 201,
+        "minPerPag" : "3min 30s",
+        "date" : 711284400
+      },
+      {
+        "duration" : "0h 9min",
+        "id" : "9F0CE796-87C6-4B1A-A446-0149786DA6E7",
+        "startingPage" : 194,
+        "endingPage" : 197,
+        "minPerPag" : "2min 15s",
+        "date" : 711198000
+      },
+      {
+        "duration" : "0h 9min",
+        "id" : "B6F74288-F34D-4101-A754-79D0BD071450",
+        "startingPage" : 191,
+        "endingPage" : 193,
+        "minPerPag" : "3min 0s",
+        "date" : 711111600
+      },
+      {
+        "duration" : "0h 5min",
+        "id" : "51B62EEE-D871-4C5D-A736-99C8482F7841",
+        "startingPage" : 189,
+        "endingPage" : 190,
+        "minPerPag" : "2min 30s",
+        "date" : 711025200
+      },
+      {
+        "duration" : "0h 34min",
+        "id" : "1C1275BE-E108-4C6D-B7FD-7D2B4D375DD8",
+        "startingPage" : 171,
+        "endingPage" : 188,
+        "minPerPag" : "1min 53s",
+        "date" : 710938800
+      },
+      {
+        "duration" : "0h 45min",
+        "id" : "84C1C352-7749-421C-8FB0-D9E3BA5987BC",
+        "startingPage" : 149,
+        "endingPage" : 170,
+        "minPerPag" : "2min 3s",
+        "date" : 710852400
+      },
+      {
+        "duration" : "0h 30min",
+        "id" : "42E2E988-2744-498A-B7D7-42A4C3FF6E88",
+        "startingPage" : 135,
+        "endingPage" : 148,
+        "minPerPag" : "2min 9s",
+        "date" : 710766000
+      },
+      {
+        "duration" : "0h 40min",
+        "id" : "49C1E1DC-1B7F-4E37-9BB1-7554E7E697B9",
+        "startingPage" : 117,
+        "endingPage" : 134,
+        "minPerPag" : "2min 13s",
+        "date" : 710679600
+      },
+      {
+        "duration" : "0h 34min",
+        "id" : "6FF50465-C926-4E62-AB0C-8E2E6B42859A",
+        "startingPage" : 100,
+        "endingPage" : 116,
+        "minPerPag" : "2min 0s",
+        "date" : 710593200
+      },
+      {
+        "duration" : "0h 2min",
+        "id" : "2DCDFFD7-E47E-4BB6-80CE-0B7D1DB8EC09",
+        "startingPage" : 99,
+        "endingPage" : 99,
+        "minPerPag" : "2min 0s",
+        "date" : 710506800
+      },
+      {
+        "duration" : "0h 24min",
+        "id" : "8DDC929E-1FFA-49B5-93FE-6E274681AFA6",
+        "startingPage" : 90,
+        "endingPage" : 98,
+        "minPerPag" : "2min 40s",
+        "date" : 710420400
+      },
+      {
+        "duration" : "0h 59min",
+        "id" : "A965382C-805C-4D02-B714-8BED3A8D72A2",
+        "startingPage" : 63,
+        "endingPage" : 89,
+        "minPerPag" : "2min 11s",
+        "date" : 710334000
+      },
+      {
+        "duration" : "0h 44min",
+        "id" : "B57F6C85-5096-4B22-A7BE-52E2D39E4BD4",
+        "startingPage" : 42,
+        "endingPage" : 62,
+        "minPerPag" : "2min 6s",
+        "date" : 710247600
+      },
+      {
+        "duration" : "1h 1min",
+        "id" : "E204CADA-56F0-4FD3-8ABA-A1133A1DD964",
+        "startingPage" : 7,
+        "endingPage" : 41,
+        "minPerPag" : "1min 45s",
+        "date" : 710161200
+      }
+    ],
+    "yearId" : 14,
+    "finishedInYear" : 2023,
+    "startDate" : 710161200,
+    "bookTitle" : "Harrow la Novena",
+    "comment" : "Pesado, solo al final mejoró algo y se puso interesante. Pero me costó terminarlo.",
+    "rating" : 3,
+    "sessions" : 46,
+    "finishDate" : 714049200
   }
 ]

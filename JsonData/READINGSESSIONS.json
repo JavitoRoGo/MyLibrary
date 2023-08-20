@@ -1,5 +1,61 @@
 [
   {
+    "duration" : "1h 34min",
+    "id" : "ECE8BD5E-A972-412C-84FA-660AC8028693",
+    "startingPage" : 1,
+    "endingPage" : 52,
+    "minPerPag" : "1min 48s",
+    "date" : 714135600
+  },
+  {
+    "duration" : "0h 44min",
+    "id" : "0F468CF4-8360-493C-BDF3-04542B6B67BC",
+    "startingPage" : 619,
+    "endingPage" : 642,
+    "minPerPag" : "1min 50s",
+    "date" : 714049200
+  },
+  {
+    "duration" : "0h 51min",
+    "id" : "C395602D-635C-4882-B84F-B903C6111BB1",
+    "startingPage" : 591,
+    "endingPage" : 618,
+    "minPerPag" : "1min 49s",
+    "date" : 713962800
+  },
+  {
+    "duration" : "2h 10min",
+    "id" : "122975F9-B091-43B9-9BBC-81E203F722B2",
+    "startingPage" : 524,
+    "endingPage" : 590,
+    "minPerPag" : "1min 56s",
+    "date" : 713876400
+  },
+  {
+    "duration" : "0h 24min",
+    "id" : "1B862619-92EC-40E1-A7DB-D920A7CBA57D",
+    "startingPage" : 512,
+    "endingPage" : 523,
+    "minPerPag" : "2min 0s",
+    "date" : 713790000
+  },
+  {
+    "duration" : "0h 41min",
+    "id" : "21DAEF45-9E71-4404-9D9C-2F13F1357913",
+    "startingPage" : 491,
+    "endingPage" : 511,
+    "minPerPag" : "1min 57s",
+    "date" : 713703600
+  },
+  {
+    "duration" : "0h 39min",
+    "id" : "0C480A47-D505-4D9E-A801-35313582C7FA",
+    "startingPage" : 470,
+    "endingPage" : 490,
+    "minPerPag" : "1min 51s",
+    "date" : 713617200
+  },
+  {
     "duration" : "1h 10min",
     "id" : "B869DE34-18CD-4BC7-A062-41CD1F94C50B",
     "startingPage" : 445,
