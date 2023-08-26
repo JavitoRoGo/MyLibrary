@@ -214,7 +214,7 @@ extension BooksModel {
     
     // Datos para la gráfica estadística
     func datas(tag: Int) -> [Double] {
-        let myPlaces = UserViewModel().myPlaces
+		let myPlaces = UserViewModel().user.myPlaces
         var array: [Double] = []
         switch tag {
         case 1:

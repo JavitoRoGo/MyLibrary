@@ -37,7 +37,7 @@ extension AddBook {
 					Text("Ubicación:")
 						.font(.subheadline)
 					Picker("Ubicación", selection: $newPlace) {
-						ForEach(model.myPlaces, id: \.self) {
+						ForEach(model.user.myPlaces, id: \.self) {
 							Text($0)
 						}
 					}

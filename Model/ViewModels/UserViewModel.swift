@@ -25,12 +25,6 @@ final class UserViewModel: ObservableObject {
 			}
 		}
 	}
-	@Published var myPlaces: [String] = loadMyPlaces() {
-		didSet {
-			Task { await saveToJson(myPlacesJson, myPlaces) }
-			user.myPlaces = myPlaces
-		}
-	}
 	@Published var password = ""
 	@Published var validations: [Validation] = []
 	@Published var isValid: Bool = false

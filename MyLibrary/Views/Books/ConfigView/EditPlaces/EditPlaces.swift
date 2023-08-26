@@ -29,11 +29,11 @@ struct EditPlaces: View {
                     Section {
                         ForEach(bmodel.getSuggestedPlacesFromData(), id:\.self) { place in
                             Button {
-                                model.myPlaces.append(place)
+								model.user.myPlaces.append(place)
                             } label: {
                                 Text(place)
                             }
-                            .disabled(model.myPlaces.contains(place))
+							.disabled(model.user.myPlaces.contains(place))
                         }
                     } header: {
                         Text("Sugerencias")
@@ -58,7 +58,7 @@ struct EditPlaces: View {
                         }
                         .buttonStyle(.bordered)
                         Button("Añadir") {
-                            model.myPlaces.insert(newPlace, at: 0)
+							model.user.myPlaces.insert(newPlace, at: 0)
                             newPlace = ""
                             showingAddPlace = false
                         }

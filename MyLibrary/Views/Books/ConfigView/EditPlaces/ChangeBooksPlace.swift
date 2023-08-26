@@ -24,14 +24,14 @@ struct ChangeBooksPlace: View {
                     .multilineTextAlignment(.center)
                 VStack {
                     Picker("Origen", selection: $oldPlace) {
-                        ForEach(model.myPlaces, id: \.self) {
+						ForEach(model.user.myPlaces, id: \.self) {
                             Text($0)
                         }
                     }
                     Image(systemName: "arrow.down")
                         .font(.system(size: 50))
                     Picker("Destino", selection: $newPlace) {
-                        ForEach(model.myPlaces, id: \.self) {
+						ForEach(model.user.myPlaces, id: \.self) {
                             Text($0)
                         }
                     }

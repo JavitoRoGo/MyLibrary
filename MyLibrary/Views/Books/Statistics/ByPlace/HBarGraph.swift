@@ -37,7 +37,7 @@ struct HBarGraph: View {
                 
                 HStack(spacing: 0) {
                     VStack {
-                        ForEach(model.myPlaces, id: \.self) { place in
+						ForEach(model.user.myPlaces, id: \.self) { place in
                             Text(place)
                                 .font(.caption)
                                 .frame(width: 25, alignment: .leading)

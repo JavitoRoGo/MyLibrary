@@ -18,14 +18,7 @@ extension ActualReading {
 	
 	func shareButton() {
 		let userUrl = getURLToShare(from: userJson)
-		let booksUrl = getURLToShare(from: booksJson)
-		let ebooksUrl = getURLToShare(from: ebooksJson)
-		let readingDataUrl = getURLToShare(from: readingDataJson)
-		let nowReadingUrl = getURLToShare(from: nowReadingJson)
-		let nowWaitingUrl = getURLToShare(from: nowWaitingJson)
-		let readingSessionsUrl = getURLToShare(from: readingSessionsJson)
-		let myPlacesUrl = getURLToShare(from: myPlacesJson)
-		let urls = [userUrl, booksUrl, ebooksUrl, readingDataUrl, nowReadingUrl, nowWaitingUrl, readingSessionsUrl, myPlacesUrl]
+		let urls = [userUrl]
 		
 		let ac = UIActivityViewController(activityItems: urls, applicationActivities: nil)
 		let scenes = UIApplication.shared.connectedScenes

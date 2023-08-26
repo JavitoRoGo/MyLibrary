@@ -40,7 +40,7 @@ extension BookStats {
 							.padding()
 						}
 						Picker("Ubicación", selection: $place) {
-							ForEach(model.myPlaces, id: \.self) {
+							ForEach(model.user.myPlaces, id: \.self) {
 								Text($0)
 							}
 						}
