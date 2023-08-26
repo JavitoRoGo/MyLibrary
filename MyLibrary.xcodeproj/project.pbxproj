@@ -64,6 +64,8 @@
 		44398EA82979CC49009E1D6A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E32D572959191700E06425 /* Entry.swift */; };
 		44398EA92979DE05009E1D6A /* RingTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E72971F442008E4489 /* RingTargetView.swift */; };
 		443C18A12975A1870027CCD0 /* EBooksStatsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C18A02975A1870027CCD0 /* EBooksStatsChartView.swift */; };
+		443F2F7E2A9A700600EAE6D3 /* TimelyTargetExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */; };
+		443F2F7F2A9A700600EAE6D3 /* TimelyTargetExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */; };
 		444504F4296327A2001AC434 /* LoginNoBiomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444504F3296327A2001AC434 /* LoginNoBiomView.swift */; };
 		444B00FD2780CFA300530FEC /* AddBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B00FC2780CFA300530FEC /* AddBook.swift */; };
 		444C3C8527D43C6200C61D36 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C3C8427D43C6200C61D36 /* ProgressRing.swift */; };
@@ -156,7 +158,7 @@
 		4482142328F724900037BE9F /* MaxAndMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482142228F724900037BE9F /* MaxAndMin.swift */; };
 		4482D5792964AE99004D0EB8 /* UserMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482D5782964AE99004D0EB8 /* UserMainView.swift */; };
 		4486010227C858F6004E84B0 /* RSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4486010127C858F6004E84B0 /* RSList.swift */; };
-		4486010427C85CC3004E84B0 /* NowRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4486010327C85CC3004E84B0 /* NowRModel.swift */; };
+		4486010427C85CC3004E84B0 /* NowRModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4486010327C85CC3004E84B0 /* NowRModelExt.swift */; };
 		4487BF6B2781D640003C6115 /* EBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4487BF6A2781D640003C6115 /* EBookList.swift */; };
 		4487BF6D278212B6003C6115 /* EBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4487BF6C278212B6003C6115 /* EBookModel.swift */; };
 		4487BF702782191B003C6115 /* EBookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4487BF6F2782191B003C6115 /* EBookRow.swift */; };
@@ -224,7 +226,7 @@
 		44E32D582959191700E06425 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E32D572959191700E06425 /* Entry.swift */; };
 		44E32D5A2959199200E06425 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E32D592959199200E06425 /* Provider.swift */; };
 		44E32D5C29591A0100E06425 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E32D5B29591A0100E06425 /* WidgetView.swift */; };
-		44E32D5D29591C3D00E06425 /* NowRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4486010327C85CC3004E84B0 /* NowRModel.swift */; };
+		44E32D5D29591C3D00E06425 /* NowRModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4486010327C85CC3004E84B0 /* NowRModelExt.swift */; };
 		44E32D5E29591C4600E06425 /* RSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModel.swift */; };
 		44E32D5F29591DAB00E06425 /* EncodeToJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442851C02842DDA0008730F0 /* EncodeToJson.swift */; };
 		44E32D6029591DAB00E06425 /* AllEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492F44127FB29F300103B6D /* AllEnums.swift */; };
@@ -330,6 +332,7 @@
 		44398EA42979C65B009E1D6A /* WidgetView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView3.swift; sourceTree = "<group>"; };
 		44398EA62979C704009E1D6A /* MediumSizeView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSizeView3.swift; sourceTree = "<group>"; };
 		443C18A02975A1870027CCD0 /* EBooksStatsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBooksStatsChartView.swift; sourceTree = "<group>"; };
+		443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelyTargetExt.swift; sourceTree = "<group>"; };
 		444504F3296327A2001AC434 /* LoginNoBiomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNoBiomView.swift; sourceTree = "<group>"; };
 		444B00FC2780CFA300530FEC /* AddBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBook.swift; sourceTree = "<group>"; };
 		444C3C8427D43C6200C61D36 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
@@ -418,7 +421,7 @@
 		4482142228F724900037BE9F /* MaxAndMin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxAndMin.swift; sourceTree = "<group>"; };
 		4482D5782964AE99004D0EB8 /* UserMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainView.swift; sourceTree = "<group>"; };
 		4486010127C858F6004E84B0 /* RSList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSList.swift; sourceTree = "<group>"; };
-		4486010327C85CC3004E84B0 /* NowRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRModel.swift; sourceTree = "<group>"; };
+		4486010327C85CC3004E84B0 /* NowRModelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowRModelExt.swift; sourceTree = "<group>"; };
 		4487BF6A2781D640003C6115 /* EBookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookList.swift; sourceTree = "<group>"; };
 		4487BF6C278212B6003C6115 /* EBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookModel.swift; sourceTree = "<group>"; };
 		4487BF6F2782191B003C6115 /* EBookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookRow.swift; sourceTree = "<group>"; };
@@ -725,10 +728,11 @@
 			children = (
 				441A84E0298FED4C00D5F1EB /* ModelData.swift */,
 				44A01F362961003600E34FA8 /* UserViewModel.swift */,
+				443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */,
 				442653A2277E175D0047D75C /* BookModel.swift */,
 				4487BF6C278212B6003C6115 /* EBookModel.swift */,
 				4472DFCD278323DB0014CC1C /* RDModel.swift */,
-				4486010327C85CC3004E84B0 /* NowRModel.swift */,
+				4486010327C85CC3004E84B0 /* NowRModelExt.swift */,
 				44B0409B284FBA4700C29E22 /* RSModel.swift */,
 			);
 			path = ViewModels;
@@ -1333,7 +1337,7 @@
 				44010748294E50EF000714B6 /* EditOwners.swift in Sources */,
 				4426539A277DF6BA0047D75C /* PlaceList.swift in Sources */,
 				44DDA8892A84245B000104A1 /* EBookDetailExt.swift in Sources */,
-				4486010427C85CC3004E84B0 /* NowRModel.swift in Sources */,
+				4486010427C85CC3004E84B0 /* NowRModelExt.swift in Sources */,
 				44102C8E2945160300F8E2F1 /* ScrollByStatus.swift in Sources */,
 				440F83E52A82D2810079C421 /* SelectBookView.swift in Sources */,
 				445BBA212A864BF50004B850 /* RSListExt.swift in Sources */,
@@ -1355,6 +1359,7 @@
 				44AB0300280A2E2800EAFE45 /* RingCircleArc.swift in Sources */,
 				4487BF702782191B003C6115 /* EBookRow.swift in Sources */,
 				44DDA88F2A844BEF000104A1 /* RDDetailExt.swift in Sources */,
+				443F2F7E2A9A700600EAE6D3 /* TimelyTargetExt.swift in Sources */,
 				440F68B6295FB1FB00F01C5F /* LockScreenView.swift in Sources */,
 				44EEC47628F19751000C1843 /* MonthChart.swift in Sources */,
 				44801F4D28144F84006FC06C /* ReadingTimer.swift in Sources */,
@@ -1509,7 +1514,7 @@
 				44E32D6129591DAB00E06425 /* Functions.swift in Sources */,
 				44523D412985646C0046E0B5 /* EachMainViewButton.swift in Sources */,
 				44E32D6229591DAB00E06425 /* Bundle-Decode.swift in Sources */,
-				44E32D5D29591C3D00E06425 /* NowRModel.swift in Sources */,
+				44E32D5D29591C3D00E06425 /* NowRModelExt.swift in Sources */,
 				44E32D6529591DC800E06425 /* BookModel.swift in Sources */,
 				44E32D582959191700E06425 /* Entry.swift in Sources */,
 				44B9FD70295A70CF00A11206 /* WidgetView2.swift in Sources */,
@@ -1527,6 +1532,7 @@
 				44E32D6829591EFE00E06425 /* SmallSizeView.swift in Sources */,
 				44523D3D29855ED60046E0B5 /* Extensions.swift in Sources */,
 				44B9FD69295A081800A11206 /* WidgetDataHelper.swift in Sources */,
+				443F2F7F2A9A700600EAE6D3 /* TimelyTargetExt.swift in Sources */,
 				44E32D6429591DC800E06425 /* EBookModel.swift in Sources */,
 				44FF97B8296E011700EE1CBC /* UserViewModel.swift in Sources */,
 				44E32D6329591DC800E06425 /* RDModel.swift in Sources */,

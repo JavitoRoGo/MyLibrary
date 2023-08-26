@@ -1,5 +1,5 @@
 //
-//  NowRModel.swift
+//  NowRModelExt.swift
 //  MyLibrary
 //
 //  Created by Javier Rodríguez Gómez on 25/2/22.
@@ -8,77 +8,114 @@
 import Foundation
 import SwiftUI
 
-final class NowReadingModel: ObservableObject {
-    @Published var readingList: [NowReading] {
-        didSet {
-            Task { await saveToJson(nowReadingJson, readingList) }
-            UserViewModel().user.nowReading = readingList
-            // Datos para el Watch
-            readingList.forEach { book in
-                if let encoded = try? JSONEncoder().encode(book) {
-                    ConnectivityMaganer().session.sendMessageData(encoded, replyHandler: nil) { error in
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
-    }
-    @Published var waitingList: [NowReading] {
-        didSet {
-            Task { await saveToJson(nowWaitingJson, waitingList) }
-            UserViewModel().user.nowWaiting = waitingList
-            // Datos para el Watch
-            waitingList.forEach { book in
-                if let encoded = try? JSONEncoder().encode(book) {
-                    ConnectivityMaganer().session.sendMessageData(encoded, replyHandler: nil) { error in
-                        print(error.localizedDescription)
-                    }
-                }
-            }
-        }
-    }
+// Extension for NowReading: reading and waiting lists
+
+extension UserViewModel {
+	// Actualizar datos para el widget
+	func fetchDataToWidget() async {
+		if user.sessions.isEmpty {
+			if user.nowReading.isEmpty {
+				saveDataForWidget(sessions: [], read: loadReadData(), target: loadTargetData())
+			} else {
+				saveDataForWidget(book: user.nowReading[0], sessions: [], read: loadReadData(), target: loadTargetData())
+			}
+		} else {
+			if user.nowReading.isEmpty {
+				saveDataForWidget(sessions: user.sessions, read: loadReadData(), target: loadTargetData())
+			} else {
+				saveDataForWidget(book: user.nowReading[0], sessions: user.sessions, read: loadReadData(), target: loadTargetData())
+			}
+		}
+	}
+	
+	// Datos para el Watch
+	func fetchDatatoWatch() async {
+		user.nowReading.forEach { book in
+			if let encoded = try? JSONEncoder().encode(book) {
+				ConnectivityMaganer().session.sendMessageData(encoded, replyHandler: nil) { error in
+					print(error.localizedDescription)
+				}
+			}
+		}
+		
+		user.nowWaiting.forEach { book in
+			if let encoded = try? JSONEncoder().encode(book) {
+				ConnectivityMaganer().session.sendMessageData(encoded, replyHandler: nil) { error in
+					print(error.localizedDescription)
+				}
+			}
+		}
+	}
+//    @Published var readingList: [NowReading] {
+//        didSet {
+//            Task { await saveToJson(nowReadingJson, readingList) }
+//            UserViewModel().user.nowReading = readingList
+//            // Datos para el Watch
+//            readingList.forEach { book in
+//                if let encoded = try? JSONEncoder().encode(book) {
+//                    ConnectivityMaganer().session.sendMessageData(encoded, replyHandler: nil) { error in
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    @Published var waitingList: [NowReading] {
+//        didSet {
+//            Task { await saveToJson(nowWaitingJson, waitingList) }
+//            UserViewModel().user.nowWaiting = waitingList
+//            // Datos para el Watch
+//            waitingList.forEach { book in
+//                if let encoded = try? JSONEncoder().encode(book) {
+//                    ConnectivityMaganer().session.sendMessageData(encoded, replyHandler: nil) { error in
+//                        print(error.localizedDescription)
+//                    }
+//                }
+//            }
+//        }
+//    }
     
-    init() {
-        readingList = Bundle.main.searchAndDecode(nowReadingJson) ?? []
-        waitingList = Bundle.main.searchAndDecode(nowWaitingJson) ?? []
-    }
+//    init() {
+//        readingList = Bundle.main.searchAndDecode(nowReadingJson) ?? []
+//        waitingList = Bundle.main.searchAndDecode(nowWaitingJson) ?? []
+//    }
     
     var allBookComments: [String: String] {
         var dict: [String: String] = [:]
-        for book in readingList where book.comment != nil {
+		for book in user.nowReading where book.comment != nil {
             dict[book.bookTitle] = book.comment
         }
-        for book in waitingList where book.comment != nil {
+		for book in user.nowWaiting where book.comment != nil {
             dict[book.bookTitle] = book.comment
         }
         return dict
     }
     
     func removeFromReading(_ book: NowReading) {
-        if let index = readingList.firstIndex(of: book) {
-            readingList.remove(at: index)
+		if let index = user.nowReading.firstIndex(of: book) {
+			user.nowReading.remove(at: index)
         }
     }
         
     func removeFromWaiting(_ book: NowReading) {
-        if let index = waitingList.firstIndex(of: book) {
-            waitingList.remove(at: index)
+		if let index = user.nowWaiting.firstIndex(of: book) {
+			user.nowWaiting.remove(at: index)
         }
     }
     
     func moveToReading(_ book: NowReading) {
-        if let index = waitingList.firstIndex(of: book) {
-            waitingList[index].isOnReading = true
-            readingList.append(waitingList[index])
-            waitingList.remove(at: index)
+        if let index = user.nowWaiting.firstIndex(of: book) {
+            user.nowWaiting[index].isOnReading = true
+            user.nowReading.append(user.nowWaiting[index])
+            user.nowWaiting.remove(at: index)
         }
     }
     
     func moveToWaiting(_ book: NowReading) {
-        if let index = readingList.firstIndex(of: book) {
-            readingList[index].isOnReading = false
-            waitingList.append(readingList[index])
-            readingList.remove(at: index)
+        if let index = user.nowReading.firstIndex(of: book) {
+            user.nowReading[index].isOnReading = false
+            user.nowWaiting.append(user.nowReading[index])
+            user.nowReading.remove(at: index)
         }
     }
     
