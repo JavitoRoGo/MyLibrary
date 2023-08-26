@@ -16,7 +16,7 @@
 
 #
 
-# 
+# onemodel
 
-## 
+## Unificar todos los viewmodel (book, ebook...) en uno solo, asocido a User. Unificar todos los archivos JSON en uno solo, con todos los datos asociados al user.
 
