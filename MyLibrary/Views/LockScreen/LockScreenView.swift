@@ -13,7 +13,6 @@ struct LockScreenView: View {
     @EnvironmentObject var bmodel: BooksModel
     @EnvironmentObject var emodel: EbooksModel
     @EnvironmentObject var rdmodel: RDModel
-    @EnvironmentObject var rsmodel: ReadingSessionModel
     
     @State var isUnlocked = false
     @State var showingAlert = false
@@ -93,6 +92,5 @@ struct LockScreenView_Previews: PreviewProvider {
             .environmentObject(BooksModel())
             .environmentObject(EbooksModel())
             .environmentObject(RDModel())
-            .environmentObject(ReadingSessionModel())
     }
 }

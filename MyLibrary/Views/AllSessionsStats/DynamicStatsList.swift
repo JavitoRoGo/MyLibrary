@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DynamicStatsList: View {
-    @EnvironmentObject var model: ReadingSessionModel
+    @EnvironmentObject var model: UserViewModel
     let graphSelected: Int
     
     var numberOfSessions: String {
@@ -19,7 +19,7 @@ struct DynamicStatsList: View {
         } else if graphSelected == 2 {
             return "365 sesiones"
         } else {
-            return "\(model.readingSessionList.count) sesiones"
+			return "\(model.user.sessions.count) sesiones"
         }
     }
     
@@ -74,6 +74,6 @@ struct DynamicStatsList: View {
 struct DynamicStatsList_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsList(graphSelected: 0)
-            .environmentObject(ReadingSessionModel())
+            .environmentObject(UserViewModel())
     }
 }

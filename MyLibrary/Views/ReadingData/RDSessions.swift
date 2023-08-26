@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RDSessions: View {
     @EnvironmentObject var rdmodel: RDModel
-    @EnvironmentObject var rsmodel: ReadingSessionModel
+    @EnvironmentObject var model: UserViewModel
     
     let rdsessions: [ReadingSession]
     let rdata: ReadingData?
@@ -18,13 +18,13 @@ struct RDSessions: View {
         if let rdata = rdata {
             return rdmodel.datas(book: rdata)
         }
-        return rsmodel.datas(sessions: rdsessions)
+        return model.datas(sessions: rdsessions)
     }
     var graphLabels: [String] {
         if let rdata = rdata {
             return rdmodel.getLabels(book: rdata)
         }
-        return rsmodel.getXLabels(sessions: rdsessions)
+        return model.getXLabels(sessions: rdsessions)
     }
     
     var body: some View {
@@ -50,7 +50,7 @@ struct RDSessions_Previews: PreviewProvider {
         NavigationView {
             RDSessions(rdsessions: ReadingData.dataTest.readingSessions, rdata: ReadingData.dataTest)
                 .environmentObject(RDModel())
-                .environmentObject(ReadingSessionModel())
+                .environmentObject(UserViewModel())
         }
     }
 }

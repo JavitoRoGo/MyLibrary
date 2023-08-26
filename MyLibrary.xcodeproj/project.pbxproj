@@ -177,7 +177,7 @@
 		44A01F372961003600E34FA8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F362961003600E34FA8 /* UserViewModel.swift */; };
 		44AA171329A004A900944623 /* RSEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA171229A004A900944623 /* RSEdit.swift */; };
 		44AB0300280A2E2800EAFE45 /* RingCircleArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */; };
-		44B0409C284FBA4700C29E22 /* RSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModel.swift */; };
+		44B0409C284FBA4700C29E22 /* RSModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModelExt.swift */; };
 		44B0409F284FCF2600C29E22 /* READINGSESSIONS.json in Resources */ = {isa = PBXBuildFile; fileRef = 44B0409E284FCF2600C29E22 /* READINGSESSIONS.json */; };
 		44B040A428500FC600C29E22 /* DynamicStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B040A328500FC600C29E22 /* DynamicStatsView.swift */; };
 		44B1E50927D1258B00EF6D40 /* AddReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E50827D1258B00EF6D40 /* AddReading.swift */; };
@@ -228,7 +228,7 @@
 		44E32D5A2959199200E06425 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E32D592959199200E06425 /* Provider.swift */; };
 		44E32D5C29591A0100E06425 /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E32D5B29591A0100E06425 /* WidgetView.swift */; };
 		44E32D5D29591C3D00E06425 /* NowRModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4486010327C85CC3004E84B0 /* NowRModelExt.swift */; };
-		44E32D5E29591C4600E06425 /* RSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModel.swift */; };
+		44E32D5E29591C4600E06425 /* RSModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModelExt.swift */; };
 		44E32D5F29591DAB00E06425 /* EncodeToJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442851C02842DDA0008730F0 /* EncodeToJson.swift */; };
 		44E32D6029591DAB00E06425 /* AllEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492F44127FB29F300103B6D /* AllEnums.swift */; };
 		44E32D6129591DAB00E06425 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492F44427FB2A8500103B6D /* Functions.swift */; };
@@ -442,7 +442,7 @@
 		44A3422E27D2DC7A00DC82D5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		44AA171229A004A900944623 /* RSEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSEdit.swift; sourceTree = "<group>"; };
 		44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingCircleArc.swift; sourceTree = "<group>"; };
-		44B0409B284FBA4700C29E22 /* RSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSModel.swift; sourceTree = "<group>"; };
+		44B0409B284FBA4700C29E22 /* RSModelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSModelExt.swift; sourceTree = "<group>"; };
 		44B0409E284FCF2600C29E22 /* READINGSESSIONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = READINGSESSIONS.json; sourceTree = "<group>"; };
 		44B040A328500FC600C29E22 /* DynamicStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStatsView.swift; sourceTree = "<group>"; };
 		44B1E50827D1258B00EF6D40 /* AddReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReading.swift; sourceTree = "<group>"; };
@@ -734,7 +734,7 @@
 				4487BF6C278212B6003C6115 /* EBookModel.swift */,
 				4472DFCD278323DB0014CC1C /* RDModel.swift */,
 				4486010327C85CC3004E84B0 /* NowRModelExt.swift */,
-				44B0409B284FBA4700C29E22 /* RSModel.swift */,
+				44B0409B284FBA4700C29E22 /* RSModelExt.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1315,7 +1315,7 @@
 				4492F44227FB29F300103B6D /* AllEnums.swift in Sources */,
 				44DDA87F2A83BDF4000104A1 /* BookDetailExt.swift in Sources */,
 				4492F44527FB2A8500103B6D /* Functions.swift in Sources */,
-				44B0409C284FBA4700C29E22 /* RSModel.swift in Sources */,
+				44B0409C284FBA4700C29E22 /* RSModelExt.swift in Sources */,
 				445BBA3A2A86B3490004B850 /* MonthlyTargetViewExt.swift in Sources */,
 				4482142028F720500037BE9F /* AnimateChartsHelper.swift in Sources */,
 				44DDA8852A841405000104A1 /* AddBookExt.swift in Sources */,
@@ -1523,7 +1523,7 @@
 				44B9FD6D295A6E7100A11206 /* MediumSizeView2.swift in Sources */,
 				44E32D4A295917F600E06425 /* MyLibraryWidgetBundle.swift in Sources */,
 				44E32D4C295917F600E06425 /* MyLibraryWidget.swift in Sources */,
-				44E32D5E29591C4600E06425 /* RSModel.swift in Sources */,
+				44E32D5E29591C4600E06425 /* RSModelExt.swift in Sources */,
 				44F471DB2993F1AD0047080A /* KeychainHelper.swift in Sources */,
 				441A84EB29902E9200D5F1EB /* ConnectivityManager.swift in Sources */,
 				44E32D5C29591A0100E06425 /* WidgetView.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 extension AddQuoteView {
 	struct AddQuoteModifier: ViewModifier {
-		@EnvironmentObject var model: ReadingSessionModel
+		@EnvironmentObject var model: UserViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		let bookTitle: String

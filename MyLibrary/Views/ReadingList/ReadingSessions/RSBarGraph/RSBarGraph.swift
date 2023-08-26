@@ -40,6 +40,6 @@ struct RDBarGraph_Previews: PreviewProvider {
     static var previews: some View {
         RSBarGraph(datas: datas, labels: labels)
             .environmentObject(RDModel())
-            .environmentObject(ReadingSessionModel())
+            .environmentObject(UserViewModel())
     }
 }

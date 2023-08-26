@@ -35,7 +35,7 @@ extension UserViewModel {
 	// Objetivo diario: páginas y tiempo leídos
 	func readToday(_ target: DWTarget) -> (String, Int) {
 		let todayComponents = Calendar.current.dateComponents([.day, .month, .year], from: Date())
-		guard let mostRecentSession = ReadingSessionModel().readingSessionList.filter({ Calendar.current.dateComponents([.day, .month, .year], from: $0.date) == todayComponents }).first else { return  ("0",0) }
+		guard let mostRecentSession = user.sessions.filter({ Calendar.current.dateComponents([.day, .month, .year], from: $0.date) == todayComponents }).first else { return  ("0",0) }
 		switch target {
 			case .pages:
 				return (String(mostRecentSession.pages), mostRecentSession.pages)
@@ -47,7 +47,7 @@ extension UserViewModel {
 	// Objetivo semanal: páginas y tiempo leídos
 	func readThisWeek(_ target: DWTarget) -> (String, Int) {
 		let todayComponents = Calendar.current.dateComponents([.weekOfYear, .year], from: Date())
-		let sessions = ReadingSessionModel().readingSessionList.filter({ Calendar.current.dateComponents([.weekOfYear, .year], from: $0.date) == todayComponents })
+		let sessions = user.sessions.filter({ Calendar.current.dateComponents([.weekOfYear, .year], from: $0.date) == todayComponents })
 		if sessions.isEmpty {
 			return ("0",0)
 		} else {
@@ -74,7 +74,7 @@ extension UserViewModel {
 					return (String(booksRead.count), booksRead.count)
 				}
 			case .pages:
-				let sessions = ReadingSessionModel().readingSessionList.filter({ Calendar.current.dateComponents([.month, .year], from: $0.date) == todayComponents })
+				let sessions = user.sessions.filter({ Calendar.current.dateComponents([.month, .year], from: $0.date) == todayComponents })
 				if sessions.isEmpty {
 					return ("0",0)
 				} else {
@@ -96,7 +96,7 @@ extension UserViewModel {
 					return (String(booksRead.count), booksRead.count)
 				}
 			case .pages:
-				let sessions = ReadingSessionModel().readingSessionList.filter({ Calendar.current.dateComponents([.year], from: $0.date) == todayComponents })
+				let sessions = user.sessions.filter({ Calendar.current.dateComponents([.year], from: $0.date) == todayComponents })
 				if sessions.isEmpty {
 					return ("0",0)
 				} else {

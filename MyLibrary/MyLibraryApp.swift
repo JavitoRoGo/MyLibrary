@@ -12,7 +12,6 @@ struct MyLibraryApp: App {
     @StateObject var booksModel = BooksModel()
     @StateObject var ebooksModel = EbooksModel()
     @StateObject var rdModel = RDModel()
-    @StateObject var rsModel = ReadingSessionModel()
     @StateObject var userModel = UserViewModel()
     @StateObject var locationManager = LocationManager()
     
@@ -22,7 +21,6 @@ struct MyLibraryApp: App {
                 .environmentObject(booksModel)
                 .environmentObject(ebooksModel)
                 .environmentObject(rdModel)
-                .environmentObject(rsModel)
                 .environmentObject(userModel)
                 .environmentObject(locationManager)
                 .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)

@@ -39,16 +39,16 @@ extension AddRS {
 		if !commentText.isEmpty {
 			newSession.comment = Quote(date: sessionDate, bookTitle: book.bookTitle, page: 0, text: commentText)
 		}
-		if !rsmodel.tempQuotesArray.isEmpty {
-			newSession.quotes = rsmodel.tempQuotesArray
-			rsmodel.tempQuotesArray.removeAll()
+		if !model.tempQuotesArray.isEmpty {
+			newSession.quotes = model.tempQuotesArray
+			model.tempQuotesArray.removeAll()
 		}
 		model.user.nowReading[index].sessions.insert(newSession, at: 0)
-		rsmodel.readingSessionList.insert(newSession, at: 0)
+		model.user.sessions.insert(newSession, at: 0)
 		
 		if Calendar.current.component(.weekday, from: newDate) == 7 {
-			let weekPages = rsmodel.calcTotalPagesPerWeekAndMonth(tag: 0).pages.reduce(0,+)
-			let weekSessions = rsmodel.getSessions(tag: 0)
+			let weekPages = model.calcTotalPagesPerWeekAndMonth(tag: 0).pages.reduce(0,+)
+			let weekSessions = model.getSessions(tag: 0)
 			let weekTime = weekSessions.reduce(0) { $0 + $1.readingTimeInHours }
 			if weekPages >= model.weeklyPagesTarget || weekTime >= model.weeklyTimeTarget {
 				showingWeeklyAchivedAlert = true

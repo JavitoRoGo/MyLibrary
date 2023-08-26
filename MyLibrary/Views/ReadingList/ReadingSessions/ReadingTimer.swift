@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReadingTimer: View {
-    @EnvironmentObject var rsmodel: ReadingSessionModel
+    @EnvironmentObject var rsmodel: UserViewModel
     @Environment(\.scenePhase) var scenePhase
     
     @State var book: NowReading
@@ -89,7 +89,7 @@ struct ReadingTimer_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             ReadingTimer(book: NowReading.example[0])
-                .environmentObject(ReadingSessionModel())
+                .environmentObject(UserViewModel())
         }
     }
 }

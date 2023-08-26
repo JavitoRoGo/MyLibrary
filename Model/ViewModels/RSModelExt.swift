@@ -1,5 +1,5 @@
 //
-//  RSModel.swift
+//  RSModelExt.swift
 //  MyLibrary
 //
 //  Created by Javier Rodríguez Gómez on 7/6/22.
@@ -8,23 +8,16 @@
 import SwiftUI
 import WidgetKit
 
-final class ReadingSessionModel: ObservableObject {
-    @Published var readingSessionList: [ReadingSession] {
-        didSet {
-            Task { await saveToJson(readingSessionsJson, readingSessionList) }
-            UserViewModel().user.sessions = readingSessionList
-        }
-    }
-    @Published var tempQuotesArray: [Quote] = []
-    
-    init() {
-        readingSessionList = Bundle.main.searchAndDecode(readingSessionsJson) ?? []
-    }
+extension UserViewModel {
+	var tempQuotesArray: [Quote] {
+		get { [] }
+		set { }
+	}
     
     // Recopilación de citas y comentarios de todas las sesiones
     var allQuotes: [Quote] {
         var array: [Quote] = []
-        readingSessionList.forEach { session in
+        user.sessions.forEach { session in
             session.quotes?.forEach { quote in
                 array.append(quote)
             }
@@ -32,12 +25,12 @@ final class ReadingSessionModel: ObservableObject {
         return array
     }
     var allComments: [Quote] {
-        readingSessionList.compactMap { $0.comment }
+        user.sessions.compactMap { $0.comment }
     }
     
     // Datos previos
     var toDate: Date {
-        readingSessionList.first?.date ?? .now
+        user.sessions.first?.date ?? .now
     }
     
     func getFromDate(tag: Int) -> Date {
@@ -54,7 +47,7 @@ final class ReadingSessionModel: ObservableObject {
         }
         var fromDate: Date {
             if tag == 3 {
-                return readingSessionList.last?.date ?? .now
+                return user.sessions.last?.date ?? .now
             }
             return toDate.addingTimeInterval(-substractingInterval)
         }
@@ -62,7 +55,7 @@ final class ReadingSessionModel: ObservableObject {
     }
     
     func getSessions(tag: Int) -> [ReadingSession] {
-        readingSessionList.prefix(while: { $0.date >= getFromDate(tag: tag) })
+        user.sessions.prefix(while: { $0.date >= getFromDate(tag: tag) })
     }
         
     // Datos para la gráfica global de todas las sesiones
@@ -244,7 +237,7 @@ final class ReadingSessionModel: ObservableObject {
 
 // MARK: - Extensión para las gráficas animadas con Swift Charts
 
-extension ReadingSessionModel {
+extension UserViewModel {
     
     // Funciones para la gráfica de barra de las sesiones con Swift Charts
     
@@ -252,18 +245,18 @@ extension ReadingSessionModel {
         var sessions = [ReadingSession]()
         if tag == 0 {
             for i in 0...6 {
-                sessions.insert(readingSessionList[i], at: 0)
+                sessions.insert(user.sessions[i], at: 0)
             }
         } else if tag == 1 {
             for i in 0...29 {
-                sessions.insert(readingSessionList[i], at: 0)
+                sessions.insert(user.sessions[i], at: 0)
             }
         } else if tag == 2 {
             for i in 0...364 {
-                sessions.insert(readingSessionList[i], at: 0)
+                sessions.insert(user.sessions[i], at: 0)
             }
         } else if tag == 3 {
-            return readingSessionList.reversed()
+            return user.sessions.reversed()
         }
         return sessions
     }
@@ -333,7 +326,7 @@ extension ReadingSessionModel {
     }
     
     func calcTotalPagesPerYear() -> (years: [String], pages: [Int]) {
-        let sessions = readingSessionList.reversed()
+        let sessions = user.sessions.reversed()
         let calendar = Calendar.current
         // Variables para almacenar los resultados
         var yearArray = [Int]()

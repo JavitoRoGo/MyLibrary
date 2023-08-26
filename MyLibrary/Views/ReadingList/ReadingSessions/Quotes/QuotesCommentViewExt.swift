@@ -10,8 +10,8 @@ import Foundation
 extension QuotesCommentView {
 	func deleteComment(from session: ReadingSession) {
 		// Borrar comentario del listado global de sesiones
-		if let index = rsmodel.readingSessionList.firstIndex(of: session) {
-			rsmodel.readingSessionList[index].comment = nil
+		if let index = model.user.sessions.firstIndex(of: session) {
+			model.user.sessions[index].comment = nil
 		}
 		// Borrar comentario de la sesión del libro en ReadingDatas, en caso de existir
 		if let bookIndex = rdmodel.readingDatas.firstIndex(where: { $0.readingSessions.contains(session) }),
@@ -29,10 +29,10 @@ extension QuotesCommentView {
 	
 	func deleteQuote(from session: ReadingSession, quote: Quote) {
 		// Borrar cita del listado global de sesiones
-		if let index = rsmodel.readingSessionList.firstIndex(of: session) {
-			rsmodel.readingSessionList[index].quotes?.removeAll(where: { $0 == quote })
-			if let _ = rsmodel.readingSessionList[index].quotes?.isEmpty {
-				rsmodel.readingSessionList[index].quotes = nil
+		if let index = model.user.sessions.firstIndex(of: session) {
+			model.user.sessions[index].quotes?.removeAll(where: { $0 == quote })
+			if let _ = model.user.sessions[index].quotes?.isEmpty {
+				model.user.sessions[index].quotes = nil
 			}
 		}
 		// Borar cita de la sesión del libro en ReadingDatas, en caso de existir

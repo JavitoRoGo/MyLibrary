@@ -120,9 +120,9 @@ extension RSEdit {
 			session.quotes = quotes
 		}
 		if let bookSessionIndex = model.user.nowReading[index].sessions.firstIndex(where: { $0.id == session.id }),
-		   let sessionIndex = rsmodel.readingSessionList.firstIndex(where: { $0.id == session.id }) {
+		   let sessionIndex = model.user.sessions.firstIndex(where: { $0.id == session.id }) {
 			model.user.nowReading[index].sessions[bookSessionIndex] = session
-			rsmodel.readingSessionList[sessionIndex] = session
+			model.user.sessions[sessionIndex] = session
 		}
 	}
 	

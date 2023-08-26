@@ -49,6 +49,6 @@ struct DynamicStatsView: View {
 struct DynamicStatsView_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsView()
-            .environmentObject(ReadingSessionModel())
+            .environmentObject(UserViewModel())
     }
 }
