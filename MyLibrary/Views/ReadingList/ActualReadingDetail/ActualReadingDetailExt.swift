@@ -89,7 +89,7 @@ extension ActualReadingDetail {
 	}
 	
 	struct ActualReadingDetailModifier: ViewModifier {
-		@EnvironmentObject var model: NowReadingModel
+		@EnvironmentObject var model: UserViewModel
 		@EnvironmentObject var rdmodel: RDModel
 		
 		@Binding var book: NowReading

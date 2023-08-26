@@ -13,7 +13,6 @@ struct LockScreenView: View {
     @EnvironmentObject var bmodel: BooksModel
     @EnvironmentObject var emodel: EbooksModel
     @EnvironmentObject var rdmodel: RDModel
-    @EnvironmentObject var nrmodel: NowReadingModel
     @EnvironmentObject var rsmodel: ReadingSessionModel
     
     @State var isUnlocked = false
@@ -81,7 +80,7 @@ struct LockScreenView: View {
                     }
                     .padding(.horizontal, 35)
                 }
-                .modifier(LockScreenViewModifier(showingFirstRunAlert: $showingFirstRunAlert, showingCreateUser: $showingCreateUser, showingLoginPage: $showingLoginPage, showingAlert: $showingAlert, isUnlocked: $isUnlocked, isFirstRun: $isFirstRun, saveDataToUser: saveDataToUser))
+                .modifier(LockScreenViewModifier(showingFirstRunAlert: $showingFirstRunAlert, showingCreateUser: $showingCreateUser, showingLoginPage: $showingLoginPage, showingAlert: $showingAlert, isUnlocked: $isUnlocked, isFirstRun: $isFirstRun))
             }
         }
     }
@@ -94,7 +93,6 @@ struct LockScreenView_Previews: PreviewProvider {
             .environmentObject(BooksModel())
             .environmentObject(EbooksModel())
             .environmentObject(RDModel())
-            .environmentObject(NowReadingModel())
             .environmentObject(ReadingSessionModel())
     }
 }

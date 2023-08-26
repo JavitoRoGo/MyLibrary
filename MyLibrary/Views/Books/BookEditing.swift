@@ -115,6 +115,5 @@ struct BookEditing_Previews: PreviewProvider {
         BookEditing(book: .constant(Books.dataTest), newBookTitle: "Título de prueba", newStatus: .notRead, newOwner: "Yo", newPlace: "A1", newSynopsis: "Resumen de prueba.")
             .environmentObject(UserViewModel())
             .environmentObject(BooksModel())
-            .environmentObject(NowReadingModel())
     }
 }

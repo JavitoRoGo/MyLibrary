@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuotesCommentView: View {
     @EnvironmentObject var rsmodel: ReadingSessionModel
-    @EnvironmentObject var nrmodel: NowReadingModel
+    @EnvironmentObject var model: UserViewModel
     @EnvironmentObject var rdmodel: RDModel
     @State var session: ReadingSession
     
@@ -65,7 +65,7 @@ struct QuotesCommentView_Previews: PreviewProvider {
     static var previews: some View {
         QuotesCommentView(session: ReadingSession.example)
             .environmentObject(ReadingSessionModel())
-            .environmentObject(NowReadingModel())
+            .environmentObject(UserViewModel())
             .environmentObject(RDModel())
     }
 }

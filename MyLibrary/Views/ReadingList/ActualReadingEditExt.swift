@@ -39,7 +39,7 @@ extension ActualReadingEdit {
 	}
 	
 	struct AREditModifier: ViewModifier {
-		@EnvironmentObject var model: NowReadingModel
+		@EnvironmentObject var model: UserViewModel
 		@EnvironmentObject var bmodel: BooksModel
 		@Environment(\.dismiss) var dismiss
 		
@@ -100,12 +100,12 @@ extension ActualReadingEdit {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Modificar") {
 							let editedBook = createEditedBook()
-							if let index = model.readingList.firstIndex(of: book) {
-								model.readingList[index] = editedBook
+							if let index = model.user.nowReading.firstIndex(of: book) {
+								model.user.nowReading[index] = editedBook
 								book = editedBook
 							}
-							if let index = model.waitingList.firstIndex(of: book) {
-								model.waitingList[index] = editedBook
+							if let index = model.user.nowWaiting.firstIndex(of: book) {
+								model.user.nowWaiting[index] = editedBook
 								book = editedBook
 							}
 							if let inputImage = inputImage {

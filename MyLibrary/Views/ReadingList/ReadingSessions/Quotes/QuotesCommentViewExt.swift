@@ -19,9 +19,9 @@ extension QuotesCommentView {
 			rdmodel.readingDatas[bookIndex].readingSessions[sessionIndex].comment = nil
 		}
 		// Borrar comentario de la sesión del libro en NowReading, en caso de existir
-		if let bookIndex = nrmodel.readingList.firstIndex(where: { $0.sessions.contains(session) }),
-		   let sessionIndex = nrmodel.readingList[bookIndex].sessions.firstIndex(of: session) {
-			nrmodel.readingList[bookIndex].sessions[sessionIndex].comment = nil
+		if let bookIndex = model.user.nowReading.firstIndex(where: { $0.sessions.contains(session) }),
+		   let sessionIndex = model.user.nowReading[bookIndex].sessions.firstIndex(of: session) {
+			model.user.nowReading[bookIndex].sessions[sessionIndex].comment = nil
 		}
 		// Borrar comentario de la sesión de la vista actual
 		self.session.comment = nil
@@ -44,11 +44,11 @@ extension QuotesCommentView {
 			}
 		}
 		// Borrar cita de la sesión del libro en NowReading, en caso de existir
-		if let bookIndex = nrmodel.readingList.firstIndex(where: { $0.sessions.contains(session) }),
-		   let sessionIndex = nrmodel.readingList[bookIndex].sessions.firstIndex(of: session) {
-			nrmodel.readingList[bookIndex].sessions[sessionIndex].quotes?.removeAll(where: { $0 == quote })
-			if let _ = nrmodel.readingList[bookIndex].sessions[sessionIndex].quotes?.isEmpty {
-				nrmodel.readingList[bookIndex].sessions[sessionIndex].quotes = nil
+		if let bookIndex = model.user.nowReading.firstIndex(where: { $0.sessions.contains(session) }),
+		   let sessionIndex = model.user.nowReading[bookIndex].sessions.firstIndex(of: session) {
+			model.user.nowReading[bookIndex].sessions[sessionIndex].quotes?.removeAll(where: { $0 == quote })
+			if let _ = model.user.nowReading[bookIndex].sessions[sessionIndex].quotes?.isEmpty {
+				model.user.nowReading[bookIndex].sessions[sessionIndex].quotes = nil
 			}
 		}
 		// Borrar cita de la sesión de la vista actual

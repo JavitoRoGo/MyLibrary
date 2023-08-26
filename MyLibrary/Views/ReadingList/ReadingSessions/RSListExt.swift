@@ -9,11 +9,11 @@ import SwiftUI
 
 extension RSList {
 	func deleteSessionRow(_ session: ReadingSession) {
-		if let index = model.readingList.firstIndex(of: book) {
+		if let index = model.user.nowReading.firstIndex(of: book) {
 			rsmodel.readingSessionList.removeAll(where: { $0 == session })
-			model.readingList[index].sessions.removeAll(where: { $0 == session })
+			model.user.nowReading[index].sessions.removeAll(where: { $0 == session })
 			if book.isFinished {
-				model.readingList[index].isFinished = false
+				model.user.nowReading[index].isFinished = false
 			}
 		}
 	}

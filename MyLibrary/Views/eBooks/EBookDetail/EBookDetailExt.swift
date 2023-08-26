@@ -11,7 +11,7 @@ extension EBookDetail {
     struct EBookDetailModifier: ViewModifier {
         @EnvironmentObject var emodel: EbooksModel
         @EnvironmentObject var rdmodel: RDModel
-        @EnvironmentObject var nrmodel: NowReadingModel
+        @EnvironmentObject var model: UserViewModel
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingDeleteAlert: Bool
@@ -76,7 +76,7 @@ extension EBookDetail {
                     }
                 }
                 .sheet(isPresented: $showingRSDetail) {
-                    if let rsdata = nrmodel.readingList.first(where: { $0.bookTitle == ebook.bookTitle }) {
+					if let rsdata = model.user.nowReading.first(where: { $0.bookTitle == ebook.bookTitle }) {
                         NavigationView {
                             ActualReadingDetail(book: rsdata)
                                 .toolbar {

@@ -29,10 +29,10 @@ extension AddRS {
 	}
 	
 	func addSession() {
-		guard let index = nrmodel.readingList.firstIndex(of: book) else { return }
+		guard let index = model.user.nowReading.firstIndex(of: book) else { return }
 		if endingPage >= book.lastPage {
 			endingPage = book.lastPage
-			nrmodel.readingList[index].isFinished = true
+			model.user.nowReading[index].isFinished = true
 		}
 		let newDate: Date = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: sessionDate) ?? .now
 		var newSession = ReadingSession(id: UUID(), date: newDate, duration: sessionDuration, startingPage: startingPage, endingPage: endingPage, minPerPag: minPerPag)
@@ -43,7 +43,7 @@ extension AddRS {
 			newSession.quotes = rsmodel.tempQuotesArray
 			rsmodel.tempQuotesArray.removeAll()
 		}
-		nrmodel.readingList[index].sessions.insert(newSession, at: 0)
+		model.user.nowReading[index].sessions.insert(newSession, at: 0)
 		rsmodel.readingSessionList.insert(newSession, at: 0)
 		
 		if Calendar.current.component(.weekday, from: newDate) == 7 {

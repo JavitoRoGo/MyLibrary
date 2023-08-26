@@ -46,39 +46,6 @@ extension UserViewModel {
 			}
 		}
 	}
-//    @Published var readingList: [NowReading] {
-//        didSet {
-//            Task { await saveToJson(nowReadingJson, readingList) }
-//            UserViewModel().user.nowReading = readingList
-//            // Datos para el Watch
-//            readingList.forEach { book in
-//                if let encoded = try? JSONEncoder().encode(book) {
-//                    ConnectivityMaganer().session.sendMessageData(encoded, replyHandler: nil) { error in
-//                        print(error.localizedDescription)
-//                    }
-//                }
-//            }
-//        }
-//    }
-//    @Published var waitingList: [NowReading] {
-//        didSet {
-//            Task { await saveToJson(nowWaitingJson, waitingList) }
-//            UserViewModel().user.nowWaiting = waitingList
-//            // Datos para el Watch
-//            waitingList.forEach { book in
-//                if let encoded = try? JSONEncoder().encode(book) {
-//                    ConnectivityMaganer().session.sendMessageData(encoded, replyHandler: nil) { error in
-//                        print(error.localizedDescription)
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
-//    init() {
-//        readingList = Bundle.main.searchAndDecode(nowReadingJson) ?? []
-//        waitingList = Bundle.main.searchAndDecode(nowWaitingJson) ?? []
-//    }
     
     var allBookComments: [String: String] {
         var dict: [String: String] = [:]
@@ -101,6 +68,15 @@ extension UserViewModel {
 		if let index = user.nowWaiting.firstIndex(of: book) {
 			user.nowWaiting.remove(at: index)
         }
+		if book.formatt == .paper {
+			if let index = user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				user.books[index].status = .notRead
+			}
+		} else {
+			if let index = user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				user.ebooks[index].status = .notRead
+			}
+		}
     }
     
     func moveToReading(_ book: NowReading) {
@@ -109,6 +85,15 @@ extension UserViewModel {
             user.nowReading.append(user.nowWaiting[index])
             user.nowWaiting.remove(at: index)
         }
+		if book.formatt == .paper {
+			if let index = BooksModel().books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				user.books[index].status = .reading
+			}
+		} else {
+			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				user.ebooks[index].status = .reading
+			}
+		}
     }
     
     func moveToWaiting(_ book: NowReading) {
@@ -117,6 +102,15 @@ extension UserViewModel {
             user.nowWaiting.append(user.nowReading[index])
             user.nowReading.remove(at: index)
         }
+		if book.formatt == .paper {
+			if let index = BooksModel().books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				BooksModel().books[index].status = .waiting
+			}
+		} else {
+			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				EbooksModel().ebooks[index].status = .waiting
+			}
+		}
     }
     
     func compareExistingBook(formatt: Formatt, text: String) -> (num: Int, datas: [String]) {

@@ -11,7 +11,6 @@ struct AddRS: View {
     @ObservedObject var wcmodel = ConnectivityMaganer()
     
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var nrmodel: NowReadingModel
     @EnvironmentObject var rsmodel: ReadingSessionModel
     @Environment(\.dismiss) var dismiss
     
@@ -119,7 +118,6 @@ struct AddRS_Previews: PreviewProvider {
         NavigationView {
             AddRS(book: .constant(book), startingPage: book.nextPage, hour: 0, minute: 0)
                 .environmentObject(UserViewModel())
-                .environmentObject(NowReadingModel())
                 .environmentObject(ReadingSessionModel())
         }
     }

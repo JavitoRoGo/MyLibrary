@@ -9,7 +9,7 @@ import SwiftUI
 
 extension BookEditing {
     struct BookEditingModifier: ViewModifier {
-        @EnvironmentObject var nrmodel: NowReadingModel
+        @EnvironmentObject var model: UserViewModel
         @Environment(\.dismiss) var dismiss
         @Binding var book: Books
         @Binding var showingAlert: Bool
@@ -45,8 +45,8 @@ extension BookEditing {
                     }
                 }
                 .onAppear {
-                    isOnWaitingList = nrmodel.readingList.contains(where: { $0.bookTitle == book.bookTitle }) ||
-                    nrmodel.waitingList.contains(where: { $0.bookTitle == book.bookTitle })
+					isOnWaitingList = model.user.nowReading.contains(where: { $0.bookTitle == book.bookTitle }) ||
+					model.user.nowWaiting.contains(where: { $0.bookTitle == book.bookTitle })
                 }
         }
     }

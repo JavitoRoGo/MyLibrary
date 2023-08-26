@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EBookDetail: View {
-    @EnvironmentObject var nrmodel: NowReadingModel
+    @EnvironmentObject var model: UserViewModel
     
     @Binding var ebook: EBooks
     @State var newStatus: ReadingStatus
@@ -61,8 +61,8 @@ struct EBookDetail: View {
             }
         }
         .onAppear {
-            isOnWaitingList = nrmodel.readingList.contains(where: { $0.bookTitle == ebook.bookTitle }) ||
-            nrmodel.waitingList.contains(where: { $0.bookTitle == ebook.bookTitle })
+			isOnWaitingList = model.user.nowReading.contains(where: { $0.bookTitle == ebook.bookTitle }) ||
+			model.user.nowWaiting.contains(where: { $0.bookTitle == ebook.bookTitle })
         }
     }
 }
@@ -73,7 +73,7 @@ struct EBookDetail_Previews: PreviewProvider {
             EBookDetail(ebook: .constant(EBooks.dataTest), newStatus: .consulting)
                 .environmentObject(EbooksModel())
                 .environmentObject(RDModel())
-                .environmentObject(NowReadingModel())
+                .environmentObject(UserViewModel())
         }
     }
 }

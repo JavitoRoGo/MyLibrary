@@ -9,11 +9,11 @@ import SwiftUI
 
 struct AllCommentsView: View {
     @EnvironmentObject var rdmodel: RDModel
-    @EnvironmentObject var nrmodel: NowReadingModel
+    @EnvironmentObject var model: UserViewModel
     @State private var showingAlert = false
     
     var comments: [String: String] {
-        rdmodel.allBookComments.merging(nrmodel.allBookComments) { (first,_) in first }
+        rdmodel.allBookComments.merging(model.allBookComments) { (first,_) in first }
     }
     
     var body: some View {
@@ -61,6 +61,6 @@ struct AllCommentsView_Previews: PreviewProvider {
     static var previews: some View {
         AllCommentsView()
             .environmentObject(RDModel())
-            .environmentObject(NowReadingModel())
+            .environmentObject(UserViewModel())
     }
 }

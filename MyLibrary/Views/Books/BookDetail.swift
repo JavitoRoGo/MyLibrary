@@ -62,6 +62,6 @@ struct BookDetail_Previews: PreviewProvider {
         BookDetail(book: Books.dataTest)
             .environmentObject(BooksModel())
             .environmentObject(RDModel())
-            .environmentObject(NowReadingModel())
+            .environmentObject(UserViewModel())
     }
 }

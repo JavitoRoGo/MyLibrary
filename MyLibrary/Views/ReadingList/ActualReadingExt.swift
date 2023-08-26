@@ -13,43 +13,6 @@ extension ActualReading {
 			showingDeletingAlert = true
 		} else {
 			model.removeFromWaiting(book)
-			changeToNotRead(book)
-		}
-	}
-	
-	func changeToReading(_ book: NowReading) {
-		if book.formatt == .paper {
-			if let index = BooksModel().books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				bmodel.books[index].status = .reading
-			}
-		} else {
-			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				emodel.ebooks[index].status = .reading
-			}
-		}
-	}
-	
-	func changeToWaiting(_ book: NowReading) {
-		if book.formatt == .paper {
-			if let index = BooksModel().books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				BooksModel().books[index].status = .waiting
-			}
-		} else {
-			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				EbooksModel().ebooks[index].status = .waiting
-			}
-		}
-	}
-	
-	func changeToNotRead(_ book: NowReading) {
-		if book.formatt == .paper {
-			if let index = bmodel.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				bmodel.books[index].status = .notRead
-			}
-		} else {
-			if let index = emodel.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				emodel.ebooks[index].status = .notRead
-			}
 		}
 	}
 	

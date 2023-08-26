@@ -154,7 +154,7 @@ extension BookDetail {
     struct BookDetailModifier: ViewModifier {
         @EnvironmentObject var model: BooksModel
         @EnvironmentObject var rdmodel: RDModel
-        @EnvironmentObject var nrmodel: NowReadingModel
+        @EnvironmentObject var nrmodel: UserViewModel
         let book: Books
         @Binding var showingDelete: Bool
         @Binding var showingEditPage: Bool
@@ -221,7 +221,7 @@ extension BookDetail {
                     }
                 }
                 .sheet(isPresented: $showingRSDetail) {
-                    if let rsdata = nrmodel.readingList.first(where: { $0.bookTitle == book.bookTitle }) {
+					if let rsdata = nrmodel.user.nowReading.first(where: { $0.bookTitle == book.bookTitle }) {
                         NavigationView {
                             ActualReadingDetail(book: rsdata)
                                 .toolbar {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RSEdit: View {
-    @EnvironmentObject var nrmodel: NowReadingModel
+    @EnvironmentObject var model: UserViewModel
     @EnvironmentObject var rsmodel: ReadingSessionModel
     
     @Binding var book: NowReading
@@ -103,7 +103,7 @@ struct RSEdit_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             RSEdit(book: .constant(NowReading.example[0]), session: .constant(ReadingSession.example))
-                .environmentObject(NowReadingModel())
+                .environmentObject(UserViewModel())
             .environmentObject(ReadingSessionModel())
         }
     }

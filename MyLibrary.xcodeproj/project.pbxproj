@@ -66,6 +66,7 @@
 		443C18A12975A1870027CCD0 /* EBooksStatsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C18A02975A1870027CCD0 /* EBooksStatsChartView.swift */; };
 		443F2F7E2A9A700600EAE6D3 /* TimelyTargetExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */; };
 		443F2F7F2A9A700600EAE6D3 /* TimelyTargetExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */; };
+		443F2F802A9A736400EAE6D3 /* TimelyTargetExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */; };
 		444504F4296327A2001AC434 /* LoginNoBiomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444504F3296327A2001AC434 /* LoginNoBiomView.swift */; };
 		444B00FD2780CFA300530FEC /* AddBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B00FC2780CFA300530FEC /* AddBook.swift */; };
 		444C3C8527D43C6200C61D36 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C3C8427D43C6200C61D36 /* ProgressRing.swift */; };
@@ -1492,6 +1493,7 @@
 				441A84E5298FF29C00D5F1EB /* AllEnums.swift in Sources */,
 				441A84EA299025C800D5F1EB /* ConnectivityManager.swift in Sources */,
 				445B62DE298C44630036D140 /* Entry.swift in Sources */,
+				443F2F802A9A736400EAE6D3 /* TimelyTargetExt.swift in Sources */,
 				44F471DA2993F1AC0047080A /* KeychainHelper.swift in Sources */,
 				441A84DF298FEC6A00D5F1EB /* SharedAppGroup.swift in Sources */,
 				445B62E2298C450F0036D140 /* DetailView.swift in Sources */,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RSList: View {
-    @EnvironmentObject var model: NowReadingModel
+    @EnvironmentObject var model: UserViewModel
     @EnvironmentObject var rsmodel: ReadingSessionModel
     
     @State var book: NowReading
@@ -42,7 +42,7 @@ struct RSList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             RSList(book: NowReading.example[0])
-                .environmentObject(NowReadingModel())
+                .environmentObject(UserViewModel())
                 .environmentObject(ReadingSessionModel())
         }
     }
