@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ActualReadingEdit: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     @EnvironmentObject var manager: LocationManager
     
     @Binding var book: NowReading
@@ -125,7 +124,6 @@ struct ActualReadingEdit_Previews: PreviewProvider {
         NavigationView {
             ActualReadingEdit(book: .constant(example))
                 .environmentObject(UserViewModel())
-                .environmentObject(BooksModel())
                 .environmentObject(LocationManager())
         }
     }

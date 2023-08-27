@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ScrollByPlace: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     @State private var showingAddPlace = false
     
     var places: [String] {
@@ -28,7 +27,7 @@ struct ScrollByPlace: View {
                             VStack {
                                 Text(place)
                                     .font(.title3.bold())
-                                Text("\(bmodel.numAtPlace(place)) libros")
+                                Text("\(model.numAtPlace(place)) libros")
                                     .font(.caption)
                             }
                         }
@@ -63,6 +62,5 @@ struct ScrollByPlace_Previews: PreviewProvider {
     static var previews: some View {
         ScrollByPlace()
             .environmentObject(UserViewModel())
-            .environmentObject(BooksModel())
     }
 }

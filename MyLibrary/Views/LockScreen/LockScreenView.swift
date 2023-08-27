@@ -10,7 +10,6 @@ import SwiftUI
 
 struct LockScreenView: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     @EnvironmentObject var emodel: EbooksModel
     @EnvironmentObject var rdmodel: RDModel
     
@@ -89,7 +88,6 @@ struct LockScreenView_Previews: PreviewProvider {
     static var previews: some View {
         LockScreenView()
             .environmentObject(UserViewModel())
-            .environmentObject(BooksModel())
             .environmentObject(EbooksModel())
             .environmentObject(RDModel())
     }

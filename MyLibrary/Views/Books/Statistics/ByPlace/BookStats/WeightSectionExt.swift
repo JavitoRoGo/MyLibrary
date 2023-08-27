@@ -10,10 +10,10 @@ import SwiftUI
 // Subvistas y secciones que componen la vista
 extension BookStats {
 	var weightSection: some View {
-		Section("Peso (g): \(noDecimalFormatter.string(from: NSNumber(value: bmodel.globalWeight().total))!)") {
-			let value = bmodel.weightAtPlace(place).total
-			let mean = bmodel.weightAtPlace(place).mean
-			let globalMean = bmodel.globalWeight().mean
+		Section("Peso (g): \(noDecimalFormatter.string(from: NSNumber(value: model.globalWeight().total))!)") {
+			let value = model.weightAtPlace(place).total
+			let mean = model.weightAtPlace(place).mean
+			let globalMean = model.globalWeight().mean
 			let compare = compareWithMean(value: Double(mean), mean: Double(globalMean))
 			HStack {
 				VStack {

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddBook: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     @Environment(\.dismiss) var dismiss
     
     @State var showingAlert = false
@@ -90,6 +89,5 @@ struct AddBook_Previews: PreviewProvider {
     static var previews: some View {
         AddBook()
             .environmentObject(UserViewModel())
-            .environmentObject(BooksModel())
     }
 }

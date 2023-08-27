@@ -78,8 +78,8 @@ extension ActualReadingDetail {
 	
 	func changeToRegistered(_ book: NowReading) {
 		if book.formatt == .paper {
-			if let index = BooksModel().books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				bmodel.books[index].status = .registered
+			if let index = model.user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				model.user.books[index].status = .registered
 			}
 		} else {
 			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {

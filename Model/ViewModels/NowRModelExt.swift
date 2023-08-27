@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-// Extension for NowReading: reading and waiting lists
+// Extension for NowReading: handling with reading and waiting books lists
 
 extension UserViewModel {
 	// Actualizar datos para el widget
@@ -86,7 +86,7 @@ extension UserViewModel {
             user.nowWaiting.remove(at: index)
         }
 		if book.formatt == .paper {
-			if let index = BooksModel().books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+			if let index = user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
 				user.books[index].status = .reading
 			}
 		} else {
@@ -103,8 +103,8 @@ extension UserViewModel {
             user.nowReading.remove(at: index)
         }
 		if book.formatt == .paper {
-			if let index = BooksModel().books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				BooksModel().books[index].status = .waiting
+			if let index = user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				user.books[index].status = .waiting
 			}
 		} else {
 			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
@@ -121,7 +121,7 @@ extension UserViewModel {
                 dataTotalArray.append(ebook.bookTitle)
             }
         } else {
-            let foundBookArray = BooksModel().books.filter { $0.bookTitle.lowercased().contains(text.lowercased()) }
+            let foundBookArray = user.books.filter { $0.bookTitle.lowercased().contains(text.lowercased()) }
             foundBookArray.forEach { book in
                 dataTotalArray.append(book.bookTitle)
             }

@@ -17,16 +17,16 @@ extension ChangeBooksOwner {
 	var number: Int {
 		switch format {
 			case .book:
-				return bmodel.numByOwner(oldOwner)
+				return model.numByOwner(oldOwner)
 			case .ebook:
 				return emodel.numByOwner(oldOwner)
 			case .all:
-				return bmodel.numByOwner(oldOwner) + emodel.numByOwner(oldOwner)
+				return model.numByOwner(oldOwner) + emodel.numByOwner(oldOwner)
 		}
 	}
 	
 	struct ChangeOwnerModifier: ViewModifier {
-		@EnvironmentObject var bmodel: BooksModel
+		@EnvironmentObject var model: UserViewModel
 		@EnvironmentObject var emodel: EbooksModel
 		@Environment(\.dismiss) var dismiss
 		
@@ -54,11 +54,11 @@ extension ChangeBooksOwner {
 					Button("Sí") {
 						switch format {
 							case .book:
-								bmodel.changeOwnerFromTo(from: oldOwner, to: newOwner)
+								model.changeOwnerFromTo(from: oldOwner, to: newOwner)
 							case .ebook:
 								emodel.changeOwnerFromTo(from: oldOwner, to: newOwner)
 							case .all:
-								bmodel.changeOwnerFromTo(from: oldOwner, to: newOwner)
+								model.changeOwnerFromTo(from: oldOwner, to: newOwner)
 								emodel.changeOwnerFromTo(from: oldOwner, to: newOwner)
 						}
 						dismiss()

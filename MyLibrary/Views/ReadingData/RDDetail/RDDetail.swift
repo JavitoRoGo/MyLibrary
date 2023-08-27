@@ -57,7 +57,6 @@ struct RDDetail_Previews: PreviewProvider {
         NavigationView {
             RDDetail(rdata: ReadingData.dataTest)
                 .environmentObject(RDModel())
-                .environmentObject(BooksModel())
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  BookModel.swift
+//  BookModelExt.swift
 //  MyLibrary
 //
 //  Created by Javier Rodríguez Gómez on 30/12/21.
@@ -7,20 +7,12 @@
 
 import SwiftUI
 
-final class BooksModel: ObservableObject {
-    @Published var books: [Books] {
-        didSet {
-            Task { await saveToJson(booksJson, books) }
-            UserViewModel().user.books = books
-        }
-    }
+// Extension for BooksModel: handling with paper formatt books
+
+extension UserViewModel {
     
-    init() {
-        books = Bundle.main.searchAndDecode(booksJson) ?? []
-    }
-            
     var activeBooks: [Books] {
-        books.filter{ $0.isActive }
+		user.books.filter{ $0.isActive }
     }
     
     func numAtPlace(_ place: String) -> Int {
@@ -31,7 +23,7 @@ final class BooksModel: ObservableObject {
     }
     
     func booksAtPlace(_ place: String) -> [Books] {
-        books.filter { $0.place == place }.reversed()
+		user.books.filter { $0.place == place }.reversed()
     }
     
     func numByOwner(_ owner: String) -> Int {
@@ -71,18 +63,18 @@ final class BooksModel: ObservableObject {
     
     // Cambiar la ubicación de libros en bloque
     func moveFromTo(from oldPlace: String, to newplace: String) {
-        for book in books where book.place == oldPlace {
-            if let index = books.firstIndex(of: book) {
-                books[index].place = newplace
+		for book in user.books where book.place == oldPlace {
+			if let index = user.books.firstIndex(of: book) {
+				user.books[index].place = newplace
             }
         }
     }
     
     // Cambiar el propietario de libros en bloque
     func changeOwnerFromTo(from oldOwner: String, to newOwner: String) {
-        for book in books where book.owner == oldOwner {
-            if let index = books.firstIndex(of: book) {
-                books[index].owner = newOwner
+		for book in user.books where book.owner == oldOwner {
+			if let index = user.books.firstIndex(of: book) {
+				user.books[index].owner = newOwner
             }
         }
     }
@@ -106,9 +98,10 @@ final class BooksModel: ObservableObject {
     }
 }
 
-extension BooksModel {
-    // Funciones para las estadísticas por ubicación
-    
+// Funciones para las estadísticas por ubicación
+
+extension UserViewModel {
+	
     // Selección del color
     func numColor(_ num: Int) -> Color {
         if num >= 50 {
@@ -251,9 +244,10 @@ extension BooksModel {
     }
 }
 
-extension BooksModel {
-    // Funciones para las otras estadísticas en SwiftCharts: por autor, editorial, encuadernación y propietario
-    
+// Funciones para las otras estadísticas en SwiftCharts: por autor, editorial, encuadernación y propietario
+
+extension UserViewModel {
+	
     // Función para obtener el listado de autores, editoriales, encuadernaciones y propietarios
     func arrayOfLabelsByCategoryForPickerAndGraph(tag: Int) -> [String] {
         var arrayOfData = [String]()

@@ -14,7 +14,6 @@ struct ScrollByOwner: View {
     let format: BookFormat
     
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     @EnvironmentObject var emodel: EbooksModel
     @State private var showingAddOwner = false
     
@@ -28,7 +27,7 @@ struct ScrollByOwner: View {
                 HStack(spacing: 10) {
                     if format == .book {
                         ForEach(model.myOwners, id:\.self) { owner in
-                            EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: bmodel.numByOwner(owner), title: owner, destination: BookList(place: "all", filterByOwner: owner))
+                            EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numByOwner(owner), title: owner, destination: BookList(place: "all", filterByOwner: owner))
                         }
                     } else {
                         ForEach(model.myOwners, id:\.self) { owner in
@@ -61,7 +60,6 @@ struct ScrollByOwner_Previews: PreviewProvider {
     static var previews: some View {
         ScrollByOwner(format: .ebook)
             .environmentObject(UserViewModel())
-            .environmentObject(BooksModel())
             .environmentObject(EbooksModel())
     }
 }

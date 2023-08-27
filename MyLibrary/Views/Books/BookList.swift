@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookList: View {
-    @EnvironmentObject var model: BooksModel
+    @EnvironmentObject var model: UserViewModel
     @State private var searchText = ""
     
     let place: String
@@ -63,7 +63,7 @@ struct BookList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             BookList(place: "A1")
-                .environmentObject(BooksModel())
+                .environmentObject(UserViewModel())
         }
     }
 }

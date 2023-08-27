@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct MyLibraryApp: App {
-    @StateObject var booksModel = BooksModel()
     @StateObject var ebooksModel = EbooksModel()
     @StateObject var rdModel = RDModel()
     @StateObject var userModel = UserViewModel()
@@ -18,7 +17,6 @@ struct MyLibraryApp: App {
     var body: some Scene {
         WindowGroup {
             LockScreenView()
-                .environmentObject(booksModel)
                 .environmentObject(ebooksModel)
                 .environmentObject(rdModel)
                 .environmentObject(userModel)

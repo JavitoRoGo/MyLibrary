@@ -40,7 +40,6 @@ extension ActualReadingEdit {
 	
 	struct AREditModifier: ViewModifier {
 		@EnvironmentObject var model: UserViewModel
-		@EnvironmentObject var bmodel: BooksModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var book: NowReading
@@ -72,7 +71,7 @@ extension ActualReadingEdit {
 						showingCameraPicker = true
 					}
 					Button("Descargar imagen") {
-						if let book = bmodel.books.filter({ $0.bookTitle == bookTitle }).first {
+						if let book = model.user.books.filter({ $0.bookTitle == bookTitle }).first {
 							let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
 							let isbnString = isbnArray.map { String($0) }.reduce("",+)
 							isbn = isbnString

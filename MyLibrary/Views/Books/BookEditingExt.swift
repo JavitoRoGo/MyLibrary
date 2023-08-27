@@ -11,10 +11,12 @@ extension BookEditing {
     struct BookEditingModifier: ViewModifier {
         @EnvironmentObject var model: UserViewModel
         @Environment(\.dismiss) var dismiss
+		
         @Binding var book: Books
         @Binding var showingAlert: Bool
         @Binding var showingAddWaitingList: Bool
         @Binding var isOnWaitingList: Bool
+		
         let newBookTitle: String
         let newStatus: ReadingStatus
         let newOwner: String

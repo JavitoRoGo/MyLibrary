@@ -8,6 +8,8 @@
 import SwiftUI
 import WidgetKit
 
+// Extension for RSModel: handling with reading sessions
+
 extension UserViewModel {
 	
 	// Recopilación de citas y comentarios de todas las sesiones

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EditPlaces: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     
     @State var oldPlace = ""
     @State var newPlace = ""
@@ -27,7 +26,7 @@ struct EditPlaces: View {
                 List {
                     placesSection
                     Section {
-                        ForEach(bmodel.getSuggestedPlacesFromData(), id:\.self) { place in
+                        ForEach(model.getSuggestedPlacesFromData(), id:\.self) { place in
                             Button {
 								model.user.myPlaces.append(place)
                             } label: {
@@ -78,7 +77,6 @@ struct EditPlaces_Previews: PreviewProvider {
         NavigationView {
             EditPlaces()
                 .environmentObject(UserViewModel())
-                .environmentObject(BooksModel())
         }
     }
 }

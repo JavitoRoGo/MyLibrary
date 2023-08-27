@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ChangeBooksPlace: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     @Environment(\.dismiss) var dismiss
     
     @State private var showingAlert = false
@@ -49,10 +48,10 @@ struct ChangeBooksPlace: View {
                     .disabled(oldPlace == newPlace || oldPlace.isEmpty || newPlace.isEmpty)
                 }
             }
-            .alert("Esto cambiará la ubicación de \(bmodel.numAtPlace(oldPlace)) libros, de \(oldPlace) a \(newPlace).", isPresented: $showingAlert) {
+            .alert("Esto cambiará la ubicación de \(model.numAtPlace(oldPlace)) libros, de \(oldPlace) a \(newPlace).", isPresented: $showingAlert) {
                 Button("No", role: .cancel) { }
                 Button("Sí") {
-                    bmodel.moveFromTo(from: oldPlace, to: newPlace)
+                    model.moveFromTo(from: oldPlace, to: newPlace)
                     dismiss()
                 }
             } message: {
@@ -67,7 +66,6 @@ struct MovingBooks_Previews: PreviewProvider {
         NavigationStack {
             ChangeBooksPlace()
                 .environmentObject(UserViewModel())
-                .environmentObject(BooksModel())
         }
     }
 }

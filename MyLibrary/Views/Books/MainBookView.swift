@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainBookView: View {
-    @EnvironmentObject var model: BooksModel
+    @EnvironmentObject var model: UserViewModel
     
     @State var showingSold = false
     @State var showingDonated = false
@@ -69,6 +69,6 @@ struct MainBookView: View {
 struct MainBookView_Previews: PreviewProvider {
     static var previews: some View {
         MainBookView()
-            .environmentObject(BooksModel())
+            .environmentObject(UserViewModel())
     }
 }

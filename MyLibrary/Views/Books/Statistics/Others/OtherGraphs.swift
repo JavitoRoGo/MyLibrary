@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct OtherGraphs: View {
-    @EnvironmentObject var model: BooksModel
+    @EnvironmentObject var model: UserViewModel
     
     let titles = ["Autor", "Editorial", "Encuadernación", "Propietario", "Estado"]
     @State private var pickerSelection = 2
@@ -104,6 +104,6 @@ struct OtherGraphs: View {
 struct OtherGraphs_Previews: PreviewProvider {
     static var previews: some View {
         OtherGraphs()
-            .environmentObject(BooksModel())
+            .environmentObject(UserViewModel())
     }
 }

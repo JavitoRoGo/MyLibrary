@@ -15,7 +15,6 @@ extension EditPlaces {
 	// View modifier para la lista con places
 	struct PlacesListModifier: ViewModifier {
 		@EnvironmentObject var model: UserViewModel
-		@EnvironmentObject var bmodel: BooksModel
 		
 		@Binding var oldPlace: String
 		@Binding var newPlace: String
@@ -34,7 +33,7 @@ extension EditPlaces {
 					Button("No", role: .cancel) { }
 					Button("Sí", role: .destructive) {
 						model.user.myPlaces.removeAll(where: { $0 == oldPlace })
-						bmodel.moveFromTo(from: oldPlace, to: "sin asignar")
+						model.moveFromTo(from: oldPlace, to: "sin asignar")
 						oldPlace = ""
 					}
 				} message: {
@@ -43,7 +42,7 @@ extension EditPlaces {
 				.alert("Se ha modificado el nombre de esta ubicación.", isPresented: $showingEditAlert) {
 					Button("No", role: .cancel) { }
 					Button("Sí") {
-						bmodel.moveFromTo(from: oldPlace, to: newPlace)
+						model.moveFromTo(from: oldPlace, to: newPlace)
 						newPlace = ""
 					}
 				} message: {
