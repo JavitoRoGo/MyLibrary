@@ -21,13 +21,16 @@ final class UserViewModel: ObservableObject {
 			}
 			// Actualizar datos para el Watch
 			Task {
-				await fetchDatatoWatch()
+				// temporalmente deshabilitado
+//				await fetchDatatoWatch()
 			}
 		}
 	}
 	@Published var password = ""
 	@Published var validations: [Validation] = []
 	@Published var isValid: Bool = false
+	
+	var tempQuotesArray: [Quote] = []
 	
 	var storedPassword = keychain.get("storedPassword") ?? ""
 	@AppStorage("isBiometricsAllowed") var isBiometricsAllowed = false

@@ -9,12 +9,8 @@ import SwiftUI
 import WidgetKit
 
 extension UserViewModel {
-	var tempQuotesArray: [Quote] {
-		get { [] }
-		set { }
-	}
-    
-    // Recopilación de citas y comentarios de todas las sesiones
+	
+	// Recopilación de citas y comentarios de todas las sesiones
     var allQuotes: [Quote] {
         var array: [Quote] = []
         user.sessions.forEach { session in

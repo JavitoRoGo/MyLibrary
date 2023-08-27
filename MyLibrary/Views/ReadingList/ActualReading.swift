@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ActualReading: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
-    @EnvironmentObject var emodel: EbooksModel
     
     @State var showingDeletingAlert = false
     @State var showingAddNewBook = false
@@ -82,7 +80,5 @@ struct ActualReading_Previews: PreviewProvider {
     static var previews: some View {
         ActualReading()
             .environmentObject(UserViewModel())
-            .environmentObject(BooksModel())
-            .environmentObject(EbooksModel())
     }
 }
