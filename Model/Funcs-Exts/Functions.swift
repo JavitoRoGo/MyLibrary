@@ -12,12 +12,6 @@ import SwiftUI
 
 // Funciones para icono y color según estado, y mensajes de información
 
-protocol BooksProtocol {
-	var pages: Int { get }
-	var price: Double { get }
-    var status: ReadingStatus { get set }
-}
-
 func imageNameStatus(_ status: ReadingStatus) -> String {
     switch status {
     case .notRead:

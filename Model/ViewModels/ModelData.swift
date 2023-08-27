@@ -239,3 +239,11 @@ struct Quote: Codable, Equatable {
     let page: Int
     let text: String
 }
+
+
+// Protocolo al que conformar para usar genéricos en algunas funciones, para Books y EBooks
+protocol BooksProtocol {
+	var pages: Int { get }
+	var price: Double { get }
+	var status: ReadingStatus { get set }
+}
