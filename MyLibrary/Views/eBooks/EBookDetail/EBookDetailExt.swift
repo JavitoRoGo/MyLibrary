@@ -10,7 +10,6 @@ import SwiftUI
 extension EBookDetail {
     struct EBookDetailModifier: ViewModifier {
         @EnvironmentObject var model: UserViewModel
-        @EnvironmentObject var rdmodel: RDModel
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingDeleteAlert: Bool
@@ -61,7 +60,7 @@ extension EBookDetail {
                     Text(messageInfoAlert)
                 }
                 .sheet(isPresented: $showingRDDetail) {
-                    if let rdata = rdmodel.readingDatas.first(where: { $0.bookTitle == ebook.bookTitle }) {
+					if let rdata = model.user.readingDatas.first(where: { $0.bookTitle == ebook.bookTitle }) {
                         NavigationView {
                             RDDetail(rdata: rdata)
                                 .toolbar {

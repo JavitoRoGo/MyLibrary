@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDGlobalStats: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     @State var datas: [RDGlobalStatsData] = [RDGlobalStatsData(title: "Libros:", paper: "81", kindle: "60", total: "141")]
     
     var body: some View {
@@ -43,6 +43,6 @@ struct RDGlobalStats: View {
 struct RDGlobalStats_Previews: PreviewProvider {
     static var previews: some View {
         RDGlobalStats()
-            .environmentObject(RDModel())
+            .environmentObject(UserViewModel())
     }
 }

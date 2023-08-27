@@ -11,7 +11,6 @@ import SwiftUI
 
 struct ActualReadingDetail: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var rdmodel: RDModel
     
     @State var book: NowReading
     
@@ -57,7 +56,6 @@ struct ActualReadingDetail_Previews: PreviewProvider {
         NavigationView {
             ActualReadingDetail(book: NowReading.example[0])
                 .environmentObject(UserViewModel())
-                .environmentObject(RDModel())
         }
     }
 }

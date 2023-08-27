@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDMain: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     
     @State private var rating: Int = 1
     
@@ -26,13 +26,13 @@ struct RDMain: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if model.readingDatas.isEmpty {
+				if model.user.readingDatas.isEmpty {
                     Text("Completa tu primera lectura para ver aquí los datos.")
                 } else {
                     VStack(spacing: 15) {
                         HStack(spacing: 10) {
-                            EachMainViewButton(iconImage: "list.star", iconColor: .pink, number: model.readingDatas.count, title: "Lista", destination: RDList())
-                            EachMainViewButton(iconImage: "square.grid.3x3", iconColor: .pink, number: model.readingDatas.count, title: "Mosaico", destination: RDGrid(filterByRatingSelection: .all))
+							EachMainViewButton(iconImage: "list.star", iconColor: .pink, number: model.user.readingDatas.count, title: "Lista", destination: RDList())
+							EachMainViewButton(iconImage: "square.grid.3x3", iconColor: .pink, number: model.user.readingDatas.count, title: "Mosaico", destination: RDGrid(filterByRatingSelection: .all))
                         }
                         ScrollView(.horizontal) {
                             HStack(spacing: 5) {
@@ -41,7 +41,7 @@ struct RDMain: View {
                                         VStack {
                                             Text(String(year.rawValue))
                                                 .font(.title3.bold())
-                                            Text("\(model.numPerYear(year, filterBy: .all)) libros")
+                                            Text("\(model.numberofreadingye(year, filterBy: .all)) libros")
                                                 .font(.caption)
                                         }
                                     }
@@ -94,6 +94,6 @@ struct RDMain: View {
 struct RDMain_Previews: PreviewProvider {
     static var previews: some View {
         RDMain()
-            .environmentObject(RDModel())
+            .environmentObject(UserViewModel())
     }
 }

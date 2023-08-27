@@ -18,7 +18,7 @@ extension RDDetail {
     }
     
     struct RDDetailModifier: ViewModifier {
-        @EnvironmentObject var model: RDModel
+        @EnvironmentObject var model: UserViewModel
         
         @Binding var rdata: ReadingData
         @Binding var showingLocation: Bool
@@ -29,7 +29,7 @@ extension RDDetail {
         
         func body(content: Content) -> some View {
             content
-                .navigationTitle("Detalle (\(rdata.id) de \(model.readingDatas.count))")
+				.navigationTitle("Detalle (\(rdata.id) de \(model.user.readingDatas.count))")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {

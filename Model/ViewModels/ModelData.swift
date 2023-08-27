@@ -168,7 +168,7 @@ extension NowReading {
         var timeLeft = 0.0
         if minPerPag.isEmpty || minPerPag == "-" {
             #if os(iOS)
-            timeLeft = RDModel().meanMinPerPag * Double(remainingPages) / 60.0
+            timeLeft = UserViewModel().meanMinPerPag * Double(remainingPages) / 60.0
             #elseif os(watchOS)
             timeLeft = Double(remainingPages * 2)
             #endif
@@ -180,7 +180,7 @@ extension NowReading {
     var finishingDay: Date {
         guard let lastReadingDay = sessions.first?.date else {
             #if os(iOS)
-            let daysLeft = Double(remainingPages) / RDModel().meanPagPerDay
+            let daysLeft = Double(remainingPages) / UserViewModel().meanPagPerDay
             #elseif os(watchOS)
             let daysLeft = Double(remainingPages) / Double(40)
             #endif

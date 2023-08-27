@@ -71,7 +71,6 @@ struct EBookDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             EBookDetail(ebook: .constant(EBooks.dataTest), newStatus: .consulting)
-                .environmentObject(RDModel())
                 .environmentObject(UserViewModel())
         }
     }

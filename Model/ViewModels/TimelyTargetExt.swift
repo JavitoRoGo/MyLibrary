@@ -67,7 +67,7 @@ extension UserViewModel {
 		let todayComponents = Calendar.current.dateComponents([.month, .year], from: Date())
 		switch target {
 			case .books:
-				let booksRead = RDModel().readingDatas.filter({ Calendar.current.dateComponents([.month, .year], from: $0.finishDate) == todayComponents })
+				let booksRead = user.readingDatas.filter({ Calendar.current.dateComponents([.month, .year], from: $0.finishDate) == todayComponents })
 				if booksRead.isEmpty {
 					return ("0",0)
 				} else {
@@ -89,7 +89,7 @@ extension UserViewModel {
 		let todayComponents = Calendar.current.dateComponents([.year], from: Date())
 		switch target {
 			case .books:
-				let booksRead = RDModel().readingDatas.filter({ Calendar.current.dateComponents([.year], from: $0.finishDate) == todayComponents })
+				let booksRead = user.readingDatas.filter({ Calendar.current.dateComponents([.year], from: $0.finishDate) == todayComponents })
 				if booksRead.isEmpty {
 					return ("0",0)
 				} else {
@@ -196,7 +196,7 @@ extension UserViewModel {
 			}
 		} else {
 			// Obtener los grupos o array de libros por año y mes
-			let books = RDModel().readingDatas
+			let books = user.readingDatas
 			var booksRead: [Int] = []
 			years.forEach { year in
 				for month in 1...12 {
@@ -239,7 +239,7 @@ extension UserViewModel {
 				}
 			}
 		} else {
-			let books = RDModel().readingDatas
+			let books = user.readingDatas
 			var booksRead: [Int] = []
 			years.forEach { year in
 				let yearBooks = books.filter {

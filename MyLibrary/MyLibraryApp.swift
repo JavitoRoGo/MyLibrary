@@ -9,14 +9,12 @@ import SwiftUI
 
 @main
 struct MyLibraryApp: App {
-    @StateObject var rdModel = RDModel()
     @StateObject var userModel = UserViewModel()
     @StateObject var locationManager = LocationManager()
     
     var body: some Scene {
         WindowGroup {
             LockScreenView()
-                .environmentObject(rdModel)
                 .environmentObject(userModel)
                 .environmentObject(locationManager)
                 .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)

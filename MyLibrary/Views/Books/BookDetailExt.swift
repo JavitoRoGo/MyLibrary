@@ -153,7 +153,6 @@ extension BookDetail {
 extension BookDetail {
     struct BookDetailModifier: ViewModifier {
         @EnvironmentObject var model: UserViewModel
-        @EnvironmentObject var rdmodel: RDModel
         let book: Books
         @Binding var showingDelete: Bool
         @Binding var showingEditPage: Bool
@@ -207,7 +206,7 @@ extension BookDetail {
                     Text(messageInfoAlert)
                 }
                 .sheet(isPresented: $showingRDDetail) {
-                    let rdata = rdmodel.readingDatas.first(where: { $0.bookTitle == book.bookTitle })!
+					let rdata = model.user.readingDatas.first(where: { $0.bookTitle == book.bookTitle })!
                     NavigationView {
                         RDDetail(rdata: rdata)
                             .toolbar {

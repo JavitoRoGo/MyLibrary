@@ -10,7 +10,6 @@ import SwiftUI
 
 struct LockScreenView: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var rdmodel: RDModel
     
     @State var isUnlocked = false
     @State var showingAlert = false
@@ -87,6 +86,5 @@ struct LockScreenView_Previews: PreviewProvider {
     static var previews: some View {
         LockScreenView()
             .environmentObject(UserViewModel())
-            .environmentObject(RDModel())
     }
 }

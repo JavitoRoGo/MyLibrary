@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct NewLineGraph: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     @State private var datasForLineChart: [DataForLineChart] = []
     
     var body: some View {
@@ -35,8 +35,8 @@ struct NewLineGraph: View {
         .chartForegroundStyleScale(["pág/d": .blue.opacity(0.4), "Evolución": .red.opacity(0.4)])
         .task {
             datasForLineChart = [
-                .init(name: "pág/d", value: model.datas().0, animate: .init(repeating: false, count: model.datas().0.count)),
-                .init(name: "Evolución", value: model.datas().1, animate: .init(repeating: false, count: model.datas().1.count))
+                .init(name: "pág/d", value: model.datasForPagPerDay().0, animate: .init(repeating: false, count: model.datasForPagPerDay().0.count)),
+                .init(name: "Evolución", value: model.datasForPagPerDay().1, animate: .init(repeating: false, count: model.datasForPagPerDay().1.count))
             ]
             animateGraph()
         }

@@ -130,7 +130,7 @@ extension UserViewModel {
     }
     
     func createNewRD(from book: NowReading, rating: Int) -> ReadingData {
-        let rdatas = RDModel().readingDatas
+        let rdatas = user.readingDatas
         let newID = rdatas.count + 1
         var newYearID: Int {
             let actualYear = Year.allCases.last
