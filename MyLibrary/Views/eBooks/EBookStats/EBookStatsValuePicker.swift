@@ -46,7 +46,7 @@ extension EbookStatsView {
 								.padding()
 							}
 							Picker("Valor", selection: $pickerSelection) {
-								ForEach(model.arrayOfLabelsByCategoryForPickerAndGraph(tag: statsSelection), id: \.self) {
+								ForEach(model.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: statsSelection), id: \.self) {
 									Text($0)
 								}
 							}

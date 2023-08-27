@@ -90,7 +90,7 @@ extension UserViewModel {
 				user.books[index].status = .reading
 			}
 		} else {
-			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+			if let index = user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
 				user.ebooks[index].status = .reading
 			}
 		}
@@ -107,8 +107,8 @@ extension UserViewModel {
 				user.books[index].status = .waiting
 			}
 		} else {
-			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				EbooksModel().ebooks[index].status = .waiting
+			if let index = user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				user.ebooks[index].status = .waiting
 			}
 		}
     }
@@ -116,7 +116,7 @@ extension UserViewModel {
     func compareExistingBook(formatt: Formatt, text: String) -> (num: Int, datas: [String]) {
         var dataTotalArray = [String]()
         if formatt == .kindle {
-            let foundEBookArray = EbooksModel().ebooks.filter { $0.bookTitle.lowercased().contains(text.lowercased()) }
+            let foundEBookArray = user.ebooks.filter { $0.bookTitle.lowercased().contains(text.lowercased()) }
             foundEBookArray.forEach { ebook in
                 dataTotalArray.append(ebook.bookTitle)
             }

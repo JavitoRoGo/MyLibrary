@@ -48,7 +48,7 @@ struct ChangeBooksPlace: View {
                     .disabled(oldPlace == newPlace || oldPlace.isEmpty || newPlace.isEmpty)
                 }
             }
-            .alert("Esto cambiará la ubicación de \(model.numAtPlace(oldPlace)) libros, de \(oldPlace) a \(newPlace).", isPresented: $showingAlert) {
+            .alert("Esto cambiará la ubicación de \(model.numberOfBooksAtPlace(oldPlace)) libros, de \(oldPlace) a \(newPlace).", isPresented: $showingAlert) {
                 Button("No", role: .cancel) { }
                 Button("Sí") {
                     model.moveFromTo(from: oldPlace, to: newPlace)

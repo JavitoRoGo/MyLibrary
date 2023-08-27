@@ -23,7 +23,7 @@ extension EditPlaces {
 						Button("Modificar") {
 							if let index = model.user.myPlaces.firstIndex(of: place) {
 								model.user.myPlaces[index] = newPlace
-								if model.numAtPlace(place) != 0 {
+								if model.numberOfBooksAtPlace(place) != 0 {
 									oldPlace = place
 									showingEditAlert = true
 								}
@@ -37,7 +37,7 @@ extension EditPlaces {
 				.swipeActions(edge: .trailing) {
 					Button(role: .destructive) {
 						withAnimation {
-							if model.numAtPlace(place) == 0 {
+							if model.numberOfBooksAtPlace(place) == 0 {
 								model.user.myPlaces.removeAll(where: { $0 == place })
 							} else {
 								oldPlace = place

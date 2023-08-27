@@ -27,7 +27,7 @@ struct ScrollByPlace: View {
                             VStack {
                                 Text(place)
                                     .font(.title3.bold())
-                                Text("\(model.numAtPlace(place)) libros")
+                                Text("\(model.numberOfBooksAtPlace(place)) libros")
                                     .font(.caption)
                             }
                         }

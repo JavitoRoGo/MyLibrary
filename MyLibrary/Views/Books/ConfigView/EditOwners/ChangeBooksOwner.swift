@@ -11,7 +11,6 @@ struct ChangeBooksOwner: View {
     @State var format: BookFormat = .book
     
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var emodel: EbooksModel
     
     @State var showingAlert = false
     @State var oldOwner = ""
@@ -57,6 +56,5 @@ struct ChangingBooks_Previews: PreviewProvider {
     static var previews: some View {
         ChangeBooksOwner()
             .environmentObject(UserViewModel())
-            .environmentObject(EbooksModel())
     }
 }

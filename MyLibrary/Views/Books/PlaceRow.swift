@@ -11,7 +11,7 @@ struct PlaceRow: View {
     @EnvironmentObject var model: UserViewModel
     let place: String
     var number: Int {
-        return model.numAtPlace(place)
+        return model.numberOfBooksAtPlace(place)
     }
     
     

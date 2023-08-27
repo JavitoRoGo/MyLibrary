@@ -1,5 +1,5 @@
 //
-//  EBookModel.swift
+//  EBookModelExt.swift
 //  MyLibrary
 //
 //  Created by Javier Rodríguez Gómez on 2/1/22.
@@ -7,20 +7,12 @@
 
 import SwiftUI
 
-final class EbooksModel: ObservableObject {
-    @Published var ebooks: [EBooks] {
-        didSet {
-            Task { await saveToJson(ebooksJson, ebooks) }
-            UserViewModel().user.ebooks = ebooks
-        }
-    }
-    
-    init() {
-        ebooks = Bundle.main.searchAndDecode(ebooksJson) ?? []
-    }
+// Extension for EbooksModel: handling with ebooks
+
+extension UserViewModel {
     
     func compareExistingAuthors(text: String) -> (num: Int, authors: [String]) {
-        let foundEBookArray = ebooks.filter { $0.author.lowercased().contains(text.lowercased()) }
+		let foundEBookArray = user.ebooks.filter { $0.author.lowercased().contains(text.lowercased()) }
         var authorTotalArray = [String]()
         
         foundEBookArray.forEach { book in
@@ -29,24 +21,24 @@ final class EbooksModel: ObservableObject {
         
         return (authorTotalArray.uniqued().count, authorTotalArray.uniqued())
     }
+	
+	func ebooksByOwner(_ owner: String) -> [EBooks] {
+		user.ebooks.filter { $0.owner == owner }.reversed()
+	}
     
-    func numByOwner(_ owner: String) -> Int {
+    func numberOfEbooksByOwner(_ owner: String) -> Int {
         ebooksByOwner(owner).count
     }
     
-    func numByStatus(_ status: ReadingStatus) -> Int {
-        ebooks.filter{ $0.status == status }.count
-    }
-    
-    func ebooksByOwner(_ owner: String) -> [EBooks] {
-        ebooks.filter { $0.owner == owner }.reversed()
+    func numberOfEbooksByStatus(_ status: ReadingStatus) -> Int {
+		user.ebooks.filter{ $0.status == status }.count
     }
     
     // Cambiar el propietario de ebooks en bloque
-    func changeOwnerFromTo(from oldOwner: String, to newOwner: String) {
-        for ebook in ebooks where ebook.owner == oldOwner {
-            if let index = ebooks.firstIndex(of: ebook) {
-                ebooks[index].owner = newOwner
+    func changeEbookOwnerFromTo(from oldOwner: String, to newOwner: String) {
+		for ebook in user.ebooks where ebook.owner == oldOwner {
+			if let index = user.ebooks.firstIndex(of: ebook) {
+				user.ebooks[index].owner = newOwner
             }
         }
     }
@@ -54,30 +46,32 @@ final class EbooksModel: ObservableObject {
     // MARK: - Funciones para las estadísticas
     
     // Datos globales
-    func globalPages() -> (total: Int, mean: Int) {
-        let total = ebooks.reduce(0) { $0 + $1.pages }
-        let mean = total / ebooks.count
-        return(total, mean)
-    }
+	// Función descartada para usar la versión con genéricos de StatsModelExt
+//    func globalPages() -> (total: Int, mean: Int) {
+//        let total = ebooks.reduce(0) { $0 + $1.pages }
+//        let mean = total / ebooks.count
+//        return(total, mean)
+//    }
     
-    func globalPrice() -> (total: Double, mean: Double) {
-        let total = ebooks.reduce(0) { $0 + $1.price }
-        let mean = total / Double(ebooks.count)
-        return (total, mean)
-    }
+	// Función descartada para usar la versión con genéricos de StatsModelExt
+//    func globalPrice() -> (total: Double, mean: Double) {
+//        let total = ebooks.reduce(0) { $0 + $1.price }
+//        let mean = total / Double(ebooks.count)
+//        return (total, mean)
+//    }
     
     // Función para obtener el listado de autores y propietarios
-    func arrayOfLabelsByCategoryForPickerAndGraph(tag: Int) -> [String] {
+    func arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: Int) -> [String] {
         var arrayOfData = [String]()
         
         // Por autor:
         if tag == 0 {
-            ebooks.forEach { ebook in
+			user.ebooks.forEach { ebook in
                 arrayOfData.append(ebook.author)
             }
         } // Por propietario:
         else if tag == 1 {
-            UserViewModel().myOwners.forEach { owner in
+            myOwners.forEach { owner in
                 arrayOfData.append(owner)
             }
         } // Por estado:
@@ -94,14 +88,14 @@ final class EbooksModel: ObservableObject {
     func numOfEBooksForStats(tag: Int, text: String) -> Int {
         // Por autor:
         if tag == 0 {
-            return ebooks.filter{ $0.author == text }.count
+			return user.ebooks.filter{ $0.author == text }.count
         } // Por propietario:
         else if tag == 1 {
-            return numByOwner(text)
+            return numberOfEbooksByOwner(text)
         } // Por estado:
         else if tag == 2 {
             guard let status = ReadingStatus.init(rawValue: text) else { return 0 }
-            return ebooks.filter{ $0.status == status }.count
+			return user.ebooks.filter{ $0.status == status }.count
         }
         return 0
     }
@@ -109,7 +103,7 @@ final class EbooksModel: ObservableObject {
     func numOfPagesForStats(tag: Int, text: String) -> (total: Int, mean: Int) {
         // Por autor:
         if tag == 0 {
-            let ebooks = ebooks.filter{ $0.author == text }
+			let ebooks = user.ebooks.filter{ $0.author == text }
             if !ebooks.isEmpty {
                 let total = ebooks.reduce(0) { $0 + $1.pages }
                 let mean = total / ebooks.count
@@ -126,7 +120,7 @@ final class EbooksModel: ObservableObject {
         } // Por estado:
         else if tag == 2 {
             guard let status = ReadingStatus.init(rawValue: text) else { return (0,0) }
-            let ebooks = ebooks.filter{ $0.status == status }
+			let ebooks = user.ebooks.filter{ $0.status == status }
             if !ebooks.isEmpty {
                 let total = ebooks.reduce(0) { $0 + $1.pages }
                 let mean = total / ebooks.count
@@ -139,7 +133,7 @@ final class EbooksModel: ObservableObject {
     func priceForStats(tag: Int, text: String) -> (total: Double, mean: Double) {
         // Por autor:
         if tag == 0 {
-            let ebooks = ebooks.filter{ $0.author == text }
+			let ebooks = user.ebooks.filter{ $0.author == text }
             if !ebooks.isEmpty {
                 let total = ebooks.reduce(0) { $0 + $1.price }
                 let mean = total / Double(ebooks.count)
@@ -156,7 +150,7 @@ final class EbooksModel: ObservableObject {
         } // Por estado:
         else if tag == 2 {
             guard let status = ReadingStatus.init(rawValue: text) else { return (0,0) }
-            let ebooks = ebooks.filter{ $0.status == status }
+			let ebooks = user.ebooks.filter{ $0.status == status }
             if !ebooks.isEmpty {
                 let total = ebooks.reduce(0) { $0 + $1.price }
                 let mean = total / Double(ebooks.count)

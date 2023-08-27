@@ -10,10 +10,10 @@ import SwiftUI
 // Subvistas y secciones que componen la vista
 extension BookStats {
 	var priceSection: some View {
-		Section("Precio: \(priceFormatter.string(from: NSNumber(value: model.globalPrice().total))!)") {
+		Section("Precio: \(priceFormatter.string(from: NSNumber(value: model.globalPrice(model.user.books).total))!)") {
 			let value = model.priceAtPlace(place).total
 			let mean = model.priceAtPlace(place).mean
-			let globalMean = model.globalPrice().mean
+			let globalMean = model.globalPrice(model.user.books).mean
 			let compare = compareWithMean(value: mean, mean: globalMean)
 			HStack {
 				VStack {

@@ -18,7 +18,7 @@ struct MainBookView: View {
             ScrollView {
                 VStack(spacing: 15) {
                     VStack(spacing: 15) {
-                        EachMainViewButton(iconImage: "books.vertical", iconColor: .pink, number: model.numAtPlace("all"), title: "Todos", destination: PlaceList())
+                        EachMainViewButton(iconImage: "books.vertical", iconColor: .pink, number: model.numberOfBooksAtPlace("all"), title: "Todos", destination: PlaceList())
                         ScrollByPlace()
                         ScrollByStatus()
                         ScrollByOwner(format: .book)
@@ -38,7 +38,7 @@ struct MainBookView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("Mostrar libros donados (\(model.numAtPlace(donatedText)))")
+                            Text("Mostrar libros donados (\(model.numberOfBooksAtPlace(donatedText)))")
                                 .padding(.vertical)
                             Spacer()
                         }
@@ -51,7 +51,7 @@ struct MainBookView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("Mostrar libros vendidos (\(model.numAtPlace(soldText)))")
+                            Text("Mostrar libros vendidos (\(model.numberOfBooksAtPlace(soldText)))")
                                 .padding(.vertical)
                             Spacer()
                         }

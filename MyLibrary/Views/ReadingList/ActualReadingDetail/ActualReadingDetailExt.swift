@@ -82,8 +82,8 @@ extension ActualReadingDetail {
 				model.user.books[index].status = .registered
 			}
 		} else {
-			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				emodel.ebooks[index].status = .registered
+			if let index = model.user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				model.user.ebooks[index].status = .registered
 			}
 		}
 	}

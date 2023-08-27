@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EditOwners: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var emodel: EbooksModel
     
     @State var oldOwner = ""
     @State var newOwner = ""
@@ -77,6 +76,5 @@ struct EditOwners_Previews: PreviewProvider {
     static var previews: some View {
         EditOwners()
             .environmentObject(UserViewModel())
-            .environmentObject(EbooksModel())
     }
 }

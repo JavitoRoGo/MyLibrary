@@ -9,9 +9,8 @@ import SwiftUI
 
 extension EBookDetail {
     struct EBookDetailModifier: ViewModifier {
-        @EnvironmentObject var emodel: EbooksModel
-        @EnvironmentObject var rdmodel: RDModel
         @EnvironmentObject var model: UserViewModel
+        @EnvironmentObject var rdmodel: RDModel
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingDeleteAlert: Bool
@@ -26,7 +25,7 @@ extension EBookDetail {
         
         func body(content: Content) -> some View {
             content
-                .navigationTitle("Detalle (\(ebook.id) de \(emodel.ebooks.count))")
+				.navigationTitle("Detalle (\(ebook.id) de \(model.user.ebooks.count))")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     HStack {
@@ -92,8 +91,8 @@ extension EBookDetail {
                 .alert("¿Deseas eliminar este registro?", isPresented: $showingDeleteAlert) {
                     Button("Cancelar", role: .cancel) { }
                     Button("Eliminar", role: .destructive) {
-                        if let index = emodel.ebooks.firstIndex(of: ebook) {
-                            emodel.ebooks.remove(at: index)
+						if let index = model.user.ebooks.firstIndex(of: ebook) {
+							model.user.ebooks.remove(at: index)
                             dismiss()
                         }
                     }

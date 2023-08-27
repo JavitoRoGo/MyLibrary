@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct EBookList: View {
-    @EnvironmentObject var model: EbooksModel
+    @EnvironmentObject var model: UserViewModel
     @State var searchText = ""
     let filter: FilterByStatus
     var filteredOwner: String? = nil
     
     var body: some View {
         List(ebooksToShow) { ebook in
-            let index = model.ebooks.firstIndex(of: ebook)!
-            NavigationLink(destination: EBookDetail(ebook: $model.ebooks[index], newStatus: ebook.status)) {
+			let index = model.user.ebooks.firstIndex(of: ebook)!
+			NavigationLink(destination: EBookDetail(ebook: $model.user.ebooks[index], newStatus: ebook.status)) {
                 EBookRow(ebook: ebook)
             }
         }
@@ -31,7 +31,7 @@ struct EBookList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             EBookList(filter: .all, filteredOwner: nil)
-                .environmentObject(EbooksModel())
+                .environmentObject(UserViewModel())
         }
     }
 }

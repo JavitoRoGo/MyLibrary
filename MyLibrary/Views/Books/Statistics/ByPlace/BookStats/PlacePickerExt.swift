@@ -57,10 +57,10 @@ extension BookStats {
 				Text("Libros:")
 					.font(.title3)
 				Spacer()
-				Text(String(model.numAtPlace(place)))
+				Text(String(model.numberOfBooksAtPlace(place)))
 					.font(.largeTitle)
 					.frame(width: 75, height: 55)
-					.background(model.numColor(model.numAtPlace(place)))
+					.background(model.numColor(model.numberOfBooksAtPlace(place)))
 					.cornerRadius(15)
 					.overlay {
 						RoundedRectangle(cornerRadius: 15).stroke(.gray, lineWidth: 2)

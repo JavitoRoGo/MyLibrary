@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct EBooksStatsChartView: View {
-    @EnvironmentObject var model: EbooksModel
+    @EnvironmentObject var model: UserViewModel
     
     let titles = ["Autor", "Propietario", "Estado"]
     @State private var pickerSelection = 1
@@ -60,7 +60,7 @@ struct EBooksStatsChartView: View {
                 }
             }
             ScrollView {
-                Chart(model.arrayOfLabelsByCategoryForPickerAndGraph(tag: pickerSelection), id:\.self) { element in
+                Chart(model.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: pickerSelection), id:\.self) { element in
                     let value = model.datasForGraph(statName: pickerSelection, dataName: dataSelection, text: element)
                     BarMark(
                         x: .value("Cantidad", value),
@@ -76,7 +76,7 @@ struct EBooksStatsChartView: View {
                     }
                 }
                 .chartPlotStyle { plot in
-                    plot.frame(height: 60 * CGFloat(model.arrayOfLabelsByCategoryForPickerAndGraph(tag: pickerSelection).count))
+                    plot.frame(height: 60 * CGFloat(model.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: pickerSelection).count))
                 }
                 .chartXAxis {
                     AxisMarks(position: .top)
@@ -92,6 +92,6 @@ struct EBooksStatsChartView: View {
 struct EBooksStatsChartView_Previews: PreviewProvider {
     static var previews: some View {
         EBooksStatsChartView()
-            .environmentObject(EbooksModel())
+            .environmentObject(UserViewModel())
     }
 }
