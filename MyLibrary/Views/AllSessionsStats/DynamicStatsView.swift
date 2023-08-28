@@ -46,7 +46,8 @@ struct DynamicStatsView: View {
 				.navigationTitle("Sesiones de lectura")
 				.navigationBarTitleDisplayMode(.inline)
 			} else {
-				Text("Completa tu primera lectura para ver aquí los datos.")
+				Text("Completa tu primera sesión de lectura para ver aquí los datos.")
+					.multilineTextAlignment(.center)
 					.bold()
 					.frame(maxWidth: .infinity, maxHeight: .infinity)
 					.background {

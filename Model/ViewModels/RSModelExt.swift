@@ -62,7 +62,9 @@ extension UserViewModel {
         var datas = [Double]()
         let sessions = getSessions(tag: tag)
         if tag == 2 {
-            var data12 = 0.0
+			let count = sessions.count
+			// varios if en función del número de elementos (count)
+			var data12 = 0.0
             sessions[0...29].forEach { data12 += Double($0.pages) }
             var data11 = 0.0
             sessions[30...60].forEach { data11 += Double($0.pages) }
@@ -87,7 +89,8 @@ extension UserViewModel {
             var data1 = 0.0
             sessions[335...364].forEach { data1 += Double($0.pages) }
             datas = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12]
-            return datas
+			// usar map para eliminar los elementos de datas que sean 0
+			return datas
         }
         if tag == 3 {
             let formatter = DateFormatter()
@@ -242,14 +245,23 @@ extension UserViewModel {
     func getSessionsForBarMark(tag: Int) -> [ReadingSession] {
         var sessions = [ReadingSession]()
         if tag == 0 {
+			if user.sessions.count <= 7 {
+				return user.sessions.reversed()
+			}
             for i in 0...6 {
                 sessions.insert(user.sessions[i], at: 0)
             }
         } else if tag == 1 {
+			if user.sessions.count <= 30 {
+				return user.sessions.reversed()
+			}
             for i in 0...29 {
                 sessions.insert(user.sessions[i], at: 0)
             }
         } else if tag == 2 {
+			if user.sessions.count <= 365 {
+				return user.sessions.reversed()
+			}
             for i in 0...364 {
                 sessions.insert(user.sessions[i], at: 0)
             }

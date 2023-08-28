@@ -44,21 +44,33 @@ extension UserViewModel {
 	// Datos de medias globales
 	
     var meanMinPerPag: Double {
+		if user.readingDatas.isEmpty {
+			return 1.0
+		}
 		let sum = user.readingDatas.reduce(0) { $0 + minPerPagInMinutes($1.minPerPag) }
 		let mean = sum / Double(user.readingDatas.count)
         return mean
     }
     var meanMinPerDay: Double {
+		if user.readingDatas.isEmpty {
+			return 1.0
+		}
 		let sum = user.readingDatas.reduce(0) { $0 + minPerDayInHours($1.minPerDay) }
 		let mean = sum / Double(user.readingDatas.count)
         return mean
     }
     var meanPagPerDay: Double {
+		if user.readingDatas.isEmpty {
+			return 1.0
+		}
 		let sum = user.readingDatas.reduce(0) { $0 + $1.pagPerDay }
 		let mean = sum / Double(user.readingDatas.count)
         return mean
     }
     var meanOver50: Double {
+		if user.readingDatas.isEmpty {
+			return 1.0
+		}
 		let sum = user.readingDatas.reduce(0) { $0 + $1.percentOver50 }
 		let mean = sum / Double(user.readingDatas.count)
         return mean
