@@ -12,6 +12,10 @@ struct MainBookView: View {
     
     @State var showingSold = false
     @State var showingDonated = false
+	
+	var areStatsDisabled: Bool {
+		model.user.books.isEmpty
+	}
         
     var body: some View {
         NavigationStack {
@@ -28,7 +32,11 @@ struct MainBookView: View {
                         HStack(spacing: 10) {
                             // Se mantiene la gráfica inicial y sus estadísticas por ubicación como ejemplo de gráfica pre-SwiftCharts
                             EachMainViewButton(iconImage: "chart.xyaxis.line", iconColor: .mint, number: 0, title: "Por ubicación", destination: BookStats(place: "Por colocar"))
+								.disabled(areStatsDisabled)
+								.foregroundColor(areStatsDisabled ? .secondary.opacity(0.2) : .primary)
                             EachMainViewButton(iconImage: "chart.xyaxis.line", iconColor: .mint, number: 0, title: "Otros datos", destination: OtherStats())
+								.disabled(areStatsDisabled)
+								.foregroundColor(areStatsDisabled ? .secondary.opacity(0.2) : .primary)
                         }
                         Divider()
                     }

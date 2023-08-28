@@ -9,6 +9,10 @@ import SwiftUI
 
 struct EBookMainView: View {
     @EnvironmentObject var model: UserViewModel
+	
+	var areStatsDisabled: Bool {
+		model.user.ebooks.isEmpty
+	}
     
     var body: some View {
         NavigationStack {
@@ -30,6 +34,8 @@ struct EBookMainView: View {
                     ScrollByOwner(format: .ebook)
                     
                     EachMainViewButton(iconImage: "chart.xyaxis.line", iconColor: .mint, number: 0, title: "Estadísticas", destination: EbookStatsView())
+						.disabled(areStatsDisabled)
+						.foregroundColor(areStatsDisabled ? .secondary.opacity(0.2) : .primary)
                 }
                 .foregroundColor(.primary)
                 
