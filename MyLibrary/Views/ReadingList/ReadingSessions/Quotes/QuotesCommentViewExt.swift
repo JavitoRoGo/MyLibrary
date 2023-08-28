@@ -14,9 +14,9 @@ extension QuotesCommentView {
 			model.user.sessions[index].comment = nil
 		}
 		// Borrar comentario de la sesión del libro en ReadingDatas, en caso de existir
-		if let bookIndex = rdmodel.readingDatas.firstIndex(where: { $0.readingSessions.contains(session) }),
-		   let sessionIndex = rdmodel.readingDatas[bookIndex].readingSessions.firstIndex(of: session) {
-			rdmodel.readingDatas[bookIndex].readingSessions[sessionIndex].comment = nil
+		if let bookIndex = model.user.readingDatas.firstIndex(where: { $0.readingSessions.contains(session) }),
+		   let sessionIndex = model.user.readingDatas[bookIndex].readingSessions.firstIndex(of: session) {
+			model.user.readingDatas[bookIndex].readingSessions[sessionIndex].comment = nil
 		}
 		// Borrar comentario de la sesión del libro en NowReading, en caso de existir
 		if let bookIndex = model.user.nowReading.firstIndex(where: { $0.sessions.contains(session) }),
@@ -36,11 +36,11 @@ extension QuotesCommentView {
 			}
 		}
 		// Borar cita de la sesión del libro en ReadingDatas, en caso de existir
-		if let bookIndex = rdmodel.readingDatas.firstIndex(where: { $0.readingSessions.contains(session) }),
-		   let sessionIndex = rdmodel.readingDatas[bookIndex].readingSessions.firstIndex(of: session) {
-			rdmodel.readingDatas[bookIndex].readingSessions[sessionIndex].quotes?.removeAll(where: { $0 == quote })
-			if let _ = rdmodel.readingDatas[bookIndex].readingSessions[sessionIndex].quotes?.isEmpty {
-				rdmodel.readingDatas[bookIndex].readingSessions[sessionIndex].quotes = nil
+		if let bookIndex = model.user.readingDatas.firstIndex(where: { $0.readingSessions.contains(session) }),
+		   let sessionIndex = model.user.readingDatas[bookIndex].readingSessions.firstIndex(of: session) {
+			model.user.readingDatas[bookIndex].readingSessions[sessionIndex].quotes?.removeAll(where: { $0 == quote })
+			if let _ = model.user.readingDatas[bookIndex].readingSessions[sessionIndex].quotes?.isEmpty {
+				model.user.readingDatas[bookIndex].readingSessions[sessionIndex].quotes = nil
 			}
 		}
 		// Borrar cita de la sesión del libro en NowReading, en caso de existir

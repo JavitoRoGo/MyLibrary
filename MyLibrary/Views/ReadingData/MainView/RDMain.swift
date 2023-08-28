@@ -41,7 +41,7 @@ struct RDMain: View {
                                         VStack {
                                             Text(String(year.rawValue))
                                                 .font(.title3.bold())
-                                            Text("\(model.numberofreadingye(year, filterBy: .all)) libros")
+                                            Text("\(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros")
                                                 .font(.caption)
                                         }
                                     }
@@ -58,7 +58,7 @@ struct RDMain: View {
                                     RDStars(rating: $rating)
                                         .font(.title)
                                     Spacer()
-                                    Text(model.numPerStar(rating), format: .number)
+                                    Text(model.numberOfReadingDataPerStar(rating), format: .number)
                                         .font(.title2.bold())
                                 }
                                 Text("Toca las estrellas para ver el total")

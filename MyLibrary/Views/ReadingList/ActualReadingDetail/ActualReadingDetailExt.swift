@@ -148,7 +148,7 @@ extension ActualReadingDetail {
 					ForEach(1..<6) { rating in
 						Button {
 							let newRD = model.createNewRD(from: book, rating: rating)
-							rdmodel.add(newRD)
+							model.addNewReadingData(newRD)
 							changeToRegistered(book)
 							showingFinalAlert = true
 						} label: {

@@ -40,6 +40,9 @@ final class UserViewModel: ObservableObject {
 	
 	init() {
 		user = Bundle.main.searchAndDecode(userJson) ?? User(id: UUID(), username: "", nickname: "", books: [Books](), ebooks: [EBooks](), readingDatas: [ReadingData](), nowReading: [NowReading](), nowWaiting: [NowReading](), sessions: [ReadingSession](), myPlaces: [String]())
+		if !user.myPlaces.contains(soldText) && !user.myPlaces.contains(donatedText) {
+			user.myPlaces += [donatedText, soldText]
+		}
 		
 		// Validations
 		passwordPublisher

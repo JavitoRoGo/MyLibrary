@@ -10,13 +10,9 @@ import Foundation
 // Nombre de archivos json
 
 let userJson = "USER.json"
-let booksJson = "BOOKS.json"
-let myPlacesJson = "MYPLACES.json"
-let ebooksJson = "EBOOKS.json"
-let readingDataJson = "READINGDATA.json"
-let nowReadingJson = "NOWREADING.json"
-let nowWaitingJson = "NOWWAITING.json"
-let readingSessionsJson = "READINGSESSIONS.json"
+
+let soldText = "Vendido"
+let donatedText = "Donado"
 
 
 // Extensión de Bundle para cargar los json
