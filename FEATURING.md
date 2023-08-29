@@ -20,3 +20,4 @@
 
 ## Unificar todos los viewmodel (book, ebook...) en uno solo, asocido a User. Unificar todos los archivos JSON en uno solo, con todos los datos asociados al user.
 
+También se arreglan todos los fallos que se producen al iniciar la app desde cero y sin datos.
