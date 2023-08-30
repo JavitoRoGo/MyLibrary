@@ -184,10 +184,12 @@ extension UserViewModel {
             let year2020 = formatter.date(from: "31/12/2020")!
             let year2021 = formatter.date(from: "31/12/2021")!
             let year2022 = formatter.date(from: "31/12/2022")!
+			let year2023 = formatter.date(from: "31/12/2023")!
             var datas2019 = 0.0
             var datas2020 = 0.0
             var datas2021 = 0.0
             var datas2022 = 0.0
+			var datas2023 = 0.0
             for element in sessions where element.date <= year2019 {
                 datas2019 += Double(element.pages)
             }
@@ -200,7 +202,10 @@ extension UserViewModel {
             for element in sessions where (element.date <= year2022 && element.date > year2021) {
                 datas2022 += Double(element.pages)
             }
-            datas = [datas2019, datas2020, datas2021, datas2022]
+			for element in sessions where (element.date <= year2023 && element.date > year2022) {
+				datas2023 += Double(element.pages)
+			}
+            datas = [datas2019, datas2020, datas2021, datas2022, datas2023]
             return datas
         }
         sessions.forEach { session in
