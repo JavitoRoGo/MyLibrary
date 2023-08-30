@@ -29,3 +29,4 @@ También se arreglan todos los fallos que se producen al iniciar la app desde ce
 ## Selección de los años en función de las fechas de las sesiones y no a mano.
 
 Arreglar la gráfica Clásica que muestra los datos globales por año: modificar la función que llama los datos, *graphData(tag: Int) -> [Double]* en RSModelExt. Hacer que los años se creen en función de las fechas de las sesiones y no a mano.
+También añadir datos vacíos a la gráfica de Mes y Semana en caso que no haya datos suficientes para representar todo el mes o toda la semana.

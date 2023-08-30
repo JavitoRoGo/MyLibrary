@@ -361,6 +361,22 @@ extension UserViewModel {
             dayArray.append(session.date)
             pagesArray.append(session.pages)
         }
+		
+		// Completar los arrays de resultados en caso que no haya datos suficientes para el mes o la semana
+		if tag == 0 && sessions.count < 7 {
+			for i in (sessions.count + 1)...7 {
+				// Uso de DateHelper para restar fechas y componentes, creados a partir de Int
+				let previousDate = sessions.last!.date - i.days
+				dayArray.insert(previousDate, at: 0)
+				pagesArray.insert(0, at: 0)
+			}
+		} else if tag == 1 && sessions.count < 30 {
+			for i in (sessions.count + 1)...30 {
+				let previousDate = sessions.last!.date - i.days
+				dayArray.insert(previousDate, at: 0)
+				pagesArray.insert(0, at: 0)
+			}
+		}
         
         return (dayArray, pagesArray)
     }
