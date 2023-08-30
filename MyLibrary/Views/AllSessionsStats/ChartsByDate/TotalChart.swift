@@ -50,7 +50,7 @@ struct TotalChart: View {
             }
             
             if let currentActiveItem, currentActiveItem.id == data.id {
-                RuleMark(x: plotLocationX, yStart: .value("inicio", 0), yEnd: .value("Fin", max + 5000))
+                RuleMark(x: plotLocationX, yStart: .value("inicio", 0), yEnd: .value("Fin", Double(max) * 1.25))
                     .lineStyle(.init(lineWidth: 2, miterLimit: 2, dash: [2], dashPhase: 5))
                     .annotation(position: .top) {
                         VStack(alignment: .leading, spacing: 6) {
@@ -95,7 +95,7 @@ struct TotalChart: View {
                     )
             }
         }
-        .chartYScale(domain: 0...(max + 5000))
+		.chartYScale(domain: 0...(Double(max) * 1.25))
         .padding()
         .background {
             if colorScheme == .dark {
