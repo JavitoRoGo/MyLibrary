@@ -175,38 +175,21 @@ extension UserViewModel {
 			return datas
         }
         if tag == 3 {
-            let formatter = DateFormatter()
-            formatter.timeStyle = .none
-            formatter.dateStyle = .short
-            formatter.locale = Locale(identifier: "es")
-            
-            let year2019 = formatter.date(from: "31/12/2019")!
-            let year2020 = formatter.date(from: "31/12/2020")!
-            let year2021 = formatter.date(from: "31/12/2021")!
-            let year2022 = formatter.date(from: "31/12/2022")!
-			let year2023 = formatter.date(from: "31/12/2023")!
-            var datas2019 = 0.0
-            var datas2020 = 0.0
-            var datas2021 = 0.0
-            var datas2022 = 0.0
-			var datas2023 = 0.0
-            for element in sessions where element.date <= year2019 {
-                datas2019 += Double(element.pages)
-            }
-            for element in sessions where (element.date <= year2020 && element.date > year2019) {
-                datas2020 += Double(element.pages)
-            }
-            for element in sessions where (element.date <= year2021 && element.date > year2020) {
-                datas2021 += Double(element.pages)
-            }
-            for element in sessions where (element.date <= year2022 && element.date > year2021) {
-                datas2022 += Double(element.pages)
-            }
-			for element in sessions where (element.date <= year2023 && element.date > year2022) {
-				datas2023 += Double(element.pages)
+			var years = [Int]()
+			sessions.forEach { session in
+				let year = Calendar.current.component(.year, from: session.date)
+				years.append(year)
 			}
-            datas = [datas2019, datas2020, datas2021, datas2022, datas2023]
-            return datas
+			let yearsSet = Set(years).sorted()
+			
+			yearsSet.forEach { year in
+				var yearData = 0.0
+				for session in sessions where Calendar.current.component(.year, from: session.date) == year {
+					yearData += Double(session.pages)
+				}
+				datas.append(yearData)
+			}
+			return datas
         }
         sessions.forEach { session in
             datas.insert(Double(session.pages), at: 0)
@@ -244,9 +227,15 @@ extension UserViewModel {
             }
         }
         if tag == 3 {
-            for year in Year.allCases {
-                labels.append(String(year.rawValue))
-            }
+			var years = [Int]()
+			sessions.forEach { session in
+				let year = Calendar.current.component(.year, from: session.date)
+				years.append(year)
+			}
+			let yearsSet = Set(years).sorted()
+			yearsSet.forEach { year in
+				labels.append(String(year))
+			}
         }
         return labels
     }
