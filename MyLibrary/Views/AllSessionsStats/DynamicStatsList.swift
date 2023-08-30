@@ -11,17 +11,13 @@ struct DynamicStatsList: View {
     @EnvironmentObject var model: UserViewModel
     let graphSelected: Int
     
-    var numberOfSessions: String {
-        if graphSelected == 0 {
-            return "7 sesiones"
-        } else if graphSelected == 1 {
-            return "30 sesiones"
-        } else if graphSelected == 2 {
-            return "365 sesiones"
-        } else {
+	var numberOfSessions: String {
+		if graphSelected == 3 {
 			return "\(model.user.sessions.count) sesiones"
-        }
-    }
+		} else {
+			return "\(model.getSessions(tag: graphSelected).count) sesiones"
+		}
+	}
     
     var fromDate: String {
         let date = model.getFromDate(tag: graphSelected)
