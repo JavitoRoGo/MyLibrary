@@ -212,8 +212,7 @@ extension UserViewModel {
     func getXLabels(tag: Int) -> [String] {
         var labels: [String] = []
         let sessions = getSessions(tag: tag)
-		let count = sessions.count
-		// completar labels con elementos vacíos según count hasta completar el número de elementos necesario según tag
+		
         if tag == 0 {
             sessions.forEach { session in
                 let text = String(session.date.formatted(date: .complete, time: .omitted).prefix(3).lowercased())
@@ -221,7 +220,7 @@ extension UserViewModel {
             }
         }
         if tag == 1 {
-            for i in stride(from: 1, to: 29, by: 6) {
+			for i in stride(from: 1, to: (sessions.count < 29 ? sessions.count : 29), by: 6) {
                 var text = String(sessions[i].date.formatted(date: .numeric, time: .omitted).prefix(5))
                 if text.last == "/" {
                     text.removeLast()
@@ -230,7 +229,7 @@ extension UserViewModel {
             }
         }
         if tag == 2 {
-            for i in stride(from: 1, to: 340, by: 60) {
+            for i in stride(from: 1, to: (sessions.count < 340 ? sessions.count : 340), by: 60) {
                 let formatter = DateFormatter()
                 formatter.timeStyle = .none
                 formatter.dateStyle = .long
