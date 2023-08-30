@@ -63,33 +63,115 @@ extension UserViewModel {
         let sessions = getSessions(tag: tag)
         if tag == 2 {
 			let count = sessions.count
-			// varios if en función del número de elementos (count)
 			var data12 = 0.0
-            sessions[0...29].forEach { data12 += Double($0.pages) }
-            var data11 = 0.0
-            sessions[30...60].forEach { data11 += Double($0.pages) }
-            var data10 = 0.0
-            sessions[61...90].forEach { data10 += Double($0.pages) }
-            var data9 = 0.0
-            sessions[91...121].forEach { data9 += Double($0.pages) }
-            var data8 = 0.0
-            sessions[122...151].forEach { data8 += Double($0.pages) }
-            var data7 = 0.0
-            sessions[152...182].forEach { data7 += Double($0.pages) }
-            var data6 = 0.0
-            sessions[183...212].forEach { data6 += Double($0.pages) }
-            var data5 = 0.0
-            sessions[213...243].forEach { data5 += Double($0.pages) }
-            var data4 = 0.0
-            sessions[244...273].forEach { data4 += Double($0.pages) }
-            var data3 = 0.0
-            sessions[274...304].forEach { data3 += Double($0.pages) }
-            var data2 = 0.0
-            sessions[305...334].forEach { data2 += Double($0.pages) }
-            var data1 = 0.0
-            sessions[335...364].forEach { data1 += Double($0.pages) }
+			var data11 = 0.0
+			var data10 = 0.0
+			var data9 = 0.0
+			var data8 = 0.0
+			var data7 = 0.0
+			var data6 = 0.0
+			var data5 = 0.0
+			var data4 = 0.0
+			var data3 = 0.0
+			var data2 = 0.0
+			var data1 = 0.0
+			
+			switch count {
+				case 336...370:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213...243].forEach { data5 += Double($0.pages) }
+					sessions[244...273].forEach { data4 += Double($0.pages) }
+					sessions[274...304].forEach { data3 += Double($0.pages) }
+					sessions[305...334].forEach { data2 += Double($0.pages) }
+					sessions[335..<count].forEach { data1 += Double($0.pages) }
+				case 306...335:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213...243].forEach { data5 += Double($0.pages) }
+					sessions[244...273].forEach { data4 += Double($0.pages) }
+					sessions[274...304].forEach { data3 += Double($0.pages) }
+					sessions[305..<count].forEach { data2 += Double($0.pages) }
+				case 275...305:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213...243].forEach { data5 += Double($0.pages) }
+					sessions[244...273].forEach { data4 += Double($0.pages) }
+					sessions[274..<count].forEach { data3 += Double($0.pages) }
+				case 245...274:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213...243].forEach { data5 += Double($0.pages) }
+					sessions[244..<count].forEach { data4 += Double($0.pages) }
+				case 214...244:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213..<count].forEach { data5 += Double($0.pages) }
+				case 184...213:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183..<count].forEach { data6 += Double($0.pages) }
+				case 153...183:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152..<count].forEach { data7 += Double($0.pages) }
+				case 123...152:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122..<count].forEach { data8 += Double($0.pages) }
+				case 92...122:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91..<count].forEach { data9 += Double($0.pages) }
+				case 62...91:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61..<count].forEach { data10 += Double($0.pages) }
+				case 31...61:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30..<count].forEach { data11 += Double($0.pages) }
+				case 1...30:
+					sessions[0..<count].forEach { data11 += Double($0.pages) }
+				default:
+					break
+			}
+            
             datas = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12]
-			// usar map para eliminar los elementos de datas que sean 0
 			return datas
         }
         if tag == 3 {
@@ -130,6 +212,8 @@ extension UserViewModel {
     func getXLabels(tag: Int) -> [String] {
         var labels: [String] = []
         let sessions = getSessions(tag: tag)
+		let count = sessions.count
+		// completar labels con elementos vacíos según count hasta completar el número de elementos necesario según tag
         if tag == 0 {
             sessions.forEach { session in
                 let text = String(session.date.formatted(date: .complete, time: .omitted).prefix(3).lowercased())
