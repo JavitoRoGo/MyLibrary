@@ -50,7 +50,6 @@ extension ActualReadingEdit {
 		@Binding var showingDownloadedImage: Bool
 		@Binding var inputImage: UIImage?
 		@Binding var location: RDLocation?
-		@Binding var isbn: String
 		
 		let bookTitle: String
 		let loadData: () -> Void
@@ -71,21 +70,17 @@ extension ActualReadingEdit {
 						showingCameraPicker = true
 					}
 					Button("Descargar imagen") {
-						if let book = model.user.books.filter({ $0.bookTitle == bookTitle }).first {
-							let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
-							let isbnString = isbnArray.map { String($0) }.reduce("",+)
-							isbn = isbnString
-						}
-						
 						showingDownloadedImage = true
 					}
-					.disabled(bookTitle.isEmpty || book.formatt == .kindle)
 				}
 				.sheet(isPresented: $showingImagePicker) {
 					ImagePicker(image: $inputImage)
 				}
 				.sheet(isPresented: $showingCameraPicker) {
 					CameraPicker(image: $inputImage)
+				}
+				.sheet(isPresented: $showingDownloadedImage) {
+					DownloadCoverView(selectedImage: $inputImage)
 				}
 				.sheet(isPresented: $showingMapSelection) {
 					EditRDMapView(location: $location)

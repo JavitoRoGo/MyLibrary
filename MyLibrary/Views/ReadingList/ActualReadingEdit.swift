@@ -56,37 +56,21 @@ struct ActualReadingEdit: View {
                 TextEditor(text: $synopsis)
                     .frame(width: 350, height: 150)
                 HStack {
-                    VStack {
-                        Button(coverButtonTitle) {
-                            showingImageSelector = true
-                        }
-                        
-                        if showingDownloadedImage {
-                            AsyncImage(url: URL(string: "https://covers.openlibrary.org/b/isbn/\(isbn)-L.jpg")) { phase in
-                                if let apiImage = phase.image {
-                                    apiImage
-                                        .resizable()
-                                        .frame(width: 100, height: 140)
-                                } else if phase.error != nil {
-                                    Image(systemName: "exclamationmark.triangle")
-                                        .resizable()
-                                        .frame(width: 120, height: 120)
-                                } else {
-                                    ProgressView()
-                                }
-                            }
-                        } else {
-                            if let image = image {
-                                image
-                                    .resizable()
-                                    .frame(width: 100, height: 140)
-                            } else {
-                                Image(systemName: "questionmark.diamond")
-                                    .resizable()
-                                    .frame(width: 120, height: 120)
-                            }
-                        }
-                    }
+					VStack {
+						Button(coverButtonTitle) {
+							showingImageSelector = true
+						}
+						
+						if let image = image {
+							image
+								.resizable()
+								.frame(width: 100, height: 140)
+						} else {
+							Image(systemName: "questionmark.diamond")
+								.resizable()
+								.frame(width: 120, height: 120)
+						}
+					}
                     Spacer()
                     VStack {
                         Button("Ubicación") {
@@ -113,7 +97,7 @@ struct ActualReadingEdit: View {
                     .frame(width: 350, height: 150)
             }
         }
-		.modifier(AREditModifier(book: $book, showingImageSelector: $showingImageSelector, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingMapSelection: $showingMapSelection, showingDownloadedImage: $showingDownloadedImage, inputImage: $inputImage, location: $location, isbn: $isbn, bookTitle: bookTitle, loadData: loadData, loadImage: loadImage, createEditedBook: createEditedBook))
+		.modifier(AREditModifier(book: $book, showingImageSelector: $showingImageSelector, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingMapSelection: $showingMapSelection, showingDownloadedImage: $showingDownloadedImage, inputImage: $inputImage, location: $location, bookTitle: bookTitle, loadData: loadData, loadImage: loadImage, createEditedBook: createEditedBook))
     }
 }
 
