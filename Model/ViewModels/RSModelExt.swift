@@ -27,33 +27,17 @@ extension UserViewModel {
     }
     
     // Datos previos
-    var toDate: Date {
-        user.sessions.first?.date ?? .now
-    }
-    
-    func getFromDate(tag: Int) -> Date {
-        var substractingInterval: Double {
-            if tag == 0 {
-                return 3600 * 24 * 6
-            } else if tag == 1 {
-                return 3600 * 24 * 29
-            } else if tag == 2 {
-                return 3600 * 24 * 364
-            } else {
-                return 1
-            }
-        }
-        var fromDate: Date {
-            if tag == 3 {
-                return user.sessions.last?.date ?? .now
-            }
-            return toDate.addingTimeInterval(-substractingInterval)
-        }
-        return fromDate
-    }
     
     func getSessions(tag: Int) -> [ReadingSession] {
-        user.sessions.prefix(while: { $0.date >= getFromDate(tag: tag) })
+		let firstSessionDate = user.sessions.first?.date ?? .now
+		if tag == 0 {
+			return user.sessions.filter({ $0.date > (firstSessionDate - 7.days) })
+		} else if tag == 1 {
+			return user.sessions.filter({ $0.date > (firstSessionDate - 30.days) })
+		} else if tag == 2 {
+			return user.sessions.filter({ $0.date > (firstSessionDate - 1.years) })
+		}
+		return user.sessions
     }
         
     // Datos para la gráfica global de todas las sesiones

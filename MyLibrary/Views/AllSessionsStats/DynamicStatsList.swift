@@ -20,11 +20,23 @@ struct DynamicStatsList: View {
 	}
     
     var fromDate: String {
-        let date = model.getFromDate(tag: graphSelected)
+		var date = Date()
+		let firstSessionDate = model.user.sessions.first?.date ?? .now
+		
+		if graphSelected == 0 {
+			date = firstSessionDate - 6.days
+		} else if graphSelected == 1 {
+			date = firstSessionDate - 29.days
+		} else if graphSelected == 2 {
+			date = firstSessionDate - 1.years
+		} else if graphSelected == 3 {
+			date = model.user.sessions.last?.date ?? .now
+		}
+		
         return date.formatted(date: .numeric, time: .omitted)
     }
     var toDate: String {
-        let date = model.toDate
+		let date = model.user.sessions.first?.date ?? .now
         return date.formatted(date: .numeric, time: .omitted)
     }
     
