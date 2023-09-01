@@ -22,7 +22,7 @@ struct RDList: View {
                     }
                 }
             } else {
-				ForEach(model.user.bookFinishingYears, id: \.self) { year in
+				ForEach(model.user.bookFinishingYears.reversed(), id: \.self) { year in
                     Section("\(String(year)) - \(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros") {
                         ForEach(model.rdataPerYear(year, filterBy: .all)) { rdata in
                             NavigationLink(destination: RDDetail(rdata: rdata)) {
