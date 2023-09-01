@@ -19,8 +19,6 @@ struct User: Identifiable, Codable {
     var nowWaiting: [NowReading]
     var sessions: [ReadingSession]
     var myPlaces: [String]
-    
-    static let example = User(id: UUID(), username: "email@noemail.com", nickname: "Nick", books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [])
 }
 
 extension User {
@@ -33,6 +31,9 @@ extension User {
 		
 		return years.uniqued().sorted()
 	}
+	
+	static let example = User(id: UUID(), username: "email@noemail.com", nickname: "Nick", books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [])
+	static let emptyUser = User(id: UUID(), username: "", nickname: "", books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [])
 }
 
 struct Books: Codable, Identifiable, Equatable, BooksProtocol {

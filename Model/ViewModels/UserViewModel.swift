@@ -39,7 +39,7 @@ final class UserViewModel: ObservableObject {
 	private var cancellableSet: Set<AnyCancellable> = []
 	
 	init() {
-		user = Bundle.main.searchAndDecode(userJson) ?? User(id: UUID(), username: "", nickname: "", books: [Books](), ebooks: [EBooks](), readingDatas: [ReadingData](), nowReading: [NowReading](), nowWaiting: [NowReading](), sessions: [ReadingSession](), myPlaces: [String]())
+		user = Bundle.main.searchAndDecode(userJson) ?? User.emptyUser
 		if !user.myPlaces.contains(soldText) && !user.myPlaces.contains(donatedText) {
 			user.myPlaces += [donatedText, soldText]
 		}
