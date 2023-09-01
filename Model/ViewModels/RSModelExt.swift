@@ -301,41 +301,10 @@ extension UserViewModel {
 
 extension UserViewModel {
     
-    // Funciones para la gráfica de barra de las sesiones con Swift Charts
-    
-    func getSessionsForBarMark(tag: Int) -> [ReadingSession] {
-        var sessions = [ReadingSession]()
-        if tag == 0 {
-			if user.sessions.count <= 7 {
-				return user.sessions.reversed()
-			}
-            for i in 0...6 {
-                sessions.insert(user.sessions[i], at: 0)
-            }
-        } else if tag == 1 {
-			if user.sessions.count <= 30 {
-				return user.sessions.reversed()
-			}
-            for i in 0...29 {
-                sessions.insert(user.sessions[i], at: 0)
-            }
-        } else if tag == 2 {
-			if user.sessions.count <= 365 {
-				return user.sessions.reversed()
-			}
-            for i in 0...364 {
-                sessions.insert(user.sessions[i], at: 0)
-            }
-        } else if tag == 3 {
-            return user.sessions.reversed()
-        }
-        return sessions
-    }
-    
     // Cálculo del total de páginas por semana, mes y año para las 4 gráficas animadas de ChartsByDate
     
     func calcTotalPagesPerWeekAndMonth(tag: Int) -> (days: [Date], pages: [Int]) {
-        let sessions = getSessionsForBarMark(tag: tag)
+		let sessions = getSessions(tag: tag).reversed()
         // Variables para almacenar los resultados
         var dayArray = [Date]()
         var pagesArray = [Int]()
@@ -348,14 +317,14 @@ extension UserViewModel {
 		
 		// Completar los arrays de resultados en caso que no haya datos suficientes para el mes o la semana
 		if tag == 0 && sessions.count < 7 {
-			for i in (sessions.count + 1)...7 {
+			for i in (sessions.count + 1)..<7 {
 				// Uso de DateHelper para restar fechas y componentes, creados a partir de Int
 				let previousDate = sessions.last!.date - i.days
 				dayArray.insert(previousDate, at: 0)
 				pagesArray.insert(0, at: 0)
 			}
 		} else if tag == 1 && sessions.count < 30 {
-			for i in (sessions.count + 1)...30 {
+			for i in (sessions.count + 1)..<30 {
 				let previousDate = sessions.last!.date - i.days
 				dayArray.insert(previousDate, at: 0)
 				pagesArray.insert(0, at: 0)
@@ -366,7 +335,7 @@ extension UserViewModel {
     }
     
     func calcTotalPagesPerMonth() -> (months: [String], pages: [Int]) {
-        let sessions = getSessionsForBarMark(tag: 2)
+		let sessions = getSessions(tag: 2).reversed()
         let calendar = Calendar.current
         // Variables para almacenar los resultados
         var monthArray = [Int]()
