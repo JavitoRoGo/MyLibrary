@@ -75,7 +75,7 @@ struct ReadingData: Codable, Identifiable, Equatable {
     let bookTitle: String
     let startDate: Date
     let finishDate: Date
-    let finishedInYear: Year
+    let finishedInYear: Int
     let sessions: Int
     let duration: String
     let pages: Int
@@ -92,7 +92,7 @@ struct ReadingData: Codable, Identifiable, Equatable {
     var location: RDLocation? = nil
     var readingSessions: [ReadingSession]
     
-    static let dataTest = ReadingData(id: 0, yearId: 0, bookTitle: "Título del libro", startDate: Date.distantPast, finishDate: Date.distantFuture, finishedInYear: .year2019, sessions: 99, duration: "10h 10min", pages: 666, over50: 99, minPerPag: "1min 30s", minPerDay: "0h 59min", pagPerDay: 66, percentOver50: 66, formatt: .paper, rating: 3, synopsis: "Resumen del libro", cover: "cover001", comment: "Comentario de prueba al libro.", location: RDLocation.dataTest, readingSessions: [ReadingSession.example])
+    static let dataTest = ReadingData(id: 0, yearId: 0, bookTitle: "Título del libro", startDate: Date.distantPast, finishDate: Date.distantFuture, finishedInYear: 2019, sessions: 99, duration: "10h 10min", pages: 666, over50: 99, minPerPag: "1min 30s", minPerDay: "0h 59min", pagPerDay: 66, percentOver50: 66, formatt: .paper, rating: 3, synopsis: "Resumen del libro", cover: "cover001", comment: "Comentario de prueba al libro.", location: RDLocation.dataTest, readingSessions: [ReadingSession.example])
 }
 
 struct RDLocation: Codable, Equatable, Identifiable {

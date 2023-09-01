@@ -13,6 +13,7 @@ enum Cover: String, Codable, CaseIterable {
     case flapPocket = "Rústica con solapas"
 }
 
+// enum original para las ubicaciones. Sustituido por un array para poder modificarlo al gusto
 //enum Place: String, Codable, CaseIterable, Identifiable {
 //    case sold = "Vendidos", donated = "Donados"
 //    case a1 = "A1", a2 = "A2", a3 = "A3", a4 = "A4", a5 = "A5"
@@ -24,6 +25,7 @@ enum Cover: String, Codable, CaseIterable {
 //    var id: String { rawValue }
 //}
 
+// enum original para los propietarios. Sustituido por un array para poder modificarlo al gusto
 //enum Owner: String, Codable, CaseIterable, Identifiable {
 //    case javi = "Javi"
 //    case aurora = "Aurora"
@@ -46,15 +48,16 @@ enum ReadingStatus: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
 }
 
-enum Year: Int, Codable, CaseIterable, Identifiable {
-    case year2019 = 2019
-    case year2020 = 2020
-    case year2021 = 2021
-    case year2022 = 2022
-    case year2023 = 2023
-    
-    var id: Int { rawValue }
-}
+// enum original para el año en que se termina el libro. Sustituido por valores Int para automatizar su funcionamiento
+//enum Year: Int, Codable, CaseIterable, Identifiable {
+//    case year2019 = 2019
+//    case year2020 = 2020
+//    case year2021 = 2021
+//    case year2022 = 2022
+//    case year2023 = 2023
+//    
+//    var id: Int { rawValue }
+//}
 
 enum Formatt: String, Codable, CaseIterable {
     case paper = "Papel"
