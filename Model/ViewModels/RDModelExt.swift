@@ -19,7 +19,7 @@ extension UserViewModel {
 		user.readingDatas.filter { $0.rating == stars }.count
     }
     
-    func rdataPerYear(_ year: Year, filterBy: FilterByRating) -> [ReadingData] {
+    func rdataPerYear(_ year: Int, filterBy: FilterByRating) -> [ReadingData] {
         if filterBy != .all {
 			return user.readingDatas.filter { $0.finishedInYear == year }.filter { $0.rating == filterBy.rawValue }.reversed()
         } else {
@@ -27,7 +27,7 @@ extension UserViewModel {
         }
     }
     
-	func numberOfReadingDataPerYear(_ year: Year, filterBy: FilterByRating) -> Int {
+	func numberOfReadingDataPerYear(_ year: Int, filterBy: FilterByRating) -> Int {
 		rdataPerYear(year, filterBy: filterBy).count
 	}
 	
@@ -82,17 +82,17 @@ extension UserViewModel {
         var datasArray: [Int] = []
         switch tag {
         case 1:
-            for year in Year.allCases.reversed() {
+			for year in user.bookFinishingYears {
                 var pages = 0
                 for book in rdataPerYear(year, filterBy: .all) {
                     pages += book.pages
                 }
                 datasArray.append(pages)
-                labelArray.append(String(year.rawValue))
+                labelArray.append(String(year))
             }
             return (labelArray, datasArray)
         case 2:
-            for year in Year.allCases.reversed() {
+			for year in user.bookFinishingYears {
                 var ppday = 0
                 let books = rdataPerYear(year, filterBy: .all)
                 for book in books {
@@ -100,7 +100,7 @@ extension UserViewModel {
                 }
                 let mean = (books.count == 0 ? 0 : ppday / books.count)
                 datasArray.append(mean)
-                labelArray.append(String(year.rawValue))
+                labelArray.append(String(year))
             }
             return (labelArray, datasArray)
         case 3:
@@ -117,11 +117,11 @@ extension UserViewModel {
             }
             return (labelArray, datasArray)
         default:
-            for year in Year.allCases.reversed() {
+			for year in user.bookFinishingYears {
                 var books = 0
                 books += numberOfReadingDataPerYear(year, filterBy: .all)
                 datasArray.append(books)
-                labelArray.append(String(year.rawValue))
+                labelArray.append(String(year))
             }
             return (labelArray, datasArray)
         }

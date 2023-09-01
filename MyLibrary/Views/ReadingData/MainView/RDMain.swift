@@ -34,10 +34,10 @@ struct RDMain: View {
 						}
 						ScrollView(.horizontal) {
 							HStack(spacing: 5) {
-								ForEach(Year.allCases.reversed()) { year in
+								ForEach(model.user.bookFinishingYears.reversed(), id: \.self) { year in
 									NavigationLink(destination: RDList(year: year)) {
 										VStack {
-											Text(String(year.rawValue))
+											Text(String(year))
 												.font(.title3.bold())
 											Text("\(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros")
 												.font(.caption)

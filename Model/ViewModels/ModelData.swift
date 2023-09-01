@@ -23,6 +23,18 @@ struct User: Identifiable, Codable {
     static let example = User(id: UUID(), username: "email@noemail.com", nickname: "Nick", books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [])
 }
 
+extension User {
+	var bookFinishingYears: [Int] {
+		var years = [Int]()
+		sessions.forEach { session in
+			let year = Calendar.current.component(.year, from: session.date)
+			years.append(year)
+		}
+		
+		return years.uniqued().sorted()
+	}
+}
+
 struct Books: Codable, Identifiable, Equatable, BooksProtocol {
     let id: Int
     let author: String

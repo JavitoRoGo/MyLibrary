@@ -17,7 +17,7 @@ struct StatsList: View {
         } else if tag == 4 {
             return 5
         } else {
-            return Year.allCases.count
+			return model.user.bookFinishingYears.count
         }
     }
     var datas: ([String], [Int]) {

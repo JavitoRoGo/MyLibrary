@@ -133,7 +133,7 @@ extension UserViewModel {
         let rdatas = user.readingDatas
         let newID = rdatas.count + 1
         var newYearID: Int {
-            let actualYear = Year.allCases.last
+			let actualYear = user.bookFinishingYears.last
             let lastYearBook = rdatas.last?.finishedInYear
             if lastYearBook == actualYear {
                 return Int(rdatas.last!.yearId + 1)
@@ -143,7 +143,7 @@ extension UserViewModel {
         }
         let initDate = book.sessions.last!.date
         let endDate = book.sessions.first!.date
-        let newFinishedInYear: Year = .allCases.last!
+		let newFinishedInYear = user.bookFinishingYears.last!
         let newSessions = book.sessions.count
         let newDuration = book.readingTime
         let newPages = book.pages

@@ -9,7 +9,7 @@ import SwiftUI
 
 extension RDDetail {
 	var titleSection: some View {
-		Section("Nº \(rdata.yearId) del año \(String(rdata.finishedInYear.rawValue))") {
+		Section("Nº \(rdata.yearId) del año \(String(rdata.finishedInYear))") {
 			HStack {
 				VStack(alignment: .leading) {
 					Text("Título:")
