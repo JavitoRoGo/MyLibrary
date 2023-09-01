@@ -10,7 +10,7 @@ import SwiftUI
 
 extension ReadingTimer {
 	struct ReadingTimerModifier: ViewModifier {
-		@EnvironmentObject var rsmodel: ReadingSessionModel
+		@EnvironmentObject var rsmodel: UserViewModel
 		@Environment(\.scenePhase) var scenePhase
 		
 		@Binding var book: NowReading

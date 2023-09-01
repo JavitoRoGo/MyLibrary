@@ -38,16 +38,6 @@ extension LockScreenView {
         return false
     }
     
-    func saveDataToUser() {
-        model.user.books = bmodel.books
-        model.user.ebooks = emodel.ebooks
-        model.user.readingDatas = rdmodel.readingDatas
-        model.user.nowReading = nrmodel.readingList
-        model.user.nowWaiting = nrmodel.waitingList
-        model.user.sessions = rsmodel.readingSessionList
-        model.user.myPlaces = model.myPlaces
-    }
-    
     struct LockScreenViewModifier: ViewModifier {
 		@EnvironmentObject var model: UserViewModel
 		
@@ -57,7 +47,6 @@ extension LockScreenView {
         @Binding var showingAlert: Bool
         @Binding var isUnlocked: Bool
         @Binding var isFirstRun: Bool
-		let saveDataToUser: () -> ()
         
         func body(content: Content) -> some View {
             content
@@ -89,7 +78,6 @@ extension LockScreenView {
 						model.storedPassword = ""
 						showingFirstRunAlert = true
 					}
-					saveDataToUser()
 				}
         }
     }

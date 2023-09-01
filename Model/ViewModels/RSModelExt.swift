@@ -1,5 +1,5 @@
 //
-//  RSModel.swift
+//  RSModelExt.swift
 //  MyLibrary
 //
 //  Created by Javier Rodríguez Gómez on 7/6/22.
@@ -8,23 +8,14 @@
 import SwiftUI
 import WidgetKit
 
-final class ReadingSessionModel: ObservableObject {
-    @Published var readingSessionList: [ReadingSession] {
-        didSet {
-            Task { await saveToJson(readingSessionsJson, readingSessionList) }
-            UserViewModel().user.sessions = readingSessionList
-        }
-    }
-    @Published var tempQuotesArray: [Quote] = []
-    
-    init() {
-        readingSessionList = Bundle.main.searchAndDecode(readingSessionsJson) ?? []
-    }
-    
-    // Recopilación de citas y comentarios de todas las sesiones
+// Extension for RSModel: handling with reading sessions
+
+extension UserViewModel {
+	
+	// Recopilación de citas y comentarios de todas las sesiones
     var allQuotes: [Quote] {
         var array: [Quote] = []
-        readingSessionList.forEach { session in
+        user.sessions.forEach { session in
             session.quotes?.forEach { quote in
                 array.append(quote)
             }
@@ -32,37 +23,21 @@ final class ReadingSessionModel: ObservableObject {
         return array
     }
     var allComments: [Quote] {
-        readingSessionList.compactMap { $0.comment }
+        user.sessions.compactMap { $0.comment }
     }
     
     // Datos previos
-    var toDate: Date {
-        readingSessionList.first?.date ?? .now
-    }
-    
-    func getFromDate(tag: Int) -> Date {
-        var substractingInterval: Double {
-            if tag == 0 {
-                return 3600 * 24 * 6
-            } else if tag == 1 {
-                return 3600 * 24 * 29
-            } else if tag == 2 {
-                return 3600 * 24 * 364
-            } else {
-                return 1
-            }
-        }
-        var fromDate: Date {
-            if tag == 3 {
-                return readingSessionList.last?.date ?? .now
-            }
-            return toDate.addingTimeInterval(-substractingInterval)
-        }
-        return fromDate
-    }
     
     func getSessions(tag: Int) -> [ReadingSession] {
-        readingSessionList.prefix(while: { $0.date >= getFromDate(tag: tag) })
+		let firstSessionDate = user.sessions.first?.date ?? .now
+		if tag == 0 {
+			return user.sessions.filter({ $0.date > (firstSessionDate - 7.days) })
+		} else if tag == 1 {
+			return user.sessions.filter({ $0.date > (firstSessionDate - 30.days) })
+		} else if tag == 2 {
+			return user.sessions.filter({ $0.date > (firstSessionDate - 1.years) })
+		}
+		return user.sessions
     }
         
     // Datos para la gráfica global de todas las sesiones
@@ -71,61 +46,134 @@ final class ReadingSessionModel: ObservableObject {
         var datas = [Double]()
         let sessions = getSessions(tag: tag)
         if tag == 2 {
-            var data12 = 0.0
-            sessions[0...29].forEach { data12 += Double($0.pages) }
-            var data11 = 0.0
-            sessions[30...60].forEach { data11 += Double($0.pages) }
-            var data10 = 0.0
-            sessions[61...90].forEach { data10 += Double($0.pages) }
-            var data9 = 0.0
-            sessions[91...121].forEach { data9 += Double($0.pages) }
-            var data8 = 0.0
-            sessions[122...151].forEach { data8 += Double($0.pages) }
-            var data7 = 0.0
-            sessions[152...182].forEach { data7 += Double($0.pages) }
-            var data6 = 0.0
-            sessions[183...212].forEach { data6 += Double($0.pages) }
-            var data5 = 0.0
-            sessions[213...243].forEach { data5 += Double($0.pages) }
-            var data4 = 0.0
-            sessions[244...273].forEach { data4 += Double($0.pages) }
-            var data3 = 0.0
-            sessions[274...304].forEach { data3 += Double($0.pages) }
-            var data2 = 0.0
-            sessions[305...334].forEach { data2 += Double($0.pages) }
-            var data1 = 0.0
-            sessions[335...364].forEach { data1 += Double($0.pages) }
+			let count = sessions.count
+			var data12 = 0.0
+			var data11 = 0.0
+			var data10 = 0.0
+			var data9 = 0.0
+			var data8 = 0.0
+			var data7 = 0.0
+			var data6 = 0.0
+			var data5 = 0.0
+			var data4 = 0.0
+			var data3 = 0.0
+			var data2 = 0.0
+			var data1 = 0.0
+			
+			switch count {
+				case 336...370:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213...243].forEach { data5 += Double($0.pages) }
+					sessions[244...273].forEach { data4 += Double($0.pages) }
+					sessions[274...304].forEach { data3 += Double($0.pages) }
+					sessions[305...334].forEach { data2 += Double($0.pages) }
+					sessions[335..<count].forEach { data1 += Double($0.pages) }
+				case 306...335:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213...243].forEach { data5 += Double($0.pages) }
+					sessions[244...273].forEach { data4 += Double($0.pages) }
+					sessions[274...304].forEach { data3 += Double($0.pages) }
+					sessions[305..<count].forEach { data2 += Double($0.pages) }
+				case 275...305:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213...243].forEach { data5 += Double($0.pages) }
+					sessions[244...273].forEach { data4 += Double($0.pages) }
+					sessions[274..<count].forEach { data3 += Double($0.pages) }
+				case 245...274:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213...243].forEach { data5 += Double($0.pages) }
+					sessions[244..<count].forEach { data4 += Double($0.pages) }
+				case 214...244:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183...212].forEach { data6 += Double($0.pages) }
+					sessions[213..<count].forEach { data5 += Double($0.pages) }
+				case 184...213:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152...182].forEach { data7 += Double($0.pages) }
+					sessions[183..<count].forEach { data6 += Double($0.pages) }
+				case 153...183:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122...151].forEach { data8 += Double($0.pages) }
+					sessions[152..<count].forEach { data7 += Double($0.pages) }
+				case 123...152:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91...121].forEach { data9 += Double($0.pages) }
+					sessions[122..<count].forEach { data8 += Double($0.pages) }
+				case 92...122:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61...90].forEach { data10 += Double($0.pages) }
+					sessions[91..<count].forEach { data9 += Double($0.pages) }
+				case 62...91:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30...60].forEach { data11 += Double($0.pages) }
+					sessions[61..<count].forEach { data10 += Double($0.pages) }
+				case 31...61:
+					sessions[0...29].forEach { data12 += Double($0.pages) }
+					sessions[30..<count].forEach { data11 += Double($0.pages) }
+				case 1...30:
+					sessions[0..<count].forEach { data11 += Double($0.pages) }
+				default:
+					break
+			}
+            
             datas = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12]
-            return datas
+			return datas
         }
         if tag == 3 {
-            let formatter = DateFormatter()
-            formatter.timeStyle = .none
-            formatter.dateStyle = .short
-            formatter.locale = Locale(identifier: "es")
-            
-            let year2019 = formatter.date(from: "31/12/2019")!
-            let year2020 = formatter.date(from: "31/12/2020")!
-            let year2021 = formatter.date(from: "31/12/2021")!
-            let year2022 = formatter.date(from: "31/12/2022")!
-            var datas2019 = 0.0
-            var datas2020 = 0.0
-            var datas2021 = 0.0
-            var datas2022 = 0.0
-            for element in sessions where element.date <= year2019 {
-                datas2019 += Double(element.pages)
-            }
-            for element in sessions where (element.date <= year2020 && element.date > year2019) {
-                datas2020 += Double(element.pages)
-            }
-            for element in sessions where (element.date <= year2021 && element.date > year2020) {
-                datas2021 += Double(element.pages)
-            }
-            for element in sessions where (element.date <= year2022 && element.date > year2021) {
-                datas2022 += Double(element.pages)
-            }
-            datas = [datas2019, datas2020, datas2021, datas2022]
-            return datas
+			var years = [Int]()
+			sessions.forEach { session in
+				let year = Calendar.current.component(.year, from: session.date)
+				years.append(year)
+			}
+			let yearsSet = Set(years).sorted()
+			
+			yearsSet.forEach { year in
+				var yearData = 0.0
+				for session in sessions where Calendar.current.component(.year, from: session.date) == year {
+					yearData += Double(session.pages)
+				}
+				datas.append(yearData)
+			}
+			return datas
         }
         sessions.forEach { session in
             datas.insert(Double(session.pages), at: 0)
@@ -136,6 +184,7 @@ final class ReadingSessionModel: ObservableObject {
     func getXLabels(tag: Int) -> [String] {
         var labels: [String] = []
         let sessions = getSessions(tag: tag)
+		
         if tag == 0 {
             sessions.forEach { session in
                 let text = String(session.date.formatted(date: .complete, time: .omitted).prefix(3).lowercased())
@@ -143,7 +192,7 @@ final class ReadingSessionModel: ObservableObject {
             }
         }
         if tag == 1 {
-            for i in stride(from: 1, to: 29, by: 6) {
+			for i in stride(from: 1, to: (sessions.count < 29 ? sessions.count : 29), by: 6) {
                 var text = String(sessions[i].date.formatted(date: .numeric, time: .omitted).prefix(5))
                 if text.last == "/" {
                     text.removeLast()
@@ -152,7 +201,7 @@ final class ReadingSessionModel: ObservableObject {
             }
         }
         if tag == 2 {
-            for i in stride(from: 1, to: 340, by: 60) {
+            for i in stride(from: 1, to: (sessions.count < 340 ? sessions.count : 340), by: 60) {
                 let formatter = DateFormatter()
                 formatter.timeStyle = .none
                 formatter.dateStyle = .long
@@ -162,9 +211,15 @@ final class ReadingSessionModel: ObservableObject {
             }
         }
         if tag == 3 {
-            for year in Year.allCases {
-                labels.append(String(year.rawValue))
-            }
+			var years = [Int]()
+			sessions.forEach { session in
+				let year = Calendar.current.component(.year, from: session.date)
+				years.append(year)
+			}
+			let yearsSet = Set(years).sorted()
+			yearsSet.forEach { year in
+				labels.append(String(year))
+			}
         }
         return labels
     }
@@ -244,34 +299,12 @@ final class ReadingSessionModel: ObservableObject {
 
 // MARK: - Extensión para las gráficas animadas con Swift Charts
 
-extension ReadingSessionModel {
-    
-    // Funciones para la gráfica de barra de las sesiones con Swift Charts
-    
-    func getSessionsForBarMark(tag: Int) -> [ReadingSession] {
-        var sessions = [ReadingSession]()
-        if tag == 0 {
-            for i in 0...6 {
-                sessions.insert(readingSessionList[i], at: 0)
-            }
-        } else if tag == 1 {
-            for i in 0...29 {
-                sessions.insert(readingSessionList[i], at: 0)
-            }
-        } else if tag == 2 {
-            for i in 0...364 {
-                sessions.insert(readingSessionList[i], at: 0)
-            }
-        } else if tag == 3 {
-            return readingSessionList.reversed()
-        }
-        return sessions
-    }
+extension UserViewModel {
     
     // Cálculo del total de páginas por semana, mes y año para las 4 gráficas animadas de ChartsByDate
     
     func calcTotalPagesPerWeekAndMonth(tag: Int) -> (days: [Date], pages: [Int]) {
-        let sessions = getSessionsForBarMark(tag: tag)
+		let sessions = getSessions(tag: tag).reversed()
         // Variables para almacenar los resultados
         var dayArray = [Date]()
         var pagesArray = [Int]()
@@ -281,12 +314,28 @@ extension ReadingSessionModel {
             dayArray.append(session.date)
             pagesArray.append(session.pages)
         }
+		
+		// Completar los arrays de resultados en caso que no haya datos suficientes para el mes o la semana
+		if tag == 0 && sessions.count < 7 {
+			for i in (sessions.count + 1)..<7 {
+				// Uso de DateHelper para restar fechas y componentes, creados a partir de Int
+				let previousDate = sessions.last!.date - i.days
+				dayArray.insert(previousDate, at: 0)
+				pagesArray.insert(0, at: 0)
+			}
+		} else if tag == 1 && sessions.count < 30 {
+			for i in (sessions.count + 1)..<30 {
+				let previousDate = sessions.last!.date - i.days
+				dayArray.insert(previousDate, at: 0)
+				pagesArray.insert(0, at: 0)
+			}
+		}
         
         return (dayArray, pagesArray)
     }
     
     func calcTotalPagesPerMonth() -> (months: [String], pages: [Int]) {
-        let sessions = getSessionsForBarMark(tag: 2)
+		let sessions = getSessions(tag: 2).reversed()
         let calendar = Calendar.current
         // Variables para almacenar los resultados
         var monthArray = [Int]()
@@ -333,7 +382,7 @@ extension ReadingSessionModel {
     }
     
     func calcTotalPagesPerYear() -> (years: [String], pages: [Int]) {
-        let sessions = readingSessionList.reversed()
+        let sessions = user.sessions.reversed()
         let calendar = Calendar.current
         // Variables para almacenar los resultados
         var yearArray = [Int]()

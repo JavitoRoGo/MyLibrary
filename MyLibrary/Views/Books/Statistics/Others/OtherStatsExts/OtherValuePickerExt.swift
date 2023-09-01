@@ -37,7 +37,7 @@ extension OtherStats {
 							.padding()
 						}
 						Picker("Valor", selection: $pickerSelection) {
-							ForEach(model.arrayOfLabelsByCategoryForPickerAndGraph(tag: statsSelection), id: \.self) {
+							ForEach(model.arrayOfBookLabelsByCategoryForPickerAndGraph(tag: statsSelection), id: \.self) {
 								Text($0)
 							}
 						}

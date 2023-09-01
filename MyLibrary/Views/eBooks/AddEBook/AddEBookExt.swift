@@ -9,8 +9,8 @@ import SwiftUI
 
 extension AddEBook {
     func searchForExistingData(_ text: String) {
-        searchResults = emodel.compareExistingAuthors(text: text).num
-        searchArray = emodel.compareExistingAuthors(text: text).authors
+        searchResults = model.compareExistingAuthors(text: text).num
+        searchArray = model.compareExistingAuthors(text: text).authors
         
         switch searchResults {
         case 6...:
@@ -38,7 +38,7 @@ extension AddEBook {
     }
     
     struct AddEBookModifier: ViewModifier {
-		@EnvironmentObject var emodel: EbooksModel
+		@EnvironmentObject var model: UserViewModel
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingAddWaitingAlert: Bool
@@ -90,7 +90,7 @@ extension AddEBook {
 					Button("No", role: .cancel) { }
 					Button("Sí") {
 						let newEBook = createNewEBook()
-						emodel.ebooks.append(newEBook)
+						model.user.ebooks.append(newEBook)
 						showingAddWaitingAlert = true
 					}
 				} message: {

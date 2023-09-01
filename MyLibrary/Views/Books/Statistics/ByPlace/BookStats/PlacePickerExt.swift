@@ -40,7 +40,7 @@ extension BookStats {
 							.padding()
 						}
 						Picker("Ubicación", selection: $place) {
-							ForEach(model.myPlaces, id: \.self) {
+							ForEach(model.user.myPlaces, id: \.self) {
 								Text($0)
 							}
 						}
@@ -57,10 +57,10 @@ extension BookStats {
 				Text("Libros:")
 					.font(.title3)
 				Spacer()
-				Text(String(bmodel.numAtPlace(place)))
+				Text(String(model.numberOfBooksAtPlace(place)))
 					.font(.largeTitle)
 					.frame(width: 75, height: 55)
-					.background(bmodel.numColor(bmodel.numAtPlace(place)))
+					.background(model.numColor(model.numberOfBooksAtPlace(place)))
 					.cornerRadius(15)
 					.overlay {
 						RoundedRectangle(cornerRadius: 15).stroke(.gray, lineWidth: 2)

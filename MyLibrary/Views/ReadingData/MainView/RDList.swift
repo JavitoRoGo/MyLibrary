@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct RDList: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     var year: Year? = nil
     
     var body: some View {
         List {
             if let year {
-                Section("\(String(year.rawValue)) - \(model.numPerYear(year, filterBy: .all)) libros") {
+                Section("\(String(year.rawValue)) - \(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros") {
                     ForEach(model.rdataPerYear(year, filterBy: .all)) { rdata in
                         NavigationLink(destination: RDDetail(rdata: rdata)) {
                             RDRow(rdata: rdata)
@@ -23,7 +23,7 @@ struct RDList: View {
                 }
             } else {
                 ForEach(Year.allCases.reversed()) { year in
-                    Section("\(String(year.rawValue)) - \(model.numPerYear(year, filterBy: .all)) libros") {
+                    Section("\(String(year.rawValue)) - \(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros") {
                         ForEach(model.rdataPerYear(year, filterBy: .all)) { rdata in
                             NavigationLink(destination: RDDetail(rdata: rdata)) {
                                 RDRow(rdata: rdata)
@@ -41,6 +41,6 @@ struct RDList: View {
 struct RDList_Previews: PreviewProvider {
     static var previews: some View {
         RDList()
-            .environmentObject(RDModel())
+            .environmentObject(UserViewModel())
     }
 }

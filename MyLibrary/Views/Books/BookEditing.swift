@@ -65,7 +65,7 @@ struct BookEditing: View {
                             Text("Ubicación:")
                                 .font(.subheadline)
                             Picker("Ubicación", selection: $newPlace) {
-                                ForEach(model.myPlaces, id: \.self) {
+								ForEach(model.user.myPlaces, id: \.self) {
                                     Text($0)
                                 }
                             }
@@ -114,7 +114,5 @@ struct BookEditing_Previews: PreviewProvider {
     static var previews: some View {
         BookEditing(book: .constant(Books.dataTest), newBookTitle: "Título de prueba", newStatus: .notRead, newOwner: "Yo", newPlace: "A1", newSynopsis: "Resumen de prueba.")
             .environmentObject(UserViewModel())
-            .environmentObject(BooksModel())
-            .environmentObject(NowReadingModel())
     }
 }

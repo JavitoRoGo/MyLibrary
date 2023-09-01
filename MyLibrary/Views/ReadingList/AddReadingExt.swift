@@ -49,7 +49,7 @@ extension AddReading {
 	}
 	
 	struct AddReadingModifier: ViewModifier {
-		@EnvironmentObject var model: NowReadingModel
+		@EnvironmentObject var model: UserViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var bookTitle: String
@@ -119,7 +119,7 @@ extension AddReading {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Guardar") {
 							let newBook = createNewBook()
-							model.waitingList.append(newBook)
+							model.user.nowWaiting.append(newBook)
 							if let inputImage = inputImage {
 								saveJpg(inputImage, title: bookTitle)
 							}

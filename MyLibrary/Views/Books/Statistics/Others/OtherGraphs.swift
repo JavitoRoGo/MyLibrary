@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct OtherGraphs: View {
-    @EnvironmentObject var model: BooksModel
+    @EnvironmentObject var model: UserViewModel
     
     let titles = ["Autor", "Editorial", "Encuadernación", "Propietario", "Estado"]
     @State private var pickerSelection = 2
@@ -72,7 +72,7 @@ struct OtherGraphs: View {
                 }
             }
             ScrollView {
-                Chart(model.arrayOfLabelsByCategoryForPickerAndGraph(tag: pickerSelection), id:\.self) { element in
+                Chart(model.arrayOfBookLabelsByCategoryForPickerAndGraph(tag: pickerSelection), id:\.self) { element in
                     let value = model.datasForOtherGraph(statName: pickerSelection, dataName: dataSelection, text: element)
                     BarMark(
                         x: .value("Cantidad", value),
@@ -88,7 +88,7 @@ struct OtherGraphs: View {
                     }
                 }
                 .chartPlotStyle { plot in
-                    plot.frame(height: 60 * CGFloat(model.arrayOfLabelsByCategoryForPickerAndGraph(tag: pickerSelection).count))
+                    plot.frame(height: 60 * CGFloat(model.arrayOfBookLabelsByCategoryForPickerAndGraph(tag: pickerSelection).count))
                 }
                 .chartXAxis {
                     AxisMarks(position: .top)
@@ -104,6 +104,6 @@ struct OtherGraphs: View {
 struct OtherGraphs_Previews: PreviewProvider {
     static var previews: some View {
         OtherGraphs()
-            .environmentObject(BooksModel())
+            .environmentObject(UserViewModel())
     }
 }

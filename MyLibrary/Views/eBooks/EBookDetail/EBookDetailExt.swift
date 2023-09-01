@@ -9,9 +9,7 @@ import SwiftUI
 
 extension EBookDetail {
     struct EBookDetailModifier: ViewModifier {
-        @EnvironmentObject var emodel: EbooksModel
-        @EnvironmentObject var rdmodel: RDModel
-        @EnvironmentObject var nrmodel: NowReadingModel
+        @EnvironmentObject var model: UserViewModel
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingDeleteAlert: Bool
@@ -26,7 +24,7 @@ extension EBookDetail {
         
         func body(content: Content) -> some View {
             content
-                .navigationTitle("Detalle (\(ebook.id) de \(emodel.ebooks.count))")
+				.navigationTitle("Detalle (\(ebook.id) de \(model.user.ebooks.count))")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     HStack {
@@ -62,7 +60,7 @@ extension EBookDetail {
                     Text(messageInfoAlert)
                 }
                 .sheet(isPresented: $showingRDDetail) {
-                    if let rdata = rdmodel.readingDatas.first(where: { $0.bookTitle == ebook.bookTitle }) {
+					if let rdata = model.user.readingDatas.first(where: { $0.bookTitle == ebook.bookTitle }) {
                         NavigationView {
                             RDDetail(rdata: rdata)
                                 .toolbar {
@@ -76,7 +74,7 @@ extension EBookDetail {
                     }
                 }
                 .sheet(isPresented: $showingRSDetail) {
-                    if let rsdata = nrmodel.readingList.first(where: { $0.bookTitle == ebook.bookTitle }) {
+					if let rsdata = model.user.nowReading.first(where: { $0.bookTitle == ebook.bookTitle }) {
                         NavigationView {
                             ActualReadingDetail(book: rsdata)
                                 .toolbar {
@@ -92,8 +90,8 @@ extension EBookDetail {
                 .alert("¿Deseas eliminar este registro?", isPresented: $showingDeleteAlert) {
                     Button("Cancelar", role: .cancel) { }
                     Button("Eliminar", role: .destructive) {
-                        if let index = emodel.ebooks.firstIndex(of: ebook) {
-                            emodel.ebooks.remove(at: index)
+						if let index = model.user.ebooks.firstIndex(of: ebook) {
+							model.user.ebooks.remove(at: index)
                             dismiss()
                         }
                     }

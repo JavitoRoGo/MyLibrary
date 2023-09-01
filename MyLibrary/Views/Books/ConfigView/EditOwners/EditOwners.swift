@@ -9,8 +9,6 @@ import SwiftUI
 
 struct EditOwners: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
-    @EnvironmentObject var emodel: EbooksModel
     
     @State var oldOwner = ""
     @State var newOwner = ""
@@ -28,7 +26,7 @@ struct EditOwners: View {
                 List {
                     ownersSection
                     Section {
-                        ForEach(bmodel.getSuggestedOwnersFromData(), id:\.self) { owner in
+                        ForEach(model.getSuggestedOwnersFromData(), id:\.self) { owner in
                             Button {
                                 model.myOwners.append(owner)
                             } label: {
@@ -78,7 +76,5 @@ struct EditOwners_Previews: PreviewProvider {
     static var previews: some View {
         EditOwners()
             .environmentObject(UserViewModel())
-            .environmentObject(BooksModel())
-            .environmentObject(EbooksModel())
     }
 }

@@ -11,7 +11,7 @@ struct PlaceList: View {
     @EnvironmentObject var model: UserViewModel
     
     var places: [String] {
-        var tempPlaces = model.myPlaces
+		var tempPlaces = model.user.myPlaces
         tempPlaces.removeAll(where: { $0 == soldText })
         tempPlaces.removeAll(where: { $0 == donatedText })
         return tempPlaces

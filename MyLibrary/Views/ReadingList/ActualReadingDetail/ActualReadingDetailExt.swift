@@ -78,19 +78,18 @@ extension ActualReadingDetail {
 	
 	func changeToRegistered(_ book: NowReading) {
 		if book.formatt == .paper {
-			if let index = BooksModel().books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				bmodel.books[index].status = .registered
+			if let index = model.user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				model.user.books[index].status = .registered
 			}
 		} else {
-			if let index = EbooksModel().ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				emodel.ebooks[index].status = .registered
+			if let index = model.user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				model.user.ebooks[index].status = .registered
 			}
 		}
 	}
 	
 	struct ActualReadingDetailModifier: ViewModifier {
-		@EnvironmentObject var model: NowReadingModel
-		@EnvironmentObject var rdmodel: RDModel
+		@EnvironmentObject var model: UserViewModel
 		
 		@Binding var book: NowReading
 		@Binding var showingEditBook: Bool
@@ -149,7 +148,7 @@ extension ActualReadingDetail {
 					ForEach(1..<6) { rating in
 						Button {
 							let newRD = model.createNewRD(from: book, rating: rating)
-							rdmodel.add(newRD)
+							model.addNewReadingData(newRD)
 							changeToRegistered(book)
 							showingFinalAlert = true
 						} label: {

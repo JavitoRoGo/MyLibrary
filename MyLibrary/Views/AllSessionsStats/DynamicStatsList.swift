@@ -8,27 +8,35 @@
 import SwiftUI
 
 struct DynamicStatsList: View {
-    @EnvironmentObject var model: ReadingSessionModel
+    @EnvironmentObject var model: UserViewModel
     let graphSelected: Int
     
-    var numberOfSessions: String {
-        if graphSelected == 0 {
-            return "7 sesiones"
-        } else if graphSelected == 1 {
-            return "30 sesiones"
-        } else if graphSelected == 2 {
-            return "365 sesiones"
-        } else {
-            return "\(model.readingSessionList.count) sesiones"
-        }
-    }
+	var numberOfSessions: String {
+		if graphSelected == 3 {
+			return "\(model.user.sessions.count) sesiones"
+		} else {
+			return "\(model.getSessions(tag: graphSelected).count) sesiones"
+		}
+	}
     
     var fromDate: String {
-        let date = model.getFromDate(tag: graphSelected)
+		var date = Date()
+		let firstSessionDate = model.user.sessions.first?.date ?? .now
+		
+		if graphSelected == 0 {
+			date = firstSessionDate - 6.days
+		} else if graphSelected == 1 {
+			date = firstSessionDate - 29.days
+		} else if graphSelected == 2 {
+			date = firstSessionDate - 1.years
+		} else if graphSelected == 3 {
+			date = model.user.sessions.last?.date ?? .now
+		}
+		
         return date.formatted(date: .numeric, time: .omitted)
     }
     var toDate: String {
-        let date = model.toDate
+		let date = model.user.sessions.first?.date ?? .now
         return date.formatted(date: .numeric, time: .omitted)
     }
     
@@ -74,6 +82,6 @@ struct DynamicStatsList: View {
 struct DynamicStatsList_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsList(graphSelected: 0)
-            .environmentObject(ReadingSessionModel())
+            .environmentObject(UserViewModel())
     }
 }

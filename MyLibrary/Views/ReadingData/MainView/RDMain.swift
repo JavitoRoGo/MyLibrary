@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDMain: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     
     @State private var rating: Int = 1
     
@@ -26,58 +26,66 @@ struct RDMain: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if model.readingDatas.isEmpty {
-                    Text("Completa tu primera lectura para ver aquí los datos.")
+				if !model.user.readingDatas.isEmpty {
+					VStack(spacing: 15) {
+						HStack(spacing: 10) {
+							EachMainViewButton(iconImage: "list.star", iconColor: .pink, number: model.user.readingDatas.count, title: "Lista", destination: RDList())
+							EachMainViewButton(iconImage: "square.grid.3x3", iconColor: .pink, number: model.user.readingDatas.count, title: "Mosaico", destination: RDGrid(filterByRatingSelection: .all))
+						}
+						ScrollView(.horizontal) {
+							HStack(spacing: 5) {
+								ForEach(Year.allCases.reversed()) { year in
+									NavigationLink(destination: RDList(year: year)) {
+										VStack {
+											Text(String(year.rawValue))
+												.font(.title3.bold())
+											Text("\(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros")
+												.font(.caption)
+										}
+									}
+									.padding()
+									.background {
+										ButtonBackground()
+									}
+								}
+							}
+						}
+						NavigationLink(destination: RDGrid(filterByRatingSelection: filter)) {
+							VStack(alignment: .leading) {
+								HStack {
+									RDStars(rating: $rating)
+										.font(.title)
+									Spacer()
+									Text(model.numberOfReadingDataPerStar(rating), format: .number)
+										.font(.title2.bold())
+								}
+								Text("Toca las estrellas para ver el total")
+									.font(.caption)
+									.foregroundColor(.secondary)
+									.padding(.top, 5)
+							}
+						}
+						.padding()
+						.background {
+							ButtonBackground()
+						}
+						VStack {
+							Divider()
+							EachMainViewButton(iconImage: "chart.pie.fill", iconColor: .mint, number: 0, title: "Estadísticas", destination: RDStatsMainView())
+							EachMainViewButton(iconImage: "map.fill", iconColor: .blue, number: 0, title: "Ubicaciones", destination: RDMapView(pins: model.rdlocations))
+							Spacer()
+						}
+					}
                 } else {
-                    VStack(spacing: 15) {
-                        HStack(spacing: 10) {
-                            EachMainViewButton(iconImage: "list.star", iconColor: .pink, number: model.readingDatas.count, title: "Lista", destination: RDList())
-                            EachMainViewButton(iconImage: "square.grid.3x3", iconColor: .pink, number: model.readingDatas.count, title: "Mosaico", destination: RDGrid(filterByRatingSelection: .all))
-                        }
-                        ScrollView(.horizontal) {
-                            HStack(spacing: 5) {
-                                ForEach(Year.allCases.reversed()) { year in
-                                    NavigationLink(destination: RDList(year: year)) {
-                                        VStack {
-                                            Text(String(year.rawValue))
-                                                .font(.title3.bold())
-                                            Text("\(model.numPerYear(year, filterBy: .all)) libros")
-                                                .font(.caption)
-                                        }
-                                    }
-                                    .padding()
-                                    .background {
-                                        ButtonBackground()
-                                    }
-                                }
-                            }
-                        }
-                        NavigationLink(destination: RDGrid(filterByRatingSelection: filter)) {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    RDStars(rating: $rating)
-                                        .font(.title)
-                                    Spacer()
-                                    Text(model.numPerStar(rating), format: .number)
-                                        .font(.title2.bold())
-                                }
-                                Text("Toca las estrellas para ver el total")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                    .padding(.top, 5)
-                            }
-                        }
-                        .padding()
-                        .background {
-                            ButtonBackground()
-                        }
-                        VStack {
-                            Divider()
-                            EachMainViewButton(iconImage: "chart.pie.fill", iconColor: .mint, number: 0, title: "Estadísticas", destination: RDStatsMainView())
-                            EachMainViewButton(iconImage: "map.fill", iconColor: .blue, number: 0, title: "Ubicaciones", destination: RDMapView(pins: model.rdlocations))
-                            Spacer()
-                        }
-                    }
+					Text("Completa tu primera lectura para ver aquí los datos.")
+						.bold()
+						.frame(maxWidth: .infinity, maxHeight: .infinity)
+						.background {
+							Image("mockRDView")
+								.resizable()
+								.scaledToFit()
+								.opacity(0.2)
+						}
                 }
             }
             .foregroundColor(.primary)
@@ -94,6 +102,6 @@ struct RDMain: View {
 struct RDMain_Previews: PreviewProvider {
     static var previews: some View {
         RDMain()
-            .environmentObject(RDModel())
+            .environmentObject(UserViewModel())
     }
 }

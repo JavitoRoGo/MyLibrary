@@ -39,8 +39,7 @@ extension ActualReadingEdit {
 	}
 	
 	struct AREditModifier: ViewModifier {
-		@EnvironmentObject var model: NowReadingModel
-		@EnvironmentObject var bmodel: BooksModel
+		@EnvironmentObject var model: UserViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var book: NowReading
@@ -51,7 +50,6 @@ extension ActualReadingEdit {
 		@Binding var showingDownloadedImage: Bool
 		@Binding var inputImage: UIImage?
 		@Binding var location: RDLocation?
-		@Binding var isbn: String
 		
 		let bookTitle: String
 		let loadData: () -> Void
@@ -72,21 +70,17 @@ extension ActualReadingEdit {
 						showingCameraPicker = true
 					}
 					Button("Descargar imagen") {
-						if let book = bmodel.books.filter({ $0.bookTitle == bookTitle }).first {
-							let isbnArray = [book.isbn1, book.isbn2, book.isbn3, book.isbn4, book.isbn5]
-							let isbnString = isbnArray.map { String($0) }.reduce("",+)
-							isbn = isbnString
-						}
-						
 						showingDownloadedImage = true
 					}
-					.disabled(bookTitle.isEmpty || book.formatt == .kindle)
 				}
 				.sheet(isPresented: $showingImagePicker) {
 					ImagePicker(image: $inputImage)
 				}
 				.sheet(isPresented: $showingCameraPicker) {
 					CameraPicker(image: $inputImage)
+				}
+				.sheet(isPresented: $showingDownloadedImage) {
+					DownloadCoverView(selectedImage: $inputImage)
 				}
 				.sheet(isPresented: $showingMapSelection) {
 					EditRDMapView(location: $location)
@@ -100,12 +94,12 @@ extension ActualReadingEdit {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Modificar") {
 							let editedBook = createEditedBook()
-							if let index = model.readingList.firstIndex(of: book) {
-								model.readingList[index] = editedBook
+							if let index = model.user.nowReading.firstIndex(of: book) {
+								model.user.nowReading[index] = editedBook
 								book = editedBook
 							}
-							if let index = model.waitingList.firstIndex(of: book) {
-								model.waitingList[index] = editedBook
+							if let index = model.user.nowWaiting.firstIndex(of: book) {
+								model.user.nowWaiting[index] = editedBook
 								book = editedBook
 							}
 							if let inputImage = inputImage {

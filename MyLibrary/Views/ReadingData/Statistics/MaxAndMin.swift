@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct MaxAndMin: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     @Environment(\.colorScheme) var colorScheme
     @State var datas: [DataForMaxMinChart] = []
     @State private var currentActiveItem: DataForMaxMinChart?
@@ -93,7 +93,7 @@ struct MaxAndMin: View {
         }
         .modifier(MaxAndMinModifier())
         .task {
-            datas = model.getMaxMinPerBook()
+            datas = model.getMaxAndMinPagesPerBook()
             animateGraph()
         }
     }
@@ -102,6 +102,6 @@ struct MaxAndMin: View {
 struct MaxAndMin_Previews: PreviewProvider {
     static var previews: some View {
         MaxAndMin()
-            .environmentObject(RDModel())
+            .environmentObject(UserViewModel())
     }
 }

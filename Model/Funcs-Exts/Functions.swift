@@ -12,10 +12,6 @@ import SwiftUI
 
 // Funciones para icono y color según estado, y mensajes de información
 
-protocol BooksProtocol {
-    var status: ReadingStatus { get set }
-}
-
 func imageNameStatus(_ status: ReadingStatus) -> String {
     switch status {
     case .notRead:
@@ -398,19 +394,3 @@ func getURLToShare(from jsonFile: String) -> URL {
     }
     return url
 }
-
-
-// MARK: - Función para cargar las ubicaciones del usuario, añadiendo dos por defecto
-
-let soldText = "Vendido"
-let donatedText = "Donado"
-
-#if os(iOS)
-func loadMyPlaces() -> [String] {
-    let places: [String] = Bundle.main.searchAndDecode(myPlacesJson) ?? []
-    if places.contains(soldText) && places.contains(donatedText) {
-        return places
-    }
-    return places + [donatedText, soldText]
-}
-#endif

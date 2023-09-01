@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct YearChart: View {
-    @EnvironmentObject var model: ReadingSessionModel
+    @EnvironmentObject var model: UserViewModel
     @Environment(\.colorScheme) var colorScheme
     @Binding var isLineGraph: Bool
     @State private var animateDatas: [DataStructForAnimateGraph<Int,String>] = []
@@ -50,7 +50,7 @@ struct YearChart: View {
             }
             
             if let currentActiveItem, currentActiveItem.id == data.id {
-                RuleMark(x: plotLocationX, yStart: .value("inicio", 0), yEnd: .value("Fin", max + 500))
+                RuleMark(x: plotLocationX, yStart: .value("inicio", 0), yEnd: .value("Fin", Double(max) * 1.25))
                     .lineStyle(.init(lineWidth: 2, miterLimit: 2, dash: [2], dashPhase: 5))
                     .annotation(position: .top) {
                         VStack(alignment: .leading, spacing: 6) {
@@ -95,7 +95,7 @@ struct YearChart: View {
                     )
             }
         }
-        .chartYScale(domain: 0...(max + 500))
+		.chartYScale(domain: 0...(Double(max) * 1.25))
         .padding()
         .background {
             if colorScheme == .dark {
@@ -126,5 +126,6 @@ struct YearChart: View {
 struct YearChart_Previews: PreviewProvider {
     static var previews: some View {
         YearChart(isLineGraph: .constant(false))
+			.environmentObject(UserViewModel())
     }
 }

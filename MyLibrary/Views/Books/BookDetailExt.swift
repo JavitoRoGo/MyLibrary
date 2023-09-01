@@ -152,9 +152,7 @@ extension BookDetail {
 // View modifier
 extension BookDetail {
     struct BookDetailModifier: ViewModifier {
-        @EnvironmentObject var model: BooksModel
-        @EnvironmentObject var rdmodel: RDModel
-        @EnvironmentObject var nrmodel: NowReadingModel
+        @EnvironmentObject var model: UserViewModel
         let book: Books
         @Binding var showingDelete: Bool
         @Binding var showingEditPage: Bool
@@ -186,8 +184,8 @@ extension BookDetail {
                     }
                 }
                 .sheet(isPresented: $showingEditPage) {
-                    if let index = model.books.firstIndex(of: book) {
-                        BookEditing(book: $model.books[index], newBookTitle: book.bookTitle, newStatus: book.status, newOwner: book.owner, newPlace: book.place, newSynopsis: book.synopsis ?? "Sinopsis no disponible.")
+					if let index = model.user.books.firstIndex(of: book) {
+						BookEditing(book: $model.user.books[index], newBookTitle: book.bookTitle, newStatus: book.status, newOwner: book.owner, newPlace: book.place, newSynopsis: book.synopsis ?? "Sinopsis no disponible.")
                     }
                 }
                 .alert(titleInfoAlert, isPresented: $showingInfoAlert) {
@@ -208,7 +206,7 @@ extension BookDetail {
                     Text(messageInfoAlert)
                 }
                 .sheet(isPresented: $showingRDDetail) {
-                    let rdata = rdmodel.readingDatas.first(where: { $0.bookTitle == book.bookTitle })!
+					let rdata = model.user.readingDatas.first(where: { $0.bookTitle == book.bookTitle })!
                     NavigationView {
                         RDDetail(rdata: rdata)
                             .toolbar {
@@ -221,7 +219,7 @@ extension BookDetail {
                     }
                 }
                 .sheet(isPresented: $showingRSDetail) {
-                    if let rsdata = nrmodel.readingList.first(where: { $0.bookTitle == book.bookTitle }) {
+					if let rsdata = model.user.nowReading.first(where: { $0.bookTitle == book.bookTitle }) {
                         NavigationView {
                             ActualReadingDetail(book: rsdata)
                                 .toolbar {
@@ -237,14 +235,14 @@ extension BookDetail {
                 .alert("¿Deseas eliminar este registro?", isPresented: $showingDelete) {
                     Button("Cancelar", role: .cancel) { }
                     Button(soldText, role: .destructive) {
-                        let index = model.books.firstIndex(of: book)!
-                        model.books[index].place = soldText
-                        model.books[index].isActive = false
+						let index = model.user.books.firstIndex(of: book)!
+						model.user.books[index].place = soldText
+						model.user.books[index].isActive = false
                     }
                     Button(donatedText, role: .destructive) {
-                        let index = model.books.firstIndex(of: book)!
-                        model.books[index].place = donatedText
-                        model.books[index].isActive = false
+						let index = model.user.books.firstIndex(of: book)!
+						model.user.books[index].place = donatedText
+						model.user.books[index].isActive = false
                     }
                 } message: {
                     Text("Indica si el libro ha sido vendido o donado.")

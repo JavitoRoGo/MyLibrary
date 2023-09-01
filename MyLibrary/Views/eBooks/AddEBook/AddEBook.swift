@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddEBook: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var emodel: EbooksModel
     @Environment(\.dismiss) var dismiss
     
     @State var showingAlert = false
@@ -22,7 +21,7 @@ struct AddEBook: View {
         return true
     }
     var newID: Int {
-        emodel.ebooks.count + 1
+		model.user.ebooks.count + 1
     }
     
     @State var newAuthor = ""
@@ -91,6 +90,5 @@ struct AddEBook_Previews: PreviewProvider {
     static var previews: some View {
         AddEBook()
             .environmentObject(UserViewModel())
-            .environmentObject(EbooksModel())
     }
 }

@@ -44,6 +44,6 @@ struct LineChart: View {
 struct LineChart_Previews: PreviewProvider {
     static var previews: some View {
         LineChart()
-            .environmentObject(RDModel())
+            .environmentObject(UserViewModel())
     }
 }

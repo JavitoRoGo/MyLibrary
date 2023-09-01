@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct WeekChart: View {
-    @EnvironmentObject var model: ReadingSessionModel
+    @EnvironmentObject var model: UserViewModel
     @Environment(\.colorScheme) var colorScheme
     
     @Binding var isLineGraph: Bool
@@ -132,6 +132,6 @@ struct WeekChart: View {
 struct WeekChart_Previews: PreviewProvider {
     static var previews: some View {
         WeekChart(isLineGraph: .constant(false))
-            .environmentObject(ReadingSessionModel())
+            .environmentObject(UserViewModel())
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDGrid: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     @State private var searchText = ""
     
     let columns = [GridItem(.adaptive(minimum: 120))]
@@ -16,9 +16,9 @@ struct RDGrid: View {
     
     var filteredRD: [ReadingData] {
         if filterByRatingSelection == .all {
-            return model.readingDatas.reversed()
+			return model.user.readingDatas.reversed()
         } else {
-            return model.readingDatas.filter { $0.rating == filterByRatingSelection.rawValue }.reversed()
+			return model.user.readingDatas.filter { $0.rating == filterByRatingSelection.rawValue }.reversed()
         }
     }
     var searchRD: [ReadingData] {
@@ -49,6 +49,6 @@ struct RDGrid: View {
 struct RDGrid_Previews: PreviewProvider {
     static var previews: some View {
         RDGrid(filterByRatingSelection: .all)
-            .environmentObject(RDModel())
+			.environmentObject(UserViewModel())
     }
 }

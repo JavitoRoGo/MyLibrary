@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct RSList: View {
-    @EnvironmentObject var model: NowReadingModel
-    @EnvironmentObject var rsmodel: ReadingSessionModel
+    @EnvironmentObject var model: UserViewModel
     
     @State var book: NowReading
     @State var showingAddSession = false
@@ -42,8 +41,7 @@ struct RSList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             RSList(book: NowReading.example[0])
-                .environmentObject(NowReadingModel())
-                .environmentObject(ReadingSessionModel())
+                .environmentObject(UserViewModel())
         }
     }
 }

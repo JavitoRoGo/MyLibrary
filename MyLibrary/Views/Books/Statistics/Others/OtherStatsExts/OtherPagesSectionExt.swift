@@ -9,10 +9,10 @@ import SwiftUI
 
 extension OtherStats {
 	var pagesSection: some View {
-		Section("Número de páginas: \(model.globalPages().total)") {
+		Section("Número de páginas: \(model.globalPages(model.user.books).total)") {
 			let value = model.numOfPagesForOtherStats(tag: statsSelection, text: pickerSelection).total
 			let mean = model.numOfPagesForOtherStats(tag: statsSelection, text: pickerSelection).mean
-			let globalMean = model.globalPages().mean
+			let globalMean = model.globalPages(model.user.books).mean
 			let compare = compareWithMean(value: Double(mean), mean: Double(globalMean))
 			HStack {
 				VStack {

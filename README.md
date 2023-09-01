@@ -49,3 +49,12 @@ ConnectivityManager para conectar con iOS.
 ## v1.1.3
 
 * Cambios internos en la app. Se refactoriza todo el código para ordenarlo y evitar MVC (massive view controlers), mediante el uso de extensiones para métodos, propiedades calculadas y view modifiers.
+
+
+# v1.2
+
+* Se recodifica gran parte de la app para unificar todos los ViewModel en uno solo: los ViewModel existentes pasan a ser conformados como extensiones de UserViewModel, que permanece como único modelo. Se eliminan los json y todos los datos pasan a estar dentro de User.
+* Se corrigen los fallos al intentar mostrar las sesiones o ReadingData si no hay datos, cuando se inicia la app desde cero. Si no hay datos se muestra una imagen de fondo y un texto. Y se deshabilitan los botones de estadísticas para Books y EBooks.
+* Se añaden datos vacíos a las gráficas de sesiones para mostrar el periodo completo aunque no haya datos: semana, mes o año.
+* Para la gráfica clásica total, se recodifica para que los años se generen a partir de los propios datos y no de forma manual.
+* Se modifica la vista de edición de NowReading para que pueda descargarse la portada también para los ebook.

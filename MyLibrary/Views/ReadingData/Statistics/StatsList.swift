@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatsList: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     let tag: Int
     let colors: [Color]
     var topRange: Int {
@@ -73,6 +73,6 @@ struct StatsList_Previews: PreviewProvider {
     
     static var previews: some View {
         StatsList(tag: 0, colors: colors)
-            .environmentObject(RDModel())
+            .environmentObject(UserViewModel())
     }
 }

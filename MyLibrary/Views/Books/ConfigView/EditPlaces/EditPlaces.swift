@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EditPlaces: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     
     @State var oldPlace = ""
     @State var newPlace = ""
@@ -27,13 +26,13 @@ struct EditPlaces: View {
                 List {
                     placesSection
                     Section {
-                        ForEach(bmodel.getSuggestedPlacesFromData(), id:\.self) { place in
+                        ForEach(model.getSuggestedPlacesFromData(), id:\.self) { place in
                             Button {
-                                model.myPlaces.append(place)
+								model.user.myPlaces.append(place)
                             } label: {
                                 Text(place)
                             }
-                            .disabled(model.myPlaces.contains(place))
+							.disabled(model.user.myPlaces.contains(place))
                         }
                     } header: {
                         Text("Sugerencias")
@@ -58,7 +57,7 @@ struct EditPlaces: View {
                         }
                         .buttonStyle(.bordered)
                         Button("Añadir") {
-                            model.myPlaces.insert(newPlace, at: 0)
+							model.user.myPlaces.insert(newPlace, at: 0)
                             newPlace = ""
                             showingAddPlace = false
                         }
@@ -78,7 +77,6 @@ struct EditPlaces_Previews: PreviewProvider {
         NavigationView {
             EditPlaces()
                 .environmentObject(UserViewModel())
-                .environmentObject(BooksModel())
         }
     }
 }

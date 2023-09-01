@@ -11,7 +11,6 @@ import SwiftUI
 
 struct BookStats: View {
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var bmodel: BooksModel
     @State var place: String
     @State var showingPlacePicker = false
     @State var showingGraph = false
@@ -52,7 +51,6 @@ struct BookStats_Previews: PreviewProvider {
         NavigationView {
             BookStats(place: "A1")
                 .environmentObject(UserViewModel())
-                .environmentObject(BooksModel())
         }
     }
 }

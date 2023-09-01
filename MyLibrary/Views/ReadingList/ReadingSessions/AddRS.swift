@@ -11,8 +11,6 @@ struct AddRS: View {
     @ObservedObject var wcmodel = ConnectivityMaganer()
     
     @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var nrmodel: NowReadingModel
-    @EnvironmentObject var rsmodel: ReadingSessionModel
     @Environment(\.dismiss) var dismiss
     
     @Binding var book: NowReading
@@ -85,15 +83,15 @@ struct AddRS: View {
                 }
             }
             Section {
-                if rsmodel.tempQuotesArray.isEmpty {
+                if model.tempQuotesArray.isEmpty {
                     Text("No has añadido ninguna cita en esta sesión")
                         .foregroundColor(.secondary)
                 } else {
-                    ForEach(rsmodel.tempQuotesArray, id:\.date) { quote in
+                    ForEach(model.tempQuotesArray, id:\.date) { quote in
                         Text(quote.text)
                             .swipeActions(edge: .trailing) {
                                 Button(role: .destructive) {
-                                    rsmodel.tempQuotesArray.removeAll(where: { $0 == quote })
+                                    model.tempQuotesArray.removeAll(where: { $0 == quote })
                                 } label: {
                                     Image(systemName: "trash")
                                 }
@@ -103,7 +101,7 @@ struct AddRS: View {
             } header: {
                 Text("Citas")
             } footer: {
-                if !rsmodel.tempQuotesArray.isEmpty {
+                if !model.tempQuotesArray.isEmpty {
                     Text("Desliza hacia la izquierda si quieres eliminar alguna de las citas.")
                 }
             }
@@ -119,8 +117,6 @@ struct AddRS_Previews: PreviewProvider {
         NavigationView {
             AddRS(book: .constant(book), startingPage: book.nextPage, hour: 0, minute: 0)
                 .environmentObject(UserViewModel())
-                .environmentObject(NowReadingModel())
-                .environmentObject(ReadingSessionModel())
         }
     }
 }

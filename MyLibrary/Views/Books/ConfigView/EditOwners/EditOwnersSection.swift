@@ -23,7 +23,7 @@ extension EditOwners {
 						Button("Modificar") {
 							if let index = model.myOwners.firstIndex(of: owner) {
 								model.myOwners[index] = newOwner
-								if bmodel.numByOwner(owner) != 0 || emodel.numByOwner(owner) != 0 {
+								if model.numberOfBooksByOwner(owner) != 0 || model.numberOfEbooksByOwner(owner) != 0 {
 									oldOwner = owner
 									showingEditAlert = true
 								}
@@ -37,7 +37,7 @@ extension EditOwners {
 				.swipeActions(edge: .trailing) {
 					Button(role: .destructive) {
 						withAnimation {
-							if bmodel.numByOwner(owner) == 0 && emodel.numByOwner(owner) == 0 {
+							if model.numberOfBooksByOwner(owner) == 0 && model.numberOfEbooksByOwner(owner) == 0 {
 								model.myOwners.removeAll(where: { $0 == owner })
 							} else {
 								oldOwner = owner

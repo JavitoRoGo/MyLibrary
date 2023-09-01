@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct MainBookView: View {
-    @EnvironmentObject var model: BooksModel
+    @EnvironmentObject var model: UserViewModel
     
     @State var showingSold = false
     @State var showingDonated = false
+	
+	var areStatsDisabled: Bool {
+		model.user.books.isEmpty
+	}
         
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 15) {
                     VStack(spacing: 15) {
-                        EachMainViewButton(iconImage: "books.vertical", iconColor: .pink, number: model.numAtPlace("all"), title: "Todos", destination: PlaceList())
+                        EachMainViewButton(iconImage: "books.vertical", iconColor: .pink, number: model.numberOfBooksAtPlace("all"), title: "Todos", destination: PlaceList())
                         ScrollByPlace()
                         ScrollByStatus()
                         ScrollByOwner(format: .book)
@@ -28,7 +32,11 @@ struct MainBookView: View {
                         HStack(spacing: 10) {
                             // Se mantiene la gráfica inicial y sus estadísticas por ubicación como ejemplo de gráfica pre-SwiftCharts
                             EachMainViewButton(iconImage: "chart.xyaxis.line", iconColor: .mint, number: 0, title: "Por ubicación", destination: BookStats(place: "Por colocar"))
+								.disabled(areStatsDisabled)
+								.foregroundColor(areStatsDisabled ? .secondary.opacity(0.2) : .primary)
                             EachMainViewButton(iconImage: "chart.xyaxis.line", iconColor: .mint, number: 0, title: "Otros datos", destination: OtherStats())
+								.disabled(areStatsDisabled)
+								.foregroundColor(areStatsDisabled ? .secondary.opacity(0.2) : .primary)
                         }
                         Divider()
                     }
@@ -38,7 +46,7 @@ struct MainBookView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("Mostrar libros donados (\(model.numAtPlace(donatedText)))")
+                            Text("Mostrar libros donados (\(model.numberOfBooksAtPlace(donatedText)))")
                                 .padding(.vertical)
                             Spacer()
                         }
@@ -51,7 +59,7 @@ struct MainBookView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("Mostrar libros vendidos (\(model.numAtPlace(soldText)))")
+                            Text("Mostrar libros vendidos (\(model.numberOfBooksAtPlace(soldText)))")
                                 .padding(.vertical)
                             Spacer()
                         }
@@ -69,6 +77,6 @@ struct MainBookView: View {
 struct MainBookView_Previews: PreviewProvider {
     static var previews: some View {
         MainBookView()
-            .environmentObject(BooksModel())
+            .environmentObject(UserViewModel())
     }
 }

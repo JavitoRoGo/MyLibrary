@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct PlaceRow: View {
-    @EnvironmentObject var model: BooksModel
+    @EnvironmentObject var model: UserViewModel
     let place: String
     var number: Int {
-        return model.numAtPlace(place)
+        return model.numberOfBooksAtPlace(place)
     }
     
     
@@ -28,7 +28,7 @@ struct PlaceRow: View {
 struct PlaceRow_Previews: PreviewProvider {
     static var previews: some View {
         PlaceRow(place: "A1")
-            .environmentObject(BooksModel())
+            .environmentObject(UserViewModel())
             .previewLayout(.fixed(width: 400, height: 50))
     }
 }

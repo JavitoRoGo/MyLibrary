@@ -15,8 +15,6 @@ extension EditOwners {
 	// View modifier para la lista de owners
 	struct OwnersListModifier: ViewModifier {
 		@EnvironmentObject var model: UserViewModel
-		@EnvironmentObject var bmodel: BooksModel
-		@EnvironmentObject var emodel: EbooksModel
 		
 		@Binding var oldOwner: String
 		@Binding var newOwner: String
@@ -35,8 +33,8 @@ extension EditOwners {
 					Button("No", role: .cancel) { }
 					Button("Sí", role: .destructive) {
 						model.myOwners.removeAll(where: { $0 == oldOwner })
-						bmodel.changeOwnerFromTo(from: oldOwner, to: "sin asignar")
-						emodel.changeOwnerFromTo(from: oldOwner, to: "sin asignar")
+						model.changeBookOwnerFromTo(from: oldOwner, to: "sin asignar")
+						model.changeEbookOwnerFromTo(from: oldOwner, to: "sin asignar")
 						oldOwner = ""
 					}
 				} message: {
@@ -45,8 +43,8 @@ extension EditOwners {
 				.alert("Se ha modificado el nombre de esta persona.", isPresented: $showingEditAlert) {
 					Button("No", role: .cancel) { }
 					Button("Sí") {
-						bmodel.changeOwnerFromTo(from: oldOwner, to: newOwner)
-						emodel.changeOwnerFromTo(from: oldOwner, to: newOwner)
+						model.changeBookOwnerFromTo(from: oldOwner, to: newOwner)
+						model.changeEbookOwnerFromTo(from: oldOwner, to: newOwner)
 						newOwner = ""
 					}
 				} message: {

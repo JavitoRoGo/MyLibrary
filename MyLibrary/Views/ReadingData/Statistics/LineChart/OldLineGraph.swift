@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct OldLineChart: View {
-    @EnvironmentObject var model: RDModel
+    @EnvironmentObject var model: UserViewModel
     var datas: ([Double], [Double]) {
-        model.datas()
+        model.datasForPagPerDay()
     }
     var maxY: Double {
         datas.0.max() ?? 0
