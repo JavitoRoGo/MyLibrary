@@ -93,6 +93,7 @@ struct CreateUserView: View {
                 
                 Section {
                     Button {
+						model.user.id = UUID()
                         model.user.nickname = nickname
                         model.user.username = username
                         keychain.set(repeatPassword, forKey: "storedPassword")

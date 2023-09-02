@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 struct User: Identifiable, Codable {
-    let id: UUID
+    var id: UUID
     var username: String
     var nickname: String
     var books: [Books]
