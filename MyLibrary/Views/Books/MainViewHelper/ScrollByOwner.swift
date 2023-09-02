@@ -21,15 +21,15 @@ struct ScrollByOwner: View {
     }
     
     var body: some View {
-        if !model.myOwners.isEmpty {
+		if !model.user.myOwners.isEmpty {
             ScrollView(.horizontal) {
                 HStack(spacing: 10) {
                     if format == .book {
-                        ForEach(model.myOwners, id:\.self) { owner in
+						ForEach(model.user.myOwners, id:\.self) { owner in
                             EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numberOfBooksByOwner(owner), title: owner, destination: BookList(place: "all", filterByOwner: owner))
                         }
                     } else {
-                        ForEach(model.myOwners, id:\.self) { owner in
+						ForEach(model.user.myOwners, id:\.self) { owner in
                             EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numberOfEbooksByOwner(owner), title: owner, destination: EBookList(filter: .all, filteredOwner: owner))
                         }
                     }

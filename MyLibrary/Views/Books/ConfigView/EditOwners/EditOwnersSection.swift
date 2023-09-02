@@ -10,7 +10,7 @@ import SwiftUI
 extension EditOwners {
 	var ownersSection: some View {
 		Section {
-			ForEach(model.myOwners, id: \.self) { owner in
+			ForEach(model.user.myOwners, id: \.self) { owner in
 				NavigationLink {
 					VStack {
 						Text("Cambia aquí el nombre de esta persona:")
@@ -21,8 +21,8 @@ extension EditOwners {
 					}
 					.toolbar {
 						Button("Modificar") {
-							if let index = model.myOwners.firstIndex(of: owner) {
-								model.myOwners[index] = newOwner
+							if let index = model.user.myOwners.firstIndex(of: owner) {
+								model.user.myOwners[index] = newOwner
 								if model.numberOfBooksByOwner(owner) != 0 || model.numberOfEbooksByOwner(owner) != 0 {
 									oldOwner = owner
 									showingEditAlert = true
@@ -38,7 +38,7 @@ extension EditOwners {
 					Button(role: .destructive) {
 						withAnimation {
 							if model.numberOfBooksByOwner(owner) == 0 && model.numberOfEbooksByOwner(owner) == 0 {
-								model.myOwners.removeAll(where: { $0 == owner })
+								model.user.myOwners.removeAll(where: { $0 == owner })
 							} else {
 								oldOwner = owner
 								showingDeleteAlert = true

@@ -28,11 +28,11 @@ struct EditOwners: View {
                     Section {
                         ForEach(model.getSuggestedOwnersFromData(), id:\.self) { owner in
                             Button {
-                                model.myOwners.append(owner)
+								model.user.myOwners.append(owner)
                             } label: {
                                 Text(owner)
                             }
-                            .disabled(model.myOwners.contains(owner))
+							.disabled(model.user.myOwners.contains(owner))
                         }
                     } header: {
                         Text("Sugerencias")
@@ -57,7 +57,7 @@ struct EditOwners: View {
                         }
                         .buttonStyle(.bordered)
                         Button("Añadir") {
-                            model.myOwners.append(newOwner)
+							model.user.myOwners.append(newOwner)
                             newOwner = ""
                             showingAddOwner = false
                         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 extension EditOwners {
 	func move(from source: IndexSet, to destination: Int) {
-		model.myOwners.move(fromOffsets: source, toOffset: destination)
+		model.user.myOwners.move(fromOffsets: source, toOffset: destination)
 	}
 	
 	// View modifier para la lista de owners
@@ -32,7 +32,7 @@ extension EditOwners {
 				.alert("Esta persona tiene libros o ebooks registrados.\n¿Deseas borrarla de todas formas?", isPresented: $showingDeleteAlert) {
 					Button("No", role: .cancel) { }
 					Button("Sí", role: .destructive) {
-						model.myOwners.removeAll(where: { $0 == oldOwner })
+						model.user.myOwners.removeAll(where: { $0 == oldOwner })
 						model.changeBookOwnerFromTo(from: oldOwner, to: "sin asignar")
 						model.changeEbookOwnerFromTo(from: oldOwner, to: "sin asignar")
 						oldOwner = ""

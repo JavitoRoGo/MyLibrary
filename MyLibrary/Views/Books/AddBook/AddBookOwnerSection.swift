@@ -15,7 +15,7 @@ extension AddBook {
 					Text("Propietario:")
 						.font(.subheadline)
 					Picker("Propietario", selection: $newOwner) {
-						ForEach(model.myOwners, id: \.self) {
+						ForEach(model.user.myOwners, id: \.self) {
 							Text($0)
 						}
 					}

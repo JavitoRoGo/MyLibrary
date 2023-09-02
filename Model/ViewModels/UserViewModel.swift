@@ -34,7 +34,6 @@ final class UserViewModel: ObservableObject {
 	
 	var storedPassword = keychain.get("storedPassword") ?? ""
 	@AppStorage("isBiometricsAllowed") var isBiometricsAllowed = false
-	@AppStorage("owners") var myOwners: [String] = []
 	
 	private var cancellableSet: Set<AnyCancellable> = []
 	

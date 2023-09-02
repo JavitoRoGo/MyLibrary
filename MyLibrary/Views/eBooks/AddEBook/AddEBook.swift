@@ -64,7 +64,7 @@ struct AddEBook: View {
                 
                 Section {
                     Picker("Propietario:", selection: $newOwner) {
-                        ForEach(model.myOwners, id: \.self) {
+						ForEach(model.user.myOwners, id: \.self) {
                             Text($0)
                         }
                     }

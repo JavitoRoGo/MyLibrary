@@ -32,14 +32,14 @@ struct ChangeBooksOwner: View {
                 
                 VStack {
                     Picker("Origen", selection: $oldOwner) {
-                        ForEach(model.myOwners, id: \.self) {
+						ForEach(model.user.myOwners, id: \.self) {
                             Text($0)
                         }
                     }
                     Image(systemName: "arrow.down")
                         .font(.system(size: 50))
                     Picker("Destino", selection: $newOwner) {
-                        ForEach(model.myOwners, id: \.self) {
+						ForEach(model.user.myOwners, id: \.self) {
                             Text($0)
                         }
                     }

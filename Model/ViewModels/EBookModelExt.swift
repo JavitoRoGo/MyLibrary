@@ -71,7 +71,7 @@ extension UserViewModel {
             }
         } // Por propietario:
         else if tag == 1 {
-            myOwners.forEach { owner in
+			user.myOwners.forEach { owner in
                 arrayOfData.append(owner)
             }
         } // Por estado:
