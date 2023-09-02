@@ -16,15 +16,4 @@
 
 #
 
-# yearnoenum
-
-### Eliminar el enum Year y pasar ese parámetro a Int.
-
-* Eliminar el enum Year.
-* Cambiar la propiedad finishedInYear de ReadingData a Int.
-* Recodificar todo lo relacionado con Year para trabajar con datos tipo Int.
-* La propiedad finishedInYear se debe generar sola en función de la fecha.
-
-# ownerinuser
-
-### Eliminar lista de owners del viewmodel y pasarlo a User igual de las ubicaciones.
+# 

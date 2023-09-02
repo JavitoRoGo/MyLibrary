@@ -58,3 +58,7 @@ ConnectivityManager para conectar con iOS.
 * Se añaden datos vacíos a las gráficas de sesiones para mostrar el periodo completo aunque no haya datos: semana, mes o año.
 * Para la gráfica clásica total, se recodifica para que los años se generen a partir de los propios datos y no de forma manual.
 * Se modifica la vista de edición de NowReading para que pueda descargarse la portada también para los ebook.
+* Se elimina el enum de Year y se pasa a Int, generándose a partir de las fechas de las sesiones.
+* Se traslada la lista de propietarios del viewmodel a una propiedad de User.
+* Se arregla un fallo al grabar una nueva sesión, que hacía que no se grabara en sessions en el json.
+* Se modifica la creación de nuevo user para asignarle un id nuevo.
