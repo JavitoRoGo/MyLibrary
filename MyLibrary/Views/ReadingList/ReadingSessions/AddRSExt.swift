@@ -44,7 +44,10 @@ extension AddRS {
 			model.tempQuotesArray.removeAll()
 		}
 		model.user.nowReading[index].sessions.insert(newSession, at: 0)
-		model.user.sessions.insert(newSession, at: 0)
+		// Se añade un pequeño retardo al grabar la sesión para que se guarde bien en el json
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+			model.user.sessions.insert(newSession, at: 0)
+		}
 		
 		if Calendar.current.component(.weekday, from: newDate) == 7 {
 			let weekPages = model.calcTotalPagesPerWeekAndMonth(tag: 0).pages.reduce(0,+)
