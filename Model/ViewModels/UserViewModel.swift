@@ -38,7 +38,8 @@ final class UserViewModel: ObservableObject {
 	private var cancellableSet: Set<AnyCancellable> = []
 	
 	init() {
-		user = Bundle.main.searchAndDecode(userJson) ?? User.emptyUser
+		guard let decoded: User = Bundle.main.searchAndDecode(userJson) else { fatalError() }
+		user = decoded
 		if !user.myPlaces.contains(soldText) && !user.myPlaces.contains(donatedText) {
 			user.myPlaces += [donatedText, soldText]
 		}
