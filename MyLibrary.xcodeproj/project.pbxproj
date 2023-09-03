@@ -45,9 +45,6 @@
 		44265388277DF5020047D75C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44265387277DF5020047D75C /* ContentView.swift */; };
 		4426538D277DF5030047D75C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4426538C277DF5030047D75C /* Preview Assets.xcassets */; };
 		4426539A277DF6BA0047D75C /* PlaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44265399277DF6BA0047D75C /* PlaceList.swift */; };
-		4426539D277E13F30047D75C /* BOOKS.json in Resources */ = {isa = PBXBuildFile; fileRef = 4426539C277E13F30047D75C /* BOOKS.json */; };
-		4426539F277E14050047D75C /* READINGDATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 4426539E277E14050047D75C /* READINGDATA.json */; };
-		442653A1277E140F0047D75C /* EBOOKS.json in Resources */ = {isa = PBXBuildFile; fileRef = 442653A0277E140F0047D75C /* EBOOKS.json */; };
 		442653A3277E175D0047D75C /* BookModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442653A2277E175D0047D75C /* BookModelExt.swift */; };
 		442653A5277E1B440047D75C /* PlaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442653A4277E1B440047D75C /* PlaceRow.swift */; };
 		442653A7277E1F120047D75C /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442653A6277E1F120047D75C /* BookList.swift */; };
@@ -171,7 +168,6 @@
 		448B2DF228315D1B00916906 /* ActualReadingEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448B2DF128315D1B00916906 /* ActualReadingEdit.swift */; };
 		448B2F9E28E8BE1900F4C4EF /* OtherStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448B2F9D28E8BE1900F4C4EF /* OtherStats.swift */; };
 		4492AC7E28AAA502003CB125 /* EditPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492AC7D28AAA502003CB125 /* EditPlaces.swift */; };
-		4492AC8028AB04AC003CB125 /* MYPLACES.json in Resources */ = {isa = PBXBuildFile; fileRef = 4492AC7F28AB04AC003CB125 /* MYPLACES.json */; };
 		4492F44227FB29F300103B6D /* AllEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492F44127FB29F300103B6D /* AllEnums.swift */; };
 		4492F44527FB2A8500103B6D /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492F44427FB2A8500103B6D /* Functions.swift */; };
 		449410FC28563DCC0055D833 /* RSBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449410FB28563DCC0055D833 /* RSBarGraph.swift */; };
@@ -181,7 +177,6 @@
 		44AA171329A004A900944623 /* RSEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA171229A004A900944623 /* RSEdit.swift */; };
 		44AB0300280A2E2800EAFE45 /* RingCircleArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */; };
 		44B0409C284FBA4700C29E22 /* RSModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModelExt.swift */; };
-		44B0409F284FCF2600C29E22 /* READINGSESSIONS.json in Resources */ = {isa = PBXBuildFile; fileRef = 44B0409E284FCF2600C29E22 /* READINGSESSIONS.json */; };
 		44B040A428500FC600C29E22 /* DynamicStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B040A328500FC600C29E22 /* DynamicStatsView.swift */; };
 		44B1E50927D1258B00EF6D40 /* AddReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1E50827D1258B00EF6D40 /* AddReading.swift */; };
 		44B6AAED28E9E4AB00D486AC /* OtherGraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B6AAEC28E9E4AB00D486AC /* OtherGraphs.swift */; };
@@ -189,7 +184,6 @@
 		44B9FD6A295A1BCB00A11206 /* WidgetDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9FD67295A081800A11206 /* WidgetDataHelper.swift */; };
 		44B9FD6D295A6E7100A11206 /* MediumSizeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9FD6B295A6E7100A11206 /* MediumSizeView2.swift */; };
 		44B9FD70295A70CF00A11206 /* WidgetView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9FD6E295A70CF00A11206 /* WidgetView2.swift */; };
-		44BE5EF027EFE27E0006285A /* NOWWAITING.json in Resources */ = {isa = PBXBuildFile; fileRef = 44BE5EEF27EFE27E0006285A /* NOWWAITING.json */; };
 		44BEBB842937C51300D0DD11 /* EditRDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEBB832937C51300D0DD11 /* EditRDView.swift */; };
 		44C0ADFD27C975CC0046E32F /* RSRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0ADFC27C975CC0046E32F /* RSRow.swift */; };
 		44C0AE0127C9AD310046E32F /* ActualReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C0AE0027C9AD310046E32F /* ActualReading.swift */; };
@@ -249,7 +243,6 @@
 		44EF88CF296CDAD50039632F /* AllQuotesCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF88CE296CDAD50039632F /* AllQuotesCommentsView.swift */; };
 		44EF94CF27CE851300998C27 /* RDSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF94CE27CE851300998C27 /* RDSessions.swift */; };
 		44EF94D127CE8B2D00998C27 /* ActualReadingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF94D027CE8B2D00998C27 /* ActualReadingRow.swift */; };
-		44EF94D327CE8EA000998C27 /* NOWREADING.json in Resources */ = {isa = PBXBuildFile; fileRef = 44EF94D227CE8EA000998C27 /* NOWREADING.json */; };
 		44EF94D727CEB5D200998C27 /* ActualReadingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF94D627CEB5D200998C27 /* ActualReadingDetail.swift */; };
 		44F2578227F4B69300EC7A7A /* ProgressRingMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F2578127F4B69300EC7A7A /* ProgressRingMini.swift */; };
 		44F418FA2A9FFD5D00A9E9B2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */; };
@@ -320,9 +313,6 @@
 		44265387277DF5020047D75C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4426538C277DF5030047D75C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44265399277DF6BA0047D75C /* PlaceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceList.swift; sourceTree = "<group>"; };
-		4426539C277E13F30047D75C /* BOOKS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BOOKS.json; sourceTree = "<group>"; };
-		4426539E277E14050047D75C /* READINGDATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = READINGDATA.json; sourceTree = "<group>"; };
-		442653A0277E140F0047D75C /* EBOOKS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EBOOKS.json; sourceTree = "<group>"; };
 		442653A2277E175D0047D75C /* BookModelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModelExt.swift; sourceTree = "<group>"; };
 		442653A4277E1B440047D75C /* PlaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRow.swift; sourceTree = "<group>"; };
 		442653A6277E1F120047D75C /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
@@ -436,7 +426,6 @@
 		448B2DF128315D1B00916906 /* ActualReadingEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingEdit.swift; sourceTree = "<group>"; };
 		448B2F9D28E8BE1900F4C4EF /* OtherStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherStats.swift; sourceTree = "<group>"; };
 		4492AC7D28AAA502003CB125 /* EditPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaces.swift; sourceTree = "<group>"; };
-		4492AC7F28AB04AC003CB125 /* MYPLACES.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MYPLACES.json; sourceTree = "<group>"; };
 		4492F44127FB29F300103B6D /* AllEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEnums.swift; sourceTree = "<group>"; };
 		4492F44427FB2A8500103B6D /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		449410FB28563DCC0055D833 /* RSBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSBarGraph.swift; sourceTree = "<group>"; };
@@ -448,7 +437,6 @@
 		44AA171229A004A900944623 /* RSEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSEdit.swift; sourceTree = "<group>"; };
 		44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingCircleArc.swift; sourceTree = "<group>"; };
 		44B0409B284FBA4700C29E22 /* RSModelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSModelExt.swift; sourceTree = "<group>"; };
-		44B0409E284FCF2600C29E22 /* READINGSESSIONS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = READINGSESSIONS.json; sourceTree = "<group>"; };
 		44B040A328500FC600C29E22 /* DynamicStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStatsView.swift; sourceTree = "<group>"; };
 		44B1E50827D1258B00EF6D40 /* AddReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReading.swift; sourceTree = "<group>"; };
 		44B6AAEC28E9E4AB00D486AC /* OtherGraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherGraphs.swift; sourceTree = "<group>"; };
@@ -457,7 +445,6 @@
 		44B9FD67295A081800A11206 /* WidgetDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataHelper.swift; sourceTree = "<group>"; };
 		44B9FD6B295A6E7100A11206 /* MediumSizeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSizeView2.swift; sourceTree = "<group>"; };
 		44B9FD6E295A70CF00A11206 /* WidgetView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView2.swift; sourceTree = "<group>"; };
-		44BE5EEF27EFE27E0006285A /* NOWWAITING.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NOWWAITING.json; sourceTree = "<group>"; };
 		44BEBB832937C51300D0DD11 /* EditRDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRDView.swift; sourceTree = "<group>"; };
 		44C0ADFC27C975CC0046E32F /* RSRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSRow.swift; sourceTree = "<group>"; };
 		44C0AE0027C9AD310046E32F /* ActualReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReading.swift; sourceTree = "<group>"; };
@@ -506,7 +493,6 @@
 		44EF88CE296CDAD50039632F /* AllQuotesCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuotesCommentsView.swift; sourceTree = "<group>"; };
 		44EF94CE27CE851300998C27 /* RDSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDSessions.swift; sourceTree = "<group>"; };
 		44EF94D027CE8B2D00998C27 /* ActualReadingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingRow.swift; sourceTree = "<group>"; };
-		44EF94D227CE8EA000998C27 /* NOWREADING.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NOWREADING.json; sourceTree = "<group>"; };
 		44EF94D627CEB5D200998C27 /* ActualReadingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingDetail.swift; sourceTree = "<group>"; };
 		44F2578127F4B69300EC7A7A /* ProgressRingMini.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingMini.swift; sourceTree = "<group>"; };
 		44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
@@ -629,13 +615,6 @@
 			isa = PBXGroup;
 			children = (
 				44FD4E4B297B192B00555B82 /* USER.json */,
-				4426539C277E13F30047D75C /* BOOKS.json */,
-				4492AC7F28AB04AC003CB125 /* MYPLACES.json */,
-				442653A0277E140F0047D75C /* EBOOKS.json */,
-				4426539E277E14050047D75C /* READINGDATA.json */,
-				44EF94D227CE8EA000998C27 /* NOWREADING.json */,
-				44BE5EEF27EFE27E0006285A /* NOWWAITING.json */,
-				44B0409E284FCF2600C29E22 /* READINGSESSIONS.json */,
 			);
 			path = JsonData;
 			sourceTree = "<group>";
@@ -1261,15 +1240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				446A6B52286FAE7E00465AED /* explosion.caf in Resources */,
-				442653A1277E140F0047D75C /* EBOOKS.json in Resources */,
 				445B62B3298C43560036D140 /* Assets.xcassets in Resources */,
-				4426539F277E14050047D75C /* READINGDATA.json in Resources */,
 				4426538D277DF5030047D75C /* Preview Assets.xcassets in Resources */,
-				44EF94D327CE8EA000998C27 /* NOWREADING.json in Resources */,
-				44B0409F284FCF2600C29E22 /* READINGSESSIONS.json in Resources */,
-				4492AC8028AB04AC003CB125 /* MYPLACES.json in Resources */,
-				44BE5EF027EFE27E0006285A /* NOWWAITING.json in Resources */,
-				4426539D277E13F30047D75C /* BOOKS.json in Resources */,
 				44FD4E4C297B192B00555B82 /* USER.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
