@@ -75,7 +75,6 @@ extension LockScreenView {
 				.onAppear {
 					if isFirstRun {
 						keychain.delete("storedPassword")
-						model.storedPassword = ""
 						showingFirstRunAlert = true
 					}
 				}

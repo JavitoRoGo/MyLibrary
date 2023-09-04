@@ -20,6 +20,16 @@ struct UserMainView: View {
     @State var showingCameraPicker = false
     @State var image: Image?
     @State var inputImage: UIImage?
+	
+	@State var showingDeleteButtons = false
+	@State var showingDeletingDatas = false
+	@State var showingDeletingUser = false
+	@State var showingPasswordField = false
+	
+	@State var password = ""
+	@State var deleteOperation = 0
+	@State var showingSuccessfulDeleting = false
+	@State var showingWrongPassword = false
     
     var body: some View {
         NavigationStack {
@@ -98,6 +108,8 @@ struct UserMainView: View {
                                 }
                             }
                         }
+						
+						deleteButtons
                         
                         Section {
                             Button(role: .destructive) {
@@ -113,7 +125,7 @@ struct UserMainView: View {
                     }
                 }
             }
-			.modifier(UserMainViewModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, image: $image, inputImage: $inputImage, loadImage: loadImage))
+			.modifier(UserMainViewModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, image: $image, inputImage: $inputImage, showingDeletingDatas: $showingDeletingDatas, showingDeletingUser: $showingDeletingUser, showingPasswordField: $showingPasswordField, showingSuccessfulDeleting: $showingSuccessfulDeleting, showingWrongPassword: $showingWrongPassword, password: $password, loadImage: loadImage, authenticateToDelete: authenticateToDelete))
         }
     }
 }

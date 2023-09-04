@@ -32,7 +32,7 @@ final class UserViewModel: ObservableObject {
 	
 	var tempQuotesArray: [Quote] = []
 	
-	var storedPassword = keychain.get("storedPassword") ?? ""
+	var storedPassword: String { keychain.get("storedPassword") ?? "" }
 	@AppStorage("isBiometricsAllowed") var isBiometricsAllowed = false
 	
 	private var cancellableSet: Set<AnyCancellable> = []

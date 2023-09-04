@@ -245,6 +245,7 @@
 		44EF94D127CE8B2D00998C27 /* ActualReadingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF94D027CE8B2D00998C27 /* ActualReadingRow.swift */; };
 		44EF94D727CEB5D200998C27 /* ActualReadingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF94D627CEB5D200998C27 /* ActualReadingDetail.swift */; };
 		44F2578227F4B69300EC7A7A /* ProgressRingMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F2578127F4B69300EC7A7A /* ProgressRingMini.swift */; };
+		44F367D22AA61A2000F00EA3 /* UserMainViewDeleteExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F367D12AA61A2000F00EA3 /* UserMainViewDeleteExt.swift */; };
 		44F418FA2A9FFD5D00A9E9B2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */; };
 		44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
 		44F471DA2993F1AC0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
@@ -495,6 +496,7 @@
 		44EF94D027CE8B2D00998C27 /* ActualReadingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingRow.swift; sourceTree = "<group>"; };
 		44EF94D627CEB5D200998C27 /* ActualReadingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingDetail.swift; sourceTree = "<group>"; };
 		44F2578127F4B69300EC7A7A /* ProgressRingMini.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingMini.swift; sourceTree = "<group>"; };
+		44F367D12AA61A2000F00EA3 /* UserMainViewDeleteExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewDeleteExt.swift; sourceTree = "<group>"; };
 		44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		44F471D82993EE7D0047080A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		44FD4E4B297B192B00555B82 /* USER.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USER.json; sourceTree = "<group>"; };
@@ -940,6 +942,7 @@
 			isa = PBXGroup;
 			children = (
 				4482D5782964AE99004D0EB8 /* UserMainView.swift */,
+				44F367D12AA61A2000F00EA3 /* UserMainViewDeleteExt.swift */,
 				440F83E62A82D3590079C421 /* UserMainViewExt.swift */,
 				4407D4EF29709715006FAC47 /* TargetsView */,
 				44EF88CE296CDAD50039632F /* AllQuotesCommentsView.swift */,
@@ -1346,6 +1349,7 @@
 				44EEC47628F19751000C1843 /* MonthChart.swift in Sources */,
 				44801F4D28144F84006FC06C /* ReadingTimer.swift in Sources */,
 				44DDA8922A844F86000104A1 /* MyRing.swift in Sources */,
+				44F367D22AA61A2000F00EA3 /* UserMainViewDeleteExt.swift in Sources */,
 				44C6A62D280256F800EF035A /* StatsView.swift in Sources */,
 				44DDA8972A84506D000104A1 /* OldLineGraph.swift in Sources */,
 				44102C852944D03F00F8E2F1 /* EBookMainView.swift in Sources */,
