@@ -10,10 +10,18 @@ import SwiftUI
 extension ActualReading {
 	func deleteBook(_ book: NowReading) {
 		if book.sessions.isEmpty == false {
+			bookToDelete = book
 			showingDeletingAlert = true
 		} else {
 			model.removeFromWaiting(book)
 		}
+	}
+	
+	func deleteBookAndSessions(_ book: NowReading) {
+		book.sessions.forEach { session in
+			model.user.sessions.removeAll(where: { $0 == session })
+		}
+		model.removeFromWaiting(book)
 	}
 	
 	func shareButton() {
@@ -28,9 +36,12 @@ extension ActualReading {
 	}
 	
 	struct ActualReadingModifer: ViewModifier {
+		@EnvironmentObject var model: UserViewModel
 		@Binding var showingDeletingAlert: Bool
 		@Binding var showingAddNewBook: Bool
 		
+		let book: NowReading
+		let deleteBookAndSessions: (NowReading) -> Void
 		let shareButton: () -> Void
 		
 		func body(content: Content) -> some View {
@@ -53,9 +64,15 @@ extension ActualReading {
 					}
 				}
 				.alert("¡Atención!\nEstás intentando borrar un libro con datos de lectura.", isPresented: $showingDeletingAlert) {
-					Button("Aceptar") { }
+					Button("Cancelar", role: .cancel) { }
+					Button("Mantener sesiones") {
+						model.removeFromWaiting(book)
+					}
+					Button("Borrar sesiones") {
+						deleteBookAndSessions(book)
+					}
 				} message: {
-					Text("Esta acción no está permitida.")
+					Text("¿Deseas mantener los datos de lectura o borrarlos?")
 				}
 				.sheet(isPresented: $showingAddNewBook) {
 					NavigationView {

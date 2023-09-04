@@ -12,6 +12,7 @@ struct ActualReading: View {
     
     @State var showingDeletingAlert = false
     @State var showingAddNewBook = false
+	@State var bookToDelete = NowReading.example[0]
     
     var body: some View {
         NavigationView {
@@ -71,7 +72,7 @@ struct ActualReading: View {
                     }
                 }
             }
-			.modifier(ActualReadingModifer(showingDeletingAlert: $showingDeletingAlert, showingAddNewBook: $showingAddNewBook, shareButton: shareButton))
+			.modifier(ActualReadingModifer(showingDeletingAlert: $showingDeletingAlert, showingAddNewBook: $showingAddNewBook, book: bookToDelete, deleteBookAndSessions: deleteBookAndSessions(_:), shareButton: shareButton))
         }
     }
 }
