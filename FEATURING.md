@@ -16,11 +16,7 @@
 
 #
 
-# deleting
+# 
 
-### Dos implementaciones para borrar datos.
-
-* Permitir borrar en ActualReading aunque haya datos de sesiones, pero preguntar si se quieren borrar o mantener los datos.
-* Dos botones en la vista de usuario, para borrar solo los datos y para borrarlo todo.
-* Al borrarlo todo, reiniciar isUnlocked, todos los datos de user, y todos los @AppStorage.
+### 
 

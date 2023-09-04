@@ -39,7 +39,7 @@ extension UserMainView {
 				} label: {
 					HStack {
 						Spacer()
-						Text("Borrar usuario")
+						Text("Eliminar usuario")
 						Spacer()
 					}
 				}

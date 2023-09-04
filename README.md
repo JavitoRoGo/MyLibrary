@@ -62,3 +62,9 @@ ConnectivityManager para conectar con iOS.
 * Se traslada la lista de propietarios del viewmodel a una propiedad de User.
 * Se arregla un fallo al grabar una nueva sesión, que hacía que no se grabara en sessions en el json.
 * Se modifica la creación de nuevo user para asignarle un id nuevo.
+
+
+## v1.2.1
+
+* Se añade la opción de borrar un libro en lista de espera aunque tenga datos de lectura. Al borrar el libro se pregunta si mantener las sesiones o borrarlas.
+* En la vista de Usuario se añaden botones para borrar todos los datos registrados y mantener el usuario, o para eliminar el usuario y sus datos.
