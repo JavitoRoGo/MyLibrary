@@ -107,7 +107,11 @@ struct TargetsMainView: View {
             .navigationTitle("Objetivos")
             .navigationBarTitleDisplayMode(.inline)
 			.onAppear {
-				DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+				numOfAchivedDailyTarget = 0
+				numOfAchivedWeeklyTarget = 0
+				numOfAchivedMonthlyTarget = 0
+				numOfAchivedYearlyTarget = 0
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
 					withAnimation(.linear(duration: 1.2)) {
 						numOfAchivedDailyTarget = model.numOfAchivedDailyTarget(dailyTarget)
 						numOfAchivedWeeklyTarget = model.numOfAchivedWeeklyTarget(weeklyTarget)
