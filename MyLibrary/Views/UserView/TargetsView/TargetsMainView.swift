@@ -80,25 +80,25 @@ struct TargetsMainView: View {
                         Text("Diario")
                             .font(.title2.bold())
                         Spacer()
-                        RollingText(color: .red, value: $numOfAchivedDailyTarget)
+                        RollingText(color: .red, value: Double(numOfAchivedDailyTarget))
                     }
                     HStack {
                         Text("Semanal")
                             .font(.title2.bold())
                         Spacer()
-                        RollingText(color: .orange, value: $numOfAchivedWeeklyTarget)
+                        RollingText(color: .orange, value: Double(numOfAchivedWeeklyTarget))
                     }
                     HStack {
                         Text("Mensual")
                             .font(.title2.bold())
                         Spacer()
-                        RollingText(color: .green, value: $numOfAchivedMonthlyTarget)
+                        RollingText(color: .green, value: Double(numOfAchivedMonthlyTarget))
                     }
                     HStack {
                         Text("Anual")
                             .font(.title2.bold())
                         Spacer()
-                        RollingText(color: .blue, value: $numOfAchivedYearlyTarget)
+                        RollingText(color: .blue, value: Double(numOfAchivedYearlyTarget))
                     }
                 } footer: {
                     Text("Número de veces que se ha conseguido cada objetivo desde el registro de la primera sesión: \(dateToString(model.user.sessions.last?.date ?? .now)).")
@@ -106,12 +106,16 @@ struct TargetsMainView: View {
             }
             .navigationTitle("Objetivos")
             .navigationBarTitleDisplayMode(.inline)
-            .onAppear {
-                numOfAchivedDailyTarget = model.numOfAchivedDailyTarget(dailyTarget)
-                numOfAchivedWeeklyTarget = model.numOfAchivedWeeklyTarget(weeklyTarget)
-                numOfAchivedMonthlyTarget = model.numOfAchivedMonthlyTarget(monthlyTarget)
-                numOfAchivedYearlyTarget = model.numOfAchivedYearlyTarget(yearlyTarget)
-            }
+			.onAppear {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+					withAnimation(.linear(duration: 1.2)) {
+						numOfAchivedDailyTarget = model.numOfAchivedDailyTarget(dailyTarget)
+						numOfAchivedWeeklyTarget = model.numOfAchivedWeeklyTarget(weeklyTarget)
+						numOfAchivedMonthlyTarget = model.numOfAchivedMonthlyTarget(monthlyTarget)
+						numOfAchivedYearlyTarget = model.numOfAchivedYearlyTarget(yearlyTarget)
+					}
+				}
+			}
         }
     }
 }
