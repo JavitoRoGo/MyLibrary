@@ -28,7 +28,7 @@ extension EBookDetail {
 				VStack {
 					Text("Precio:")
 						.font(.subheadline)
-					Text(priceFormatter.string(from: NSNumber(value: ebook.price))!)
+					Text(ebook.price, format: .currency(code: "eur"))
 						.font(.headline)
 				}
 			}

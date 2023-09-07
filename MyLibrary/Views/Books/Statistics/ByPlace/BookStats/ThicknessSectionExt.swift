@@ -10,7 +10,7 @@ import SwiftUI
 // Subvistas y secciones que componen la vista
 extension BookStats {
 	var thicknessSection: some View {
-		Section("Grosor (cm): \(measureFormatter.string(from: NSNumber(value: model.globalThickness().total))!)") {
+		Section("Grosor (cm): \(model.globalThickness().total, format: .number.precision(.fractionLength(1)))") {
 			let value = model.thicknessAtPlace(place).total
 			let mean = model.thicknessAtPlace(place).mean
 			let globalMean = model.globalThickness().mean
@@ -19,14 +19,14 @@ extension BookStats {
 				VStack {
 					Text("Total:")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: value))!)
+					Text(value, format: .number.precision(.fractionLength(1)))
 						.font(.title2)
 				}
 				Spacer()
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: mean))!)
+					Text(mean, format: .number.precision(.fractionLength(1)))
 						.font(.title2)
 						.foregroundColor(compare.color)
 				}
@@ -34,7 +34,7 @@ extension BookStats {
 				VStack {
 					Text("Global:")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: globalMean))!)
+					Text(globalMean, format: .number.precision(.fractionLength(1)))
 						.font(.title2)
 				}
 			}

@@ -116,23 +116,6 @@ func compareWithMean(value: Double, mean: Double) -> (color: Color, image: Strin
 
 // MARK: - Number formatters
 
-let priceFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.locale = Locale.init(identifier: "fr_FR")
-    formatter.numberStyle = .currency
-    return formatter
-}()
-
-let measureFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.decimalSeparator = ","
-    formatter.groupingSeparator = "."
-    formatter.minimumFractionDigits = 1
-    formatter.maximumFractionDigits = 1
-    return formatter
-}()
-
 let noDecimalFormatter: NumberFormatter = {
    let formatter = NumberFormatter()
     formatter.numberStyle = .decimal

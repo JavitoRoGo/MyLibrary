@@ -5,7 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 10/8/23.
 //
 
-import Foundation
+import SwiftUI
 
 extension RDGlobalStats {
     func loadData() {
@@ -43,9 +43,9 @@ extension RDGlobalStats {
                   kindle: String(model.calcRDPagPerDayPerFormatt(.kindle)),
                   total: String(Int(model.meanPagPerDay))),
             .init(title: "Valoración promedio:",
-                  paper: measureFormatter.string(from: NSNumber(value: model.meanRDRatingPerFormatt(.paper)))!,
-                  kindle: measureFormatter.string(from: NSNumber(value: model.meanRDRatingPerFormatt(.kindle)))!,
-                  total: measureFormatter.string(from: NSNumber(value: model.meanRDRatingPerFormatt()))!)
+				  paper: "\(model.meanRDRatingPerFormatt(.paper), format: .number.precision(.fractionLength(1)))",
+                  kindle: "\(model.meanRDRatingPerFormatt(.kindle), format: .number.precision(.fractionLength(1)))",
+                  total: "\(model.meanRDRatingPerFormatt(), format: .number.precision(.fractionLength(1)))")
         ]
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 // Subvistas y secciones que componen la vista
 extension BookStats {
 	var priceSection: some View {
-		Section("Precio: \(priceFormatter.string(from: NSNumber(value: model.globalPrice(model.user.books).total))!)") {
+		Section("Precio: \(model.globalPrice(model.user.books).total, format: .currency(code: "eur"))") {
 			let value = model.priceAtPlace(place).total
 			let mean = model.priceAtPlace(place).mean
 			let globalMean = model.globalPrice(model.user.books).mean
@@ -19,14 +19,14 @@ extension BookStats {
 				VStack {
 					Text("Total:")
 						.font(.subheadline)
-					Text(priceFormatter.string(from: NSNumber(value: value))!)
+					Text(value, format: .currency(code: "eur"))
 						.font(.title2)
 				}
 				Spacer()
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(priceFormatter.string(from: NSNumber(value: mean))!)
+					Text(mean, format: .currency(code: "eur"))
 						.font(.title2)
 						.foregroundColor(compare.color)
 				}
@@ -34,7 +34,7 @@ extension BookStats {
 				VStack {
 					Text("Global:")
 						.font(.subheadline)
-					Text(priceFormatter.string(from: NSNumber(value: globalMean))!)
+					Text(globalMean, format: .currency(code: "eur"))
 						.font(.title2)
 				}
 			}

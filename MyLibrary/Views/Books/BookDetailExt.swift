@@ -112,7 +112,7 @@ extension BookDetail {
 				VStack {
 					Text("Precio:")
 						.font(.subheadline)
-					Text(priceFormatter.string(from: NSNumber(value: book.price))!)
+					Text(book.price, format: .currency(code: "eur"))
 						.font(.headline)
 				}
 				Spacer()
@@ -127,21 +127,21 @@ extension BookDetail {
 				VStack {
 					Text("Alto (cm):")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: book.height))!)
+					Text(book.height, format: .number.precision(.fractionLength(1)))
 						.font(.headline)
 				}
 				Spacer()
 				VStack {
 					Text("Ancho (cm):")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: book.width))!)
+					Text(book.width, format: .number.precision(.fractionLength(1)))
 						.font(.headline)
 				}
 				Spacer()
 				VStack {
 					Text("Grosor (cm):")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: book.thickness))!)
+					Text(book.thickness, format: .number.precision(.fractionLength(1)))
 						.font(.headline)
 				}
 			}
