@@ -14,12 +14,12 @@ extension UserViewModel {
 	func dailyTargetText(_ target: DWTarget) -> String {
 		target == .pages ?
 		"\(dailyPagesTarget) páginas" :
-		"\(minPerDayDoubleToString(dailyTimeTarget))"
+		"\(dailyTimeTarget.minPerDayDoubleToString)"
 	}
 	func weeklyTargetText(_ target: DWTarget) -> String {
 		target == .pages ?
 		"\(weeklyPagesTarget) páginas" :
-		"\(minPerDayDoubleToString(weeklyTimeTarget))"
+		"\(weeklyTimeTarget.minPerDayDoubleToString)"
 	}
 	func monthlyTargetText(_ target: MYTarget) -> String {
 		target == .pages ?
@@ -40,7 +40,7 @@ extension UserViewModel {
 			case .pages:
 				return (String(mostRecentSession.pages), mostRecentSession.pages)
 			case .time:
-				return (minPerDayDoubleToString(mostRecentSession.readingTimeInHours), Int(mostRecentSession.readingTimeInHours))
+				return (mostRecentSession.readingTimeInHours.minPerDayDoubleToString, Int(mostRecentSession.readingTimeInHours))
 		}
 	}
 	
@@ -57,7 +57,7 @@ extension UserViewModel {
 					return (String(sum), sum)
 				case .time:
 					let sum = sessions.reduce(0) { $0 + $1.readingTimeInHours }
-					return (minPerDayDoubleToString(sum), Int(sum))
+					return (sum.minPerDayDoubleToString, Int(sum))
 			}
 		}
 	}

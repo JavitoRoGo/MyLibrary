@@ -11,7 +11,7 @@ extension RDDetail {
 	var compareSection: some View {
 		Section {
 			HStack {
-				let value = minPerPagInMinutes(rdata.minPerPag)
+				let value = rdata.minPerPag.minPerPagInMinutes
 				let mean = model.meanMinPerPag
 				let compare = compareWithMean(value: mean, mean: value)
 				
@@ -26,7 +26,7 @@ extension RDDetail {
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(minPerPagDoubleToString(mean))
+					Text(mean.minPerPagDoubleToString)
 						.font(.headline)
 				}
 				Spacer()
@@ -35,7 +35,7 @@ extension RDDetail {
 					.font(.title)
 			}
 			HStack {
-				let value = minPerDayInHours(rdata.minPerDay)
+				let value = rdata.minPerDay.minPerDayInHours
 				let mean = model.meanMinPerDay
 				let compare = compareWithMean(value: value, mean: mean)
 				
@@ -50,7 +50,7 @@ extension RDDetail {
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(minPerDayDoubleToString(mean))
+					Text(mean.minPerDayDoubleToString)
 						.font(.headline)
 				}
 				Spacer()
