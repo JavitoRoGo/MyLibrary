@@ -9,11 +9,11 @@ import SwiftUI
 
 struct RollingText: View, Animatable {
 	let color: Color
-	var value: Double
+	var value: Int
 	
 	var animatableData: Double {
-		get { (value) }
-		set { value = (newValue) }
+		get { Double(value) }
+		set { value = Int(newValue) }
 	}
 	
 	var body: some View {
