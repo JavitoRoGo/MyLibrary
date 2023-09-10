@@ -18,7 +18,7 @@ extension OtherStats {
 				VStack {
 					Text("Total:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: value))!)
+					Text(value.formatted(.number))
 						.font(.title2)
 				}
 				Spacer()

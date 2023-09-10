@@ -43,9 +43,9 @@ extension RDGlobalStats {
                   kindle: String(model.calcRDPagPerDayPerFormatt(.kindle)),
                   total: String(Int(model.meanPagPerDay))),
             .init(title: "Valoración promedio:",
-				  paper: "\(model.meanRDRatingPerFormatt(.paper), format: .number.precision(.fractionLength(1)))",
-                  kindle: "\(model.meanRDRatingPerFormatt(.kindle), format: .number.precision(.fractionLength(1)))",
-                  total: "\(model.meanRDRatingPerFormatt(), format: .number.precision(.fractionLength(1)))")
+				  paper: "\(model.meanRDRatingPerFormatt(.paper).formatted(.number.precision(.fractionLength(1))))",
+				  kindle: "\(model.meanRDRatingPerFormatt(.kindle).formatted(.number.precision(.fractionLength(1))))",
+				  total: "\(model.meanRDRatingPerFormatt().formatted(.number.precision(.fractionLength(1))))")
         ]
     }
 }

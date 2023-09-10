@@ -18,14 +18,14 @@ extension OtherStats {
 				VStack {
 					Text("Total:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: value))!)
+					Text(value.formatted(.number))
 						.font(.title2)
 				}
 				Spacer()
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: mean))!)
+					Text(mean.formatted(.number))
 						.font(.title2)
 						.foregroundColor(compare.color)
 				}
@@ -33,7 +33,7 @@ extension OtherStats {
 				VStack {
 					Text("Global:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: globalMean))!)
+					Text(globalMean.formatted(.number))
 						.font(.title2)
 				}
 			}

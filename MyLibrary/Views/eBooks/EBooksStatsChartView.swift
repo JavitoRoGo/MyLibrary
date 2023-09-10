@@ -68,8 +68,8 @@ struct EBooksStatsChartView: View {
                     ).annotation(position: .trailing, alignment: .center) {
                         Text(
                             dataSelection == 2 ?
-							"\(value, format: .currency(code: "eur"))" :
-                                "noDecimalFormatter.string(from: NSNumber(value: value))!"
+							"\(value.formatted(.currency(code: "eur")))" :
+								value.formatted(.number)
                         )
                         .font(.caption)
                         .foregroundColor(.secondary)
