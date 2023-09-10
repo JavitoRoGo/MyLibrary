@@ -23131,7 +23131,7 @@
       "id" : 108,
       "price" : 0,
       "bookTitle" : "Ajuste de cuentas",
-      "status" : "Leyendo",
+      "status" : "Registrado",
       "year" : 2003,
       "synopsis" : "Mientras pasea por Boston, Jack Reacher ve el rostro de un hombre al que conoció cuando estaba en el ejército y que debería llevar muerto diez años. Desde ese momento, Reacher solo tiene un propósito: acabar con él. No va a ser nada fácil. Su presa está relacionada con una red ilegal que está siendo investigada por la DEA. Reacher se verá obligado a actuar como agente infiltrado para lograr su objetivo. Sabe que es una misión suicida, pero él no es de los que deja los trabajos a medias.",
       "originalTitle" : "Persuader"
@@ -23272,6 +23272,62 @@
   "id" : "564DA490-1AAC-43C5-B5AD-369047602EB6",
   "nickname" : "Tic",
   "sessions" : [
+    {
+      "duration" : "1h 19min",
+      "id" : "BA309203-0902-477F-AD77-F872038E93E2",
+      "startingPage" : 32,
+      "endingPage" : 78,
+      "minPerPag" : "1min 41s",
+      "date" : 715950000
+    },
+    {
+      "duration" : "0h 53min",
+      "id" : "F4C3CB3B-7D25-4DD6-9F3F-A270D5975BC1",
+      "startingPage" : 4,
+      "endingPage" : 31,
+      "minPerPag" : "1min 54s",
+      "date" : 715863600
+    },
+    {
+      "duration" : "0h 9min",
+      "id" : "DA7C9C77-1A91-4E34-860D-055052F24947",
+      "startingPage" : 1,
+      "endingPage" : 3,
+      "minPerPag" : "3min 0s",
+      "date" : 715777200
+    },
+    {
+      "duration" : "0h 22min",
+      "id" : "7FE5AECD-0794-4ED9-89A9-CCC46C6149EF",
+      "startingPage" : 472,
+      "endingPage" : 481,
+      "minPerPag" : "2min 12s",
+      "date" : 715690800
+    },
+    {
+      "duration" : "0h 47min",
+      "id" : "7AA09E3A-35B8-412A-93EB-79AD8C0BAA8E",
+      "startingPage" : 442,
+      "endingPage" : 471,
+      "minPerPag" : "1min 34s",
+      "date" : 715604400
+    },
+    {
+      "duration" : "0h 28min",
+      "id" : "0181B216-0F87-46BC-8117-FB7715146DF5",
+      "startingPage" : 429,
+      "endingPage" : 441,
+      "minPerPag" : "2min 9s",
+      "date" : 715518000
+    },
+    {
+      "duration" : "0h 16min",
+      "id" : "2C268B07-0245-4C2E-BD1A-24823488BB49",
+      "startingPage" : 418,
+      "endingPage" : 428,
+      "minPerPag" : "1min 27s",
+      "date" : 715431600
+    },
     {
       "duration" : "0h 56min",
       "id" : "28BDBCAA-6563-4972-9F3A-4DD48FF9540C",
@@ -53731,90 +53787,52 @@
       "rating" : 3,
       "sessions" : 46,
       "finishDate" : 714049200
-    }
-  ],
-  "username" : "tic@ticritus.com",
-  "nowWaiting" : [
+    },
     {
-      "lastPage" : 220,
-      "bookTitle" : "tulipán negro, El",
-      "isFinished" : false,
-      "sessions" : [
-
-      ],
+      "minPerDay" : "0h 42min",
+      "pages" : 481,
       "formatt" : "Kindle",
-      "synopsis" : "Los hermanos De Witt, protegidos del gran rey Luis de Francia, encontrarán la muerte a manos de la enloquecida población de La Haya, que les cree culpables de conspiración. Pero antes de morir dejarán a su ahijado Cornelius unos comprometedores documentos que le llevarán a la cárcel, donde, en compañía de la joven Rosa, se afanará en conseguir lo que más desea en el mundo: el bulbo del tulipán negro.\n\nCon su habitual talento narrativo, Alejandro Dumas despliega en esta novela de intriga todos los ingredientes necesarios para atrapar al lector desde la primera página y sumergirlo en la tumultuosa sociedad holandesa de finales del siglo XVII.",
-      "isOnReading" : false,
-      "firstPage" : 1
-    },
-    {
-      "lastPage" : 381,
-      "bookTitle" : "horas oscuras, Las",
-      "isFinished" : false,
-      "sessions" : [
-
-      ],
-      "formatt" : "Papel",
-      "synopsis" : "Reina el caos en Hollywood en Nochevieja. Renée Ballard, detective del Departamento de Policía de los Ángeles, recibe una llamada poco después de medianoche: el propietario de un taller de coches ha resultado mortalmente herido por una bala en medio de una fiesta callejera.\nEnseguida concluye que está relacionada con otro asesinato sin resolver investigado por el detective Harry Bosch. Al mismo tiempo, Ballard persigue a una perversa pareja de violadores en serie, los Hombres de Medianoche.\nLa detective siente que va a contracorriente en un departamento de policía cambiado por la pandemia y el malestar social, por lo que busca la ayuda de Harry Bosch. Mientras trabajan juntos, deben mirar por encima del hombro constantemente. Los depredadores a los que persiguen están dispuestos a matar para mantener ocultos sus secretos.",
-      "isOnReading" : false,
-      "firstPage" : 7
-    },
-    {
-      "lastPage" : 522,
-      "bookTitle" : "Eclipse",
-      "isFinished" : false,
-      "sessions" : [
-
-      ],
-      "formatt" : "Papel",
-      "synopsis" : "Harry Hole se ha mudado a Los Ángeles, ya nada le retiene en Noruega después de perder todo lo que daba sentido a su vida. Allí lo rescata de su deriva alcohólica Lucille, una veterana actriz de cine que, a cambio de su protección, le ofrece un techo, un traje a medida y unos zapatos de lujo.\n\nMientras, en Oslo, ha aparecido muerta una chica a la que buscaban hacía días, después de acudir a una fiesta organizada por Markus Røed, un magnate inmobiliario que era su sugar daddy. Otra joven relacionada con él sigue en paradero desconocido, por lo que la policía estrecha el cerco sobre el millonario. También les inquieta un detalle inusual en la cabeza de la primera víctima: parece la firma de alguien que desea volver a matar.\n\nDispuesto a limpiar su nombre, Røed envía a un emisario para contratar a Hole como investigador privado. Es tan suculenta la recompensa que con ella Harry podrá ayudar a Lucille a librarse de una peligrosa banda mexicana. Sin embargo, solo tendrá diez días para volver a su país y resolver el caso. El reloj avanza y algo ominoso, infeccioso como un parásito, flota en el ambiente: se acerca un eclipse de luna que pronto bañará de rojo la ciudad de Oslo.",
-      "isOnReading" : false,
-      "firstPage" : 7
-    }
-  ],
-  "myPlaces" : [
-    "Por colocar",
-    "F7",
-    "F4",
-    "F2",
-    "E7",
-    "E6",
-    "E5",
-    "E4",
-    "E3",
-    "E2",
-    "E1",
-    "D7",
-    "D6",
-    "D5",
-    "D4",
-    "D1",
-    "C7",
-    "C6",
-    "C5",
-    "C4",
-    "C3",
-    "C2",
-    "C1",
-    "B5",
-    "B4",
-    "B3",
-    "B2",
-    "B1",
-    "A5",
-    "A4",
-    "A3",
-    "A2",
-    "A1",
-    "Donado",
-    "Vendido"
-  ],
-  "nowReading" : [
-    {
-      "lastPage" : 481,
-      "bookTitle" : "Ajuste de cuentas",
-      "isFinished" : false,
-      "sessions" : [
+      "duration" : "13h 10min",
+      "synopsis" : "Mientras pasea por Boston, Jack Reacher ve el rostro de un hombre al que conoció cuando estaba en el ejército y que debería llevar muerto diez años. Desde ese momento, Reacher solo tiene un propósito: acabar con él. No va a ser nada fácil. Su presa está relacionada con una red ilegal que está siendo investigada por la DEA. Reacher se verá obligado a actuar como agente infiltrado para lograr su objetivo. Sabe que es una misión suicida, pero él no es de los que deja los trabajos a medias.",
+      "over50" : 2,
+      "percentOver50" : 10.526315789473683,
+      "pagPerDay" : 25,
+      "cover" : "ajustedecuentas",
+      "minPerPag" : "1min 41s",
+      "id" : 156,
+      "readingSessions" : [
+        {
+          "duration" : "0h 22min",
+          "id" : "7FE5AECD-0794-4ED9-89A9-CCC46C6149EF",
+          "startingPage" : 472,
+          "endingPage" : 481,
+          "minPerPag" : "2min 12s",
+          "date" : 715690800
+        },
+        {
+          "duration" : "0h 47min",
+          "id" : "7AA09E3A-35B8-412A-93EB-79AD8C0BAA8E",
+          "startingPage" : 442,
+          "endingPage" : 471,
+          "minPerPag" : "1min 34s",
+          "date" : 715604400
+        },
+        {
+          "duration" : "0h 28min",
+          "id" : "0181B216-0F87-46BC-8117-FB7715146DF5",
+          "startingPage" : 429,
+          "endingPage" : 441,
+          "minPerPag" : "2min 9s",
+          "date" : 715518000
+        },
+        {
+          "duration" : "0h 16min",
+          "id" : "2C268B07-0245-4C2E-BD1A-24823488BB49",
+          "startingPage" : 418,
+          "endingPage" : 428,
+          "minPerPag" : "1min 27s",
+          "date" : 715431600
+        },
         {
           "duration" : "0h 56min",
           "id" : "28BDBCAA-6563-4972-9F3A-4DD48FF9540C",
@@ -53936,8 +53954,113 @@
           "date" : 714135600
         }
       ],
+      "yearId" : 15,
+      "finishedInYear" : 2023,
+      "startDate" : 714135600,
+      "bookTitle" : "Ajuste de cuentas",
+      "comment" : "Como los otros de este autor y personaje, en la misma línea. Pero me gusta.",
+      "rating" : 4,
+      "sessions" : 19,
+      "finishDate" : 715690800
+    }
+  ],
+  "username" : "tic@ticritus.com",
+  "nowWaiting" : [
+    {
+      "lastPage" : 381,
+      "bookTitle" : "horas oscuras, Las",
+      "isFinished" : false,
+      "sessions" : [
+
+      ],
+      "formatt" : "Papel",
+      "synopsis" : "Reina el caos en Hollywood en Nochevieja. Renée Ballard, detective del Departamento de Policía de los Ángeles, recibe una llamada poco después de medianoche: el propietario de un taller de coches ha resultado mortalmente herido por una bala en medio de una fiesta callejera.\nEnseguida concluye que está relacionada con otro asesinato sin resolver investigado por el detective Harry Bosch. Al mismo tiempo, Ballard persigue a una perversa pareja de violadores en serie, los Hombres de Medianoche.\nLa detective siente que va a contracorriente en un departamento de policía cambiado por la pandemia y el malestar social, por lo que busca la ayuda de Harry Bosch. Mientras trabajan juntos, deben mirar por encima del hombro constantemente. Los depredadores a los que persiguen están dispuestos a matar para mantener ocultos sus secretos.",
+      "isOnReading" : false,
+      "firstPage" : 7
+    },
+    {
+      "lastPage" : 522,
+      "bookTitle" : "Eclipse",
+      "isFinished" : false,
+      "sessions" : [
+
+      ],
+      "formatt" : "Papel",
+      "synopsis" : "Harry Hole se ha mudado a Los Ángeles, ya nada le retiene en Noruega después de perder todo lo que daba sentido a su vida. Allí lo rescata de su deriva alcohólica Lucille, una veterana actriz de cine que, a cambio de su protección, le ofrece un techo, un traje a medida y unos zapatos de lujo.\n\nMientras, en Oslo, ha aparecido muerta una chica a la que buscaban hacía días, después de acudir a una fiesta organizada por Markus Røed, un magnate inmobiliario que era su sugar daddy. Otra joven relacionada con él sigue en paradero desconocido, por lo que la policía estrecha el cerco sobre el millonario. También les inquieta un detalle inusual en la cabeza de la primera víctima: parece la firma de alguien que desea volver a matar.\n\nDispuesto a limpiar su nombre, Røed envía a un emisario para contratar a Hole como investigador privado. Es tan suculenta la recompensa que con ella Harry podrá ayudar a Lucille a librarse de una peligrosa banda mexicana. Sin embargo, solo tendrá diez días para volver a su país y resolver el caso. El reloj avanza y algo ominoso, infeccioso como un parásito, flota en el ambiente: se acerca un eclipse de luna que pronto bañará de rojo la ciudad de Oslo.",
+      "isOnReading" : false,
+      "firstPage" : 7
+    }
+  ],
+  "myPlaces" : [
+    "Por colocar",
+    "F7",
+    "F4",
+    "F2",
+    "E7",
+    "E6",
+    "E5",
+    "E4",
+    "E3",
+    "E2",
+    "E1",
+    "D7",
+    "D6",
+    "D5",
+    "D4",
+    "D1",
+    "C7",
+    "C6",
+    "C5",
+    "C4",
+    "C3",
+    "C2",
+    "C1",
+    "B5",
+    "B4",
+    "B3",
+    "B2",
+    "B1",
+    "A5",
+    "A4",
+    "A3",
+    "A2",
+    "A1",
+    "Donado",
+    "Vendido"
+  ],
+  "nowReading" : [
+    {
+      "lastPage" : 220,
+      "bookTitle" : "tulipán negro, El",
+      "isFinished" : false,
+      "sessions" : [
+        {
+          "duration" : "1h 19min",
+          "id" : "BA309203-0902-477F-AD77-F872038E93E2",
+          "startingPage" : 32,
+          "endingPage" : 78,
+          "minPerPag" : "1min 41s",
+          "date" : 715950000
+        },
+        {
+          "duration" : "0h 53min",
+          "id" : "F4C3CB3B-7D25-4DD6-9F3F-A270D5975BC1",
+          "startingPage" : 4,
+          "endingPage" : 31,
+          "minPerPag" : "1min 54s",
+          "date" : 715863600
+        },
+        {
+          "duration" : "0h 9min",
+          "id" : "DA7C9C77-1A91-4E34-860D-055052F24947",
+          "startingPage" : 1,
+          "endingPage" : 3,
+          "minPerPag" : "3min 0s",
+          "date" : 715777200
+        }
+      ],
       "formatt" : "Kindle",
-      "synopsis" : "Mientras pasea por Boston, Jack Reacher ve el rostro de un hombre al que conoció cuando estaba en el ejército y que debería llevar muerto diez años. Desde ese momento, Reacher solo tiene un propósito: acabar con él. No va a ser nada fácil. Su presa está relacionada con una red ilegal que está siendo investigada por la DEA. Reacher se verá obligado a actuar como agente infiltrado para lograr su objetivo. Sabe que es una misión suicida, pero él no es de los que deja los trabajos a medias.",
+      "synopsis" : "Los hermanos De Witt, protegidos del gran rey Luis de Francia, encontrarán la muerte a manos de la enloquecida población de La Haya, que les cree culpables de conspiración. Pero antes de morir dejarán a su ahijado Cornelius unos comprometedores documentos que le llevarán a la cárcel, donde, en compañía de la joven Rosa, se afanará en conseguir lo que más desea en el mundo: el bulbo del tulipán negro.\n\nCon su habitual talento narrativo, Alejandro Dumas despliega en esta novela de intriga todos los ingredientes necesarios para atrapar al lector desde la primera página y sumergirlo en la tumultuosa sociedad holandesa de finales del siglo XVII.",
       "isOnReading" : true,
       "firstPage" : 1
     }
