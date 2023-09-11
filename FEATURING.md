@@ -16,7 +16,7 @@
 
 #
 
-# extensions
+# 
 
-### Cambiar las funciones de transformación de tiempos de string a double, y viceversa, a extensiones de string y double.
+### 
 
