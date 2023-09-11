@@ -66,7 +66,7 @@ extension RDDetail {
 				VStack {
 					Text("pág/día:")
 						.font(.subheadline)
-					Text(value, format: .number)
+					Text(value, format: .number.precision(.fractionLength(0)))
 						.font(.headline)
 						.foregroundColor(compare.color)
 				}
@@ -74,7 +74,7 @@ extension RDDetail {
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: mean))!)
+					Text(mean.formatted(.number.precision(.fractionLength(0))))
 						.font(.headline)
 				}
 				Spacer()
@@ -90,7 +90,7 @@ extension RDDetail {
 				VStack {
 					Text(">50 (%):")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: value))! + "%")
+					Text(value.formatted(.number.precision(.fractionLength(0))) + "%")
 						.font(.headline)
 						.foregroundColor(compare.color)
 				}
@@ -98,7 +98,7 @@ extension RDDetail {
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: mean))! + "%")
+					Text(mean.formatted(.number.precision(.fractionLength(0))) + "%")
 						.font(.headline)
 				}
 				Spacer()

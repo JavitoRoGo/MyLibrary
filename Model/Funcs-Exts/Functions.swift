@@ -114,17 +114,6 @@ func compareWithMean(value: Double, mean: Double) -> (color: Color, image: Strin
 }
 
 
-// MARK: - Number formatters
-
-let noDecimalFormatter: NumberFormatter = {
-   let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.maximumFractionDigits = 0
-    formatter.groupingSeparator = "."
-    return formatter
-}()
-
-
 // MARK: - Función para obtener la ruta a FileManager
 
 func getDocumentDirectory() -> URL? {

@@ -25,7 +25,7 @@ extension Double {
 
 extension Double {
 	var minPerPagDoubleToString: String {
-		var float = self.truncatingRemainder(dividingBy: 1)
+		let float = self.truncatingRemainder(dividingBy: 1)
 		let min = Int(self - float)
 		let seg = Int((float * 60).rounded())
 		return "\(min)min \(seg)s"

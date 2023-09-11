@@ -15,9 +15,9 @@ extension RDGlobalStats {
                   kindle: String(model.numberOfReadingDataPerFormatt(.kindle)),
 				  total: String(model.user.readingDatas.count)),
             .init(title: "Páginas:",
-                  paper: noDecimalFormatter.string(from: NSNumber(value: model.calcRDPagesPerFormatt(.paper).total))!,
-                  kindle: noDecimalFormatter.string(from: NSNumber(value: model.calcRDPagesPerFormatt(.kindle).total))!,
-                  total: noDecimalFormatter.string(from: NSNumber(value: model.calcRDPagesPerFormatt().total))!),
+				  paper: model.calcRDPagesPerFormatt(.paper).total.formatted(.number),
+				  kindle: model.calcRDPagesPerFormatt(.kindle).total.formatted(.number),
+				  total: model.calcRDPagesPerFormatt().total.formatted(.number)),
             .init(title: "Páginas promedio:",
                   paper: String(model.calcRDPagesPerFormatt(.paper).mean),
                   kindle: String(model.calcRDPagesPerFormatt(.kindle).mean),
@@ -43,9 +43,9 @@ extension RDGlobalStats {
                   kindle: String(model.calcRDPagPerDayPerFormatt(.kindle)),
                   total: String(Int(model.meanPagPerDay))),
             .init(title: "Valoración promedio:",
-				  paper: "\(model.meanRDRatingPerFormatt(.paper).formatted(.number.precision(.fractionLength(1))))",
-				  kindle: "\(model.meanRDRatingPerFormatt(.kindle).formatted(.number.precision(.fractionLength(1))))",
-				  total: "\(model.meanRDRatingPerFormatt().formatted(.number.precision(.fractionLength(1))))")
+				  paper: model.meanRDRatingPerFormatt(.paper).formatted(.number.precision(.fractionLength(1))),
+				  kindle: model.meanRDRatingPerFormatt(.kindle).formatted(.number.precision(.fractionLength(1))),
+				  total: model.meanRDRatingPerFormatt().formatted(.number.precision(.fractionLength(1))))
         ]
     }
 }
