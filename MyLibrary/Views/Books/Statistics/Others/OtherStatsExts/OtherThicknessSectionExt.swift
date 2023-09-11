@@ -9,7 +9,7 @@ import SwiftUI
 
 extension OtherStats {
 	var thicknessSection: some View {
-		Section("Grosor (cm): \(measureFormatter.string(from: NSNumber(value: model.globalThickness().total))!)") {
+		Section("Grosor (cm): \(model.globalThickness().total, format: .number.precision(.fractionLength(1)))") {
 			let value = model.thicknessForOtherStats(tag: statsSelection, text: pickerSelection).total
 			let mean = model.thicknessForOtherStats(tag: statsSelection, text: pickerSelection).mean
 			let globalMean = model.globalThickness().mean
@@ -18,14 +18,14 @@ extension OtherStats {
 				VStack {
 					Text("Total:")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: value))!)
+					Text(value, format: .number.precision(.fractionLength(1)))
 						.font(.title2)
 				}
 				Spacer()
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: mean))!)
+					Text(mean, format: .number.precision(.fractionLength(1)))
 						.font(.title2)
 						.foregroundColor(compare.color)
 				}
@@ -33,7 +33,7 @@ extension OtherStats {
 				VStack {
 					Text("Global:")
 						.font(.subheadline)
-					Text(measureFormatter.string(from: NSNumber(value: globalMean))!)
+					Text(globalMean, format: .number.precision(.fractionLength(1)))
 						.font(.title2)
 				}
 			}

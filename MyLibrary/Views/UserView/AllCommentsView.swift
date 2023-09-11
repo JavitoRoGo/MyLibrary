@@ -19,7 +19,7 @@ struct AllCommentsView: View {
         NavigationStack {
             VStack {
                 if comments.isEmpty {
-                    Text("Todavía no has añadido ningún comentario. Puedes añadirlo pulsando \"Editar\" en \"Leyendo\", o pulsando \(Image(systemName: "rectangle.and.pencil.and.ellipsis")) en \"Registros\".")
+                    Text("Todavía no has añadido ningún comentario. Puedes añadirlo pulsando \"Editar\" en \"Leyendo\", o pulsando \(Image(systemName: "rectangle.and.pencil.and.ellipsis")) en \"Lecturas\".")
                         .padding(.horizontal)
                 } else {
                     List {

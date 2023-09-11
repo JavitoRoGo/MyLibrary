@@ -68,3 +68,5 @@ ConnectivityManager para conectar con iOS.
 
 * Se añade la opción de borrar un libro en lista de espera aunque tenga datos de lectura. Al borrar el libro se pregunta si mantener las sesiones o borrarlas.
 * En la vista de Usuario se añaden botones para borrar todos los datos registrados y mantener el usuario, o para eliminar el usuario y sus datos.
+* Las funciones de cambio de tiempos entre String<- ->Double se eliminan como tal y se reescriben como extensiones de String y Double. También alguna función para fechas como extensión de Date.
+* Se eliminan las funciones de formateado de números y se sustituye por código de formato nativo de SwiftUI.

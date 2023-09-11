@@ -229,21 +229,21 @@ extension UserViewModel {
     func getReadingTime(tag: Int) -> String {
         let sessions = getSessions(tag: tag)
         let time = sessions.reduce(0) { $0 + $1.readingTimeInHours }
-        return minPerDayDoubleToString(time)
+		return time.minPerDayDoubleToString
     }
     
     func getMinPerPag(tag: Int) -> String {
         let sessions = getSessions(tag: tag)
         let sum = sessions.reduce(0) { $0 + $1.minPerPagSessionInMinutes }
         let mean = sum / Double(sessions.count)
-        return minPerPagDoubleToString(mean)
+		return mean.minPerPagDoubleToString
     }
     
     func getMinPerDay(tag: Int) -> String {
         let sessions = getSessions(tag: tag)
         let sum = sessions.reduce(0) { $0 + $1.readingTimeInHours }
         let mean = sum / Double(sessions.count)
-        return minPerDayDoubleToString(mean)
+		return mean.minPerDayDoubleToString
     }
     
     func getPagPerDay(tag: Int) -> Double {

@@ -13,7 +13,7 @@ extension RDDetail {
 			VStack(alignment: .leading) {
 				Text("Inicio - Fin:")
 					.font(.subheadline)
-				Text("\(dateToString(rdata.startDate)) - \(dateToString(rdata.finishDate))")
+				Text("\(rdata.startDate.toString) - \(rdata.finishDate.toString)")
 					.font(.headline)
 			}
 			NavigationLink(destination: RDSessions(rdsessions: rdata.readingSessions, rdata: rdata)) {

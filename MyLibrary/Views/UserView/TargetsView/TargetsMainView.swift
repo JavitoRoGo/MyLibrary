@@ -101,7 +101,7 @@ struct TargetsMainView: View {
                         RollingText(color: .blue, value: numOfAchivedYearlyTarget)
                     }
                 } footer: {
-                    Text("Número de veces que se ha conseguido cada objetivo desde el registro de la primera sesión: \(dateToString(model.user.sessions.last?.date ?? .now)).")
+					Text("Número de veces que se ha conseguido cada objetivo desde el registro de la primera sesión: \((model.user.sessions.last?.date ?? .now).toString).")
                 }
             }
             .navigationTitle("Objetivos")

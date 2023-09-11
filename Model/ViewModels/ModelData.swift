@@ -154,19 +154,19 @@ extension NowReading {
     var readingTime: String {
         guard !sessions.isEmpty else { return "-" }
         let duration = sessions.reduce(0) { $0 + $1.readingTimeInHours }
-        return minPerDayDoubleToString(duration)
+		return duration.minPerDayDoubleToString
     }
     var minPerPag: String {
         guard !sessions.isEmpty else { return "-" }
         let sum = sessions.reduce(0) { $0 + $1.minPerPagSessionInMinutes }
         let mean = sum / Double(sessions.count)
-        return minPerPagDoubleToString(mean)
+		return mean.minPerPagDoubleToString
     }
     var minPerDay: String {
         guard !sessions.isEmpty else { return "-" }
         let sum = sessions.reduce(0) { $0 + $1.readingTimeInHours }
         let mean = sum / Double(sessions.count)
-        return minPerDayDoubleToString(mean)
+		return mean.minPerDayDoubleToString
     }
     var pagesPerDay: Int {
         guard !sessions.isEmpty else { return 0 }
@@ -187,7 +187,7 @@ extension NowReading {
             timeLeft = Double(remainingPages * 2)
             #endif
         } else {
-            timeLeft = minPerPagInMinutes(minPerPag) * Double(remainingPages) / 60.0
+			timeLeft = minPerPag.minPerPagInMinutes * Double(remainingPages) / 60.0
         }
         return timeLeft
     }
@@ -239,11 +239,11 @@ extension ReadingSession {
     }
     
     var readingTimeInHours: Double {
-        minPerDayInHours(duration)
+		duration.minPerDayInHours
     }
     
     var minPerPagSessionInMinutes: Double {
-        minPerPagInMinutes(minPerPag)
+		minPerPag.minPerPagInMinutes
     }
 }
 

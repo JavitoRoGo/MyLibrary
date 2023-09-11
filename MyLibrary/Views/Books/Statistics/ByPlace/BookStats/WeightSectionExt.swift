@@ -10,7 +10,7 @@ import SwiftUI
 // Subvistas y secciones que componen la vista
 extension BookStats {
 	var weightSection: some View {
-		Section("Peso (g): \(noDecimalFormatter.string(from: NSNumber(value: model.globalWeight().total))!)") {
+		Section("Peso (g): \(model.globalWeight().total.formatted(.number))") {
 			let value = model.weightAtPlace(place).total
 			let mean = model.weightAtPlace(place).mean
 			let globalMean = model.globalWeight().mean
@@ -19,14 +19,14 @@ extension BookStats {
 				VStack {
 					Text("Total:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: value))!)
+					Text(value.formatted(.number))
 						.font(.title2)
 				}
 				Spacer()
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: mean))!)
+					Text(mean.formatted(.number))
 						.font(.title2)
 						.foregroundColor(compare.color)
 				}
@@ -34,7 +34,7 @@ extension BookStats {
 				VStack {
 					Text("Global:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: globalMean))!)
+					Text(globalMean.formatted(.number))
 						.font(.title2)
 				}
 			}

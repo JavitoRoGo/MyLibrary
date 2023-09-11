@@ -80,8 +80,8 @@ struct OtherGraphs: View {
                     ).annotation(position: .trailing, alignment: .center) {
                         Text(
                             dataSelection == 2 ?
-                            priceFormatter.string(from: NSNumber(value: value))! :
-                                noDecimalFormatter.string(from: NSNumber(value: value))!
+							"\(value.formatted(.currency(code: "eur")))" :
+								value.formatted(.number)
                         )
                         .font(.caption)
                         .foregroundColor(.secondary)

@@ -47,7 +47,7 @@ extension UserViewModel {
 		if user.readingDatas.isEmpty {
 			return 1.0
 		}
-		let sum = user.readingDatas.reduce(0) { $0 + minPerPagInMinutes($1.minPerPag) }
+		let sum = user.readingDatas.reduce(0) { $0 + $1.minPerPag.minPerPagInMinutes }
 		let mean = sum / Double(user.readingDatas.count)
         return mean
     }
@@ -55,7 +55,7 @@ extension UserViewModel {
 		if user.readingDatas.isEmpty {
 			return 1.0
 		}
-		let sum = user.readingDatas.reduce(0) { $0 + minPerDayInHours($1.minPerDay) }
+		let sum = user.readingDatas.reduce(0) { $0 + $1.minPerDay.minPerDayInHours }
 		let mean = sum / Double(user.readingDatas.count)
         return mean
     }
@@ -245,14 +245,14 @@ extension UserViewModel {
     
     // Velocidad promedio por formato. El global ya está calculado como meanMinPerPag
     func calcRDMinPerPagPerFormatt(_ formatt: Formatt) -> Double {
-        let total = getReadingDataPerFormatt(formatt).reduce(0) { $0 + minPerPagInMinutes($1.minPerPag) }
+		let total = getReadingDataPerFormatt(formatt).reduce(0) { $0 + $1.minPerPag.minPerPagInMinutes }
         let mean = total / Double(numberOfReadingDataPerFormatt(formatt))
         return mean
     }
     
     // Dedicación promedio por formato. El global ya está calculado como meanMinPerDay
     func calcRDMinPerDayPerFormatt(_ formatt: Formatt) -> Double {
-        let total = getReadingDataPerFormatt(formatt).reduce(0) { $0 + minPerDayInHours($1.minPerDay) }
+		let total = getReadingDataPerFormatt(formatt).reduce(0) { $0 + $1.minPerDay.minPerDayInHours }
         let mean = total / Double(numberOfReadingDataPerFormatt(formatt))
         return mean
     }

@@ -26,7 +26,7 @@ struct ContentView: View {
             
             RDMain()
                 .tabItem {
-                    Label("Registros", systemImage: "textformat.abc")
+                    Label("Lecturas", systemImage: "textformat.abc")
                 }
             
             SelectBookView()

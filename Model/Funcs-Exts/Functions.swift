@@ -89,6 +89,7 @@ func setInfoAlertFor<T: BooksProtocol>(_ book: T) -> (title: String, message: St
     return (title, message)
 }
 
+
 // Función para obtener n colores aleatorios
 func getRandomColors() -> [Color] {
     var colors = [Color]()
@@ -102,79 +103,6 @@ func getRandomColors() -> [Color] {
     return colors
 }
 
-// Funciones para pasar datos de tiempo de tipo String a Double:
-// las funciones son iguales, pero las mantengo porque el nombre ayuda a aclarar las unidades del resultado en Double
-func minPerPagInMinutes(_ value: String) -> Double {
-    var min = 0.0
-    var sec = 0.0
-    var stringArray = [String]()
-    for char in value {
-        stringArray.append(String(char))
-    }
-    let array = stringArray.compactMap { Double($0) }
-    if array.count == 1 {
-        if stringArray[1] == "m" {
-            min = array[0]
-        } else {
-            sec = array[0]
-        }
-    } else if array.count == 2 {
-        if stringArray[1] == "m" {
-            min = array[0]
-            sec = array[1]
-        } else {
-            sec = array[0] * 10 + array[1]
-        }
-    } else if array.count == 3 {
-        min = array[0]
-        sec = array[1] * 10 + array[2]
-    }
-    let total = min + (sec / 60)
-    return total
-}
-func minPerDayInHours(_ value: String) -> Double {
-    var hour = 0.0
-    var min = 0.0
-    var stringArray = [String]()
-    for char in value {
-        stringArray.append(String(char))
-    }
-    let array = stringArray.compactMap { Double($0) }
-    if array.count == 1 {
-        if stringArray[1] == "h" {
-            hour = array[0]
-        } else {
-            min = array[0]
-        }
-    } else if array.count == 2 {
-        if stringArray[1] == "h" {
-            hour = array[0]
-            min = array[1]
-        } else {
-            min = array[0] * 10 + array[1]
-        }
-    } else if array.count == 3 {
-        hour = array[0]
-        min = array[1] * 10 + array[2]
-    }
-    let total = hour + (min / 60)
-    return total
-}
-
-// Funciones para pasar los datos de tiempo de tipo Double a String
-
-func minPerPagDoubleToString(_ value: Double) -> String {
-    let float = value.truncatingRemainder(dividingBy: 1)
-    let min = Int(value - float)
-    let seg = Int(round(float * 60))
-    return "\(min)min \(seg)s"
-}
-func minPerDayDoubleToString(_ value: Double) -> String {
-    let float = value.truncatingRemainder(dividingBy: 1)
-    let hour = Int(value - float)
-    let min = Int(round(float * 60))
-    return "\(hour)h \(min)min"
-}
 
 // Funciones de comparación de cada valor con la media
 func compareWithMean(value: Double, mean: Double) -> (color: Color, image: String) {
@@ -184,50 +112,6 @@ func compareWithMean(value: Double, mean: Double) -> (color: Color, image: Strin
         return (Color.red, "arrow.turn.right.down")
     }
 }
-
-// Función de formato para las fechas de datePicker, devuelve string
-func dateToString(_ date: Date) -> String {
-    let formatter = DateFormatter()
-    formatter.timeStyle = .none
-    formatter.dateStyle = .short
-    formatter.locale = Locale(identifier: "fr_FR")
-    let dateString = formatter.string(from: date)
-    return dateString
-}
-// Función de formato de fechas, devuelve Date desde String
-func stringToDate(_ string: String) -> Date {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "dd/MM/yy"
-    return formatter.date(from: string) ?? .now
-}
-
-
-// MARK: - Number formatters
-
-let priceFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.locale = Locale.init(identifier: "fr_FR")
-    formatter.numberStyle = .currency
-    return formatter
-}()
-
-let measureFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.decimalSeparator = ","
-    formatter.groupingSeparator = "."
-    formatter.minimumFractionDigits = 1
-    formatter.maximumFractionDigits = 1
-    return formatter
-}()
-
-let noDecimalFormatter: NumberFormatter = {
-   let formatter = NumberFormatter()
-    formatter.numberStyle = .decimal
-    formatter.maximumFractionDigits = 0
-    formatter.groupingSeparator = "."
-    return formatter
-}()
 
 
 // MARK: - Función para obtener la ruta a FileManager

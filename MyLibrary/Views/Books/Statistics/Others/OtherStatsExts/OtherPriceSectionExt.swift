@@ -9,7 +9,7 @@ import SwiftUI
 
 extension OtherStats {
 	var priceSection: some View {
-		Section("Precio: \(priceFormatter.string(from: NSNumber(value: model.globalPrice(model.user.books).total))!)") {
+		Section("Precio: \(model.globalPrice(model.user.books).total, format: .currency(code: "eur"))") {
 			let value = model.priceForOtherStats(tag: statsSelection, text: pickerSelection).total
 			let mean = model.priceForOtherStats(tag: statsSelection, text: pickerSelection).mean
 			let globalMean = model.globalPrice(model.user.books).mean
@@ -18,14 +18,14 @@ extension OtherStats {
 				VStack {
 					Text("Total:")
 						.font(.subheadline)
-					Text(priceFormatter.string(from: NSNumber(value: value))!)
+					Text(value, format: .currency(code: "eur"))
 						.font(.title2)
 				}
 				Spacer()
 				VStack {
 					Text("Promedio:")
 						.font(.subheadline)
-					Text(priceFormatter.string(from: NSNumber(value: mean))!)
+					Text(mean, format: .currency(code: "eur"))
 						.font(.title2)
 						.foregroundColor(compare.color)
 				}
@@ -33,7 +33,7 @@ extension OtherStats {
 				VStack {
 					Text("Global:")
 						.font(.subheadline)
-					Text(priceFormatter.string(from: NSNumber(value: globalMean))!)
+					Text(globalMean, format: .currency(code: "eur"))
 						.font(.title2)
 				}
 			}

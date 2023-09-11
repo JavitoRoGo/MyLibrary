@@ -10,7 +10,7 @@ import SwiftUI
 // Subvistas y secciones que componen la vista
 extension BookStats {
 	var pagesSection: some View {
-		Section("Número de páginas: \(noDecimalFormatter.string(from: NSNumber(value: model.globalPages(model.user.books).total))!)") {
+		Section("Número de páginas: \(model.globalPages(model.user.books).total.formatted(.number))") {
 			let value = model.pagesAtPlace(place).total
 			let mean = model.pagesAtPlace(place).mean
 			let globalMean = model.globalPages(model.user.books).mean
@@ -19,7 +19,7 @@ extension BookStats {
 				VStack {
 					Text("Total:")
 						.font(.subheadline)
-					Text(noDecimalFormatter.string(from: NSNumber(value: value))!)
+					Text(value.formatted(.number))
 						.font(.title2)
 				}
 				Spacer()

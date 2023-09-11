@@ -23,7 +23,7 @@ extension ActualReadingDetail {
 			HStack {
 				Text("Tiempo restante")
 				Spacer()
-				Text(!book.isFinished ? minPerDayDoubleToString(book.remainingTime) : "0min")
+				Text(!book.isFinished ? book.remainingTime.minPerDayDoubleToString : "0min")
 			}
 			HStack {
 				Text("Puedes terminar...")

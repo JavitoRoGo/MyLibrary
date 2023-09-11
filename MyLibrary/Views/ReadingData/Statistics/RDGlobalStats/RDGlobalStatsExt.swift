@@ -5,7 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 10/8/23.
 //
 
-import Foundation
+import SwiftUI
 
 extension RDGlobalStats {
     func loadData() {
@@ -15,37 +15,37 @@ extension RDGlobalStats {
                   kindle: String(model.numberOfReadingDataPerFormatt(.kindle)),
 				  total: String(model.user.readingDatas.count)),
             .init(title: "Páginas:",
-                  paper: noDecimalFormatter.string(from: NSNumber(value: model.calcRDPagesPerFormatt(.paper).total))!,
-                  kindle: noDecimalFormatter.string(from: NSNumber(value: model.calcRDPagesPerFormatt(.kindle).total))!,
-                  total: noDecimalFormatter.string(from: NSNumber(value: model.calcRDPagesPerFormatt().total))!),
+				  paper: model.calcRDPagesPerFormatt(.paper).total.formatted(.number),
+				  kindle: model.calcRDPagesPerFormatt(.kindle).total.formatted(.number),
+				  total: model.calcRDPagesPerFormatt().total.formatted(.number)),
             .init(title: "Páginas promedio:",
                   paper: String(model.calcRDPagesPerFormatt(.paper).mean),
                   kindle: String(model.calcRDPagesPerFormatt(.kindle).mean),
                   total: String(model.calcRDPagesPerFormatt().mean)),
             .init(title: "Tiempo:",
-                  paper: minPerDayDoubleToString(model.calcRDDurationPerFormatt(.paper).total),
-                  kindle: minPerDayDoubleToString(model.calcRDDurationPerFormatt(.kindle).total),
-                  total: minPerDayDoubleToString(model.calcRDDurationPerFormatt().total)),
+				  paper: model.calcRDDurationPerFormatt(.paper).total.minPerDayDoubleToString,
+				  kindle: model.calcRDDurationPerFormatt(.kindle).total.minPerDayDoubleToString,
+				  total: model.calcRDDurationPerFormatt().total.minPerDayDoubleToString),
             .init(title: "Tiempo promedio:",
-                  paper: minPerDayDoubleToString(model.calcRDDurationPerFormatt(.paper).mean),
-                  kindle: minPerDayDoubleToString(model.calcRDDurationPerFormatt(.kindle).mean),
-                  total: minPerDayDoubleToString(model.calcRDDurationPerFormatt().mean)),
+				  paper: model.calcRDDurationPerFormatt(.paper).mean.minPerDayDoubleToString,
+				  kindle: model.calcRDDurationPerFormatt(.kindle).mean.minPerDayDoubleToString,
+				  total: model.calcRDDurationPerFormatt().mean.minPerDayDoubleToString),
             .init(title: "Velocidad promedio:",
-                  paper: minPerPagDoubleToString(model.calcRDMinPerPagPerFormatt(.paper)),
-                  kindle: minPerPagDoubleToString(model.calcRDMinPerPagPerFormatt(.kindle)),
-                  total: minPerPagDoubleToString(model.meanMinPerPag)),
+				  paper: model.calcRDMinPerPagPerFormatt(.paper).minPerPagDoubleToString,
+				  kindle: model.calcRDMinPerPagPerFormatt(.kindle).minPerPagDoubleToString,
+				  total: model.meanMinPerPag.minPerPagDoubleToString),
             .init(title: "Dedicación promedio:",
-                  paper: minPerDayDoubleToString(model.calcRDMinPerDayPerFormatt(.paper)),
-                  kindle: minPerDayDoubleToString(model.calcRDMinPerDayPerFormatt(.kindle)),
-                  total: minPerDayDoubleToString(model.meanMinPerDay)),
+				  paper: model.calcRDMinPerDayPerFormatt(.paper).minPerDayDoubleToString,
+				  kindle: model.calcRDMinPerDayPerFormatt(.kindle).minPerDayDoubleToString,
+				  total: model.meanMinPerDay.minPerDayDoubleToString),
             .init(title: "pág/día promedio:",
                   paper: String(model.calcRDPagPerDayPerFormatt(.paper)),
                   kindle: String(model.calcRDPagPerDayPerFormatt(.kindle)),
                   total: String(Int(model.meanPagPerDay))),
             .init(title: "Valoración promedio:",
-                  paper: measureFormatter.string(from: NSNumber(value: model.meanRDRatingPerFormatt(.paper)))!,
-                  kindle: measureFormatter.string(from: NSNumber(value: model.meanRDRatingPerFormatt(.kindle)))!,
-                  total: measureFormatter.string(from: NSNumber(value: model.meanRDRatingPerFormatt()))!)
+				  paper: model.meanRDRatingPerFormatt(.paper).formatted(.number.precision(.fractionLength(1))),
+				  kindle: model.meanRDRatingPerFormatt(.kindle).formatted(.number.precision(.fractionLength(1))),
+				  total: model.meanRDRatingPerFormatt().formatted(.number.precision(.fractionLength(1))))
         ]
     }
 }

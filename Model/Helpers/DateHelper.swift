@@ -161,3 +161,16 @@ public extension DateComponents {
 		return Calendar.current.date(byAdding: -self, to: Date())!
 	}
 }
+
+// Función de formato para las fechas de datePicker, devuelve string
+
+extension Date {
+	var toString: String {
+		let formatter = DateFormatter()
+		formatter.timeStyle = .none
+		formatter.dateStyle = .short
+		formatter.locale = Locale(identifier: "fr_FR")
+		let dateString = formatter.string(from: self)
+		return dateString
+	}
+}
