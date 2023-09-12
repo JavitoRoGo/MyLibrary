@@ -68,13 +68,15 @@ extension UserViewModel {
 		if let index = user.nowWaiting.firstIndex(of: book) {
 			user.nowWaiting.remove(at: index)
         }
-		if book.formatt == .paper {
-			if let index = user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				user.books[index].status = .notRead
-			}
-		} else {
-			if let index = user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				user.ebooks[index].status = .notRead
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+			if book.formatt == .paper {
+				if let index = self.user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+					self.user.books[index].status = .notRead
+				}
+			} else {
+				if let index = self.user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+					self.user.ebooks[index].status = .notRead
+				}
 			}
 		}
     }
@@ -85,13 +87,15 @@ extension UserViewModel {
             user.nowReading.append(user.nowWaiting[index])
             user.nowWaiting.remove(at: index)
         }
-		if book.formatt == .paper {
-			if let index = user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				user.books[index].status = .reading
-			}
-		} else {
-			if let index = user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				user.ebooks[index].status = .reading
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+			if book.formatt == .paper {
+				if let index = self.user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+					self.user.books[index].status = .reading
+				}
+			} else {
+				if let index = self.user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+					self.user.ebooks[index].status = .reading
+				}
 			}
 		}
     }
@@ -102,13 +106,15 @@ extension UserViewModel {
             user.nowWaiting.append(user.nowReading[index])
             user.nowReading.remove(at: index)
         }
-		if book.formatt == .paper {
-			if let index = user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				user.books[index].status = .waiting
-			}
-		} else {
-			if let index = user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				user.ebooks[index].status = .waiting
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+			if book.formatt == .paper {
+				if let index = self.user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+					self.user.books[index].status = .waiting
+				}
+			} else {
+				if let index = self.user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+					self.user.ebooks[index].status = .waiting
+				}
 			}
 		}
     }
