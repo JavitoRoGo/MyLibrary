@@ -125,6 +125,7 @@
 		4467B5E42971DC86008E4489 /* MonthlyTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E32971DC86008E4489 /* MonthlyTargetView.swift */; };
 		4467B5E62971E936008E4489 /* YearlyTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E52971E936008E4489 /* YearlyTargetView.swift */; };
 		4467B5E82971F442008E4489 /* RingTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4467B5E72971F442008E4489 /* RingTargetView.swift */; };
+		446983A92AB37770009898B9 /* EBookGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446983A82AB37770009898B9 /* EBookGrid.swift */; };
 		446A6B52286FAE7E00465AED /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = 446A6B4F286FA15100465AED /* explosion.caf */; };
 		446C35A42790AC6E00532EF9 /* RDGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A32790AC6E00532EF9 /* RDGrid.swift */; };
 		446C35A62790AF3E00532EF9 /* RDMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A52790AF3E00532EF9 /* RDMain.swift */; };
@@ -387,6 +388,7 @@
 		4467B5E32971DC86008E4489 /* MonthlyTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTargetView.swift; sourceTree = "<group>"; };
 		4467B5E52971E936008E4489 /* YearlyTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyTargetView.swift; sourceTree = "<group>"; };
 		4467B5E72971F442008E4489 /* RingTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTargetView.swift; sourceTree = "<group>"; };
+		446983A82AB37770009898B9 /* EBookGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookGrid.swift; sourceTree = "<group>"; };
 		446A6B4F286FA15100465AED /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
 		446C35A32790AC6E00532EF9 /* RDGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDGrid.swift; sourceTree = "<group>"; };
 		446C35A52790AF3E00532EF9 /* RDMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDMain.swift; sourceTree = "<group>"; };
@@ -679,6 +681,7 @@
 				4487BF6A2781D640003C6115 /* EBookList.swift */,
 				44DDA8862A842356000104A1 /* EBookListExt.swift */,
 				4487BF6F2782191B003C6115 /* EBookRow.swift */,
+				446983A82AB37770009898B9 /* EBookGrid.swift */,
 				447189D52A87C29800BE66E5 /* EBookDetail */,
 				447189DC2A87DB6800BE66E5 /* AddEBook */,
 				44D28FD3296F376F00180ACE /* EBookConfigView.swift */,
@@ -1382,6 +1385,7 @@
 				445BBA302A865E5D0004B850 /* AddQuoteViewExt.swift in Sources */,
 				445BBA3C2A86BE650004B850 /* YearlyTargetViewExt.swift in Sources */,
 				4487BF7227822296003C6115 /* EBookDetail.swift in Sources */,
+				446983A92AB37770009898B9 /* EBookGrid.swift in Sources */,
 				44B9FD6A295A1BCB00A11206 /* WidgetDataHelper.swift in Sources */,
 				445BBA452A86F2F90004B850 /* ThicknessSectionExt.swift in Sources */,
 				440246192784B47D003D7338 /* RDScroll.swift in Sources */,
