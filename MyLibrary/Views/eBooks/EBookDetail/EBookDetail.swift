@@ -26,6 +26,12 @@ struct EBookDetail: View {
     
     var body: some View {
         VStack {
+			if let data = ebook.cover, let image = UIImage(data: data) {
+				Image(uiImage: image)
+					.resizable()
+					.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+			}
+			
             List {
                 authorSection
                 
