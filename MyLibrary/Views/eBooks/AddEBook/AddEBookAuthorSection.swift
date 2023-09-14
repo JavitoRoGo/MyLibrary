@@ -35,12 +35,21 @@ extension AddEBook {
 				Button("Añadir portada") {
 					showingCoverSelection = true
 				}
+				.buttonStyle(.plain)
+				.foregroundColor(.blue)
 				Spacer()
 				if let inputImage {
 					Image(uiImage: inputImage)
 						.resizable()
 						.scaledToFit()
 						.frame(height: 50)
+					Button {
+						self.inputImage = nil
+					} label: {
+						Image(systemName: "xmark.circle")
+							.foregroundColor(.secondary)
+					}
+
 				}
 			}
 		}
