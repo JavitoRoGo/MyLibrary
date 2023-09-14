@@ -17,7 +17,7 @@ struct EBookList: View {
     var body: some View {
         NavigationStack {
 			if showingGridWithCovers {
-				EBookGrid()
+				EBookGrid(ebooks: ebooksToShow)
 			} else {
 				List(ebooksToShow) { ebook in
 					let index = model.user.ebooks.firstIndex(of: ebook)!
