@@ -14,15 +14,11 @@ struct AddEBook: View {
     @State var showingAlert = false
     @State var showingAddWaitingAlert = false
     @State var showingAddWaiting = false
-    
-    var isDisabled: Bool {
-        guard newAuthor.isEmpty || newBookTitle.isEmpty || newOriginalTitle.isEmpty ||
-                newYear == 0 || newPages == 0 || newOwner.isEmpty else { return false }
-        return true
-    }
-    var newID: Int {
-		model.user.ebooks.count + 1
-    }
+	@State var showingCoverSelection = false
+	@State var showingImagePicker = false
+	@State var showingCameraPicker = false
+	@State var showingDownloadPage = false
+	@State var inputImage: UIImage?
     
     @State var newAuthor = ""
     @State var newBookTitle = ""
@@ -82,7 +78,7 @@ struct AddEBook: View {
                 }
             }
         }
-        .modifier(AddEBookModifier(showingAddWaitingAlert: $showingAddWaitingAlert, showingAddWaiting: $showingAddWaiting, showingSearchAlert: $showingSearchAlert, showingSearchResults: $showingSearchResults, showingAlert: $showingAlert, newAuthor: $newAuthor, newBookTitle: newBookTitle, synopsis: synopsis, searchResultsTitle: searchResultsTitle, searchResultsMessage: searchResultsMessage, searchArray: searchArray, createNewEBook: createNewEBook))
+		.modifier(AddEBookModifier(showingAddWaitingAlert: $showingAddWaitingAlert, showingAddWaiting: $showingAddWaiting, showingSearchAlert: $showingSearchAlert, showingSearchResults: $showingSearchResults, showingAlert: $showingAlert, showingCoverSelection: $showingCoverSelection, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingDownloadPage: $showingDownloadPage, inputImage: $inputImage, newAuthor: $newAuthor, newBookTitle: newBookTitle, synopsis: synopsis, searchResultsTitle: searchResultsTitle, searchResultsMessage: searchResultsMessage, searchArray: searchArray, createNewEBook: createNewEBook))
     }
 }
 

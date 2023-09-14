@@ -79,6 +79,7 @@ struct EBooks: Codable, Identifiable, Equatable, BooksProtocol {
     var owner: String
     var status: ReadingStatus
     var synopsis: String? = nil
+	var cover: Data? = nil
     
     static let dataTest = EBooks(id: 0, author: "Pepito Pérez", bookTitle: "Título del ebook", originalTitle: "Título original", year: 2022, pages: 666, price: 9.99, owner: "Yo", status: .consulting, synopsis: "Resumen de prueba.")
 }

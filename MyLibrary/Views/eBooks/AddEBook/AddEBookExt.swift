@@ -8,6 +8,15 @@
 import SwiftUI
 
 extension AddEBook {
+	var isDisabled: Bool {
+		guard newAuthor.isEmpty || newBookTitle.isEmpty || newOriginalTitle.isEmpty ||
+				newYear == 0 || newPages == 0 || newOwner.isEmpty else { return false }
+		return true
+	}
+	var newID: Int {
+		model.user.ebooks.count + 1
+	}
+	
     func searchForExistingData(_ text: String) {
         searchResults = model.compareExistingAuthors(text: text).num
         searchArray = model.compareExistingAuthors(text: text).authors
@@ -34,7 +43,13 @@ extension AddEBook {
     }
     
     func createNewEBook() -> EBooks {
-        return EBooks(id: newID, author: newAuthor, bookTitle: newBookTitle, originalTitle: newOriginalTitle, year: newYear, pages: newPages, price: newPrice, owner: newOwner, status: newStatus, synopsis: synopsis.isEmpty ? nil : synopsis)
+		let cover: Data?
+		if let inputImage {
+			cover = inputImage.jpegData(compressionQuality: 0.8)
+		} else {
+			cover = nil
+		}
+        return EBooks(id: newID, author: newAuthor, bookTitle: newBookTitle, originalTitle: newOriginalTitle, year: newYear, pages: newPages, price: newPrice, owner: newOwner, status: newStatus, synopsis: synopsis.isEmpty ? nil : synopsis, cover: cover)
     }
     
     struct AddEBookModifier: ViewModifier {
@@ -46,6 +61,13 @@ extension AddEBook {
         @Binding var showingSearchAlert: Bool
         @Binding var showingSearchResults: Bool
 		@Binding var showingAlert: Bool
+		
+		@Binding var showingCoverSelection: Bool
+		@Binding var showingImagePicker: Bool
+		@Binding var showingCameraPicker: Bool
+		@Binding var showingDownloadPage: Bool
+		@Binding var inputImage: UIImage?
+		
         @Binding var newAuthor: String
         
         let newBookTitle: String
@@ -58,6 +80,27 @@ extension AddEBook {
         func body(content: Content) -> some View {
             content
                 .autocorrectionDisabled()
+				.confirmationDialog("Selecciona una opción para la portada:", isPresented: $showingCoverSelection, titleVisibility: .visible) {
+					Button("Cancelar", role: .cancel) { }
+					Button("Seleccionar foto") {
+						showingImagePicker = true
+					}
+					Button("Hacer foto") {
+						showingCameraPicker = true
+					}
+					Button("Descargar imagen") {
+						showingDownloadPage = true
+					}
+				}
+				.sheet(isPresented: $showingImagePicker) {
+					ImagePicker(image: $inputImage)
+				}
+				.sheet(isPresented: $showingCameraPicker) {
+					CameraPicker(image: $inputImage)
+				}
+				.sheet(isPresented: $showingDownloadPage) {
+					DownloadCoverView(selectedImage: $inputImage)
+				}
                 .alert("¿Deseas añadir el ebook a la lista de espera de lectura?", isPresented: $showingAddWaitingAlert) {
                     Button("No", role: .cancel) {
                         dismiss()

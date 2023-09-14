@@ -31,6 +31,18 @@ extension AddEBook {
 					.font(.headline)
 					.textInputAutocapitalization(.never)
 			}
+			HStack {
+				Button("Añadir portada") {
+					showingCoverSelection = true
+				}
+				Spacer()
+				if let inputImage {
+					Image(uiImage: inputImage)
+						.resizable()
+						.scaledToFit()
+						.frame(height: 50)
+				}
+			}
 		}
 	}
 }
