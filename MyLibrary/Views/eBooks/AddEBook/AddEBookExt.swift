@@ -43,9 +43,10 @@ extension AddEBook {
     }
     
     func createNewEBook() -> EBooks {
-		let cover: Data?
+		let cover: String?
 		if let inputImage {
-			cover = inputImage.jpegData(compressionQuality: 0.8)
+			cover = imageCoverName(from: newBookTitle)
+			saveJpg(inputImage, title: cover!)
 		} else {
 			cover = nil
 		}

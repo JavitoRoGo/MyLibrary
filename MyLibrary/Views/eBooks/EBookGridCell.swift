@@ -10,8 +10,8 @@ import SwiftUI
 struct EBookGridCell: View {
 	let ebook: EBooks
 	var uiimage: UIImage? {
-		if let data = ebook.cover, let image = UIImage(data: data) {
-			return image
+		if let cover = ebook.cover {
+			return getCoverImage(from: cover)
 		} else {
 			return nil
 		}
