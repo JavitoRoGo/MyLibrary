@@ -191,6 +191,19 @@ func getUserImage(from user: String) -> Image? {
     return userToShow
 }
 
+// Función para borrar una imagen de Archivos en caso de borrar el registro
+// De momento solo usada al borrar un ebook: no se pueden borrar books, y al borrar de ReadingList se borraría la imagen del book o ebook correspondiente
+func removeJpgFromFileManager(_ file: String) {
+	if let fileUrl = getDocumentDirectory()?.appendingPathComponent("\(file).jpg") {
+		do {
+			try FileManager.default.removeItem(at: fileUrl)
+			print("Archivo \(file) borrado con éxito")
+		} catch {
+			print("Error al borrar el archivo \(file)")
+		}
+	}
+}
+
 // Dejo estas operaciones para macOS a modo de ejemplo de cómo se hace
 /*
 #if os(macOS)

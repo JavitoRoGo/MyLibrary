@@ -92,6 +92,9 @@ extension EBookDetail {
                     Button("Eliminar", role: .destructive) {
 						if let index = model.user.ebooks.firstIndex(of: ebook) {
 							model.user.ebooks.remove(at: index)
+							if let file = ebook.cover {
+								removeJpgFromFileManager(file)
+							}
                             dismiss()
                         }
                     }
