@@ -20,39 +20,47 @@ struct BookDetail: View {
     @State var showingRSDetail = false
     
     var body: some View {
-        List {
-            authorSection
-            
-            publisherSection
-            
-            physicalCharsSection
-            
-            Section {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Propietario:")
-                            .font(.subheadline)
-                        Text(book.owner)
-                            .font(.headline)
-                    }
-                    Spacer()
-                    VStack {
-                        Text("Ubicación:")
-                            .font(.subheadline)
-                        Text(book.place)
-                            .font(.headline)
-                    }
-                }
-            }
-            
-            Section {
-                if let text = book.synopsis, !text.isEmpty {
-                    Text(text)
-                } else {
-                    Text("Sinopsis no disponible.")
-                }
-            }
-        }
+		VStack {
+			if let cover = book.cover {
+				Image(uiImage: getCoverImage(from: cover))
+					.resizable()
+					.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+			}
+			
+			List {
+				authorSection
+				
+				publisherSection
+				
+				physicalCharsSection
+				
+				Section {
+					HStack {
+						VStack(alignment: .leading) {
+							Text("Propietario:")
+								.font(.subheadline)
+							Text(book.owner)
+								.font(.headline)
+						}
+						Spacer()
+						VStack {
+							Text("Ubicación:")
+								.font(.subheadline)
+							Text(book.place)
+								.font(.headline)
+						}
+					}
+				}
+				
+				Section {
+					if let text = book.synopsis, !text.isEmpty {
+						Text(text)
+					} else {
+						Text("Sinopsis no disponible.")
+					}
+				}
+			}
+		}
         .modifier(BookDetailModifier(book: book, showingDelete: $showingDelete, showingEditPage: $showingEditPage, showingInfoAlert: $showingInfoAlert, showingRDDetail: $showingRDDetail, showingRSDetail: $showingRDDetail, titleInfoAlert: titleInfoAlert, messageInfoAlert: messageInfoAlert))
     }
 }

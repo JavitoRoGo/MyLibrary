@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BookEditing: View {
     @EnvironmentObject var model: UserViewModel
-    @Environment(\.dismiss) var dismiss
     
     @Binding var book: Books
     @State var newBookTitle: String
@@ -21,22 +20,15 @@ struct BookEditing: View {
     @State var showingAlert = false
     @State var showingAddWaitingList = false
     @State var isOnWaitingList = false
+	
+	@State var showingCoverSelection = false
+	@State var showingImagePicker = false
+	@State var showingCameraPicker = false
+	@State var showingDownloadPage = false
+	@State var inputImage: UIImage?
     
     var body: some View {
-        VStack {
-            HStack {
-                Button("Cancelar") {
-                    dismiss()
-                }
-                Spacer()
-                Text("Editando...")
-                Spacer()
-                Button("Modificar") {
-                    showingAlert = true
-                }
-            }
-            .padding([.top, .leading, .trailing])
-            
+        NavigationStack {
             Form {
                 Section {
                     VStack(alignment: .leading) {
@@ -47,50 +39,16 @@ struct BookEditing: View {
                             .disableAutocorrection(true)
                     }
                 }
-                Section {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Estado:")
-                                .font(.subheadline)
-                            Picker("Estado", selection: $newStatus) {
-                                ForEach(ReadingStatus.allCases, id: \.self) {
-                                    Text($0.rawValue)
-                                }
-                            }
-                            .labelsHidden()
-                            .pickerStyle(.menu)
-                        }
-                        Spacer()
-                        VStack(alignment: .center) {
-                            Text("Ubicación:")
-                                .font(.subheadline)
-                            Picker("Ubicación", selection: $newPlace) {
-								ForEach(model.user.myPlaces, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-                            .labelsHidden()
-                            .pickerStyle(.menu)
-                        }
-                        Spacer()
-                        VStack(alignment: .center) {
-                            Text("Propietario:")
-                                .font(.subheadline)
-                            Picker("Propietario", selection: $newOwner) {
-								ForEach(model.user.myOwners, id: \.self) {
-                                    Text($0)
-                                }
-                            }
-                            .labelsHidden()
-                            .pickerStyle(.menu)
-                        }
-                    }
-                }
+				
+                pickers
                 
                 Section {
                     TextEditor(text: $newSynopsis)
                         .frame(height: 150)
                 }
+				
+				imageSelector
+				
                 Section {
                     if newStatus == .notRead || newStatus == .reading || newStatus == .waiting {
                         HStack {
@@ -105,8 +63,8 @@ struct BookEditing: View {
                     }
                 }
             }
+			.modifier(BookEditingModifier(book: $book, showingAlert: $showingAlert, showingAddWaitingList: $showingAddWaitingList, isOnWaitingList: $isOnWaitingList, showingCoverSelection: $showingCoverSelection, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingDownloadPage: $showingDownloadPage, inputImage: $inputImage, newBookTitle: newBookTitle, newStatus: newStatus, newOwner: newOwner, newPlace: newPlace, newSynopsis: newSynopsis))
         }
-        .modifier(BookEditingModifier(book: $book, showingAlert: $showingAlert, showingAddWaitingList: $showingAddWaitingList, isOnWaitingList: $isOnWaitingList, newBookTitle: newBookTitle, newStatus: newStatus, newOwner: newOwner, newPlace: newPlace, newSynopsis: newSynopsis))
     }
 }
 

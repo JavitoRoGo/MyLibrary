@@ -17,6 +17,12 @@ extension BookEditing {
         @Binding var showingAddWaitingList: Bool
         @Binding var isOnWaitingList: Bool
 		
+		@Binding var showingCoverSelection: Bool
+		@Binding var showingImagePicker: Bool
+		@Binding var showingCameraPicker: Bool
+		@Binding var showingDownloadPage: Bool
+		@Binding var inputImage: UIImage?
+		
         let newBookTitle: String
         let newStatus: ReadingStatus
         let newOwner: String
@@ -25,6 +31,35 @@ extension BookEditing {
         
         func body(content: Content) -> some View {
             content
+				.toolbar {
+					ToolbarItem(placement: .navigationBarLeading) {
+						Button("Cancelar") { dismiss() }
+					}
+					ToolbarItem(placement: .navigationBarTrailing) {
+						Button("Modificar") { showingAlert = true }
+					}
+				}
+				.confirmationDialog("Selecciona una opción para la portada:", isPresented: $showingCoverSelection, titleVisibility: .visible) {
+					Button("Cancelar", role: .cancel) { }
+					Button("Seleccionar foto") {
+						showingImagePicker = true
+					}
+					Button("Hacer foto") {
+						showingCameraPicker = true
+					}
+					Button("Descargar imagen") {
+						showingDownloadPage = true
+					}
+				}
+				.sheet(isPresented: $showingImagePicker) {
+					ImagePicker(image: $inputImage)
+				}
+				.sheet(isPresented: $showingCameraPicker) {
+					CameraPicker(image: $inputImage)
+				}
+				.sheet(isPresented: $showingDownloadPage) {
+					DownloadCoverView(selectedImage: $inputImage)
+				}
                 .alert("Se va a modificar este registro.", isPresented: $showingAlert) {
                     Button("No", role: .cancel) { }
                     Button("Sí") {
@@ -35,6 +70,13 @@ extension BookEditing {
                         if newPlace == soldText || newPlace == donatedText {
                             book.isActive = false
                         }
+						if let inputImage {
+							let newCover = imageCoverName(from: book.bookTitle)
+							book.cover = newCover
+							saveJpg(inputImage, title: newCover)
+						} else {
+							book.cover = nil
+						}
                         book.synopsis = newSynopsis
                         dismiss()
                     }
@@ -49,6 +91,9 @@ extension BookEditing {
                 .onAppear {
 					isOnWaitingList = model.user.nowReading.contains(where: { $0.bookTitle == book.bookTitle }) ||
 					model.user.nowWaiting.contains(where: { $0.bookTitle == book.bookTitle })
+					if let cover = book.cover {
+						inputImage = getCoverImage(from: cover)
+					}
                 }
         }
     }
