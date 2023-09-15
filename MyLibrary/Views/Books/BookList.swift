@@ -10,6 +10,7 @@ import SwiftUI
 struct BookList: View {
     @EnvironmentObject var model: UserViewModel
     @State private var searchText = ""
+	@State var showingGridWithCovers = false
     
     let place: String
     var filterByStatus: FilterByStatus = .all
@@ -47,15 +48,33 @@ struct BookList: View {
 	}
     
     var body: some View {
-        List(searchedBooks) { book in
-            NavigationLink(destination: BookDetail(book: book)) {
-                BookRow(book: book)
-            }
-        }
-        .navigationTitle(navigationTitle)
-        .navigationBarTitleDisplayMode(.inline)
-        .searchable(text: $searchText, prompt: "Búsqueda por título o autor")
-        .disableAutocorrection(true)
+		NavigationStack {
+			if showingGridWithCovers {
+				BooksGrid(books: filteredBooks)
+			} else {
+				List(searchedBooks) { book in
+					NavigationLink(destination: BookDetail(book: book)) {
+						BookRow(book: book)
+					}
+				}
+				.searchable(text: $searchText, prompt: "Búsqueda por título o autor")
+				.disableAutocorrection(true)
+			}
+		}
+		.navigationTitle(navigationTitle)
+		.navigationBarTitleDisplayMode(.inline)
+		.toolbar {
+			ToolbarItem(placement: .navigationBarTrailing) {
+				Button {
+					withAnimation {
+						showingGridWithCovers.toggle()
+					}
+				} label: {
+					Image(systemName: showingGridWithCovers ? "list.star" : "square.grid.3x3")
+				}
+				
+			}
+		}
     }
 }
 
