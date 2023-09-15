@@ -127,9 +127,9 @@ extension AddReading {
 										model.user.ebooks[index].cover = imageCoverName(from: bookTitle)
 									}
 								} else {
-//									if let index = model.user.books.firstIndex(where: { $0.bookTitle == bookTitle }) {
-//										model.user.books[index].cover = imageCoverName(from: bookTitle)
-//									}
+									if let index = model.user.books.firstIndex(where: { $0.bookTitle == bookTitle }) {
+										model.user.books[index].cover = imageCoverName(from: bookTitle)
+									}
 								}
 							}
 							dismiss()
