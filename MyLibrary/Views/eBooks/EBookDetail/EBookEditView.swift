@@ -53,7 +53,6 @@ struct EBookEditView: View {
 								.frame(height: 150)
 							Button {
 								self.inputImage = nil
-								ebook.cover = nil
 							} label: {
 								Image(systemName: "xmark.circle")
 									.foregroundColor(.secondary)
@@ -95,6 +94,8 @@ struct EBookEditView: View {
 								ebook.cover = newCover
 								saveJpg(inputImage, title: newCover)
 							}
+						} else {
+							ebook.cover = nil
 						}
 						dismiss()
 					}
