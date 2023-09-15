@@ -89,9 +89,12 @@ struct EBookEditView: View {
 					Button("Modificar") {
 						ebook.status = newStatus
 						if let inputImage {
-							let newCover = imageCoverName(from: ebook.bookTitle)
-							ebook.cover = newCover
-							saveJpg(inputImage, title: newCover)
+							// Añadir pequeño retardo para que grabe bien
+							DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+								let newCover = imageCoverName(from: ebook.bookTitle)
+								ebook.cover = newCover
+								saveJpg(inputImage, title: newCover)
+							}
 						}
 						dismiss()
 					}

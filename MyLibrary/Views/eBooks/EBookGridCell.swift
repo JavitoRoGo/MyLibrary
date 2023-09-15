@@ -32,6 +32,7 @@ struct EBookGridCell: View {
 				.foregroundColor(colorStatus(ebook.status))
 				.offset(x: 15, y: -5)
 		}
+		.padding(.bottom)
     }
 }
 

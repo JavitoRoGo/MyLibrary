@@ -122,6 +122,15 @@ extension AddReading {
 							model.user.nowWaiting.append(newBook)
 							if let inputImage = inputImage {
 								saveJpg(inputImage, title: bookTitle)
+								if newBook.formatt == .kindle {
+									if let index = model.user.ebooks.firstIndex(where: { $0.bookTitle == bookTitle }) {
+										model.user.ebooks[index].cover = imageCoverName(from: bookTitle)
+									}
+								} else {
+//									if let index = model.user.books.firstIndex(where: { $0.bookTitle == bookTitle }) {
+//										model.user.books[index].cover = imageCoverName(from: bookTitle)
+//									}
+								}
 							}
 							dismiss()
 						}
