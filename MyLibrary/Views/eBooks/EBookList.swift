@@ -21,7 +21,7 @@ struct EBookList: View {
 			} else {
 				List(ebooksToShow) { ebook in
 					let index = model.user.ebooks.firstIndex(of: ebook)!
-					NavigationLink(destination: EBookDetail(ebook: $model.user.ebooks[index], newStatus: ebook.status)) {
+					NavigationLink(destination: EBookDetail(ebook: $model.user.ebooks[index])) {
 						EBookRow(ebook: ebook)
 					}
 				}

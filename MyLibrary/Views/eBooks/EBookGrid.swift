@@ -18,7 +18,7 @@ struct EBookGrid: View {
 			LazyVGrid(columns: columns) {
 				ForEach(ebooks) { ebook in
 					let index = model.user.ebooks.firstIndex(of: ebook)!
-					NavigationLink(destination: EBookDetail(ebook: $model.user.ebooks[index], newStatus: ebook.status)) {
+					NavigationLink(destination: EBookDetail(ebook: $model.user.ebooks[index])) {
 						EBookGridCell(ebook: ebook)
 					}
 				}

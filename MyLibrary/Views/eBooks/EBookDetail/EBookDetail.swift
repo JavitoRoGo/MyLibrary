@@ -11,7 +11,6 @@ struct EBookDetail: View {
     @EnvironmentObject var model: UserViewModel
     
     @Binding var ebook: EBooks
-    @State var newStatus: ReadingStatus
     
     @State var showingEditPage = false
     @State var showingInfoAlert = false
@@ -21,8 +20,6 @@ struct EBookDetail: View {
     @State var showingDeleteAlert = false
     @State var showingRDDetail = false
     @State var showingRSDetail = false
-    @State var showingAddWaitingList = false
-    @State var isOnWaitingList = false
     
     var body: some View {
         VStack {
@@ -55,20 +52,7 @@ struct EBookDetail: View {
                     }
                 }
             }
-            .modifier(EBookDetailModifier(showingDeleteAlert: $showingDeleteAlert, showingEditPage: $showingEditPage, showingInfoAlert: $showingInfoAlert, showingRDDetail: $showingRDDetail, showingRSDetail: $showingRDDetail, ebook: ebook, titleInfoAlert: titleInfoAlert, messageInfoAlert: messageInfoAlert))
-            
-            if showingEditPage {
-                editView
-            }
-        }
-        .sheet(isPresented: $showingAddWaitingList) {
-            NavigationView {
-                AddReading(bookTitle: ebook.bookTitle, synopsis: ebook.synopsis ?? "Sinopsis no disponible.", formatt: .kindle)
-            }
-        }
-        .onAppear {
-			isOnWaitingList = model.user.nowReading.contains(where: { $0.bookTitle == ebook.bookTitle }) ||
-			model.user.nowWaiting.contains(where: { $0.bookTitle == ebook.bookTitle })
+            .modifier(EBookDetailModifier(showingDeleteAlert: $showingDeleteAlert, showingEditPage: $showingEditPage, showingInfoAlert: $showingInfoAlert, showingRDDetail: $showingRDDetail, showingRSDetail: $showingRDDetail, ebook: $ebook, titleInfoAlert: titleInfoAlert, messageInfoAlert: messageInfoAlert))
         }
     }
 }
@@ -76,7 +60,7 @@ struct EBookDetail: View {
 struct EBookDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            EBookDetail(ebook: .constant(EBooks.dataTest), newStatus: .consulting)
+            EBookDetail(ebook: .constant(EBooks.dataTest))
                 .environmentObject(UserViewModel())
         }
     }

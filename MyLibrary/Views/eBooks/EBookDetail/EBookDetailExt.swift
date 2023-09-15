@@ -18,7 +18,7 @@ extension EBookDetail {
         @Binding var showingRDDetail: Bool
         @Binding var showingRSDetail: Bool
         
-        let ebook: EBooks
+        @Binding var ebook: EBooks
         let titleInfoAlert: String
         let messageInfoAlert: String
         
@@ -87,6 +87,9 @@ extension EBookDetail {
                         }
                     }
                 }
+				.sheet(isPresented: $showingEditPage) {
+					EBookEditView(ebook: $ebook, newStatus: ebook.status)
+				}
                 .alert("¿Deseas eliminar este registro?", isPresented: $showingDeleteAlert) {
                     Button("Cancelar", role: .cancel) { }
                     Button("Eliminar", role: .destructive) {

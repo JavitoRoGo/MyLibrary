@@ -15,7 +15,7 @@ struct DownloadCoverView: View {
     @State private var resultImages = [UIImage]()
     
     let pickerTitles = ["ISBN", "Título", "Autor"]
-    @State private var pickerSelection = 0
+    @State private var pickerSelection = 1
     @State private var searchText = ""
     
     @State private var showingResults = false
