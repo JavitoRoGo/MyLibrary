@@ -17,25 +17,15 @@ struct BookList: View {
     
     var filteredBooks: [Books] {
         if place != "all" {
-            if filterByStatus == .all && filterByOwner == "all" {
-                return model.booksAtPlace(place)
-            } else if filterByStatus == .all {
-                return model.booksAtPlace(place).filter { $0.owner == filterByOwner }
-            } else if filterByOwner == "all" {
-                return model.booksAtPlace(place).filter { $0.status.rawValue == filterByStatus.rawValue }
-            } else {
-                return model.booksAtPlace(place).filter { $0.status.rawValue == filterByStatus.rawValue && $0.owner == filterByOwner }
-            }
+			return model.booksAtPlace(place)
         } else {
-            if filterByStatus == .all && filterByOwner == "all" {
-                return model.activeBooks.reversed()
-            } else if filterByStatus == .all {
+			if filterByOwner != "all" {
                 return model.activeBooks.filter { $0.owner == filterByOwner }.reversed()
-            } else if filterByOwner == "all" {
+			} else if filterByStatus != .all {
                 return model.activeBooks.filter { $0.status.rawValue == filterByStatus.rawValue }.reversed()
-            } else {
-                return model.activeBooks.filter { $0.status.rawValue == filterByStatus.rawValue && $0.owner == filterByOwner }.reversed()
-            }
+			} else {
+				return model.activeBooks.reversed()
+			}
         }
     }
     var searchedBooks: [Books] {
@@ -45,6 +35,16 @@ struct BookList: View {
             return filteredBooks.filter { $0.bookTitle.lowercased().contains(searchText.lowercased()) || $0.author.lowercased().contains(searchText.lowercased()) }
         }
     }
+	
+	var navigationTitle: String {
+		if filterByStatus != .all {
+			return "\(filterByStatus.rawValue) - \(filteredBooks.count)"
+		}
+		if filterByOwner != "all" {
+			return "\(filterByOwner) - \(filteredBooks.count)"
+		}
+		return "\(place == "all" ? "Todos" : place) - \(filteredBooks.count)"
+	}
     
     var body: some View {
         List(searchedBooks) { book in
@@ -52,7 +52,7 @@ struct BookList: View {
                 BookRow(book: book)
             }
         }
-        .navigationTitle("\(place == "all" ? "Todos" : place) (\(filteredBooks.count) entradas)")
+        .navigationTitle(navigationTitle)
         .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $searchText, prompt: "Búsqueda por título o autor")
         .disableAutocorrection(true)
