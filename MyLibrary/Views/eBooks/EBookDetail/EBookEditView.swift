@@ -78,6 +78,8 @@ struct EBookEditView: View {
 				}
 				Spacer()
 			}
+			.navigationTitle("Editar...")
+			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItem(placement: .navigationBarLeading) {
 					Button("Cancelar") {

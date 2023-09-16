@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddEBook: View {
     @EnvironmentObject var model: UserViewModel
-    @Environment(\.dismiss) var dismiss
     
     @State var showingAlert = false
     @State var showingAddWaitingAlert = false
@@ -38,21 +37,7 @@ struct AddEBook: View {
     @State var searchArray = [String]()
     
     var body: some View {
-        VStack {
-            HStack {
-                Button("Cancelar") {
-                    dismiss()
-                }
-                Spacer()
-                Text("Nuevo registro: \(newID)")
-                Spacer()
-                Button("Añadir") {
-                    showingAlert = true
-                }
-                .disabled(isDisabled)
-            }
-            .padding([.top, .leading, .trailing])
-            
+        NavigationStack {
             Form {
                 authorSection
                 
@@ -77,8 +62,8 @@ struct AddEBook: View {
                         .frame(height: 200)
                 }
             }
+			.modifier(AddEBookModifier(showingAddWaitingAlert: $showingAddWaitingAlert, showingAddWaiting: $showingAddWaiting, showingSearchAlert: $showingSearchAlert, showingSearchResults: $showingSearchResults, showingAlert: $showingAlert, showingCoverSelection: $showingCoverSelection, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingDownloadPage: $showingDownloadPage, inputImage: $inputImage, newAuthor: $newAuthor, newID: newID, newBookTitle: newBookTitle, synopsis: synopsis, searchResultsTitle: searchResultsTitle, searchResultsMessage: searchResultsMessage, searchArray: searchArray, createNewEBook: createNewEBook))
         }
-		.modifier(AddEBookModifier(showingAddWaitingAlert: $showingAddWaitingAlert, showingAddWaiting: $showingAddWaiting, showingSearchAlert: $showingSearchAlert, showingSearchResults: $showingSearchResults, showingAlert: $showingAlert, showingCoverSelection: $showingCoverSelection, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingDownloadPage: $showingDownloadPage, inputImage: $inputImage, newAuthor: $newAuthor, newBookTitle: newBookTitle, synopsis: synopsis, searchResultsTitle: searchResultsTitle, searchResultsMessage: searchResultsMessage, searchArray: searchArray, createNewEBook: createNewEBook))
     }
 }
 

@@ -50,7 +50,8 @@ extension AddEBook {
 		} else {
 			cover = nil
 		}
-        return EBooks(id: newID, author: newAuthor, bookTitle: newBookTitle, originalTitle: newOriginalTitle, year: newYear, pages: newPages, price: newPrice, owner: newOwner, status: newStatus, synopsis: synopsis.isEmpty ? nil : synopsis, cover: cover)
+        let newEBook = EBooks(id: newID, author: newAuthor, bookTitle: newBookTitle, originalTitle: newOriginalTitle, year: newYear, pages: newPages, price: newPrice, owner: newOwner, status: newStatus, synopsis: synopsis.isEmpty ? nil : synopsis, cover: cover)
+		return newEBook
     }
     
     struct AddEBookModifier: ViewModifier {
@@ -71,6 +72,7 @@ extension AddEBook {
 		
         @Binding var newAuthor: String
         
+		let newID: Int
         let newBookTitle: String
         let synopsis: String
         let searchResultsTitle: String
@@ -81,6 +83,18 @@ extension AddEBook {
         func body(content: Content) -> some View {
             content
                 .autocorrectionDisabled()
+				.navigationTitle("Nuevo registro: \(newID)")
+				.navigationBarTitleDisplayMode(.inline)
+				.toolbar {
+					ToolbarItem(placement: .navigationBarLeading) {
+						Button("Cancelar") { dismiss() }
+					}
+					ToolbarItem(placement: .navigationBarTrailing) {
+						Button("Añadir") {
+							showingAlert = true
+						}
+					}
+				}
 				.confirmationDialog("Selecciona una opción para la portada:", isPresented: $showingCoverSelection, titleVisibility: .visible) {
 					Button("Cancelar", role: .cancel) { }
 					Button("Seleccionar foto") {

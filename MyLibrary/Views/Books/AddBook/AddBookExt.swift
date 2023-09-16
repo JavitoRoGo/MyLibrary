@@ -62,7 +62,8 @@ extension AddBook {
 		} else {
 			cover = nil
 		}
-        return Books(id: newID, author: newAuthor, bookTitle: newBookTitle, originalTitle: newOriginalTitle, publisher: newPublisher, city: newCity, edition: newEdition, editionYear: newYear, writingYear: newWritingYear, coverType: newCoverType, isbn1: newISBN1, isbn2: newISBN2, isbn3: newISBN3, isbn4: newISBN4, isbn5: newISBN5, pages: newPages, height: newHeight, width: newWidth, thickness: newThickness, weight: newWeight, price: newPrice, place: newPlace, owner: newOwner, status: newStatus, isActive: true, synopsis: (newSynopsis.isEmpty ? nil : newSynopsis), cover: cover)
+        let newBook = Books(id: newID, author: newAuthor, bookTitle: newBookTitle, originalTitle: newOriginalTitle, publisher: newPublisher, city: newCity, edition: newEdition, editionYear: newYear, writingYear: newWritingYear, coverType: newCoverType, isbn1: newISBN1, isbn2: newISBN2, isbn3: newISBN3, isbn4: newISBN4, isbn5: newISBN5, pages: newPages, height: newHeight, width: newWidth, thickness: newThickness, weight: newWeight, price: newPrice, place: newPlace, owner: newOwner, status: newStatus, isActive: true, synopsis: (newSynopsis.isEmpty ? nil : newSynopsis), cover: cover)
+		return newBook
     }
 }
 
