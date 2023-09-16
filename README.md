@@ -70,3 +70,13 @@ ConnectivityManager para conectar con iOS.
 * En la vista de Usuario se añaden botones para borrar todos los datos registrados y mantener el usuario, o para eliminar el usuario y sus datos.
 * Las funciones de cambio de tiempos entre String<- ->Double se eliminan como tal y se reescriben como extensiones de String y Double. También alguna función para fechas como extensión de Date.
 * Se eliminan las funciones de formateado de números y se sustituye por código de formato nativo de SwiftUI.
+
+
+# v1.3
+
+* Se añade la funcionalidad de poder elegir una portada para libros y ebooks, tanto al crear uno nuevo como al editarlo en la vista detalle correspondiente. Se puede elegir entre seleccionar una imagen existente, hacer foto, o descargar la portada.
+* Opción de lista o vista de parrilla de portadas al listar los libros y ebooks.
+* Opción de elegir por defecto entre lista y parrilla en la vista de usuario.
+* Se muestra la portada, si existe, en la vista detalle.
+* En la vista en parrilla se muestra solo el título si la imagen de portada no existe.
+
