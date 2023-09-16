@@ -96,7 +96,7 @@ struct UserMainView: View {
 								Label("Parrilla de portadas", systemImage: "square.grid.3x3")
 							}
 						} footer: {
-							Text("Elige la vista por defecto para los libros y ebooks: lista o parrilla con las portadas.")
+							Text("Elige la vista por defecto para los libros y ebooks.")
 						}
                         
                         Section {
