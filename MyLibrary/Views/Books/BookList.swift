@@ -10,6 +10,7 @@ import SwiftUI
 struct BookList: View {
     @EnvironmentObject var model: UserViewModel
     @State private var searchText = ""
+	@State private var customPreferredGridView = false
     
     let place: String
     var filterByStatus: FilterByStatus = .all
@@ -48,7 +49,7 @@ struct BookList: View {
     
     var body: some View {
 		NavigationStack {
-			if model.preferredGridView {
+			if customPreferredGridView {
 				BooksGrid(books: filteredBooks)
 			} else {
 				List(searchedBooks) { book in
@@ -66,14 +67,15 @@ struct BookList: View {
 			ToolbarItem(placement: .navigationBarTrailing) {
 				Button {
 					withAnimation {
-						model.preferredGridView.toggle()
+						customPreferredGridView.toggle()
 					}
 				} label: {
-					Image(systemName: model.preferredGridView ? "list.star" : "square.grid.3x3")
+					Image(systemName: customPreferredGridView ? "list.star" : "square.grid.3x3")
 				}
 				
 			}
 		}
+		.onAppear { customPreferredGridView = model.preferredGridView }
     }
 }
 

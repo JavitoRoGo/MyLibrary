@@ -10,12 +10,14 @@ import SwiftUI
 struct EBookList: View {
     @EnvironmentObject var model: UserViewModel
     @State var searchText = ""
+	@State private var customPreferredGridVew = false
+	
     let filter: FilterByStatus
     var filteredOwner: String? = nil
     
     var body: some View {
         NavigationStack {
-			if model.preferredGridView {
+			if customPreferredGridVew {
 				EBookGrid(ebooks: ebooksToShow)
 			} else {
 				List(ebooksToShow) { ebook in
@@ -34,14 +36,15 @@ struct EBookList: View {
 			ToolbarItem(placement: .navigationBarTrailing) {
 				Button {
 					withAnimation {
-						model.preferredGridView.toggle()
+						customPreferredGridVew.toggle()
 					}
 				} label: {
-					Image(systemName: model.preferredGridView ? "list.star" : "square.grid.3x3")
+					Image(systemName: customPreferredGridVew ? "list.star" : "square.grid.3x3")
 				}
 
 			}
 		}
+		.onAppear { customPreferredGridVew = model.preferredGridView }
     }
 }
 
