@@ -31,6 +31,8 @@ extension BookEditing {
         
         func body(content: Content) -> some View {
             content
+				.navigationTitle("Editar...")
+				.navigationBarTitleDisplayMode(.inline)
 				.toolbar {
 					ToolbarItem(placement: .navigationBarLeading) {
 						Button("Cancelar") { dismiss() }

@@ -55,7 +55,14 @@ extension AddBook {
     }
     
     func createNewBook() -> Books {
-        return Books(id: newID, author: newAuthor, bookTitle: newBookTitle, originalTitle: newOriginalTitle, publisher: newPublisher, city: newCity, edition: newEdition, editionYear: newYear, writingYear: newWritingYear, coverType: newCoverType, isbn1: newISBN1, isbn2: newISBN2, isbn3: newISBN3, isbn4: newISBN4, isbn5: newISBN5, pages: newPages, height: newHeight, width: newWidth, thickness: newThickness, weight: newWeight, price: newPrice, place: newPlace, owner: newOwner, status: newStatus, isActive: true, synopsis: (newSynopsis.isEmpty ? nil : newSynopsis))
+		let cover: String?
+		if let inputImage {
+			cover = imageCoverName(from: newBookTitle)
+			saveJpg(inputImage, title: cover!)
+		} else {
+			cover = nil
+		}
+        return Books(id: newID, author: newAuthor, bookTitle: newBookTitle, originalTitle: newOriginalTitle, publisher: newPublisher, city: newCity, edition: newEdition, editionYear: newYear, writingYear: newWritingYear, coverType: newCoverType, isbn1: newISBN1, isbn2: newISBN2, isbn3: newISBN3, isbn4: newISBN4, isbn5: newISBN5, pages: newPages, height: newHeight, width: newWidth, thickness: newThickness, weight: newWeight, price: newPrice, place: newPlace, owner: newOwner, status: newStatus, isActive: true, synopsis: (newSynopsis.isEmpty ? nil : newSynopsis), cover: cover)
     }
 }
 
@@ -77,18 +84,58 @@ extension AddBook {
 		@Binding var newCity: String
 		@Binding var newBook: Books?
 		
+		@Binding var showingCoverSelection: Bool
+		@Binding var showingImagePicker: Bool
+		@Binding var showingCameraPicker: Bool
+		@Binding var showingDownloadPage: Bool
+		@Binding var inputImage: UIImage?
+		
 		let newBookTitle: String
 		let newSynopsis: String
 		let searchResultsTitle: String
 		let searchResultsMessage: String
 		let searchArray: [String]
 		let myTag: Int
+		let newID: Int
+		let isDisabled: Bool
 		
 		let createNewBook: () -> Books
 		
 		func body(content: Content) -> some View {
 			content
 				.autocorrectionDisabled()
+				.navigationTitle("Nuevo registro: \(newID)")
+				.navigationBarTitleDisplayMode(.inline)
+				.confirmationDialog("Selecciona una opción para la portada:", isPresented: $showingCoverSelection, titleVisibility: .visible) {
+					Button("Cancelar", role: .cancel) { }
+					Button("Seleccionar foto") {
+						showingImagePicker = true
+					}
+					Button("Hacer foto") {
+						showingCameraPicker = true
+					}
+					Button("Descargar imagen") {
+						showingDownloadPage = true
+					}
+				}
+				.sheet(isPresented: $showingImagePicker) {
+					ImagePicker(image: $inputImage)
+				}
+				.sheet(isPresented: $showingCameraPicker) {
+					CameraPicker(image: $inputImage)
+				}
+				.sheet(isPresented: $showingDownloadPage) {
+					DownloadCoverView(selectedImage: $inputImage)
+				}
+				.toolbar {
+					ToolbarItem(placement: .navigationBarLeading) {
+						Button("Cancelar") { dismiss() }
+					}
+					ToolbarItem(placement: .navigationBarTrailing) {
+						Button("Añadir") { showingAlert = true }
+							.disabled(isDisabled)
+					}
+				}
 				.alert("¿Deseas añadir el nuevo registro?", isPresented: $showingAlert) {
 					Button("No", role: .cancel) { }
 					Button("Sí") {

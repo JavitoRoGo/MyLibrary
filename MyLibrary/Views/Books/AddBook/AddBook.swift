@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddBook: View {
     @EnvironmentObject var model: UserViewModel
-    @Environment(\.dismiss) var dismiss
     
     @State var showingAlert = false
     @State var showingAddWaitingAlert = false
@@ -49,23 +48,15 @@ struct AddBook: View {
     @State var searchResults = 0
     @State var searchArray = [String]()
     @State var myTag = 0
+	
+	@State var showingCoverSelection = false
+	@State var showingImagePicker = false
+	@State var showingCameraPicker = false
+	@State var showingDownloadPage = false
+	@State var inputImage: UIImage?
         
     var body: some View {
-        VStack {
-            HStack {
-                Button("Cancelar") {
-                    dismiss()
-                }
-                Spacer()
-                Text("Nuevo registro: \(newID)")
-                Spacer()
-                Button("Añadir") {
-                    showingAlert = true
-                }
-                .disabled(isDisabled)
-            }
-            .padding([.top, .leading, .trailing])
-            
+        NavigationStack {
             Form {
                 authorSection
                 
@@ -80,8 +71,8 @@ struct AddBook: View {
                         .frame(height: 150)
                 }
             }
+			.modifier(AddBookModifier(showingAlert: $showingAlert, showingAddWaitingAlert: $showingAddWaitingAlert, showingAddWaiting: $showingAddWaiting, showingSearchAlert: $showingSearchAlert, showingSearchResults: $showingSearchResults, newAuthor: $newAuthor, newPublisher: $newPublisher, newCity: $newCity, newBook: $newBook, showingCoverSelection: $showingCoverSelection, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingDownloadPage: $showingDownloadPage, inputImage: $inputImage, newBookTitle: newBookTitle, newSynopsis: newSynopsis, searchResultsTitle: searchResultsTitle, searchResultsMessage: searchResultsMessage, searchArray: searchArray, myTag: myTag, newID: newID, isDisabled: isDisabled, createNewBook: createNewBook))
         }
-        .modifier(AddBookModifier(showingAlert: $showingAlert, showingAddWaitingAlert: $showingAddWaitingAlert, showingAddWaiting: $showingAddWaiting, showingSearchAlert: $showingSearchAlert, showingSearchResults: $showingSearchResults, newAuthor: $newAuthor, newPublisher: $newPublisher, newCity: $newCity, newBook: $newBook, newBookTitle: newBookTitle, newSynopsis: newSynopsis, searchResultsTitle: searchResultsTitle, searchResultsMessage: searchResultsMessage, searchArray: searchArray, myTag: myTag, createNewBook: createNewBook))
     }
 }
 
