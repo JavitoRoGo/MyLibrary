@@ -9,14 +9,13 @@ import SwiftUI
 
 struct EBookList: View {
     @EnvironmentObject var model: UserViewModel
-	@State var showingGridWithCovers = false
     @State var searchText = ""
     let filter: FilterByStatus
     var filteredOwner: String? = nil
     
     var body: some View {
         NavigationStack {
-			if showingGridWithCovers {
+			if model.preferredGridView {
 				EBookGrid(ebooks: ebooksToShow)
 			} else {
 				List(ebooksToShow) { ebook in
@@ -35,10 +34,10 @@ struct EBookList: View {
 			ToolbarItem(placement: .navigationBarTrailing) {
 				Button {
 					withAnimation {
-						showingGridWithCovers.toggle()
+						model.preferredGridView.toggle()
 					}
 				} label: {
-					Image(systemName: showingGridWithCovers ? "list.star" : "square.grid.3x3")
+					Image(systemName: model.preferredGridView ? "list.star" : "square.grid.3x3")
 				}
 
 			}

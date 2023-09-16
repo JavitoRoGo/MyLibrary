@@ -34,6 +34,11 @@ final class UserViewModel: ObservableObject {
 	
 	var storedPassword: String { keychain.get("storedPassword") ?? "" }
 	@AppStorage("isBiometricsAllowed") var isBiometricsAllowed = false
+	@AppStorage("preferredGridView") var preferredGridView = false
+	var preferredListView: Bool {
+		get { !preferredGridView }
+		set { preferredGridView = !newValue }
+	}
 	
 	private var cancellableSet: Set<AnyCancellable> = []
 	

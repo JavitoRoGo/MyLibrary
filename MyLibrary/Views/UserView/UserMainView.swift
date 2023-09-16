@@ -87,6 +87,17 @@ struct UserMainView: View {
                                 Text("Comentarios por libro")
                             }
                         }
+						
+						Section {
+							Toggle(isOn: $model.preferredListView) {
+								Label("Listado de libros", systemImage: "list.star")
+							}
+							Toggle(isOn: $model.preferredGridView) {
+								Label("Parrilla de portadas", systemImage: "square.grid.3x3")
+							}
+						} footer: {
+							Text("Elige la vista por defecto para los libros y ebooks: lista o parrilla con las portadas.")
+						}
                         
                         Section {
                             Toggle(isOn: $model.isBiometricsAllowed) {
