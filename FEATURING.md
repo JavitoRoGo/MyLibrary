@@ -26,3 +26,4 @@
 * Cambiar de vista con botón como estaba inicialmente en ReadingData.
 * En la vista en grid mostrar una portada genérica con título si no se dispone de ninguna, como en epublibre.
 * Mostrar portada también en la vista detalle, pero solo si existe.
+* Añadir opción en vista de usuario para elegir por defecto entre lista y mosaico en BookList y EBookList.
