@@ -29,40 +29,42 @@ struct BookEditing: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
-                    VStack(alignment: .leading) {
-                        Text("Título:")
-                            .font(.subheadline)
-                        TextField(book.bookTitle, text: $newBookTitle)
-                            .font(.headline)
-                            .disableAutocorrection(true)
-                    }
-                }
-				
-                pickers
-                
-                Section {
-                    TextEditor(text: $newSynopsis)
-                        .frame(height: 150)
-                }
+			VStack {
+				Form {
+					Section {
+						VStack(alignment: .leading) {
+							Text("Título:")
+								.font(.subheadline)
+							TextField(book.bookTitle, text: $newBookTitle)
+								.font(.headline)
+								.disableAutocorrection(true)
+						}
+					}
+					
+					pickers
+					
+					Section {
+						TextEditor(text: $newSynopsis)
+							.frame(height: 150)
+					}
+					
+					Section {
+						if newStatus == .notRead || newStatus == .reading || newStatus == .waiting {
+							HStack {
+								Text("¿Está en la lista de lectura?")
+								Spacer()
+								Image(systemName: isOnWaitingList ? "star.fill" : "star")
+									.foregroundColor(isOnWaitingList ? .yellow : .gray.opacity(0.8))
+							}
+							Toggle("Añadir a la lista de lectura", isOn: $showingAddWaitingList)
+								.foregroundColor(isOnWaitingList ? .secondary : .primary)
+								.disabled(isOnWaitingList)
+						}
+					}
+				}
 				
 				imageSelector
-				
-                Section {
-                    if newStatus == .notRead || newStatus == .reading || newStatus == .waiting {
-                        HStack {
-                            Text("¿Está en la lista de lectura?")
-                            Spacer()
-                            Image(systemName: isOnWaitingList ? "star.fill" : "star")
-                                .foregroundColor(isOnWaitingList ? .yellow : .gray.opacity(0.8))
-                        }
-                        Toggle("Añadir a la lista de lectura", isOn: $showingAddWaitingList)
-                            .foregroundColor(isOnWaitingList ? .secondary : .primary)
-                            .disabled(isOnWaitingList)
-                    }
-                }
-            }
+			}
 			.modifier(BookEditingModifier(book: $book, showingAlert: $showingAlert, showingAddWaitingList: $showingAddWaitingList, isOnWaitingList: $isOnWaitingList, showingCoverSelection: $showingCoverSelection, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingDownloadPage: $showingDownloadPage, inputImage: $inputImage, newBookTitle: newBookTitle, newStatus: newStatus, newOwner: newOwner, newPlace: newPlace, newSynopsis: newSynopsis))
         }
     }

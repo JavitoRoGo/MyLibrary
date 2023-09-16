@@ -51,34 +51,32 @@ extension BookEditing {
 	}
 	
 	var imageSelector: some View {
-		Section {
-			VStack(alignment: .center, spacing: 15) {
-				Button {
-					showingCoverSelection = true
-				} label: {
-					if inputImage != nil {
-						Text("Cambiar portada")
-					} else {
-						Text("Añadir portada")
+		VStack(alignment: .center, spacing: 15) {
+			Button {
+				showingCoverSelection = true
+			} label: {
+				if inputImage != nil {
+					Text("Cambiar portada")
+				} else {
+					Text("Añadir portada")
+				}
+			}
+			.buttonStyle(.borderedProminent)
+			
+			if let inputImage {
+				HStack {
+					Image(uiImage: inputImage)
+						.resizable()
+						.scaledToFit()
+						.frame(height: 150)
+					Button {
+						self.inputImage = nil
+					} label: {
+						Image(systemName: "xmark.circle")
+							.foregroundColor(.secondary)
 					}
 				}
-				.buttonStyle(.borderedProminent)
-				
-				if let inputImage {
-					HStack {
-						Image(uiImage: inputImage)
-							.resizable()
-							.scaledToFit()
-							.frame(height: 150)
-						Button {
-							self.inputImage = nil
-						} label: {
-							Image(systemName: "xmark.circle")
-								.foregroundColor(.secondary)
-						}
-					}
-					.offset(x: 18)
-				}
+				.offset(x: 18)
 			}
 		}
 	}
