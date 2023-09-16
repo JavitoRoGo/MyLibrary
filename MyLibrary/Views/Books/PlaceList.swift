@@ -19,11 +19,11 @@ struct PlaceList: View {
     
     var body: some View {
         List() {
-            NavigationLink(destination: BookList(place: "all")) {
+			NavigationLink(destination: BookList(customPreferredGridView: model.preferredGridView, place: "all")) {
                 PlaceRow(place: "all")
             }
             ForEach(places, id: \.self) { place in
-                NavigationLink(destination: BookList(place: place)) {
+                NavigationLink(destination: BookList(customPreferredGridView: model.preferredGridView, place: place)) {
                     PlaceRow(place: place)
                 }
             }

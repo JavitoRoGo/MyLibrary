@@ -10,14 +10,14 @@ import SwiftUI
 struct EBookList: View {
     @EnvironmentObject var model: UserViewModel
     @State var searchText = ""
-	@State private var customPreferredGridVew = false
+	@State var customPreferredGridView: Bool
 	
     let filter: FilterByStatus
     var filteredOwner: String? = nil
     
     var body: some View {
         NavigationStack {
-			if customPreferredGridVew {
+			if customPreferredGridView {
 				EBookGrid(ebooks: ebooksToShow)
 			} else {
 				List(ebooksToShow) { ebook in
@@ -36,22 +36,21 @@ struct EBookList: View {
 			ToolbarItem(placement: .navigationBarTrailing) {
 				Button {
 					withAnimation {
-						customPreferredGridVew.toggle()
+						customPreferredGridView.toggle()
 					}
 				} label: {
-					Image(systemName: customPreferredGridVew ? "list.star" : "square.grid.3x3")
+					Image(systemName: customPreferredGridView ? "list.star" : "square.grid.3x3")
 				}
 
 			}
 		}
-		.onAppear { customPreferredGridVew = model.preferredGridView }
     }
 }
 
 struct EBookList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            EBookList(filter: .all, filteredOwner: nil)
+			EBookList(customPreferredGridView: false, filter: .all, filteredOwner: nil)
                 .environmentObject(UserViewModel())
         }
     }

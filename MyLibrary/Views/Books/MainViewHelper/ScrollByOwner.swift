@@ -26,11 +26,11 @@ struct ScrollByOwner: View {
                 HStack(spacing: 10) {
                     if format == .book {
 						ForEach(model.user.myOwners, id:\.self) { owner in
-                            EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numberOfBooksByOwner(owner), title: owner, destination: BookList(place: "all", filterByOwner: owner))
+                            EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numberOfBooksByOwner(owner), title: owner, destination: BookList(customPreferredGridView: model.preferredGridView, place: "all", filterByOwner: owner))
                         }
                     } else {
 						ForEach(model.user.myOwners, id:\.self) { owner in
-                            EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numberOfEbooksByOwner(owner), title: owner, destination: EBookList(filter: .all, filteredOwner: owner))
+                            EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numberOfEbooksByOwner(owner), title: owner, destination: EBookList(customPreferredGridView: model.preferredGridView, filter: .all, filteredOwner: owner))
                         }
                     }
                 }

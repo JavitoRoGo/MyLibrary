@@ -10,7 +10,7 @@ import SwiftUI
 struct BookList: View {
     @EnvironmentObject var model: UserViewModel
     @State private var searchText = ""
-	@State private var customPreferredGridView = false
+	@State var customPreferredGridView: Bool
     
     let place: String
     var filterByStatus: FilterByStatus = .all
@@ -75,14 +75,13 @@ struct BookList: View {
 				
 			}
 		}
-		.onAppear { customPreferredGridView = model.preferredGridView }
     }
 }
 
 struct BookList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            BookList(place: "A1")
+			BookList(customPreferredGridView: false, place: "A1")
                 .environmentObject(UserViewModel())
         }
     }

@@ -23,7 +23,7 @@ struct ScrollByPlace: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 5) {
                     ForEach(places, id: \.self) { place in
-                        NavigationLink(destination: BookList(place: place)) {
+                        NavigationLink(destination: BookList(customPreferredGridView: model.preferredGridView, place: place)) {
                             VStack {
                                 Text(place)
                                     .font(.title3.bold())
