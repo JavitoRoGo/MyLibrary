@@ -12486,6 +12486,7 @@
       "originalTitle" : "Becoming Steve Jobs: the evolution of a reckless upstart into a visionary leader",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "librodestevejobsel",
       "id" : 456,
       "isbn5" : 7,
       "height" : 21.5,
@@ -15845,6 +15846,7 @@
       "originalTitle" : "Prussian blue",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "azuldeprusia",
       "id" : 576,
       "isbn5" : 0,
       "height" : 22,
@@ -16013,6 +16015,7 @@
       "originalTitle" : "Yo, Julia",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "yojulia",
       "id" : 582,
       "isbn5" : 9,
       "height" : 23.800000000000001,
@@ -16069,6 +16072,7 @@
       "originalTitle" : "infinito, El",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "infinitoel",
       "id" : 584,
       "isbn5" : 0,
       "height" : 23.699999999999999,
@@ -16125,6 +16129,7 @@
       "originalTitle" : "Fox, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "zorroel",
       "id" : 586,
       "isbn5" : 1,
       "height" : 23.699999999999999,
@@ -16153,6 +16158,7 @@
       "originalTitle" : "Sønnen",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "herederoel",
       "id" : 587,
       "isbn5" : 3,
       "height" : 23.100000000000001,
@@ -16209,6 +16215,7 @@
       "originalTitle" : "Topología. La geometría de la plastilina",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "topologialageometriadelaplastilina",
       "id" : 589,
       "isbn5" : 6,
       "height" : 23.699999999999999,
@@ -16237,6 +16244,7 @@
       "originalTitle" : "Tarde, mal y nunca",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "tardemalynunca",
       "id" : 590,
       "isbn5" : 9,
       "height" : 21.300000000000001,
@@ -16265,6 +16273,7 @@
       "originalTitle" : "Skrattande polisen",
       "edition" : 5,
       "isbn1" : 978,
+      "cover" : "policiaquerieel",
       "id" : 591,
       "isbn5" : 6,
       "height" : 21.399999999999999,
@@ -16405,6 +16414,7 @@
       "originalTitle" : "Two kinds of truth",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "doscarasdelaverdadlas",
       "id" : 596,
       "isbn5" : 9,
       "height" : 23,
@@ -16433,6 +16443,7 @@
       "originalTitle" : "Sabotaje",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "sabotaje",
       "id" : 597,
       "isbn5" : 8,
       "height" : 24.600000000000001,
@@ -16461,6 +16472,7 @@
       "originalTitle" : "Sharp Ends",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "filosmortales",
       "id" : 598,
       "isbn5" : 9,
       "height" : 22.800000000000001,
@@ -16489,6 +16501,7 @@
       "originalTitle" : "isla del fin de la suerte, La",
       "edition" : 3,
       "isbn1" : 978,
+      "cover" : "isladelfindelasuertela",
       "id" : 599,
       "isbn5" : 7,
       "height" : 19,
@@ -16517,6 +16530,7 @@
       "originalTitle" : "Muerte en abril",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "muerteenabril",
       "id" : 600,
       "isbn5" : 9,
       "height" : 21,
@@ -16545,6 +16559,7 @@
       "originalTitle" : "Airframe",
       "edition" : 3,
       "isbn1" : 978,
+      "cover" : "puntocritico",
       "id" : 601,
       "isbn5" : 6,
       "height" : 19,
@@ -16573,6 +16588,7 @@
       "originalTitle" : "Cobra, The",
       "edition" : 2,
       "isbn1" : 978,
+      "cover" : "cobra",
       "id" : 602,
       "isbn5" : 5,
       "height" : 19,
@@ -16601,6 +16617,7 @@
       "originalTitle" : "Greeks bearing gifts",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "laberintogriego",
       "id" : 603,
       "isbn5" : 2,
       "height" : 22,
@@ -16629,6 +16646,7 @@
       "originalTitle" : "rise and fall or the dinosaurs, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "augeycaidadelosdinosaurios",
       "id" : 604,
       "isbn5" : 5,
       "height" : 23.699999999999999,
@@ -16657,6 +16675,7 @@
       "originalTitle" : "alano, El",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "alanoel",
       "id" : 605,
       "isbn5" : 8,
       "height" : 23.5,
@@ -16685,6 +16704,7 @@
       "originalTitle" : "Optimización matemática",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "optimizacionmatematica",
       "id" : 606,
       "isbn5" : 1,
       "height" : 23.699999999999999,
@@ -16741,6 +16761,7 @@
       "originalTitle" : "Gardens of the Moon",
       "edition" : 3,
       "isbn1" : 978,
+      "cover" : "jardinesdelalunalos",
       "id" : 608,
       "isbn5" : 7,
       "height" : 23.699999999999999,
@@ -16769,6 +16790,7 @@
       "originalTitle" : "Kniv",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "cuchillo",
       "id" : 609,
       "isbn5" : 9,
       "height" : 22.800000000000001,
@@ -16797,6 +16819,7 @@
       "originalTitle" : "Margen de error",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "margendeerror",
       "id" : 610,
       "isbn5" : 5,
       "height" : 21.300000000000001,
@@ -16825,6 +16848,7 @@
       "originalTitle" : "Deathhouse gates",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "puertasdelacasadelamuertelas",
       "id" : 611,
       "isbn5" : 2,
       "height" : 23.699999999999999,
@@ -16853,6 +16877,7 @@
       "originalTitle" : "Mord på 31: a våningen",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "asesinatoenlaplanta31",
       "id" : 612,
       "isbn5" : 8,
       "height" : 21.399999999999999,
@@ -16881,6 +16906,7 @@
       "originalTitle" : "Bad luck and trouble",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "malasuerte",
       "id" : 613,
       "isbn5" : 9,
       "height" : 21.199999999999999,
@@ -16937,6 +16963,7 @@
       "originalTitle" : "Metropolis",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "metropolis",
       "id" : 615,
       "isbn5" : 0,
       "height" : 21.800000000000001,
@@ -16965,6 +16992,7 @@
       "originalTitle" : "Muerte de un violinista",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "muertedeunviolinista",
       "id" : 616,
       "isbn5" : 0,
       "height" : 21,
@@ -16993,6 +17021,7 @@
       "originalTitle" : "Avenger",
       "edition" : 2,
       "isbn1" : 978,
+      "cover" : "vengador",
       "id" : 617,
       "isbn5" : 1,
       "height" : 19,
@@ -17021,6 +17050,7 @@
       "originalTitle" : "late show, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "sesionnocturna",
       "id" : 618,
       "isbn5" : 1,
       "height" : 23,
@@ -17049,6 +17079,7 @@
       "originalTitle" : "Memories of Ice",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "memoriasdehielo",
       "id" : 619,
       "isbn5" : 6,
       "height" : 23.699999999999999,
@@ -17077,6 +17108,7 @@
       "originalTitle" : "House of Chains",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "casadecadenasla",
       "id" : 620,
       "isbn5" : 5,
       "height" : 23.699999999999999,
@@ -17105,6 +17137,7 @@
       "originalTitle" : "Midnight tides",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "mareasdemedianoche",
       "id" : 621,
       "isbn5" : 2,
       "height" : 23.699999999999999,
@@ -17133,6 +17166,7 @@
       "originalTitle" : "Sidi",
       "edition" : 4,
       "isbn1" : 978,
+      "cover" : "sidi",
       "id" : 622,
       "isbn5" : 3,
       "height" : 24.399999999999999,
@@ -17161,6 +17195,7 @@
       "originalTitle" : "Reina Roja",
       "edition" : 20,
       "isbn1" : 978,
+      "cover" : "reinaroja",
       "id" : 623,
       "isbn5" : 7,
       "height" : 23.399999999999999,
@@ -17189,6 +17224,7 @@
       "originalTitle" : "Y Julia retó a los dioses",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "yjuliaretoalosdioses",
       "id" : 624,
       "isbn5" : 3,
       "height" : 23.5,
@@ -17217,6 +17253,7 @@
       "originalTitle" : "Half a king",
       "edition" : 5,
       "isbn1" : 978,
+      "cover" : "mediorey",
       "id" : 625,
       "isbn5" : 5,
       "height" : 19,
@@ -17245,6 +17282,7 @@
       "originalTitle" : "Half the world",
       "edition" : 3,
       "isbn1" : 978,
+      "cover" : "mediomundo",
       "id" : 626,
       "isbn5" : 2,
       "height" : 19,
@@ -17273,6 +17311,7 @@
       "originalTitle" : "Half a war",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "mediaguerra",
       "id" : 627,
       "isbn5" : 9,
       "height" : 19,
@@ -17301,6 +17340,7 @@
       "originalTitle" : "Blod på snø",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "sangreenlanieve",
       "id" : 628,
       "isbn5" : 1,
       "height" : 23,
@@ -17329,6 +17369,7 @@
       "originalTitle" : "Nothing to lose",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "nadaqueperder",
       "id" : 629,
       "isbn5" : 3,
       "height" : 22,
@@ -17357,6 +17398,7 @@
       "originalTitle" : "Prayer",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "plegarias",
       "id" : 630,
       "isbn5" : 5,
       "height" : 22,
@@ -17385,6 +17427,7 @@
       "originalTitle" : "gods themselves, The",
       "edition" : 5,
       "isbn1" : 978,
+      "cover" : "propiosdioseslos",
       "id" : 631,
       "isbn5" : 2,
       "height" : 19,
@@ -17413,6 +17456,7 @@
       "originalTitle" : "Un rastro de sirena",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "unrastrodesirena",
       "id" : 632,
       "isbn5" : 9,
       "height" : 22.800000000000001,
@@ -17441,6 +17485,7 @@
       "originalTitle" : "deceiver, The",
       "edition" : 2,
       "isbn1" : 978,
+      "cover" : "manipuladorel",
       "id" : 633,
       "isbn5" : 0,
       "height" : 19,
@@ -17469,6 +17514,7 @@
       "originalTitle" : "mal de Corcira, El",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "maldecorcirael",
       "id" : 634,
       "isbn5" : 7,
       "height" : 23.5,
@@ -17497,6 +17543,7 @@
       "originalTitle" : "Dark sacred night",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "nochesagrada",
       "id" : 635,
       "isbn5" : 4,
       "height" : 23,
@@ -17525,6 +17572,7 @@
       "originalTitle" : "Loba Negra",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "lobanegra",
       "id" : 636,
       "isbn5" : 7,
       "height" : 23.5,
@@ -17882,6 +17930,7 @@
       "originalTitle" : "Munich",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "munich",
       "id" : 649,
       "isbn5" : 0,
       "height" : 18.899999999999999,
@@ -17910,6 +17959,7 @@
       "originalTitle" : "Reliquary",
       "edition" : 2,
       "isbn1" : 978,
+      "cover" : "relicarioel",
       "id" : 650,
       "isbn5" : 0,
       "height" : 19,
@@ -17938,6 +17988,7 @@
       "originalTitle" : "A little hatred",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "unpocodeodio",
       "id" : 651,
       "isbn5" : 8,
       "height" : 22.600000000000001,
@@ -18749,6 +18800,7 @@
       "originalTitle" : "Línea de fuego",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "lineadefuego",
       "id" : 680,
       "isbn5" : 5,
       "height" : 24.699999999999999,
@@ -18889,6 +18941,7 @@
       "originalTitle" : "Altered carbon",
       "edition" : 2,
       "isbn1" : 978,
+      "cover" : "carbonomodificado",
       "id" : 685,
       "isbn5" : 3,
       "height" : 21.5,
@@ -18917,6 +18970,7 @@
       "originalTitle" : "Centurion",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "centurion",
       "id" : 686,
       "isbn5" : 1,
       "height" : 19,
@@ -18945,6 +18999,7 @@
       "originalTitle" : "cabinet of curiosities, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "asesinatosdemanhattanlos",
       "id" : 687,
       "isbn5" : 8,
       "height" : 19,
@@ -18973,6 +19028,7 @@
       "originalTitle" : "afghan, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "afganoel",
       "id" : 688,
       "isbn5" : 0,
       "height" : 19,
@@ -19001,6 +19057,7 @@
       "originalTitle" : "lágrimas de Isis, Las",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "lagrimasdeisislas",
       "id" : 689,
       "isbn5" : 0,
       "height" : 21.399999999999999,
@@ -19029,6 +19086,7 @@
       "originalTitle" : "Killing floor",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "zonapeligrosa",
       "id" : 690,
       "isbn5" : 3,
       "height" : 22,
@@ -19057,6 +19115,7 @@
       "originalTitle" : "Nuestra señora de la Luna",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "nuestrasenoradelaluna",
       "id" : 691,
       "isbn5" : 8,
       "height" : 21,
@@ -19085,6 +19144,7 @@
       "originalTitle" : "Rey Blanco",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "reyblanco",
       "id" : 692,
       "isbn5" : 5,
       "height" : 23.800000000000001,
@@ -19113,6 +19173,7 @@
       "originalTitle" : "night fire, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "fuegonocturno",
       "id" : 693,
       "isbn5" : 2,
       "height" : 23,
@@ -19141,6 +19202,7 @@
       "originalTitle" : "Mere blod",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "soldesangre",
       "id" : 694,
       "isbn5" : 8,
       "height" : 23,
@@ -19197,6 +19259,7 @@
       "originalTitle" : "On stranger tides",
       "edition" : 2,
       "isbn1" : 978,
+      "cover" : "encostasextranas",
       "id" : 696,
       "isbn5" : 7,
       "height" : 18.899999999999999,
@@ -19225,6 +19288,7 @@
       "originalTitle" : "Hrolf Kraki’s saga",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "sagadehrolfkrakila",
       "id" : 697,
       "isbn5" : 6,
       "height" : 22,
@@ -19533,6 +19597,7 @@
       "originalTitle" : "Castellano",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "castellano",
       "id" : 708,
       "isbn5" : 1,
       "height" : 24.5,
@@ -19673,6 +19738,7 @@
       "originalTitle" : "Storm Island",
       "edition" : 3,
       "isbn1" : 978,
+      "cover" : "isladelastormentasla",
       "id" : 713,
       "isbn5" : 1,
       "height" : 19,
@@ -19701,6 +19767,7 @@
       "originalTitle" : "paciente, El",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "pacienteel",
       "id" : 714,
       "isbn5" : 5,
       "height" : 19,
@@ -19729,6 +19796,7 @@
       "originalTitle" : "Gideon the Ninth",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "gideonlanovena",
       "id" : 715,
       "isbn5" : 0,
       "height" : 23.5,
@@ -19757,6 +19825,7 @@
       "originalTitle" : "trouble with peace, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "problemadelapazel",
       "id" : 716,
       "isbn5" : 8,
       "height" : 22.800000000000001,
@@ -19785,6 +19854,7 @@
       "originalTitle" : "Kings of the Wyld",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "reyesdelatierrasalvaje",
       "id" : 717,
       "isbn5" : 3,
       "height" : 23.5,
@@ -19813,6 +19883,7 @@
       "originalTitle" : "Project Hail Mary",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "proyectohailmary",
       "id" : 718,
       "isbn5" : 6,
       "height" : 23,
@@ -19841,6 +19912,7 @@
       "originalTitle" : "Kongeriket",
       "edition" : 3,
       "isbn1" : 978,
+      "cover" : "reinoel",
       "id" : 719,
       "isbn5" : 3,
       "height" : 23,
@@ -19869,6 +19941,7 @@
       "originalTitle" : "Fair warning",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "advertenciarazonable",
       "id" : 720,
       "isbn5" : 3,
       "height" : 23,
@@ -19897,6 +19970,7 @@
       "originalTitle" : "Die trying",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "morirenelintento",
       "id" : 721,
       "isbn5" : 0,
       "height" : 22,
@@ -20148,6 +20222,7 @@
       "originalTitle" : "Fariña. La novela gráfica",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "farinalanovelagrafica",
       "id" : 730,
       "isbn5" : 4,
       "height" : 24.5,
@@ -20176,6 +20251,7 @@
       "originalTitle" : "puño del emperador, El",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "punodelemperadorel",
       "id" : 731,
       "isbn5" : 5,
       "height" : 23.5,
@@ -20988,6 +21064,7 @@
       "originalTitle" : "Ready player one",
       "edition" : 2,
       "isbn1" : 978,
+      "cover" : "readyplayerone",
       "id" : 760,
       "isbn5" : 9,
       "height" : 23,
@@ -21016,6 +21093,7 @@
       "originalTitle" : "The law of innocence",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "leydelainocenciala",
       "id" : 761,
       "isbn5" : 1,
       "height" : 23,
@@ -21044,6 +21122,7 @@
       "originalTitle" : "Rotteøya og andre fortellinger",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "hombrecelosoel",
       "id" : 762,
       "isbn5" : 6,
       "height" : 23,
@@ -21072,6 +21151,7 @@
       "originalTitle" : "Roma soy yo",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "romasoyyo",
       "id" : 763,
       "isbn5" : 1,
       "height" : 23.699999999999999,
@@ -21100,6 +21180,7 @@
       "originalTitle" : "Research",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "artedelcrimenel",
       "id" : 764,
       "isbn5" : 7,
       "height" : 22,
@@ -21128,6 +21209,7 @@
       "originalTitle" : "Blue christmas",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "bluechristmas",
       "id" : 765,
       "isbn5" : 6,
       "height" : 21,
@@ -21156,6 +21238,7 @@
       "originalTitle" : "Si esto es una mujer",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "siestoesunamujer",
       "id" : 766,
       "isbn5" : 9,
       "height" : 19.5,
@@ -21184,6 +21267,7 @@
       "originalTitle" : "Cicatriz",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "cicatriz",
       "id" : 767,
       "isbn5" : 1,
       "height" : 19,
@@ -21296,6 +21380,7 @@
       "originalTitle" : "Todo arde",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "todoarde",
       "id" : 771,
       "isbn5" : 4,
       "height" : 24.5,
@@ -21324,6 +21409,7 @@
       "originalTitle" : "Revolución",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "revolucion",
       "id" : 772,
       "isbn5" : 5,
       "height" : 24.600000000000001,
@@ -21435,6 +21521,7 @@
       "originalTitle" : "adventures of Captain Underpant, The",
       "edition" : 5,
       "isbn1" : 978,
+      "cover" : "aventurasdelcapitancalzoncilloslas",
       "id" : 776,
       "isbn5" : 9,
       "height" : 24.5,
@@ -21491,6 +21578,7 @@
       "originalTitle" : "forja de una rebelde, La",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "forjadeunarebeldela",
       "id" : 778,
       "isbn5" : 3,
       "height" : 19,
@@ -21519,6 +21607,7 @@
       "originalTitle" : "gladiator, The",
       "edition" : 2,
       "isbn1" : 978,
+      "cover" : "gladiadorel",
       "id" : 779,
       "isbn5" : 0,
       "height" : 19,
@@ -21547,6 +21636,7 @@
       "originalTitle" : "dark hours, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "horasoscuraslas",
       "id" : 780,
       "isbn5" : 4,
       "height" : 23,
@@ -21575,6 +21665,7 @@
       "originalTitle" : "wisdom of crowds, The",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "sabiduriadelasmultitudesla",
       "id" : 781,
       "isbn5" : 4,
       "height" : 22.699999999999999,
@@ -21603,6 +21694,7 @@
       "originalTitle" : "verano que murió Chavela, El",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "veranoquemuriochavelael",
       "id" : 782,
       "isbn5" : 9,
       "height" : 21,
@@ -21631,6 +21723,7 @@
       "originalTitle" : "Harrow the Ninth",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "harrowlanovena",
       "id" : 783,
       "isbn5" : 4,
       "height" : 23.600000000000001,
@@ -21743,6 +21836,7 @@
       "originalTitle" : "Metti il turbo",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "granratrallyel",
       "id" : 787,
       "isbn5" : 0,
       "height" : 21.699999999999999,
@@ -21771,6 +21865,7 @@
       "originalTitle" : "Blodmåne",
       "edition" : 1,
       "isbn1" : 978,
+      "cover" : "eclipse",
       "id" : 788,
       "isbn5" : 1,
       "height" : 23,
@@ -21886,7 +21981,8 @@
       "status" : "Registrado",
       "year" : 1945,
       "synopsis" : "Ha pasado menos de un año desde que la hermosa Rosemary Burton se quitó la vida en una cena de cumpleaños en su honor. Su esposo George nunca creyó que se tratase de un suicidio, especialmente después de recibir dos cartas anónimas sugiriendo que se trató de un asesinato a sangre fría. Una de ellas implicaba al mismo George.\nEs cierto que este sufrió demasiado tiempo las infidelidades de Rosemary. Pero ¿qué decir de la amargada hermana de Rosemary, excluida del testamento familiar? ¿O de alguno de los amantes de Rosemary, por no mencionar a sus esposas traicionadas? Ni uno de ellos ha olvidado a Rosemary. Ninguno la ha perdonado, tampoco. Pero sólo uno la asesinó...",
-      "originalTitle" : "Sparkling canide"
+      "originalTitle" : "Sparkling canide",
+      "cover" : "cianuroespumoso"
     },
     {
       "author" : "Christie, Agatha",
@@ -21898,7 +21994,8 @@
       "status" : "Registrado",
       "year" : 1930,
       "synopsis" : "El asesinato del coronel Protheroe conmociona el pueblo de St. Mary Mead, donde el principal entretenimiento consiste en tomar el té y chismorrear. Entre los vecinos de St. Mary Mead, la persona más entrometida, observadora y sagaz es miss Marple. Su intervención será decisiva en la resolución de un crimen para el que no faltan sospechosos.",
-      "originalTitle" : "Murder at the vicarage, The"
+      "originalTitle" : "Murder at the vicarage, The",
+      "cover" : "muerteenlavicaria"
     },
     {
       "author" : "Christie, Agatha",
@@ -21910,7 +22007,8 @@
       "status" : "Registrado",
       "year" : 1922,
       "synopsis" : "La búsqueda de unos comprometedores documentos secretos suscritos durante la Primera Guerra Mundial y perdidos en el naufragio del Lusitania, da lugar a una lucha sin cuartel entre los servicios secretos británicos y una banda internacional que quiere utilizar los documentos como instrumento de la propaganda bolchevique. Pero en la vorágine de la guerra de espías aparecen dos jóvenes, Tommy y Tuppence, dispuestos a jugarse la vida para desvelar la identidad del líder de la banda, el misterioso Mr. Brown.",
-      "originalTitle" : "Secret adversary, The"
+      "originalTitle" : "Secret adversary, The",
+      "cover" : "misteriososrbrownel"
     },
     {
       "author" : "Christie, Agatha",
@@ -21922,7 +22020,8 @@
       "status" : "Registrado",
       "year" : 1927,
       "synopsis" : "Hércules Poirot se enfrenta con unos criminales fuera de lo común. No son vulgares asesinos ni simples estafadores. Son líderes organizados a escala internacional, que mueven los hilos de cuanto sucede en el mundo. Se les conoce como \"Los cuatro grandes\" y el detective tendrá que descubrir su identidad antes de que sea demasiado tarde para la humanidad.",
-      "originalTitle" : "Big Four, The"
+      "originalTitle" : "Big Four, The",
+      "cover" : "cuatrograndeslos"
     },
     {
       "author" : "Christie, Agatha",
@@ -21946,7 +22045,8 @@
       "status" : "Registrado",
       "year" : 1928,
       "synopsis" : "Cuando el lujoso Tren Azul llega a Niza, un guardia intenta despertar a Ruth Kettering para anunciarle su parada. Pero ella no despertará nunca más, ya que un disparo de gran calibre la ha matado, desfigurando sus rasgos hasta volverla casi irreconocible. Además, sus valiosísimos rubíes han desaparecido.\nEl principal sospechoso del crimen es el arruinado marido de la dama, Derek. Pero Poirot no está convencido, y decide hacer una reconstrucción de ese día hasta llegar a la clave del asesinato…",
-      "originalTitle" : "Mistery of the blue train, The"
+      "originalTitle" : "Mistery of the blue train, The",
+      "cover" : "misteriodeltrenazulel"
     },
     {
       "author" : "Christie, Agatha",
@@ -21958,7 +22058,8 @@
       "status" : "Registrado",
       "year" : 1946,
       "synopsis" : "Hércules Poirot es invitado por su vecina, lady Angkatell a almolzar con ellos. Al llegar a la piscina, donde se va a tomar el aperitivo, a Poirot se le presenta una escena completa de asesinato que aparentemente acaba de ocurrir: John Christow, amigo de la familia, aparece asesinado, y a su lado su mujer sosteniendo una pistola en la mano. Poirot se enfrenta con la difícil tarea de averiguar si la señora Christow ha matado realmente a su marido o si por el contrario todo ha sido una trampa habilmente preparada.",
-      "originalTitle" : "Hollow, The"
+      "originalTitle" : "Hollow, The",
+      "cover" : "sangreenlapiscina"
     },
     {
       "author" : "Connelly, Michael",
@@ -22030,7 +22131,8 @@
       "status" : "Registrado",
       "year" : 1970,
       "synopsis" : "En un aeropuerto alemán, en Fráncfort, un diplomático británico de categoría menor es abordado por una mujer joven de forma sorpresiva. Ella le ruega que, mediante un astuto plan, él le ceda su identificación y su pasaje a Inglaterra, pues corre peligro mortal. El vuelo original de ambos iba a detenerse en Ginebra antes de proseguir hacia Londres, pero por el mal tiempo fue desviado a Fráncfort, donde se han detenido, y la misteriosa viajera, que lleva un nombre griego, debería abordar una nueva conexión a Ginebra. Sin embargo, no debe volar hacia Suiza si quiere seguir con vida, o ésa es la historia que le cuenta al diplomático…",
-      "originalTitle" : "Passenger to Frankfurt"
+      "originalTitle" : "Passenger to Frankfurt",
+      "cover" : "pasajeroparafrancfort"
     },
     {
       "author" : "Harris, Robert",
@@ -22090,7 +22192,8 @@
       "status" : "Registrado",
       "year" : 1935,
       "synopsis" : "Durante una cena convocada en la casa de un veterano y afamado actor, se produce la muerte de un viejo párroco. El incidente no establece un indicio de asesinato de manera clara. Posteriormente, es la segunda muerte de uno de los invitados de aquella cena por envenenamiento la que conecta los dos casos.\nUna joven enamorada de este maduro actor, dicho actor, un viejo mecenas y Poirot, se alían para resolver los crímenes.",
-      "originalTitle" : "Three act tragedy"
+      "originalTitle" : "Three act tragedy",
+      "cover" : "tragediaentresactos"
     },
     {
       "author" : "Christie, Agatha",
@@ -22102,7 +22205,8 @@
       "status" : "Registrado",
       "year" : 1950,
       "synopsis" : "Los tranquilos vecinos de Chipping Cleghorn, entre los que se encuentra la señorita Marple, son sorprendidos por la noticia, aparecida en un periódico local, que reza: «Se anuncia un asesinato que se cometerá el viernes 29 de octubre en Little Paddocks, a las seis y media de la tarde.» ¿Se trata acaso de una broma de mal gusto? ¿O de una artimaña para asustar a la pobre Letitia Blacklock? Incapaz de resistir la misteriosa invitación, una muchedumbre comienza a reunirse para llegar a Little Paddocks a la hora indicada cuando, misteriosamente, todas las luces se apagan sin previo aviso…",
-      "originalTitle" : "Murder is announced, A"
+      "originalTitle" : "Murder is announced, A",
+      "cover" : "seanunciaunasesinato"
     },
     {
       "author" : "Christie, Agatha",
@@ -22114,7 +22218,8 @@
       "status" : "Registrado",
       "year" : 1953,
       "synopsis" : "Rex Fortescue muere envenenado y todo indica que el asesino puso el veneno en el té que, como cada mañana, le sirvió su secretaria. Peros los informes del forense lo desmienten y el asunto se complica cuando la investigación saca a la luz los trapos sucios de la familia Fortescue. El inspector Neele, encargado del caso, contará en todo momento con la ayuda de la sagaz miss Marple.",
-      "originalTitle" : "Pocket full of rye, A"
+      "originalTitle" : "Pocket full of rye, A",
+      "cover" : "unpunadodecenteno"
     },
     {
       "author" : "Christie, Agatha",
@@ -22222,7 +22327,8 @@
       "status" : "Registrado",
       "year" : 1978,
       "synopsis" : "Este libro contiene un sinfín de divertidos y ocurrentes acertijos y adivinanzas. Para todo aquel que busque entretenimiento y que desee desarrollar su intelecto con un poco de gimnasia mental.\nPuede disfrutarlo uno sólo o en compañía, exponiendo los acertijos y averiguando quién es capaz de acertar o quién lo consigue en menos tiempo.\nBien estructurado, ameno y con las soluciones perfectamente explicadas, es ideal para todos aquellos amantes de pasatiempos y acertijos lógicos.",
-      "originalTitle" : "What is the name of this book?"
+      "originalTitle" : "What is the name of this book?",
+      "cover" : "comosellamaestelibro"
     },
     {
       "author" : "Howard, Robert E.",
@@ -22378,7 +22484,8 @@
       "status" : "Registrado",
       "year" : 1895,
       "synopsis" : "Tremal-Naik, «el Cazador de la Jungla Negra», cae enamorado de la bella Ada, retenida contra su voluntad por los estranguladores Thugs que veneran a Kali, la diosa de la muerte. Ayudado por el fiel Kammamuri, su amigo más que su criado, intentará rescatarla.",
-      "originalTitle" : "Misteri della Jungla Nera, I"
+      "originalTitle" : "Misteri della Jungla Nera, I",
+      "cover" : "misteriosdelajunglanegralos"
     },
     {
       "author" : "Connelly, Michael",
@@ -22390,7 +22497,8 @@
       "status" : "Registrado",
       "year" : 2002,
       "synopsis" : "Pierce es un investigador de informática molecular volcado en un estudio que podría revolucionar el mundo de la medicina. Su obsesiva dedicación al trabajo ha repercutido en su vida privada, dando al trase con su relación con Nicole. La obsesión de Pierce le arrastra al oscuro mundo del sexo e Internet, un ámbito desconocido para él y que no tardará en convertirse en una terrible pesadilla de consecuencias imprevisibles.",
-      "originalTitle" : "Chasing the dime"
+      "originalTitle" : "Chasing the dime",
+      "cover" : "llamadaperdida"
     },
     {
       "author" : "Golding, William",
@@ -22450,7 +22558,8 @@
       "status" : "Registrado",
       "year" : 1930,
       "synopsis" : "Todo Sam Spade engloba las cuatro únicas obras que Hammett escribió sobre el famoso detective: los relatos Demasiados han vivido, Solo pueden colgarte una vez, Un tal Samuel Spade, publicados originalmente en The American Magazine en 1932, y la novela El halcón maltés, que ha permanecido en la memoria colectiva como uno de los mayores hitos del género negro de todos los tiempos. En 1530, los caballeros de la Orden de Malta regalaron al emperador Carlos V una estatuilla en forma de halcón repleta de piedras preciosas que durante más de cuatro siglos ha sido objeto de robos y desapariciones. En pleno siglo xx, el halcón aparece en San Francisco, donde es codiciado por una banda internacional de criminales atraída por su incalculable valor. El detective Sam Spade, tras el misterioso asesinato de su socio Miles Archer, se verá envuelto en la búsqueda de la extraña estatuilla y deberá lidiar con un sinfín de mentiras, traiciones, asesinatos, y una seductora clienta que oculta oscuros secretos.",
-      "originalTitle" : "Maltesse Falcon, The"
+      "originalTitle" : "Maltesse Falcon, The",
+      "cover" : "todosloscasosdesamspade"
     },
     {
       "author" : "Lovecraft, H.P.",
@@ -22498,7 +22607,8 @@
       "status" : "Registrado",
       "year" : 1912,
       "synopsis" : "Esta novela narra la historia de John Clayton «Tarzán», hijo de Lord Greystoke John Clayton, y Alice Rutherford, una pareja de ingleses abandonados en la selva de la costa occidental del África Ecuatorial. Los esposos traen al mundo a un niño en su modesta cabaña antes de morir abatidos por las fieras. Adoptado por Kala, una enorme simia que también ha perdido a su cría, Tarzán crecerá entre los antropoides, desarrollando una gran fuerza física y un agudo ingenio. También aprenderá a leer y escribir utilizando los libros infantiles hallados en la cabaña. Años más tarde, otro motín a bordo de un barco deja a un grupo de ingleses en la playa y Tarzán se convierte en su misterioso protector.",
-      "originalTitle" : "Tarzan of the apes"
+      "originalTitle" : "Tarzan of the apes",
+      "cover" : "tarzandelosmonos"
     },
     {
       "author" : "Burroughs, Edgar Rice",
@@ -22522,7 +22632,8 @@
       "status" : "Registrado",
       "year" : 1912,
       "synopsis" : "Esta primera novela de su Serie Marciana —once volúmenes llenos de aventura, intriga y, quizá, ciencia ficción— nos lleva a recorrer un planeta Marte donde conviven multitud de razas de muy diversa índole, condición y colores, todas ellas enfrentadas en una serie continua de guerras y enfrentamientos.\nAllí es donde llega, huyendo de los apaches, nuestro héroe, John Carter, un soldado de la Confederación que decide hacerse buscador de oro (como su padre literario) cuando acaba la guerra entre los Estados y que se ve misteriosamente trasladado a un planeta Marte que no es otro que el Marte soñado por el astrónomo Percival Lowell, con sus canales y todo; un mundo lleno de vida.\nLas aventuras de John Carter le hacen encontrarse con la hermosa Dejah Thoris, princesa de Hélium, a quien, en una serie ininterrumpida de hechos trepidantes que le llevarán a recorrer todo el planeta, acabará encontrando y perdiendo en numerosas ocasiones. Su amor, capaz de romper la barrera que separa los mundos, nos hará descubrir todo el exotismo y variedad de ambientes de uno de los mundos alienígenas más coloridos que se han dado en la literatura.",
-      "originalTitle" : "Princess of Mars, A"
+      "originalTitle" : "Princess of Mars, A",
+      "cover" : "unaprincesademarte"
     },
     {
       "author" : "Golden, Christie",
@@ -22534,7 +22645,8 @@
       "status" : "Registrado",
       "year" : 2007,
       "synopsis" : "Aunque el joven Jefe de Guerra Thrall acabó con la maldición demoníaca que había asolado a su raza durante generaciones, los orcos aún deben cargar con los pecados de su sangriento pasado. Al igual que la destructora Horda, libraron una serie de devastadoras guerras contra su eterno enemigo: la Alianza. No obstante, la ira y la sed de sangre que impulsaron a los orcos a destruir todo cuanto hallaban a su paso estuvieron a punto de aniquilarlos a ellos también.\nHace mucho tiempo, en el idílico mundo de Draenor, los nobles clanes orcos convivían en una relativa paz con sus enigmáticos vecinos, los dranei. Pero los malévolos agentes de la Legión Ardiente tenían otros planes para ambas razas. El señor demoníaco kil’jaeden puso en marcha una serie de acontecimientos tenebrosos que no sólo erradicaron a los dranei, sino que fusionaron a todos los clanes orcos en una imparable y destructiva fuerza movida por el odio.",
-      "originalTitle" : "Rise of the Horde, The"
+      "originalTitle" : "Rise of the Horde, The",
+      "cover" : "ascensodelahordael"
     },
     {
       "author" : "Cook, Glen",
@@ -22594,7 +22706,8 @@
       "status" : "Registrado",
       "year" : 2008,
       "synopsis" : "A veces estar en lo más alto no es suficiente. El ambicioso y cautivador Roger Brown parece haber logrado todo lo que un hombre puede desear: ser el mejor en su trabajo como headhunter para empresas, estar casado con una culta y bella mujer responsable de una galería de arte, vivir en una lujosa y elegante casa... Sin embargo, la codicia y el deseo de riqueza obligan a Roger a correr algunos riesgos, como por ejemplo robar obras de arte.\nEl día que Roger conoce a Clas Greve, todo parece sonreírle. No solo es el director ejecutivo ideal que él estaba buscando para trabajar en una empresa de GPS, sino que además es propietario de un cuadro de Rubens de incalculable valor. Roger empieza inmediatamente a planificar el robo de la ansiada tela, pero pronto descubrirá que cometer el delito solo será uno más de sus problemas.",
-      "originalTitle" : "Headhunters"
+      "originalTitle" : "Headhunters",
+      "cover" : "headhunters"
     },
     {
       "author" : "Asimov, Isaac",
@@ -22606,7 +22719,8 @@
       "status" : "Registrado",
       "year" : 1953,
       "synopsis" : "El sistema solar ha sido colonizado por la Tierra, unificada bajo el gobierno del Consejo de Ciencias.\nEn el enjambre de asteroides que orbitan entre Marte y Júpiter, como antaño en los archipiélagos del Caribe, se ocultan los feroces corsarios del espacio, que han sustituido el velero por la astronave y el trabuco por el rayo desintegrador. Pero, tras sus correrías y pillajes, se esconde una amenaza mucho mayor, un terrible misterio que Lucky Starr, joven agente especial del Consejo de las Ciencias, deberá desentrañar.",
-      "originalTitle" : "Lucky Starr and the pirates of the asteroids"
+      "originalTitle" : "Lucky Starr and the pirates of the asteroids",
+      "cover" : "piratasdelosasteroideslos"
     },
     {
       "author" : "Villar, Domingo",
@@ -22618,7 +22732,8 @@
       "status" : "Registrado",
       "year" : 2009,
       "synopsis" : "Una mañana, el cadáver de un marinero es arrastrado por la marea hasta la orilla de una playa gallega. Si no tuviese las manos atadas, Justo Castelo sería otro de los hijos del mar que encontró su tumba entre las aguas mientras faenaba. Sin testigos ni rastro de la embarcación del fallecido, el lacónico inspector Leo Caldas se sumerge en el ambiente marinero del pueblo, tratando de esclarecer el crimen entre hombres y mujeres que se resisten a desvelar sus sospechas y que, cuando se deciden a hablar, apuntan en una dirección demasiado insólita.\nUn asunto brumoso para Caldas, que atraviesa días difíciles: el único hermano de su padre está gravemente enfermo y su colaboración radiofónica en Onda Vigo se está volviendo insoportable. Tampoco facilita las cosas el carácter impulsivo de Rafael Estévez, su ayudante aragonés, que no acaba de adaptarse a la forma de ser del inspector.",
-      "originalTitle" : "Playa de los ahogados, La"
+      "originalTitle" : "Playa de los ahogados, La",
+      "cover" : "playadelosahogadosla"
     },
     {
       "author" : "Burroughs, Edgar Rice",
@@ -22630,7 +22745,8 @@
       "status" : "Registrado",
       "year" : 1929,
       "synopsis" : "Trece años después de haber cerrado las aventuras de Innes, Burroughs se decide a volver al mundo interior. Escrita a lo largo de 1928, Tanar de Pellucidar constituye la tercera novela del ciclo de Pellucidar. En ella asistimos a cómo desde el norte de Pellucidar comienzan a llegar unos extraños invasores, los korsar, que conocen la tecnología de la superficie y que amenazan la paz y la seguridad del Imperio de Pellucidar. Tanar, hijo de Ghal, es enviado por David Innes a parlamentar con ellos. En esta obra se introduce a Jason Gridley, cuyos experimentos con la radio dan pie a la trama del libro y su continuación.",
-      "originalTitle" : "Tanar of Pellucidar"
+      "originalTitle" : "Tanar of Pellucidar",
+      "cover" : "tanarenpellucidar"
     },
     {
       "author" : "Villar, Domingo",
@@ -22642,7 +22758,8 @@
       "status" : "Registrado",
       "year" : 2006,
       "synopsis" : "Entre el aroma del mar y de los pinos gallegos, en una torre residencial junto a la playa, un joven saxofonista de ojos claros, Luis Reigosa, ha aparecido asesinado con una crueldad que apunta a un crimen pasional. Sin embargo, el músico muerto no mantiene una relación estable y la casa, limpia de huellas, no muestra más que partituras ordenadas en los estantes y saxofones colgados en las paredes.\nLeo Caldas, un solitario y melancólico inspector de policía que compagina su trabajo en comisaría con un consultorio radiofónico, se hará cargo de una investigación que le llevará de la bruma del anochecer al humo de las tabernas y los clubes de jazz. A su lado está el ayudante Rafael Estévez, un aragonés demasiado impetuoso para una Galicia irónica y ambigua, e incluso demasiado impetuoso para el propio Leo, que busca entre sorbos de vino los fantasmas ocultos en los demás mientras intenta sobrevivir a los suyos. Gracias a la labor de este singular tándem Caldas-Estévez la verdad termina por aflorar, llevándonos a desentrañar el secreto que esconden los ojos de agua.",
-      "originalTitle" : "Ollos de auga"
+      "originalTitle" : "Ollos de auga",
+      "cover" : "ojosdeagua"
     },
     {
       "author" : "Cook, Glen",
@@ -22654,7 +22771,8 @@
       "status" : "Registrado",
       "year" : 1989,
       "synopsis" : "Imbutido en el tronco del hijo del dios árbol, contiene la esencia del más loco de los Diez Que Fueron Tomados…, el Dominador. Derrotado por la Dama y arrojado fuera de este mundo, todo lo que queda de él es una horrible huella de persistente maldad. Pero el lugar de muerte que fue en su tiempo el Túmulo contiene más secretos que muertos. Todo quien posea el poder del Dominador es atraído hacia el clavo. Una pandilla de temerarios ladrones es la primera en alcanzarlo, y un espíritu maligno y rapaz es liberado sobre un desprevenido mundo. Las fuerzas se unen, se establecen los bandos, y los hombres mortales sólo pueden morir mientras los Señores Oscuros batallan por el dominio.",
-      "originalTitle" : "Silver spike, The"
+      "originalTitle" : "Silver spike, The",
+      "cover" : "clavodeplatael"
     },
     {
       "author" : "Charteris, Leslie",
@@ -22666,7 +22784,8 @@
       "status" : "Registrado",
       "year" : 1928,
       "synopsis" : "En «El Santo contra el Tigre» Simon Templar sigue hasta Baycombe, Devon, las huellas del Tigre, un gángster de Chicago que protagonizó un atraco donde obtuvo una gran cantidad de oro y que vive en una pequeña fortaleza abandonada de la I Guerra Mundial. Su objetivo es cobrar la recompensa por recuperar el botín y entregar al culpable a la justicia.",
-      "originalTitle" : "Meet the Tiger!"
+      "originalTitle" : "Meet the Tiger!",
+      "cover" : "santocontraeltigreel"
     },
     {
       "author" : "Vázquez-Figueroa, Alberto",
@@ -22678,7 +22797,8 @@
       "status" : "Registrado",
       "year" : 1996,
       "synopsis" : "Piratas es la novela de aventuras en estado puro: el género que ha convertido Alberto Vázquez-Figueroa en el autor español número uno en ventas. Narra una extraordinaria historia repleta de acción, emociones e intriga protagonizada por un viejo corsario británico y un jovencísimo buscador de perlas español al que las circunstancias conducen hasta el barco del temido Jacaré Jack.\nLos combates en alta mar, los peligrosos juegos de la astucia, el destino de una familia de españoles afincada en el Caribe de la época de la trata de negros y la corrupción generalizada de las autoridades coloniales constituyen el transfondo de una trama trepidante, como corresponde a una de las mejores novelas de su autor.",
-      "originalTitle" : "Piratas"
+      "originalTitle" : "Piratas",
+      "cover" : "piratas"
     },
     {
       "author" : "Vázquez-Figueroa, Alberto",
@@ -22690,7 +22810,8 @@
       "status" : "Registrado",
       "year" : 1996,
       "synopsis" : "Tras el éxito de Piratas, Alberto Vázquez-Figueroa continúa esta serie de novelas con Negreros. Celeste Heredia recoge el testigo de su hermano Sebastián y fleta un galeón para luchar contra el tráfico de negros. La historia, que empieza en el Caribe, tiene un desenlace extraordinario e inesperado en el mismísimo corazón de África, con Celeste al frente de un ejército de mujeres y dispuesta a enfrentarse a un hombre cruel que está en el origen de la trata de negros.",
-      "originalTitle" : "Negreros"
+      "originalTitle" : "Negreros",
+      "cover" : "negreros"
     },
     {
       "author" : "Vázquez-Figueroa, Alberto",
@@ -22702,7 +22823,8 @@
       "status" : "Registrado",
       "year" : 1998,
       "synopsis" : "En octubre de 1689, el barco de León Bocanegra encalla en las costas del desierto sahariano y él y sus hombres son hechos prisioneros por los beduinos y vendidos como esclavos...\nA lo largo de esta trepidante novela, el lector se sumergirá en una emocionante aventura en la que el amor y la muerte se mezclan con el trasfondo del mar como escenario de una historia inolvidable.",
-      "originalTitle" : "León Bocanegra"
+      "originalTitle" : "León Bocanegra",
+      "cover" : "leonbocanegra"
     },
     {
       "author" : "Thilliez, Franck",
@@ -22714,7 +22836,8 @@
       "status" : "Registrado",
       "year" : 2004,
       "synopsis" : "La aparición de un cadáver decapitado, artísticamente troceado y diseminado con enigmáticos designios por diversos rincones de París, sacude de un modo eléctrico al comisario Franck Sharko. Saber que no se trata del cuerpo de su esposa, que lleva ya seis meses desaparecida sin que nadie haya pedido rescate y sin que se tenga la menor pista sobre su paradero, es sólo un consuelo menor. Al contrario, este descubrimiento da pie a una estremecedora y alucinante investigación que pone en contacto a Sharko con los ambientes más sórdidos que puedan imaginarse, con las redes virtuales más exhibicionistas y enloquecidas, con los personajes más crueles y despiadados y, sobre todo, con una mente fría, manipuladora y perversa hasta límites que sólo un escritor del calibre de Thilliez es capaz no sólo de crear, sino de mostrarlo con una fuerza arrebatadora. Sólo la tensión en que Thilliez mantiene al lector a lo largo toda la novela, impide que éste sienta el calor de la espesa sangre que rezuman estas páginas. Franck Thilliez logra que la lectura se convierta en una experiencia visceral. Un thriller absolutamente recomendable (salvo, quizás, para quienes padezcan enfermedades cardíacas).",
-      "originalTitle" : "Train d’enfer pour Ange Rouge"
+      "originalTitle" : "Train d’enfer pour Ange Rouge",
+      "cover" : "angelrojoel"
     },
     {
       "author" : "Grey, Zane",
@@ -22726,7 +22849,8 @@
       "status" : "Registrado",
       "year" : 1910,
       "synopsis" : "Admirable narración de la vida nómada en el desierto de la secta de los mormones, con la exquisitez de detalles a que nos tiene acostumbrados este excelente autor, conocedor como pocos de los secretos de la Naturaleza y de la psicología especial de los que hacen del culto a ella el principal objetivo de su vida.\nLa, en realidad, resurrección de un pobre enfermo norteamericano a quien la vida salvaje, entre rebaños y caballadas, devuelve la salud perdida, es base de esta nueva producción de Zane Grey.\nNo faltan, como es natural, las pintorescas descripciones de su lucha, en unión de los mormones, con los cuatreros y bandidos del desierto, de los que al fin logra salir vencedor, conquistando al mismo tiempo el corazón de la mestiza Mescal, eje de esta interesantísima novela de amor y de aventuras.",
-      "originalTitle" : "heritage of the desert, The"
+      "originalTitle" : "heritage of the desert, The",
+      "cover" : "herenciadeldesiertola"
     },
     {
       "author" : "King, William",
@@ -22738,7 +22862,8 @@
       "status" : "Registrado",
       "year" : 1999,
       "synopsis" : "En lo alto de la colina, se alzaba el castillo con las murallas ennegrecidas por el fuego como una araña pétrea que se aferrase a la cumbre con marchitos pies de roca. Ante la abertura que dejaba la puerta destrozada, colgaban hombres que se balanceaban en el extremo de unas cuerdas como moscas atrapadas en una telaraña de un solo hilo.\n—Ha llegado la hora de derramar un poco de sangre —dijo Gotrek.\nSe pasó la mano izquierda por la enorme cresta de cabello rojizo que coronaba su cráneo rapado y cubierto de tatuajes. La cadena que le perforaba la nariz tintineó con suavidad, en extraño contrapunto con el demencial rugido de su risa.\n—Soy un Matatrolls, humano. Nací para morir en el combate. No hay lugar para el miedo en mi vida.\nMatatrolls es la primera parte de la saga mortífera de Gotrek Gurnisson, relatada por su compañero de viaje Félix Jaeger. Ambientada en el mundo gótico y tenebroso de Warhammer, Matatrolls es una novela que contiene las aventuras más extraordinarias de esta letal pareja de héroes. El lector de encontrará con monstruos, demonios, brujos, mutantes, orcos y seres aun peores mientras Gotrek sigue buscando una muerte honorable en el combate. Félix, por su parte, debe sobrevivir para contar la historia.",
-      "originalTitle" : "Trollslayer"
+      "originalTitle" : "Trollslayer",
+      "cover" : "matatrolls"
     },
     {
       "author" : "Werner, C. L.",
@@ -22750,7 +22875,8 @@
       "status" : "Registrado",
       "year" : 2003,
       "synopsis" : "En el inhóspito Viejo Mundo, pocos son tan temidos y odiados como los cazadores de recompensas. El suyo es un mundo de engaño, traición y violencia indiscriminada, donde las palabras y las vidas se venden a bajo precio. La supervivencia depende de una mezcla única de inteligencia, astucia animal y fuerza bruta, mientras la promesa de dolor mantiene vivo el miedo. Brunner es uno de ellos, un hombre despiadado que no se detendrá ante nada con tal de atrapar a su presa y reclamar la recompensa.",
-      "originalTitle" : "Blood money"
+      "originalTitle" : "Blood money",
+      "cover" : "dinerosangriento"
     },
     {
       "author" : "Galfard, Christophe",
@@ -22762,7 +22888,8 @@
       "status" : "Registrado",
       "year" : 2006,
       "synopsis" : "No estás solo en el universo. Y no estás solo en este viaje por el universo. Estás tumbado mirando el cielo en una playa cuando alguien te coge de la mano. Te guía en una odisea alucinante hasta los agujeros negros, las galaxias más lejanas y el inicio mismo del cosmos. Abandonas tu cuerpo y te desplazas a velocidades imposibles, te introduces en un núcleo atómico, viajas en el tiempo, entras en el Sol. No es que te expliquen el universo. Es que lo tocas. No es que por fin entiendas el universo. Lo tienes en tu mano.",
-      "originalTitle" : "universe in your hand, The"
+      "originalTitle" : "universe in your hand, The",
+      "cover" : "universoentumanoel"
     },
     {
       "author" : "Charteris, Leslie",
@@ -22774,7 +22901,8 @@
       "status" : "Registrado",
       "year" : 1937,
       "synopsis" : "Difícilmente podía imaginar Simón Templar, el hombre que en el mundo del hampa y en las más altas instancias policiacas mundiales era especialmente conocido con el sobrenombre de «El Santo», que cuando aquella noche de diciembre de 1935 desembarcaba en el puerto de Santa Cruz de Tenerife estaba dando comienzo una de las aventuras más peligrosas de su arriesgada vida.\nEn aquella recoleta y animada ciudad iba a enfrentarse a la peligrosa banda de atracadores internacionales que venía persiguiendo hacía tiempo, pero también se involucraría en la búsqueda de un billete de lotería que podía devolver vida y libertad a un hombre castigado por las circunstancias y a su bella hija.\nY todo empezó en la carretera que desde Santa Cruz llevaba a La Laguna…",
-      "originalTitle" : "Thieves’ picnic"
+      "originalTitle" : "Thieves’ picnic",
+      "cover" : "santoentenerifeel"
     },
     {
       "author" : "Delgado Bañón, Luis M.",
@@ -22786,7 +22914,8 @@
       "status" : "Registrado",
       "year" : 2002,
       "synopsis" : "Mediado el siglo XVIII español, Francisco Leñanza, un joven sano y fuerte de tierra adentro, lleno de sueños de aventuras y deseando comerse el mundo, muy natural a su edad, ansía lanzarse a la mar, que no ha visto nunca y que sólo conoce por lo que su abuelo Clemente, marino, ha contado a la familia. Y ya se sabe que cuando uno tiene dieciocho años y se le pone algo entre ceja y ceja, lo acaba por llevar adelante. Así pues, Paco Leñanza sale en busca del mar, abandona su pueblito natal castellano y comienza sus aventuras, que más hay que calificar de desventuras, porque antes de llegar al mar, le ocurren toda una serie de desgracias, dada su ingenuidad e inexperiencia del mundo, y su desconocimiento de la maldad humana.\nEste primer volumen de la serie, Luis Delgado aborda la vida que se sufría en las galeras de la Real Armada en la segunda mitad del siglo XVIII y presenta al primer Leñanza, padre del que será protagonista de muchos de las aventuras de la saga.",
-      "originalTitle" : "galera “Santa Bárbara”, La"
+      "originalTitle" : "galera “Santa Bárbara”, La",
+      "cover" : "galerasantabarbarala"
     },
     {
       "author" : "Frutiger, Adrian",
@@ -22810,7 +22939,8 @@
       "status" : "Registrado",
       "year" : 2005,
       "synopsis" : "El día en que cumplen 75 años, 1022 ancianos se enrolan en las Fuerzas de Defensa Coloniales. En el universo se está librando una guerra por los planetas todavía deshabitados. El ejército está formado por ancianos a los que les dan cuerpos de jóvenes de veinte años, que deberán viajar a un lugar remoto e inhóspito donde lo único importante será luchar y tratar de sobrevivir, sin la posibilidad de regresar a la Tierra.",
-      "originalTitle" : "Old man’s war"
+      "originalTitle" : "Old man’s war",
+      "cover" : "viejaguardiala"
     },
     {
       "author" : "Delgado Bañón, Luis M.",
@@ -22822,7 +22952,8 @@
       "status" : "Registrado",
       "year" : 2002,
       "synopsis" : "En este volumen, segundo de la serie, el hijo de Francisco Leñanza, también apodado en su hogar como Gigante por sus recias hechuras y fornida musculatura, siente el mismo gusanillo de la aventura marinera sufrido por su progenitor a temprana edad. El padre consiente en sus deseos, prepara un plan adecuado para que su querido vástago no llegue a sufrir las penalidades por él mismo padecidas. De esta forma, sorteando a generoso precio los vericuetos legales en la Corte, consigue que su hijo siente plaza en la Real Compañía de Guardiamarinas, tras presentar el necesario expediente de limpieza de sangre tan impecable como falso, unos manejos que se producían con frecuencia en aquellos años para los que aportaban suficiente fortuna. Gracias a los sabios manejos del padre, nuestro protagonista se convierte, como por encanto, en el guardiamarina don Francisco de Asís Jerónimo Pascual de Leñanza y Martínez de los Cobos. Aquí se narran las peripecias del guardiamarina el Colegio Naval de Cartagena, los primeros contactos con la mar, su heroica actuación formando parte de las cañoneras del general Barceló en el Gran Sitio de Gibraltar, así como los novelescos avatares que se suceden a continuación en compañía de su inseparable compañero, Pecas, más propios de epopeya popular. Como necesario aderezo, aparecen los vaivenes sufridos en su primer amor, con Cristina, hermana del gran amigo.",
-      "originalTitle" : "cañonera 23, La"
+      "originalTitle" : "cañonera 23, La",
+      "cover" : "canonera23la"
     },
     {
       "author" : "King, William",
@@ -22834,7 +22965,8 @@
       "status" : "Registrado",
       "year" : 1999,
       "synopsis" : "Ragnar abandonó su escondite de un salto, escupiendo muerte con su pistola bolter. Era imposible que los merodeadores de las sombras no se percataran de dónde estaba, y con un rugido de rabia se lanzaron cointra él. Ragnar respondió con un aullido lobuno y se tranquilizó al oírlo repetido por las gargantas de sus camaradas Garras Sangrientas que se acercaban. Apretó el gatillo una y otra vez mientras la masa de mutantes enloquecidos se aproximaba, haciendo blanco indefectiblemente. Ragnar rió como un maníaco, invadido por la furia del combate.",
-      "originalTitle" : "Space wolf"
+      "originalTitle" : "Space wolf",
+      "cover" : "loboespacial"
     },
     {
       "author" : "Clarke, Arthur C.",
@@ -22846,7 +22978,8 @@
       "status" : "Registrado",
       "year" : 1968,
       "synopsis" : "Un sobrecogedor viaje interestelar en busca de la evidencia de que el ser humano no está solo en el cosmos. Una expedición a los confines del universo y a los del alma, en la que pasado, presente y futuro se amalgaman en un continuo enigmático. ¿Qué esencia última nos rige? ¿Qué lugar ocupa el hombre en el complejo entramado del infinito? ¿Qué es el tiempo, la vida, la muerte…?",
-      "originalTitle" : "2001: A space odyssey"
+      "originalTitle" : "2001: A space odyssey",
+      "cover" : "2001unaodiseaespacial"
     },
     {
       "author" : "Cercas, Javier",
@@ -22858,7 +22991,8 @@
       "status" : "Registrado",
       "year" : 2019,
       "synopsis" : "Un crimen terrible sacude la apacible comarca de la Terra Alta: los propietarios de su mayor empresa, Gráficas Adell, aparecen asesinados tras haber sido sometidos a atroces torturas. Se encarga del caso Melchor Marín, un joven policía y lector voraz llegado desde Barcelona cuatro años atrás, con un oscuro pasado a cuestas que le ha convertido en una leyenda del cuerpo y que cree haber enterrado bajo su vida feliz como marido de la bibliotecaria del pueblo y padre de una niña llamada Cosette, igual que la hija de Jean Valjean, el protagonista de su novela favorita: Los miserables. Partiendo de ese suceso, y a través de una narración trepidante y repleta de personajes memorables, esta novela se convierte en una lúcida reflexión sobre el valor de la ley, la posibilidad de la justicia y la legitimidad de la venganza, pero sobre todo en la epopeya de un hombre en busca de su lugar en el mundo.",
-      "originalTitle" : "Terra Alta"
+      "originalTitle" : "Terra Alta",
+      "cover" : "terraalta"
     },
     {
       "author" : "Cabanas, Antonio",
@@ -22870,7 +23004,8 @@
       "status" : "Registrado",
       "year" : 2006,
       "synopsis" : "A pesar de los dos mil años transcurridos desde su desaparición, el Antiguo Egipto aún ejerce una poderosa fascinación. Antonio Cabanas abandona el terreno de la ficción para presentarnos una apasionante visión del Antiguo Egipto a partir de sus historias más difundidas y también de las más desconocidas, y nos desvela numerosos enigmas que arrojan luz sobre la historia, la costumbres, las creencias y la tecnología de los habitantes de la Tierra Negra. «Si existe una civilización cuya sola mención sea sinónima de los más insondables misterios, esa es, sin duda, la del Antiguo Egipto. La milenaria cultura de este pueblo se halla impregnada de infinidad de enigmas que parecen perderse entre las espesas brumas de un pasado ya lejano y especialmente distante de nosotros».",
-      "originalTitle" : "secretos de Osiris, Los"
+      "originalTitle" : "secretos de Osiris, Los",
+      "cover" : "secretosdeosirislos"
     },
     {
       "author" : "Cabanas, Antonio",
@@ -22882,7 +23017,8 @@
       "status" : "Registrado",
       "year" : 2008,
       "synopsis" : "Julia es una mujer a la que le abruma la certeza de que jamás le ocurrirá nada auténtico. Profesora de historia, esposa abnegada y madre solícita afronta la llegada de la madurez con resignación. Pero cuando parecía que su trayectoria vital estaba completa, el destino le lleva a vivir una aventura inesperada. El sueño milenario arranca de una situación de intenso dramatismo cuando, tras asistir a una subasta de antigüedades, Julia es testigo de un asesinato y se convierte, por azar, en guardiana de un magnífico y enigmático talismán egipcio de más de 3500 años de antigüedad. A partir de ese momento su vida corre un grave peligro y se va viendo inmersa en la vorágine de una trama en la que están implicadas hermandades secretas y una élite de hombres de negocios poderosos y sin escrúpulos. Acompañada de Lord Bronsbury, un rico coleccionista de arte y Barry Howard, un profesor de egiptología, su gran coraje le empuja a viajar a El Cairo para llevar a cabo la misión de devolver el amuleto a sus legítimos dueños y resolver un misterio que arranca del Egipto de los faraones y llega a la actualidad. Mientras se suceden asesinatos, se cumplen extraños presagios y se ocultan objetos de extraordinaria antigüedad, Julia conoce la pasión y el deseo que ella creía definitivamente enterrados hacía mucho tiempo. ",
-      "originalTitle" : "sueño milenario, El"
+      "originalTitle" : "sueño milenario, El",
+      "cover" : "suenomilenarioel"
     },
     {
       "author" : "González-Ripoll, Juan Luis",
@@ -22894,7 +23030,8 @@
       "status" : "Registrado",
       "year" : 1974,
       "synopsis" : "Las narraciones que componen este libro han sido escritas sobre la base de relatos auténticos y testimonios directos de personas reales. Las cosas que se cuentan ocurrieron efectivamente; los nombres que se mencionan pertenecen a seres que viven o vivieron. La acción transcurre en la Sierra de Cazorla, provincia de Jaén, en la vasta zona que actualmente ocupa el Coto Nacional. Sin embargo, a veces el hilo de las narraciones coge ramales insospechados que nos llevan más lejos aún, adentrándonos en la provincia de Granada, hasta tierras de Castril o de la Puebla de Don Fadrique, en las estribaciones de Sierra Nevada.",
-      "originalTitle" : "Narraciones de caza mayor en Cazorla"
+      "originalTitle" : "Narraciones de caza mayor en Cazorla",
+      "cover" : "narracionesdecazamayorencazorla"
     },
     {
       "author" : "Manfredi, Valerio Massino",
@@ -22906,7 +23043,8 @@
       "status" : "Registrado",
       "year" : 1998,
       "synopsis" : "Jerusalén sitiada por los babilonios en el 586 a. C.: el profeta Jeremías huye por un túnel para salvar el arca de la Alianza y esconderla en una caverna del monte Horeb. Regresa habiendo descubierto algo que parece haberlo enloquecido y se pierde en la nada.\nChicago, fin del segundo milenio d. C.: el profesor William Blake, egiptólogo, busca el misterioso «papiro Breasted» que, se supone, contiene una versión egipcia del Éxodo bíblico, pero cae en una emboscada, pierde su trabajo y su mujer lo abandona.\nTodo ello tiene lugar en un momento de máxima tensión internacional: el Medio Oriente está al borde del colapso, se enfrentan los extremismos en un clima de cruzada y el mundo corre el peligro de un verdadero Armaggedon. Será el enfrentamiento final, en el que se medirán Abú Hamid, líder del terrorismo palestino más radical, y Gad Avner, el jefe del temible Mossad israelí.\nWilliam Blake, al borde del suicidio, es raptado por dos emisarios de una extraña Waren Mining Co. que efectúa sondeos geológicos en un lugar secreto del Medio Oriente para que estudie lo que parece ser la tumba de un alto dignatario egipcio, quizás un faraón. Sin instrumentos; sin ayuda, sólo con la afectuosa comprensión de Sarah Forrestal, Blake descubre que no está en Egipto sino en el desierto de Paran. ¿Qué hace la tumba de un faraón tan lejos de Egipto?\nBlake descubre lo que más de dos milenios antes había enloquecido al profeta Jeremías, una hipótesis que, de confirmarse, desestabilizaría el equilibrio mundial.\n¿Por qué? ¿Cuál es la identidad del faraón del desierto?",
-      "originalTitle" : "faraone delle sabbie, Il"
+      "originalTitle" : "faraone delle sabbie, Il",
+      "cover" : "faraondeldesiertoel"
     },
     {
       "author" : "Manfredi, Valerio Massino",
@@ -22918,7 +23056,8 @@
       "status" : "Registrado",
       "year" : 2005,
       "synopsis" : "Épica, exótica y apasionada, esta aventura en clave de ficción histórica narra las peripecias de un grupo de soldados romanos que huyendo de los persas llega hasta el Imperio de los Dragones, la China del siglo III. Allí su protagonista, Metellus, descubrirá un reino milenario, de deslumbrante belleza, a unos guerreros que luchan de un modo muy extraño y parecen tener poderes mágicos, y a la joven Yu Chang, de quien se enamorará perdidamente. Basada en un episodio real de la historia romana poco conocido: un grupo de soldados romanos que llegaron a China. Tiene todo el atractivo de las películas chinas que están de moda: paisajes exóticos y bellísimos, guerreros con poderes casi sobrenaturales y una historia de amor preciosa pero que no tiene futuro.",
-      "originalTitle" : "L’impero dei draghi"
+      "originalTitle" : "L’impero dei draghi",
+      "cover" : "imperiodelosdragonesel"
     },
     {
       "author" : "Preston, Douglas",
@@ -22930,7 +23069,8 @@
       "status" : "Registrado",
       "year" : 1995,
       "synopsis" : "En 1986, en plena selva amazónica, un grupo de científicos encuentra la talla de un enigmático dios adorado por una tribu de salvajes. El extraño ídolo es enviado a Nueva York, donde queda arrumbado en los sótanos de un enorme y antiguo museo. Poco después, los científicos son masacrados por los indígenas y todo el proyecto cae en el olvido. Sin embargo, con ocasión de una importante exposición, las sinuosas galerías y los vetustos subsuelos del museo se convierten en escenario de varios asesinatos horrendos e inexplicables… Un mundo de maldiciones y pesadillas ancestrales instalado en el corazón del Nueva York actual.",
-      "originalTitle" : "relic, The"
+      "originalTitle" : "relic, The",
+      "cover" : "therelic"
     },
     {
       "author" : "Sendarrubias, Tomás",
@@ -22954,7 +23094,8 @@
       "status" : "Registrado",
       "year" : 2016,
       "synopsis" : "Desde que Dariel Acheron, Santo entre los Santos, acoge al niño Cai en el Monasterio de Término, los signos del regreso de los Dioses comienzan a sucederse por toda la faz de Occidente. Y mientras, las familias de los DeDaanan y los Shaleedor, señores de Allesyr y Llyr, parecen decididas a no alcanzar la paz entre ellas hasta que una de las dos sea exterminada, y las nuevas generaciones no tardarán en verse apresadas en este conflicto. Con las dos poderosas naciones al borde de una guerra continuada, el regreso de los predicadores del Dios Muerto y su enfrentamiento con la Ciencia, y la reaparición de los misteriosos Sidhri en Allesyr, parecen las piezas que harán que Occidente se vea incendiada por una guerra sin final.",
-      "originalTitle" : "Cortes de la Tormenta, Las"
+      "originalTitle" : "Cortes de la Tormenta, Las",
+      "cover" : "cortesdelatormentalas"
     },
     {
       "author" : "Sendarrubias, Tomás",
@@ -22978,7 +23119,8 @@
       "status" : "Registrado",
       "year" : 1995,
       "synopsis" : "Alain Remy-Duray, multimillonario francés, dueño de una importante cadena de periódicos, es un enfermo cardíaco desahuciado. Un día recibe una extraña visita: un magnate del cine le propone ser sometido a un tratamiento médico secreto por parte de un misterioso equipo. El precio que se ha de pagar es exorbitante: 10 millones de dólares. Sin embargo, la contraprestación es algo que no puede rechazarse. Alain Remy-Duray inicia, tras su curación, una nueva vida. Se siente lleno de nuevas facultades y completamente rejuvenecido. Al mismo tiempo, otros grandes magnates que han seguido el mismo tratamiento médico que él, lo invitan a que participe en sus reuniones y a que comparta sus proyectos para el futuro. A pesar de todo, Alain se siente insatisfecho y desea descubrir la verdad que se esconde tras su asombrosa curación. ¿Quiénes eran aquellos misteriosos doctores? ¿Por qué le habían exigido silencio y no le habían revelado nada?",
-      "originalTitle" : "Nuevos dioses"
+      "originalTitle" : "Nuevos dioses",
+      "cover" : "nuevosdioses"
     },
     {
       "author" : "Napier, William",
@@ -22990,7 +23132,8 @@
       "status" : "Registrado",
       "year" : 2007,
       "synopsis" : "En el amanecer del siglo V, Roma se tambalea al borde del abismo. El gran Imperio que otrora dominara el mundo occidental se muestra vulnerable a sus antiguos enemigos: las tribus bárbaras de vándalos y visigodos que presienten que su tiempo ha llegado. Sin embargo, son peores los rumores de un nuevo poder que surge en el Este. Una nación de feroces guerreros a caballo, los hunos, aterroriza la frontera. El joven Atila, nieto del rey de este pueblo, vive como rehén en el palacio imperial de Roma para que su abuelo se mantenga fiel a su alianza con el emperador romano. Su único sueño es escapar y llegar a las llanuras de Asia central, donde no hay muros y hombres y caballos, como un mismo ser, cabalgan en libertad. Con este primer volumen de la trilogía sobre la vida de Atila, William Napier comienza una saga de guerras, codicia y poder que llevarán al fiero huno a convertirse en el guerrero más temido de su tiempo: el verdadero Azote de Dios.",
-      "originalTitle" : "Attila"
+      "originalTitle" : "Attila",
+      "cover" : "findelmundovendradelesteel"
     },
     {
       "author" : "Pratchett, Terry",
@@ -23002,7 +23145,8 @@
       "status" : "Registrado",
       "year" : 1983,
       "synopsis" : "En un mundo plano sostenido por cuatro elefantes impasibles -que se apoyan en la espalda de una tortuga gigante- habitan los estrafalarios personajes de esta novela: un hechicero avaro y torpe, un turista ingenuo cuyo fiero equipaje le sigue a todas partes sostenido por cientos de patitas, dragones que existen si se cree en ellos, gremios de ladrones y asesinos, espadas mágicas, la Muerte y, por supuesto, un extenso catálogo de magos y demonios... En esta serie de novelas se dan cita todos los temas y situaciones del género fantástico, visto a través del personalismo y corrosivo sentido de la comicidad de un autor inglés que se ha convertido en uno de los escritores de humor de mayor éxito y fama en el mundo.",
-      "originalTitle" : "colour of magic, The"
+      "originalTitle" : "colour of magic, The",
+      "cover" : "colordelamagiael"
     },
     {
       "author" : "Sveistrup, Søren",
@@ -23014,7 +23158,8 @@
       "status" : "Registrado",
       "year" : 2018,
       "synopsis" : "El primer martes de Octubre, Rosa Hartung vuelve a su trabajo como ministra de asuntos sociales después de un año de ausencia, al haber vivido una situación dramática: la desaparición de su hija de 12 años. Linus Berger, un joven que sufre de una enfermedad mental, confesó haber matado a la chica, pero es incapaz de recordar dónde quemó las varias partes del cadáver, que fue desmembrado. Hay una correlación entre el caso de la hija de la ministra y esta serie de asesinatos.\nEl mismo día que Rosa vuelve al parlamento, se encuentra el cadáver de una joven madre soltera, que ha sido brutalmente asesinada en su casa, en un suburbio de Copenhague - ha sido torturada y le han cortado una mano. La joven investigadora Naia Thulin es informada al respecto, y junto con Mark Hess, que acaba de ser expulsado de la sede de Europol en La Haya, son enviados a investigar el caso. Al llegar al lugar del crimen, encuentran una figura de un hombrecito hecha con castañas. Parece que el muñeco está ocultando un secreto, aunque esto se atribuye a una coincidencia. Cuando otra mujer es asesinada -y en este caso, el cadáver de la víctima se encuentra con ambas manos cortadas- y a su vez se encuentra en el lugar del crimen otro muñeco hecho con castañas, Thulin y Hess empiezan a sospechar que hay una conexión entre el caso Hartung, las mujeres asesinadas y un asesino que está extendiendo el miedo a lo largo del país.\nEmpieza entonces una carrera contra el tiempo, ya que todo apunta a que el asesino cumple una misión que está lejos de terminar.",
-      "originalTitle" : "Kastanjemanden"
+      "originalTitle" : "Kastanjemanden",
+      "cover" : "casohartungel"
     },
     {
       "author" : "Martín, Ibon",
@@ -23026,7 +23171,8 @@
       "status" : "Registrado",
       "year" : 2014,
       "synopsis" : "Una tarde de otoño, la noche llama a las puertas de un remoto faro de la costa vasca, el cuerpo de una mujer aparece a los pies de la torre de luz. El asesino se ha llevado la grasa de su abdomen. Leire, la escritora bilbaína que ha encontrado el cadáver, se convierte en la principal sospechosa. Desesperada, se verá obligada a iniciar una inquietante investigación que sacará a la luz intrigas familiares y conspiraciones económicas. Sus pasos, que avanzan con más decisión que las pesquisas oficiales, no tardarán en desvelarle que está ante un imitador del Sacamantecas, el brutal asesino en serie que aterrorizó Vitoria en el siglo XIX. Pasaia, una población dividida por la pretendida construcción de una nueva dársena, es el escenario de estas páginas. Tras su apariencia de apacible pueblo pesquero, se oculta un puerto industrial en decadencia, en el que algunos habitantes guardan una oscura verdad.",
-      "originalTitle" : "faro del silencio, El"
+      "originalTitle" : "faro del silencio, El",
+      "cover" : "farodelsilencioel"
     },
     {
       "author" : "Forsyth, Frederick",
@@ -23038,7 +23184,8 @@
       "status" : "Registrado",
       "year" : 2001,
       "synopsis" : "Frederick Forsyth regresa al terreno de sus grandes bestsellers. Y para Forsyth esto significa historias de engaños, de misterio, de venganza y, sobre todo, de intriga. Estos cinco relatos originales constituyen una obra impresionante, con ambientaciones que van desde Londres hasta Siena y desde la Segunda Guerra Mundial hasta el Lejano Oeste. Todos confirman, si cabe, el reconocido talento del autor para narrar historias que subyugan totalmente desde la primera página, gracias a su perfecto sentido del ritmo, el giro inesperado y el suspense narrativos. Así pues, Forsyth vuelve a demostrarnos por qué está considerado el maestro de su género.",
-      "originalTitle" : "veteran, The"
+      "originalTitle" : "veteran, The",
+      "cover" : "veteranoel"
     },
     {
       "author" : "Christie, Agatha",
@@ -23050,7 +23197,8 @@
       "status" : "Registrado",
       "year" : 1938,
       "synopsis" : "La señora Boynton muere víctima de lo que parece un ataque al corazón y, con ello, hace a su familia el mejor de los regalos: la libertad. Todos tenían razones para desear su muerte, pero ¿alguno de ellos la mató? Hércules Poirot desvelará el misterio y demostrará una vez más que para ver la verdad hay que ser capaz de mirar más allá de las apariencias.",
-      "originalTitle" : "Appointment with death"
+      "originalTitle" : "Appointment with death",
+      "cover" : "citaconlamuerte"
     },
     {
       "author" : "Christie, Agatha",
@@ -23062,7 +23210,8 @@
       "status" : "Registrado",
       "year" : 1941,
       "synopsis" : "Una playa estupenda y un hotel lujoso. Reina la paz, la alegría y la despreocupación. Sin embargo la naturaleza humana es la naturaleza humana. Caldo de cultivo en el que la codicia se agita, hierven las pasiones y los vapores de la maldad se filtran por todas partes, bajo el sol. Aquí la maldad parece concentrarse en Arlene, a la que todos desean. Mujer fatal, que acaso castigo por su carácter licencioso, aparece estrangulada junto al mar. Se trata de un asesinato, pero todos los posibles sospechosos tienen coartada. Sin embargo, el detective Hércules Poirot ve más allá de las apariencias. Se percata de que aquel es un crimen minuciosamente planeado y cronometrado…",
-      "originalTitle" : "Evil under the sun"
+      "originalTitle" : "Evil under the sun",
+      "cover" : "maldadbajoelsol"
     },
     {
       "author" : "Dickson, Carter",
@@ -23074,7 +23223,8 @@
       "status" : "Registrado",
       "year" : 1934,
       "synopsis" : "En un pabellón rodeado de nieve sin pisar aparece el cadáver de una mujer. Las únicas huellas que se ven son las que ha dejado la persona que ha encontrado el cuerpo. Lo curioso es que el asesinato se cometió cuando ya había dejado de nevar. No hay más señales en el manto blanco del suelo, y el asesino tampoco estaba en el interior del recinto. ¿Un crimen imposible?",
-      "originalTitle" : "white priory murders, The"
+      "originalTitle" : "white priory murders, The",
+      "cover" : "sangreenelespejodelareina"
     },
     {
       "author" : "Follett, Ken",
@@ -23086,7 +23236,8 @@
       "status" : "Registrado",
       "year" : 1979,
       "synopsis" : "Nat Dickstein, uno de los mejores agentes secretos israelíes, tiene una misión crucial: hacer desaparecer el barco que transporta el uranio que Egipto necesita para poseer la bomba atómica. Ciertamente una misión casi imposible, ya que egipcios y palestinos no están dispuestos a contemplar pasivamente cómo se esfuma su gran baza para inclinar a su favor el conflicto de Oriente Medio… Una novela electrizante a partir de un suceso real.",
-      "originalTitle" : "Triple"
+      "originalTitle" : "Triple",
+      "cover" : "triple"
     },
     {
       "author" : "Gardner, Earle Stanley",
@@ -23098,7 +23249,8 @@
       "status" : "Registrado",
       "year" : 1933,
       "synopsis" : "Una mujer glamurosa pero indiscreta confía en el abogado criminalista Perry Mason para la tarea de desenredar una red de chantaje.",
-      "originalTitle" : "case of the velvet claws, The"
+      "originalTitle" : "case of the velvet claws, The",
+      "cover" : "casodelasgarrasdeterciopeloel"
     },
     {
       "author" : "Pérez-Reverte, Arturo",
@@ -23110,7 +23262,8 @@
       "status" : "Registrado",
       "year" : 2021,
       "synopsis" : "En los años 1942 y 1943, durante la Segunda Guerra Mundial, buzos de combate italianos hundieron o dañaron catorce barcos aliados en Gibraltar y la bahía de Algeciras. En esta novela, inspirada en hechos reales, sólo algunos personajes y situaciones son imaginarios. Elena Arbués, una librera de veintisiete años, encuentra una madrugada mientras pasea por la playa a uno de esos buzos, desvanecido entre la arena y el agua. Al socorrerlo, la joven ignora que esa determinación cambiará su vida y que el amor será sólo parte de una peligrosa aventura.",
-      "originalTitle" : "italiano, El"
+      "originalTitle" : "italiano, El",
+      "cover" : "italianoel"
     },
     {
       "author" : "Santiago, Mikel",
@@ -23122,7 +23275,8 @@
       "status" : "Registrado",
       "year" : 2021,
       "synopsis" : "Un grupo de rock. Un concierto. Una chica desaparecida. Han pasado más de veinte años, pero hay noches que nunca terminan.\n¿Puede una noche marcar el destino de todos los que la vivieron? Han pasado más de veinte años desde que Diego Letamendia, estrella del rock en declive, actuó por última vez en su pueblo natal, Illumbe. Esa fue la noche del final de su banda y su grupo de amigos, y también la de la desaparición de Lorea, su novia. La policía nunca logró esclarecer lo ocurrido con la chica, que fue vista saliendo a toda prisa de la sala de conciertos, como si huyera de algo o de alguien. Después de aquello, Diego emprendió una carrera de éxitos en solitario y jamás regresó al pueblo.\nCuando uno de los miembros de la banda muere en un extraño incendio, Diego decide volver a Illumbe. Han pasado muchos años y el reencuentro con los antiguos amigos es difícil: ninguno de ellos sigue siendo la persona que fue. Mientras, crece la sospecha de que el incendio no fue accidental. ¿Es posible que todo esté relacionado y que, tanto tiempo después, Diego pueda encontrar nuevas pistas sobre lo que pasó con Lorea?",
-      "originalTitle" : "En plena noche"
+      "originalTitle" : "En plena noche",
+      "cover" : "enplenanoche"
     },
     {
       "author" : "Child, Lee",
@@ -23134,7 +23288,8 @@
       "status" : "Registrado",
       "year" : 2003,
       "synopsis" : "Mientras pasea por Boston, Jack Reacher ve el rostro de un hombre al que conoció cuando estaba en el ejército y que debería llevar muerto diez años. Desde ese momento, Reacher solo tiene un propósito: acabar con él. No va a ser nada fácil. Su presa está relacionada con una red ilegal que está siendo investigada por la DEA. Reacher se verá obligado a actuar como agente infiltrado para lograr su objetivo. Sabe que es una misión suicida, pero él no es de los que deja los trabajos a medias.",
-      "originalTitle" : "Persuader"
+      "originalTitle" : "Persuader",
+      "cover" : "ajustedecuentas"
     },
     {
       "author" : "Santiago, Mikel",
@@ -23146,7 +23301,8 @@
       "status" : "Registrado",
       "year" : 2020,
       "synopsis" : "Hay novelas imposibles de abandonar una vez leídas las primeras páginas. Historias que reinventan el suspense y hacen dudar al lector cada vez que termina un capítulo. En este thriller absolutamente original y adictivo, Mikel Santiago rompe los límites de la intriga psicológica con un relato que explora las frágiles fronteras entre el recuerdo y la amnesia, la verdad y la mentira.\nEn la primera escena, el protagonista despierta en una fábrica abandonada junto al cadáver de un hombre desconocido y una piedra con restos de sangre. Cuando huye, decide tratar de reconstruir él mismo los hechos. Sin embargo, tiene un problema: no recuerda apenas nada de lo ocurrido en las últimas cuarenta y ocho horas. Y lo poco que sí sabe es mejor no contárselo a nadie.\nAsí arranca este thriller que nos traslada a un pueblo costero del País Vasco, entre sinuosas carreteras al borde de acantilados y casas de muros resquebrajados por las noches de tormenta: una pequeña comunidad donde, solo aparentemente, nadie tiene secretos para nadie.",
-      "originalTitle" : "mentiroso, El"
+      "originalTitle" : "mentiroso, El",
+      "cover" : "mentirosoel"
     },
     {
       "author" : "Child, Lee",
@@ -23158,7 +23314,8 @@
       "status" : "Registrado",
       "year" : 1999,
       "synopsis" : "El expolicía militar Jack Reacher está disfrutando de su anonimato en Florida cuando un desconocido con muchas preguntas empieza a husmear a su alrededor. Reacher también tiene muchas preguntas, especialmente desde que el tipo aparece muerto. Las respuestas le conducen hasta Nueva York, hasta una seductora mujer y hasta los rincones oscuros de su propio pasado.",
-      "originalTitle" : "Tripwire"
+      "originalTitle" : "Tripwire",
+      "cover" : "trampamortal"
     },
     {
       "author" : "Asimov, Isaac",
@@ -23170,7 +23327,8 @@
       "status" : "Registrado",
       "year" : 1976,
       "synopsis" : "En 1976, con motivo de la celebración del segundo centenario de la independencia de Estados Unidos, se encargó a varios autores que escribieran algún relato corto con el tema The Bicentennial Man, el cual podía desarrollarse libremente. En inglés esta expresión puede interpretarse como «El hombre del Bicentenario» (la vida de la gente en Estados Unidos doscientos años después de la Declaración de Independencia) o como «El hombre bicentenario» (un hombre que llega a vivir doscientos años).\n\nJugando con esta ambigüedad, Asimov, que fue uno de los autores que recibió dicho encargo, renunció a hacer un ensayo sociológico y, argumentando que «un hombre no podría vivir tanto tiempo», escribió un relato corto acerca de un robot que poco a poco va asimilando el mundo de los humanos hasta desear ser reconocido como uno de ellos, lo cual lo lleva a luchar por obtener su humanidad de manera legítima.\n\nEl resultado fue el magistral relato que en su día obtuvo los premios Hugo, Nebula y Locus, y que ahora da nombre a esta recopilación. Junto a él, podemos gozar de otros cuentos que han pasado ya a la historia con la categoría de grandes clásicos.",
-      "originalTitle" : "bicentennial man, The"
+      "originalTitle" : "bicentennial man, The",
+      "cover" : "hombrebicentenarioel"
     },
     {
       "author" : "Corey, James S.A.",
@@ -23194,7 +23352,8 @@
       "status" : "No leído",
       "year" : 1990,
       "synopsis" : "Isaac Asimov, creador de la palabra robótica, nos fascinó con su inolvidable libro Sueños de robot, que nos introdujo en el universo de la inteligencia artificial. Ahora, en Visiones de robot, nos ofrece treinta y seis de sus más importantes relatos cortos y ensayos sobre robots.\nEn este libro extraordinario se incluyen tres narraciones escritas de manera específica para este volumen. Visiones de robot resume medio siglo de pensamiento acerca de los robots y la robótica. Desde el mismo Robbie hasta los relatos de Susan Calvin, la primera robopsicóloga, pasando por Stephen Byerley, el robot humanoide, y el equipo de detectives formado por un hombre y un robot, Lije Baley y Daneel Olivaw, encontramos aquí los momentos clave en la historia de ficción de las relaciones entre el hombre y el robot. Descubrimos los primeros ordenadores y máquinas móviles casi desprovistas de \"inteligencia\", robots pensantes capaces de probar que son superiores a los humanos e incluso el primer robot que llega a convertirse en un hombre, mediante todo lo cual Asimov nos lleva a una fascinante exploración de los peligros y posibilidades a los que se enfrenta quien trate de crear una inteligencia verdaderamente artificial.\nPor su parte, Ralph McQuarrie, ganador de un Oscar de la Academia y diseñador de la producción de La guerra de las galaxias, aumenta el valor intrínseco de este libro con unas magníficas ilustraciones.",
-      "originalTitle" : "Robot visions"
+      "originalTitle" : "Robot visions",
+      "cover" : "visionesderobot"
     },
     {
       "author" : "Dumas, Alexandre",
@@ -23242,7 +23401,8 @@
       "status" : "Registrado",
       "year" : 1973,
       "synopsis" : "Cita con Rama es una de las obras de ciencia ficción más galardonadas de todos los tiempos y sin duda una de las mejores novelas escritas por Clarke. El punto de partida de esta espléndida novela resulta ya inquietante: Después del impacto de un enorme asteroide que destruye completamente Padua y Verona, se crea en la Tierra un sofisticado sistema para detectar la trayectoria de cualquier objeto que aparezca cerca de nuestro planeta, y gracias a esta previsión se descubre un extraño asteroide que gira a una increíble velocidad.",
-      "originalTitle" : "Rendezous with Rama"
+      "originalTitle" : "Rendezous with Rama",
+      "cover" : "citaconrama"
     },
     {
       "author" : "Dumas, Alexandre",
@@ -23251,10 +23411,11 @@
       "id" : 118,
       "price" : 0,
       "bookTitle" : "tulipán negro, El",
-      "status" : "En espera",
+      "status" : "Leyendo",
       "year" : 1850,
       "synopsis" : "Los hermanos De Witt, protegidos del gran rey Luis de Francia, encontrarán la muerte a manos de la enloquecida población de La Haya, que les cree culpables de conspiración. Pero antes de morir dejarán a su ahijado Cornelius unos comprometedores documentos que le llevarán a la cárcel, donde, en compañía de la joven Rosa, se afanará en conseguir lo que más desea en el mundo: el bulbo del tulipán negro.\n\nCon su habitual talento narrativo, Alejandro Dumas despliega en esta novela de intriga todos los ingredientes necesarios para atrapar al lector desde la primera página y sumergirlo en la tumultuosa sociedad holandesa de finales del siglo XVII.",
-      "originalTitle" : "La tulipe noire"
+      "originalTitle" : "La tulipe noire",
+      "cover" : "tulipannegroel"
     },
     {
       "author" : "Carrigan, Lou",
@@ -23266,12 +23427,69 @@
       "status" : "Registrado",
       "year" : 1965,
       "synopsis" : "Oyó el ruido de un grifo dejando escapar gotas de agua muy seguidas. Sólo eso. Guardó la ganzúa y sacó el encendedor del bolso y la pistola del seno. Apercibió esta última en su mano derecha y con la izquierda encendió el mechero.\nUn cuarto grandote, con muebles viejos. Una ventana al fondo, que debía de dar a un patio interior, completamente oscuro en aquel momento. La ventana estaba abierta y entraba una suave corriente de aire hacia la puerta; debía de filtrarse por debajo.\nApagó el encendedor y se acercó a la ventana. Se asomó cautelosamente mirando hacia arriba y hacia abajo. Grandes canalones rezumando humedad, el techo por cielo, negrura absoluta abajo...\nCerró la ventana, se volvió, y de nuevo encendió el mechero. Lo vio entonces.\nEl bulto. Estaba casi en el centro de la habitación, a un lado de la mesa, de tal modo que no había podido verlo desde la entrada.",
-      "originalTitle" : "Si parla italiano"
+      "originalTitle" : "Si parla italiano",
+      "cover" : "siparlaitaliano"
     }
   ],
   "id" : "564DA490-1AAC-43C5-B5AD-369047602EB6",
   "nickname" : "Tic",
   "sessions" : [
+    {
+      "duration" : "0h 16min",
+      "id" : "EEDF4AA0-5950-4D3E-ADD6-FF98C7A782C3",
+      "startingPage" : 175,
+      "endingPage" : 186,
+      "minPerPag" : "1min 20s",
+      "date" : 716554800
+    },
+    {
+      "duration" : "0h 8min",
+      "id" : "15658DEB-029A-41C4-AB9F-33A6684D5FEE",
+      "startingPage" : 169,
+      "endingPage" : 174,
+      "minPerPag" : "1min 20s",
+      "date" : 716468400
+    },
+    {
+      "duration" : "0h 36min",
+      "id" : "3C9CA45F-0251-4E79-8CA7-931ECF360E68",
+      "startingPage" : 149,
+      "endingPage" : 168,
+      "minPerPag" : "1min 48s",
+      "date" : 716382000
+    },
+    {
+      "duration" : "0h 19min",
+      "id" : "E84993BA-B4C3-41C9-AED5-85853DEFCA3E",
+      "startingPage" : 137,
+      "endingPage" : 148,
+      "minPerPag" : "1min 35s",
+      "date" : 716295600
+    },
+    {
+      "duration" : "0h 36min",
+      "id" : "17158AAD-165B-4648-8CED-325BE0A9A46F",
+      "startingPage" : 115,
+      "endingPage" : 136,
+      "minPerPag" : "1min 38s",
+      "date" : 716209200
+    },
+    {
+      "duration" : "0h 24min",
+      "id" : "8132BE8B-75CB-4A80-816D-6518C15510DF",
+      "startingPage" : 101,
+      "endingPage" : 114,
+      "minPerPag" : "1min 43s",
+      "date" : 716122800
+    },
+    {
+      "duration" : "0h 36min",
+      "id" : "2CF95FF8-8A4A-4031-A11F-51D20FBD453F",
+      "startingPage" : 79,
+      "endingPage" : 100,
+      "minPerPag" : "1min 38s",
+      "date" : 716036400
+    },
     {
       "duration" : "1h 19min",
       "id" : "BA309203-0902-477F-AD77-F872038E93E2",
@@ -36534,7 +36752,7 @@
       "over50" : 2,
       "percentOver50" : 40,
       "pagPerDay" : 49,
-      "cover" : "cover001",
+      "cover" : "headhunters",
       "minPerPag" : "1min 38s",
       "id" : 1,
       "readingSessions" : [
@@ -36609,7 +36827,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 28,
-      "cover" : "cover002",
+      "cover" : "infinitoel",
       "minPerPag" : "1min 38s",
       "id" : 2,
       "readingSessions" : [
@@ -36676,7 +36894,7 @@
       "over50" : 2,
       "percentOver50" : 13,
       "pagPerDay" : 36,
-      "cover" : "cover003",
+      "cover" : "azuldeprusia",
       "minPerPag" : "1min 47s",
       "id" : 3,
       "readingSessions" : [
@@ -36823,7 +37041,7 @@
       "over50" : 2,
       "percentOver50" : 40,
       "pagPerDay" : 57,
-      "cover" : "cover004",
+      "cover" : "ascensodelahordael",
       "minPerPag" : "1min 34s",
       "id" : 4,
       "readingSessions" : [
@@ -36890,7 +37108,7 @@
       "over50" : 1,
       "percentOver50" : 14,
       "pagPerDay" : 33,
-      "cover" : "cover005",
+      "cover" : "cianuroespumoso",
       "minPerPag" : "1min 33s",
       "id" : 5,
       "readingSessions" : [
@@ -36973,7 +37191,7 @@
       "over50" : 3,
       "percentOver50" : 43,
       "pagPerDay" : 47,
-      "cover" : "cover006",
+      "cover" : "todosloscasosdesamspade",
       "minPerPag" : "1min 29s",
       "id" : 6,
       "readingSessions" : [
@@ -37056,7 +37274,7 @@
       "over50" : 5,
       "percentOver50" : 36,
       "pagPerDay" : 49,
-      "cover" : "cover007",
+      "cover" : "yojulia",
       "minPerPag" : "1min 34s",
       "id" : 7,
       "readingSessions" : [
@@ -37195,7 +37413,7 @@
       "over50" : 1,
       "percentOver50" : 17,
       "pagPerDay" : 35,
-      "cover" : "cover008",
+      "cover" : "santocontraeltigreel",
       "minPerPag" : "1min 46s",
       "id" : 8,
       "readingSessions" : [
@@ -37278,7 +37496,7 @@
       "over50" : 3,
       "percentOver50" : 43,
       "pagPerDay" : 45,
-      "cover" : "cover009",
+      "cover" : "clavodeplatael",
       "minPerPag" : "1min 42s",
       "id" : 9,
       "readingSessions" : [
@@ -37361,7 +37579,7 @@
       "over50" : 1,
       "percentOver50" : 25,
       "pagPerDay" : 35,
-      "cover" : "cover010",
+      "cover" : "topologialageometriadelaplastilina",
       "minPerPag" : "1min 35s",
       "id" : 10,
       "readingSessions" : [
@@ -37420,7 +37638,7 @@
       "over50" : 4,
       "percentOver50" : 80,
       "pagPerDay" : 56,
-      "cover" : "cover011",
+      "cover" : "zorroel",
       "minPerPag" : "1min 30s",
       "id" : 11,
       "readingSessions" : [
@@ -37487,7 +37705,7 @@
       "over50" : 2,
       "percentOver50" : 100,
       "pagPerDay" : 78,
-      "cover" : "cover012",
+      "cover" : "piratasdelosasteroideslos",
       "minPerPag" : "1min 28s",
       "id" : 12,
       "readingSessions" : [
@@ -37530,7 +37748,7 @@
       "over50" : 4,
       "percentOver50" : 100,
       "pagPerDay" : 53,
-      "cover" : "cover013",
+      "cover" : "tardemalynunca",
       "minPerPag" : "1min 32s",
       "id" : 13,
       "readingSessions" : [
@@ -37589,7 +37807,7 @@
       "over50" : 4,
       "percentOver50" : 67,
       "pagPerDay" : 58,
-      "cover" : "cover014",
+      "cover" : "llamadaperdida",
       "minPerPag" : "1min 21s",
       "id" : 14,
       "readingSessions" : [
@@ -37664,7 +37882,7 @@
       "over50" : 3,
       "percentOver50" : 75,
       "pagPerDay" : 65,
-      "cover" : "cover015",
+      "cover" : "tanarenpellucidar",
       "minPerPag" : "1min 30s",
       "id" : 15,
       "readingSessions" : [
@@ -37723,7 +37941,7 @@
       "over50" : 3,
       "percentOver50" : 100,
       "pagPerDay" : 82,
-      "cover" : "cover016",
+      "cover" : "muerteenlavicaria",
       "minPerPag" : "1min 24s",
       "id" : 16,
       "readingSessions" : [
@@ -37782,7 +38000,7 @@
       "over50" : 4,
       "percentOver50" : 80,
       "pagPerDay" : 60,
-      "cover" : "cover017",
+      "cover" : "herenciadeldesiertola",
       "minPerPag" : "1min 36s",
       "id" : 17,
       "readingSessions" : [
@@ -37849,7 +38067,7 @@
       "over50" : 4,
       "percentOver50" : 57,
       "pagPerDay" : 50,
-      "cover" : "cover018",
+      "cover" : "matatrolls",
       "minPerPag" : "1min 34s",
       "id" : 18,
       "readingSessions" : [
@@ -37932,7 +38150,7 @@
       "over50" : 6,
       "percentOver50" : 86,
       "pagPerDay" : 74,
-      "cover" : "cover019",
+      "cover" : "herederoel",
       "minPerPag" : "1min 20s",
       "id" : 19,
       "readingSessions" : [
@@ -38023,7 +38241,7 @@
       "over50" : 3,
       "percentOver50" : 50,
       "pagPerDay" : 47,
-      "cover" : "cover020",
+      "cover" : "policiaquerieel",
       "minPerPag" : "1min 25s",
       "id" : 20,
       "readingSessions" : [
@@ -38098,7 +38316,7 @@
       "over50" : 4,
       "percentOver50" : 67,
       "pagPerDay" : 59,
-      "cover" : "cover021",
+      "cover" : "cobra",
       "minPerPag" : "1min 43s",
       "id" : 21,
       "readingSessions" : [
@@ -38173,7 +38391,7 @@
       "over50" : 3,
       "percentOver50" : 75,
       "pagPerDay" : 91,
-      "cover" : "cover022",
+      "cover" : "sabotaje",
       "minPerPag" : "1min 18s",
       "id" : 22,
       "readingSessions" : [
@@ -38232,7 +38450,7 @@
       "over50" : 3,
       "percentOver50" : 100,
       "pagPerDay" : 94,
-      "cover" : "cover023",
+      "cover" : "piratas",
       "minPerPag" : "1min 28s",
       "id" : 23,
       "readingSessions" : [
@@ -38283,7 +38501,7 @@
       "over50" : 6,
       "percentOver50" : 86,
       "pagPerDay" : 76,
-      "cover" : "cover024",
+      "cover" : "alanoel",
       "minPerPag" : "1min 23s",
       "id" : 24,
       "readingSessions" : [
@@ -38366,7 +38584,7 @@
       "over50" : 4,
       "percentOver50" : 100,
       "pagPerDay" : 92,
-      "cover" : "cover025",
+      "cover" : "doscarasdelaverdadlas",
       "minPerPag" : "1min 16s",
       "id" : 25,
       "readingSessions" : [
@@ -38425,7 +38643,7 @@
       "over50" : 4,
       "percentOver50" : 100,
       "pagPerDay" : 69,
-      "cover" : "cover026",
+      "cover" : "negreros",
       "minPerPag" : "1min 24s",
       "id" : 26,
       "readingSessions" : [
@@ -38484,7 +38702,7 @@
       "over50" : 2,
       "percentOver50" : 67,
       "pagPerDay" : 70,
-      "cover" : "cover027",
+      "cover" : "isladelfindelasuertela",
       "minPerPag" : "1min 16s",
       "id" : 27,
       "readingSessions" : [
@@ -38535,7 +38753,7 @@
       "over50" : 3,
       "percentOver50" : 43,
       "pagPerDay" : 51,
-      "cover" : "cover028",
+      "cover" : "filosmortales",
       "minPerPag" : "1min 43s",
       "id" : 28,
       "readingSessions" : [
@@ -38618,7 +38836,7 @@
       "over50" : 3,
       "percentOver50" : 50,
       "pagPerDay" : 48,
-      "cover" : "cover029",
+      "cover" : "santoentenerifeel",
       "minPerPag" : "1min 34s",
       "id" : 29,
       "readingSessions" : [
@@ -38693,7 +38911,7 @@
       "over50" : 4,
       "percentOver50" : 67,
       "pagPerDay" : 53,
-      "cover" : "cover030",
+      "cover" : "tarzandelosmonos",
       "minPerPag" : "1min 26s",
       "id" : 30,
       "readingSessions" : [
@@ -38768,7 +38986,7 @@
       "over50" : 2,
       "percentOver50" : 67,
       "pagPerDay" : 72,
-      "cover" : "cover031",
+      "cover" : "muerteenabril",
       "minPerPag" : "1min 31s",
       "id" : 31,
       "readingSessions" : [
@@ -38819,7 +39037,7 @@
       "over50" : 5,
       "percentOver50" : 83,
       "pagPerDay" : 74,
-      "cover" : "cover032",
+      "cover" : "puntocritico",
       "minPerPag" : "1min 07s",
       "id" : 32,
       "readingSessions" : [
@@ -38894,7 +39112,7 @@
       "over50" : 3,
       "percentOver50" : 50,
       "pagPerDay" : 53,
-      "cover" : "cover033",
+      "cover" : "dinerosangriento",
       "minPerPag" : "1min 40s",
       "id" : 33,
       "readingSessions" : [
@@ -38969,7 +39187,7 @@
       "over50" : 1,
       "percentOver50" : 33,
       "pagPerDay" : 44,
-      "cover" : "cover034",
+      "cover" : "optimizacionmatematica",
       "minPerPag" : "1min 36s",
       "id" : 34,
       "readingSessions" : [
@@ -39020,7 +39238,7 @@
       "over50" : 3,
       "percentOver50" : 30,
       "pagPerDay" : 40,
-      "cover" : "cover035",
+      "cover" : "laberintogriego",
       "minPerPag" : "1min 49s",
       "id" : 35,
       "readingSessions" : [
@@ -39127,7 +39345,7 @@
       "over50" : 4,
       "percentOver50" : 100,
       "pagPerDay" : 65,
-      "cover" : "cover036",
+      "cover" : "misteriososrbrownel",
       "minPerPag" : "1min 29s",
       "id" : 36,
       "readingSessions" : [
@@ -39186,7 +39404,7 @@
       "over50" : 4,
       "percentOver50" : 80,
       "pagPerDay" : 54,
-      "cover" : "cover037",
+      "cover" : "galerasantabarbarala",
       "minPerPag" : "1min 45s",
       "id" : 37,
       "readingSessions" : [
@@ -39253,7 +39471,7 @@
       "over50" : 2,
       "percentOver50" : 25,
       "pagPerDay" : 38,
-      "cover" : "cover038",
+      "cover" : "viejaguardiala",
       "minPerPag" : "1min 42s",
       "id" : 38,
       "readingSessions" : [
@@ -39344,7 +39562,7 @@
       "over50" : 1,
       "percentOver50" : 11,
       "pagPerDay" : 37,
-      "cover" : "cover039",
+      "cover" : "augeycaidadelosdinosaurios",
       "minPerPag" : "1min 48s",
       "id" : 39,
       "readingSessions" : [
@@ -39443,7 +39661,7 @@
       "over50" : 7,
       "percentOver50" : 78,
       "pagPerDay" : 61,
-      "cover" : "cover040",
+      "cover" : "cuchillo",
       "minPerPag" : "1min 30s",
       "id" : 40,
       "readingSessions" : [
@@ -39542,7 +39760,7 @@
       "over50" : 6,
       "percentOver50" : 30,
       "pagPerDay" : 38,
-      "cover" : "cover041",
+      "cover" : "jardinesdelalunalos",
       "minPerPag" : "2min 01s",
       "id" : 41,
       "readingSessions" : [
@@ -39729,7 +39947,7 @@
       "over50" : 3,
       "percentOver50" : 50,
       "pagPerDay" : 52,
-      "cover" : "cover042",
+      "cover" : "margendeerror",
       "minPerPag" : "1min 25s",
       "id" : 42,
       "readingSessions" : [
@@ -39804,7 +40022,7 @@
       "over50" : 4,
       "percentOver50" : 100,
       "pagPerDay" : 68,
-      "cover" : "cover043",
+      "cover" : "canonera23la",
       "minPerPag" : "1min 43s",
       "id" : 43,
       "readingSessions" : [
@@ -39863,7 +40081,7 @@
       "over50" : 2,
       "percentOver50" : 67,
       "pagPerDay" : 60,
-      "cover" : "cover044",
+      "cover" : "ojosdeagua",
       "minPerPag" : "1min 26s",
       "id" : 44,
       "readingSessions" : [
@@ -39914,7 +40132,7 @@
       "over50" : 3,
       "percentOver50" : 100,
       "pagPerDay" : 65,
-      "cover" : "cover045",
+      "cover" : "unaprincesademarte",
       "minPerPag" : "1min 44s",
       "id" : 45,
       "readingSessions" : [
@@ -39965,7 +40183,7 @@
       "over50" : 6,
       "percentOver50" : 29,
       "pagPerDay" : 42,
-      "cover" : "cover046",
+      "cover" : "puertasdelacasadelamuertelas",
       "minPerPag" : "2min 19s",
       "id" : 46,
       "readingSessions" : [
@@ -40160,7 +40378,7 @@
       "over50" : 3,
       "percentOver50" : 100,
       "pagPerDay" : 61,
-      "cover" : "cover047",
+      "cover" : "asesinatoenlaplanta31",
       "minPerPag" : "1min 31s",
       "id" : 47,
       "readingSessions" : [
@@ -40211,7 +40429,7 @@
       "over50" : 2,
       "percentOver50" : 50,
       "pagPerDay" : 52,
-      "cover" : "cover048",
+      "cover" : "2001unaodiseaespacial",
       "minPerPag" : "1min 59s",
       "id" : 48,
       "readingSessions" : [
@@ -40270,7 +40488,7 @@
       "over50" : 3,
       "percentOver50" : 8,
       "pagPerDay" : 32,
-      "cover" : "cover049",
+      "cover" : "memoriasdehielo",
       "minPerPag" : "2min 25s",
       "id" : 49,
       "readingSessions" : [
@@ -40585,7 +40803,7 @@
       "over50" : 2,
       "percentOver50" : 50,
       "pagPerDay" : 62,
-      "cover" : "cover050",
+      "cover" : "misteriodeltrenazulel",
       "minPerPag" : "1min 21s",
       "id" : 50,
       "readingSessions" : [
@@ -40644,7 +40862,7 @@
       "over50" : 3,
       "percentOver50" : 43,
       "pagPerDay" : 44,
-      "cover" : "cover051",
+      "cover" : "loboespacial",
       "minPerPag" : "1min 57s",
       "id" : 51,
       "readingSessions" : [
@@ -40727,7 +40945,7 @@
       "over50" : 4,
       "percentOver50" : 67,
       "pagPerDay" : 61,
-      "cover" : "cover052",
+      "cover" : "sesionnocturna",
       "minPerPag" : "1min 31s",
       "id" : 52,
       "readingSessions" : [
@@ -40802,7 +41020,7 @@
       "over50" : 5,
       "percentOver50" : 63,
       "pagPerDay" : 54,
-      "cover" : "cover053",
+      "cover" : "playadelosahogadosla",
       "minPerPag" : "1min 24s",
       "id" : 53,
       "readingSessions" : [
@@ -40893,7 +41111,7 @@
       "over50" : 3,
       "percentOver50" : 60,
       "pagPerDay" : 50,
-      "cover" : "cover054",
+      "cover" : "secretosdeosirislos",
       "minPerPag" : "2min 03s",
       "id" : 54,
       "readingSessions" : [
@@ -40960,7 +41178,7 @@
       "over50" : 1,
       "percentOver50" : 25,
       "pagPerDay" : 49,
-      "cover" : "cover055",
+      "cover" : "cuatrograndeslos",
       "minPerPag" : "1min 46s",
       "id" : 55,
       "readingSessions" : [
@@ -41019,7 +41237,7 @@
       "over50" : 3,
       "percentOver50" : 12,
       "pagPerDay" : 31,
-      "cover" : "cover056",
+      "cover" : "casadecadenasla",
       "minPerPag" : "2min 24s",
       "id" : 56,
       "readingSessions" : [
@@ -41246,7 +41464,7 @@
       "over50" : 6,
       "percentOver50" : 75,
       "pagPerDay" : 55,
-      "cover" : "cover057",
+      "cover" : "malasuerte",
       "minPerPag" : "1min 22s",
       "id" : 57,
       "readingSessions" : [
@@ -41337,7 +41555,7 @@
       "over50" : 5,
       "percentOver50" : 83,
       "pagPerDay" : 61,
-      "cover" : "cover058",
+      "cover" : "sidi",
       "minPerPag" : "1min 24s",
       "id" : 58,
       "readingSessions" : [
@@ -41412,7 +41630,7 @@
       "over50" : 3,
       "percentOver50" : 100,
       "pagPerDay" : 59,
-      "cover" : "cover059",
+      "cover" : "narracionesdecazamayorencazorla",
       "minPerPag" : "1min 35s",
       "id" : 59,
       "readingSessions" : [
@@ -41463,7 +41681,7 @@
       "over50" : 4,
       "percentOver50" : 57,
       "pagPerDay" : 60,
-      "cover" : "cover060",
+      "cover" : "imperiodelosdragonesel",
       "minPerPag" : "1min 34s",
       "id" : 60,
       "readingSessions" : [
@@ -41546,7 +41764,7 @@
       "over50" : 4,
       "percentOver50" : 80,
       "pagPerDay" : 59,
-      "cover" : "cover061",
+      "cover" : "muertedeunviolinista",
       "minPerPag" : "1min 31s",
       "id" : 61,
       "readingSessions" : [
@@ -41613,7 +41831,7 @@
       "over50" : 1,
       "percentOver50" : 11,
       "pagPerDay" : 35,
-      "cover" : "cover062",
+      "cover" : "metropolis",
       "minPerPag" : "2min 03s",
       "id" : 62,
       "readingSessions" : [
@@ -41712,7 +41930,7 @@
       "over50" : 3,
       "percentOver50" : 38,
       "pagPerDay" : 49,
-      "cover" : "cover063",
+      "cover" : "vengador",
       "minPerPag" : "1min 45s",
       "id" : 63,
       "readingSessions" : [
@@ -41803,7 +42021,7 @@
       "over50" : 1,
       "percentOver50" : 14,
       "pagPerDay" : 27,
-      "cover" : "cover064",
+      "cover" : "mareasdemedianoche",
       "minPerPag" : "2min 24s",
       "id" : 64,
       "readingSessions" : [
@@ -41886,7 +42104,7 @@
       "over50" : 3,
       "percentOver50" : 50,
       "pagPerDay" : 45,
-      "cover" : "cover065",
+      "cover" : "sangreenlapiscina",
       "minPerPag" : "1min 38s",
       "id" : 65,
       "readingSessions" : [
@@ -41961,7 +42179,7 @@
       "over50" : 2,
       "percentOver50" : 50,
       "pagPerDay" : 60,
-      "cover" : "cover066",
+      "cover" : "leonbocanegra",
       "minPerPag" : "1min 38s",
       "id" : 66,
       "readingSessions" : [
@@ -42020,7 +42238,7 @@
       "over50" : 6,
       "percentOver50" : 86,
       "pagPerDay" : 60,
-      "cover" : "cover067",
+      "cover" : "therelic",
       "minPerPag" : "1min 25s",
       "id" : 67,
       "readingSessions" : [
@@ -42103,7 +42321,7 @@
       "over50" : 6,
       "percentOver50" : 75,
       "pagPerDay" : 63,
-      "cover" : "cover068",
+      "cover" : "suenomilenarioel",
       "minPerPag" : "1min 29s",
       "id" : 68,
       "readingSessions" : [
@@ -42194,7 +42412,7 @@
       "over50" : 6,
       "percentOver50" : 100,
       "pagPerDay" : 93,
-      "cover" : "cover069",
+      "cover" : "reinaroja",
       "minPerPag" : "1min 00s",
       "id" : 69,
       "readingSessions" : [
@@ -42269,7 +42487,7 @@
       "over50" : 10,
       "percentOver50" : 91,
       "pagPerDay" : 66,
-      "cover" : "cover070",
+      "cover" : "yjuliaretoalosdioses",
       "minPerPag" : "1min 29s",
       "id" : 70,
       "readingSessions" : [
@@ -42384,7 +42602,7 @@
       "over50" : 2,
       "percentOver50" : 100,
       "pagPerDay" : 96,
-      "cover" : "cover071",
+      "cover" : "sangreenlanieve",
       "minPerPag" : "0min 54s",
       "id" : 71,
       "readingSessions" : [
@@ -42427,7 +42645,7 @@
       "over50" : 7,
       "percentOver50" : 100,
       "pagPerDay" : 76,
-      "cover" : "cover072",
+      "cover" : "maldecorcirael",
       "minPerPag" : "1min 30s",
       "id" : 72,
       "readingSessions" : [
@@ -42510,7 +42728,7 @@
       "over50" : 2,
       "percentOver50" : 40,
       "pagPerDay" : 49,
-      "cover" : "cover073",
+      "cover" : "colordelamagiael",
       "minPerPag" : "1min 37s",
       "id" : 73,
       "readingSessions" : [
@@ -42577,7 +42795,7 @@
       "over50" : 2,
       "percentOver50" : 67,
       "pagPerDay" : 56,
-      "cover" : "cover074",
+      "cover" : "nuevosdioses",
       "minPerPag" : "1min 29s",
       "id" : 74,
       "readingSessions" : [
@@ -42628,7 +42846,7 @@
       "over50" : 3,
       "percentOver50" : 75,
       "pagPerDay" : 59,
-      "cover" : "cover075",
+      "cover" : "pasajeroparafrancfort",
       "minPerPag" : "1min 29s",
       "id" : 75,
       "readingSessions" : [
@@ -42687,7 +42905,7 @@
       "over50" : 3,
       "percentOver50" : 75,
       "pagPerDay" : 79,
-      "cover" : "cover076",
+      "cover" : "terraalta",
       "minPerPag" : "1min 30s",
       "id" : 76,
       "readingSessions" : [
@@ -42746,7 +42964,7 @@
       "over50" : 4,
       "percentOver50" : 80,
       "pagPerDay" : 88,
-      "cover" : "cover077",
+      "cover" : "findelmundovendradelesteel",
       "minPerPag" : "1min 26s",
       "id" : 77,
       "readingSessions" : [
@@ -42813,7 +43031,7 @@
       "over50" : 5,
       "percentOver50" : 100,
       "pagPerDay" : 78,
-      "cover" : "cover078",
+      "cover" : "veteranoel",
       "minPerPag" : "1min 31s",
       "id" : 78,
       "readingSessions" : [
@@ -42880,7 +43098,7 @@
       "over50" : 5,
       "percentOver50" : 100,
       "pagPerDay" : 74,
-      "cover" : "cover079",
+      "cover" : "mediorey",
       "minPerPag" : "1min 14s",
       "id" : 79,
       "readingSessions" : [
@@ -42947,7 +43165,7 @@
       "over50" : 5,
       "percentOver50" : 100,
       "pagPerDay" : 88,
-      "cover" : "cover080",
+      "cover" : "mediomundo",
       "minPerPag" : "1min 20s",
       "id" : 80,
       "readingSessions" : [
@@ -43014,7 +43232,7 @@
       "over50" : 6,
       "percentOver50" : 100,
       "pagPerDay" : 73,
-      "cover" : "cover081",
+      "cover" : "mediaguerra",
       "minPerPag" : "1min 20s",
       "id" : 81,
       "readingSessions" : [
@@ -43089,7 +43307,7 @@
       "over50" : 5,
       "percentOver50" : 100,
       "pagPerDay" : 103,
-      "cover" : "cover082",
+      "cover" : "nadaqueperder",
       "minPerPag" : "1min 17s",
       "id" : 82,
       "readingSessions" : [
@@ -43156,7 +43374,7 @@
       "over50" : 5,
       "percentOver50" : 100,
       "pagPerDay" : 77,
-      "cover" : "cover083",
+      "cover" : "plegarias",
       "minPerPag" : "1min 37s",
       "id" : 83,
       "readingSessions" : [
@@ -43223,7 +43441,7 @@
       "over50" : 3,
       "percentOver50" : 100,
       "pagPerDay" : 78,
-      "cover" : "cover084",
+      "cover" : "unrastrodesirena",
       "minPerPag" : "1min 31s",
       "id" : 84,
       "readingSessions" : [
@@ -43274,7 +43492,7 @@
       "over50" : 4,
       "percentOver50" : 67,
       "pagPerDay" : 55,
-      "cover" : "cover085",
+      "cover" : "propiosdioseslos",
       "minPerPag" : "1min 31s",
       "id" : 85,
       "readingSessions" : [
@@ -43349,7 +43567,7 @@
       "over50" : 4,
       "percentOver50" : 27,
       "pagPerDay" : 33,
-      "cover" : "cover086",
+      "cover" : "manipuladorel",
       "minPerPag" : "2min 04s",
       "id" : 86,
       "readingSessions" : [
@@ -43496,7 +43714,7 @@
       "over50" : 5,
       "percentOver50" : 100,
       "pagPerDay" : 81,
-      "cover" : "cover087",
+      "cover" : "nochesagrada",
       "minPerPag" : "1min 13s",
       "id" : 87,
       "readingSessions" : [
@@ -43563,7 +43781,7 @@
       "over50" : 4,
       "percentOver50" : 100,
       "pagPerDay" : 135,
-      "cover" : "cover088",
+      "cover" : "lobanegra",
       "minPerPag" : "1min 00s",
       "id" : 88,
       "readingSessions" : [
@@ -43622,7 +43840,7 @@
       "over50" : 4,
       "percentOver50" : 67,
       "pagPerDay" : 64,
-      "cover" : "cover089",
+      "cover" : "munich",
       "minPerPag" : "1min 22s",
       "id" : 89,
       "readingSessions" : [
@@ -43697,7 +43915,7 @@
       "over50" : 5,
       "percentOver50" : 63,
       "pagPerDay" : 66,
-      "cover" : "cover090",
+      "cover" : "relicarioel",
       "minPerPag" : "1min 27s",
       "id" : 90,
       "readingSessions" : [
@@ -43788,7 +44006,7 @@
       "over50" : 2,
       "percentOver50" : 10,
       "pagPerDay" : 33,
-      "cover" : "cover091",
+      "cover" : "unpocodeodio",
       "minPerPag" : "1min 52s",
       "id" : 91,
       "readingSessions" : [
@@ -43975,7 +44193,7 @@
       "over50" : 2,
       "percentOver50" : 50,
       "pagPerDay" : 50,
-      "cover" : "cover092",
+      "cover" : "tragediaentresactos",
       "minPerPag" : "1min 34s",
       "id" : 92,
       "readingSessions" : [
@@ -44034,7 +44252,7 @@
       "over50" : 4,
       "percentOver50" : 57,
       "pagPerDay" : 52,
-      "cover" : "cover093",
+      "cover" : "angelrojoel",
       "minPerPag" : "1min 50s",
       "id" : 93,
       "readingSessions" : [
@@ -44117,7 +44335,7 @@
       "over50" : 5,
       "percentOver50" : 25,
       "pagPerDay" : 39,
-      "cover" : "cover094",
+      "cover" : "cortesdelatormentalas",
       "minPerPag" : "1min 54s",
       "id" : 94,
       "readingSessions" : [
@@ -44304,7 +44522,7 @@
       "over50" : 1,
       "percentOver50" : 17,
       "pagPerDay" : 45,
-      "cover" : "cover095",
+      "cover" : "seanunciaunasesinato",
       "minPerPag" : "1min 43s",
       "id" : 95,
       "readingSessions" : [
@@ -44379,7 +44597,7 @@
       "over50" : 9,
       "percentOver50" : 82,
       "pagPerDay" : 61,
-      "cover" : "cover096",
+      "cover" : "lineadefuego",
       "minPerPag" : "1min 32s",
       "id" : 96,
       "readingSessions" : [
@@ -44494,7 +44712,7 @@
       "over50" : 8,
       "percentOver50" : 67,
       "pagPerDay" : 56,
-      "cover" : "cover097",
+      "cover" : "carbonomodificado",
       "minPerPag" : "1min 29s",
       "id" : 97,
       "readingSessions" : [
@@ -44617,7 +44835,7 @@
       "over50" : 7,
       "percentOver50" : 64,
       "pagPerDay" : 51,
-      "cover" : "cover098",
+      "cover" : "centurion",
       "minPerPag" : "1min 24s",
       "id" : 98,
       "readingSessions" : [
@@ -44732,7 +44950,7 @@
       "over50" : 2,
       "percentOver50" : 15,
       "pagPerDay" : 40,
-      "cover" : "cover099",
+      "cover" : "asesinatosdemanhattanlos",
       "minPerPag" : "1min 58s",
       "id" : 99,
       "readingSessions" : [
@@ -44863,7 +45081,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 30,
-      "cover" : "cover100",
+      "cover" : "afganoel",
       "minPerPag" : "2min 15s",
       "id" : 100,
       "readingSessions" : [
@@ -44978,7 +45196,7 @@
       "over50" : 1,
       "percentOver50" : 2,
       "pagPerDay" : 15,
-      "cover" : "cover101",
+      "cover" : "lagrimasdeisislas",
       "minPerPag" : "1min 45s",
       "id" : 101,
       "readingSessions" : [
@@ -45421,7 +45639,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 12,
-      "cover" : "cover102",
+      "cover" : "zonapeligrosa",
       "minPerPag" : "1min 27s",
       "id" : 102,
       "readingSessions" : [
@@ -45784,7 +46002,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 16,
-      "cover" : "cover103",
+      "cover" : "nuestrasenoradelaluna",
       "minPerPag" : "1min 24s",
       "id" : 103,
       "readingSessions" : [
@@ -45979,7 +46197,7 @@
       "over50" : 4,
       "percentOver50" : 31,
       "pagPerDay" : 40,
-      "cover" : "cover104",
+      "cover" : "reyblanco",
       "minPerPag" : "1min 03s",
       "id" : 104,
       "readingSessions" : [
@@ -46110,7 +46328,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 13,
-      "cover" : "cover105",
+      "cover" : "universoentumanoel",
       "minPerPag" : "1min 58s",
       "id" : 105,
       "readingSessions" : [
@@ -46369,7 +46587,7 @@
       "over50" : 1,
       "percentOver50" : 17,
       "pagPerDay" : 34,
-      "cover" : "cover106",
+      "cover" : "unpunadodecenteno",
       "minPerPag" : "1min 20s",
       "id" : 106,
       "readingSessions" : [
@@ -46444,7 +46662,7 @@
       "over50" : 1,
       "percentOver50" : 14,
       "pagPerDay" : 33,
-      "cover" : "cover107",
+      "cover" : "casodelasgarrasdeterciopeloel",
       "minPerPag" : "1min 21s",
       "id" : 107,
       "readingSessions" : [
@@ -46527,7 +46745,7 @@
       "over50" : 1,
       "percentOver50" : 10,
       "pagPerDay" : 42,
-      "cover" : "cover108",
+      "cover" : "triple",
       "minPerPag" : "1min 41s",
       "id" : 108,
       "readingSessions" : [
@@ -46634,7 +46852,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 12,
-      "cover" : "cover109",
+      "cover" : "sangreenelespejodelareina",
       "minPerPag" : "1min 41s",
       "id" : 109,
       "readingSessions" : [
@@ -46805,7 +47023,7 @@
       "over50" : 1,
       "percentOver50" : 6,
       "pagPerDay" : 23,
-      "cover" : "cover110",
+      "cover" : "fuegonocturno",
       "minPerPag" : "1min 17s",
       "id" : 110,
       "readingSessions" : [
@@ -46976,7 +47194,7 @@
       "over50" : 2,
       "percentOver50" : 33,
       "pagPerDay" : 43,
-      "cover" : "cover111",
+      "cover" : "soldesangre",
       "minPerPag" : "1min 3s",
       "id" : 111,
       "readingSessions" : [
@@ -47051,7 +47269,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 21,
-      "cover" : "cover112",
+      "cover" : "encostasextranas",
       "minPerPag" : "1min 32s",
       "id" : 112,
       "readingSessions" : [
@@ -47254,7 +47472,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 14,
-      "cover" : "cover113",
+      "cover" : "sagadehrolfkrakila",
       "minPerPag" : "2min 0s",
       "id" : 113,
       "readingSessions" : [
@@ -47449,7 +47667,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 12,
-      "cover" : "cover114",
+      "cover" : "castellano",
       "minPerPag" : "1min 29s",
       "id" : 114,
       "readingSessions" : [
@@ -47612,7 +47830,7 @@
       "over50" : 2,
       "percentOver50" : 6,
       "pagPerDay" : 17,
-      "cover" : "cover115",
+      "cover" : "reyesdelatierrasalvaje",
       "minPerPag" : "1min 42s",
       "id" : 115,
       "readingSessions" : [
@@ -47887,7 +48105,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 14,
-      "cover" : "cover116",
+      "cover" : "isladelastormentasla",
       "minPerPag" : "1min 30s",
       "id" : 116,
       "readingSessions" : [
@@ -48146,7 +48364,7 @@
       "over50" : 0,
       "percentOver50" : 0,
       "pagPerDay" : 21,
-      "cover" : "cover117",
+      "cover" : "pacienteel",
       "minPerPag" : "1min 10s",
       "id" : 117,
       "readingSessions" : [
@@ -48357,7 +48575,7 @@
       "over50" : 1,
       "percentOver50" : 1.9607843137254901,
       "pagPerDay" : 10,
-      "cover" : "cover118",
+      "cover" : "gideonlanovena",
       "minPerPag" : "1min 51s",
       "id" : 118,
       "readingSessions" : [
@@ -48792,7 +49010,7 @@
       "over50" : 4,
       "percentOver50" : 33.333333333333329,
       "pagPerDay" : 44,
-      "cover" : "cover119",
+      "cover" : "proyectohailmary",
       "minPerPag" : "1min 34s",
       "id" : 119,
       "readingSessions" : [
@@ -48915,7 +49133,7 @@
       "over50" : 1,
       "percentOver50" : 16.666666666666664,
       "pagPerDay" : 35,
-      "cover" : "cover120",
+      "cover" : "citaconlamuerte",
       "minPerPag" : "1min 24s",
       "id" : 120,
       "readingSessions" : [
@@ -48990,7 +49208,7 @@
       "over50" : 1,
       "percentOver50" : 25,
       "pagPerDay" : 38,
-      "cover" : "cover121",
+      "cover" : "comosellamaestelibro",
       "minPerPag" : "1min 42s",
       "id" : 121,
       "readingSessions" : [
@@ -53790,6 +54008,11 @@
     },
     {
       "minPerDay" : "0h 42min",
+      "location" : {
+        "id" : "05A658AB-0DF2-493A-8752-33182EEA8CF1",
+        "longitude" : -17.915914574603569,
+        "latitude" : 28.658279547269455
+      },
       "pages" : 481,
       "formatt" : "Kindle",
       "duration" : "13h 10min",
@@ -54030,10 +54253,71 @@
   ],
   "nowReading" : [
     {
-      "lastPage" : 220,
+      "location" : {
+        "id" : "0CF0B701-D7EB-464A-B2C4-09EEF656A57D",
+        "longitude" : -17.915952789662903,
+        "latitude" : 28.658245551807592
+      },
+      "lastPage" : 260,
       "bookTitle" : "tulipán negro, El",
       "isFinished" : false,
       "sessions" : [
+        {
+          "duration" : "0h 16min",
+          "id" : "EEDF4AA0-5950-4D3E-ADD6-FF98C7A782C3",
+          "startingPage" : 175,
+          "endingPage" : 186,
+          "minPerPag" : "1min 20s",
+          "date" : 716554800
+        },
+        {
+          "duration" : "0h 8min",
+          "id" : "15658DEB-029A-41C4-AB9F-33A6684D5FEE",
+          "startingPage" : 169,
+          "endingPage" : 174,
+          "minPerPag" : "1min 20s",
+          "date" : 716468400
+        },
+        {
+          "duration" : "0h 36min",
+          "id" : "3C9CA45F-0251-4E79-8CA7-931ECF360E68",
+          "startingPage" : 149,
+          "endingPage" : 168,
+          "minPerPag" : "1min 48s",
+          "date" : 716382000
+        },
+        {
+          "duration" : "0h 19min",
+          "id" : "E84993BA-B4C3-41C9-AED5-85853DEFCA3E",
+          "startingPage" : 137,
+          "endingPage" : 148,
+          "minPerPag" : "1min 35s",
+          "date" : 716295600
+        },
+        {
+          "duration" : "0h 36min",
+          "id" : "17158AAD-165B-4648-8CED-325BE0A9A46F",
+          "startingPage" : 115,
+          "endingPage" : 136,
+          "minPerPag" : "1min 38s",
+          "date" : 716209200
+        },
+        {
+          "duration" : "0h 24min",
+          "id" : "8132BE8B-75CB-4A80-816D-6518C15510DF",
+          "startingPage" : 101,
+          "endingPage" : 114,
+          "minPerPag" : "1min 43s",
+          "date" : 716122800
+        },
+        {
+          "duration" : "0h 36min",
+          "id" : "2CF95FF8-8A4A-4031-A11F-51D20FBD453F",
+          "startingPage" : 79,
+          "endingPage" : 100,
+          "minPerPag" : "1min 38s",
+          "date" : 716036400
+        },
         {
           "duration" : "1h 19min",
           "id" : "BA309203-0902-477F-AD77-F872038E93E2",
