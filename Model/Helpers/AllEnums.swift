@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Cover: String, Codable, CaseIterable {
     case hardcover = "Cartoné"
@@ -114,3 +115,20 @@ enum MYTarget: String, CaseIterable {
     case pages = "Páginas"
 }
 
+// MARK: - APPEARANCE SELECTION
+
+enum UserAppearance: Int {
+	case system = 0
+	case light
+	case dark
+	
+	func setSystemColorScheme() -> ColorScheme {
+		if self == .system {
+			return UserViewModel.deviceColorScheme
+		} else if self == .light {
+			return .light
+		} else {
+			return .dark
+		}
+	}
+}

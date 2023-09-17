@@ -10,6 +10,7 @@ import SwiftUI
 
 struct UserConfigView: View {
 	@EnvironmentObject var model: UserViewModel
+	
 	@Binding var isUnlocked: Bool
 	@State var showingEditUser = false
 	
@@ -26,6 +27,59 @@ struct UserConfigView: View {
     var body: some View {
 		NavigationStack {
 			List {
+				Section {
+					Button {
+						withAnimation {
+							model.customAppearance = .system
+						}
+					} label: {
+						HStack {
+							Image(systemName: "gearshape.2")
+							Text("Auto")
+								.foregroundColor(.primary)
+							Spacer()
+							if model.customAppearance == .system {
+								Image(systemName: "checkmark")
+									.animation(.easeIn)
+							}
+						}
+					}
+					Button {
+						withAnimation {
+							model.customAppearance = .light
+						}
+					} label: {
+						HStack {
+							Image(systemName: "sun.max")
+							Text("Claro")
+								.foregroundColor(.primary)
+							Spacer()
+							if model.customAppearance == .light {
+								Image(systemName: "checkmark")
+									.animation(.easeIn)
+							}
+						}
+					}
+					Button {
+						withAnimation {
+							model.customAppearance = .dark
+						}
+					} label: {
+						HStack {
+							Image(systemName: "moon.fill")
+							Text("Oscuro")
+								.foregroundColor(.primary)
+							Spacer()
+							if model.customAppearance == .dark {
+								Image(systemName: "checkmark")
+									.animation(.easeIn)
+							}
+						}
+					}
+				} header: {
+					Text("Aspecto")
+				}
+				
 				Section {
 					Toggle(isOn: $model.preferredListView) {
 						Label("Listado de libros", systemImage: "list.star")

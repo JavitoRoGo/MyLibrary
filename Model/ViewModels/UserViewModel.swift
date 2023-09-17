@@ -34,11 +34,19 @@ final class UserViewModel: ObservableObject {
 	
 	var storedPassword: String { keychain.get("storedPassword") ?? "" }
 	@AppStorage("isBiometricsAllowed") var isBiometricsAllowed = false
+	
 	@AppStorage("preferredGridView") var preferredGridView = false
 	var preferredListView: Bool {
 		get { !preferredGridView }
 		set { preferredGridView = !newValue }
 	}
+	
+	@AppStorage("preferredAppearance") var preferredAppearance = 0
+	var customAppearance: UserAppearance {
+		get { .init(rawValue: preferredAppearance)! }
+		set { preferredAppearance = newValue.rawValue }
+	}
+	public static var deviceColorScheme: ColorScheme = .light
 	
 	private var cancellableSet: Set<AnyCancellable> = []
 	
