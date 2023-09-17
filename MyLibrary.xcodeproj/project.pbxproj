@@ -558,6 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				44010745294E4D75000714B6 /* BookConfigView.swift */,
+				445BBA532A86FABA0004B850 /* AddBook */,
 				445BBA5C2A86FFD80004B850 /* EditPlaces */,
 				447189CE2A87B93800BE66E5 /* EditOwners */,
 			);
@@ -687,7 +688,6 @@
 				446D6C072AB52107001A6E85 /* BookEditingSectionsExt.swift */,
 				44DDA8802A840D5C000104A1 /* BookEditingExt.swift */,
 				44C6A6222801DDE600EF035A /* Statistics */,
-				445BBA532A86FABA0004B850 /* AddBook */,
 				44010744294E4D56000714B6 /* ConfigView */,
 			);
 			path = Books;
