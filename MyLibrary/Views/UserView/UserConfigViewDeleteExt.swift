@@ -1,5 +1,5 @@
 //
-//  UserMainViewDeleteExt.swift
+//  UserConfigViewDeleteExt.swift
 //  MyLibrary
 //
 //  Created by Javier Rodríguez Gómez on 4/9/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension UserMainView {
+extension UserConfigView {
 	var deleteButtons: some View {
 		Section {
 			if !showingDeleteButtons {

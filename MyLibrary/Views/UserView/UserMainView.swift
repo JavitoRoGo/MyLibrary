@@ -5,7 +5,6 @@
 //  Created by Javier Rodríguez Gómez on 3/1/23.
 //
 
-import LocalAuthentication
 import SwiftUI
 
 struct UserMainView: View {
@@ -13,23 +12,12 @@ struct UserMainView: View {
     @Binding var isUnlocked: Bool
     
     @State var showingClosingAlert = false
-    @State var showingEditUser = false
     
     @State var showingSelectorPicker = false
     @State var showingImagePicker = false
     @State var showingCameraPicker = false
     @State var image: Image?
     @State var inputImage: UIImage?
-	
-	@State var showingDeleteButtons = false
-	@State var showingDeletingDatas = false
-	@State var showingDeletingUser = false
-	@State var showingPasswordField = false
-	
-	@State var password = ""
-	@State var deleteOperation = 0
-	@State var showingSuccessfulDeleting = false
-	@State var showingWrongPassword = false
     
     var body: some View {
         NavigationStack {
@@ -66,63 +54,37 @@ struct UserMainView: View {
                         }
                     }
                     List {
-                        NavigationLink(destination: TargetsMainView()) {
-                            HStack {
-                                Image(systemName: "chart.pie.fill")
-                                    .foregroundColor(.green)
-                                Text("Objetivos de lectura")
-                            }
-                        }
-                        NavigationLink(destination: AllQuotesCommentsView()) {
-                            HStack {
-                                Image(systemName: "quote.bubble")
-                                    .foregroundColor(.blue)
-                                Text("Citas y comentarios de sesiones")
-                            }
-                        }
-                        NavigationLink(destination: AllCommentsView()) {
-                            HStack {
-                                Image(systemName: "quote.bubble")
-                                    .foregroundColor(.pink)
-                                Text("Comentarios por libro")
-                            }
+                        Section {
+                        	NavigationLink(destination: TargetsMainView()) {
+								HStack {
+									Image(systemName: "chart.pie.fill")
+										.foregroundColor(.green)
+									Text("Objetivos de lectura")
+								}
+							}
+							NavigationLink(destination: AllQuotesCommentsView()) {
+								HStack {
+									Image(systemName: "quote.bubble")
+										.foregroundColor(.blue)
+									Text("Citas y comentarios de sesiones")
+								}
+							}
+							NavigationLink(destination: AllCommentsView()) {
+								HStack {
+									Image(systemName: "quote.bubble")
+										.foregroundColor(.pink)
+									Text("Comentarios por libro")
+								}
+							}
                         }
 						
 						Section {
-							Toggle(isOn: $model.preferredListView) {
-								Label("Listado de libros", systemImage: "list.star")
+							NavigationLink(destination: UserConfigView(isUnlocked: $isUnlocked)) {
+								Label("Ajustes personales", systemImage: "gear")
 							}
-							Toggle(isOn: $model.preferredGridView) {
-								Label("Parrilla de portadas", systemImage: "square.grid.3x3")
-							}
-						} footer: {
-							Text("Elige la vista por defecto para los libros y ebooks.")
 						}
-                        
-                        Section {
-                            Toggle(isOn: $model.isBiometricsAllowed) {
-                                Label("Acceder con \(getBioMetricStatus() ? "FaceID" : "TouchID")",
-                                      systemImage: getBioMetricStatus() ? "faceid" : "touchid")
-                            }
-                            .onChange(of: model.isBiometricsAllowed) { newValue in
-                                if newValue {
-                                    authenticate()
-                                }
-                            }
-                            Button {
-                                showingEditUser = true
-                            } label: {
-                                HStack {
-                                    Spacer()
-                                    Text("Cambiar usuario y contraseña")
-                                    Spacer()
-                                }
-                            }
-                        }
 						
-						deleteButtons
-                        
-                        Section {
+						Section {
                             Button(role: .destructive) {
                                 showingClosingAlert = true
                             } label: {
@@ -136,7 +98,7 @@ struct UserMainView: View {
                     }
                 }
             }
-			.modifier(UserMainViewModifier(showingEditUser: $showingEditUser, showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, image: $image, inputImage: $inputImage, showingDeletingDatas: $showingDeletingDatas, showingDeletingUser: $showingDeletingUser, showingPasswordField: $showingPasswordField, showingSuccessfulDeleting: $showingSuccessfulDeleting, showingWrongPassword: $showingWrongPassword, password: $password, loadImage: loadImage, authenticateToDelete: authenticateToDelete))
+			.modifier(UserMainViewModifier(showingClosingAlert: $showingClosingAlert, isUnlocked: $isUnlocked, showingSelectorPicker: $showingSelectorPicker, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, image: $image, inputImage: $inputImage, loadImage: loadImage))
         }
     }
 }

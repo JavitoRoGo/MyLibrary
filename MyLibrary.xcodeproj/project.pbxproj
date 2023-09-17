@@ -28,6 +28,8 @@
 		44102C892944F5D600F8E2F1 /* EachMainViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */; };
 		44102C8C294511C600F8E2F1 /* ScrollByPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C8B294511C600F8E2F1 /* ScrollByPlace.swift */; };
 		44102C8E2945160300F8E2F1 /* ScrollByStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44102C8D2945160300F8E2F1 /* ScrollByStatus.swift */; };
+		4411A4CA2AB74C5C00B59027 /* UserConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411A4C92AB74C5C00B59027 /* UserConfigView.swift */; };
+		4411A4CC2AB7531700B59027 /* UserConfigViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4411A4CB2AB7531700B59027 /* UserConfigViewExt.swift */; };
 		4418D790277F91DA00F0501B /* BookEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4418D78F277F91DA00F0501B /* BookEditing.swift */; };
 		441A84DE298FEB7800D5F1EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445B6291298C23540036D140 /* Assets.xcassets */; };
 		441A84DF298FEC6A00D5F1EB /* SharedAppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44730E21298F2283005CFCAF /* SharedAppGroup.swift */; };
@@ -256,7 +258,7 @@
 		44EF94D127CE8B2D00998C27 /* ActualReadingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF94D027CE8B2D00998C27 /* ActualReadingRow.swift */; };
 		44EF94D727CEB5D200998C27 /* ActualReadingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF94D627CEB5D200998C27 /* ActualReadingDetail.swift */; };
 		44F2578227F4B69300EC7A7A /* ProgressRingMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F2578127F4B69300EC7A7A /* ProgressRingMini.swift */; };
-		44F367D22AA61A2000F00EA3 /* UserMainViewDeleteExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F367D12AA61A2000F00EA3 /* UserMainViewDeleteExt.swift */; };
+		44F367D22AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */; };
 		44F418FA2A9FFD5D00A9E9B2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */; };
 		44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
 		44F471DA2993F1AC0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
@@ -315,6 +317,8 @@
 		44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachMainViewButton.swift; sourceTree = "<group>"; };
 		44102C8B294511C600F8E2F1 /* ScrollByPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollByPlace.swift; sourceTree = "<group>"; };
 		44102C8D2945160300F8E2F1 /* ScrollByStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollByStatus.swift; sourceTree = "<group>"; };
+		4411A4C92AB74C5C00B59027 /* UserConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigView.swift; sourceTree = "<group>"; };
+		4411A4CB2AB7531700B59027 /* UserConfigViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewExt.swift; sourceTree = "<group>"; };
 		4418D78F277F91DA00F0501B /* BookEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditing.swift; sourceTree = "<group>"; };
 		441A84E0298FED4C00D5F1EB /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		441A84E8299025C800D5F1EB /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
@@ -515,7 +519,7 @@
 		44EF94D027CE8B2D00998C27 /* ActualReadingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingRow.swift; sourceTree = "<group>"; };
 		44EF94D627CEB5D200998C27 /* ActualReadingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualReadingDetail.swift; sourceTree = "<group>"; };
 		44F2578127F4B69300EC7A7A /* ProgressRingMini.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingMini.swift; sourceTree = "<group>"; };
-		44F367D12AA61A2000F00EA3 /* UserMainViewDeleteExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewDeleteExt.swift; sourceTree = "<group>"; };
+		44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewDeleteExt.swift; sourceTree = "<group>"; };
 		44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		44F471D82993EE7D0047080A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		44FD4E4B297B192B00555B82 /* USER.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USER.json; sourceTree = "<group>"; };
@@ -977,12 +981,14 @@
 			isa = PBXGroup;
 			children = (
 				4482D5782964AE99004D0EB8 /* UserMainView.swift */,
-				44F367D12AA61A2000F00EA3 /* UserMainViewDeleteExt.swift */,
 				440F83E62A82D3590079C421 /* UserMainViewExt.swift */,
 				4407D4EF29709715006FAC47 /* TargetsView */,
 				44EF88CE296CDAD50039632F /* AllQuotesCommentsView.swift */,
 				44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */,
 				4407D4EB297087DC006FAC47 /* EditUserPasswordView.swift */,
+				4411A4C92AB74C5C00B59027 /* UserConfigView.swift */,
+				44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */,
+				4411A4CB2AB7531700B59027 /* UserConfigViewExt.swift */,
 			);
 			path = UserView;
 			sourceTree = "<group>";
@@ -1324,6 +1330,7 @@
 				445BBA282A864F490004B850 /* OldBarGraph.swift in Sources */,
 				44E8888F28843509009670D0 /* MainBookView.swift in Sources */,
 				44DDA8992A8450D1000104A1 /* OldLineGraphExt.swift in Sources */,
+				4411A4CA2AB74C5C00B59027 /* UserConfigView.swift in Sources */,
 				44DDA88D2A844773000104A1 /* RDCoverModifier.swift in Sources */,
 				4486010227C858F6004E84B0 /* RSList.swift in Sources */,
 				445BBA3E2A86EFA10004B850 /* PlacePickerExt.swift in Sources */,
@@ -1383,7 +1390,7 @@
 				44EEC47628F19751000C1843 /* MonthChart.swift in Sources */,
 				44801F4D28144F84006FC06C /* ReadingTimer.swift in Sources */,
 				44DDA8922A844F86000104A1 /* MyRing.swift in Sources */,
-				44F367D22AA61A2000F00EA3 /* UserMainViewDeleteExt.swift in Sources */,
+				44F367D22AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift in Sources */,
 				44C6A62D280256F800EF035A /* StatsView.swift in Sources */,
 				44DDA8972A84506D000104A1 /* OldLineGraph.swift in Sources */,
 				44102C852944D03F00F8E2F1 /* EBookMainView.swift in Sources */,
@@ -1423,6 +1430,7 @@
 				44730E22298F2283005CFCAF /* SharedAppGroup.swift in Sources */,
 				444504F4296327A2001AC434 /* LoginNoBiomView.swift in Sources */,
 				44EF94D127CE8B2D00998C27 /* ActualReadingRow.swift in Sources */,
+				4411A4CC2AB7531700B59027 /* UserConfigViewExt.swift in Sources */,
 				44C6A6262801E0D700EF035A /* GraphMenu.swift in Sources */,
 				445BBA322A8662A50004B850 /* AddReadingExt.swift in Sources */,
 				44210FD0294FAC06009764A3 /* ChangeBooksOwner.swift in Sources */,

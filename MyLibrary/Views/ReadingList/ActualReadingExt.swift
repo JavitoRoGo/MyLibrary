@@ -42,19 +42,11 @@ extension ActualReading {
 		
 		let book: NowReading
 		let deleteBookAndSessions: (NowReading) -> Void
-		let shareButton: () -> Void
 		
 		func body(content: Content) -> some View {
 			content
 				.navigationTitle("Leyendo... y en espera")
 				.toolbar {
-					ToolbarItem(placement: .navigationBarLeading) {
-						Button {
-							shareButton()
-						} label: {
-							Label("Exportar", systemImage: "square.and.arrow.up")
-						}
-					}
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button {
 							showingAddNewBook = true

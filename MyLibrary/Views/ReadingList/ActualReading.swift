@@ -72,7 +72,7 @@ struct ActualReading: View {
                     }
                 }
             }
-			.modifier(ActualReadingModifer(showingDeletingAlert: $showingDeletingAlert, showingAddNewBook: $showingAddNewBook, book: bookToDelete, deleteBookAndSessions: deleteBookAndSessions(_:), shareButton: shareButton))
+			.modifier(ActualReadingModifer(showingDeletingAlert: $showingDeletingAlert, showingAddNewBook: $showingAddNewBook, book: bookToDelete, deleteBookAndSessions: deleteBookAndSessions(_:)))
         }
     }
 }
