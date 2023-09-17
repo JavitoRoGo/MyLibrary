@@ -16,8 +16,14 @@
 
 #
 
-# 
+# userview
 
-### 
+### Cambios en la vista de usuario
 
-
+* Crear nueva vista para las opciones de configuración, y dejar en la vista principal los accesos a objetivos, notas y cerrar sesión.
+* ¿Acceder a la nueva vista con botón en toolbar o botón en la lista?
+* En la nueva vista incluir la vista de portadas por defecto y los botones de borrado.
+* Incluir nueva feature de selección de modo claro y oscuro, o según sistema.
+* Incluir nueva feature para importar y exportar el json. ¿También las imágenes? En ese caso, exportar todas las imágenes, de Archivos y Bundle.
+* ¿Importar el nuevo json y sobreescribir los datos actuales? ¿O hacer una especie de merge?
+* Eliminar el botón de exportar actual de ReadingList.
