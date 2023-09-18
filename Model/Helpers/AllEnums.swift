@@ -122,13 +122,11 @@ enum UserAppearance: Int {
 	case light
 	case dark
 	
-	func setSystemColorScheme() -> ColorScheme {
-		if self == .system {
-			return UserViewModel.deviceColorScheme
-		} else if self == .light {
-			return .light
-		} else {
-			return .dark
+	func setSystemColorScheme() -> ColorScheme? {
+		switch self {
+			case .system: return nil
+			case .light: return .light
+			case .dark: return .dark
 		}
 	}
 }

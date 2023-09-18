@@ -11,7 +11,6 @@ import SwiftUI
 struct MyLibraryApp: App {
     @StateObject var userModel = UserViewModel()
     @StateObject var locationManager = LocationManager()
-	@Environment(\.colorScheme) var colorScheme
     
     var body: some Scene {
         WindowGroup {
@@ -20,16 +19,10 @@ struct MyLibraryApp: App {
                 .environmentObject(locationManager)
 				.onAppear {
 					UIApplication.shared.addTapGestureRecognizer()
-					UserViewModel.deviceColorScheme = colorScheme
 				}
 				.preferredColorScheme(
 					UserAppearance.setSystemColorScheme(userModel.customAppearance)()
 				)
-				.onChange(of: colorScheme) { newValue in
-					if userModel.customAppearance == .system {
-						UserViewModel.deviceColorScheme = newValue
-					}
-				}
         }
     }
 }

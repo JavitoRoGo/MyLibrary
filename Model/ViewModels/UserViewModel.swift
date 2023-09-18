@@ -46,7 +46,6 @@ final class UserViewModel: ObservableObject {
 		get { .init(rawValue: preferredAppearance)! }
 		set { preferredAppearance = newValue.rawValue }
 	}
-	public static var deviceColorScheme: ColorScheme = .light
 	
 	private var cancellableSet: Set<AnyCancellable> = []
 	
