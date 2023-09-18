@@ -59,6 +59,9 @@
 		442B619529562FA00003537E /* RDStatsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B619429562FA00003537E /* RDStatsMainView.swift */; };
 		442B6197295635BE0003537E /* RDGlobalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B6196295635BE0003537E /* RDGlobalStats.swift */; };
 		442B619929565B1A0003537E /* RDGlobalStatsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B619829565B1A0003537E /* RDGlobalStatsHelper.swift */; };
+		4431C8972AB883E900B705A8 /* UserConfigViewAppearanceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C8962AB883E900B705A8 /* UserConfigViewAppearanceExt.swift */; };
+		4431C8992AB8847100B705A8 /* UserConfigViewGridExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C8982AB8847100B705A8 /* UserConfigViewGridExt.swift */; };
+		4431C89B2AB884CD00B705A8 /* UserConfigViewIDExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C89A2AB884CD00B705A8 /* UserConfigViewIDExt.swift */; };
 		4436FD0229CB48C4003BBA2C /* EditRDMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436FD0129CB48C4003BBA2C /* EditRDMapView.swift */; };
 		44398EA52979C65B009E1D6A /* WidgetView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44398EA42979C65B009E1D6A /* WidgetView3.swift */; };
 		44398EA72979C704009E1D6A /* MediumSizeView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44398EA62979C704009E1D6A /* MediumSizeView3.swift */; };
@@ -340,6 +343,9 @@
 		442B619429562FA00003537E /* RDStatsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDStatsMainView.swift; sourceTree = "<group>"; };
 		442B6196295635BE0003537E /* RDGlobalStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDGlobalStats.swift; sourceTree = "<group>"; };
 		442B619829565B1A0003537E /* RDGlobalStatsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDGlobalStatsHelper.swift; sourceTree = "<group>"; };
+		4431C8962AB883E900B705A8 /* UserConfigViewAppearanceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewAppearanceExt.swift; sourceTree = "<group>"; };
+		4431C8982AB8847100B705A8 /* UserConfigViewGridExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewGridExt.swift; sourceTree = "<group>"; };
+		4431C89A2AB884CD00B705A8 /* UserConfigViewIDExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewIDExt.swift; sourceTree = "<group>"; };
 		4436FD0129CB48C4003BBA2C /* EditRDMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRDMapView.swift; sourceTree = "<group>"; };
 		44398EA42979C65B009E1D6A /* WidgetView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView3.swift; sourceTree = "<group>"; };
 		44398EA62979C704009E1D6A /* MediumSizeView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSizeView3.swift; sourceTree = "<group>"; };
@@ -727,6 +733,19 @@
 			path = ReadingData;
 			sourceTree = "<group>";
 		};
+		4431C8952AB883A300B705A8 /* UserConfigView */ = {
+			isa = PBXGroup;
+			children = (
+				4411A4C92AB74C5C00B59027 /* UserConfigView.swift */,
+				4431C8962AB883E900B705A8 /* UserConfigViewAppearanceExt.swift */,
+				4431C8982AB8847100B705A8 /* UserConfigViewGridExt.swift */,
+				4431C89A2AB884CD00B705A8 /* UserConfigViewIDExt.swift */,
+				44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */,
+				4411A4CB2AB7531700B59027 /* UserConfigViewExt.swift */,
+			);
+			path = UserConfigView;
+			sourceTree = "<group>";
+		};
 		444504F2296325D0001AC434 /* LockScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -986,9 +1005,7 @@
 				44EF88CE296CDAD50039632F /* AllQuotesCommentsView.swift */,
 				44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */,
 				4407D4EB297087DC006FAC47 /* EditUserPasswordView.swift */,
-				4411A4C92AB74C5C00B59027 /* UserConfigView.swift */,
-				44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */,
-				4411A4CB2AB7531700B59027 /* UserConfigViewExt.swift */,
+				4431C8952AB883A300B705A8 /* UserConfigView */,
 			);
 			path = UserView;
 			sourceTree = "<group>";
@@ -1328,6 +1345,7 @@
 				447189E52A87DFA900BE66E5 /* EBookStatsPagesSection.swift in Sources */,
 				44F418FA2A9FFD5D00A9E9B2 /* DateHelper.swift in Sources */,
 				445BBA282A864F490004B850 /* OldBarGraph.swift in Sources */,
+				4431C8972AB883E900B705A8 /* UserConfigViewAppearanceExt.swift in Sources */,
 				44E8888F28843509009670D0 /* MainBookView.swift in Sources */,
 				44DDA8992A8450D1000104A1 /* OldLineGraphExt.swift in Sources */,
 				4411A4CA2AB74C5C00B59027 /* UserConfigView.swift in Sources */,
@@ -1457,6 +1475,7 @@
 				442B6197295635BE0003537E /* RDGlobalStats.swift in Sources */,
 				445121082AAA132700E680DE /* StringExtensions.swift in Sources */,
 				447189D02A87B97200BE66E5 /* EditOwnersSection.swift in Sources */,
+				4431C8992AB8847100B705A8 /* UserConfigViewGridExt.swift in Sources */,
 				441A84E9299025C800D5F1EB /* ConnectivityManager.swift in Sources */,
 				44DDA89E2A845581000104A1 /* RDGlobalStatsExt.swift in Sources */,
 				446D6C032AB4D868001A6E85 /* BooksGridCell.swift in Sources */,
@@ -1473,6 +1492,7 @@
 				4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */,
 				44398EA82979CC49009E1D6A /* Entry.swift in Sources */,
 				445BBA5B2A86FD680004B850 /* AddBookOwnerSection.swift in Sources */,
+				4431C89B2AB884CD00B705A8 /* UserConfigViewIDExt.swift in Sources */,
 				447189D72A87C2E600BE66E5 /* EBookDetailAuthorSection.swift in Sources */,
 				442653A3277E175D0047D75C /* BookModelExt.swift in Sources */,
 				44F2578227F4B69300EC7A7A /* ProgressRingMini.swift in Sources */,

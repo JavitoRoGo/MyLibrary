@@ -36,10 +36,6 @@ final class UserViewModel: ObservableObject {
 	@AppStorage("isBiometricsAllowed") var isBiometricsAllowed = false
 	
 	@AppStorage("preferredGridView") var preferredGridView = false
-	var preferredListView: Bool {
-		get { !preferredGridView }
-		set { preferredGridView = !newValue }
-	}
 	
 	@AppStorage("preferredAppearance") var preferredAppearance = 0
 	var customAppearance: UserAppearance {
