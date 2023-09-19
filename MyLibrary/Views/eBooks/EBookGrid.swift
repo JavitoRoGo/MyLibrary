@@ -11,7 +11,7 @@ struct EBookGrid: View {
 	@EnvironmentObject var model: UserViewModel
 	
 	let ebooks: [EBooks]
-	let columns = [GridItem(.adaptive(minimum: 120))]
+	let columns = [GridItem(.adaptive(minimum: 100))]
 	
     var body: some View {
 		ScrollView {
