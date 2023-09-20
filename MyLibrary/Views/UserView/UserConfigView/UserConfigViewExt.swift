@@ -72,9 +72,25 @@ extension UserConfigView {
 		}
 	}
 	
+	func shareAction() {
+		let userUrl = getURLToShare(from: userJson)
+		let urls = [userUrl]
+		
+		let ac = UIActivityViewController(activityItems: urls, applicationActivities: nil)
+		let scenes = UIApplication.shared.connectedScenes
+		let windowScene = scenes.first as? UIWindowScene
+		let window = windowScene?.windows.first
+		window?.rootViewController!.present(ac, animated: true, completion: nil)
+	}
+	
 	struct UserConfigViewModifier: ViewModifier {
 		@EnvironmentObject var model: UserViewModel
 		@Binding var showingEditUser: Bool
+		
+		@Binding var isExporting: Bool
+		@Binding var isImporting: Bool
+		@Binding var importOperation: Int
+		@Binding var showingImporting: Bool
 		
 		@Binding var showingDeletingDatas: Bool
 		@Binding var showingDeletingUser: Bool
@@ -92,6 +108,37 @@ extension UserConfigView {
 				.navigationBarTitleDisplayMode(.inline)
 				.sheet(isPresented: $showingEditUser) {
 					EditUserPasswordView()
+				}
+				.fileExporter(isPresented: $isExporting, document: JsonExportingDocument(model.user), contentType: .json, defaultFilename: "userData.json") { result in
+					if case .failure(let error) = result {
+						print("Error al exportar: \(error.localizedDescription)")
+					} else {
+						print("Exportación correcta")
+					}
+				}
+				.alert("¿Qué deseas hacer con los nuevos datos?", isPresented: $isImporting) {
+					Button("Sobreescribir", role: .destructive) { importOperation = 0; showingImporting = true }
+					Button("Agregar") { importOperation = 1; showingImporting = true }
+				}
+				.fileImporter(isPresented: $showingImporting, allowedContentTypes: [.json]) { result in
+					do {
+						let url = try result.get()
+						let accessing = url.startAccessingSecurityScopedResource()
+						defer {
+							if accessing {
+								url.stopAccessingSecurityScopedResource()
+							}
+						}
+						let data = try Data(contentsOf: url)
+						let importedJson = try JSONDecoder().decode(User.self, from: data)
+						if importOperation == 0 {
+							model.user = importedJson
+						} else {
+							model.user.merge(importedJson)
+						}
+					} catch {
+						print("Algo fue mal con la importación: \(error.localizedDescription)")
+					}
 				}
 				.alert("⚠️\n¡Atención!", isPresented: $showingDeletingDatas) {
 					Button("Cancelar", role: .cancel) { }

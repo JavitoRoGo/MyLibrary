@@ -14,6 +14,11 @@ struct UserConfigView: View {
 	@Binding var isUnlocked: Bool
 	@State var showingEditUser = false
 	
+	@State var isExporting = false
+	@State var isImporting = false
+	@State var importOperation = 0
+	@State var showingImporting = false
+	
 	@State var showingDeleteButtons = false
 	@State var showingDeletingDatas = false
 	@State var showingDeletingUser = false
@@ -33,9 +38,11 @@ struct UserConfigView: View {
 				
 				faceIDButtons
 				
+				exportingButtons
+				
 				deleteButtons
 			}
-			.modifier(UserConfigViewModifier(showingEditUser: $showingEditUser, showingDeletingDatas: $showingDeletingDatas, showingDeletingUser: $showingDeletingUser, showingPasswordField: $showingPasswordField, password: $password, showingSuccessfulDeleting: $showingSuccessfulDeleting, showingWrongPassword: $showingWrongPassword, authenticateToDelete: authenticateToDelete(_:)))
+			.modifier(UserConfigViewModifier(showingEditUser: $showingEditUser, isExporting: $isExporting, isImporting: $isImporting, importOperation: $importOperation, showingImporting: $showingImporting, showingDeletingDatas: $showingDeletingDatas, showingDeletingUser: $showingDeletingUser, showingPasswordField: $showingPasswordField, password: $password, showingSuccessfulDeleting: $showingSuccessfulDeleting, showingWrongPassword: $showingWrongPassword, authenticateToDelete: authenticateToDelete(_:)))
 		}
     }
 }

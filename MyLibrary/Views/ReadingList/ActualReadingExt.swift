@@ -24,17 +24,6 @@ extension ActualReading {
 		model.removeFromWaiting(book)
 	}
 	
-	func shareButton() {
-		let userUrl = getURLToShare(from: userJson)
-		let urls = [userUrl]
-		
-		let ac = UIActivityViewController(activityItems: urls, applicationActivities: nil)
-		let scenes = UIApplication.shared.connectedScenes
-		let windowScene = scenes.first as? UIWindowScene
-		let window = windowScene?.windows.first
-		window?.rootViewController!.present(ac, animated: true, completion: nil)
-	}
-	
 	struct ActualReadingModifer: ViewModifier {
 		@EnvironmentObject var model: UserViewModel
 		@Binding var showingDeletingAlert: Bool

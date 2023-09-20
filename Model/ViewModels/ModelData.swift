@@ -34,6 +34,24 @@ extension User {
 	}
 }
 
+extension User {
+	mutating func merge(_ other: User) {
+		self.books += other.books
+		self.ebooks += other.ebooks
+		self.readingDatas += other.readingDatas
+		self.nowReading += other.nowReading
+		self.nowWaiting += other.nowWaiting
+		self.sessions += other.sessions
+		// Añadir los que no se repiten
+		for place in other.myPlaces where !self.myPlaces.contains(place) {
+			self.myPlaces.append(place)
+		}
+		for owner in other.myOwners where !self.myOwners.contains(owner) {
+			self.myOwners.append(owner)
+		}
+	}
+}
+
 struct Books: Codable, Identifiable, Equatable, BooksProtocol {
     let id: Int
     let author: String

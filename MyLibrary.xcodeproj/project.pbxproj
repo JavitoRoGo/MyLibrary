@@ -62,6 +62,7 @@
 		4431C8972AB883E900B705A8 /* UserConfigViewAppearanceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C8962AB883E900B705A8 /* UserConfigViewAppearanceExt.swift */; };
 		4431C8992AB8847100B705A8 /* UserConfigViewGridExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C8982AB8847100B705A8 /* UserConfigViewGridExt.swift */; };
 		4431C89B2AB884CD00B705A8 /* UserConfigViewIDExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C89A2AB884CD00B705A8 /* UserConfigViewIDExt.swift */; };
+		4431C89D2AB886CB00B705A8 /* UserConfigViewExportingExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C89C2AB886CB00B705A8 /* UserConfigViewExportingExt.swift */; };
 		4436FD0229CB48C4003BBA2C /* EditRDMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436FD0129CB48C4003BBA2C /* EditRDMapView.swift */; };
 		44398EA52979C65B009E1D6A /* WidgetView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44398EA42979C65B009E1D6A /* WidgetView3.swift */; };
 		44398EA72979C704009E1D6A /* MediumSizeView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44398EA62979C704009E1D6A /* MediumSizeView3.swift */; };
@@ -266,6 +267,8 @@
 		44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
 		44F471DA2993F1AC0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
 		44F471DB2993F1AD0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
+		44F9F0B52ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */; };
+		44F9F0B62ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */; };
 		44FD4E4C297B192B00555B82 /* USER.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USER.json */; };
 		44FD4E4D297B192B00555B82 /* USER.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USER.json */; };
 		44FF97B3296DB62100EE1CBC /* AllCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */; };
@@ -346,6 +349,7 @@
 		4431C8962AB883E900B705A8 /* UserConfigViewAppearanceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewAppearanceExt.swift; sourceTree = "<group>"; };
 		4431C8982AB8847100B705A8 /* UserConfigViewGridExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewGridExt.swift; sourceTree = "<group>"; };
 		4431C89A2AB884CD00B705A8 /* UserConfigViewIDExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewIDExt.swift; sourceTree = "<group>"; };
+		4431C89C2AB886CB00B705A8 /* UserConfigViewExportingExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewExportingExt.swift; sourceTree = "<group>"; };
 		4436FD0129CB48C4003BBA2C /* EditRDMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRDMapView.swift; sourceTree = "<group>"; };
 		44398EA42979C65B009E1D6A /* WidgetView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView3.swift; sourceTree = "<group>"; };
 		44398EA62979C704009E1D6A /* MediumSizeView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSizeView3.swift; sourceTree = "<group>"; };
@@ -528,6 +532,7 @@
 		44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewDeleteExt.swift; sourceTree = "<group>"; };
 		44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		44F471D82993EE7D0047080A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportingHelper.swift; sourceTree = "<group>"; };
 		44FD4E4B297B192B00555B82 /* USER.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USER.json; sourceTree = "<group>"; };
 		44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommentsView.swift; sourceTree = "<group>"; };
 		44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingPasswordHelper.swift; sourceTree = "<group>"; };
@@ -740,6 +745,7 @@
 				4431C8962AB883E900B705A8 /* UserConfigViewAppearanceExt.swift */,
 				4431C8982AB8847100B705A8 /* UserConfigViewGridExt.swift */,
 				4431C89A2AB884CD00B705A8 /* UserConfigViewIDExt.swift */,
+				4431C89C2AB886CB00B705A8 /* UserConfigViewExportingExt.swift */,
 				44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */,
 				4411A4CB2AB7531700B59027 /* UserConfigViewExt.swift */,
 			);
@@ -800,6 +806,7 @@
 				441A84E8299025C800D5F1EB /* ConnectivityManager.swift */,
 				44741ECC29CA6DB800138691 /* LocationManager.swift */,
 				44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */,
+				44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1486,10 +1493,12 @@
 				447189D22A87B9F500BE66E5 /* EditOwnersExt.swift in Sources */,
 				4407D4EC297087DC006FAC47 /* EditUserPasswordView.swift in Sources */,
 				44CA18FC2A85753C00E9786A /* ActualReadingDetailExt.swift in Sources */,
+				44F9F0B52ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */,
 				4487BF6D278212B6003C6115 /* EBookModelExt.swift in Sources */,
 				44D28FD4296F376F00180ACE /* EBookConfigView.swift in Sources */,
 				4407D4EE29708B46006FAC47 /* TargetsMainView.swift in Sources */,
 				4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */,
+				4431C89D2AB886CB00B705A8 /* UserConfigViewExportingExt.swift in Sources */,
 				44398EA82979CC49009E1D6A /* Entry.swift in Sources */,
 				445BBA5B2A86FD680004B850 /* AddBookOwnerSection.swift in Sources */,
 				4431C89B2AB884CD00B705A8 /* UserConfigViewIDExt.swift in Sources */,
@@ -1567,6 +1576,7 @@
 				44FF97B9296E012300EE1CBC /* CheckingPasswordHelper.swift in Sources */,
 				442A7D282A9BAFCE006A0300 /* StatsModelExt.swift in Sources */,
 				44E32D5F29591DAB00E06425 /* EncodeToJson.swift in Sources */,
+				44F9F0B62ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */,
 				44E32D5A2959199200E06425 /* Provider.swift in Sources */,
 				44E32D6629591E0F00E06425 /* AnimateChartsHelper.swift in Sources */,
 				44E32D6029591DAB00E06425 /* AllEnums.swift in Sources */,
