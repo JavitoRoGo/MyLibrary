@@ -4,6 +4,8 @@ Google*.plist
 # Ignore the content of covers directory with all the cover images
 covers/
 
+FEATURING.md
+
 
 # Xcode
 #
