@@ -80,3 +80,5 @@ ConnectivityManager para conectar con iOS.
 * Se muestra la portada, si existe, en la vista detalle.
 * En la vista en parrilla se muestra solo el título si la imagen de portada no existe.
 
+* Se crea una nueva vista para las opciones de configuración, dejando en la vista principal los accesos a objetivos, notas y cerrar sesión.
+* En la nueva vista de configuración se añade la opción de elegir entre modo claro y oscuro, vista por defecto para las portadas (o en lista), y poder compartir los datos como json, importarlos o exportarlos.
