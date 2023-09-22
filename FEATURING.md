@@ -16,8 +16,15 @@
 
 #
 
-# 
+# upgrade
 
-### 
+### Actualizar a iOS17. Además, cambiar la lógica de modelos y persistencia según tutorial de jcfmunoz para adoptar el patrón singleton y la nueva API Obervation.
 
+Son varios cambios, pero cambios grandes que implican casi una restructuración completa, al menos de los modelos. Las vistas se mantienen igual, salvo los cambios necesarios al adoptar la nueva API Observation.
 
+* Subir el minimum deployment target a iOS17.
+* Pasar las extensiones del modelo a final class que hereden del modelo.
+* Usar el patrón singleton en todas las clases para que todas las llamadas lo hagan a los mismos datos.
+* Mejorar el Preview Content con datos "reales": json con un par de libros, de registros...
+* Usar la arquitectura del ejemplo de Julio con un viewmodel global, varios modelLogic, y persistencia para producción y para la preview.
+* Cuando todo esté funcionando, cambiar a Observation.
