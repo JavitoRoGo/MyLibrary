@@ -52,7 +52,7 @@ struct RSRow: View {
 
 struct RSRow_Previews: PreviewProvider {
     static var previews: some View {
-        RSRow(session: ReadingSession.example)
+        RSRow(session: ReadingSession.dataTest)
             .previewLayout(.sizeThatFits)
     }
 }

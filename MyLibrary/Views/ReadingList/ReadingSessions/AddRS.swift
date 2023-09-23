@@ -111,7 +111,7 @@ struct AddRS: View {
 }
 
 struct AddRS_Previews: PreviewProvider {
-    static let book = NowReading.example[0]
+    static let book = NowReading.dataTest
     
     static var previews: some View {
         NavigationView {

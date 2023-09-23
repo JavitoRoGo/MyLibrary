@@ -9,7 +9,7 @@ import SwiftUI
 
 // Extension for RDModel: handling with ReadingData
 
-extension UserViewModel {
+extension UserLogic {
     
     func addNewReadingData(_ newRD: ReadingData) {
 		user.readingDatas.append(newRD)
@@ -201,7 +201,7 @@ extension UserViewModel {
 
 // MARK: - Funciones varias para obtener los valores para las estadísticas globales por formato
 
-extension UserViewModel {
+extension UserLogic {
     // Listado de registros según formato
     func getReadingDataPerFormatt(_ formatt: Formatt) -> [ReadingData] {
 		user.readingDatas.filter { $0.formatt == formatt }

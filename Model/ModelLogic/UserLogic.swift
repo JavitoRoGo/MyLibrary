@@ -1,5 +1,5 @@
 //
-//  UserViewModel.swift
+//  UserLogic.swift
 //  MyLibrary
 //
 //  Created by Javier Rodríguez Gómez on 31/12/22.
@@ -8,13 +8,22 @@
 import Combine
 import SwiftUI
 
-final class UserViewModel: ObservableObject {
+class UserLogic: ObservableObject {
+	// Patrón singleton: siempre se llamará al shared
+	static let shared = UserLogic()
+	
+	let persistence: PersistenceInteractor
+	
 	// Propiedades Published
 	@Published var user: User {
 		didSet {
-			Task {
-				await saveToJson(userJson, user)
+			do {
+				try persistence.saveUser(user)
+			} catch {
+				// gestionar el error y mostrar alguna alerta al usuario
+				print("Error en el guardado: \(error.localizedDescription)")
 			}
+			
 			// Actualizar datos para el widget
 			Task {
 				await fetchDataToWidget()
@@ -45,9 +54,16 @@ final class UserViewModel: ObservableObject {
 	
 	private var cancellableSet: Set<AnyCancellable> = []
 	
-	init() {
-		guard let decoded: User = Bundle.main.searchAndDecode(userJson) else { fatalError() }
-		user = decoded
+	init(persistence: PersistenceInteractor = Persistence()) {
+		// Valor de persistencia por defecto para los datos de producción
+		self.persistence = persistence
+		do {
+			self.user = try persistence.loadUser()
+		} catch {
+			// gestionar el error y mostrar alguna alerta al usuario
+			print("Error en la carga: \(error.localizedDescription)")
+		}
+		
 		if !user.myPlaces.contains(soldText) && !user.myPlaces.contains(donatedText) {
 			user.myPlaces += [donatedText, soldText]
 		}

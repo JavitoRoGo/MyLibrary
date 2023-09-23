@@ -9,19 +9,19 @@ import SwiftUI
 
 @main
 struct MyLibraryApp: App {
-    @StateObject var userModel = UserViewModel()
+    @StateObject var globalModel = GlobalViewModel()
     @StateObject var locationManager = LocationManager()
     
     var body: some Scene {
         WindowGroup {
             LockScreenView()
-                .environmentObject(userModel)
+                .environmentObject(globalModel)
                 .environmentObject(locationManager)
 				.onAppear {
 					UIApplication.shared.addTapGestureRecognizer()
 				}
 				.preferredColorScheme(
-					UserAppearance.setSystemColorScheme(userModel.customAppearance)()
+					UserAppearance.setSystemColorScheme(globalModel.userLogic.customAppearance)()
 				)
         }
     }

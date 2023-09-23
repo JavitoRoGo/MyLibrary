@@ -101,7 +101,7 @@ struct RSEdit: View {
 struct RSEdit_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            RSEdit(book: .constant(NowReading.example[0]), session: .constant(ReadingSession.example))
+            RSEdit(book: .constant(NowReading.dataTest), session: .constant(ReadingSession.dataTest))
                 .environmentObject(UserViewModel())
         }
     }

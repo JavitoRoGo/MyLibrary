@@ -54,7 +54,7 @@ struct ActualReadingDetail: View {
 struct ActualReadingDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ActualReadingDetail(book: NowReading.example[0])
+            ActualReadingDetail(book: NowReading.dataTest)
                 .environmentObject(UserViewModel())
         }
     }

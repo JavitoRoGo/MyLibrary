@@ -10,7 +10,7 @@ import SwiftUI
 
 // Funciones para las estadísticas por ubicación
 
-extension UserViewModel {
+extension UserLogic {
 	
 	// Selección del color
 	func numColor(_ num: Int) -> Color {
@@ -157,7 +157,7 @@ extension UserViewModel {
 
 // Funciones para las otras estadísticas en SwiftCharts: por autor, editorial, encuadernación y propietario
 
-extension UserViewModel {
+extension UserLogic {
 	
 	// Función para obtener el listado de autores, editoriales, encuadernaciones y propietarios
 	func arrayOfBookLabelsByCategoryForPickerAndGraph(tag: Int) -> [String] {

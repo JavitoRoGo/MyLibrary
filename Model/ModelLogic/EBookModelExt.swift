@@ -9,7 +9,7 @@ import SwiftUI
 
 // Extension for EbooksModel: handling with ebooks
 
-extension UserViewModel {
+extension UserLogic {
     
     func compareExistingAuthors(text: String) -> (num: Int, authors: [String]) {
 		let foundEBookArray = user.ebooks.filter { $0.author.lowercased().contains(text.lowercased()) }

@@ -31,8 +31,3 @@ struct TargetForWidget: Codable {
     let yearlyPages: Int
     let yearlyBooks: Int
 }
-
-
-let exampleCurrent = TargetForWidget(dailyPages: 20, dailyTime: 1, weeklyPages: 100, weeklyTime: 5, monthlyPages: 1000, monthlyBooks: 2, yearlyPages: 5500, yearlyBooks: 32)
-let exampleTarget = TargetForWidget(dailyPages: 40, dailyTime: 2, weeklyPages: 250, weeklyTime: 7, monthlyPages: 1200, monthlyBooks: 4, yearlyPages: 8000, yearlyBooks: 40)
-let exampleData = DataForWidget(bookTitle: "Leyendo libro", progress: 55, remaining: 69, sessions: [ReadingSession.example], read: exampleCurrent, targets: exampleTarget)

@@ -257,3 +257,7 @@ protocol BooksProtocol {
 	var price: Double { get }
 	var status: ReadingStatus { get set }
 }
+
+
+let soldText = "Vendido"
+let donatedText = "Donado"

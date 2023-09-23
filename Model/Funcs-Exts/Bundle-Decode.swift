@@ -8,11 +8,10 @@
 import Foundation
 
 // Nombre de archivos json
-
+/*
 let userJson = "USER.json"
 
-let soldText = "Vendido"
-let donatedText = "Donado"
+
 
 
 // Extensión de Bundle para cargar los json
@@ -46,3 +45,4 @@ extension Bundle {
         return loaded
     }
 }
+*/

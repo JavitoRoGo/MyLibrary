@@ -12,7 +12,7 @@ struct ActualReading: View {
     
     @State var showingDeletingAlert = false
     @State var showingAddNewBook = false
-	@State var bookToDelete = NowReading.example[0]
+	@State var bookToDelete = NowReading.dataTest
     
     var body: some View {
         NavigationView {

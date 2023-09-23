@@ -42,6 +42,9 @@
 		441A84EA299025C800D5F1EB /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441A84E8299025C800D5F1EB /* ConnectivityManager.swift */; };
 		441A84EB29902E9200D5F1EB /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441A84E8299025C800D5F1EB /* ConnectivityManager.swift */; };
 		441A930327836986006C4FD3 /* RDStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441A930227836986006C4FD3 /* RDStars.swift */; };
+		441CC8372ABF10C700EB4BB4 /* USERPreview.json in Resources */ = {isa = PBXBuildFile; fileRef = 441CC8362ABF10C700EB4BB4 /* USERPreview.json */; };
+		441CC83B2ABF13E300EB4BB4 /* PersistenceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CC83A2ABF13E300EB4BB4 /* PersistenceInteractor.swift */; };
+		441CC83E2ABF3AEC00EB4BB4 /* GlobalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CC83D2ABF3AEC00EB4BB4 /* GlobalViewModel.swift */; };
 		44210FD0294FAC06009764A3 /* ChangeBooksOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44210FCF294FAC06009764A3 /* ChangeBooksOwner.swift */; };
 		44265386277DF5020047D75C /* MyLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44265385277DF5020047D75C /* MyLibraryApp.swift */; };
 		44265388277DF5020047D75C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44265387277DF5020047D75C /* ContentView.swift */; };
@@ -190,7 +193,7 @@
 		449410FC28563DCC0055D833 /* RSBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449410FB28563DCC0055D833 /* RSBarGraph.swift */; };
 		4496063A2847C1C800D27055 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449606392847C1C800D27055 /* ConfettiView.swift */; };
 		44A01F352960FE8300E34FA8 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F342960FE8300E34FA8 /* CreateUserView.swift */; };
-		44A01F372961003600E34FA8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F362961003600E34FA8 /* UserViewModel.swift */; };
+		44A01F372961003600E34FA8 /* UserLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F362961003600E34FA8 /* UserLogic.swift */; };
 		44AA171329A004A900944623 /* RSEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA171229A004A900944623 /* RSEdit.swift */; };
 		44AB0300280A2E2800EAFE45 /* RingCircleArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */; };
 		44B0409C284FBA4700C29E22 /* RSModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModelExt.swift */; };
@@ -269,11 +272,11 @@
 		44F471DB2993F1AD0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
 		44F9F0B52ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */; };
 		44F9F0B62ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */; };
-		44FD4E4C297B192B00555B82 /* USER.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USER.json */; };
-		44FD4E4D297B192B00555B82 /* USER.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USER.json */; };
+		44FD4E4C297B192B00555B82 /* USERDATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USERDATA.json */; };
+		44FD4E4D297B192B00555B82 /* USERDATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USERDATA.json */; };
 		44FF97B3296DB62100EE1CBC /* AllCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */; };
 		44FF97B5296DF37C00EE1CBC /* CheckingPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */; };
-		44FF97B8296E011700EE1CBC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F362961003600E34FA8 /* UserViewModel.swift */; };
+		44FF97B8296E011700EE1CBC /* UserLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F362961003600E34FA8 /* UserLogic.swift */; };
 		44FF97B9296E012300EE1CBC /* CheckingPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -329,6 +332,9 @@
 		441A84E0298FED4C00D5F1EB /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		441A84E8299025C800D5F1EB /* ConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
 		441A930227836986006C4FD3 /* RDStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDStars.swift; sourceTree = "<group>"; };
+		441CC8362ABF10C700EB4BB4 /* USERPreview.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USERPreview.json; sourceTree = "<group>"; };
+		441CC83A2ABF13E300EB4BB4 /* PersistenceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceInteractor.swift; sourceTree = "<group>"; };
+		441CC83D2ABF3AEC00EB4BB4 /* GlobalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewModel.swift; sourceTree = "<group>"; };
 		44210FCF294FAC06009764A3 /* ChangeBooksOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBooksOwner.swift; sourceTree = "<group>"; };
 		44265382277DF5020047D75C /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44265385277DF5020047D75C /* MyLibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryApp.swift; sourceTree = "<group>"; };
@@ -465,7 +471,7 @@
 		449410FB28563DCC0055D833 /* RSBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSBarGraph.swift; sourceTree = "<group>"; };
 		449606392847C1C800D27055 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		44A01F342960FE8300E34FA8 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
-		44A01F362961003600E34FA8 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		44A01F362961003600E34FA8 /* UserLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogic.swift; sourceTree = "<group>"; };
 		44A3422C27D2DC7A00DC82D5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		44A3422E27D2DC7A00DC82D5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		44AA171229A004A900944623 /* RSEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSEdit.swift; sourceTree = "<group>"; };
@@ -533,7 +539,7 @@
 		44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		44F471D82993EE7D0047080A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportingHelper.swift; sourceTree = "<group>"; };
-		44FD4E4B297B192B00555B82 /* USER.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USER.json; sourceTree = "<group>"; };
+		44FD4E4B297B192B00555B82 /* USERDATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USERDATA.json; sourceTree = "<group>"; };
 		44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommentsView.swift; sourceTree = "<group>"; };
 		44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingPasswordHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -603,6 +609,30 @@
 			path = MainViewHelper;
 			sourceTree = "<group>";
 		};
+		441CC8382ABF135100EB4BB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				441A84E0298FED4C00D5F1EB /* ModelData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		441CC8392ABF13C900EB4BB4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				441CC83A2ABF13E300EB4BB4 /* PersistenceInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		441CC83C2ABF3A6F00EB4BB4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				441CC83D2ABF3AEC00EB4BB4 /* GlobalViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		44265379277DF5020047D75C = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +675,7 @@
 			children = (
 				4426538C277DF5030047D75C /* Preview Assets.xcassets */,
 				446D6C042AB50E57001A6E85 /* PreviewData.swift */,
+				441CC8362ABF10C700EB4BB4 /* USERPreview.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -652,7 +683,7 @@
 		44265393277DF54F0047D75C /* JsonData */ = {
 			isa = PBXGroup;
 			children = (
-				44FD4E4B297B192B00555B82 /* USER.json */,
+				44FD4E4B297B192B00555B82 /* USERDATA.json */,
 			);
 			path = JsonData;
 			sourceTree = "<group>";
@@ -660,7 +691,10 @@
 		44265394277DF5580047D75C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				44523D3E298563E70046E0B5 /* ViewModels */,
+				441CC8382ABF135100EB4BB4 /* Model */,
+				441CC8392ABF13C900EB4BB4 /* Interactor */,
+				44523D3E298563E70046E0B5 /* ModelLogic */,
+				441CC83C2ABF3A6F00EB4BB4 /* ViewModel */,
 				44523D40298564410046E0B5 /* Funcs-Exts */,
 				44523D3F298564350046E0B5 /* Helpers */,
 			);
@@ -775,11 +809,10 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		44523D3E298563E70046E0B5 /* ViewModels */ = {
+		44523D3E298563E70046E0B5 /* ModelLogic */ = {
 			isa = PBXGroup;
 			children = (
-				441A84E0298FED4C00D5F1EB /* ModelData.swift */,
-				44A01F362961003600E34FA8 /* UserViewModel.swift */,
+				44A01F362961003600E34FA8 /* UserLogic.swift */,
 				443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */,
 				442653A2277E175D0047D75C /* BookModelExt.swift */,
 				4487BF6C278212B6003C6115 /* EBookModelExt.swift */,
@@ -788,7 +821,7 @@
 				4486010327C85CC3004E84B0 /* NowRModelExt.swift */,
 				44B0409B284FBA4700C29E22 /* RSModelExt.swift */,
 			);
-			path = ViewModels;
+			path = ModelLogic;
 			sourceTree = "<group>";
 		};
 		44523D3F298564350046E0B5 /* Helpers */ = {
@@ -1309,8 +1342,9 @@
 			files = (
 				446A6B52286FAE7E00465AED /* explosion.caf in Resources */,
 				445B62B3298C43560036D140 /* Assets.xcassets in Resources */,
+				441CC8372ABF10C700EB4BB4 /* USERPreview.json in Resources */,
 				4426538D277DF5030047D75C /* Preview Assets.xcassets in Resources */,
-				44FD4E4C297B192B00555B82 /* USER.json in Resources */,
+				44FD4E4C297B192B00555B82 /* USERDATA.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1330,7 +1364,7 @@
 			files = (
 				44E32D4E295917F800E06425 /* Assets.xcassets in Resources */,
 				445B62B4298C43560036D140 /* Assets.xcassets in Resources */,
-				44FD4E4D297B192B00555B82 /* USER.json in Resources */,
+				44FD4E4D297B192B00555B82 /* USERDATA.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1343,6 +1377,7 @@
 			files = (
 				445BBA4E2A86F6E20004B850 /* OtherPriceSectionExt.swift in Sources */,
 				44EF88CF296CDAD50039632F /* AllQuotesCommentsView.swift in Sources */,
+				441CC83B2ABF13E300EB4BB4 /* PersistenceInteractor.swift in Sources */,
 				445BBA362A86AF7A0004B850 /* DailyTargetViewExt.swift in Sources */,
 				44D28FD2296F27FA00180ACE /* EbookStatsView.swift in Sources */,
 				4482D5792964AE99004D0EB8 /* UserMainView.swift in Sources */,
@@ -1435,6 +1470,7 @@
 				445BBA3C2A86BE650004B850 /* YearlyTargetViewExt.swift in Sources */,
 				4487BF7227822296003C6115 /* EBookDetail.swift in Sources */,
 				446983A92AB37770009898B9 /* EBookGrid.swift in Sources */,
+				441CC83E2ABF3AEC00EB4BB4 /* GlobalViewModel.swift in Sources */,
 				44B9FD6A295A1BCB00A11206 /* WidgetDataHelper.swift in Sources */,
 				445BBA452A86F2F90004B850 /* ThicknessSectionExt.swift in Sources */,
 				440246192784B47D003D7338 /* RDScroll.swift in Sources */,
@@ -1526,7 +1562,7 @@
 				447189E32A87DF4000BE66E5 /* EBookStatsValuePicker.swift in Sources */,
 				445BBA432A86F2AE0004B850 /* PriceSectionExt.swift in Sources */,
 				446C35AA2790ECD900532EF9 /* Bundle-Decode.swift in Sources */,
-				44A01F372961003600E34FA8 /* UserViewModel.swift in Sources */,
+				44A01F372961003600E34FA8 /* UserLogic.swift in Sources */,
 				442851C12842DDA0008730F0 /* EncodeToJson.swift in Sources */,
 				4456FB3829FD756600C955B9 /* CameraPicker.swift in Sources */,
 				44DDA89B2A84524D000104A1 /* MaxAndMinExt.swift in Sources */,
@@ -1608,7 +1644,7 @@
 				443F2F7F2A9A700600EAE6D3 /* TimelyTargetExt.swift in Sources */,
 				44E32D6429591DC800E06425 /* EBookModelExt.swift in Sources */,
 				445121062AAA12CD00E680DE /* DoubleExtensions.swift in Sources */,
-				44FF97B8296E011700EE1CBC /* UserViewModel.swift in Sources */,
+				44FF97B8296E011700EE1CBC /* UserLogic.swift in Sources */,
 				44E32D6329591DC800E06425 /* RDModelExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1676,7 +1712,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1733,7 +1769,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1766,15 +1802,18 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = JRG79.MyLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1803,15 +1842,18 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = JRG79.MyLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1897,7 +1939,7 @@
 				INFOPLIST_FILE = MyLibraryWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyLibraryWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1928,7 +1970,7 @@
 				INFOPLIST_FILE = MyLibraryWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyLibraryWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,7 +9,7 @@ import LocalAuthentication
 import SwiftUI
 
 struct LockScreenView: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     
     @State var isUnlocked = false
     @State var showingAlert = false
@@ -85,6 +85,6 @@ struct LockScreenView: View {
 struct LockScreenView_Previews: PreviewProvider {
     static var previews: some View {
         LockScreenView()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

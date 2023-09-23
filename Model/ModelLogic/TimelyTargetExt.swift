@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - OBJETIVOS DE LECTURA:
 
-extension UserViewModel {
+extension UserLogic {
 	// Texto a mostrar según el objetivo
 	func dailyTargetText(_ target: DWTarget) -> String {
 		target == .pages ?

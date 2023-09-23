@@ -88,7 +88,7 @@ struct ReadingTimer: View {
 struct ReadingTimer_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ReadingTimer(book: NowReading.example[0])
+            ReadingTimer(book: NowReading.dataTest)
                 .environmentObject(UserViewModel())
         }
     }

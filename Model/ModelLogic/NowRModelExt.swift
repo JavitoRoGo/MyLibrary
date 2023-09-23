@@ -10,7 +10,7 @@ import SwiftUI
 
 // Extension for NowReading: handling with reading and waiting books lists
 
-extension UserViewModel {
+extension UserLogic {
 	// Actualizar datos para el widget
 	func fetchDataToWidget() async {
 		if user.sessions.isEmpty {

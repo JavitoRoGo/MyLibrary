@@ -1,0 +1,271 @@
+{
+  "nowReading" : [
+	  {
+		  "location" : {
+			  "id" : "0CF0B701-D7EB-464A-B2C4-09EEF656A57D",
+			  "longitude" : -17.915952789662903,
+			  "latitude" : 28.658245551807592
+		  },
+		  "lastPage" : 260,
+		  "bookTitle" : "tulipán negro, El",
+		  "isFinished" : false,
+		  "sessions" : [
+			  {
+				  "duration" : "0h 16min",
+				  "id" : "EEDF4AA0-5950-4D3E-ADD6-FF98C7A782C3",
+				  "startingPage" : 175,
+				  "endingPage" : 186,
+				  "minPerPag" : "1min 20s",
+				  "date" : 716554800
+			  },
+			  {
+				  "duration" : "0h 8min",
+				  "id" : "15658DEB-029A-41C4-AB9F-33A6684D5FEE",
+				  "startingPage" : 169,
+				  "endingPage" : 174,
+				  "minPerPag" : "1min 20s",
+				  "date" : 716468400
+			  },
+			  {
+				  "duration" : "0h 36min",
+				  "id" : "3C9CA45F-0251-4E79-8CA7-931ECF360E68",
+				  "startingPage" : 149,
+				  "endingPage" : 168,
+				  "minPerPag" : "1min 48s",
+				  "date" : 716382000
+			  },
+			  {
+				  "duration" : "0h 19min",
+				  "id" : "E84993BA-B4C3-41C9-AED5-85853DEFCA3E",
+				  "startingPage" : 137,
+				  "endingPage" : 148,
+				  "minPerPag" : "1min 35s",
+				  "date" : 716295600
+			  },
+			  {
+				  "duration" : "0h 36min",
+				  "id" : "17158AAD-165B-4648-8CED-325BE0A9A46F",
+				  "startingPage" : 115,
+				  "endingPage" : 136,
+				  "minPerPag" : "1min 38s",
+				  "date" : 716209200
+			  },
+			  {
+				  "duration" : "0h 24min",
+				  "id" : "8132BE8B-75CB-4A80-816D-6518C15510DF",
+				  "startingPage" : 101,
+				  "endingPage" : 114,
+				  "minPerPag" : "1min 43s",
+				  "date" : 716122800
+			  },
+			  {
+				  "duration" : "0h 36min",
+				  "id" : "2CF95FF8-8A4A-4031-A11F-51D20FBD453F",
+				  "startingPage" : 79,
+				  "endingPage" : 100,
+				  "minPerPag" : "1min 38s",
+				  "date" : 716036400
+			  },
+			  {
+				  "duration" : "1h 19min",
+				  "id" : "BA309203-0902-477F-AD77-F872038E93E2",
+				  "startingPage" : 32,
+				  "endingPage" : 78,
+				  "minPerPag" : "1min 41s",
+				  "date" : 715950000
+			  },
+			  {
+				  "duration" : "0h 53min",
+				  "id" : "F4C3CB3B-7D25-4DD6-9F3F-A270D5975BC1",
+				  "startingPage" : 4,
+				  "endingPage" : 31,
+				  "minPerPag" : "1min 54s",
+				  "date" : 715863600
+			  },
+			  {
+				  "duration" : "0h 9min",
+				  "id" : "DA7C9C77-1A91-4E34-860D-055052F24947",
+				  "startingPage" : 1,
+				  "endingPage" : 3,
+				  "minPerPag" : "3min 0s",
+				  "date" : 715777200
+			  }
+		  ],
+		  "formatt" : "Kindle",
+		  "synopsis" : "Los hermanos De Witt, protegidos del gran rey Luis de Francia, encontrarán la muerte a manos de la enloquecida población de La Haya, que les cree culpables de conspiración. Pero antes de morir dejarán a su ahijado Cornelius unos comprometedores documentos que le llevarán a la cárcel, donde, en compañía de la joven Rosa, se afanará en conseguir lo que más desea en el mundo: el bulbo del tulipán negro.\n\nCon su habitual talento narrativo, Alejandro Dumas despliega en esta novela de intriga todos los ingredientes necesarios para atrapar al lector desde la primera página y sumergirlo en la tumultuosa sociedad holandesa de finales del siglo XVII.",
+		  "isOnReading" : true,
+		  "firstPage" : 1
+	  }
+  ],
+  "id" : "DFCAE585-BEAD-42CA-BEE3-02DE43B77DBE",
+  "books" : [
+	  {
+		  "price" : 10.4,
+		  "place" : "A4",
+		  "weight" : 443,
+		  "publisher" : "Ediciones Minotauro",
+		  "pages" : 560,
+		  "isbn3" : 450,
+		  "status" : "Leído",
+		  "isbn2" : 84,
+		  "writingYear" : 1966,
+		  "owner" : "Javi",
+		  "isActive" : true,
+		  "city" : "Barcelona",
+		  "originalTitle" : "Lord of the Rings, The. The fellowship of the ring",
+		  "edition" : 9,
+		  "isbn1" : 978,
+		  "id" : 1,
+		  "isbn5" : 8,
+		  "height" : 18,
+		  "width" : 11.5,
+		  "isbn4" : 7140,
+		  "editionYear" : 1996,
+		  "thickness" : 3,
+		  "bookTitle" : "Señor de los Anillos, El. La comunidad del anillo",
+		  "author" : "Tolkien, J. R. R.",
+		  "coverType" : "Rústica"
+	  }
+  ],
+  "ebooks" : [
+	  {
+		  "author" : "Connelly, Michael",
+		  "pages" : 350,
+		  "owner" : "Javi",
+		  "id" : 1,
+		  "price" : 0,
+		  "bookTitle" : "Deuda de sangre",
+		  "status" : "Leído",
+		  "year" : 1998,
+		  "synopsis" : "Tras dos años a la espera de un donante compatible, Terry McCaleb se recupera de un trasplante de corazón que le ha obligado a cambiar por completo de estilo de vida. Su única meta es reparar el velero en el que se ha retirado y dejar definitivamente atrás sus días como agente del FBI especializado en casos de asesinos en serie. Sin embargo, antes de empezar una nueva vida deberá zanjar un asunto pendiente: resolver el asesinato de Gloria Rivers, la mujer cuyo corazón late en su pecho.",
+		  "originalTitle" : "Blood work"
+	  }
+  ],
+  "sessions" : [
+	  {
+		  "duration" : "0h 16min",
+		  "id" : "EEDF4AA0-5950-4D3E-ADD6-FF98C7A782C3",
+		  "startingPage" : 175,
+		  "endingPage" : 186,
+		  "minPerPag" : "1min 20s",
+		  "date" : 716554800
+	  },
+	  {
+		  "duration" : "0h 8min",
+		  "id" : "15658DEB-029A-41C4-AB9F-33A6684D5FEE",
+		  "startingPage" : 169,
+		  "endingPage" : 174,
+		  "minPerPag" : "1min 20s",
+		  "date" : 716468400
+	  },
+	  {
+		  "duration" : "0h 36min",
+		  "id" : "3C9CA45F-0251-4E79-8CA7-931ECF360E68",
+		  "startingPage" : 149,
+		  "endingPage" : 168,
+		  "minPerPag" : "1min 48s",
+		  "date" : 716382000
+	  }
+  ],
+  "readingDatas" : [
+	  {
+		  "minPerDay" : "1h 19min",
+		  "location" : {
+			  "id" : "A32BCD4B-3AB1-4524-9C53-CDE4E8238FBC",
+			  "longitude" : -17.912244999999999,
+			  "latitude" : 28.658073999999999
+		  },
+		  "pages" : 243,
+		  "formatt" : "Kindle",
+		  "duration" : "6h 35min",
+		  "synopsis" : "A veces estar en lo más alto no es suficiente. El ambicioso y cautivador Roger Brown parece haber logrado todo lo que un hombre puede desear: ser el mejor en su trabajo como headhunter para empresas, estar casado con una culta y bella mujer responsable de una galería de arte, vivir en una lujosa y elegante casa... Sin embargo, la codicia y el deseo de riqueza obligan a Roger a correr algunos riesgos, como por ejemplo robar obras de arte.\nEl día que Roger conoce a Clas Greve, todo parece sonreírle. No solo es el director ejecutivo ideal que él estaba buscando para trabajar en una empresa de GPS, sino que además es propietario de un cuadro de Rubens de incalculable valor. Roger empieza inmediatamente a planificar el robo de la ansiada tela, pero pronto descubrirá que cometer el delito solo será uno más de sus problemas.",
+		  "over50" : 2,
+		  "percentOver50" : 40,
+		  "pagPerDay" : 49,
+		  "cover" : "headhunters",
+		  "minPerPag" : "1min 38s",
+		  "id" : 1,
+		  "readingSessions" : [
+			  {
+				  "duration" : "53min",
+				  "id" : "EF7B0AB1-9D59-44BD-BF14-1BDD178B6237",
+				  "startingPage" : 207,
+				  "endingPage" : 243,
+				  "minPerPag" : "1min 26s",
+				  "date" : 576364080
+			  },
+			  {
+				  "duration" : "1h 31min",
+				  "id" : "03983310-0C62-4AB7-93CD-A46998FA7B4E",
+				  "startingPage" : 149,
+				  "endingPage" : 207,
+				  "minPerPag" : "1min 33s",
+				  "date" : 576283920
+			  },
+			  {
+				  "duration" : "31min",
+				  "id" : "067E47AC-0181-4BD1-B5F1-F54534D40C30",
+				  "startingPage" : 133,
+				  "endingPage" : 149,
+				  "minPerPag" : "1min 50s",
+				  "date" : 576260820
+			  },
+			  {
+				  "duration" : "1h 20min",
+				  "id" : "871B4892-2900-4F76-8AE3-967970B93CA7",
+				  "startingPage" : 82,
+				  "endingPage" : 133,
+				  "minPerPag" : "1min 32s",
+				  "date" : 576197040
+			  },
+			  {
+				  "duration" : "1h 8min",
+				  "id" : "BB1468EB-3686-413E-8189-6B2E6ABD2A96",
+				  "startingPage" : 42,
+				  "endingPage" : 82,
+				  "minPerPag" : "1min 40s",
+				  "date" : 576109380
+			  },
+			  {
+				  "duration" : "1h 11min",
+				  "id" : "1BC45D21-F8FE-4DB5-AEC3-067949CCF222",
+				  "startingPage" : 1,
+				  "endingPage" : 42,
+				  "minPerPag" : "1min 41s",
+				  "date" : 576024600
+			  }
+		  ],
+		  "yearId" : 1,
+		  "finishedInYear" : 2019,
+		  "startDate" : 575985600,
+		  "bookTitle" : "Headhunters",
+		  "sessions" : 5,
+		  "rating" : 5,
+		  "finishDate" : 576331200
+	  }
+  ],
+  "myOwners" : [
+	  "Yo"
+  ],
+  "nickname" : "MySelf",
+  "username" : "tic@ticritus.com",
+  "nowWaiting" : [
+	  {
+		  "lastPage" : 381,
+		  "bookTitle" : "horas oscuras, Las",
+		  "isFinished" : false,
+		  "sessions" : [
+			  
+		  ],
+		  "formatt" : "Papel",
+		  "synopsis" : "Reina el caos en Hollywood en Nochevieja. Renée Ballard, detective del Departamento de Policía de los Ángeles, recibe una llamada poco después de medianoche: el propietario de un taller de coches ha resultado mortalmente herido por una bala en medio de una fiesta callejera.\nEnseguida concluye que está relacionada con otro asesinato sin resolver investigado por el detective Harry Bosch. Al mismo tiempo, Ballard persigue a una perversa pareja de violadores en serie, los Hombres de Medianoche.\nLa detective siente que va a contracorriente en un departamento de policía cambiado por la pandemia y el malestar social, por lo que busca la ayuda de Harry Bosch. Mientras trabajan juntos, deben mirar por encima del hombro constantemente. Los depredadores a los que persiguen están dispuestos a matar para mantener ocultos sus secretos.",
+		  "isOnReading" : false,
+		  "firstPage" : 7
+	  }
+  ],
+  "myPlaces" : [
+    "A1",
+	"Donado",
+    "Vendido"
+  ]
+}

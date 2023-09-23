@@ -57,6 +57,6 @@ struct ProgressRing: View {
 
 struct ProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressRing(book: NowReading.example[0])
+        ProgressRing(book: NowReading.dataTest)
     }
 }

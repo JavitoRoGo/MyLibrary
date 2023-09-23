@@ -10,7 +10,7 @@ import WidgetKit
 
 // Extension for RSModel: handling with reading sessions
 
-extension UserViewModel {
+extension UserLogic {
 	
 	// Recopilación de citas y comentarios de todas las sesiones
     var allQuotes: [Quote] {
@@ -299,7 +299,7 @@ extension UserViewModel {
 
 // MARK: - Extensión para las gráficas animadas con Swift Charts
 
-extension UserViewModel {
+extension UserLogic {
     
     // Cálculo del total de páginas por semana, mes y año para las 4 gráficas animadas de ChartsByDate
     

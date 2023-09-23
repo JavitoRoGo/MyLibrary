@@ -102,7 +102,7 @@ struct ActualReadingEdit: View {
 }
 
 struct ActualReadingEdit_Previews: PreviewProvider {
-    static let example = NowReading.example[0]
+    static let example = NowReading.dataTest
     
     static var previews: some View {
         NavigationView {
