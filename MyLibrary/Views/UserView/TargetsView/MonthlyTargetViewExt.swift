@@ -23,7 +23,7 @@ extension MonthlyTargetView {
 	}
 	
 	struct MonthlyTargetModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var books: Int
@@ -40,9 +40,9 @@ extension MonthlyTargetView {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Guardar") {
 							if monthlyTarget == .pages {
-								model.monthlyPagesTarget = pages
+								model.userLogic.monthlyPagesTarget = pages
 							} else {
-								model.monthlyBooksTarget = books
+								model.userLogic.monthlyBooksTarget = books
 							}
 							dismiss()
 						}
@@ -50,8 +50,8 @@ extension MonthlyTargetView {
 					}
 				}
 				.task {
-					books = model.monthlyBooksTarget
-					pages = model.monthlyPagesTarget
+					books = model.userLogic.monthlyBooksTarget
+					pages = model.userLogic.monthlyPagesTarget
 				}
 		}
 	}

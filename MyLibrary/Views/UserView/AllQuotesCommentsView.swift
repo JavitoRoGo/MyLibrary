@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllQuotesCommentsView: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @State private var showingQuotes = true
     @State private var showingAlert = false
     
@@ -16,13 +16,13 @@ struct AllQuotesCommentsView: View {
         NavigationStack {
             VStack {
                 if showingQuotes {
-                    if model.allQuotes.isEmpty {
+					if model.userLogic.allQuotes.isEmpty {
                         Text("Todavía no has añadido ninguna cita. Inicia una sesión de lectura y pulsa sobre el icono \(Image(systemName: "quote.bubble")) para agregar una.")
                             .padding(.horizontal)
                     } else {
                         List {
-                            Section("\(model.allQuotes.count) citas") {
-                                ForEach(model.allQuotes, id:\.date) { quote in
+							Section("\(model.userLogic.allQuotes.count) citas") {
+								ForEach(model.userLogic.allQuotes, id:\.date) { quote in
                                     VStack(alignment: .leading) {
                                         Text("Recogida el \(quote.date.formatted(date: .numeric, time: .omitted)) en la página \(quote.page) de \(quote.bookTitle).")
                                             .font(.caption)
@@ -43,13 +43,13 @@ struct AllQuotesCommentsView: View {
                         }
                     }
                 } else {
-                    if model.allComments.isEmpty {
+					if model.userLogic.allComments.isEmpty {
                         Text("Todavía no has añadido ningún comentario. Termina una sesión de lectura para agregar uno.")
                             .padding(.horizontal)
                     } else {
                         List {
-                            Section("\(model.allComments.count) comentarios") {
-                                ForEach(model.allComments, id:\.date) { comment in
+							Section("\(model.userLogic.allComments.count) comentarios") {
+								ForEach(model.userLogic.allComments, id:\.date) { comment in
                                     VStack(alignment: .leading) {
                                         Text("Recogido el \(comment.date.formatted(date: .numeric, time: .omitted)) del libro \(comment.bookTitle).")
                                             .font(.caption)
@@ -94,6 +94,6 @@ struct AllQuotesCommentsView: View {
 struct AllQuotesCommentsView_Previews: PreviewProvider {
     static var previews: some View {
         AllQuotesCommentsView()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

@@ -26,7 +26,7 @@ extension WeeklyTargetView {
 	}
 	
 	struct WeeklyTargetModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var pages: Int
@@ -42,9 +42,9 @@ extension WeeklyTargetView {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Guardar") {
 							if weeklyTarget == .pages {
-								model.weeklyPagesTarget = pages
+								model.userLogic.weeklyPagesTarget = pages
 							} else {
-								model.weeklyTimeTarget = duration
+								model.userLogic.weeklyTimeTarget = duration
 							}
 							dismiss()
 						}
@@ -52,7 +52,7 @@ extension WeeklyTargetView {
 					}
 				}
 				.task {
-					pages = model.weeklyPagesTarget
+					pages = model.userLogic.weeklyPagesTarget
 				}
 		}
 	}

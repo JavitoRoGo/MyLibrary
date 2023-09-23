@@ -33,8 +33,8 @@ struct LockScreenView: View {
                     
                     VStack {
                         Text(
-                            !model.user.nickname.isEmpty ?
-                            "Hola, \(model.user.nickname). Haz login para acceder a todo el contenido de la app." :
+							!model.userLogic.user.nickname.isEmpty ?
+							"Hola, \(model.userLogic.user.nickname). Haz login para acceder a todo el contenido de la app." :
                             "Introduce tu usuario para acceder a todo el contenido de la app."
                         )
                             .font(.title3)
@@ -54,14 +54,14 @@ struct LockScreenView: View {
                         .scaleEffect(0.85)
                         VStack {
                             Button {
-                                if model.isBiometricsAllowed {
+								if model.userLogic.isBiometricsAllowed {
                                     authenticate()
                                 } else {
                                     showingLoginPage = true
                                 }
                             } label: {
                                 VStack(spacing: 30) {
-                                    if model.isBiometricsAllowed {
+									if model.userLogic.isBiometricsAllowed {
                                         if getBioMetricStatus() {
                                             Image(systemName: LAContext().biometryType == .faceID ? "faceid" : "touchid")
                                                 .font(.system(size: 50))

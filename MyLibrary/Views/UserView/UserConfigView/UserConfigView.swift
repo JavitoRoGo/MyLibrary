@@ -9,7 +9,7 @@ import LocalAuthentication
 import SwiftUI
 
 struct UserConfigView: View {
-	@EnvironmentObject var model: UserViewModel
+	@EnvironmentObject var model: GlobalViewModel
 	
 	@Binding var isUnlocked: Bool
 	@State var showingEditUser = false
@@ -50,6 +50,6 @@ struct UserConfigView: View {
 struct UserConfigView_Previews: PreviewProvider {
     static var previews: some View {
 		UserConfigView(isUnlocked: .constant(true))
-			.environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

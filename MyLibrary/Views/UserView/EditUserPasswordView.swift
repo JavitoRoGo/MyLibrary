@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditUserPasswordView: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @Environment(\.dismiss) var dismiss
     
     @State private var nickname = ""
@@ -20,7 +20,7 @@ struct EditUserPasswordView: View {
         if repeatPassword.isEmpty {
             return false
         }
-        return model.isValid && repeatPassword == model.password
+		return model.userLogic.isValid && repeatPassword == model.userLogic.password
     }
     
     var body: some View {
@@ -40,9 +40,9 @@ struct EditUserPasswordView: View {
                 Section {
                     HStack {
                         if isPasswordVisible {
-                            TextField("Introduce la nueva contraseña", text: $model.password)
+							TextField("Introduce la nueva contraseña", text: $model.userLogic.password)
                         } else {
-                            SecureField("Introduce la nueva contraseña", text: $model.password)
+							SecureField("Introduce la nueva contraseña", text: $model.userLogic.password)
                         }
                         Spacer()
                         Button {
@@ -66,7 +66,7 @@ struct EditUserPasswordView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
-                    List(model.validations) { validation in
+					List(model.userLogic.validations) { validation in
                         HStack {
                             Image(systemName: validation.state == .success ? "checkmark.circle.fill" : "checkmark.circle")
                                 .foregroundColor(validation.state == .success ? .green : .gray.opacity(0.3))
@@ -78,20 +78,20 @@ struct EditUserPasswordView: View {
                         .padding(.leading, 15)
                     }
                     HStack {
-                        Image(systemName: model.password == repeatPassword && !repeatPassword.isEmpty ? "checkmark.circle.fill" : "checkmark.circle")
-                            .foregroundColor(model.password == repeatPassword && !repeatPassword.isEmpty ? .green : .gray.opacity(0.3))
+						Image(systemName: model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? "checkmark.circle.fill" : "checkmark.circle")
+							.foregroundColor(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? .green : .gray.opacity(0.3))
                         Text("Repite la contraseña.")
-                            .strikethrough(model.password == repeatPassword && !repeatPassword.isEmpty)
+							.strikethrough(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty)
                             .font(.caption)
-                            .foregroundColor(model.password == repeatPassword && !repeatPassword.isEmpty ? .secondary : .primary)
+							.foregroundColor(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? .secondary : .primary)
                     }
                     .padding(.leading, 15)
                 }
                 
                 Section {
                     Button {
-                        model.user.nickname = nickname
-                        model.user.username = username
+						model.userLogic.user.nickname = nickname
+						model.userLogic.user.username = username
                         keychain.set(repeatPassword, forKey: "storedPassword")
                         if keychain.set(repeatPassword, forKey: "storedPassword") {
                             print("Usuario y contraseña cambiados correctamente")
@@ -126,8 +126,8 @@ struct EditUserPasswordView: View {
             .navigationTitle("Modifica tu usuario y contraseña")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                nickname = model.user.nickname
-                username = model.user.username
+				nickname = model.userLogic.user.nickname
+				username = model.userLogic.user.username
             }
         }
     }
@@ -136,6 +136,6 @@ struct EditUserPasswordView: View {
 struct EditUserPasswordView_Previews: PreviewProvider {
     static var previews: some View {
         EditUserPasswordView()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

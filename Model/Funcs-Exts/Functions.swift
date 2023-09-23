@@ -116,10 +116,10 @@ func compareWithMean(value: Double, mean: Double) -> (color: Color, image: Strin
 
 // MARK: - Función para obtener la ruta a FileManager
 
-func getDocumentDirectory() -> URL? {
-    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    return path.first
-}
+//func getDocumentDirectory() -> URL? {
+//    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//    return path.first
+//}
 
 
 // MARK: - Funciones para la imagen de portada

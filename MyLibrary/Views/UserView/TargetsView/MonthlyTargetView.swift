@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct MonthlyTargetView: View {
-    @EnvironmentObject var model: UserViewModel
-    
     @Binding var monthlyTarget: MYTarget
     @State var books = 4
     @State var pages = 1000
@@ -55,6 +53,6 @@ struct MonthlyTargetView: View {
 struct MonthlyTargetView_Previews: PreviewProvider {
     static var previews: some View {
         MonthlyTargetView(monthlyTarget: .constant(.books))
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

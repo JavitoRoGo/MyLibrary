@@ -23,7 +23,7 @@ extension YearlyTargetView {
 	}
 	
 	struct YearlyTargetModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var books: Int
@@ -40,9 +40,9 @@ extension YearlyTargetView {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Guardar") {
 							if yearlyTarget == .pages {
-								model.yearlyPagesTarget = pages
+								model.userLogic.yearlyPagesTarget = pages
 							} else {
-								model.yearlyBooksTarget = books
+								model.userLogic.yearlyBooksTarget = books
 							}
 							dismiss()
 						}
@@ -50,8 +50,8 @@ extension YearlyTargetView {
 					}
 				}
 				.task {
-					books = model.yearlyBooksTarget
-					pages = model.yearlyPagesTarget
+					books = model.userLogic.yearlyBooksTarget
+					pages = model.userLogic.yearlyPagesTarget
 				}
 		}
 	}

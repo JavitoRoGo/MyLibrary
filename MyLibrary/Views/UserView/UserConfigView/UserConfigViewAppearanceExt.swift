@@ -12,7 +12,7 @@ extension UserConfigView {
 		Section {
 			Button {
 				withAnimation {
-					model.customAppearance = .system
+					model.userLogic.customAppearance = .system
 				}
 			} label: {
 				HStack {
@@ -20,7 +20,7 @@ extension UserConfigView {
 					Text("Auto")
 						.foregroundColor(.primary)
 					Spacer()
-					if model.customAppearance == .system {
+					if model.userLogic.customAppearance == .system {
 						Image(systemName: "checkmark")
 							.animation(.easeIn)
 					}
@@ -28,7 +28,7 @@ extension UserConfigView {
 			}
 			Button {
 				withAnimation {
-					model.customAppearance = .light
+					model.userLogic.customAppearance = .light
 				}
 			} label: {
 				HStack {
@@ -36,7 +36,7 @@ extension UserConfigView {
 					Text("Claro")
 						.foregroundColor(.primary)
 					Spacer()
-					if model.customAppearance == .light {
+					if model.userLogic.customAppearance == .light {
 						Image(systemName: "checkmark")
 							.animation(.easeIn)
 					}
@@ -44,7 +44,7 @@ extension UserConfigView {
 			}
 			Button {
 				withAnimation {
-					model.customAppearance = .dark
+					model.userLogic.customAppearance = .dark
 				}
 			} label: {
 				HStack {
@@ -52,7 +52,7 @@ extension UserConfigView {
 					Text("Oscuro")
 						.foregroundColor(.primary)
 					Spacer()
-					if model.customAppearance == .dark {
+					if model.userLogic.customAppearance == .dark {
 						Image(systemName: "checkmark")
 							.animation(.easeIn)
 					}
