@@ -62,6 +62,7 @@ class UserLogic: ObservableObject {
 		} catch {
 			// gestionar el error y mostrar alguna alerta al usuario
 			print("Error en la carga: \(error.localizedDescription)")
+			self.user = User.emptyUser
 		}
 		
 		if !user.myPlaces.contains(soldText) && !user.myPlaces.contains(donatedText) {

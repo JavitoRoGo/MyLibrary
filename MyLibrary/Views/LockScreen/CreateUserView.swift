@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CreateUserView: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @Environment(\.dismiss) var dismiss
     @Binding var isUnlocked: Bool
     
@@ -21,7 +21,7 @@ struct CreateUserView: View {
         if repeatPassword.isEmpty {
             return false
         }
-        return model.isValid && repeatPassword == model.password
+		return model.userLogic.isValid && repeatPassword == model.userLogic.password
     }
     
     var body: some View {
@@ -43,9 +43,9 @@ struct CreateUserView: View {
                 Section {
                     HStack {
                         if isPasswordVisible {
-                            TextField("Introduce la contraseña", text: $model.password)
+							TextField("Introduce la contraseña", text: $model.userLogic.password)
                         } else {
-                            SecureField("Introduce la contraseña", text: $model.password)
+							SecureField("Introduce la contraseña", text: $model.userLogic.password)
                         }
                         Spacer()
                         Button {
@@ -69,7 +69,7 @@ struct CreateUserView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
-                    List(model.validations) { validation in
+					List(model.userLogic.validations) { validation in
                         HStack {
                             Image(systemName: validation.state == .success ? "checkmark.circle.fill" : "checkmark.circle")
                                 .foregroundColor(validation.state == .success ? .green : .gray.opacity(0.3))
@@ -81,21 +81,21 @@ struct CreateUserView: View {
                         .padding(.leading, 15)
                     }
                     HStack {
-                        Image(systemName: model.password == repeatPassword && !repeatPassword.isEmpty ? "checkmark.circle.fill" : "checkmark.circle")
-                            .foregroundColor(model.password == repeatPassword && !repeatPassword.isEmpty ? .green : .gray.opacity(0.3))
+						Image(systemName: model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? "checkmark.circle.fill" : "checkmark.circle")
+							.foregroundColor(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? .green : .gray.opacity(0.3))
                         Text("Repite la contraseña.")
-                            .strikethrough(model.password == repeatPassword && !repeatPassword.isEmpty)
+							.strikethrough(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty)
                             .font(.caption)
-                            .foregroundColor(model.password == repeatPassword && !repeatPassword.isEmpty ? .secondary : .primary)
+							.foregroundColor(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? .secondary : .primary)
                     }
                     .padding(.leading, 15)
                 }
                 
                 Section {
                     Button {
-						model.user.id = UUID()
-                        model.user.nickname = nickname
-                        model.user.username = username
+						model.userLogic.user.id = UUID()
+						model.userLogic.user.nickname = nickname
+						model.userLogic.user.username = username
                         keychain.set(repeatPassword, forKey: "storedPassword")
                         if keychain.set(repeatPassword, forKey: "storedPassword") {
                             print("Contraseña guardada correctamente")
@@ -137,6 +137,6 @@ struct CreateUserView: View {
 struct CreateUserView_Previews: PreviewProvider {
     static var previews: some View {
         CreateUserView(isUnlocked: .constant(false))
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

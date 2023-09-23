@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginNoBiomView: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @Environment(\.dismiss) var dismiss
     @Binding var isUnlocked: Bool
     
@@ -57,7 +57,7 @@ struct LoginNoBiomView: View {
                     .opacity(password.isEmpty ? 1 : 0)
                 }
                 Section {
-                    if model.storedPassword.isEmpty {
+					if model.userLogic.storedPassword.isEmpty {
                         Button {
                             showingCreateUser = true
                         } label: {
@@ -69,7 +69,7 @@ struct LoginNoBiomView: View {
                         }
                     } else {
                         Button {
-                            if model.user.username == username && model.storedPassword == password {
+							if model.userLogic.user.username == username && model.userLogic.storedPassword == password {
                                 isUnlocked = true
                             } else {
                                 showingAlert = true
@@ -115,6 +115,6 @@ struct LoginNoBiomView: View {
 struct LoginNoBiomView_Previews: PreviewProvider {
     static var previews: some View {
         LoginNoBiomView(isUnlocked: .constant(false))
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }
