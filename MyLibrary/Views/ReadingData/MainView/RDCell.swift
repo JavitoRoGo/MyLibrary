@@ -45,6 +45,5 @@ struct RDCell: View {
 struct RDCell_Previews: PreviewProvider {
     static var previews: some View {
         RDCell(rdata: ReadingData.dataTest)
-            .environmentObject(UserViewModel())
     }
 }

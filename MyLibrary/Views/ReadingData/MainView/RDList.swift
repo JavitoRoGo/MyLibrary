@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct RDList: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     var year: Int? = nil
     
     var body: some View {
         List {
             if let year {
-                Section("\(String(year)) - \(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros") {
-                    ForEach(model.rdataPerYear(year, filterBy: .all)) { rdata in
+				Section("\(String(year)) - \(model.userLogic.numberOfReadingDataPerYear(year, filterBy: .all)) libros") {
+					ForEach(model.userLogic.rdataPerYear(year, filterBy: .all)) { rdata in
                         NavigationLink(destination: RDDetail(rdata: rdata)) {
                             RDRow(rdata: rdata)
                         }
                     }
                 }
             } else {
-				ForEach(model.user.bookFinishingYears.reversed(), id: \.self) { year in
-                    Section("\(String(year)) - \(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros") {
-                        ForEach(model.rdataPerYear(year, filterBy: .all)) { rdata in
+				ForEach(model.userLogic.user.bookFinishingYears.reversed(), id: \.self) { year in
+					Section("\(String(year)) - \(model.userLogic.numberOfReadingDataPerYear(year, filterBy: .all)) libros") {
+						ForEach(model.userLogic.rdataPerYear(year, filterBy: .all)) { rdata in
                             NavigationLink(destination: RDDetail(rdata: rdata)) {
                                 RDRow(rdata: rdata)
                             }
@@ -41,6 +41,6 @@ struct RDList: View {
 struct RDList_Previews: PreviewProvider {
     static var previews: some View {
         RDList()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

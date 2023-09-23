@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditRDView: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @Environment(\.dismiss) var dismiss
     
     @State private var rating = 0
@@ -79,11 +79,11 @@ struct EditRDView: View {
     }
     
     func saveChanges() {
-		if let index = model.user.readingDatas.firstIndex(of: book) {
-			model.user.readingDatas[index].rating = rating
-			model.user.readingDatas[index].comment = comment.isEmpty ? nil : comment
+		if let index = model.userLogic.user.readingDatas.firstIndex(of: book) {
+			model.userLogic.user.readingDatas[index].rating = rating
+			model.userLogic.user.readingDatas[index].comment = comment.isEmpty ? nil : comment
             if let location {
-				model.user.readingDatas[index].location = location
+				model.userLogic.user.readingDatas[index].location = location
             }
         }
         dismiss()
@@ -93,6 +93,6 @@ struct EditRDView: View {
 struct EditRDView_Previews: PreviewProvider {
     static var previews: some View {
         EditRDView(book: .constant(ReadingData.dataTest))
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

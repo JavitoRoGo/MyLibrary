@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct OldLineChart: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     var datas: ([Double], [Double]) {
-        model.datasForPagPerDay()
+		model.userLogic.datasForPagPerDay()
     }
     var maxY: Double {
         datas.0.max() ?? 0
@@ -45,7 +45,7 @@ struct OldLineChart: View {
                     .foregroundColor(.blue)
                 chartView(datas: datas.1)
                     .foregroundColor(.red)
-                chartView(datas: Array(repeating: model.meanPagPerDay, count: datas.0.count))
+				chartView(datas: Array(repeating: model.userLogic.meanPagPerDay, count: datas.0.count))
                     .foregroundColor(.primary)
             }
             .padding(.leading, 30)
