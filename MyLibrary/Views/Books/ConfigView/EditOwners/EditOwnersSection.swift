@@ -10,7 +10,7 @@ import SwiftUI
 extension EditOwners {
 	var ownersSection: some View {
 		Section {
-			ForEach(model.user.myOwners, id: \.self) { owner in
+			ForEach(model.userLogic.user.myOwners, id: \.self) { owner in
 				NavigationLink {
 					VStack {
 						Text("Cambia aquí el nombre de esta persona:")
@@ -21,9 +21,9 @@ extension EditOwners {
 					}
 					.toolbar {
 						Button("Modificar") {
-							if let index = model.user.myOwners.firstIndex(of: owner) {
-								model.user.myOwners[index] = newOwner
-								if model.numberOfBooksByOwner(owner) != 0 || model.numberOfEbooksByOwner(owner) != 0 {
+							if let index = model.userLogic.user.myOwners.firstIndex(of: owner) {
+								model.userLogic.user.myOwners[index] = newOwner
+								if model.userLogic.numberOfBooksByOwner(owner) != 0 || model.userLogic.numberOfEbooksByOwner(owner) != 0 {
 									oldOwner = owner
 									showingEditAlert = true
 								}
@@ -37,8 +37,8 @@ extension EditOwners {
 				.swipeActions(edge: .trailing) {
 					Button(role: .destructive) {
 						withAnimation {
-							if model.numberOfBooksByOwner(owner) == 0 && model.numberOfEbooksByOwner(owner) == 0 {
-								model.user.myOwners.removeAll(where: { $0 == owner })
+							if model.userLogic.numberOfBooksByOwner(owner) == 0 && model.userLogic.numberOfEbooksByOwner(owner) == 0 {
+								model.userLogic.user.myOwners.removeAll(where: { $0 == owner })
 							} else {
 								oldOwner = owner
 								showingDeleteAlert = true

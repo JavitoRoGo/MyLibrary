@@ -9,10 +9,10 @@ import SwiftUI
 
 extension OtherStats {
 	var thicknessSection: some View {
-		Section("Grosor (cm): \(model.globalThickness().total, format: .number.precision(.fractionLength(1)))") {
-			let value = model.thicknessForOtherStats(tag: statsSelection, text: pickerSelection).total
-			let mean = model.thicknessForOtherStats(tag: statsSelection, text: pickerSelection).mean
-			let globalMean = model.globalThickness().mean
+		Section("Grosor (cm): \(model.userLogic.globalThickness().total, format: .number.precision(.fractionLength(1)))") {
+			let value = model.userLogic.thicknessForOtherStats(tag: statsSelection, text: pickerSelection).total
+			let mean = model.userLogic.thicknessForOtherStats(tag: statsSelection, text: pickerSelection).mean
+			let globalMean = model.userLogic.globalThickness().mean
 			let compare = compareWithMean(value: mean, mean: globalMean)
 			HStack {
 				VStack {

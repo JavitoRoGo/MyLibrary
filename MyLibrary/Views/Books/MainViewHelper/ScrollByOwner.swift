@@ -13,7 +13,7 @@ struct ScrollByOwner: View {
     }
     let format: BookFormat
     
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @State private var showingAddOwner = false
     
     var colors: [Color] {
@@ -21,16 +21,16 @@ struct ScrollByOwner: View {
     }
     
     var body: some View {
-		if !model.user.myOwners.isEmpty {
+		if !model.userLogic.user.myOwners.isEmpty {
             ScrollView(.horizontal) {
                 HStack(spacing: 10) {
                     if format == .book {
-						ForEach(model.user.myOwners, id:\.self) { owner in
-                            EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numberOfBooksByOwner(owner), title: owner, destination: BookList(customPreferredGridView: model.preferredGridView, place: "all", filterByOwner: owner))
+						ForEach(model.userLogic.user.myOwners, id:\.self) { owner in
+							EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.userLogic.numberOfBooksByOwner(owner), title: owner, destination: BookList(customPreferredGridView: model.userLogic.preferredGridView, place: "all", filterByOwner: owner))
                         }
                     } else {
-						ForEach(model.user.myOwners, id:\.self) { owner in
-                            EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.numberOfEbooksByOwner(owner), title: owner, destination: EBookList(customPreferredGridView: model.preferredGridView, filter: .all, filteredOwner: owner))
+						ForEach(model.userLogic.user.myOwners, id:\.self) { owner in
+							EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.userLogic.numberOfEbooksByOwner(owner), title: owner, destination: EBookList(customPreferredGridView: model.userLogic.preferredGridView, filter: .all, filteredOwner: owner))
                         }
                     }
                 }
@@ -58,6 +58,6 @@ struct ScrollByOwner: View {
 struct ScrollByOwner_Previews: PreviewProvider {
     static var previews: some View {
         ScrollByOwner(format: .ebook)
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 extension MainBookView {
     struct MainBookViewModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
         @Binding var showingSold: Bool
         @Binding var showingDonated: Bool
         
@@ -31,7 +31,7 @@ extension MainBookView {
                 }
                 .sheet(isPresented: $showingSold) {
                     NavigationView {
-                        BookList(customPreferredGridView: model.preferredGridView, place: soldText)
+						BookList(customPreferredGridView: model.userLogic.preferredGridView, place: soldText)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
                                     Button("Volver") {
@@ -43,7 +43,7 @@ extension MainBookView {
                 }
                 .sheet(isPresented: $showingDonated) {
                     NavigationView {
-                        BookList(customPreferredGridView: model.preferredGridView, place: donatedText)
+						BookList(customPreferredGridView: model.userLogic.preferredGridView, place: donatedText)
                             .toolbar {
                                 ToolbarItem(placement: .navigationBarLeading) {
                                     Button("Volver") {

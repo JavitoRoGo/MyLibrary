@@ -10,7 +10,7 @@ import SwiftUI
 extension EditPlaces {
 	var placesSection: some View {
 		Section {
-			ForEach(model.user.myPlaces, id: \.self) { place in
+			ForEach(model.userLogic.user.myPlaces, id: \.self) { place in
 				NavigationLink {
 					VStack {
 						Text("Cambia aquí el nombre de esta ubicación:")
@@ -21,9 +21,9 @@ extension EditPlaces {
 					}
 					.toolbar {
 						Button("Modificar") {
-							if let index = model.user.myPlaces.firstIndex(of: place) {
-								model.user.myPlaces[index] = newPlace
-								if model.numberOfBooksAtPlace(place) != 0 {
+							if let index = model.userLogic.user.myPlaces.firstIndex(of: place) {
+								model.userLogic.user.myPlaces[index] = newPlace
+								if model.userLogic.numberOfBooksAtPlace(place) != 0 {
 									oldPlace = place
 									showingEditAlert = true
 								}
@@ -37,8 +37,8 @@ extension EditPlaces {
 				.swipeActions(edge: .trailing) {
 					Button(role: .destructive) {
 						withAnimation {
-							if model.numberOfBooksAtPlace(place) == 0 {
-								model.user.myPlaces.removeAll(where: { $0 == place })
+							if model.userLogic.numberOfBooksAtPlace(place) == 0 {
+								model.userLogic.user.myPlaces.removeAll(where: { $0 == place })
 							} else {
 								oldPlace = place
 								showingDeleteAlert = true

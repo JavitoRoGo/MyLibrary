@@ -27,7 +27,7 @@ extension BookEditing {
 					Text("Ubicación:")
 						.font(.subheadline)
 					Picker("Ubicación", selection: $newPlace) {
-						ForEach(model.user.myPlaces, id: \.self) {
+						ForEach(model.userLogic.user.myPlaces, id: \.self) {
 							Text($0)
 						}
 					}
@@ -39,7 +39,7 @@ extension BookEditing {
 					Text("Propietario:")
 						.font(.subheadline)
 					Picker("Propietario", selection: $newOwner) {
-						ForEach(model.user.myOwners, id: \.self) {
+						ForEach(model.userLogic.user.myOwners, id: \.self) {
 							Text($0)
 						}
 					}

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct HBarGraph: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     
     let tag: Int
     var datas: [Double] {
-        model.datas(tag: tag)
+		model.userLogic.datas(tag: tag)
     }
     
     var body: some View {
@@ -36,7 +36,7 @@ struct HBarGraph: View {
                 
                 HStack(spacing: 0) {
                     VStack {
-						ForEach(model.user.myPlaces, id: \.self) { place in
+						ForEach(model.userLogic.user.myPlaces, id: \.self) { place in
                             Text(place)
                                 .font(.caption)
                                 .frame(width: 25, alignment: .leading)
@@ -63,6 +63,6 @@ struct HBarGraph: View {
 struct HBarGraph_Previews: PreviewProvider {
     static var previews: some View {
         HBarGraph(tag: 0)
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

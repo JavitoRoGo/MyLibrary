@@ -38,6 +38,5 @@ struct GraphView: View {
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
         GraphView()
-            .environmentObject(UserViewModel())
     }
 }

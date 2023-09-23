@@ -9,10 +9,10 @@ import SwiftUI
 
 extension OtherStats {
 	var weightSection: some View {
-		Section("Peso (g): \(model.globalWeight().total)") {
-			let value = model.weightForOtherStats(tag: statsSelection, text: pickerSelection).total
-			let mean = model.weightForOtherStats(tag: statsSelection, text: pickerSelection).mean
-			let globalMean = model.globalWeight().mean
+		Section("Peso (g): \(model.userLogic.globalWeight().total)") {
+			let value = model.userLogic.weightForOtherStats(tag: statsSelection, text: pickerSelection).total
+			let mean = model.userLogic.weightForOtherStats(tag: statsSelection, text: pickerSelection).mean
+			let globalMean = model.userLogic.globalWeight().mean
 			let compare = compareWithMean(value: Double(mean), mean: Double(globalMean))
 			HStack {
 				VStack {

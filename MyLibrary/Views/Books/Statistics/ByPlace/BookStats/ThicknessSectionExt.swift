@@ -10,10 +10,10 @@ import SwiftUI
 // Subvistas y secciones que componen la vista
 extension BookStats {
 	var thicknessSection: some View {
-		Section("Grosor (cm): \(model.globalThickness().total, format: .number.precision(.fractionLength(1)))") {
-			let value = model.thicknessAtPlace(place).total
-			let mean = model.thicknessAtPlace(place).mean
-			let globalMean = model.globalThickness().mean
+		Section("Grosor (cm): \(model.userLogic.globalThickness().total, format: .number.precision(.fractionLength(1)))") {
+			let value = model.userLogic.thicknessAtPlace(place).total
+			let mean = model.userLogic.thicknessAtPlace(place).mean
+			let globalMean = model.userLogic.globalThickness().mean
 			let compare = compareWithMean(value: mean, mean: globalMean)
 			HStack {
 				VStack {

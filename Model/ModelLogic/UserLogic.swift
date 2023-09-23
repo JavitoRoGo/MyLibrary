@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-class UserLogic: ObservableObject {
+final class UserLogic: ObservableObject {
 	// Patrón singleton: siempre se llamará al shared
 	static let shared = UserLogic()
 	

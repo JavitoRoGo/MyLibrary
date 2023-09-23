@@ -17,16 +17,16 @@ extension ChangeBooksOwner {
 	var number: Int {
 		switch format {
 			case .book:
-				return model.numberOfBooksByOwner(oldOwner)
+				return model.userLogic.numberOfBooksByOwner(oldOwner)
 			case .ebook:
-				return model.numberOfEbooksByOwner(oldOwner)
+				return model.userLogic.numberOfEbooksByOwner(oldOwner)
 			case .all:
-				return model.numberOfBooksByOwner(oldOwner) + model.numberOfEbooksByOwner(oldOwner)
+				return model.userLogic.numberOfBooksByOwner(oldOwner) + model.userLogic.numberOfEbooksByOwner(oldOwner)
 		}
 	}
 	
 	struct ChangeOwnerModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var showingAlert: Bool
@@ -53,12 +53,12 @@ extension ChangeBooksOwner {
 					Button("Sí") {
 						switch format {
 							case .book:
-								model.changeBookOwnerFromTo(from: oldOwner, to: newOwner)
+								model.userLogic.changeBookOwnerFromTo(from: oldOwner, to: newOwner)
 							case .ebook:
-								model.changeEbookOwnerFromTo(from: oldOwner, to: newOwner)
+								model.userLogic.changeEbookOwnerFromTo(from: oldOwner, to: newOwner)
 							case .all:
-								model.changeBookOwnerFromTo(from: oldOwner, to: newOwner)
-								model.changeEbookOwnerFromTo(from: oldOwner, to: newOwner)
+								model.userLogic.changeBookOwnerFromTo(from: oldOwner, to: newOwner)
+								model.userLogic.changeEbookOwnerFromTo(from: oldOwner, to: newOwner)
 						}
 						dismiss()
 					}

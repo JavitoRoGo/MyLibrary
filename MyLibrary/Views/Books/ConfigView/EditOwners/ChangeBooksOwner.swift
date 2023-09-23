@@ -10,7 +10,7 @@ import SwiftUI
 struct ChangeBooksOwner: View {
     @State var format: BookFormat = .book
     
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     
     @State var showingAlert = false
     @State var oldOwner = ""
@@ -32,14 +32,14 @@ struct ChangeBooksOwner: View {
                 
                 VStack {
                     Picker("Origen", selection: $oldOwner) {
-						ForEach(model.user.myOwners, id: \.self) {
+						ForEach(model.userLogic.user.myOwners, id: \.self) {
                             Text($0)
                         }
                     }
                     Image(systemName: "arrow.down")
                         .font(.system(size: 50))
                     Picker("Destino", selection: $newOwner) {
-						ForEach(model.user.myOwners, id: \.self) {
+						ForEach(model.userLogic.user.myOwners, id: \.self) {
                             Text($0)
                         }
                     }
@@ -55,6 +55,6 @@ struct ChangeBooksOwner: View {
 struct ChangingBooks_Previews: PreviewProvider {
     static var previews: some View {
         ChangeBooksOwner()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

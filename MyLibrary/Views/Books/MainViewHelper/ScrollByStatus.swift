@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ScrollByStatus: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 10) {
                 ForEach(ReadingStatus.allCases) { status in
-					EachMainViewButton(iconImage: imageNameStatus(status), iconColor: colorStatus(status), number: model.numberOfBooksByStatus(status), title: status.rawValue, destination: BookList(customPreferredGridView: model.preferredGridView, place: "all", filterByStatus: getFilter(status)))
+					EachMainViewButton(iconImage: imageNameStatus(status), iconColor: colorStatus(status), number: model.userLogic.numberOfBooksByStatus(status), title: status.rawValue, destination: BookList(customPreferredGridView: model.userLogic.preferredGridView, place: "all", filterByStatus: getFilter(status)))
                 }
             }
         }
@@ -28,6 +28,6 @@ struct ScrollByStatus: View {
 struct ScrollByStatus_Previews: PreviewProvider {
     static var previews: some View {
         ScrollByStatus()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

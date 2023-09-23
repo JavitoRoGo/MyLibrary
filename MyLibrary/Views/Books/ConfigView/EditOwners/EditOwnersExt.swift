@@ -9,12 +9,12 @@ import SwiftUI
 
 extension EditOwners {
 	func move(from source: IndexSet, to destination: Int) {
-		model.user.myOwners.move(fromOffsets: source, toOffset: destination)
+		model.userLogic.user.myOwners.move(fromOffsets: source, toOffset: destination)
 	}
 	
 	// View modifier para la lista de owners
 	struct OwnersListModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		
 		@Binding var oldOwner: String
 		@Binding var newOwner: String
@@ -32,9 +32,9 @@ extension EditOwners {
 				.alert("Esta persona tiene libros o ebooks registrados.\n¿Deseas borrarla de todas formas?", isPresented: $showingDeleteAlert) {
 					Button("No", role: .cancel) { }
 					Button("Sí", role: .destructive) {
-						model.user.myOwners.removeAll(where: { $0 == oldOwner })
-						model.changeBookOwnerFromTo(from: oldOwner, to: "sin asignar")
-						model.changeEbookOwnerFromTo(from: oldOwner, to: "sin asignar")
+						model.userLogic.user.myOwners.removeAll(where: { $0 == oldOwner })
+						model.userLogic.changeBookOwnerFromTo(from: oldOwner, to: "sin asignar")
+						model.userLogic.changeEbookOwnerFromTo(from: oldOwner, to: "sin asignar")
 						oldOwner = ""
 					}
 				} message: {
@@ -43,8 +43,8 @@ extension EditOwners {
 				.alert("Se ha modificado el nombre de esta persona.", isPresented: $showingEditAlert) {
 					Button("No", role: .cancel) { }
 					Button("Sí") {
-						model.changeBookOwnerFromTo(from: oldOwner, to: newOwner)
-						model.changeEbookOwnerFromTo(from: oldOwner, to: newOwner)
+						model.userLogic.changeBookOwnerFromTo(from: oldOwner, to: newOwner)
+						model.userLogic.changeEbookOwnerFromTo(from: oldOwner, to: newOwner)
 						newOwner = ""
 					}
 				} message: {
