@@ -29,35 +29,35 @@ extension AddRS {
 	}
 	
 	func addSession() {
-		guard let index = model.user.nowReading.firstIndex(of: book) else { return }
+		guard let index = model.userLogic.user.nowReading.firstIndex(of: book) else { return }
 		if endingPage >= book.lastPage {
 			endingPage = book.lastPage
-			model.user.nowReading[index].isFinished = true
+			model.userLogic.user.nowReading[index].isFinished = true
 		}
 		let newDate: Date = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: sessionDate) ?? .now
 		var newSession = ReadingSession(id: UUID(), date: newDate, duration: sessionDuration, startingPage: startingPage, endingPage: endingPage, minPerPag: minPerPag)
 		if !commentText.isEmpty {
 			newSession.comment = Quote(date: sessionDate, bookTitle: book.bookTitle, page: 0, text: commentText)
 		}
-		if !model.tempQuotesArray.isEmpty {
-			newSession.quotes = model.tempQuotesArray
-			model.tempQuotesArray.removeAll()
+		if !model.userLogic.tempQuotesArray.isEmpty {
+			newSession.quotes = model.userLogic.tempQuotesArray
+			model.userLogic.tempQuotesArray.removeAll()
 		}
-		model.user.nowReading[index].sessions.insert(newSession, at: 0)
+		model.userLogic.user.nowReading[index].sessions.insert(newSession, at: 0)
 		// Se añade un pequeño retardo al grabar la sesión para que se guarde bien en el json
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-			model.user.sessions.insert(newSession, at: 0)
+			model.userLogic.user.sessions.insert(newSession, at: 0)
 		}
 		
 		if Calendar.current.component(.weekday, from: newDate) == 7 {
-			let weekPages = model.calcTotalPagesPerWeekAndMonth(tag: 0).pages.reduce(0,+)
-			let weekSessions = model.getSessions(tag: 0)
+			let weekPages = model.userLogic.calcTotalPagesPerWeekAndMonth(tag: 0).pages.reduce(0,+)
+			let weekSessions = model.userLogic.getSessions(tag: 0)
 			let weekTime = weekSessions.reduce(0) { $0 + $1.readingTimeInHours }
-			if weekPages >= model.weeklyPagesTarget || weekTime >= model.weeklyTimeTarget {
+			if weekPages >= model.userLogic.weeklyPagesTarget || weekTime >= model.userLogic.weeklyTimeTarget {
 				showingWeeklyAchivedAlert = true
 			}
 		}
-		if newSession.pages >= model.dailyPagesTarget || newSession.readingTimeInHours >= model.dailyTimeTarget {
+		if newSession.pages >= model.userLogic.dailyPagesTarget || newSession.readingTimeInHours >= model.userLogic.dailyTimeTarget {
 			showingDailyAchivedAlert = true
 		} else {
 			dismiss()

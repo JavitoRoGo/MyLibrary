@@ -39,7 +39,7 @@ extension ActualReadingEdit {
 	}
 	
 	struct AREditModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var book: NowReading
@@ -94,12 +94,12 @@ extension ActualReadingEdit {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Modificar") {
 							let editedBook = createEditedBook()
-							if let index = model.user.nowReading.firstIndex(of: book) {
-								model.user.nowReading[index] = editedBook
+							if let index = model.userLogic.user.nowReading.firstIndex(of: book) {
+								model.userLogic.user.nowReading[index] = editedBook
 								book = editedBook
 							}
-							if let index = model.user.nowWaiting.firstIndex(of: book) {
-								model.user.nowWaiting[index] = editedBook
+							if let index = model.userLogic.user.nowWaiting.firstIndex(of: book) {
+								model.userLogic.user.nowWaiting[index] = editedBook
 								book = editedBook
 							}
 							if let inputImage = inputImage {
@@ -112,7 +112,7 @@ extension ActualReadingEdit {
 				.onAppear {
 					loadData()
 				}
-				.onChange(of: inputImage) { _ in loadImage() }
+				.onChange(of: inputImage) { _, _ in loadImage() }
 		}
 	}
 }

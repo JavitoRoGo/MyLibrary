@@ -10,7 +10,7 @@ import SwiftUI
 struct AddRS: View {
     @ObservedObject var wcmodel = ConnectivityMaganer()
     
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @Environment(\.dismiss) var dismiss
     
     @Binding var book: NowReading
@@ -83,15 +83,15 @@ struct AddRS: View {
                 }
             }
             Section {
-                if model.tempQuotesArray.isEmpty {
+				if model.userLogic.tempQuotesArray.isEmpty {
                     Text("No has añadido ninguna cita en esta sesión")
                         .foregroundColor(.secondary)
                 } else {
-                    ForEach(model.tempQuotesArray, id:\.date) { quote in
+					ForEach(model.userLogic.tempQuotesArray, id:\.date) { quote in
                         Text(quote.text)
                             .swipeActions(edge: .trailing) {
                                 Button(role: .destructive) {
-                                    model.tempQuotesArray.removeAll(where: { $0 == quote })
+									model.userLogic.tempQuotesArray.removeAll(where: { $0 == quote })
                                 } label: {
                                     Image(systemName: "trash")
                                 }
@@ -101,7 +101,7 @@ struct AddRS: View {
             } header: {
                 Text("Citas")
             } footer: {
-                if !model.tempQuotesArray.isEmpty {
+				if !model.userLogic.tempQuotesArray.isEmpty {
                     Text("Desliza hacia la izquierda si quieres eliminar alguna de las citas.")
                 }
             }
@@ -116,7 +116,7 @@ struct AddRS_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             AddRS(book: .constant(book), startingPage: book.nextPage, hour: 0, minute: 0)
-                .environmentObject(UserViewModel())
+				.environmentObject(GlobalViewModel.preview)
         }
     }
 }

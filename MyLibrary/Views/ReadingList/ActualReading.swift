@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ActualReading: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     
     @State var showingDeletingAlert = false
     @State var showingAddNewBook = false
@@ -17,22 +17,22 @@ struct ActualReading: View {
     var body: some View {
         NavigationView {
             List {
-				if model.user.nowReading.isEmpty && model.user.nowWaiting.isEmpty {
+				if model.userLogic.user.nowReading.isEmpty && model.userLogic.user.nowWaiting.isEmpty {
                     Text("Parece que no tienes ninguna lectura entre manos ahora mismo. Pulsa el botón de arriba para añadir tu próxima lectura.")
                 } else {
                     Section("Leyendo") {
-						if model.user.nowReading.isEmpty {
+						if model.userLogic.user.nowReading.isEmpty {
                             Text("Parece que no estás leyendo nada ahora. Elige un libro de la Lista de espera y empieza a leer.")
-                                .foregroundColor(.secondary)
+                                .foregroundStyle(.secondary)
                         } else {
-							ForEach(model.user.nowReading, id:\.bookTitle) { book in
+							ForEach(model.userLogic.user.nowReading, id:\.bookTitle) { book in
                                 NavigationLink(destination: ActualReadingDetail(book: book)) {
                                     ActualReadingRow(book: book)
                                 }
                                 .swipeActions(edge: .leading) {
                                     Button("En espera") {
                                         withAnimation {
-                                            model.moveToWaiting(book)
+											model.userLogic.moveToWaiting(book)
                                         }
                                     }
                                     .tint(.blue)
@@ -42,18 +42,18 @@ struct ActualReading: View {
                     }
                     
                     Section("Lista de espera") {
-						if model.user.nowWaiting.isEmpty {
+						if model.userLogic.user.nowWaiting.isEmpty {
                             Text("Parece que no tienes libros esperando a ser leídos. Añade alguno pulsando el botón.")
                                 .foregroundColor(.secondary)
 						} else {
-							ForEach(model.user.nowWaiting, id:\.bookTitle) { book in
+							ForEach(model.userLogic.user.nowWaiting, id:\.bookTitle) { book in
 								NavigationLink(destination: ActualReadingDetail(book: book)) {
 									ActualReadingRow(book: book)
 								}
 								.swipeActions(edge: .leading) {
 									Button("Leyendo") {
 										withAnimation {
-											model.moveToReading(book)
+											model.userLogic.moveToReading(book)
 										}
 									}
 									.tint(.green)
@@ -80,6 +80,6 @@ struct ActualReading: View {
 struct ActualReading_Previews: PreviewProvider {
     static var previews: some View {
         ActualReading()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

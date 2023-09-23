@@ -15,8 +15,8 @@ extension AddReading {
 	}
 	
 	func searchForExistingData(_ formatt: Formatt, _ text: String) {
-		searchResults = model.compareExistingBook(formatt: formatt, text: text).num
-		searchArray = model.compareExistingBook(formatt: formatt, text: text).datas
+		searchResults = model.userLogic.compareExistingBook(formatt: formatt, text: text).num
+		searchArray = model.userLogic.compareExistingBook(formatt: formatt, text: text).datas
 		
 		switch searchResults {
 			case 6...:
@@ -49,7 +49,7 @@ extension AddReading {
 	}
 	
 	struct AddReadingModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var bookTitle: String
@@ -119,16 +119,16 @@ extension AddReading {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Guardar") {
 							let newBook = createNewBook()
-							model.user.nowWaiting.append(newBook)
+							model.userLogic.user.nowWaiting.append(newBook)
 							if let inputImage = inputImage {
 								saveJpg(inputImage, title: bookTitle)
 								if newBook.formatt == .kindle {
-									if let index = model.user.ebooks.firstIndex(where: { $0.bookTitle == bookTitle }) {
-										model.user.ebooks[index].cover = imageCoverName(from: bookTitle)
+									if let index = model.userLogic.user.ebooks.firstIndex(where: { $0.bookTitle == bookTitle }) {
+										model.userLogic.user.ebooks[index].cover = imageCoverName(from: bookTitle)
 									}
 								} else {
-									if let index = model.user.books.firstIndex(where: { $0.bookTitle == bookTitle }) {
-										model.user.books[index].cover = imageCoverName(from: bookTitle)
+									if let index = model.userLogic.user.books.firstIndex(where: { $0.bookTitle == bookTitle }) {
+										model.userLogic.user.books[index].cover = imageCoverName(from: bookTitle)
 									}
 								}
 							}
@@ -137,7 +137,7 @@ extension AddReading {
 						.disabled(isDisabled)
 					}
 				}
-				.onChange(of: inputImage) { _ in loadImage() }
+				.onChange(of: inputImage) { _,_ in loadImage() }
 		}
 	}
 }

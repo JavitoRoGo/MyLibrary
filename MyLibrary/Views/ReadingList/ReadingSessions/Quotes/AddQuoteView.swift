@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddQuoteView: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @Environment(\.dismiss) var dismiss
     
     let bookTitle: String
@@ -47,6 +47,6 @@ struct AddQuoteView: View {
 struct AddQuoteView_Previews: PreviewProvider {
     static var previews: some View {
         AddQuoteView(bookTitle: "Título del libro")
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

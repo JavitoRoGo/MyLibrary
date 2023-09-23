@@ -78,18 +78,18 @@ extension ActualReadingDetail {
 	
 	func changeToRegistered(_ book: NowReading) {
 		if book.formatt == .paper {
-			if let index = model.user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				model.user.books[index].status = .registered
+			if let index = model.userLogic.user.books.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				model.userLogic.user.books[index].status = .registered
 			}
 		} else {
-			if let index = model.user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
-				model.user.ebooks[index].status = .registered
+			if let index = model.userLogic.user.ebooks.firstIndex(where: { $0.bookTitle == book.bookTitle }) {
+				model.userLogic.user.ebooks[index].status = .registered
 			}
 		}
 	}
 	
 	struct ActualReadingDetailModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		
 		@Binding var book: NowReading
 		@Binding var showingEditBook: Bool
@@ -109,7 +109,7 @@ extension ActualReadingDetail {
 				.navigationBarTitleDisplayMode(.inline)
 				.alert("Registro añadido.", isPresented: $showingFinalAlert) {
 					Button("Aceptar") {
-						model.removeFromReading(book)
+						model.userLogic.removeFromReading(book)
 					}
 				} message: {
 					Text("Se ha cambiado el estado del libro a \"Registrado\".")
@@ -147,8 +147,8 @@ extension ActualReadingDetail {
 					Button("Cancelar", role: .cancel) { }
 					ForEach(1..<6) { rating in
 						Button {
-							let newRD = model.createNewRD(from: book, rating: rating)
-							model.addNewReadingData(newRD)
+							let newRD = model.userLogic.createNewRD(from: book, rating: rating)
+							model.userLogic.addNewReadingData(newRD)
 							changeToRegistered(book)
 							showingFinalAlert = true
 						} label: {

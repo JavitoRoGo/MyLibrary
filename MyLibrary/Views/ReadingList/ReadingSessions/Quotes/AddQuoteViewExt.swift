@@ -9,7 +9,7 @@ import SwiftUI
 
 extension AddQuoteView {
 	struct AddQuoteModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
 		@Environment(\.dismiss) var dismiss
 		
 		let bookTitle: String
@@ -33,7 +33,7 @@ extension AddQuoteView {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Crear") {
 							let newQuote = Quote(date: date, bookTitle: bookTitle, page: page, text: text)
-							model.tempQuotesArray.insert(newQuote, at: 0)
+							model.userLogic.tempQuotesArray.insert(newQuote, at: 0)
 							showingSavingAlert = true
 						}
 						.disabled(page == 0 || text.isEmpty)

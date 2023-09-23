@@ -9,7 +9,7 @@ import MapKit
 import SwiftUI
 
 struct ActualReadingEdit: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     @EnvironmentObject var manager: LocationManager
     
     @Binding var book: NowReading
@@ -107,7 +107,7 @@ struct ActualReadingEdit_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ActualReadingEdit(book: .constant(example))
-                .environmentObject(UserViewModel())
+				.environmentObject(GlobalViewModel.preview)
                 .environmentObject(LocationManager())
         }
     }

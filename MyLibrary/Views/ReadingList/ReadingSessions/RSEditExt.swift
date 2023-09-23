@@ -106,10 +106,10 @@ extension RSEdit {
 	}
 	
 	func modifySession() {
-		guard let index = model.user.nowReading.firstIndex(of: book) else { return }
+		guard let index = model.userLogic.user.nowReading.firstIndex(of: book) else { return }
 		if endingPage >= book.lastPage {
 			endingPage = book.lastPage
-			model.user.nowReading[index].isFinished = true
+			model.userLogic.user.nowReading[index].isFinished = true
 		}
 		let newDate: Date = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: sessionDate) ?? .now
 		session = ReadingSession(id: session.id, date: newDate, duration: sessionDuration, startingPage: startingPage, endingPage: endingPage, minPerPag: minPerPag)
@@ -119,10 +119,10 @@ extension RSEdit {
 		if !quotes.isEmpty {
 			session.quotes = quotes
 		}
-		if let bookSessionIndex = model.user.nowReading[index].sessions.firstIndex(where: { $0.id == session.id }),
-		   let sessionIndex = model.user.sessions.firstIndex(where: { $0.id == session.id }) {
-			model.user.nowReading[index].sessions[bookSessionIndex] = session
-			model.user.sessions[sessionIndex] = session
+		if let bookSessionIndex = model.userLogic.user.nowReading[index].sessions.firstIndex(where: { $0.id == session.id }),
+		   let sessionIndex = model.userLogic.user.sessions.firstIndex(where: { $0.id == session.id }) {
+			model.userLogic.user.nowReading[index].sessions[bookSessionIndex] = session
+			model.userLogic.user.sessions[sessionIndex] = session
 		}
 	}
 	
