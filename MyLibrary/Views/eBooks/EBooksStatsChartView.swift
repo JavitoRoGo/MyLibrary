@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct EBooksStatsChartView: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     
     let titles = ["Autor", "Propietario", "Estado"]
     @State private var pickerSelection = 1
@@ -60,8 +60,8 @@ struct EBooksStatsChartView: View {
                 }
             }
             ScrollView {
-                Chart(model.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: pickerSelection), id:\.self) { element in
-                    let value = model.datasForGraph(statName: pickerSelection, dataName: dataSelection, text: element)
+				Chart(model.userLogic.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: pickerSelection), id:\.self) { element in
+					let value = model.userLogic.datasForGraph(statName: pickerSelection, dataName: dataSelection, text: element)
                     BarMark(
                         x: .value("Cantidad", value),
                         y: .value("Valor", element)
@@ -76,7 +76,7 @@ struct EBooksStatsChartView: View {
                     }
                 }
                 .chartPlotStyle { plot in
-                    plot.frame(height: 60 * CGFloat(model.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: pickerSelection).count))
+					plot.frame(height: 60 * CGFloat(model.userLogic.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: pickerSelection).count))
                 }
                 .chartXAxis {
                     AxisMarks(position: .top)
@@ -92,6 +92,6 @@ struct EBooksStatsChartView: View {
 struct EBooksStatsChartView_Previews: PreviewProvider {
     static var previews: some View {
         EBooksStatsChartView()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

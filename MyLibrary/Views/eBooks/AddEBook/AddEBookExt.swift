@@ -14,12 +14,12 @@ extension AddEBook {
 		return true
 	}
 	var newID: Int {
-		model.user.ebooks.count + 1
+		model.userLogic.user.ebooks.count + 1
 	}
 	
     func searchForExistingData(_ text: String) {
-        searchResults = model.compareExistingAuthors(text: text).num
-        searchArray = model.compareExistingAuthors(text: text).authors
+		searchResults = model.userLogic.compareExistingAuthors(text: text).num
+		searchArray = model.userLogic.compareExistingAuthors(text: text).authors
         
         switch searchResults {
         case 6...:
@@ -55,7 +55,7 @@ extension AddEBook {
     }
     
     struct AddEBookModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@EnvironmentObject var model: GlobalViewModel
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingAddWaitingAlert: Bool
@@ -148,7 +148,7 @@ extension AddEBook {
 					Button("No", role: .cancel) { }
 					Button("Sí") {
 						let newEBook = createNewEBook()
-						model.user.ebooks.append(newEBook)
+						model.userLogic.user.ebooks.append(newEBook)
 						showingAddWaitingAlert = true
 					}
 				} message: {

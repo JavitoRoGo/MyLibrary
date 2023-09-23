@@ -9,10 +9,10 @@ import SwiftUI
 
 extension EbookStatsView {
 	var pagesSection: some View {
-		Section("Número de páginas: \(model.globalPages(model.user.ebooks).total)") {
-			let value = model.numOfPagesForStats(tag: statsSelection, text: pickerSelection).total
-			let mean = model.numOfPagesForStats(tag: statsSelection, text: pickerSelection).mean
-			let globalMean = model.globalPages(model.user.ebooks).mean
+		Section("Número de páginas: \(model.userLogic.globalPages(model.userLogic.user.ebooks).total)") {
+			let value = model.userLogic.numOfPagesForStats(tag: statsSelection, text: pickerSelection).total
+			let mean = model.userLogic.numOfPagesForStats(tag: statsSelection, text: pickerSelection).mean
+			let globalMean = model.userLogic.globalPages(model.userLogic.user.ebooks).mean
 			let compare = compareWithMean(value: Double(mean), mean: Double(globalMean))
 			HStack {
 				VStack {
