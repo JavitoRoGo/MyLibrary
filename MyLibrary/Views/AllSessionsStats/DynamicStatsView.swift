@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DynamicStatsView: View {
-	@EnvironmentObject var model: UserViewModel
+	@EnvironmentObject var model: GlobalViewModel
 	
     let titles = ["SwiwftCharts", "Clásica"]
     @State private var graphSelection = 0
@@ -17,7 +17,7 @@ struct DynamicStatsView: View {
     
     var body: some View {
         NavigationView {
-			if !model.user.sessions.isEmpty {
+			if !model.userLogic.user.sessions.isEmpty {
 				VStack {
 					VStack {
 						Picker("Tipo de gráfica", selection: $graphSelection.animation()) {
@@ -66,6 +66,6 @@ struct DynamicStatsView: View {
 struct DynamicStatsView_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsView()
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

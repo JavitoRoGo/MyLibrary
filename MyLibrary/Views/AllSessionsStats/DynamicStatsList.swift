@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct DynamicStatsList: View {
-    @EnvironmentObject var model: UserViewModel
+    @EnvironmentObject var model: GlobalViewModel
     let graphSelected: Int
     
 	var numberOfSessions: String {
 		if graphSelected == 3 {
-			return "\(model.user.sessions.count) sesiones"
+			return "\(model.userLogic.user.sessions.count) sesiones"
 		} else {
-			return "\(model.getSessions(tag: graphSelected).count) sesiones"
+			return "\(model.userLogic.getSessions(tag: graphSelected).count) sesiones"
 		}
 	}
     
     var fromDate: String {
 		var date = Date()
-		let firstSessionDate = model.user.sessions.first?.date ?? .now
+		let firstSessionDate = model.userLogic.user.sessions.first?.date ?? .now
 		
 		if graphSelected == 0 {
 			date = firstSessionDate - 6.days
@@ -30,20 +30,20 @@ struct DynamicStatsList: View {
 		} else if graphSelected == 2 {
 			date = firstSessionDate - 1.years
 		} else if graphSelected == 3 {
-			date = model.user.sessions.last?.date ?? .now
+			date = model.userLogic.user.sessions.last?.date ?? .now
 		}
 		
         return date.formatted(date: .numeric, time: .omitted)
     }
     var toDate: String {
-		let date = model.user.sessions.first?.date ?? .now
+		let date = model.userLogic.user.sessions.first?.date ?? .now
         return date.formatted(date: .numeric, time: .omitted)
     }
     
     var body: some View {
         List {
             Section(numberOfSessions) {
-                NavigationLink(destination: RDSessions(rdsessions: Array(model.getSessions(tag: graphSelected)), rdata: nil)) {
+				NavigationLink(destination: RDSessions(rdsessions: Array(model.userLogic.getSessions(tag: graphSelected)), rdata: nil)) {
                     Text(fromDate + " - " + toDate)
                 }
                 HStack {
@@ -82,6 +82,6 @@ struct DynamicStatsList: View {
 struct DynamicStatsList_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsList(graphSelected: 0)
-            .environmentObject(UserViewModel())
+			.environmentObject(GlobalViewModel.preview)
     }
 }

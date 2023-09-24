@@ -9,7 +9,7 @@ import SwiftUI
 
 extension DynamicStatsLineChart {
 	var datas: [Double] {
-		model.graphData(tag: graphSelected)
+		model.userLogic.graphData(tag: graphSelected)
 	}
 	var spacing: CGFloat {
 		if graphSelected == 0 {
@@ -73,7 +73,7 @@ extension DynamicStatsLineChart {
 	
 	var xLabels: some View {
 		HStack(spacing: spacing) {
-			ForEach(model.getXLabels(tag: graphSelected), id: \.self) {
+			ForEach(model.userLogic.getXLabels(tag: graphSelected), id: \.self) {
 				Text($0)
 			}
 			.frame(maxWidth: .infinity)
@@ -102,7 +102,7 @@ extension DynamicStatsLineChart {
 						}
 					}
 				}
-				.onChange(of: graphSelected) { _ in
+				.onChange(of: graphSelected) { _,_ in
 					percentage = 0
 					DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
 						withAnimation(.linear(duration: 2.0)) {
