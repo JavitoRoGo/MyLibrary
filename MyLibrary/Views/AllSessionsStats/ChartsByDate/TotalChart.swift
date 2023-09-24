@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct TotalChart: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.colorScheme) var colorScheme
     @Binding var isLineGraph: Bool
     @State private var animateDatas: [DataStructForAnimateGraph<Int,String>] = []
@@ -126,6 +126,6 @@ struct TotalChart: View {
 struct TotalChart_Previews: PreviewProvider {
     static var previews: some View {
         TotalChart(isLineGraph: .constant(false))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

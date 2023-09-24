@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Binding var isUnlocked: Bool
     
     var body: some View {
@@ -45,6 +45,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(isUnlocked: .constant(true))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

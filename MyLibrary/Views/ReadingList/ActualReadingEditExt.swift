@@ -39,7 +39,7 @@ extension ActualReadingEdit {
 	}
 	
 	struct AREditModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var book: NowReading

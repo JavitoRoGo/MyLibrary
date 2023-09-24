@@ -55,7 +55,7 @@ extension AddEBook {
     }
     
     struct AddEBookModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingAddWaitingAlert: Bool

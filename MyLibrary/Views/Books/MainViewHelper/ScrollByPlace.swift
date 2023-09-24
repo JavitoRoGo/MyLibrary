@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ScrollByPlace: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     @State private var showingAddPlace = false
     
     var places: [String] {
@@ -23,7 +24,7 @@ struct ScrollByPlace: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 5) {
                     ForEach(places, id: \.self) { place in
-						NavigationLink(destination: BookList(customPreferredGridView: model.userLogic.preferredGridView, place: place)) {
+						NavigationLink(destination: BookList(customPreferredGridView: preferences.preferredGridView, place: place)) {
                             VStack {
                                 Text(place)
                                     .font(.title3.bold())
@@ -61,6 +62,7 @@ struct ScrollByPlace: View {
 struct ScrollByPlace_Previews: PreviewProvider {
     static var previews: some View {
         ScrollByPlace()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
+			.environmentObject(UserPreferences())
     }
 }

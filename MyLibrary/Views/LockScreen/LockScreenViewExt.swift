@@ -26,7 +26,7 @@ extension LockScreenView {
             }
         } else {
             // no autorización para biometrics
-			model.userLogic.isBiometricsAllowed = false
+			preferences.isBiometricsAllowed = false
         }
     }
     

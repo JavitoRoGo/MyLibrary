@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WeeklyTargetView: View {
+	
     @Binding var weeklyTarget: DWTarget
     @State var pages = 250
     @State var hour = 7
@@ -63,6 +64,6 @@ struct WeeklyTargetView: View {
 struct WeeklyTargetView_Previews: PreviewProvider {
     static var previews: some View {
         WeeklyTargetView(weeklyTarget: .constant(.time))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

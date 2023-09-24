@@ -12,7 +12,7 @@ extension UserConfigView {
 		Section {
 			Button {
 				withAnimation {
-					model.userLogic.preferredGridView = false
+					preferences.preferredGridView = false
 				}
 			} label: {
 				HStack {
@@ -20,7 +20,7 @@ extension UserConfigView {
 					Text("Listado de libros")
 						.foregroundColor(.primary)
 					Spacer()
-					if !model.userLogic.preferredGridView {
+					if !preferences.preferredGridView {
 						Image(systemName: "checkmark")
 							.animation(.easeIn)
 					}
@@ -28,7 +28,7 @@ extension UserConfigView {
 			}
 			Button {
 				withAnimation {
-					model.userLogic.preferredGridView = true
+					preferences.preferredGridView = true
 				}
 			} label: {
 				HStack {
@@ -36,7 +36,7 @@ extension UserConfigView {
 					Text("Parrilla de portadas")
 						.foregroundColor(.primary)
 					Spacer()
-					if model.userLogic.preferredGridView {
+					if preferences.preferredGridView {
 						Image(systemName: "checkmark")
 							.animation(.easeIn)
 					}

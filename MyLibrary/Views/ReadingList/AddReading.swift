@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 struct AddReading: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var bookTitle: String
     @State var firstPage: Int = 0
@@ -90,7 +90,7 @@ struct AddReading_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             AddReading(bookTitle: "", synopsis: "", formatt: .paper)
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
         }
     }
 }

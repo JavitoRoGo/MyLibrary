@@ -9,7 +9,8 @@ import LocalAuthentication
 import SwiftUI
 
 struct LockScreenView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     
     @State var isUnlocked = false
     @State var showingAlert = false
@@ -54,14 +55,14 @@ struct LockScreenView: View {
                         .scaleEffect(0.85)
                         VStack {
                             Button {
-								if model.userLogic.isBiometricsAllowed {
+								if preferences.isBiometricsAllowed {
                                     authenticate()
                                 } else {
                                     showingLoginPage = true
                                 }
                             } label: {
                                 VStack(spacing: 30) {
-									if model.userLogic.isBiometricsAllowed {
+									if preferences.isBiometricsAllowed {
                                         if getBioMetricStatus() {
                                             Image(systemName: LAContext().biometryType == .faceID ? "faceid" : "touchid")
                                                 .font(.system(size: 50))
@@ -85,6 +86,7 @@ struct LockScreenView: View {
 struct LockScreenView_Previews: PreviewProvider {
     static var previews: some View {
         LockScreenView()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
+			.environmentObject(UserPreferences())
     }
 }

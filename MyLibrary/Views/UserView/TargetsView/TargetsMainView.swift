@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TargetsMainView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     
     @State private var dailyTarget: DWTarget = .pages
     @State private var weeklyTarget: DWTarget = .pages
@@ -32,7 +33,7 @@ struct TargetsMainView: View {
                                 Text("\(model.userLogic.readToday(dailyTarget).0) / \(model.userLogic.dailyTargetText(dailyTarget))")
                             }
                             Spacer()
-                            RingTargetView(color: .red, current: model.userLogic.readToday(dailyTarget).1, target: dailyTarget == .pages ? model.userLogic.dailyPagesTarget : Int(model.userLogic.dailyTimeTarget))
+							RingTargetView(color: .red, current: model.userLogic.readToday(dailyTarget).1, target: dailyTarget == .pages ? preferences.dailyPagesTarget : Int(preferences.dailyTimeTarget))
                                 .frame(height: 50)
                         }
                     }
@@ -44,7 +45,7 @@ struct TargetsMainView: View {
                                 Text("\(model.userLogic.readThisWeek(weeklyTarget).0) / \(model.userLogic.weeklyTargetText(weeklyTarget))")
                             }
                             Spacer()
-                            RingTargetView(color: .orange, current: model.userLogic.readThisWeek(weeklyTarget).1, target: weeklyTarget == .pages ? model.userLogic.weeklyPagesTarget : Int(model.userLogic.weeklyTimeTarget))
+							RingTargetView(color: .orange, current: model.userLogic.readThisWeek(weeklyTarget).1, target: weeklyTarget == .pages ? preferences.weeklyPagesTarget : Int(preferences.weeklyTimeTarget))
                                 .frame(height: 50)
                         }
                     }
@@ -56,7 +57,7 @@ struct TargetsMainView: View {
                                 Text("\(model.userLogic.readThisMonth(monthlyTarget).0) / \(model.userLogic.monthlyTargetText(monthlyTarget))")
                             }
                             Spacer()
-                            RingTargetView(color: .green, current: model.userLogic.readThisMonth(monthlyTarget).1, target: monthlyTarget == .books ? model.userLogic.monthlyBooksTarget : model.userLogic.monthlyPagesTarget)
+							RingTargetView(color: .green, current: model.userLogic.readThisMonth(monthlyTarget).1, target: monthlyTarget == .books ? preferences.monthlyBooksTarget : preferences.monthlyPagesTarget)
                                 .frame(height: 50)
                         }
                     }
@@ -68,7 +69,7 @@ struct TargetsMainView: View {
                                 Text("\(model.userLogic.readThisYear(yearlyTarget).0) / \(model.userLogic.yearlyTargetText(yearlyTarget))")
                             }
                             Spacer()
-                            RingTargetView(color: .blue, current: model.userLogic.readThisYear(yearlyTarget).1, target: yearlyTarget == .books ? model.userLogic.yearlyBooksTarget : model.userLogic.yearlyPagesTarget)
+							RingTargetView(color: .blue, current: model.userLogic.readThisYear(yearlyTarget).1, target: yearlyTarget == .books ? preferences.yearlyBooksTarget : preferences.yearlyPagesTarget)
                                 .frame(height: 50)
                         }
                     }
@@ -127,6 +128,7 @@ struct TargetsMainView: View {
 struct TargetsMainView_Previews: PreviewProvider {
     static var previews: some View {
         TargetsMainView()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
+			.environmentObject(UserPreferences())
     }
 }

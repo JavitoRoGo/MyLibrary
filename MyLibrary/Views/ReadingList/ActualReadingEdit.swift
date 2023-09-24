@@ -9,8 +9,8 @@ import MapKit
 import SwiftUI
 
 struct ActualReadingEdit: View {
-    @EnvironmentObject var model: GlobalViewModel
-    @EnvironmentObject var manager: LocationManager
+    @Environment(GlobalViewModel.self) var model
+	@Environment(LocationManager.self) var manager
     
     @Binding var book: NowReading
     
@@ -31,6 +31,8 @@ struct ActualReadingEdit: View {
     @State var showingMapSelection = false
     
 	var body: some View {
+		@Bindable var bindingManager = manager
+		
         Form {
             Section {
                 TextField(book.bookTitle, text: $bookTitle)
@@ -81,7 +83,7 @@ struct ActualReadingEdit: View {
                                 .stroke(lineWidth: 0)
                                 .frame(width: 180, height: 140)
                             if let location {
-                                Map(coordinateRegion: $manager.region, interactionModes: .zoom, showsUserLocation: false, annotationItems: [location]) { pin in
+                                Map(coordinateRegion: $bindingManager.region, interactionModes: .zoom, showsUserLocation: false, annotationItems: [location]) { pin in
                                     MapMarker(coordinate: CLLocationCoordinate2D(latitude: pin.latitude, longitude: pin.longitude))
                                 }
                                     .frame(width: 180, height: 140)
@@ -107,8 +109,8 @@ struct ActualReadingEdit_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ActualReadingEdit(book: .constant(example))
-				.environmentObject(GlobalViewModel.preview)
-                .environmentObject(LocationManager())
+				.environment(GlobalViewModel.preview)
+                .environment(LocationManager())
         }
     }
 }

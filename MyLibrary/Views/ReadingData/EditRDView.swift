@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditRDView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.dismiss) var dismiss
     
     @State private var rating = 0
@@ -93,6 +93,6 @@ struct EditRDView: View {
 struct EditRDView_Previews: PreviewProvider {
     static var previews: some View {
         EditRDView(book: .constant(ReadingData.dataTest))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

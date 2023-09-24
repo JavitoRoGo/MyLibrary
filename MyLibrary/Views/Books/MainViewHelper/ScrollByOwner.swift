@@ -13,7 +13,8 @@ struct ScrollByOwner: View {
     }
     let format: BookFormat
     
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     @State private var showingAddOwner = false
     
     var colors: [Color] {
@@ -26,11 +27,11 @@ struct ScrollByOwner: View {
                 HStack(spacing: 10) {
                     if format == .book {
 						ForEach(model.userLogic.user.myOwners, id:\.self) { owner in
-							EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.userLogic.numberOfBooksByOwner(owner), title: owner, destination: BookList(customPreferredGridView: model.userLogic.preferredGridView, place: "all", filterByOwner: owner))
+							EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.userLogic.numberOfBooksByOwner(owner), title: owner, destination: BookList(customPreferredGridView: preferences.preferredGridView, place: "all", filterByOwner: owner))
                         }
                     } else {
 						ForEach(model.userLogic.user.myOwners, id:\.self) { owner in
-							EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.userLogic.numberOfEbooksByOwner(owner), title: owner, destination: EBookList(customPreferredGridView: model.userLogic.preferredGridView, filter: .all, filteredOwner: owner))
+							EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.userLogic.numberOfEbooksByOwner(owner), title: owner, destination: EBookList(customPreferredGridView: preferences.preferredGridView, filter: .all, filteredOwner: owner))
                         }
                     }
                 }
@@ -58,6 +59,7 @@ struct ScrollByOwner: View {
 struct ScrollByOwner_Previews: PreviewProvider {
     static var previews: some View {
         ScrollByOwner(format: .ebook)
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
+			.environmentObject(UserPreferences())
     }
 }

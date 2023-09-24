@@ -53,6 +53,6 @@ struct YearlyTargetView: View {
 struct YearlyTargetView_Previews: PreviewProvider {
     static var previews: some View {
         YearlyTargetView(yearlyTarget: .constant(.books))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

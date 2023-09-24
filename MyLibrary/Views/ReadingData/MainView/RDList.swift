@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDList: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     var year: Int? = nil
     
     var body: some View {
@@ -41,6 +41,6 @@ struct RDList: View {
 struct RDList_Previews: PreviewProvider {
     static var previews: some View {
         RDList()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

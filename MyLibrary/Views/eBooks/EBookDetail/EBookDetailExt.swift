@@ -9,7 +9,7 @@ import SwiftUI
 
 extension EBookDetail {
     struct EBookDetailModifier: ViewModifier {
-        @EnvironmentObject var model: GlobalViewModel
+        @Environment(GlobalViewModel.self) var model
         @Environment(\.dismiss) var dismiss
         
         @Binding var showingDeleteAlert: Bool

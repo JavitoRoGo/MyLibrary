@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct BookStats: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @State var place: String
     @State var showingPlacePicker = false
     @State var showingGraph = false
@@ -50,7 +50,7 @@ struct BookStats_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             BookStats(place: "A1")
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
         }
     }
 }

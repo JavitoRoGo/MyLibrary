@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HBarGraph: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     
     let tag: Int
     var datas: [Double] {
@@ -63,6 +63,6 @@ struct HBarGraph: View {
 struct HBarGraph_Previews: PreviewProvider {
     static var previews: some View {
         HBarGraph(tag: 0)
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDScroll: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Binding var rdata: ReadingData
     @State private var spinAmount = 0.0
     @State private var buttonTapped = 0
@@ -61,7 +61,7 @@ struct RDScroll: View {
 struct RDScroll_Previews: PreviewProvider {
     static var previews: some View {
         RDScroll(rdata: .constant(ReadingData.dataTest))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
             .previewLayout(.fixed(width: 400, height: 250))
     }
 }

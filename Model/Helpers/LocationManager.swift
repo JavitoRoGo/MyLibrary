@@ -7,18 +7,19 @@
 
 import MapKit
 
-final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MKMapViewDelegate {
+@Observable
+final class LocationManager: NSObject, CLLocationManagerDelegate, MKMapViewDelegate {
     // Manager opcional porque puede ser que la localización no esté activa
     private var manager: CLLocationManager?
     
-    @Published var region = MKCoordinateRegion()
+	var region = MKCoordinateRegion()
         
     // Propiedades para mostrar el mapa que permite crear un draggable pin
-    @Published var mapView: MKMapView = .init()
-    @Published var pickedPlaceMark: CLPlacemark?
+	var mapView: MKMapView = .init()
+	var pickedPlaceMark: CLPlacemark?
     //No entiendo el sentido de las dos siguientes:
-    @Published var pickedLocation: CLLocation?
-    @Published var userLocation: CLLocation?
+	var pickedLocation: CLLocation?
+	var userLocation: CLLocation?
     
     override init() {
         super.init()

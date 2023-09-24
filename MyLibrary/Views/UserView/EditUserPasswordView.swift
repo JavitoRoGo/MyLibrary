@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditUserPasswordView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.dismiss) var dismiss
     
     @State private var nickname = ""
@@ -24,6 +24,8 @@ struct EditUserPasswordView: View {
     }
     
     var body: some View {
+		@Bindable var bindingModel = model
+		
         NavigationStack {
             Form {
                 Section {
@@ -40,9 +42,9 @@ struct EditUserPasswordView: View {
                 Section {
                     HStack {
                         if isPasswordVisible {
-							TextField("Introduce la nueva contraseña", text: $model.userLogic.password)
+							TextField("Introduce la nueva contraseña", text: $bindingModel.userLogic.password)
                         } else {
-							SecureField("Introduce la nueva contraseña", text: $model.userLogic.password)
+							SecureField("Introduce la nueva contraseña", text: $bindingModel.userLogic.password)
                         }
                         Spacer()
                         Button {
@@ -136,6 +138,6 @@ struct EditUserPasswordView: View {
 struct EditUserPasswordView_Previews: PreviewProvider {
     static var previews: some View {
         EditUserPasswordView()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

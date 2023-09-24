@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatsView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @State var graphKey = "Libros leídos por año"
     @State var tag = 0
     
@@ -34,7 +34,7 @@ struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             StatsView()
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
         }
     }
 }

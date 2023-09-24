@@ -190,6 +190,8 @@
 		4492F44527FB2A8500103B6D /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4492F44427FB2A8500103B6D /* Functions.swift */; };
 		4493DBC22AC0739E0052061C /* GlobalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CC83D2ABF3AEC00EB4BB4 /* GlobalViewModel.swift */; };
 		4493DBC32AC073A60052061C /* PersistenceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441CC83A2ABF13E300EB4BB4 /* PersistenceInteractor.swift */; };
+		4493DBC52AC0B8820052061C /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493DBC42AC0B8820052061C /* UserPreferences.swift */; };
+		4493DBC62AC0B8820052061C /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493DBC42AC0B8820052061C /* UserPreferences.swift */; };
 		449410FC28563DCC0055D833 /* RSBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449410FB28563DCC0055D833 /* RSBarGraph.swift */; };
 		4496063A2847C1C800D27055 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449606392847C1C800D27055 /* ConfettiView.swift */; };
 		44A01F352960FE8300E34FA8 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F342960FE8300E34FA8 /* CreateUserView.swift */; };
@@ -464,6 +466,7 @@
 		4492AC7D28AAA502003CB125 /* EditPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaces.swift; sourceTree = "<group>"; };
 		4492F44127FB29F300103B6D /* AllEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEnums.swift; sourceTree = "<group>"; };
 		4492F44427FB2A8500103B6D /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		4493DBC42AC0B8820052061C /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		449410FB28563DCC0055D833 /* RSBarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSBarGraph.swift; sourceTree = "<group>"; };
 		449606392847C1C800D27055 /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		44A01F342960FE8300E34FA8 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
@@ -809,6 +812,7 @@
 			isa = PBXGroup;
 			children = (
 				44A01F362961003600E34FA8 /* UserLogic.swift */,
+				4493DBC42AC0B8820052061C /* UserPreferences.swift */,
 				443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */,
 				442653A2277E175D0047D75C /* BookModelExt.swift */,
 				4487BF6C278212B6003C6115 /* EBookModelExt.swift */,
@@ -1394,6 +1398,7 @@
 				447189E02A87DC8000BE66E5 /* AddEBookYearSection.swift in Sources */,
 				4492F44227FB29F300103B6D /* AllEnums.swift in Sources */,
 				44DDA87F2A83BDF4000104A1 /* BookDetailExt.swift in Sources */,
+				4493DBC52AC0B8820052061C /* UserPreferences.swift in Sources */,
 				4492F44527FB2A8500103B6D /* Functions.swift in Sources */,
 				44B0409C284FBA4700C29E22 /* RSModelExt.swift in Sources */,
 				445BBA3A2A86B3490004B850 /* MonthlyTargetViewExt.swift in Sources */,
@@ -1622,6 +1627,7 @@
 				44E32D4A295917F600E06425 /* MyLibraryWidgetBundle.swift in Sources */,
 				44E32D4C295917F600E06425 /* MyLibraryWidget.swift in Sources */,
 				44E32D5E29591C4600E06425 /* RSModelExt.swift in Sources */,
+				4493DBC62AC0B8820052061C /* UserPreferences.swift in Sources */,
 				44F471DB2993F1AD0047080A /* KeychainHelper.swift in Sources */,
 				441A84EB29902E9200D5F1EB /* ConnectivityManager.swift in Sources */,
 				44E32D5C29591A0100E06425 /* WidgetView.swift in Sources */,

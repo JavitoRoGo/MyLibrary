@@ -14,7 +14,7 @@ extension EditOwners {
 	
 	// View modifier para la lista de owners
 	struct OwnersListModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
 		
 		@Binding var oldOwner: String
 		@Binding var newOwner: String

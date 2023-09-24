@@ -63,6 +63,6 @@ struct DailyTargetView: View {
 struct DailyTargetView_Previews: PreviewProvider {
     static var previews: some View {
         DailyTargetView(dailyTarget: .constant(.pages))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

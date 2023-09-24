@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DynamicStatsList: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     let graphSelected: Int
     
 	var numberOfSessions: String {
@@ -82,6 +82,6 @@ struct DynamicStatsList: View {
 struct DynamicStatsList_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsList(graphSelected: 0)
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

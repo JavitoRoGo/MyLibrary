@@ -25,7 +25,7 @@ extension ActualReading {
 	}
 	
 	struct ActualReadingModifer: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
 		@Binding var showingDeletingAlert: Bool
 		@Binding var showingAddNewBook: Bool
 		

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatsList: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     let tag: Int
     let colors: [Color]
     var topRange: Int {
@@ -73,6 +73,6 @@ struct StatsList_Previews: PreviewProvider {
     
     static var previews: some View {
         StatsList(tag: 0, colors: colors)
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

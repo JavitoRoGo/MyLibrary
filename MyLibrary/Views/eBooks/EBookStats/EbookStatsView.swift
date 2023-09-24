@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EbookStatsView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     
     let titles = ["Autor", "Propietario", "Estado"]
     @State var statsSelection = 0
@@ -50,6 +50,6 @@ struct EbookStatsView: View {
 struct EbookStatsView_Previews: PreviewProvider {
     static var previews: some View {
         EbookStatsView()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

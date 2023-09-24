@@ -53,11 +53,11 @@ extension AddRS {
 			let weekPages = model.userLogic.calcTotalPagesPerWeekAndMonth(tag: 0).pages.reduce(0,+)
 			let weekSessions = model.userLogic.getSessions(tag: 0)
 			let weekTime = weekSessions.reduce(0) { $0 + $1.readingTimeInHours }
-			if weekPages >= model.userLogic.weeklyPagesTarget || weekTime >= model.userLogic.weeklyTimeTarget {
+			if weekPages >= preferences.weeklyPagesTarget || weekTime >= preferences.weeklyTimeTarget {
 				showingWeeklyAchivedAlert = true
 			}
 		}
-		if newSession.pages >= model.userLogic.dailyPagesTarget || newSession.readingTimeInHours >= model.userLogic.dailyTimeTarget {
+		if newSession.pages >= preferences.dailyPagesTarget || newSession.readingTimeInHours >= preferences.dailyTimeTarget {
 			showingDailyAchivedAlert = true
 		} else {
 			dismiss()

@@ -53,6 +53,6 @@ struct MonthlyTargetView: View {
 struct MonthlyTargetView_Previews: PreviewProvider {
     static var previews: some View {
         MonthlyTargetView(monthlyTarget: .constant(.books))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

@@ -10,11 +10,11 @@ import SwiftUI
 extension UserConfigView {
 	var faceIDButtons: some View {
 		Section {
-			Toggle(isOn: $model.userLogic.isBiometricsAllowed) {
+			Toggle(isOn: $preferences.isBiometricsAllowed) {
 				Label("Acceder con \(getBioMetricStatus() ? "FaceID" : "TouchID")",
 					  systemImage: getBioMetricStatus() ? "faceid" : "touchid")
 			}
-			.onChange(of: model.userLogic.isBiometricsAllowed) { _, newValue in
+			.onChange(of: preferences.isBiometricsAllowed) { _, newValue in
 				if newValue {
 					authenticate()
 				}

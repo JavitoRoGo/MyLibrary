@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct EBookGrid: View {
-	@EnvironmentObject var model: GlobalViewModel
+	@Environment(GlobalViewModel.self) var model
 	
 	let ebooks: [EBooks]
 	let columns = [GridItem(.adaptive(minimum: 100))]
 	
     var body: some View {
+		@Bindable var bindingModel = model
+		
 		ScrollView {
 			LazyVGrid(columns: columns) {
 				ForEach(ebooks) { ebook in
 					let index = model.userLogic.user.ebooks.firstIndex(of: ebook)!
-					NavigationLink(destination: EBookDetail(ebook: $model.userLogic.user.ebooks[index])) {
+					NavigationLink(destination: EBookDetail(ebook: $bindingModel.userLogic.user.ebooks[index])) {
 						EBookGridCell(ebook: ebook)
 					}
 				}
@@ -31,6 +33,6 @@ struct EBookGrid: View {
 struct EBookGrid_Previews: PreviewProvider {
     static var previews: some View {
 		EBookGrid(ebooks: [EBooks.dataTest])
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

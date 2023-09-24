@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookList: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @State private var searchText = ""
 	@State var customPreferredGridView: Bool
     
@@ -82,7 +82,7 @@ struct BookList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
 			BookList(customPreferredGridView: false, place: "A1")
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
         }
     }
 }

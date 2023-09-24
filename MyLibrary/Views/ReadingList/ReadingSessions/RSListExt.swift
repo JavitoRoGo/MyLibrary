@@ -19,7 +19,7 @@ extension RSList {
 	}
 	
 	struct RSListModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
 		
 		@Binding var book: NowReading
 		@Binding var showingAddSession: Bool

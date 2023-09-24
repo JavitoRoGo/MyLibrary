@@ -152,7 +152,7 @@ extension BookDetail {
 // View modifier
 extension BookDetail {
     struct BookDetailModifier: ViewModifier {
-        @EnvironmentObject var model: GlobalViewModel
+        @Environment(GlobalViewModel.self) var model
         let book: Books
         @Binding var showingDelete: Bool
         @Binding var showingEditPage: Bool
@@ -163,6 +163,8 @@ extension BookDetail {
         let messageInfoAlert: String
         
         func body(content: Content) -> some View {
+			@Bindable var bindingModel = model
+			
             content
 				.navigationTitle("Detalle (\(book.id) de \(model.userLogic.activeBooks.count))")
                 .navigationBarTitleDisplayMode(.inline)
@@ -185,7 +187,7 @@ extension BookDetail {
                 }
                 .sheet(isPresented: $showingEditPage) {
 					if let index = model.userLogic.user.books.firstIndex(of: book) {
-						BookEditing(book: $model.userLogic.user.books[index], newBookTitle: book.bookTitle, newStatus: book.status, newOwner: book.owner, newPlace: book.place, newSynopsis: book.synopsis ?? "Sinopsis no disponible.")
+						BookEditing(book: $bindingModel.userLogic.user.books[index], newBookTitle: book.bookTitle, newStatus: book.status, newOwner: book.owner, newPlace: book.place, newSynopsis: book.synopsis ?? "Sinopsis no disponible.")
                     }
                 }
                 .alert(titleInfoAlert, isPresented: $showingInfoAlert) {

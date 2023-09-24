@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct MaxAndMin: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.colorScheme) var colorScheme
     @State var datas: [DataForMaxMinChart] = []
     @State private var currentActiveItem: DataForMaxMinChart?
@@ -102,6 +102,6 @@ struct MaxAndMin: View {
 struct MaxAndMin_Previews: PreviewProvider {
     static var previews: some View {
         MaxAndMin()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

@@ -13,23 +13,23 @@ extension UserLogic {
 	// Texto a mostrar según el objetivo
 	func dailyTargetText(_ target: DWTarget) -> String {
 		target == .pages ?
-		"\(dailyPagesTarget) páginas" :
-		"\(dailyTimeTarget.minPerDayDoubleToString)"
+		"\(UserPreferences().dailyPagesTarget) páginas" :
+		"\(UserPreferences().dailyTimeTarget.minPerDayDoubleToString)"
 	}
 	func weeklyTargetText(_ target: DWTarget) -> String {
 		target == .pages ?
-		"\(weeklyPagesTarget) páginas" :
-		"\(weeklyTimeTarget.minPerDayDoubleToString)"
+		"\(UserPreferences().weeklyPagesTarget) páginas" :
+		"\(UserPreferences().weeklyTimeTarget.minPerDayDoubleToString)"
 	}
 	func monthlyTargetText(_ target: MYTarget) -> String {
 		target == .pages ?
-		"\(monthlyPagesTarget) páginas" :
-		"\(monthlyBooksTarget) libros"
+		"\(UserPreferences().monthlyPagesTarget) páginas" :
+		"\(UserPreferences().monthlyBooksTarget) libros"
 	}
 	func yearlyTargetText(_ target: MYTarget) -> String {
 		target == .pages ?
-		"\(yearlyPagesTarget) páginas" :
-		"\(yearlyBooksTarget) libros"
+		"\(UserPreferences().yearlyPagesTarget) páginas" :
+		"\(UserPreferences().yearlyBooksTarget) libros"
 	}
 	
 	// Objetivo diario: páginas y tiempo leídos
@@ -111,11 +111,11 @@ extension UserLogic {
 		var count = 0
 		if target == .pages {
 			// Simplemente comparar cada sesión de forma individual
-			for session in user.sessions where session.pages >= dailyPagesTarget {
+			for session in user.sessions where session.pages >= UserPreferences().dailyPagesTarget {
 				count += 1
 			}
 		} else {
-			for session in user.sessions where session.readingTimeInHours >= dailyTimeTarget {
+			for session in user.sessions where session.readingTimeInHours >= UserPreferences().dailyTimeTarget {
 				count += 1
 			}
 		}
@@ -149,14 +149,14 @@ extension UserLogic {
 		if target == .pages {
 			doubleSessionArray.forEach { sessionArray in
 				let pages = sessionArray.reduce(0) { $0 + $1.pages }
-				if pages >= weeklyPagesTarget {
+				if pages >= UserPreferences().weeklyPagesTarget {
 					count += 1
 				}
 			}
 		} else {
 			doubleSessionArray.forEach { sessionArray in
 				let time = sessionArray.reduce(0) { $0 + $1.readingTimeInHours }
-				if time >= weeklyTimeTarget {
+				if time >= UserPreferences().weeklyTimeTarget {
 					count += 1
 				}
 			}
@@ -190,7 +190,7 @@ extension UserLogic {
 			}
 			doubleSessionArray.forEach { sessionArray in
 				let pages = sessionArray.reduce(0) { $0 + $1.pages }
-				if pages >= monthlyPagesTarget {
+				if pages >= UserPreferences().monthlyPagesTarget {
 					count += 1
 				}
 			}
@@ -206,7 +206,7 @@ extension UserLogic {
 					booksRead.append(monthBooks)
 				}
 			}
-			for read in booksRead where read >= monthlyBooksTarget {
+			for read in booksRead where read >= UserPreferences().monthlyBooksTarget {
 				count += 1
 			}
 		}
@@ -234,7 +234,7 @@ extension UserLogic {
 			}
 			doubleSessionArray.forEach { sessionArray in
 				let pages = sessionArray.reduce(0) { $0 + $1.pages }
-				if pages >= yearlyPagesTarget {
+				if pages >= UserPreferences().yearlyPagesTarget {
 					count += 1
 				}
 			}
@@ -247,7 +247,7 @@ extension UserLogic {
 				}.count
 				booksRead.append(yearBooks)
 			}
-			for read in booksRead where read >= yearlyBooksTarget {
+			for read in booksRead where read >= UserPreferences().yearlyBooksTarget {
 				count += 1
 			}
 		}
@@ -266,10 +266,10 @@ extension UserLogic {
 	}
 	func loadTargetData() -> TargetForWidget {
 		return TargetForWidget(
-			dailyPages: dailyPagesTarget, dailyTime: Int(dailyTimeTarget),
-			weeklyPages: weeklyPagesTarget, weeklyTime: Int(weeklyTimeTarget),
-			monthlyPages: monthlyPagesTarget, monthlyBooks: monthlyBooksTarget,
-			yearlyPages: yearlyPagesTarget, yearlyBooks: yearlyBooksTarget
+			dailyPages: UserPreferences().dailyPagesTarget, dailyTime: Int(UserPreferences().dailyTimeTarget),
+			weeklyPages: UserPreferences().weeklyPagesTarget, weeklyTime: Int(UserPreferences().weeklyTimeTarget),
+			monthlyPages: UserPreferences().monthlyPagesTarget, monthlyBooks: UserPreferences().monthlyBooksTarget,
+			yearlyPages: UserPreferences().yearlyPagesTarget, yearlyBooks: UserPreferences().yearlyBooksTarget
 		)
 	}
 }

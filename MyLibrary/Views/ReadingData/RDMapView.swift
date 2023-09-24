@@ -9,7 +9,7 @@ import MapKit
 import SwiftUI
 
 struct RDMapView: View {
-    @EnvironmentObject var manager: LocationManager
+	@Environment(LocationManager.self) var manager
     @State private var region = MKCoordinateRegion()
     
     let pins: [RDLocation]
@@ -67,7 +67,7 @@ struct RDMapView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             RDMapView(pins: [RDLocation.dataTest])
-                .environmentObject(LocationManager())
+                .environment(LocationManager())
         }
     }
 }

@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct YearChart: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.colorScheme) var colorScheme
     @Binding var isLineGraph: Bool
     @State private var animateDatas: [DataStructForAnimateGraph<Int,String>] = []
@@ -126,6 +126,6 @@ struct YearChart: View {
 struct YearChart_Previews: PreviewProvider {
     static var previews: some View {
         YearChart(isLineGraph: .constant(false))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

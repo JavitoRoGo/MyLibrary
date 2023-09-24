@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CreateUserView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.dismiss) var dismiss
     @Binding var isUnlocked: Bool
     
@@ -25,6 +25,8 @@ struct CreateUserView: View {
     }
     
     var body: some View {
+		@Bindable var bindingModel = model
+		
         NavigationStack {
             Form {
                 Section {
@@ -43,9 +45,9 @@ struct CreateUserView: View {
                 Section {
                     HStack {
                         if isPasswordVisible {
-							TextField("Introduce la contraseña", text: $model.userLogic.password)
+							TextField("Introduce la contraseña", text: $bindingModel.userLogic.password)
                         } else {
-							SecureField("Introduce la contraseña", text: $model.userLogic.password)
+							SecureField("Introduce la contraseña", text: $bindingModel.userLogic.password)
                         }
                         Spacer()
                         Button {
@@ -137,6 +139,6 @@ struct CreateUserView: View {
 struct CreateUserView_Previews: PreviewProvider {
     static var previews: some View {
         CreateUserView(isUnlocked: .constant(false))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

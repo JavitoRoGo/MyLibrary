@@ -21,7 +21,6 @@ extension PersistenceInteractor {
 		if !FileManager.default.fileExists(atPath: url.path) {
 			url = bundleURL
 		}
-		print(url.absoluteString)
 		let data = try Data(contentsOf: url)
 		return try JSONDecoder().decode(User.self, from: data)
 	}

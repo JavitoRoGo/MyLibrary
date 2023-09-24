@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OtherStats: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     
     let titles = ["Autor", "Editorial", "Encuadernación", "Propietario", "Estado"]
     @State var statsSelection = 0
@@ -60,7 +60,7 @@ struct OtherStats_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             OtherStats()
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
         }
     }
 }

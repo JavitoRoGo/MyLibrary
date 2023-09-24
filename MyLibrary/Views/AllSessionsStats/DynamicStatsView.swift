@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DynamicStatsView: View {
-	@EnvironmentObject var model: GlobalViewModel
+	@Environment(GlobalViewModel.self) var model
 	
     let titles = ["SwiwftCharts", "Clásica"]
     @State private var graphSelection = 0
@@ -66,6 +66,6 @@ struct DynamicStatsView: View {
 struct DynamicStatsView_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsView()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

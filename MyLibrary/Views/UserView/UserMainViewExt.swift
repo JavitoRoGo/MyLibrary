@@ -20,7 +20,7 @@ extension UserMainView {
     }
     
     struct UserMainViewModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
 		
         @Binding var showingClosingAlert: Bool
         @Binding var isUnlocked: Bool

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDGrid: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @State private var searchText = ""
     
     let columns = [GridItem(.adaptive(minimum: 120))]
@@ -49,6 +49,6 @@ struct RDGrid: View {
 struct RDGrid_Previews: PreviewProvider {
     static var previews: some View {
         RDGrid(filterByRatingSelection: .all)
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

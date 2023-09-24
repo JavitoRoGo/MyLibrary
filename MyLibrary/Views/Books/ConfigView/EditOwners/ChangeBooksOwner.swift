@@ -10,7 +10,7 @@ import SwiftUI
 struct ChangeBooksOwner: View {
     @State var format: BookFormat = .book
     
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var showingAlert = false
     @State var oldOwner = ""
@@ -55,6 +55,6 @@ struct ChangeBooksOwner: View {
 struct ChangingBooks_Previews: PreviewProvider {
     static var previews: some View {
         ChangeBooksOwner()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

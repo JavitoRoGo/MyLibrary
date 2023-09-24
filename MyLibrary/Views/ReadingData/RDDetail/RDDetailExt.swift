@@ -18,7 +18,7 @@ extension RDDetail {
     }
     
     struct RDDetailModifier: ViewModifier {
-        @EnvironmentObject var model: GlobalViewModel
+        @Environment(GlobalViewModel.self) var model
         
         @Binding var rdata: ReadingData
         @Binding var showingLocation: Bool

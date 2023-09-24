@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OldLineChart: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     var datas: ([Double], [Double]) {
 		model.userLogic.datasForPagPerDay()
     }

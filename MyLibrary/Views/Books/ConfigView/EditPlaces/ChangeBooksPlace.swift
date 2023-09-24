@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChangeBooksPlace: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.dismiss) var dismiss
     
     @State private var showingAlert = false
@@ -65,7 +65,7 @@ struct MovingBooks_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             ChangeBooksPlace()
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
         }
     }
 }

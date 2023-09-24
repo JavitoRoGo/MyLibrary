@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-final class GlobalViewModel: ObservableObject {
+@Observable
+final class GlobalViewModel {
 	// Crear una instancia de cada lógica de datos
 	
 	var userLogic: UserLogic

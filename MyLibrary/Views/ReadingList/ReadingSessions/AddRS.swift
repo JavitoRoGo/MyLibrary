@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct AddRS: View {
+	@EnvironmentObject var preferences: UserPreferences
     @ObservedObject var wcmodel = ConnectivityMaganer()
     
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.dismiss) var dismiss
     
     @Binding var book: NowReading
@@ -116,7 +117,8 @@ struct AddRS_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             AddRS(book: .constant(book), startingPage: book.nextPage, hour: 0, minute: 0)
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
+				.environmentObject(UserPreferences())
         }
     }
 }

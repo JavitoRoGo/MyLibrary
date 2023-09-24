@@ -62,7 +62,7 @@ extension UserConfigView {
 										model.userLogic.user = User.emptyUser
 										keychain.delete("storedPassword")
 										password = ""
-										model.userLogic.isBiometricsAllowed = false
+										preferences.isBiometricsAllowed = false
 										showingPasswordField = false
 										showingDeleteButtons = false
 										isUnlocked = false

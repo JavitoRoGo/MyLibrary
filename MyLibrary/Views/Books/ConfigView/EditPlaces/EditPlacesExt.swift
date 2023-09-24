@@ -14,7 +14,7 @@ extension EditPlaces {
 	
 	// View modifier para la lista con places
 	struct PlacesListModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
 		
 		@Binding var oldPlace: String
 		@Binding var newPlace: String

@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct EBooksStatsChartView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     
     let titles = ["Autor", "Propietario", "Estado"]
     @State private var pickerSelection = 1
@@ -92,6 +92,6 @@ struct EBooksStatsChartView: View {
 struct EBooksStatsChartView_Previews: PreviewProvider {
     static var previews: some View {
         EBooksStatsChartView()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

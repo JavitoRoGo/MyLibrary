@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditPlaces: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var oldPlace = ""
     @State var newPlace = ""
@@ -76,7 +76,7 @@ struct EditPlaces_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             EditPlaces()
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
         }
     }
 }

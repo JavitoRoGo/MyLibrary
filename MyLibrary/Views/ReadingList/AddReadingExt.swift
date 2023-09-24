@@ -49,7 +49,7 @@ extension AddReading {
 	}
 	
 	struct AddReadingModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var bookTitle: String

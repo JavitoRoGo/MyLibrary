@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllQuotesCommentsView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @State private var showingQuotes = true
     @State private var showingAlert = false
     
@@ -94,6 +94,6 @@ struct AllQuotesCommentsView: View {
 struct AllQuotesCommentsView_Previews: PreviewProvider {
     static var previews: some View {
         AllQuotesCommentsView()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

@@ -19,15 +19,15 @@ extension UserConfigView {
 				DispatchQueue.main.async {
 					if success {
 						// Matching with biometrics
-						model.userLogic.isBiometricsAllowed = true
+						preferences.isBiometricsAllowed = true
 					} else {
-						model.userLogic.isBiometricsAllowed = false
+						preferences.isBiometricsAllowed = false
 					}
 				}
 			}
 		} else {
 			// no autorización para biometrics
-			model.userLogic.isBiometricsAllowed = false
+			preferences.isBiometricsAllowed = false
 		}
 	}
 	
@@ -58,7 +58,7 @@ extension UserConfigView {
 							// Borrar usuario y salir
 							model.userLogic.user = User.emptyUser
 							keychain.delete("storedPassword")
-							model.userLogic.isBiometricsAllowed = false
+							preferences.isBiometricsAllowed = false
 							showingDeleteButtons = false
 							isUnlocked = false
 						}
@@ -84,7 +84,8 @@ extension UserConfigView {
 	}
 	
 	struct UserConfigViewModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
+		@EnvironmentObject var preferences: UserPreferences
 		@Binding var showingEditUser: Bool
 		
 		@Binding var isExporting: Bool
@@ -143,7 +144,7 @@ extension UserConfigView {
 				.alert("⚠️\n¡Atención!", isPresented: $showingDeletingDatas) {
 					Button("Cancelar", role: .cancel) { }
 					Button("Borrar", role: .destructive) {
-						if model.userLogic.isBiometricsAllowed {
+						if preferences.isBiometricsAllowed {
 							authenticateToDelete(0)
 						} else {
 							withAnimation {
@@ -157,7 +158,7 @@ extension UserConfigView {
 				.alert("⚠️\n¡Atención!", isPresented: $showingDeletingUser) {
 					Button("Cancelar", role: .cancel) { }
 					Button("Borrar y salir", role: .destructive) {
-						if model.userLogic.isBiometricsAllowed {
+						if preferences.isBiometricsAllowed {
 							authenticateToDelete(1)
 						} else {
 							withAnimation {

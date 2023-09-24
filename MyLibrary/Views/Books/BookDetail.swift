@@ -68,6 +68,6 @@ struct BookDetail: View {
 struct BookDetail_Previews: PreviewProvider {
     static var previews: some View {
         BookDetail(book: Books.dataTest)
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

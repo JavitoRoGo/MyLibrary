@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct NewLineGraph: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @State private var datasForLineChart: [DataForLineChart] = []
     
     var body: some View {

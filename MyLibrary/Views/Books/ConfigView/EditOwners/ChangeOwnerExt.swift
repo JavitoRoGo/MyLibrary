@@ -26,7 +26,7 @@ extension ChangeBooksOwner {
 	}
 	
 	struct ChangeOwnerModifier: ViewModifier {
-		@EnvironmentObject var model: GlobalViewModel
+		@Environment(GlobalViewModel.self) var model
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var showingAlert: Bool

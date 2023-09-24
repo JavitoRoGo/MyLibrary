@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ActualReading: View {
-    @EnvironmentObject var model: GlobalViewModel
+	@Environment(GlobalViewModel.self) var model
     
     @State var showingDeletingAlert = false
     @State var showingAddNewBook = false
@@ -80,6 +80,6 @@ struct ActualReading: View {
 struct ActualReading_Previews: PreviewProvider {
     static var previews: some View {
         ActualReading()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllCommentsView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @State private var showingAlert = false
     
     var comments: [String: String] {
@@ -59,6 +59,6 @@ struct AllCommentsView: View {
 struct AllCommentsView_Previews: PreviewProvider {
     static var previews: some View {
         AllCommentsView()
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

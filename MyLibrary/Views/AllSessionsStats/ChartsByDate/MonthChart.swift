@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct MonthChart: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.colorScheme) var colorScheme
     @Binding var isLineGraph: Bool
     @State private var animateDatas : [DataStructForAnimateGraph<Int,Date>] = []
@@ -129,6 +129,6 @@ struct MonthChart: View {
 struct MonthChart_Previews: PreviewProvider {
     static var previews: some View {
         MonthChart(isLineGraph: .constant(false))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

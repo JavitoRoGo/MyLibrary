@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DynamicStatsLineChart: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     
     let graphSelected: Int
     
@@ -32,6 +32,6 @@ struct DynamicStatsLineChart: View {
 struct DynamicStatsLineChart_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsLineChart(graphSelected: 2)
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }

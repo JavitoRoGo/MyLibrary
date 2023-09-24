@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PlaceList: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     
     var places: [String] {
 		var tempPlaces = model.userLogic.user.myPlaces
@@ -19,11 +20,11 @@ struct PlaceList: View {
     
     var body: some View {
         List() {
-			NavigationLink(destination: BookList(customPreferredGridView: model.userLogic.preferredGridView, place: "all")) {
+			NavigationLink(destination: BookList(customPreferredGridView: preferences.preferredGridView, place: "all")) {
                 PlaceRow(place: "all")
             }
             ForEach(places, id: \.self) { place in
-				NavigationLink(destination: BookList(customPreferredGridView: model.userLogic.preferredGridView, place: place)) {
+				NavigationLink(destination: BookList(customPreferredGridView: preferences.preferredGridView, place: place)) {
                     PlaceRow(place: place)
                 }
             }
@@ -37,7 +38,8 @@ struct PlaceList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             PlaceList()
-				.environmentObject(GlobalViewModel.preview)
+				.environment(GlobalViewModel.preview)
+				.environmentObject(UserPreferences())
         }
     }
 }

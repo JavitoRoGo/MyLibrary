@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginNoBiomView: View {
-    @EnvironmentObject var model: GlobalViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.dismiss) var dismiss
     @Binding var isUnlocked: Bool
     
@@ -115,6 +115,6 @@ struct LoginNoBiomView: View {
 struct LoginNoBiomView_Previews: PreviewProvider {
     static var previews: some View {
         LoginNoBiomView(isUnlocked: .constant(false))
-			.environmentObject(GlobalViewModel.preview)
+			.environment(GlobalViewModel.preview)
     }
 }
