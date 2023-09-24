@@ -58,7 +58,7 @@ final class UserLogic: ObservableObject {
 		// Valor de persistencia por defecto para los datos de producción
 		self.persistence = persistence
 		do {
-			self.user = try persistence.loadUser()
+			self.user = try self.persistence.loadUser()
 		} catch {
 			// gestionar el error y mostrar alguna alerta al usuario
 			print("Error en la carga: \(error.localizedDescription)")

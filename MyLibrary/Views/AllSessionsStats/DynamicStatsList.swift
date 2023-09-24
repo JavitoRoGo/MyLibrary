@@ -49,29 +49,29 @@ struct DynamicStatsList: View {
                 HStack {
                     Text("Tiempo de lectura")
                     Spacer()
-                    Text(model.getReadingTime(tag: graphSelected))
+					Text(model.userLogic.getReadingTime(tag: graphSelected))
                 }
                 HStack {
                     Text("Páginas leídas")
                     Spacer()
-                    Text(model.graphData(tag: graphSelected).reduce(0, +), format: .number)
+					Text(model.userLogic.graphData(tag: graphSelected).reduce(0, +), format: .number)
                 }
             }
             Section {
                 HStack {
                     Text("min/pág")
                     Spacer()
-                    Text(model.getMinPerPag(tag: graphSelected))
+					Text(model.userLogic.getMinPerPag(tag: graphSelected))
                 }
                 HStack {
                     Text("min/día")
                     Spacer()
-                    Text(model.getMinPerDay(tag: graphSelected))
+					Text(model.userLogic.getMinPerDay(tag: graphSelected))
                 }
                 HStack {
                     Text("pág/día")
                     Spacer()
-                    Text(model.getPagPerDay(tag: graphSelected), format: .number.precision(.fractionLength(0)))
+					Text(model.userLogic.getPagPerDay(tag: graphSelected), format: .number.precision(.fractionLength(0)))
                 }
             }
         }
