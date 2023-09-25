@@ -5,6 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 24/9/23.
 //
 
+import Combine
 import SwiftUI
 
 final class UserPreferences: ObservableObject {
@@ -32,4 +33,47 @@ final class UserPreferences: ObservableObject {
 	// Anual
 	@AppStorage("yearlyPagesTarget") var yearlyPagesTarget: Int = 8000
 	@AppStorage("yearlyTimeTarget") var yearlyBooksTarget: Int = 40
+	
+	// VALIDACIÓN DE CONTRASEÑA:
+	
+	@Published var password = ""
+	@Published var validations: [Validation] = []
+	@Published var isValid: Bool = false
+	
+	var storedPassword: String { keychain.get("storedPassword") ?? "" }
+	
+	private var cancellableSet: Set<AnyCancellable> = []
+	
+	init() {
+		// Validations
+		passwordPublisher
+			.receive(on: RunLoop.main)
+			.assign(to: \.validations, on: self)
+			.store(in: &cancellableSet)
+		
+		// isValid
+		passwordPublisher
+			.receive(on: RunLoop.main)
+			.map { validations in
+				return validations.filter { validation in
+					return ValidationState.failure == validation.state
+				}.isEmpty
+			}
+			.assign(to: \.isValid, on: self)
+			.store(in: &cancellableSet)
+	}
+	
+	private var passwordPublisher: AnyPublisher<[Validation], Never> {
+		$password
+			.removeDuplicates()
+			.map { password in
+				var validations: [Validation] = []
+				validations.append(Validation(string: password, id: 0, field: .password, validationType: .isNotEmpty))
+				validations.append(Validation(string: password, id: 1, field: .password, validationType: .minCharacters(min: 8)))
+				validations.append(Validation(string: password, id: 2, field: .password, validationType: .hasSymbols))
+				validations.append(Validation(string: password, id: 3, field: .password, validationType: .hasUppercasedLetters))
+				validations.append(Validation(string: password, id: 4, field: .password, validationType: .hasNumbers))
+				return validations
+			}.eraseToAnyPublisher()
+	}
 }

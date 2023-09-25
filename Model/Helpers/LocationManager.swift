@@ -7,8 +7,7 @@
 
 import MapKit
 
-@Observable
-final class LocationManager: NSObject, CLLocationManagerDelegate, MKMapViewDelegate {
+final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate, MKMapViewDelegate {
     // Manager opcional porque puede ser que la localización no esté activa
     private var manager: CLLocationManager?
     

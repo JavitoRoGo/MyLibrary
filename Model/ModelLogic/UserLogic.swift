@@ -5,7 +5,6 @@
 //  Created by Javier Rodríguez Gómez on 31/12/22.
 //
 
-import Combine
 import SwiftUI
 
 @Observable
@@ -37,15 +36,8 @@ final class UserLogic {
 			}
 		}
 	}
-	var password = ""
-	var validations: [Validation] = []
-	var isValid: Bool = false
 	
 	var tempQuotesArray: [Quote] = []
-	
-	var storedPassword: String { keychain.get("storedPassword") ?? "" }
-	
-	private var cancellableSet: Set<AnyCancellable> = []
 	
 	init(persistence: PersistenceInteractor = Persistence()) {
 		// Valor de persistencia por defecto para los datos de producción
@@ -64,35 +56,4 @@ final class UserLogic {
 			user.myPlaces += [donatedText, soldText]
 		}
 	}
-//		// Validations
-//		passwordPublisher
-//			.receive(on: RunLoop.main)
-//			.assign(to: \.validations, on: self)
-//			.store(in: &cancellableSet)
-//		
-//		// isValid
-//		passwordPublisher
-//			.receive(on: RunLoop.main)
-//			.map { validations in
-//				return validations.filter { validation in
-//					return ValidationState.failure == validation.state
-//				}.isEmpty
-//			}
-//			.assign(to: \.isValid, on: self)
-//			.store(in: &cancellableSet)
-//	}
-//	
-//	private var passwordPublisher: AnyPublisher<[Validation], Never> {
-//		$password
-//			.removeDuplicates()
-//			.map { password in
-//				var validations: [Validation] = []
-//				validations.append(Validation(string: password, id: 0, field: .password, validationType: .isNotEmpty))
-//				validations.append(Validation(string: password, id: 1, field: .password, validationType: .minCharacters(min: 8)))
-//				validations.append(Validation(string: password, id: 2, field: .password, validationType: .hasSymbols))
-//				validations.append(Validation(string: password, id: 3, field: .password, validationType: .hasUppercasedLetters))
-//				validations.append(Validation(string: password, id: 4, field: .password, validationType: .hasNumbers))
-//				return validations
-//			}.eraseToAnyPublisher()
-//	}
 }

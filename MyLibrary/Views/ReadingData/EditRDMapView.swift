@@ -9,7 +9,7 @@ import MapKit
 import SwiftUI
 
 struct EditRDMapView: View {
-	@Environment(LocationManager.self) var manager
+	@EnvironmentObject var manager: LocationManager
     @Environment(\.dismiss) var dismiss
     
 //    @State var region = MKCoordinateRegion()
@@ -24,7 +24,7 @@ struct EditRDMapView: View {
             ZStack(alignment: .bottomTrailing) {
                 MapViewHelper()
                     .frame(width: 400, height: 550)
-                    .environment(manager)
+                    .environmentObject(manager)
                 HStack(spacing: 15) {
                     if pins.isEmpty {
                         Button {
@@ -94,13 +94,13 @@ struct EditRDMapView: View {
 struct EditRDMapView_Previews: PreviewProvider {
     static var previews: some View {
         EditRDMapView(location: .constant(RDLocation(id: UUID(), latitude: 20, longitude: 20)))
-            .environment(LocationManager())
+            .environmentObject(LocationManager())
     }
 }
 
 
 struct MapViewHelper: UIViewRepresentable {
-	@Environment(LocationManager.self) var manager
+	@EnvironmentObject var manager: LocationManager
     
     func makeUIView(context: Context) -> MKMapView {
         manager.mapView

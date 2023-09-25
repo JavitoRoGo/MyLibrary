@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EditUserPasswordView: View {
     @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     @Environment(\.dismiss) var dismiss
     
     @State private var nickname = ""
@@ -20,13 +21,11 @@ struct EditUserPasswordView: View {
         if repeatPassword.isEmpty {
             return false
         }
-		return model.userLogic.isValid && repeatPassword == model.userLogic.password
+		return preferences.isValid && repeatPassword == preferences.password
     }
     
     var body: some View {
-		@Bindable var bindingModel = model
-		
-        NavigationStack {
+		NavigationStack {
             Form {
                 Section {
                     TextField("Cambia tu usuario", text: $nickname)
@@ -42,9 +41,9 @@ struct EditUserPasswordView: View {
                 Section {
                     HStack {
                         if isPasswordVisible {
-							TextField("Introduce la nueva contraseña", text: $bindingModel.userLogic.password)
+							TextField("Introduce la nueva contraseña", text: $preferences.password)
                         } else {
-							SecureField("Introduce la nueva contraseña", text: $bindingModel.userLogic.password)
+							SecureField("Introduce la nueva contraseña", text: $preferences.password)
                         }
                         Spacer()
                         Button {
@@ -68,7 +67,7 @@ struct EditUserPasswordView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
-					List(model.userLogic.validations) { validation in
+					List(preferences.validations) { validation in
                         HStack {
                             Image(systemName: validation.state == .success ? "checkmark.circle.fill" : "checkmark.circle")
                                 .foregroundColor(validation.state == .success ? .green : .gray.opacity(0.3))
@@ -80,12 +79,12 @@ struct EditUserPasswordView: View {
                         .padding(.leading, 15)
                     }
                     HStack {
-						Image(systemName: model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? "checkmark.circle.fill" : "checkmark.circle")
-							.foregroundColor(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? .green : .gray.opacity(0.3))
+						Image(systemName: preferences.password == repeatPassword && !repeatPassword.isEmpty ? "checkmark.circle.fill" : "checkmark.circle")
+							.foregroundColor(preferences.password == repeatPassword && !repeatPassword.isEmpty ? .green : .gray.opacity(0.3))
                         Text("Repite la contraseña.")
-							.strikethrough(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty)
+							.strikethrough(preferences.password == repeatPassword && !repeatPassword.isEmpty)
                             .font(.caption)
-							.foregroundColor(model.userLogic.password == repeatPassword && !repeatPassword.isEmpty ? .secondary : .primary)
+							.foregroundColor(preferences.password == repeatPassword && !repeatPassword.isEmpty ? .secondary : .primary)
                     }
                     .padding(.leading, 15)
                 }
@@ -139,5 +138,6 @@ struct EditUserPasswordView_Previews: PreviewProvider {
     static var previews: some View {
         EditUserPasswordView()
 			.environment(GlobalViewModel.preview)
+			.environmentObject(UserPreferences())
     }
 }

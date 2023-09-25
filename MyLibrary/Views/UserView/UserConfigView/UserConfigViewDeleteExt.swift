@@ -48,7 +48,7 @@ extension UserConfigView {
 						SecureField("Confirma el borrado con la contraseña", text: $password)
 						Spacer()
 						Button {
-							if password == model.userLogic.storedPassword {
+							if password == preferences.storedPassword {
 								DispatchQueue.main.async {
 									if deleteOperation == 0 {
 										// Borrar solo datos
