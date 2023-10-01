@@ -84,7 +84,7 @@ ConnectivityManager para conectar con iOS.
 * En la nueva vista de configuración se añade la opción de elegir entre modo claro y oscuro, vista por defecto para las portadas (o en lista), y poder compartir los datos como json, importarlos o exportarlos.
 
 
-# v1.4
+# v2.0
 
 * Actualización a iOS 17.
 * Se adopta la nueva API Observation para el modelo principal, mientras que se mantiene la estructura anterior con ObservableObject para las preferencias de usuario y la comprobación de contraseña.
