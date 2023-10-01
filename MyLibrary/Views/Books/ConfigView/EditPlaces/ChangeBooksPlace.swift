@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChangeBooksPlace: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.dismiss) var dismiss
     
     @State private var showingAlert = false
@@ -23,14 +23,14 @@ struct ChangeBooksPlace: View {
                     .multilineTextAlignment(.center)
                 VStack {
                     Picker("Origen", selection: $oldPlace) {
-						ForEach(model.user.myPlaces, id: \.self) {
+						ForEach(model.userLogic.user.myPlaces, id: \.self) {
                             Text($0)
                         }
                     }
                     Image(systemName: "arrow.down")
                         .font(.system(size: 50))
                     Picker("Destino", selection: $newPlace) {
-						ForEach(model.user.myPlaces, id: \.self) {
+						ForEach(model.userLogic.user.myPlaces, id: \.self) {
                             Text($0)
                         }
                     }
@@ -48,10 +48,10 @@ struct ChangeBooksPlace: View {
                     .disabled(oldPlace == newPlace || oldPlace.isEmpty || newPlace.isEmpty)
                 }
             }
-            .alert("Esto cambiará la ubicación de \(model.numberOfBooksAtPlace(oldPlace)) libros, de \(oldPlace) a \(newPlace).", isPresented: $showingAlert) {
+			.alert("Esto cambiará la ubicación de \(model.userLogic.numberOfBooksAtPlace(oldPlace)) libros, de \(oldPlace) a \(newPlace).", isPresented: $showingAlert) {
                 Button("No", role: .cancel) { }
                 Button("Sí") {
-                    model.moveFromTo(from: oldPlace, to: newPlace)
+					model.userLogic.moveFromTo(from: oldPlace, to: newPlace)
                     dismiss()
                 }
             } message: {
@@ -65,7 +65,7 @@ struct MovingBooks_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             ChangeBooksPlace()
-                .environmentObject(UserViewModel())
+				.environment(GlobalViewModel.preview)
         }
     }
 }

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TargetsMainView: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     
     @State private var dailyTarget: DWTarget = .pages
     @State private var weeklyTarget: DWTarget = .pages
@@ -29,10 +30,10 @@ struct TargetsMainView: View {
                             VStack(alignment: .leading) {
                                 Text("Diario")
                                     .font(.title2.bold())
-                                Text("\(model.readToday(dailyTarget).0) / \(model.dailyTargetText(dailyTarget))")
+                                Text("\(model.userLogic.readToday(dailyTarget).0) / \(model.userLogic.dailyTargetText(dailyTarget))")
                             }
                             Spacer()
-                            RingTargetView(color: .red, current: model.readToday(dailyTarget).1, target: dailyTarget == .pages ? model.dailyPagesTarget : Int(model.dailyTimeTarget))
+							RingTargetView(color: .red, current: model.userLogic.readToday(dailyTarget).1, target: dailyTarget == .pages ? preferences.dailyPagesTarget : Int(preferences.dailyTimeTarget))
                                 .frame(height: 50)
                         }
                     }
@@ -41,10 +42,10 @@ struct TargetsMainView: View {
                             VStack(alignment: .leading) {
                                 Text("Semanal")
                                     .font(.title2.bold())
-                                Text("\(model.readThisWeek(weeklyTarget).0) / \(model.weeklyTargetText(weeklyTarget))")
+                                Text("\(model.userLogic.readThisWeek(weeklyTarget).0) / \(model.userLogic.weeklyTargetText(weeklyTarget))")
                             }
                             Spacer()
-                            RingTargetView(color: .orange, current: model.readThisWeek(weeklyTarget).1, target: weeklyTarget == .pages ? model.weeklyPagesTarget : Int(model.weeklyTimeTarget))
+							RingTargetView(color: .orange, current: model.userLogic.readThisWeek(weeklyTarget).1, target: weeklyTarget == .pages ? preferences.weeklyPagesTarget : Int(preferences.weeklyTimeTarget))
                                 .frame(height: 50)
                         }
                     }
@@ -53,10 +54,10 @@ struct TargetsMainView: View {
                             VStack(alignment: .leading) {
                                 Text("Mensual")
                                     .font(.title2.bold())
-                                Text("\(model.readThisMonth(monthlyTarget).0) / \(model.monthlyTargetText(monthlyTarget))")
+                                Text("\(model.userLogic.readThisMonth(monthlyTarget).0) / \(model.userLogic.monthlyTargetText(monthlyTarget))")
                             }
                             Spacer()
-                            RingTargetView(color: .green, current: model.readThisMonth(monthlyTarget).1, target: monthlyTarget == .books ? model.monthlyBooksTarget : model.monthlyPagesTarget)
+							RingTargetView(color: .green, current: model.userLogic.readThisMonth(monthlyTarget).1, target: monthlyTarget == .books ? preferences.monthlyBooksTarget : preferences.monthlyPagesTarget)
                                 .frame(height: 50)
                         }
                     }
@@ -65,10 +66,10 @@ struct TargetsMainView: View {
                             VStack(alignment: .leading) {
                                 Text("Anual")
                                     .font(.title2.bold())
-                                Text("\(model.readThisYear(yearlyTarget).0) / \(model.yearlyTargetText(yearlyTarget))")
+                                Text("\(model.userLogic.readThisYear(yearlyTarget).0) / \(model.userLogic.yearlyTargetText(yearlyTarget))")
                             }
                             Spacer()
-                            RingTargetView(color: .blue, current: model.readThisYear(yearlyTarget).1, target: yearlyTarget == .books ? model.yearlyBooksTarget : model.yearlyPagesTarget)
+							RingTargetView(color: .blue, current: model.userLogic.readThisYear(yearlyTarget).1, target: yearlyTarget == .books ? preferences.yearlyBooksTarget : preferences.yearlyPagesTarget)
                                 .frame(height: 50)
                         }
                     }
@@ -101,7 +102,7 @@ struct TargetsMainView: View {
                         RollingText(color: .blue, value: numOfAchivedYearlyTarget)
                     }
                 } footer: {
-					Text("Número de veces que se ha conseguido cada objetivo desde el registro de la primera sesión: \((model.user.sessions.last?.date ?? .now).toString).")
+					Text("Número de veces que se ha conseguido cada objetivo desde el registro de la primera sesión: \((model.userLogic.user.sessions.last?.date ?? .now).toString).")
                 }
             }
             .navigationTitle("Objetivos")
@@ -113,10 +114,10 @@ struct TargetsMainView: View {
 				numOfAchivedYearlyTarget = 0
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
 					withAnimation(.linear(duration: 1.2)) {
-						numOfAchivedDailyTarget = model.numOfAchivedDailyTarget(dailyTarget)
-						numOfAchivedWeeklyTarget = model.numOfAchivedWeeklyTarget(weeklyTarget)
-						numOfAchivedMonthlyTarget = model.numOfAchivedMonthlyTarget(monthlyTarget)
-						numOfAchivedYearlyTarget = model.numOfAchivedYearlyTarget(yearlyTarget)
+						numOfAchivedDailyTarget = model.userLogic.numOfAchivedDailyTarget(dailyTarget)
+						numOfAchivedWeeklyTarget = model.userLogic.numOfAchivedWeeklyTarget(weeklyTarget)
+						numOfAchivedMonthlyTarget = model.userLogic.numOfAchivedMonthlyTarget(monthlyTarget)
+						numOfAchivedYearlyTarget = model.userLogic.numOfAchivedYearlyTarget(yearlyTarget)
 					}
 				}
 			}
@@ -127,6 +128,7 @@ struct TargetsMainView: View {
 struct TargetsMainView_Previews: PreviewProvider {
     static var previews: some View {
         TargetsMainView()
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
+			.environmentObject(UserPreferences())
     }
 }

@@ -27,6 +27,5 @@ struct RingTargetView: View {
 struct RingTargetView_Previews: PreviewProvider {
     static var previews: some View {
         RingTargetView(color: .red, current: 15, target: 40)
-            .environmentObject(UserViewModel())
     }
 }

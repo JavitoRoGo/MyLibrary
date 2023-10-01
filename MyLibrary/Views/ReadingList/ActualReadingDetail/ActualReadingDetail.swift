@@ -10,7 +10,7 @@ import CoreHaptics
 import SwiftUI
 
 struct ActualReadingDetail: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var book: NowReading
     
@@ -54,8 +54,8 @@ struct ActualReadingDetail: View {
 struct ActualReadingDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ActualReadingDetail(book: NowReading.example[0])
-                .environmentObject(UserViewModel())
+            ActualReadingDetail(book: NowReading.dataTest)
+				.environment(GlobalViewModel.preview)
         }
     }
 }

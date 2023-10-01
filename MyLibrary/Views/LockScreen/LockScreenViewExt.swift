@@ -26,7 +26,7 @@ extension LockScreenView {
             }
         } else {
             // no autorización para biometrics
-            model.isBiometricsAllowed = false
+			preferences.isBiometricsAllowed = false
         }
     }
     
@@ -39,9 +39,7 @@ extension LockScreenView {
     }
     
     struct LockScreenViewModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
-		
-        @Binding var showingFirstRunAlert: Bool
+		@Binding var showingFirstRunAlert: Bool
         @Binding var showingCreateUser: Bool
         @Binding var showingLoginPage: Bool
         @Binding var showingAlert: Bool

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct RDScroll: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @Binding var rdata: ReadingData
     @State private var spinAmount = 0.0
     @State private var buttonTapped = 0
     
     var scrollIndex: Int {
-		model.user.readingDatas.firstIndex(of: rdata) ?? 0
+		model.userLogic.user.readingDatas.firstIndex(of: rdata) ?? 0
     }
     
     var body: some View {
@@ -27,8 +27,8 @@ struct RDScroll: View {
             ScrollViewReader { value in
                 ScrollView(.horizontal) {
                     HStack {
-						ForEach(model.user.readingDatas.reversed()) { rdata in
-							let index = model.user.readingDatas.firstIndex(of: rdata)!
+						ForEach(model.userLogic.user.readingDatas.reversed()) { rdata in
+							let index = model.userLogic.user.readingDatas.firstIndex(of: rdata)!
                             Button {
                                 buttonTapped = 0
                                 withAnimation {
@@ -61,7 +61,7 @@ struct RDScroll: View {
 struct RDScroll_Previews: PreviewProvider {
     static var previews: some View {
         RDScroll(rdata: .constant(ReadingData.dataTest))
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
             .previewLayout(.fixed(width: 400, height: 250))
     }
 }

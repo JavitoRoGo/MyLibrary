@@ -9,12 +9,12 @@ import SwiftUI
 
 extension EditPlaces {
 	func move(from source: IndexSet, to destination: Int) {
-		model.user.myPlaces.move(fromOffsets: source, toOffset: destination)
+		model.userLogic.user.myPlaces.move(fromOffsets: source, toOffset: destination)
 	}
 	
 	// View modifier para la lista con places
 	struct PlacesListModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@Environment(GlobalViewModel.self) var model
 		
 		@Binding var oldPlace: String
 		@Binding var newPlace: String
@@ -32,8 +32,8 @@ extension EditPlaces {
 				.alert("Esta ubicación tiene libros registrados.\n¿Deseas borrarla de todas formas?", isPresented: $showingDeleteAlert) {
 					Button("No", role: .cancel) { }
 					Button("Sí", role: .destructive) {
-						model.user.myPlaces.removeAll(where: { $0 == oldPlace })
-						model.moveFromTo(from: oldPlace, to: "sin asignar")
+						model.userLogic.user.myPlaces.removeAll(where: { $0 == oldPlace })
+						model.userLogic.moveFromTo(from: oldPlace, to: "sin asignar")
 						oldPlace = ""
 					}
 				} message: {
@@ -42,7 +42,7 @@ extension EditPlaces {
 				.alert("Se ha modificado el nombre de esta ubicación.", isPresented: $showingEditAlert) {
 					Button("No", role: .cancel) { }
 					Button("Sí") {
-						model.moveFromTo(from: oldPlace, to: newPlace)
+						model.userLogic.moveFromTo(from: oldPlace, to: newPlace)
 						newPlace = ""
 					}
 				} message: {

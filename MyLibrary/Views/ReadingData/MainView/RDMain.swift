@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDMain: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State private var rating: Int = 1
     
@@ -26,20 +26,20 @@ struct RDMain: View {
     var body: some View {
         NavigationStack {
             VStack {
-				if !model.user.readingDatas.isEmpty {
+				if !model.userLogic.user.readingDatas.isEmpty {
 					VStack(spacing: 15) {
 						HStack(spacing: 10) {
-							EachMainViewButton(iconImage: "list.star", iconColor: .pink, number: model.user.readingDatas.count, title: "Lista", destination: RDList())
-							EachMainViewButton(iconImage: "square.grid.3x3", iconColor: .pink, number: model.user.readingDatas.count, title: "Mosaico", destination: RDGrid(filterByRatingSelection: .all))
+							EachMainViewButton(iconImage: "list.star", iconColor: .pink, number: model.userLogic.user.readingDatas.count, title: "Lista", destination: RDList())
+							EachMainViewButton(iconImage: "square.grid.3x3", iconColor: .pink, number: model.userLogic.user.readingDatas.count, title: "Mosaico", destination: RDGrid(filterByRatingSelection: .all))
 						}
 						ScrollView(.horizontal) {
 							HStack(spacing: 5) {
-								ForEach(model.user.bookFinishingYears.reversed(), id: \.self) { year in
+								ForEach(model.userLogic.user.bookFinishingYears.reversed(), id: \.self) { year in
 									NavigationLink(destination: RDList(year: year)) {
 										VStack {
 											Text(String(year))
 												.font(.title3.bold())
-											Text("\(model.numberOfReadingDataPerYear(year, filterBy: .all)) libros")
+											Text("\(model.userLogic.numberOfReadingDataPerYear(year, filterBy: .all)) libros")
 												.font(.caption)
 										}
 									}
@@ -56,7 +56,7 @@ struct RDMain: View {
 									RDStars(rating: $rating)
 										.font(.title)
 									Spacer()
-									Text(model.numberOfReadingDataPerStar(rating), format: .number)
+									Text(model.userLogic.numberOfReadingDataPerStar(rating), format: .number)
 										.font(.title2.bold())
 								}
 								Text("Toca las estrellas para ver el total")
@@ -72,7 +72,7 @@ struct RDMain: View {
 						VStack {
 							Divider()
 							EachMainViewButton(iconImage: "chart.pie.fill", iconColor: .mint, number: 0, title: "Estadísticas", destination: RDStatsMainView())
-							EachMainViewButton(iconImage: "map.fill", iconColor: .blue, number: 0, title: "Ubicaciones", destination: RDMapView(pins: model.rdlocations))
+							EachMainViewButton(iconImage: "map.fill", iconColor: .blue, number: 0, title: "Ubicaciones", destination: RDMapView(pins: model.userLogic.rdlocations))
 							Spacer()
 						}
 					}
@@ -102,6 +102,6 @@ struct RDMain: View {
 struct RDMain_Previews: PreviewProvider {
     static var previews: some View {
         RDMain()
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

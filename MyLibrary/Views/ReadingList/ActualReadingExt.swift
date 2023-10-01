@@ -13,19 +13,19 @@ extension ActualReading {
 			bookToDelete = book
 			showingDeletingAlert = true
 		} else {
-			model.removeFromWaiting(book)
+			model.userLogic.removeFromWaiting(book)
 		}
 	}
 	
 	func deleteBookAndSessions(_ book: NowReading) {
 		book.sessions.forEach { session in
-			model.user.sessions.removeAll(where: { $0 == session })
+			model.userLogic.user.sessions.removeAll(where: { $0 == session })
 		}
-		model.removeFromWaiting(book)
+		model.userLogic.removeFromWaiting(book)
 	}
 	
 	struct ActualReadingModifer: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@Environment(GlobalViewModel.self) var model
 		@Binding var showingDeletingAlert: Bool
 		@Binding var showingAddNewBook: Bool
 		
@@ -47,7 +47,7 @@ extension ActualReading {
 				.alert("¡Atención!\nEstás intentando borrar un libro con datos de lectura.", isPresented: $showingDeletingAlert) {
 					Button("Cancelar", role: .cancel) { }
 					Button("Mantener sesiones") {
-						model.removeFromWaiting(book)
+						model.userLogic.removeFromWaiting(book)
 					}
 					Button("Borrar sesiones") {
 						deleteBookAndSessions(book)

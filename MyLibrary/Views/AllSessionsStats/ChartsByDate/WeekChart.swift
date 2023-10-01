@@ -9,17 +9,17 @@ import Charts
 import SwiftUI
 
 struct WeekChart: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.colorScheme) var colorScheme
     
     @Binding var isLineGraph: Bool
     @State private var animateDatas : [DataStructForAnimateGraph<Int,Date>] = []
     
     var pages: [Int] {
-        model.calcTotalPagesPerWeekAndMonth(tag: 0).pages
+		model.userLogic.calcTotalPagesPerWeekAndMonth(tag: 0).pages
     }
     var days: [Date] {
-        model.calcTotalPagesPerWeekAndMonth(tag: 0).days
+		model.userLogic.calcTotalPagesPerWeekAndMonth(tag: 0).days
     }
     
     // Propiedades para mostrar los datos en la gráfica al hacer el gesto de arrastrar
@@ -132,6 +132,6 @@ struct WeekChart: View {
 struct WeekChart_Previews: PreviewProvider {
     static var previews: some View {
         WeekChart(isLineGraph: .constant(false))
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

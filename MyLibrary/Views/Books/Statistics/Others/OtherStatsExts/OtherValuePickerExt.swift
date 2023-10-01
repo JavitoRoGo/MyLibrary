@@ -37,7 +37,7 @@ extension OtherStats {
 							.padding()
 						}
 						Picker("Valor", selection: $pickerSelection) {
-							ForEach(model.arrayOfBookLabelsByCategoryForPickerAndGraph(tag: statsSelection), id: \.self) {
+							ForEach(model.userLogic.arrayOfBookLabelsByCategoryForPickerAndGraph(tag: statsSelection), id: \.self) {
 								Text($0)
 							}
 						}
@@ -53,7 +53,7 @@ extension OtherStats {
 				Text("Libros:")
 					.font(.title3)
 				Spacer()
-				Text(String(model.numOfBooksForOtherStats(tag: statsSelection, text: pickerSelection)))
+				Text(String(model.userLogic.numOfBooksForOtherStats(tag: statsSelection, text: pickerSelection)))
 					.font(.largeTitle)
 					.frame(width: 75, height: 55)
 					.background(.orange)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookList: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @State private var searchText = ""
 	@State var customPreferredGridView: Bool
     
@@ -18,14 +18,14 @@ struct BookList: View {
     
     var filteredBooks: [Books] {
         if place != "all" {
-			return model.booksAtPlace(place)
+			return model.userLogic.booksAtPlace(place)
         } else {
 			if filterByOwner != "all" {
-                return model.activeBooks.filter { $0.owner == filterByOwner }.reversed()
+				return model.userLogic.activeBooks.filter { $0.owner == filterByOwner }.reversed()
 			} else if filterByStatus != .all {
-                return model.activeBooks.filter { $0.status.rawValue == filterByStatus.rawValue }.reversed()
+				return model.userLogic.activeBooks.filter { $0.status.rawValue == filterByStatus.rawValue }.reversed()
 			} else {
-				return model.activeBooks.reversed()
+				return model.userLogic.activeBooks.reversed()
 			}
         }
     }
@@ -82,7 +82,7 @@ struct BookList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
 			BookList(customPreferredGridView: false, place: "A1")
-                .environmentObject(UserViewModel())
+				.environment(GlobalViewModel.preview)
         }
     }
 }

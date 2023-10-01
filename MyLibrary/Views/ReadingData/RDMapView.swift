@@ -9,7 +9,7 @@ import MapKit
 import SwiftUI
 
 struct RDMapView: View {
-    @EnvironmentObject var manager: LocationManager
+	@EnvironmentObject var manager: LocationManager
     @State private var region = MKCoordinateRegion()
     
     let pins: [RDLocation]

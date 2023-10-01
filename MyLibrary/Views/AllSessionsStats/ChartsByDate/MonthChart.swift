@@ -9,16 +9,16 @@ import Charts
 import SwiftUI
 
 struct MonthChart: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.colorScheme) var colorScheme
     @Binding var isLineGraph: Bool
     @State private var animateDatas : [DataStructForAnimateGraph<Int,Date>] = []
     
     var pages: [Int] {
-        model.calcTotalPagesPerWeekAndMonth(tag: 1).pages
+		model.userLogic.calcTotalPagesPerWeekAndMonth(tag: 1).pages
     }
     var days: [Date] {
-        model.calcTotalPagesPerWeekAndMonth(tag: 1).days
+		model.userLogic.calcTotalPagesPerWeekAndMonth(tag: 1).days
     }
     
     // Propiedades para mostrar los datos en la gráfica al hacer el gesto de arrastrar
@@ -129,6 +129,6 @@ struct MonthChart: View {
 struct MonthChart_Previews: PreviewProvider {
     static var previews: some View {
         MonthChart(isLineGraph: .constant(false))
-			.environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

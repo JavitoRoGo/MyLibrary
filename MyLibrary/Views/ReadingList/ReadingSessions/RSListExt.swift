@@ -9,17 +9,17 @@ import SwiftUI
 
 extension RSList {
 	func deleteSessionRow(_ session: ReadingSession) {
-		if let index = model.user.nowReading.firstIndex(of: book) {
-			model.user.sessions.removeAll(where: { $0 == session })
-			model.user.nowReading[index].sessions.removeAll(where: { $0 == session })
+		if let index = model.userLogic.user.nowReading.firstIndex(of: book) {
+			model.userLogic.user.sessions.removeAll(where: { $0 == session })
+			model.userLogic.user.nowReading[index].sessions.removeAll(where: { $0 == session })
 			if book.isFinished {
-				model.user.nowReading[index].isFinished = false
+				model.userLogic.user.nowReading[index].isFinished = false
 			}
 		}
 	}
 	
 	struct RSListModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@Environment(GlobalViewModel.self) var model
 		
 		@Binding var book: NowReading
 		@Binding var showingAddSession: Bool
@@ -30,7 +30,7 @@ extension RSList {
 				.navigationBarTitleDisplayMode(.inline)
 				.toolbar {
 					HStack {
-						NavigationLink(destination: RSBarGraph(datas: model.datas(book: book), labels: model.getXLabels(book: book))) {
+						NavigationLink(destination: RSBarGraph(datas: model.userLogic.datas(book: book), labels: model.userLogic.getXLabels(book: book))) {
 							Image(systemName: "chart.bar")
 						}
 						.disabled(book.sessions.isEmpty)

@@ -9,8 +9,8 @@ import MapKit
 import SwiftUI
 
 struct ActualReadingEdit: View {
-    @EnvironmentObject var model: UserViewModel
-    @EnvironmentObject var manager: LocationManager
+    @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var manager: LocationManager
     
     @Binding var book: NowReading
     
@@ -31,7 +31,7 @@ struct ActualReadingEdit: View {
     @State var showingMapSelection = false
     
 	var body: some View {
-        Form {
+		Form {
             Section {
                 TextField(book.bookTitle, text: $bookTitle)
             }
@@ -102,12 +102,12 @@ struct ActualReadingEdit: View {
 }
 
 struct ActualReadingEdit_Previews: PreviewProvider {
-    static let example = NowReading.example[0]
+    static let example = NowReading.dataTest
     
     static var previews: some View {
         NavigationView {
             ActualReadingEdit(book: .constant(example))
-                .environmentObject(UserViewModel())
+				.environment(GlobalViewModel.preview)
                 .environmentObject(LocationManager())
         }
     }

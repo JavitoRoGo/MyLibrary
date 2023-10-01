@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EBookEditView: View {
-	@EnvironmentObject var model: UserViewModel
+	@Environment(GlobalViewModel.self) var model
 	@Environment(\.dismiss) var dismiss
 	
 	@Binding var ebook: EBooks
@@ -130,8 +130,8 @@ struct EBookEditView: View {
 				}
 			}
 			.onAppear {
-				isOnWaitingList = model.user.nowReading.contains(where: { $0.bookTitle == ebook.bookTitle }) ||
-				model.user.nowWaiting.contains(where: { $0.bookTitle == ebook.bookTitle })
+				isOnWaitingList = model.userLogic.user.nowReading.contains(where: { $0.bookTitle == ebook.bookTitle }) ||
+				model.userLogic.user.nowWaiting.contains(where: { $0.bookTitle == ebook.bookTitle })
 				if let cover = ebook.cover {
 					inputImage = getCoverImage(from: cover)
 				}
@@ -143,6 +143,6 @@ struct EBookEditView: View {
 struct EBookEditView_Previews: PreviewProvider {
     static var previews: some View {
 		EBookEditView(ebook: .constant(EBooks.dataTest), newStatus: .reading)
-			.environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

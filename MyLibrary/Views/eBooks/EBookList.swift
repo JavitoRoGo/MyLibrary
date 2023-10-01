@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EBookList: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @State var searchText = ""
 	@State var customPreferredGridView: Bool
 	
@@ -16,13 +16,15 @@ struct EBookList: View {
     var filteredOwner: String? = nil
     
     var body: some View {
+		@Bindable var bindingModel = model
+		
         NavigationStack {
 			if customPreferredGridView {
 				EBookGrid(ebooks: ebooksToShow)
 			} else {
 				List(ebooksToShow) { ebook in
-					let index = model.user.ebooks.firstIndex(of: ebook)!
-					NavigationLink(destination: EBookDetail(ebook: $model.user.ebooks[index])) {
+					let index = model.userLogic.user.ebooks.firstIndex(of: ebook)!
+					NavigationLink(destination: EBookDetail(ebook: $bindingModel.userLogic.user.ebooks[index])) {
 						EBookRow(ebook: ebook)
 					}
 				}
@@ -51,7 +53,7 @@ struct EBookList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
 			EBookList(customPreferredGridView: false, filter: .all, filteredOwner: nil)
-                .environmentObject(UserViewModel())
+				.environment(GlobalViewModel.preview)
         }
     }
 }

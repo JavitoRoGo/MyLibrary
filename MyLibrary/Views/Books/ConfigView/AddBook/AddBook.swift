@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddBook: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var showingAlert = false
     @State var showingAddWaitingAlert = false
@@ -79,6 +79,6 @@ struct AddBook: View {
 struct AddBook_Previews: PreviewProvider {
     static var previews: some View {
         AddBook()
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

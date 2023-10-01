@@ -19,12 +19,12 @@ extension AddBook {
 	}
 	
 	var newID: Int {
-		model.user.books.count + 1
+		model.userLogic.user.books.count + 1
 	}
 	
     func searchForExistingData(tag: Int, _ text: String) {
-        searchResults = model.compareExistingData(tag: tag, text: text).num
-        searchArray = model.compareExistingData(tag: tag, text: text).datas
+		searchResults = model.userLogic.compareExistingData(tag: tag, text: text).num
+		searchArray = model.userLogic.compareExistingData(tag: tag, text: text).datas
         
         switch searchResults {
         case 6...:
@@ -71,7 +71,7 @@ extension AddBook {
 // View modifiers
 extension AddBook {
 	struct AddBookModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@Environment(GlobalViewModel.self) var model
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var showingAlert: Bool
@@ -141,7 +141,7 @@ extension AddBook {
 					Button("No", role: .cancel) { }
 					Button("Sí") {
 						newBook = createNewBook()
-						model.user.books.append(newBook!)
+						model.userLogic.user.books.append(newBook!)
 						
 						showingAddWaitingAlert = true
 					}
@@ -153,8 +153,8 @@ extension AddBook {
 						dismiss()
 					}
 					Button("Sí") {
-						if let newBook, let index = model.user.books.firstIndex(of: newBook) {
-							model.user.books[index].status = .waiting
+						if let newBook, let index = model.userLogic.user.books.firstIndex(of: newBook) {
+							model.userLogic.user.books[index].status = .waiting
 						}
 						showingAddWaiting = true
 					}

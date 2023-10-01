@@ -9,7 +9,7 @@ import SwiftUI
 
 extension BookEditing {
     struct BookEditingModifier: ViewModifier {
-        @EnvironmentObject var model: UserViewModel
+        @Environment(GlobalViewModel.self) var model
         @Environment(\.dismiss) var dismiss
 		
         @Binding var book: Books
@@ -91,8 +91,8 @@ extension BookEditing {
                     }
                 }
                 .onAppear {
-					isOnWaitingList = model.user.nowReading.contains(where: { $0.bookTitle == book.bookTitle }) ||
-					model.user.nowWaiting.contains(where: { $0.bookTitle == book.bookTitle })
+					isOnWaitingList = model.userLogic.user.nowReading.contains(where: { $0.bookTitle == book.bookTitle }) ||
+					model.userLogic.user.nowWaiting.contains(where: { $0.bookTitle == book.bookTitle })
 					if let cover = book.cover {
 						inputImage = getCoverImage(from: cover)
 					}

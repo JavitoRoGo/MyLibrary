@@ -19,15 +19,15 @@ extension UserConfigView {
 				DispatchQueue.main.async {
 					if success {
 						// Matching with biometrics
-						model.isBiometricsAllowed = true
+						preferences.isBiometricsAllowed = true
 					} else {
-						model.isBiometricsAllowed = false
+						preferences.isBiometricsAllowed = false
 					}
 				}
 			}
 		} else {
 			// no autorización para biometrics
-			model.isBiometricsAllowed = false
+			preferences.isBiometricsAllowed = false
 		}
 	}
 	
@@ -51,14 +51,14 @@ extension UserConfigView {
 						// Matching with biometrics
 						if tag == 0 {
 							// Borrar solo datos
-							model.user = User(id: model.user.id, username: model.user.username, nickname: model.user.nickname, books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
+							model.userLogic.user = User(id: model.userLogic.user.id, username: model.userLogic.user.username, nickname: model.userLogic.user.nickname, books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
 							showingDeleteButtons = false
 							showingSuccessfulDeleting = true
 						} else if tag == 1 {
 							// Borrar usuario y salir
-							model.user = User.emptyUser
+							model.userLogic.user = User.emptyUser
 							keychain.delete("storedPassword")
-							model.isBiometricsAllowed = false
+							preferences.isBiometricsAllowed = false
 							showingDeleteButtons = false
 							isUnlocked = false
 						}
@@ -73,7 +73,7 @@ extension UserConfigView {
 	}
 	
 	func shareAction() {
-		let userUrl = getURLToShare(from: userJson)
+		let userUrl = getURLToShare(from: "USERDATA.json")
 		let urls = [userUrl]
 		
 		let ac = UIActivityViewController(activityItems: urls, applicationActivities: nil)
@@ -84,7 +84,8 @@ extension UserConfigView {
 	}
 	
 	struct UserConfigViewModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@Environment(GlobalViewModel.self) var model
+		@EnvironmentObject var preferences: UserPreferences
 		@Binding var showingEditUser: Bool
 		
 		@Binding var isExporting: Bool
@@ -109,7 +110,7 @@ extension UserConfigView {
 				.sheet(isPresented: $showingEditUser) {
 					EditUserPasswordView()
 				}
-				.fileExporter(isPresented: $isExporting, document: JsonExportingDocument(model.user), contentType: .json, defaultFilename: "userData.json") { result in
+				.fileExporter(isPresented: $isExporting, document: JsonExportingDocument(model.userLogic.user), contentType: .json, defaultFilename: "userData.json") { result in
 					if case .failure(let error) = result {
 						print("Error al exportar: \(error.localizedDescription)")
 					} else {
@@ -132,9 +133,9 @@ extension UserConfigView {
 						let data = try Data(contentsOf: url)
 						let importedJson = try JSONDecoder().decode(User.self, from: data)
 						if importOperation == 0 {
-							model.user = importedJson
+							model.userLogic.user = importedJson
 						} else {
-							model.user.merge(importedJson)
+							model.userLogic.user.merge(importedJson)
 						}
 					} catch {
 						print("Algo fue mal con la importación: \(error.localizedDescription)")
@@ -143,7 +144,7 @@ extension UserConfigView {
 				.alert("⚠️\n¡Atención!", isPresented: $showingDeletingDatas) {
 					Button("Cancelar", role: .cancel) { }
 					Button("Borrar", role: .destructive) {
-						if model.isBiometricsAllowed {
+						if preferences.isBiometricsAllowed {
 							authenticateToDelete(0)
 						} else {
 							withAnimation {
@@ -157,7 +158,7 @@ extension UserConfigView {
 				.alert("⚠️\n¡Atención!", isPresented: $showingDeletingUser) {
 					Button("Cancelar", role: .cancel) { }
 					Button("Borrar y salir", role: .destructive) {
-						if model.isBiometricsAllowed {
+						if preferences.isBiometricsAllowed {
 							authenticateToDelete(1)
 						} else {
 							withAnimation {

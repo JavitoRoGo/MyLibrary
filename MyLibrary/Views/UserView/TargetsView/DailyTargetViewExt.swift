@@ -26,7 +26,8 @@ extension DailyTargetView {
 	}
 	
 	struct DailyTargetModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@Environment(GlobalViewModel.self) var model
+		@EnvironmentObject var preferences: UserPreferences
 		@Environment(\.dismiss) var dismiss
 		
 		@Binding var pages: Int
@@ -42,9 +43,9 @@ extension DailyTargetView {
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Guardar") {
 							if dailyTarget == .pages {
-								model.dailyPagesTarget = pages
+								preferences.dailyPagesTarget = pages
 							} else {
-								model.dailyTimeTarget = duration
+								preferences.dailyTimeTarget = duration
 							}
 							dismiss()
 						}
@@ -52,7 +53,7 @@ extension DailyTargetView {
 					}
 				}
 				.task {
-					pages = model.dailyPagesTarget
+					pages = preferences.dailyPagesTarget
 				}
 		}
 	}

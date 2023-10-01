@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditOwners: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var oldOwner = ""
     @State var newOwner = ""
@@ -26,13 +26,13 @@ struct EditOwners: View {
                 List {
                     ownersSection
                     Section {
-                        ForEach(model.getSuggestedOwnersFromData(), id:\.self) { owner in
+						ForEach(model.userLogic.getSuggestedOwnersFromData(), id:\.self) { owner in
                             Button {
-								model.user.myOwners.append(owner)
+								model.userLogic.user.myOwners.append(owner)
                             } label: {
                                 Text(owner)
                             }
-							.disabled(model.user.myOwners.contains(owner))
+							.disabled(model.userLogic.user.myOwners.contains(owner))
                         }
                     } header: {
                         Text("Sugerencias")
@@ -57,7 +57,7 @@ struct EditOwners: View {
                         }
                         .buttonStyle(.bordered)
                         Button("Añadir") {
-							model.user.myOwners.append(newOwner)
+							model.userLogic.user.myOwners.append(newOwner)
                             newOwner = ""
                             showingAddOwner = false
                         }
@@ -75,6 +75,6 @@ struct EditOwners: View {
 struct EditOwners_Previews: PreviewProvider {
     static var previews: some View {
         EditOwners()
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

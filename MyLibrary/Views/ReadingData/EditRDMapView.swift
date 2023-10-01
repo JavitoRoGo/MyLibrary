@@ -9,7 +9,7 @@ import MapKit
 import SwiftUI
 
 struct EditRDMapView: View {
-    @EnvironmentObject var manager: LocationManager
+	@EnvironmentObject var manager: LocationManager
     @Environment(\.dismiss) var dismiss
     
 //    @State var region = MKCoordinateRegion()
@@ -100,7 +100,7 @@ struct EditRDMapView_Previews: PreviewProvider {
 
 
 struct MapViewHelper: UIViewRepresentable {
-    @EnvironmentObject var manager: LocationManager
+	@EnvironmentObject var manager: LocationManager
     
     func makeUIView(context: Context) -> MKMapView {
         manager.mapView

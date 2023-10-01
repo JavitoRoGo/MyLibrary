@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RDDetail: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var rdata: ReadingData
     @State var showingLocation = false
@@ -56,7 +56,7 @@ struct RDDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             RDDetail(rdata: ReadingData.dataTest)
-                .environmentObject(UserViewModel())
+				.environment(GlobalViewModel.preview)
         }
     }
 }

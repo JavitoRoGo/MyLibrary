@@ -9,10 +9,10 @@ import SwiftUI
 
 extension OtherStats {
 	var priceSection: some View {
-		Section("Precio: \(model.globalPrice(model.user.books).total, format: .currency(code: "eur"))") {
-			let value = model.priceForOtherStats(tag: statsSelection, text: pickerSelection).total
-			let mean = model.priceForOtherStats(tag: statsSelection, text: pickerSelection).mean
-			let globalMean = model.globalPrice(model.user.books).mean
+		Section("Precio: \(model.userLogic.globalPrice(model.userLogic.user.books).total, format: .currency(code: "eur"))") {
+			let value = model.userLogic.priceForOtherStats(tag: statsSelection, text: pickerSelection).total
+			let mean = model.userLogic.priceForOtherStats(tag: statsSelection, text: pickerSelection).mean
+			let globalMean = model.userLogic.globalPrice(model.userLogic.user.books).mean
 			let compare = compareWithMean(value: mean, mean: globalMean)
 			HStack {
 				VStack {

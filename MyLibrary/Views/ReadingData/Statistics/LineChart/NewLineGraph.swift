@@ -9,7 +9,7 @@ import Charts
 import SwiftUI
 
 struct NewLineGraph: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @State private var datasForLineChart: [DataForLineChart] = []
     
     var body: some View {
@@ -23,10 +23,10 @@ struct NewLineGraph: View {
             }
             .foregroundStyle(by: .value("Tipo", serie.name))
             
-            RuleMark(y: .value("media", model.meanPagPerDay))
+			RuleMark(y: .value("media", model.userLogic.meanPagPerDay))
                 .foregroundStyle(.black).lineStyle(.init(lineWidth: 3))
                 .annotation(alignment: .leading) {
-                    Text("media: \(model.meanPagPerDay, format: .number.precision(.fractionLength(0)))")
+					Text("media: \(model.userLogic.meanPagPerDay, format: .number.precision(.fractionLength(0)))")
                         .font(.caption)
                     
                 }
@@ -35,8 +35,8 @@ struct NewLineGraph: View {
         .chartForegroundStyleScale(["pág/d": .blue.opacity(0.4), "Evolución": .red.opacity(0.4)])
         .task {
             datasForLineChart = [
-                .init(name: "pág/d", value: model.datasForPagPerDay().0, animate: .init(repeating: false, count: model.datasForPagPerDay().0.count)),
-                .init(name: "Evolución", value: model.datasForPagPerDay().1, animate: .init(repeating: false, count: model.datasForPagPerDay().1.count))
+				.init(name: "pág/d", value: model.userLogic.datasForPagPerDay().0, animate: .init(repeating: false, count: model.userLogic.datasForPagPerDay().0.count)),
+				.init(name: "Evolución", value: model.userLogic.datasForPagPerDay().1, animate: .init(repeating: false, count: model.userLogic.datasForPagPerDay().1.count))
             ]
             animateGraph()
         }

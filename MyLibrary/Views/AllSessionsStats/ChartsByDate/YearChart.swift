@@ -9,16 +9,16 @@ import Charts
 import SwiftUI
 
 struct YearChart: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @Environment(\.colorScheme) var colorScheme
     @Binding var isLineGraph: Bool
     @State private var animateDatas: [DataStructForAnimateGraph<Int,String>] = []
     
     var pages: [Int] {
-        model.calcTotalPagesPerMonth().pages
+		model.userLogic.calcTotalPagesPerMonth().pages
     }
     var months: [String] {
-        model.calcTotalPagesPerMonth().months
+		model.userLogic.calcTotalPagesPerMonth().months
     }
     var max: Int {
         pages.max() ?? 0
@@ -126,6 +126,6 @@ struct YearChart: View {
 struct YearChart_Previews: PreviewProvider {
     static var previews: some View {
         YearChart(isLineGraph: .constant(false))
-			.environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

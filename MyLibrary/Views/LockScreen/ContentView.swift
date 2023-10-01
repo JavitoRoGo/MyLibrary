@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @Binding var isUnlocked: Bool
     
     var body: some View {
@@ -19,7 +19,7 @@ struct ContentView: View {
                 }
             
             DynamicStatsView()
-                .badge(Double(model.user.sessions.count).stringFormat)
+				.badge(Double(model.userLogic.user.sessions.count).stringFormat)
                 .tabItem {
                     Label("Sesiones", systemImage: "calendar")
                 }
@@ -45,6 +45,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(isUnlocked: .constant(true))
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

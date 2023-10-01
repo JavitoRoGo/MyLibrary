@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddEBook: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var showingAlert = false
     @State var showingAddWaitingAlert = false
@@ -45,7 +45,7 @@ struct AddEBook: View {
                 
                 Section {
                     Picker("Propietario:", selection: $newOwner) {
-						ForEach(model.user.myOwners, id: \.self) {
+						ForEach(model.userLogic.user.myOwners, id: \.self) {
                             Text($0)
                         }
                     }
@@ -70,6 +70,6 @@ struct AddEBook: View {
 struct AddEBook_Previews: PreviewProvider {
     static var previews: some View {
         AddEBook()
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

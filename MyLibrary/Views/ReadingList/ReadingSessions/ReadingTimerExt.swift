@@ -10,7 +10,7 @@ import SwiftUI
 
 extension ReadingTimer {
 	struct ReadingTimerModifier: ViewModifier {
-		@EnvironmentObject var rsmodel: UserViewModel
+		@Environment(GlobalViewModel.self) var model
 		@Environment(\.scenePhase) var scenePhase
 		
 		@Binding var book: NowReading
@@ -48,7 +48,7 @@ extension ReadingTimer {
 				}
 				.onAppear {
 					timerIsRunning = true
-					rsmodel.tempQuotesArray.removeAll()
+					model.userLogic.tempQuotesArray.removeAll()
 				}
 				.onReceive(timer) { _ in
 					if timerIsRunning {
@@ -65,7 +65,7 @@ extension ReadingTimer {
 						}
 					}
 				}
-				.onChange(of: scenePhase) { phase in
+				.onChange(of: scenePhase) { _, phase in
 					if timerIsRunning {
 						if phase == .background {
 							totalSeconds = hours * 3600 + minutes * 60 + seconds

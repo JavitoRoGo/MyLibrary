@@ -116,10 +116,12 @@ func compareWithMean(value: Double, mean: Double) -> (color: Color, image: Strin
 
 // MARK: - Función para obtener la ruta a FileManager
 
-func getDocumentDirectory() -> URL? {
-    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    return path.first
-}
+//func getDocumentDirectory() -> URL? {
+//    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//    return path.first
+//}
+
+// Se sustituye la función anterior por el método propio de URL.documentsDirectory.appending(path:)
 
 
 // MARK: - Funciones para la imagen de portada
@@ -142,8 +144,8 @@ func imageCoverName(from title: String) -> String {
 
 func saveJpg(_ image: UIImage, title: String) {
     let name = imageCoverName(from: title)
-    if let jpgData = image.jpegData(compressionQuality: 0.5),
-       let path = getDocumentDirectory()?.appendingPathComponent("\(name).jpg") {
+    if let jpgData = image.jpegData(compressionQuality: 0.5) {
+		let path = URL.documentsDirectory.appending(path: "\(name).jpg")
         try? jpgData.write(to: path)
         print("Imagen guardada en Archivos")
         print(path.absoluteString)
@@ -157,50 +159,47 @@ func getCoverImage(from cover: String) -> UIImage {
     var coverToShow = UIImage(systemName: "questionmark")!
     if let existingCover = UIImage(named: cover) {
         coverToShow = existingCover
-    } else {
-        if let file = getDocumentDirectory()?.appendingPathComponent("\(cover).jpg") {
-            if FileManager.default.fileExists(atPath: file.path) {
-                do {
-                    let coverData = try Data(contentsOf: file)
-                    if let savedCover = UIImage(data: coverData) {
-                        coverToShow = savedCover
-                    }
-                } catch {
-                    print("Error al convertir la imagen: \(error)")
-                }
-            }
-        }
-    }
+	} else {
+		let file = URL.documentsDirectory.appending(path: "\(cover).jpg")
+		if FileManager.default.fileExists(atPath: file.path) {
+			do {
+				let coverData = try Data(contentsOf: file)
+				if let savedCover = UIImage(data: coverData) {
+					coverToShow = savedCover
+				}
+			} catch {
+				print("Error al convertir la imagen: \(error)")
+			}
+		}
+	}
     return coverToShow
 }
 // Función para obtener la imagen de usuario. Función aparte de la anterior para que devuelva la imagen guardada o nil
 func getUserImage(from user: String) -> Image? {
     var userToShow: Image? = nil
-    if let file = getDocumentDirectory()?.appendingPathComponent("\(user).jpg") {
-        if FileManager.default.fileExists(atPath: file.path) {
-            do {
-                let imageData = try Data(contentsOf: file)
-                if let savedImage = UIImage(data: imageData) {
-                    userToShow = Image(uiImage: savedImage)
-                }
-            } catch {
-                print("Error al convertir la imagen: \(error)")
-            }
-        }
-    }
+	let file = URL.documentsDirectory.appending(path: "\(user).jpg")
+	if FileManager.default.fileExists(atPath: file.path) {
+		do {
+			let imageData = try Data(contentsOf: file)
+			if let savedImage = UIImage(data: imageData) {
+				userToShow = Image(uiImage: savedImage)
+			}
+		} catch {
+			print("Error al convertir la imagen: \(error)")
+		}
+	}
     return userToShow
 }
 
 // Función para borrar una imagen de Archivos en caso de borrar el registro
 // De momento solo usada al borrar un ebook: no se pueden borrar books, y al borrar de ReadingList se borraría la imagen del book o ebook correspondiente
 func removeJpgFromFileManager(_ file: String) {
-	if let fileUrl = getDocumentDirectory()?.appendingPathComponent("\(file).jpg") {
-		do {
-			try FileManager.default.removeItem(at: fileUrl)
-			print("Archivo \(file) borrado con éxito")
-		} catch {
-			print("Error al borrar el archivo \(file)")
-		}
+	let fileUrl = URL.documentsDirectory.appending(path: "\(file).jpg")
+	do {
+		try FileManager.default.removeItem(at: fileUrl)
+		print("Archivo \(file) borrado con éxito")
+	} catch {
+		print("Error al borrar el archivo \(file)")
 	}
 }
 
@@ -281,11 +280,10 @@ func getCoverImage(from cover: String) -> NSImage {
 // MARK: - Función para obtener la ruta de los archivos json y exportar
 
 func getURLToShare(from jsonFile: String) -> URL {
-    guard var url = Bundle.main.url(forResource: jsonFile, withExtension: nil),
-          let documents = getDocumentDirectory() else {
+    guard var url = Bundle.main.url(forResource: jsonFile, withExtension: nil) else {
         return URL(string: "")!
     }
-    let file = documents.appendingPathComponent(jsonFile)
+	let file = URL.documentsDirectory.appending(path: jsonFile)
     if FileManager.default.fileExists(atPath: file.path) {
         url = file
     }

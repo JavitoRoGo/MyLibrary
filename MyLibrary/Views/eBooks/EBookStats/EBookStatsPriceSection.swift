@@ -9,10 +9,10 @@ import SwiftUI
 
 extension EbookStatsView {
 	var priceSection: some View {
-		Section("Precio: \(model.globalPrice(model.user.ebooks).total, format: .currency(code: "eur"))") {
-			let value = model.priceForStats(tag: statsSelection, text: pickerSelection).total
-			let mean = model.priceForStats(tag: statsSelection, text: pickerSelection).mean
-			let globalMean = model.globalPrice(model.user.ebooks).mean
+		Section("Precio: \(model.userLogic.globalPrice(model.userLogic.user.ebooks).total, format: .currency(code: "eur"))") {
+			let value = model.userLogic.priceForStats(tag: statsSelection, text: pickerSelection).total
+			let mean = model.userLogic.priceForStats(tag: statsSelection, text: pickerSelection).mean
+			let globalMean = model.userLogic.globalPrice(model.userLogic.user.ebooks).mean
 			let compare = compareWithMean(value: mean, mean: globalMean)
 			HStack {
 				VStack {

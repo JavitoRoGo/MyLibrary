@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatsList: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     let tag: Int
     let colors: [Color]
     var topRange: Int {
@@ -17,11 +17,11 @@ struct StatsList: View {
         } else if tag == 4 {
             return 5
         } else {
-			return model.user.bookFinishingYears.count
+			return model.userLogic.user.bookFinishingYears.count
         }
     }
     var datas: ([String], [Int]) {
-        model.datas(tag: tag)
+		model.userLogic.datas(tag: tag)
     }
     
     var body: some View {
@@ -73,6 +73,6 @@ struct StatsList_Previews: PreviewProvider {
     
     static var previews: some View {
         StatsList(tag: 0, colors: colors)
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

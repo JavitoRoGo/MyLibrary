@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct MainBookView: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @State var showingSold = false
     @State var showingDonated = false
 	
 	var areStatsDisabled: Bool {
-		model.user.books.isEmpty
+		model.userLogic.user.books.isEmpty
 	}
         
     var body: some View {
@@ -22,7 +22,7 @@ struct MainBookView: View {
             ScrollView {
                 VStack(spacing: 15) {
                     VStack(spacing: 15) {
-                        EachMainViewButton(iconImage: "books.vertical", iconColor: .pink, number: model.numberOfBooksAtPlace("all"), title: "Todos", destination: PlaceList())
+						EachMainViewButton(iconImage: "books.vertical", iconColor: .pink, number: model.userLogic.numberOfBooksAtPlace("all"), title: "Todos", destination: PlaceList())
                         ScrollByPlace()
                         ScrollByStatus()
                         ScrollByOwner(format: .book)
@@ -46,7 +46,7 @@ struct MainBookView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("Mostrar libros donados (\(model.numberOfBooksAtPlace(donatedText)))")
+							Text("Mostrar libros donados (\(model.userLogic.numberOfBooksAtPlace(donatedText)))")
                                 .padding(.vertical)
                             Spacer()
                         }
@@ -59,7 +59,7 @@ struct MainBookView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("Mostrar libros vendidos (\(model.numberOfBooksAtPlace(soldText)))")
+							Text("Mostrar libros vendidos (\(model.userLogic.numberOfBooksAtPlace(soldText)))")
                                 .padding(.vertical)
                             Spacer()
                         }
@@ -77,6 +77,6 @@ struct MainBookView: View {
 struct MainBookView_Previews: PreviewProvider {
     static var previews: some View {
         MainBookView()
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

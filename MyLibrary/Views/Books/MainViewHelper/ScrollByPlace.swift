@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ScrollByPlace: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     @State private var showingAddPlace = false
     
     var places: [String] {
-		var tempPlaces = model.user.myPlaces
+		var tempPlaces = model.userLogic.user.myPlaces
         tempPlaces.removeAll(where: { $0 == soldText })
         tempPlaces.removeAll(where: { $0 == donatedText })
         return tempPlaces
@@ -23,11 +24,11 @@ struct ScrollByPlace: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 5) {
                     ForEach(places, id: \.self) { place in
-                        NavigationLink(destination: BookList(customPreferredGridView: model.preferredGridView, place: place)) {
+						NavigationLink(destination: BookList(customPreferredGridView: preferences.preferredGridView, place: place)) {
                             VStack {
                                 Text(place)
                                     .font(.title3.bold())
-                                Text("\(model.numberOfBooksAtPlace(place)) libros")
+								Text("\(model.userLogic.numberOfBooksAtPlace(place)) libros")
                                     .font(.caption)
                             }
                         }
@@ -61,6 +62,7 @@ struct ScrollByPlace: View {
 struct ScrollByPlace_Previews: PreviewProvider {
     static var previews: some View {
         ScrollByPlace()
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
+			.environmentObject(UserPreferences())
     }
 }

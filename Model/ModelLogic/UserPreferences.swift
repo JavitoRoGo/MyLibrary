@@ -1,38 +1,14 @@
 //
-//  UserViewModel.swift
+//  UserPreferences.swift
 //  MyLibrary
 //
-//  Created by Javier Rodríguez Gómez on 31/12/22.
+//  Created by Javier Rodríguez Gómez on 24/9/23.
 //
 
 import Combine
 import SwiftUI
 
-final class UserViewModel: ObservableObject {
-	// Propiedades Published
-	@Published var user: User {
-		didSet {
-			Task {
-				await saveToJson(userJson, user)
-			}
-			// Actualizar datos para el widget
-			Task {
-				await fetchDataToWidget()
-			}
-			// Actualizar datos para el Watch
-			Task {
-				// temporalmente deshabilitado
-//				await fetchDatatoWatch()
-			}
-		}
-	}
-	@Published var password = ""
-	@Published var validations: [Validation] = []
-	@Published var isValid: Bool = false
-	
-	var tempQuotesArray: [Quote] = []
-	
-	var storedPassword: String { keychain.get("storedPassword") ?? "" }
+final class UserPreferences: ObservableObject {
 	@AppStorage("isBiometricsAllowed") var isBiometricsAllowed = false
 	
 	@AppStorage("preferredGridView") var preferredGridView = false
@@ -43,15 +19,32 @@ final class UserViewModel: ObservableObject {
 		set { preferredAppearance = newValue.rawValue }
 	}
 	
+	// OBJETIVOS DE LECTURA:
+	
+	// Diario
+	@AppStorage("dailyPagesTarget") var dailyPagesTarget: Int = 40
+	@AppStorage("dailyTimeTarget") var dailyTimeTarget: Double = 1.0
+	// Semanal
+	@AppStorage("weeklyPagesTarget") var weeklyPagesTarget: Int = 250
+	@AppStorage("weeklyTimeTarget") var weeklyTimeTarget: Double = 7.0
+	// Mensual
+	@AppStorage("monthlyPagesTarget") var monthlyPagesTarget: Int = 1000
+	@AppStorage("monthlyTimeTarget") var monthlyBooksTarget: Int = 4
+	// Anual
+	@AppStorage("yearlyPagesTarget") var yearlyPagesTarget: Int = 8000
+	@AppStorage("yearlyTimeTarget") var yearlyBooksTarget: Int = 40
+	
+	// VALIDACIÓN DE CONTRASEÑA:
+	
+	@Published var password = ""
+	@Published var validations: [Validation] = []
+	@Published var isValid: Bool = false
+	
+	var storedPassword: String { keychain.get("storedPassword") ?? "" }
+	
 	private var cancellableSet: Set<AnyCancellable> = []
 	
 	init() {
-		guard let decoded: User = Bundle.main.searchAndDecode(userJson) else { fatalError() }
-		user = decoded
-		if !user.myPlaces.contains(soldText) && !user.myPlaces.contains(donatedText) {
-			user.myPlaces += [donatedText, soldText]
-		}
-		
 		// Validations
 		passwordPublisher
 			.receive(on: RunLoop.main)
@@ -83,19 +76,4 @@ final class UserViewModel: ObservableObject {
 				return validations
 			}.eraseToAnyPublisher()
 	}
-	
-	// OBJETIVOS DE LECTURA:
-	
-	// Diario
-	@AppStorage("dailyPagesTarget") var dailyPagesTarget: Int = 40
-	@AppStorage("dailyTimeTarget") var dailyTimeTarget: Double = 1.0
-	// Semanal
-	@AppStorage("weeklyPagesTarget") var weeklyPagesTarget: Int = 250
-	@AppStorage("weeklyTimeTarget") var weeklyTimeTarget: Double = 7.0
-	// Mensual
-	@AppStorage("monthlyPagesTarget") var monthlyPagesTarget: Int = 1000
-	@AppStorage("monthlyTimeTarget") var monthlyBooksTarget: Int = 4
-	// Anual
-	@AppStorage("yearlyPagesTarget") var yearlyPagesTarget: Int = 8000
-	@AppStorage("yearlyTimeTarget") var yearlyBooksTarget: Int = 40
 }

@@ -51,7 +51,6 @@ struct RDRow: View {
 struct RDRow_Previews: PreviewProvider {
     static var previews: some View {
         RDRow(rdata: ReadingData.dataTest)
-            .environmentObject(UserViewModel())
             .previewLayout(.fixed(width: 400, height: 150))
     }
 }

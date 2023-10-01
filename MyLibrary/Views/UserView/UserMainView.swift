@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserMainView: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @Binding var isUnlocked: Bool
     
     @State var showingClosingAlert = false
@@ -106,6 +106,6 @@ struct UserMainView: View {
 struct UserMainView_Previews: PreviewProvider {
     static var previews: some View {
         UserMainView(isUnlocked: .constant(true))
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

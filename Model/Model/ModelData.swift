@@ -191,7 +191,7 @@ extension NowReading {
         var timeLeft = 0.0
         if minPerPag.isEmpty || minPerPag == "-" {
             #if os(iOS)
-            timeLeft = UserViewModel().meanMinPerPag * Double(remainingPages) / 60.0
+			timeLeft = GlobalViewModel().userLogic.meanMinPerPag * Double(remainingPages) / 60.0
             #elseif os(watchOS)
             timeLeft = Double(remainingPages * 2)
             #endif
@@ -203,7 +203,7 @@ extension NowReading {
     var finishingDay: Date {
         guard let lastReadingDay = sessions.first?.date else {
             #if os(iOS)
-            let daysLeft = Double(remainingPages) / UserViewModel().meanPagPerDay
+			let daysLeft = Double(remainingPages) / GlobalViewModel().userLogic.meanPagPerDay
             #elseif os(watchOS)
             let daysLeft = Double(remainingPages) / Double(40)
             #endif
@@ -257,3 +257,7 @@ protocol BooksProtocol {
 	var price: Double { get }
 	var status: ReadingStatus { get set }
 }
+
+
+let soldText = "Vendido"
+let donatedText = "Donado"

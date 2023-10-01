@@ -109,6 +109,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(book: .constant(NowReading.example[0]))
+        TimerView(book: .constant(NowReading.dataTest))
     }
 }

@@ -46,7 +46,7 @@ extension EbookStatsView {
 								.padding()
 							}
 							Picker("Valor", selection: $pickerSelection) {
-								ForEach(model.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: statsSelection), id: \.self) {
+								ForEach(model.userLogic.arrayOfEbookLabelsByCategoryForPickerAndGraph(tag: statsSelection), id: \.self) {
 									Text($0)
 								}
 							}
@@ -62,7 +62,7 @@ extension EbookStatsView {
 					Text("eBooks:")
 						.font(.title3)
 					Spacer()
-					Text(String(model.numOfEBooksForStats(tag: statsSelection, text: pickerSelection)))
+					Text(String(model.userLogic.numOfEBooksForStats(tag: statsSelection, text: pickerSelection)))
 						.font(.largeTitle)
 						.frame(width: 75, height: 55)
 						.background(.orange)

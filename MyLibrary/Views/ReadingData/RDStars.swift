@@ -40,7 +40,6 @@ struct RDStars: View {
 struct RDStars_Previews: PreviewProvider {
     static var previews: some View {
         RDStars(rating: .constant(3))
-            .environmentObject(UserViewModel())
             .previewLayout(.sizeThatFits)
     }
 }

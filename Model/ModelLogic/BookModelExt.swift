@@ -9,7 +9,7 @@ import SwiftUI
 
 // Extension for BooksModel: handling with paper formatt books
 
-extension UserViewModel {
+extension UserLogic {
     
     var activeBooks: [Books] {
 		user.books.filter{ $0.isActive }

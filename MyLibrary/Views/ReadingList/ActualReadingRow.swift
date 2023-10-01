@@ -42,7 +42,7 @@ struct ActualReadingRow: View {
 
 struct ActualReadingRow_Previews: PreviewProvider {
     static var previews: some View {
-        ActualReadingRow(book: NowReading.example[0])
+        ActualReadingRow(book: NowReading.dataTest)
             .previewLayout(.sizeThatFits)
     }
 }

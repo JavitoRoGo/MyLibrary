@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct AllCommentsView: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @State private var showingAlert = false
     
     var comments: [String: String] {
-        model.allReadingDataComments.merging(model.allBookComments) { (first,_) in first }
+		model.userLogic.allReadingDataComments.merging(model.userLogic.allBookComments) { (first,_) in first }
     }
     
     var body: some View {
@@ -59,6 +59,6 @@ struct AllCommentsView: View {
 struct AllCommentsView_Previews: PreviewProvider {
     static var previews: some View {
         AllCommentsView()
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct BooksGrid: View {
-	@EnvironmentObject var model: UserViewModel
-	
 	let books: [Books]
 	let columns = [GridItem(.adaptive(minimum: 100))]
 	
@@ -30,6 +28,5 @@ struct BooksGrid: View {
 struct BooksGrid_Previews: PreviewProvider {
     static var previews: some View {
 		BooksGrid(books: [Books.dataTest])
-			.environmentObject(UserViewModel())
     }
 }

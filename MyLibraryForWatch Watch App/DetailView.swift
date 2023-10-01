@@ -52,6 +52,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(book: NowReading.example[0])
+		DetailView(book: NowReading.dataTest)
     }
 }

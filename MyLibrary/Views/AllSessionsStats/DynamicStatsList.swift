@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct DynamicStatsList: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     let graphSelected: Int
     
 	var numberOfSessions: String {
 		if graphSelected == 3 {
-			return "\(model.user.sessions.count) sesiones"
+			return "\(model.userLogic.user.sessions.count) sesiones"
 		} else {
-			return "\(model.getSessions(tag: graphSelected).count) sesiones"
+			return "\(model.userLogic.getSessions(tag: graphSelected).count) sesiones"
 		}
 	}
     
     var fromDate: String {
 		var date = Date()
-		let firstSessionDate = model.user.sessions.first?.date ?? .now
+		let firstSessionDate = model.userLogic.user.sessions.first?.date ?? .now
 		
 		if graphSelected == 0 {
 			date = firstSessionDate - 6.days
@@ -30,48 +30,48 @@ struct DynamicStatsList: View {
 		} else if graphSelected == 2 {
 			date = firstSessionDate - 1.years
 		} else if graphSelected == 3 {
-			date = model.user.sessions.last?.date ?? .now
+			date = model.userLogic.user.sessions.last?.date ?? .now
 		}
 		
         return date.formatted(date: .numeric, time: .omitted)
     }
     var toDate: String {
-		let date = model.user.sessions.first?.date ?? .now
+		let date = model.userLogic.user.sessions.first?.date ?? .now
         return date.formatted(date: .numeric, time: .omitted)
     }
     
     var body: some View {
         List {
             Section(numberOfSessions) {
-                NavigationLink(destination: RDSessions(rdsessions: Array(model.getSessions(tag: graphSelected)), rdata: nil)) {
+				NavigationLink(destination: RDSessions(rdsessions: Array(model.userLogic.getSessions(tag: graphSelected)), rdata: nil)) {
                     Text(fromDate + " - " + toDate)
                 }
                 HStack {
                     Text("Tiempo de lectura")
                     Spacer()
-                    Text(model.getReadingTime(tag: graphSelected))
+					Text(model.userLogic.getReadingTime(tag: graphSelected))
                 }
                 HStack {
                     Text("Páginas leídas")
                     Spacer()
-                    Text(model.graphData(tag: graphSelected).reduce(0, +), format: .number)
+					Text(model.userLogic.graphData(tag: graphSelected).reduce(0, +), format: .number)
                 }
             }
             Section {
                 HStack {
                     Text("min/pág")
                     Spacer()
-                    Text(model.getMinPerPag(tag: graphSelected))
+					Text(model.userLogic.getMinPerPag(tag: graphSelected))
                 }
                 HStack {
                     Text("min/día")
                     Spacer()
-                    Text(model.getMinPerDay(tag: graphSelected))
+					Text(model.userLogic.getMinPerDay(tag: graphSelected))
                 }
                 HStack {
                     Text("pág/día")
                     Spacer()
-                    Text(model.getPagPerDay(tag: graphSelected), format: .number.precision(.fractionLength(0)))
+					Text(model.userLogic.getPagPerDay(tag: graphSelected), format: .number.precision(.fractionLength(0)))
                 }
             }
         }
@@ -82,6 +82,6 @@ struct DynamicStatsList: View {
 struct DynamicStatsList_Previews: PreviewProvider {
     static var previews: some View {
         DynamicStatsList(graphSelected: 0)
-            .environmentObject(UserViewModel())
+			.environment(GlobalViewModel.preview)
     }
 }

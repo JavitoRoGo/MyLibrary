@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct RDSessions: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     let rdsessions: [ReadingSession]
     let rdata: ReadingData?
     
     var graphDatas: [Double] {
         if let rdata = rdata {
-            return model.datasForSessionsBarGraph(book: rdata)
+			return model.userLogic.datasForSessionsBarGraph(book: rdata)
         }
-        return model.datas(sessions: rdsessions)
+		return model.userLogic.datas(sessions: rdsessions)
     }
     var graphLabels: [String] {
         if let rdata = rdata {
-            return model.getLabelsForSessionsBarGraph(book: rdata)
+			return model.userLogic.getLabelsForSessionsBarGraph(book: rdata)
         }
-        return model.getXLabels(sessions: rdsessions)
+		return model.userLogic.getXLabels(sessions: rdsessions)
     }
     
     var body: some View {
@@ -48,7 +48,7 @@ struct RDSessions_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             RDSessions(rdsessions: ReadingData.dataTest.readingSessions, rdata: ReadingData.dataTest)
-                .environmentObject(UserViewModel())
+				.environment(GlobalViewModel.preview)
         }
     }
 }

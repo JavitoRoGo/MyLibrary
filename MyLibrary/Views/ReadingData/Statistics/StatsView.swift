@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct StatsView: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     @State var graphKey = "Libros leídos por año"
     @State var tag = 0
     
     var body: some View {
-        let colors = model.getColors()
+		let colors = model.userLogic.getColors()
         VStack {
             HStack {
                 Text(graphKey)
                 Spacer()
                 RoundedGraphMenu(graphKey: $graphKey, tag: $tag)
             }
-            RingCircleArc(datas: model.datas(tag: tag).1, colors: colors)
+			RingCircleArc(datas: model.userLogic.datas(tag: tag).1, colors: colors)
             StatsList(tag: tag, colors: colors)
             Spacer()
         }
@@ -34,7 +34,7 @@ struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             StatsView()
-                .environmentObject(UserViewModel())
+				.environment(GlobalViewModel.preview)
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EBookDetail: View {
-    @EnvironmentObject var model: UserViewModel
+    @Environment(GlobalViewModel.self) var model
     
     @Binding var ebook: EBooks
     
@@ -61,7 +61,7 @@ struct EBookDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             EBookDetail(ebook: .constant(EBooks.dataTest))
-                .environmentObject(UserViewModel())
+				.environment(GlobalViewModel.preview)
         }
     }
 }

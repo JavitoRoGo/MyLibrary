@@ -12,7 +12,7 @@ extension RDDetail {
 		Section {
 			HStack {
 				let value = rdata.minPerPag.minPerPagInMinutes
-				let mean = model.meanMinPerPag
+				let mean = model.userLogic.meanMinPerPag
 				let compare = compareWithMean(value: mean, mean: value)
 				
 				VStack {
@@ -36,7 +36,7 @@ extension RDDetail {
 			}
 			HStack {
 				let value = rdata.minPerDay.minPerDayInHours
-				let mean = model.meanMinPerDay
+				let mean = model.userLogic.meanMinPerDay
 				let compare = compareWithMean(value: value, mean: mean)
 				
 				VStack {
@@ -60,7 +60,7 @@ extension RDDetail {
 			}
 			HStack {
 				let value = rdata.pagPerDay
-				let mean = model.meanPagPerDay
+				let mean = model.userLogic.meanPagPerDay
 				let compare = compareWithMean(value: value, mean: mean)
 				
 				VStack {
@@ -84,7 +84,7 @@ extension RDDetail {
 			}
 			HStack {
 				let value = rdata.percentOver50
-				let mean = model.meanOver50
+				let mean = model.userLogic.meanOver50
 				let compare = compareWithMean(value: value, mean: mean)
 				
 				VStack {

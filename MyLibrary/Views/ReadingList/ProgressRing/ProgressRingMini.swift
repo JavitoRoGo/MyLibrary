@@ -29,6 +29,6 @@ struct ProgressRingMini: View {
 
 struct ProgressRingMini_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressRingMini(book: NowReading.example[0])
+        ProgressRingMini(book: NowReading.dataTest)
     }
 }

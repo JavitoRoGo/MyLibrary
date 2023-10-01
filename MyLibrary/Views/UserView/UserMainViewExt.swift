@@ -14,14 +14,13 @@ extension UserMainView {
     }
     
     func removeUserImage() {
-        let name = imageCoverName(from: model.user.nickname)
-        if let path = getDocumentDirectory()?.appendingPathComponent("\(name).jpg") {
-            try? FileManager.default.removeItem(at: path)
-        }
+		let name = imageCoverName(from: model.userLogic.user.nickname)
+		let path = URL.documentsDirectory.appending(path: "\(name).jpg")
+		try? FileManager.default.removeItem(at: path)
     }
     
     struct UserMainViewModifier: ViewModifier {
-		@EnvironmentObject var model: UserViewModel
+		@Environment(GlobalViewModel.self) var model
 		
         @Binding var showingClosingAlert: Bool
         @Binding var isUnlocked: Bool
@@ -36,15 +35,15 @@ extension UserMainView {
         
         func body(content: Content) -> some View {
             content
-				.navigationTitle("Hola, \(model.user.nickname).")
-				.onChange(of: inputImage) { newValue in
+				.navigationTitle("Hola, \(model.userLogic.user.nickname).")
+				.onChange(of: inputImage, initial: true) { _, newValue in
 					loadImage()
 					if let newValue {
-						saveJpg(newValue, title: model.user.nickname)
+						saveJpg(newValue, title: model.userLogic.user.nickname)
 					}
 				}
 				.onAppear {
-					let name = imageCoverName(from: model.user.nickname)
+					let name = imageCoverName(from: model.userLogic.user.nickname)
 					image = getUserImage(from: name)
 				}
                 .confirmationDialog("Elige una opción para la imagen:", isPresented: $showingSelectorPicker) {

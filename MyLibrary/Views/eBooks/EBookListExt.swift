@@ -10,9 +10,9 @@ import Foundation
 extension EBookList {
     var filteredEBooks: [EBooks] {
         if filter == .all {
-			return model.user.ebooks.reversed()
+			return model.userLogic.user.ebooks.reversed()
         } else {
-			return model.user.ebooks.filter { $0.status.rawValue == filter.rawValue }.reversed()
+			return model.userLogic.user.ebooks.filter { $0.status.rawValue == filter.rawValue }.reversed()
         }
     }
     var searchedEBooks: [EBooks] {
@@ -30,7 +30,7 @@ extension EBookList {
     }
     var navigationTitle: String {
         if let filteredOwner {
-            return "\(filteredOwner) - \(model.numberOfEbooksByOwner(filteredOwner))"
+			return "\(filteredOwner) - \(model.userLogic.numberOfEbooksByOwner(filteredOwner))"
         }
         return "\(filter.rawValue) - \(filteredEBooks.count)"
     }
