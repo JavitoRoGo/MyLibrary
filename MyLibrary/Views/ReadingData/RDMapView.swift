@@ -10,64 +10,84 @@ import SwiftUI
 
 struct RDMapView: View {
 	@EnvironmentObject var manager: LocationManager
-    @State private var region = MKCoordinateRegion()
+	@State private var cameraPosition: MapCameraPosition = .automatic
+	@State var mapPins: [MKMapItem] = []
+	@State var selectedItem: MKMapItem?
+	@State var lookAroundScene: MKLookAroundScene?
     
-    let pins: [RDLocation]
+	let books: [ReadingData]
+	
+	var booksWithLocation: [ReadingData] {
+		books.filter { $0.location != nil }
+	}
     
     var title: String {
-        if pins.isEmpty {
+        if mapPins.isEmpty {
             return "0 libros"
-        } else {
-            return "\(pins.count) libro\(pins.count > 1 ? "s" : "")"
+		} else if mapPins.count == 1 {
+			return books.first!.bookTitle
+		} else {
+            return "\(mapPins.count) libros"
         }
     }
     
     var body: some View {
-        VStack {
-            Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, annotationItems: pins) { location in
-                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)) {
-                    Image(systemName: "book.circle.fill")
-                        .font(.title2)
-                        .foregroundColor(.orange)
-                        .onTapGesture {
-                            // ¿alerta con el título al pinchar?
-                        }
-                }
-            }
-        }
+		Map(position: $cameraPosition, selection: $selectedItem) {
+			ForEach(mapPins, id: \.self) { item in
+				if books.count == 1 {
+					let book = books.first!
+					Annotation("", coordinate: CLLocationCoordinate2D(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude)) {
+						Image(book.cover)
+							.resizable()
+							.modifier(RDCoverModifier(width: 45, height: 60, cornerRadius: 10, lineWidth: 2))
+					}
+					.annotationTitles(.hidden)
+				} else {
+					Marker("Libro", systemImage: "book", coordinate: item.placemark.coordinate)
+						.tint(.orange)
+						.annotationTitles(.hidden)
+				}
+			}
+		}
         .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    withAnimation {
-                        region = manager.region
-                    }
-                } label: {
-                    Image(systemName: "location")
-                }
-            }
-        }
-        .onAppear {
-            manager.checkIfLocationServicesIsEnabled()
-            manager.startLocating()
-        }
-        .onDisappear { manager.stopLocating() }
-        .task {
-            if pins.isEmpty {
-                region = manager.region
-            } else {
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: pins[0].latitude, longitude: pins[0].longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-            }
-        }
+		.sheet(item: $selectedItem) { item in
+			VStack {
+				if booksWithLocation.count == 1 {
+					itemInfoDetail(item)
+				} else {
+					itemsInfoDetail(item)
+				}
+			}
+			.padding(.top, 25)
+			.presentationCornerRadius(25)
+		}
+		.task {
+			if booksWithLocation.count == 1 {
+				do {
+					try await createPin()
+				} catch {
+					print("Error al crear el objeto MKMapItem.")
+				}
+			} else if booksWithLocation.count > 1 {
+				createPins()
+			}
+		}
+		.onChange(of: selectedItem) {
+			fetchLookAroundPreview()
+		}
     }
 }
 
 struct RDMapView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            RDMapView(pins: [RDLocation.dataTest])
+			RDMapView(books: [ReadingData.dataTest])
                 .environmentObject(LocationManager())
         }
     }
 }
+
+
+// Necesario conformar MKMapItem a Identifiable para usarlo en sheet
+extension MKMapItem: Identifiable { }

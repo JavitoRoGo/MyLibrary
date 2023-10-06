@@ -50,7 +50,7 @@ extension RDDetail {
                 }
                 .sheet(isPresented: $showingLocation) {
                     NavigationStack {
-                        RDMapView(pins: [rdata.location!])
+                        RDMapView(books: [rdata])
                     }
                 }
                 .sheet(isPresented: $showingEditView) {

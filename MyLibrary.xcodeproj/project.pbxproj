@@ -257,6 +257,7 @@
 		44E32D6829591EFE00E06425 /* SmallSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E32D6729591EFE00E06425 /* SmallSizeView.swift */; };
 		44E32D6B2959279300E06425 /* MediumSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E32D6A2959279300E06425 /* MediumSizeView.swift */; };
 		44E8888F28843509009670D0 /* MainBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E8888E28843508009670D0 /* MainBookView.swift */; };
+		44EC16C02AD06E0D00BC479C /* RDMapViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC16BF2AD06E0D00BC479C /* RDMapViewExt.swift */; };
 		44EEC47628F19751000C1843 /* MonthChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC47528F19751000C1843 /* MonthChart.swift */; };
 		44EEC47828F19BFB000C1843 /* YearChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC47728F19BFB000C1843 /* YearChart.swift */; };
 		44EEC47A28F19FD8000C1843 /* TotalChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC47928F19FD7000C1843 /* TotalChart.swift */; };
@@ -526,6 +527,7 @@
 		44E32D6729591EFE00E06425 /* SmallSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSizeView.swift; sourceTree = "<group>"; };
 		44E32D6A2959279300E06425 /* MediumSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSizeView.swift; sourceTree = "<group>"; };
 		44E8888E28843508009670D0 /* MainBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBookView.swift; sourceTree = "<group>"; };
+		44EC16BF2AD06E0D00BC479C /* RDMapViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDMapViewExt.swift; sourceTree = "<group>"; };
 		44EEC47528F19751000C1843 /* MonthChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthChart.swift; sourceTree = "<group>"; };
 		44EEC47728F19BFB000C1843 /* YearChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearChart.swift; sourceTree = "<group>"; };
 		44EEC47928F19FD7000C1843 /* TotalChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalChart.swift; sourceTree = "<group>"; };
@@ -767,6 +769,7 @@
 				4436FD0129CB48C4003BBA2C /* EditRDMapView.swift */,
 				44C6A62B2802569D00EF035A /* Statistics */,
 				44741ECA29CA29B800138691 /* RDMapView.swift */,
+				44EC16BF2AD06E0D00BC479C /* RDMapViewExt.swift */,
 			);
 			path = ReadingData;
 			sourceTree = "<group>";
@@ -1573,6 +1576,7 @@
 				440882A229455AA800DCA9E7 /* ChangeBooksPlace.swift in Sources */,
 				446983AB2AB37CE1009898B9 /* EBookGridCell.swift in Sources */,
 				441A930327836986006C4FD3 /* RDStars.swift in Sources */,
+				44EC16C02AD06E0D00BC479C /* RDMapViewExt.swift in Sources */,
 				4472DFD527832B2B0014CC1C /* RDDetail.swift in Sources */,
 				4496063A2847C1C800D27055 /* ConfettiView.swift in Sources */,
 				442653A9277E21BA0047D75C /* BookRow.swift in Sources */,
