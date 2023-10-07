@@ -9,7 +9,6 @@ import MapKit
 import SwiftUI
 
 struct RDMapView: View {
-	@EnvironmentObject var manager: LocationManager
 	@State private var cameraPosition: MapCameraPosition = .automatic
 	@State var mapPins: [MKMapItem] = []
 	@State var selectedItem: MKMapItem?
@@ -83,7 +82,6 @@ struct RDMapView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
 			RDMapView(books: [ReadingData.dataTest])
-                .environmentObject(LocationManager())
         }
     }
 }

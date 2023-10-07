@@ -37,31 +37,31 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     }
     
     // Comprobación de los permisos
-    private func checkLocationAuthorization() {
-        guard let manager else { return }
-        switch manager.authorizationStatus {
-        case .notDetermined:
-            manager.requestWhenInUseAuthorization()
-        case .restricted:
-            print("Your location is restricted for any reason.")
-        case .denied:
-            print("You have denied this app location permission. Go into settings to change it.")
-        case .authorizedAlways, .authorizedWhenInUse:
-            mapView.showsUserLocation = true
-            region = MKCoordinateRegion(
-                center: CLLocationCoordinate2D(latitude: manager.location!.coordinate.latitude, longitude: manager.location!.coordinate.longitude),
-                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-            )
-        @unknown default:
-            break
-        }
-    }
+//    private func checkLocationAuthorization() {
+//        guard let manager else { return }
+//        switch manager.authorizationStatus {
+//        case .notDetermined:
+//            manager.requestWhenInUseAuthorization()
+//        case .restricted:
+//            print("Your location is restricted for any reason.")
+//        case .denied:
+//            print("You have denied this app location permission. Go into settings to change it.")
+//        case .authorizedAlways, .authorizedWhenInUse:
+//            mapView.showsUserLocation = true
+//            region = MKCoordinateRegion(
+//                center: CLLocationCoordinate2D(latitude: manager.location!.coordinate.latitude, longitude: manager.location!.coordinate.longitude),
+//                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+//            )
+//        @unknown default:
+//            break
+//        }
+//    }
     
     // Comprobación de cambios en las autorizaciones
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        // Este método se ejecuta siempre que se crea el locationManager
-        checkLocationAuthorization()
-    }
+//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+//        // Este método se ejecuta siempre que se crea el locationManager
+//        checkLocationAuthorization()
+//    }
     
     func startLocating() {
         guard let manager else { return }

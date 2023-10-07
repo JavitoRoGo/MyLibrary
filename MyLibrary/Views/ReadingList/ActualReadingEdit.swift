@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ActualReadingEdit: View {
     @Environment(GlobalViewModel.self) var model
-	@EnvironmentObject var manager: LocationManager
     
     @Binding var book: NowReading
     
@@ -65,10 +64,11 @@ struct ActualReadingEdit: View {
 							image
 								.resizable()
 								.frame(width: 100, height: 140)
+								.clipShape(.rect(cornerRadius: 15))
 						} else {
 							Image(systemName: "questionmark.diamond")
 								.resizable()
-								.frame(width: 120, height: 120)
+								.frame(width: 140, height: 140)
 						}
 					}
                     Spacer()
@@ -76,17 +76,17 @@ struct ActualReadingEdit: View {
                         Button("Ubicación") {
                             showingMapSelection = true
                         }
-                        ZStack {
-                            Rectangle()
-                                .stroke(lineWidth: 0)
-                                .frame(width: 180, height: 140)
+                        VStack {
                             if let location {
-                                Map(coordinateRegion: $manager.region, interactionModes: .zoom, showsUserLocation: false, annotationItems: [location]) { pin in
-                                    MapMarker(coordinate: CLLocationCoordinate2D(latitude: pin.latitude, longitude: pin.longitude))
-                                }
-                                    .frame(width: 180, height: 140)
-                            }
+								Image(.map)
+									.resizable()
+									.clipShape(.rect(cornerRadius: 15))
+							} else {
+								Rectangle()
+									.stroke(lineWidth: 0)
+							}
                         }
+						.frame(width: 150, height: 140)
                     }
                 }
                 .buttonStyle(.bordered)
@@ -108,7 +108,6 @@ struct ActualReadingEdit_Previews: PreviewProvider {
         NavigationView {
             ActualReadingEdit(book: .constant(example))
 				.environment(GlobalViewModel.preview)
-                .environmentObject(LocationManager())
         }
     }
 }
