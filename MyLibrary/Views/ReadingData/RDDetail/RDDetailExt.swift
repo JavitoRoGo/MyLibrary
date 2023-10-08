@@ -51,6 +51,11 @@ extension RDDetail {
                 .sheet(isPresented: $showingLocation) {
                     NavigationStack {
                         RDMapView(books: [rdata])
+							.toolbar {
+								ToolbarItem(placement: .topBarTrailing) {
+									Button("Volver") { showingLocation = false }
+								}
+							}
                     }
                 }
                 .sheet(isPresented: $showingEditView) {
