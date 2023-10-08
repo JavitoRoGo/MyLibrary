@@ -1798,7 +1798,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Usa la cámara para capturar la portada del libro";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Usa FaceID para identificarte y acceder a la app.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Usa tu posición para localizar dónde has leído los libros.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Usa tu ubicación para localizar dónde has leído los libros.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Usa tu ubicación para localizar dónde has leído los libros.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1838,7 +1839,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Usa la cámara para capturar la portada del libro";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Usa FaceID para identificarte y acceder a la app.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Usa tu posición para localizar dónde has leído los libros.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Usa tu ubicación para localizar dónde has leído los libros.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Usa tu ubicación para localizar dónde has leído los libros.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

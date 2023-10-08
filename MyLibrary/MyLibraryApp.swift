@@ -10,14 +10,12 @@ import SwiftUI
 @main
 struct MyLibraryApp: App {
     @State var globalModel = GlobalViewModel()
-    @StateObject var locationManager = LocationManager()
 	@StateObject var preferences = UserPreferences()
     
     var body: some Scene {
         WindowGroup {
             LockScreenView()
                 .environment(globalModel)
-                .environmentObject(locationManager)
 				.environmentObject(preferences)
 				.onAppear {
 					UIApplication.shared.addTapGestureRecognizer()

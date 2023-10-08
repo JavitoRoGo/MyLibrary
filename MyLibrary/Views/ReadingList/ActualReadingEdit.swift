@@ -77,7 +77,7 @@ struct ActualReadingEdit: View {
                             showingMapSelection = true
                         }
                         VStack {
-                            if let location {
+                            if location != nil {
 								Image(.map)
 									.resizable()
 									.clipShape(.rect(cornerRadius: 15))
