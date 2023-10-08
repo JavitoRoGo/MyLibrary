@@ -13,14 +13,19 @@ struct EditRDMapView: View {
     @Environment(\.dismiss) var dismiss
 	
 	@State var visibleRegion: MKCoordinateRegion?
+	@State private var myMarkerCoordinate: CLLocationCoordinate2D?
     
-    @State private var pins = [RDLocation]()
     @Binding var location: RDLocation?
     
 	var body: some View {
 		VStack {
 			Map {
 				UserAnnotation()
+				if let myMarkerCoordinate {
+					Marker("MyMarker", systemImage: "book", coordinate: myMarkerCoordinate)
+						.tint(.orange)
+						.annotationTitles(.hidden)
+				}
 			}
 			.mapControls {
 				MapUserLocationButton()
@@ -36,17 +41,29 @@ struct EditRDMapView: View {
 						location = RDLocation(id: UUID(), latitude: userLocation.latitude, longitude: userLocation.longitude)
 						dismiss()
 					} label: {
-						Text("Mi ubicación")
+						Text("Elegir mi ubicación")
 							.frame(width: 250)
 					}
 					.disabled(!manager.userPermission)
+					if let mapLocation = visibleRegion?.center, myMarkerCoordinate != nil {
+						Button {
+							location = RDLocation(id: UUID(), latitude: mapLocation.latitude, longitude: mapLocation.longitude)
+							dismiss()
+						} label: {
+							Text("Elegir marcador")
+								.frame(width: 250)
+						}
+					}
 					Button {
-						#warning("Implementar crear un marker")
+						if let mapLocation = visibleRegion?.center {
+							myMarkerCoordinate = CLLocationCoordinate2D(latitude: mapLocation.latitude, longitude: mapLocation.longitude)
+						}
 					} label: {
-						Text("Marcador")
+						Text("Añadir marcador")
 							.frame(width: 250)
 					}
-					Text("Puedes elegir entre tu ubicación actual o cualquier otra ubicación en el mapa.")
+					.buttonStyle(.bordered)
+					Text("Puedes elegir entre tu ubicación actual o cualquier otra ubicación en el mapa añadiendo un marcador.")
 						.font(.caption)
 						.foregroundColor(.secondary)
 						.padding(.horizontal)
