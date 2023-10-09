@@ -16,12 +16,8 @@
 
 #
 
-# maps
+# 
 
-### Actualizar las vistas de mapas a iOS 17, añadiendo alguna nueva feature.
+### 
 
-* ~~Adaptar las vistas de mapas a los nuevos cambios de iOS 17: Marker, Annotation, UserAnnotation, UserLocationButton, CompassButton...~~
-* ~~Usar safeAreaInset para los botones: ¿añadir pin? ¿user location?~~
-* ~~En la vista del mapa general con todos los ReadingData, al pulsar sobre un pin que muestre info en una ventana flotante regulable: título, autor, portada, lookAround...~~
-* ~~En la vista del mapa para cada registro individual, sustituir el icono por Annotation con la portada.~~
 
