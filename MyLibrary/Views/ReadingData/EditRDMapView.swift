@@ -13,6 +13,7 @@ struct EditRDMapView: View {
 	@StateObject var manager = LocationManager()
     @Environment(\.dismiss) var dismiss
 	
+	@State var cameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
 	@State var visibleRegion: MKCoordinateRegion?
 	@State var myMarkerCoordinate: CLLocationCoordinate2D?
 	@State var showingMapStyleOptions = false
@@ -21,7 +22,7 @@ struct EditRDMapView: View {
     
 	var body: some View {
 		ZStack(alignment: .topLeading) {
-			Map {
+			Map(position: $cameraPosition) {
 				UserAnnotation()
 				if let myMarkerCoordinate {
 					Marker("MyMarker", systemImage: "book", coordinate: myMarkerCoordinate)
