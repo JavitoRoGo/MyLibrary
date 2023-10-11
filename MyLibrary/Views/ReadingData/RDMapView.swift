@@ -13,6 +13,8 @@ struct RDMapView: View {
 	@State var mapPins: [MKMapItem] = []
 	@State var selectedItem: MKMapItem?
 	@State var lookAroundScene: MKLookAroundScene?
+	@State var customMapStyle: MapStyle = .standard(elevation: .realistic)
+	@State var showingMapStyleOptions = false
     
 	let books: [ReadingData]
 	
@@ -31,35 +33,40 @@ struct RDMapView: View {
     }
     
     var body: some View {
-		Map(position: $cameraPosition, selection: $selectedItem) {
-			ForEach(mapPins, id: \.self) { item in
-				if books.count == 1 {
-					let book = books.first!
-					Annotation("", coordinate: CLLocationCoordinate2D(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude)) {
-						Image(book.cover)
-							.resizable()
-							.modifier(RDCoverModifier(width: 45, height: 60, cornerRadius: 10, lineWidth: 2))
-					}
-					.annotationTitles(.hidden)
-				} else {
-					Marker("Libro", systemImage: "book", coordinate: item.placemark.coordinate)
-						.tint(.orange)
+		ZStack(alignment: .topLeading) {
+			Map(position: $cameraPosition, selection: $selectedItem) {
+				ForEach(mapPins, id: \.self) { item in
+					if books.count == 1 {
+						let book = books.first!
+						Annotation("", coordinate: CLLocationCoordinate2D(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude)) {
+							Image(book.cover)
+								.resizable()
+								.modifier(RDCoverModifier(width: 45, height: 60, cornerRadius: 10, lineWidth: 2))
+						}
 						.annotationTitles(.hidden)
+					} else {
+						Marker("Libro", systemImage: "book", coordinate: item.placemark.coordinate)
+							.tint(.orange)
+							.annotationTitles(.hidden)
+					}
 				}
 			}
-		}
-        .navigationTitle(title)
-        .navigationBarTitleDisplayMode(.inline)
-		.sheet(item: $selectedItem) { item in
-			VStack {
-				if booksWithLocation.count == 1 {
-					itemInfoDetail(item)
-				} else {
-					itemsInfoDetail(item)
+			.mapStyle(customMapStyle)
+			.navigationTitle(title)
+			.navigationBarTitleDisplayMode(.inline)
+			.sheet(item: $selectedItem) { item in
+				VStack {
+					if booksWithLocation.count == 1 {
+						itemInfoDetail(item)
+					} else {
+						itemsInfoDetail(item)
+					}
 				}
+				.padding(.top, 25)
+				.presentationCornerRadius(25)
 			}
-			.padding(.top, 25)
-			.presentationCornerRadius(25)
+			
+			mapStyleButton
 		}
 		.task {
 			if booksWithLocation.count == 1 {

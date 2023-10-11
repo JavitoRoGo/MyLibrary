@@ -45,15 +45,16 @@ struct EditRDMapView: View {
 							.frame(width: 250)
 					}
 					.disabled(!manager.userPermission)
-					if let mapLocation = visibleRegion?.center, myMarkerCoordinate != nil {
-						Button {
+					Button {
+						if let mapLocation = visibleRegion?.center, myMarkerCoordinate != nil {
 							location = RDLocation(id: UUID(), latitude: mapLocation.latitude, longitude: mapLocation.longitude)
 							dismiss()
-						} label: {
-							Text("Elegir marcador")
-								.frame(width: 250)
 						}
+					} label: {
+						Text("Elegir marcador")
+							.frame(width: 250)
 					}
+					.disabled(myMarkerCoordinate == nil)
 					Button {
 						if let mapLocation = visibleRegion?.center {
 							myMarkerCoordinate = CLLocationCoordinate2D(latitude: mapLocation.latitude, longitude: mapLocation.longitude)

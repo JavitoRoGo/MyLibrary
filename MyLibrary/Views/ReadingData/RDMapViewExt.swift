@@ -81,6 +81,53 @@ extension RDMapView {
 		.presentationDetents([.height(200)])
 	}
 	
+	var mapStyleButton: some View {
+		HStack {
+			Button {
+				withAnimation(.spring) {
+					showingMapStyleOptions.toggle()
+				}
+			} label: {
+				Image(systemName: "map")
+					.font(.title3)
+					.foregroundStyle(.white)
+					.padding(12)
+					.background(.orange)
+					.clipShape(.circle)
+			}
+			if showingMapStyleOptions {
+				Button {
+					withAnimation(.easeInOut) {
+						customMapStyle = .standard(elevation: .realistic)
+						showingMapStyleOptions.toggle()
+					}
+				} label: {
+					Text("Por defecto")
+						.font(.caption)
+						.foregroundStyle(.white)
+						.padding(7)
+						.background(.gray)
+						.clipShape(.rect(cornerRadius: 12))
+				}
+				Button {
+					withAnimation(.easeInOut) {
+						customMapStyle = .imagery(elevation: .realistic)
+						showingMapStyleOptions.toggle()
+					}
+				} label: {
+					Text("Satélite")
+						.font(.caption)
+						.foregroundStyle(.white)
+						.padding(7)
+						.background(.gray)
+						.clipShape(.rect(cornerRadius: 12))
+				}
+			}
+		}
+		.buttonStyle(.plain)
+		.offset(x: 20, y: 15)
+	}
+	
 	func createPin() async throws {
 		for book in booksWithLocation {
 			let newLocation = CLLocation(latitude: book.location!.latitude, longitude: book.location!.longitude)
