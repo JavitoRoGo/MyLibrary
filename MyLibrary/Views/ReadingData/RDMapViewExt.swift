@@ -9,6 +9,28 @@ import MapKit
 import SwiftUI
 
 extension RDMapView {
+	var booksWithLocation: [ReadingData] {
+		books.filter { $0.location != nil }
+	}
+	
+	var title: String {
+		if mapPins.isEmpty {
+			return "0 libros"
+		} else if mapPins.count == 1 {
+			return books.first!.bookTitle
+		} else {
+			return "\(mapPins.count) libros"
+		}
+	}
+	
+	var customMapStyle: MapStyle {
+		if userModel.preferredStandardMapStyle {
+			return .standard(elevation: .realistic)
+		} else {
+			return .imagery(elevation: .realistic)
+		}
+	}
+	
 	@ViewBuilder
 	func itemInfoDetail(_ item: MKMapItem) -> some View {
 		ScrollView {
@@ -92,13 +114,13 @@ extension RDMapView {
 					.font(.title3)
 					.foregroundStyle(.white)
 					.padding(12)
-					.background(.orange)
+					.background(.green)
 					.clipShape(.circle)
 			}
 			if showingMapStyleOptions {
 				Button {
 					withAnimation(.easeInOut) {
-						customMapStyle = .standard(elevation: .realistic)
+						userModel.preferredStandardMapStyle = true
 						showingMapStyleOptions.toggle()
 					}
 				} label: {
@@ -111,7 +133,7 @@ extension RDMapView {
 				}
 				Button {
 					withAnimation(.easeInOut) {
-						customMapStyle = .imagery(elevation: .realistic)
+						userModel.preferredStandardMapStyle = false
 						showingMapStyleOptions.toggle()
 					}
 				} label: {

@@ -9,12 +9,12 @@ import MapKit
 import SwiftUI
 
 struct EditRDMapView: View {
+	@EnvironmentObject var userModel: UserPreferences
 	@StateObject var manager = LocationManager()
     @Environment(\.dismiss) var dismiss
 	
 	@State var visibleRegion: MKCoordinateRegion?
 	@State var myMarkerCoordinate: CLLocationCoordinate2D?
-	@State var customMapStyle: MapStyle = .standard(elevation: .realistic)
 	@State var showingMapStyleOptions = false
     
     @Binding var location: RDLocation?
@@ -55,6 +55,7 @@ struct EditRDMapView: View {
 struct EditRDMapView_Previews: PreviewProvider {
     static var previews: some View {
         EditRDMapView(location: .constant(RDLocation(id: UUID(), latitude: 20, longitude: 20)))
+			.environmentObject(UserPreferences())
 			.environmentObject(LocationManager())
     }
 }

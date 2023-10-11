@@ -9,15 +9,21 @@ import Combine
 import SwiftUI
 
 final class UserPreferences: ObservableObject {
+	// Uso de FaceID
 	@AppStorage("isBiometricsAllowed") var isBiometricsAllowed = false
 	
+	// Vista por defecto con portadas o en lista
 	@AppStorage("preferredGridView") var preferredGridView = false
 	
+	// Modo de vista claro u oscuro
 	@AppStorage("preferredAppearance") var preferredAppearance = 0
 	var customAppearance: UserAppearance {
 		get { .init(rawValue: preferredAppearance)! }
 		set { preferredAppearance = newValue.rawValue }
 	}
+	
+	// Tipo de mapa por defecto
+	@AppStorage ("preferredMapStyle") var preferredStandardMapStyle = true
 	
 	// OBJETIVOS DE LECTURA:
 	

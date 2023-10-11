@@ -9,30 +9,16 @@ import MapKit
 import SwiftUI
 
 struct RDMapView: View {
+	@EnvironmentObject var userModel: UserPreferences
 	@State private var cameraPosition: MapCameraPosition = .automatic
 	@State var mapPins: [MKMapItem] = []
 	@State var selectedItem: MKMapItem?
 	@State var lookAroundScene: MKLookAroundScene?
-	@State var customMapStyle: MapStyle = .standard(elevation: .realistic)
 	@State var showingMapStyleOptions = false
     
 	let books: [ReadingData]
 	
-	var booksWithLocation: [ReadingData] {
-		books.filter { $0.location != nil }
-	}
-    
-    var title: String {
-        if mapPins.isEmpty {
-            return "0 libros"
-		} else if mapPins.count == 1 {
-			return books.first!.bookTitle
-		} else {
-            return "\(mapPins.count) libros"
-        }
-    }
-    
-    var body: some View {
+	var body: some View {
 		ZStack(alignment: .topLeading) {
 			Map(position: $cameraPosition, selection: $selectedItem) {
 				ForEach(mapPins, id: \.self) { item in
@@ -89,6 +75,7 @@ struct RDMapView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
 			RDMapView(books: [ReadingData.dataTest])
+				.environmentObject(UserPreferences())
         }
     }
 }

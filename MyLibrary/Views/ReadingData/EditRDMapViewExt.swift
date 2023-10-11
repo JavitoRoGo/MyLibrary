@@ -9,6 +9,14 @@ import MapKit
 import SwiftUI
 
 extension EditRDMapView {
+	var customMapStyle: MapStyle {
+		if userModel.preferredStandardMapStyle {
+			return .standard(elevation: .realistic)
+		} else {
+			return .imagery(elevation: .realistic)
+		}
+	}
+	
 	var locationButtons: some View {
 		VStack {
 			Button {
@@ -71,13 +79,13 @@ extension EditRDMapView {
 					.font(.title3)
 					.foregroundStyle(.white)
 					.padding(12)
-					.background(.orange)
+					.background(.green)
 					.clipShape(.circle)
 			}
 			if showingMapStyleOptions {
 				Button {
 					withAnimation(.easeInOut) {
-						customMapStyle = .standard(elevation: .realistic)
+						userModel.preferredStandardMapStyle = true
 						showingMapStyleOptions.toggle()
 					}
 				} label: {
@@ -90,7 +98,7 @@ extension EditRDMapView {
 				}
 				Button {
 					withAnimation(.easeInOut) {
-						customMapStyle = .imagery(elevation: .realistic)
+						userModel.preferredStandardMapStyle = false
 						showingMapStyleOptions.toggle()
 					}
 				} label: {
