@@ -273,6 +273,7 @@
 		44F471DB2993F1AD0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
 		44F9F0B52ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */; };
 		44F9F0B62ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */; };
+		44FBADF32AD7109400E32D25 /* EditRDMapViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBADF22AD7109400E32D25 /* EditRDMapViewExt.swift */; };
 		44FD4E4C297B192B00555B82 /* USERDATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USERDATA.json */; };
 		44FD4E4D297B192B00555B82 /* USERDATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USERDATA.json */; };
 		44FF97B3296DB62100EE1CBC /* AllCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */; };
@@ -540,6 +541,7 @@
 		44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		44F471D82993EE7D0047080A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportingHelper.swift; sourceTree = "<group>"; };
+		44FBADF22AD7109400E32D25 /* EditRDMapViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRDMapViewExt.swift; sourceTree = "<group>"; };
 		44FD4E4B297B192B00555B82 /* USERDATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USERDATA.json; sourceTree = "<group>"; };
 		44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommentsView.swift; sourceTree = "<group>"; };
 		44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingPasswordHelper.swift; sourceTree = "<group>"; };
@@ -767,6 +769,7 @@
 				44EF94CE27CE851300998C27 /* RDSessions.swift */,
 				44BEBB832937C51300D0DD11 /* EditRDView.swift */,
 				4436FD0129CB48C4003BBA2C /* EditRDMapView.swift */,
+				44FBADF22AD7109400E32D25 /* EditRDMapViewExt.swift */,
 				44C6A62B2802569D00EF035A /* Statistics */,
 				44741ECA29CA29B800138691 /* RDMapView.swift */,
 				44EC16BF2AD06E0D00BC479C /* RDMapViewExt.swift */,
@@ -1463,6 +1466,7 @@
 				446D6C012AB4D6D7001A6E85 /* BooksGrid.swift in Sources */,
 				44C0ADFD27C975CC0046E32F /* RSRow.swift in Sources */,
 				445BBA1F2A8645FD0004B850 /* ActualReadingEditExt.swift in Sources */,
+				44FBADF32AD7109400E32D25 /* EditRDMapViewExt.swift in Sources */,
 				44BEBB842937C51300D0DD11 /* EditRDView.swift in Sources */,
 				445BBA342A8667360004B850 /* DynamicStatsLineChartExt.swift in Sources */,
 				444B00FD2780CFA300530FEC /* AddBook.swift in Sources */,
