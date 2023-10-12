@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 struct User: Identifiable, Codable {
     var id: UUID

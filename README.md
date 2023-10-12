@@ -90,3 +90,6 @@ ConnectivityManager para conectar con iOS.
 * Se adopta la nueva API Observation para el modelo principal, mientras que se mantiene la estructura anterior con ObservableObject para las preferencias de usuario y la comprobación de contraseña.
 * Adopción del patrón singleton para los modelos, con modelLogic y un viewmodel global.
 * Mejora del Preview Content con datos para las previews.
+* Se cambian las vistas de mapas que muestran la ubicación de los libros según las novedades de iOS 17.
+* Se muestra información sobre cada libro al pulsar sobre su icono en los mapas.
+* Y en el mapa que muestra la ubicación de cada libro, se muestra su portada y la vista lookAround al pinchar sobre el icono.

@@ -62,7 +62,7 @@ extension ActualReadingEdit {
 				.navigationTitle("Editar...")
 				.navigationBarTitleDisplayMode(.inline)
 				.confirmationDialog("Selecciona una opción para la portada:", isPresented: $showingImageSelector, titleVisibility: .visible) {
-					Button("Canclear", role: .cancel) { }
+					Button("Cancelar", role: .cancel) { }
 					Button("Seleccionar foto") {
 						showingImagePicker = true
 					}

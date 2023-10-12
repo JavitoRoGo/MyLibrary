@@ -72,7 +72,7 @@ struct RDMain: View {
 						VStack {
 							Divider()
 							EachMainViewButton(iconImage: "chart.pie.fill", iconColor: .mint, number: 0, title: "Estadísticas", destination: RDStatsMainView())
-							EachMainViewButton(iconImage: "map.fill", iconColor: .blue, number: 0, title: "Ubicaciones", destination: RDMapView(pins: model.userLogic.rdlocations))
+							EachMainViewButton(iconImage: "map.fill", iconColor: .blue, number: 0, title: "Ubicaciones", destination: RDMapView(books: model.userLogic.user.readingDatas))
 							Spacer()
 						}
 					}
