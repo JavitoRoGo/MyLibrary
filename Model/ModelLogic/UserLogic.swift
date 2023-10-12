@@ -57,3 +57,6 @@ final class UserLogic {
 		}
 	}
 }
+
+let soldText = "Vendido"
+let donatedText = "Donado"
