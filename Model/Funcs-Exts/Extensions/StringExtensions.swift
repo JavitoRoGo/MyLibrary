@@ -59,13 +59,13 @@ extension String {
 		}
 		
 		if array.count == 1 {
-			if self.prefix(1) == "m" {
+			if self.contains("m") {
 				min = array[0]
 			} else {
 				sec = array[0]
 			}
 		} else if array.count == 2 {
-			if self.prefix(1) == "m" {
+			if self.contains("m") {
 				min = array[0]
 				sec = array[1]
 			} else {
@@ -89,13 +89,13 @@ extension String {
 		}
 		
 		if array.count == 1 {
-			if self.prefix(1) == "h" {
+			if self.contains("h") {
 				hour = array[0]
 			} else {
 				min = array[0]
 			}
 		} else if array.count == 2 {
-			if self.prefix(1) == "h" {
+			if self.contains("h") {
 				hour = array[0]
 				min = array[1]
 			} else {
