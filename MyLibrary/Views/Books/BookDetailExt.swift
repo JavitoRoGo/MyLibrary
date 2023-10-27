@@ -20,13 +20,13 @@ extension BookDetail {
 				}
 				Spacer()
 				Button {
-					titleInfoAlert = setInfoAlertFor(book).title
-					messageInfoAlert = setInfoAlertFor(book).message
+					titleInfoAlert = book.status.infoAlert.title
+					messageInfoAlert = book.status.infoAlert.message
 					showingInfoAlert = true
 				} label: {
-					imageStatus(book)
+					Image(systemName: book.status.iconName)
 						.font(.title)
-						.foregroundColor(colorStatus(book.status))
+						.foregroundColor(book.status.iconColor)
 				}
 				.buttonStyle(.bordered)
 			}

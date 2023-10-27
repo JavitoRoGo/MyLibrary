@@ -12,9 +12,9 @@ struct BookRow: View {
     
     var body: some View {
         HStack {
-            imageStatus(book)
+			Image(systemName: book.status.iconName)
                 .font(.title)
-                .foregroundColor(colorStatus(book.status))
+				.foregroundColor(book.status.iconColor)
             VStack(alignment: .leading) {
                 Text(book.bookTitle)
                     .font(.title2)

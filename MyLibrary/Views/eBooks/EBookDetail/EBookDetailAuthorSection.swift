@@ -19,13 +19,13 @@ extension EBookDetail {
 				}
 				Spacer()
 				Button {
-					titleInfoAlert = setInfoAlertFor(ebook).title
-					messageInfoAlert = setInfoAlertFor(ebook).message
+					titleInfoAlert = ebook.status.infoAlert.title
+					messageInfoAlert = ebook.status.infoAlert.message
 					showingInfoAlert = true
 				} label: {
-					imageStatus(ebook)
+					Image(systemName: ebook.status.iconName)
 						.font(.title)
-						.foregroundColor(colorStatus(ebook.status))
+						.foregroundColor(ebook.status.iconColor)
 				}
 				.buttonStyle(.bordered)
 			}

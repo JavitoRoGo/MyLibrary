@@ -15,7 +15,7 @@ struct ScrollByStatus: View {
         ScrollView(.horizontal) {
             HStack(spacing: 10) {
                 ForEach(ReadingStatus.allCases) { status in
-					EachMainViewButton(iconImage: imageNameStatus(status), iconColor: colorStatus(status), number: model.userLogic.numberOfBooksByStatus(status), title: status.rawValue, destination: BookList(customPreferredGridView: preferences.preferredGridView, place: "all", filterByStatus: getFilter(status)))
+					EachMainViewButton(iconImage: status.iconName, iconColor: status.iconColor, number: model.userLogic.numberOfBooksByStatus(status), title: status.rawValue, destination: BookList(customPreferredGridView: preferences.preferredGridView, place: "all", filterByStatus: getFilter(status)))
                 }
             }
         }

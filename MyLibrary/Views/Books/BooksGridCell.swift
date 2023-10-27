@@ -28,8 +28,8 @@ struct BooksGridCell: View {
 					.modifier(RDCoverModifier(width: 100, height: 120, cornerRadius: 10, lineWidth: 4))
 			}
 			
-			imageStatus(book)
-				.foregroundColor(colorStatus(book.status))
+			Image(systemName: book.status.iconName)
+				.foregroundColor(book.status.iconColor)
 				.offset(x: 15, y: -5)
 		}
 		.padding(.bottom)

@@ -28,8 +28,8 @@ struct EBookGridCell: View {
 					.modifier(RDCoverModifier(width: 100, height: 120, cornerRadius: 10, lineWidth: 4))
 			}
 			
-			imageStatus(ebook)
-				.foregroundColor(colorStatus(ebook.status))
+			Image(systemName: ebook.status.iconName)
+				.foregroundColor(ebook.status.iconColor)
 				.offset(x: 15, y: -5)
 		}
 		.padding(.bottom)

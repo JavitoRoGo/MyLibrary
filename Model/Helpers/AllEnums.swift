@@ -5,7 +5,6 @@
 //  Created by Javier Rodríguez Gómez on 4/4/22.
 //
 
-import Foundation
 import SwiftUI
 
 enum Cover: String, Codable, CaseIterable {
@@ -47,6 +46,64 @@ enum ReadingStatus: String, Codable, CaseIterable, Identifiable {
     case waiting = "En espera"
     
     var id: String { rawValue }
+	
+	var iconName: String {
+		switch self {
+			case .notRead:
+				return "bookmark.slash"
+			case .read:
+				return "book"
+			case .registered:
+				return "paperclip"
+			case .consulting:
+				return "text.book.closed"
+			case .reading:
+				return "eyes"
+			case .waiting:
+				return "hourglass"
+		}
+	}
+	
+	var iconColor: Color {
+		switch self {
+			case .notRead:
+				return .red
+			case .read:
+				return .green
+			case .registered:
+				return .blue
+			case .consulting:
+				return .brown
+			case .reading:
+				return .orange
+			case .waiting:
+				return .primary.opacity(0.8)
+		}
+	}
+	
+	var infoAlert: (title: String, message: String) {
+		let title: String
+		var message = "Pulsa para volver."
+		switch self {
+			case .registered:
+				title = "Libro leído y con registro de lectura."
+				message = "Pulsa para ver los detalles."
+			case .notRead:
+				title = "Libro sin leer o pendiente."
+			case .read:
+				title = "Libro leído pero sin registro de lectura."
+			case .consulting:
+				title = "Libro de consulta."
+				//    case .noStatus:
+				//        title = "Libro en estado desconocido."
+			case .reading:
+				title = "Libro en proceso de lectura."
+				message = "Pulsa para ver los detalles."
+			case .waiting:
+				title = "Libro en lista de espera."
+		}
+		return (title, message)
+	}
 }
 
 // enum original para el año en que se termina el libro. Sustituido por valores Int para automatizar su funcionamiento
