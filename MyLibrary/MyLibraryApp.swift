@@ -21,7 +21,7 @@ struct MyLibraryApp: App {
 					UIApplication.shared.addTapGestureRecognizer()
 				}
 				.preferredColorScheme(
-					UserAppearance.setSystemColorScheme(preferences.customAppearance)()
+					preferences.customAppearance.systemColorScheme
 				)
         }
     }

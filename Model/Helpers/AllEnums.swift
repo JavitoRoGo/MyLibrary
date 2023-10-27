@@ -179,7 +179,7 @@ enum UserAppearance: Int {
 	case light
 	case dark
 	
-	func setSystemColorScheme() -> ColorScheme? {
+	var systemColorScheme: ColorScheme? {
 		switch self {
 			case .system: return nil
 			case .light: return .light
