@@ -44,6 +44,4 @@ protocol BooksProtocol {
 	var pages: Int { get }
 	/// The price paid for a book or ebook, in local currency. The currency used must be the same for all the app.
 	var price: Double { get }
-	/// The reading status or state of a book or ebook. Choose among not read, read, registered (read with reading data), consulting, on reading, on waiting list.
-	var status: ReadingStatus { get set }
 }
