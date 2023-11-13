@@ -22,7 +22,7 @@ struct ScrollByPlace: View {
     var body: some View {
         if !places.isEmpty {
             ScrollView(.horizontal) {
-                HStack(spacing: 5) {
+                LazyHStack(spacing: 5) {
                     ForEach(places, id: \.self) { place in
 						NavigationLink(destination: BookList(customPreferredGridView: preferences.preferredGridView, place: place)) {
                             VStack {
@@ -39,6 +39,7 @@ struct ScrollByPlace: View {
                     }
                 }
             }
+			.scrollIndicators(.hidden)
         } else {
             VStack {
                 Text("No existe ninguna ubicación. Pulsa para crear una nueva.")

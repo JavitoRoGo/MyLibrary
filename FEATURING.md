@@ -16,8 +16,8 @@
 
 #
 
-# 
+# emptyview
 
-### 
+### Sustituir los resultados de búsqueda vacíos por las vistas vacías de iOS 17.
 
 

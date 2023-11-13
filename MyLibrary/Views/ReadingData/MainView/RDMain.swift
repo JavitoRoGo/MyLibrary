@@ -33,7 +33,7 @@ struct RDMain: View {
 							EachMainViewButton(iconImage: "square.grid.3x3", iconColor: .pink, number: model.userLogic.user.readingDatas.count, title: "Mosaico", destination: RDGrid(filterByRatingSelection: .all))
 						}
 						ScrollView(.horizontal) {
-							HStack(spacing: 5) {
+							LazyHStack(spacing: 5) {
 								ForEach(model.userLogic.user.bookFinishingYears.reversed(), id: \.self) { year in
 									NavigationLink(destination: RDList(year: year)) {
 										VStack {
@@ -49,7 +49,10 @@ struct RDMain: View {
 									}
 								}
 							}
+							.frame(height: 75)
 						}
+						.scrollIndicators(.hidden)
+						
 						NavigationLink(destination: RDGrid(filterByRatingSelection: filter)) {
 							VStack(alignment: .leading) {
 								HStack {

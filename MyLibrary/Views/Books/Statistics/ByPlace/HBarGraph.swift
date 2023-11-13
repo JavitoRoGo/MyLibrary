@@ -35,7 +35,7 @@ struct HBarGraph: View {
                 }
                 
                 HStack(spacing: 0) {
-                    VStack {
+                    LazyVStack {
 						ForEach(model.userLogic.user.myPlaces, id: \.self) { place in
                             Text(place)
                                 .font(.caption)
@@ -44,7 +44,7 @@ struct HBarGraph: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     }
                     .offset(x: 10)
-                    VStack(alignment: .leading) {
+                    LazyVStack(alignment: .leading) {
                         ForEach(datas.indices, id:\.self) { index in
                             AnimatedBarGraph(index: index, showOver50: false)
                                 .frame(width: getBarWidth(point: datas[index], size: geo.size))

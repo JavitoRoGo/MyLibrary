@@ -13,12 +13,13 @@ struct ScrollByStatus: View {
     
     var body: some View {
         ScrollView(.horizontal) {
-            HStack(spacing: 10) {
+            LazyHStack(spacing: 10) {
                 ForEach(ReadingStatus.allCases) { status in
 					EachMainViewButton(iconImage: status.iconName, iconColor: status.iconColor, number: model.userLogic.numberOfBooksByStatus(status), title: status.rawValue, destination: BookList(customPreferredGridView: preferences.preferredGridView, place: "all", filterByStatus: getFilter(status)))
                 }
             }
         }
+		.scrollIndicators(.hidden)
     }
     
     func getFilter(_ status: ReadingStatus) -> FilterByStatus {

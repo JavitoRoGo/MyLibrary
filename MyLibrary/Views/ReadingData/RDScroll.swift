@@ -26,7 +26,7 @@ struct RDScroll: View {
             
             ScrollViewReader { value in
                 ScrollView(.horizontal) {
-                    HStack {
+                    LazyHStack {
 						ForEach(model.userLogic.user.readingDatas.reversed()) { rdata in
 							let index = model.userLogic.user.readingDatas.firstIndex(of: rdata)!
                             Button {
@@ -49,7 +49,9 @@ struct RDScroll: View {
                             .rotation3DEffect(buttonTapped == index ? .degrees(spinAmount) : .degrees(0), axis: (x: 0, y: 1, z: 0))
                         }
                     }
+					.frame(height: 75)
                 }
+				.scrollIndicators(.hidden)
                 .task {
                     value.scrollTo(scrollIndex, anchor: .center)
                 }

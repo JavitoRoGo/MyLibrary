@@ -24,7 +24,7 @@ struct ScrollByOwner: View {
     var body: some View {
 		if !model.userLogic.user.myOwners.isEmpty {
             ScrollView(.horizontal) {
-                HStack(spacing: 10) {
+                LazyHStack(spacing: 10) {
                     if format == .book {
 						ForEach(model.userLogic.user.myOwners, id:\.self) { owner in
 							EachMainViewButton(iconImage: "person.circle.fill", iconColor: colors.randomElement()!, number: model.userLogic.numberOfBooksByOwner(owner), title: owner, destination: BookList(customPreferredGridView: preferences.preferredGridView, place: "all", filterByOwner: owner))
@@ -36,6 +36,7 @@ struct ScrollByOwner: View {
                     }
                 }
             }
+			.scrollIndicators(.hidden)
         } else {
             VStack {
                 Text("No existe ningún propietario. Pulsa para crear uno nuevo.")
