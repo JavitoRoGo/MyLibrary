@@ -13,9 +13,7 @@ struct RDScroll: View {
     @State private var spinAmount = 0.0
     @State private var buttonTapped = 0
     
-    var scrollIndex: Int {
-		model.userLogic.user.readingDatas.firstIndex(of: rdata) ?? 0
-    }
+	@State var scrollIndex: ReadingData.ID?
     
     var body: some View {
         VStack {
@@ -24,45 +22,44 @@ struct RDScroll: View {
                 .modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
                 .rotation3DEffect(.degrees(spinAmount), axis: (x: 0, y: 1, z: 0))
             
-            ScrollViewReader { value in
-                ScrollView(.horizontal) {
-                    LazyHStack {
-						ForEach(model.userLogic.user.readingDatas.reversed()) { rdata in
-							let index = model.userLogic.user.readingDatas.firstIndex(of: rdata)!
-                            Button {
-                                buttonTapped = 0
-                                withAnimation {
-                                    self.rdata = rdata
-                                    buttonTapped = index
-                                    spinAmount += 360
-                                }
-                            } label: {
-                                Image(uiImage: getCoverImage(from: rdata.cover))
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    .overlay {
-                                        Circle().stroke(.white, lineWidth: 1)
-                                    }
-                                    .shadow(color: .gray, radius: 7)
-                            }
-                            .rotation3DEffect(buttonTapped == index ? .degrees(spinAmount) : .degrees(0), axis: (x: 0, y: 1, z: 0))
-                        }
-                    }
-					.frame(height: 75)
-                }
-				.scrollIndicators(.hidden)
-                .task {
-                    value.scrollTo(scrollIndex, anchor: .center)
-                }
-            }
+			ScrollView(.horizontal) {
+				LazyHStack {
+					ForEach(model.userLogic.user.readingDatas.reversed()) { rdata in
+						let index = model.userLogic.user.readingDatas.firstIndex(of: rdata)!
+						Button {
+							buttonTapped = 0
+							withAnimation {
+								self.rdata = rdata
+								buttonTapped = index
+								spinAmount += 360
+							}
+						} label: {
+							Image(uiImage: getCoverImage(from: rdata.cover))
+								.resizable()
+								.frame(width: 50, height: 50)
+								.clipShape(Circle())
+								.overlay {
+									Circle().stroke(.white, lineWidth: 1)
+								}
+								.shadow(color: .gray, radius: 7)
+						}
+						.rotation3DEffect(buttonTapped == index ? .degrees(spinAmount) : .degrees(0), axis: (x: 0, y: 1, z: 0))
+					}
+				}
+				.frame(height: 75)
+			}
+			.scrollIndicators(.hidden)
+			.scrollPosition(id: $scrollIndex)
+			.onAppear {
+				scrollIndex = rdata.id
+			}
         }
     }
 }
 
 struct RDScroll_Previews: PreviewProvider {
     static var previews: some View {
-        RDScroll(rdata: .constant(ReadingData.dataTest))
+		RDScroll(rdata: .constant(ReadingData.dataTest))
 			.environment(GlobalViewModel.preview)
             .previewLayout(.fixed(width: 400, height: 250))
     }
