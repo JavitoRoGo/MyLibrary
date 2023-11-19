@@ -31,13 +31,17 @@ struct RDGrid: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(searchRD) { rdata in
-                    NavigationLink(destination: RDDetail(rdata: rdata)) {
-                        RDCell(rdata: rdata)
-                    }
-                }
-            }
+			if !searchRD.isEmpty {
+				LazyVGrid(columns: columns) {
+					ForEach(searchRD) { rdata in
+						NavigationLink(destination: RDDetail(rdata: rdata)) {
+							RDCell(rdata: rdata)
+						}
+					}
+				}
+			} else {
+				ContentUnavailableView("No se han encontrado resultados", systemImage: "magnifyingglass")
+			}
         }
         .navigationTitle("Lecturas")
         .navigationBarTitleDisplayMode(.inline)
