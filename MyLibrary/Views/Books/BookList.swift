@@ -49,17 +49,23 @@ struct BookList: View {
     
     var body: some View {
 		NavigationStack {
-			if customPreferredGridView {
-				BooksGrid(books: filteredBooks)
-			} else {
-				List(searchedBooks) { book in
-					NavigationLink(destination: BookDetail(book: book)) {
-						BookRow(book: book)
+			VStack {
+				if !searchedBooks.isEmpty {
+					if customPreferredGridView {
+						BooksGrid(books: searchedBooks)
+					} else {
+						List(searchedBooks) { book in
+							NavigationLink(destination: BookDetail(book: book)) {
+								BookRow(book: book)
+							}
+						}
 					}
+				} else {
+					ContentUnavailableView("No se han encontrado resultados", systemImage: "magnifyingglass")
 				}
-				.searchable(text: $searchText, prompt: "Búsqueda por título o autor")
-				.disableAutocorrection(true)
 			}
+			.searchable(text: $searchText, prompt: "Búsqueda por título o autor")
+			.disableAutocorrection(true)
 		}
 		.navigationTitle(navigationTitle)
 		.navigationBarTitleDisplayMode(.inline)

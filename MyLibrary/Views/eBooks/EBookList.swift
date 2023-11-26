@@ -19,18 +19,24 @@ struct EBookList: View {
 		@Bindable var bindingModel = model
 		
         NavigationStack {
-			if customPreferredGridView {
-				EBookGrid(ebooks: ebooksToShow)
-			} else {
-				List(ebooksToShow) { ebook in
-					let index = model.userLogic.user.ebooks.firstIndex(of: ebook)!
-					NavigationLink(destination: EBookDetail(ebook: $bindingModel.userLogic.user.ebooks[index])) {
-						EBookRow(ebook: ebook)
+			VStack {
+				if !ebooksToShow.isEmpty {
+					if customPreferredGridView {
+						EBookGrid(ebooks: ebooksToShow)
+					} else {
+						List(ebooksToShow) { ebook in
+							let index = model.userLogic.user.ebooks.firstIndex(of: ebook)!
+							NavigationLink(destination: EBookDetail(ebook: $bindingModel.userLogic.user.ebooks[index])) {
+								EBookRow(ebook: ebook)
+							}
+						}
 					}
+				} else {
+					ContentUnavailableView("No se han encontrado resultados", systemImage: "magnifyingglass")
 				}
-				.searchable(text: $searchText, prompt: "Búsqueda por título o autor")
-				.disableAutocorrection(true)
 			}
+			.searchable(text: $searchText, prompt: "Búsqueda por título o autor")
+			.disableAutocorrection(true)
         }
         .navigationTitle(navigationTitle)
         .navigationBarTitleDisplayMode(.inline)
