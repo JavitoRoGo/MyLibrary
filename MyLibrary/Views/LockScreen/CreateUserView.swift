@@ -97,12 +97,9 @@ struct CreateUserView: View {
 						model.userLogic.user.id = UUID()
 						model.userLogic.user.nickname = nickname
 						model.userLogic.user.username = username
-                        keychain.set(repeatPassword, forKey: "storedPassword")
-                        if keychain.set(repeatPassword, forKey: "storedPassword") {
-                            print("Contraseña guardada correctamente")
-                        } else {
-                            print("No se guardó la contraseña")
-                        }
+						if let hashed = hashPassword(repeatPassword) {
+							model.userLogic.user.password = hashed
+						}
                         isUnlocked = true
                         dismiss()
                     } label: {

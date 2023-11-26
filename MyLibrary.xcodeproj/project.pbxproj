@@ -196,6 +196,8 @@
 		4496063A2847C1C800D27055 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449606392847C1C800D27055 /* ConfettiView.swift */; };
 		44A01F352960FE8300E34FA8 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F342960FE8300E34FA8 /* CreateUserView.swift */; };
 		44A01F372961003600E34FA8 /* UserLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F362961003600E34FA8 /* UserLogic.swift */; };
+		44A36F212B13BE6000DA146D /* HashPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A36F202B13BE6000DA146D /* HashPasswordHelper.swift */; };
+		44A36F222B13BE6000DA146D /* HashPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A36F202B13BE6000DA146D /* HashPasswordHelper.swift */; };
 		44AA171329A004A900944623 /* RSEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA171229A004A900944623 /* RSEdit.swift */; };
 		44AB0300280A2E2800EAFE45 /* RingCircleArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */; };
 		44B0409C284FBA4700C29E22 /* RSModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModelExt.swift */; };
@@ -289,9 +291,6 @@
 		44F2578227F4B69300EC7A7A /* ProgressRingMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F2578127F4B69300EC7A7A /* ProgressRingMini.swift */; };
 		44F367D22AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */; };
 		44F418FA2A9FFD5D00A9E9B2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */; };
-		44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
-		44F471DA2993F1AC0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
-		44F471DB2993F1AD0047080A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F471D82993EE7D0047080A /* KeychainHelper.swift */; };
 		44F9F0B52ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */; };
 		44F9F0B62ABA07C7001EA3C1 /* ExportingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */; };
 		44FBADF32AD7109400E32D25 /* EditRDMapViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBADF22AD7109400E32D25 /* EditRDMapViewExt.swift */; };
@@ -496,6 +495,7 @@
 		44A01F362961003600E34FA8 /* UserLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogic.swift; sourceTree = "<group>"; };
 		44A3422C27D2DC7A00DC82D5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		44A3422E27D2DC7A00DC82D5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		44A36F202B13BE6000DA146D /* HashPasswordHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashPasswordHelper.swift; sourceTree = "<group>"; };
 		44AA171229A004A900944623 /* RSEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSEdit.swift; sourceTree = "<group>"; };
 		44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingCircleArc.swift; sourceTree = "<group>"; };
 		44B0409B284FBA4700C29E22 /* RSModelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSModelExt.swift; sourceTree = "<group>"; };
@@ -567,7 +567,6 @@
 		44F2578127F4B69300EC7A7A /* ProgressRingMini.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingMini.swift; sourceTree = "<group>"; };
 		44F367D12AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigViewDeleteExt.swift; sourceTree = "<group>"; };
 		44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
-		44F471D82993EE7D0047080A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportingHelper.swift; sourceTree = "<group>"; };
 		44FBADF22AD7109400E32D25 /* EditRDMapViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRDMapViewExt.swift; sourceTree = "<group>"; };
 		44FD4E4B297B192B00555B82 /* USERDATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USERDATA.json; sourceTree = "<group>"; };
@@ -872,7 +871,6 @@
 				44102C882944F5D600F8E2F1 /* EachMainViewButton.swift */,
 				4482141F28F720500037BE9F /* AnimateChartsHelper.swift */,
 				44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */,
-				44F471D82993EE7D0047080A /* KeychainHelper.swift */,
 				440D9BDD281F42960072C484 /* ImagePicker.swift */,
 				4456FB3729FD756600C955B9 /* CameraPicker.swift */,
 				446430E92A193BEF00013669 /* DownloadCoverHelper.swift */,
@@ -881,6 +879,7 @@
 				44741ECC29CA6DB800138691 /* LocationManager.swift */,
 				44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */,
 				44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */,
+				44A36F202B13BE6000DA146D /* HashPasswordHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1580,6 +1579,7 @@
 				4487BF6D278212B6003C6115 /* EBookModelExt.swift in Sources */,
 				44D28FD4296F376F00180ACE /* EBookConfigView.swift in Sources */,
 				4407D4EE29708B46006FAC47 /* TargetsMainView.swift in Sources */,
+				44A36F212B13BE6000DA146D /* HashPasswordHelper.swift in Sources */,
 				4467B5E22971C36F008E4489 /* WeeklyTargetView.swift in Sources */,
 				4431C89D2AB886CB00B705A8 /* UserConfigViewExportingExt.swift in Sources */,
 				44398EA82979CC49009E1D6A /* Entry.swift in Sources */,
@@ -1601,7 +1601,6 @@
 				44B1E50927D1258B00EF6D40 /* AddReading.swift in Sources */,
 				447189D42A87BD8A00BE66E5 /* ChangeOwnerExt.swift in Sources */,
 				445BBA502A86F72C0004B850 /* OtherThicknessSectionExt.swift in Sources */,
-				44F471D92993EE7D0047080A /* KeychainHelper.swift in Sources */,
 				445BBA262A864F240004B850 /* NewBarGraph.swift in Sources */,
 				44102C892944F5D600F8E2F1 /* EachMainViewButton.swift in Sources */,
 				4472DFD327832B1C0014CC1C /* RDRow.swift in Sources */,
@@ -1649,7 +1648,6 @@
 				44B4B2222AD85B4D00CDB5A9 /* ReadingSessionModel.swift in Sources */,
 				445B62DE298C44630036D140 /* Entry.swift in Sources */,
 				443F2F802A9A736400EAE6D3 /* TimelyTargetExt.swift in Sources */,
-				44F471DA2993F1AC0047080A /* KeychainHelper.swift in Sources */,
 				441A84DF298FEC6A00D5F1EB /* SharedAppGroup.swift in Sources */,
 				44B4B21A2AD8569400CDB5A9 /* EBookModel.swift in Sources */,
 				445B62E2298C450F0036D140 /* DetailView.swift in Sources */,
@@ -1689,7 +1687,6 @@
 				44E32D4C295917F600E06425 /* MyLibraryWidget.swift in Sources */,
 				44E32D5E29591C4600E06425 /* RSModelExt.swift in Sources */,
 				4493DBC62AC0B8820052061C /* UserPreferences.swift in Sources */,
-				44F471DB2993F1AD0047080A /* KeychainHelper.swift in Sources */,
 				441A84EB29902E9200D5F1EB /* ConnectivityManager.swift in Sources */,
 				44E32D5C29591A0100E06425 /* WidgetView.swift in Sources */,
 				44E32D6B2959279300E06425 /* MediumSizeView.swift in Sources */,
@@ -1699,6 +1696,7 @@
 				44730E23298F2283005CFCAF /* SharedAppGroup.swift in Sources */,
 				44B4B2152AD853EF00CDB5A9 /* BookModel.swift in Sources */,
 				44398EA72979C704009E1D6A /* MediumSizeView3.swift in Sources */,
+				44A36F222B13BE6000DA146D /* HashPasswordHelper.swift in Sources */,
 				44E32D6829591EFE00E06425 /* SmallSizeView.swift in Sources */,
 				44B4B22D2AD886BF00CDB5A9 /* QuoteModel.swift in Sources */,
 				44523D3D29855ED60046E0B5 /* ArrayExtensions.swift in Sources */,

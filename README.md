@@ -34,24 +34,24 @@ ConnectivityManager para conectar con iOS.
 
 #
 
-# v1.1
+## v1.1
 
 * Se añade funcionalidad para poder descargar la portada del libro en lectura, tanto al añadirlo a lista de espera como desde la vista de edición de ese libro. Opción activa solo para libros en papel, porque la descarga se hace desde OpenLibrary API con ISBN.
 
-## v1.1.1
+### v1.1.1
 
 * Se añade funcionalidad para descargar la portada buscando por título, autor o ISBN, tanto para papel como ebook. La descarga se hace desde la API de GoogleBooks.
 
-## v1.1.2
+### v1.1.2
 
 * Se mejora y optimiza el código de descarga de portada mediante el uso de async/await con URLSession y TaskGroup.
 
-## v1.1.3
+### v1.1.3
 
 * Cambios internos en la app. Se refactoriza todo el código para ordenarlo y evitar MVC (massive view controlers), mediante el uso de extensiones para métodos, propiedades calculadas y view modifiers.
 
 
-# v1.2
+## v1.2
 
 * Se recodifica gran parte de la app para unificar todos los ViewModel en uno solo: los ViewModel existentes pasan a ser conformados como extensiones de UserViewModel, que permanece como único modelo. Se eliminan los json y todos los datos pasan a estar dentro de User.
 * Se corrigen los fallos al intentar mostrar las sesiones o ReadingData si no hay datos, cuando se inicia la app desde cero. Si no hay datos se muestra una imagen de fondo y un texto. Y se deshabilitan los botones de estadísticas para Books y EBooks.
@@ -64,7 +64,7 @@ ConnectivityManager para conectar con iOS.
 * Se modifica la creación de nuevo user para asignarle un id nuevo.
 
 
-## v1.2.1
+### v1.2.1
 
 * Se añade la opción de borrar un libro en lista de espera aunque tenga datos de lectura. Al borrar el libro se pregunta si mantener las sesiones o borrarlas.
 * En la vista de Usuario se añaden botones para borrar todos los datos registrados y mantener el usuario, o para eliminar el usuario y sus datos.
@@ -72,7 +72,7 @@ ConnectivityManager para conectar con iOS.
 * Se eliminan las funciones de formateado de números y se sustituye por código de formato nativo de SwiftUI.
 
 
-# v1.3
+## v1.3
 
 * Se añade la funcionalidad de poder elegir una portada para libros y ebooks, tanto al crear uno nuevo como al editarlo en la vista detalle correspondiente. Se puede elegir entre seleccionar una imagen existente, hacer foto, o descargar la portada.
 * Opción de lista o vista de parrilla de portadas al listar los libros y ebooks.
@@ -93,6 +93,15 @@ ConnectivityManager para conectar con iOS.
 * Se cambian las vistas de mapas que muestran la ubicación de los libros según las novedades de iOS 17.
 * Se muestra información sobre cada libro al pulsar sobre su icono en los mapas.
 * Y en el mapa que muestra la ubicación de cada libro, se muestra su portada y la vista lookAround al pinchar sobre el icono.
+
+
+### v2.0.1
+
 * Cambios menores que mejoran el rendimiento de vistas con scroll, al utilizar LazyVStack y LazyHStack.
 * Se eliminan los indicadores de desplazamiento en varios scrolls.
 * Se añade una vista de contenido no disponible a vistas con opción de búsqueda, en caso de no encontrar resultados.
+
+
+## v2.1
+
+* Se elimina el uso de keychain para guardar la contraseña, que pasa a guardarse junto a los datos de usuario, aplicando un hash.

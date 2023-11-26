@@ -51,13 +51,12 @@ extension UserConfigView {
 						// Matching with biometrics
 						if tag == 0 {
 							// Borrar solo datos
-							model.userLogic.user = User(id: model.userLogic.user.id, username: model.userLogic.user.username, nickname: model.userLogic.user.nickname, books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
+							model.userLogic.user = User(id: model.userLogic.user.id, username: model.userLogic.user.username, password: model.userLogic.user.password, nickname: model.userLogic.user.nickname, books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
 							showingDeleteButtons = false
 							showingSuccessfulDeleting = true
 						} else if tag == 1 {
 							// Borrar usuario y salir
 							model.userLogic.user = User.emptyUser
-							keychain.delete("storedPassword")
 							preferences.isBiometricsAllowed = false
 							showingDeleteButtons = false
 							isUnlocked = false

@@ -10,8 +10,8 @@ import Foundation
 // dataTest para los structs del modelo
 
 extension User {
-	static let dataTest = User(id: UUID(), username: "email@noemail.com", nickname: "Nick", books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
-	static let emptyUser = User(id: UUID(), username: "", nickname: "", books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
+	static let dataTest = User(id: UUID(), username: "email@noemail.com", password: "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8", nickname: "Nick", books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
+	static let emptyUser = User(id: UUID(), username: "", password: "", nickname: "", books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
 }
 
 extension Books {

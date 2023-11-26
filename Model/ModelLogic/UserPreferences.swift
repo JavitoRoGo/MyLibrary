@@ -45,9 +45,7 @@ final class UserPreferences: ObservableObject {
 	@Published var password = ""
 	@Published var validations: [Validation] = []
 	@Published var isValid: Bool = false
-	
-	var storedPassword: String { keychain.get("storedPassword") ?? "" }
-	
+		
 	private var cancellableSet: Set<AnyCancellable> = []
 	
 	init() {

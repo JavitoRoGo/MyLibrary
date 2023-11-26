@@ -93,12 +93,9 @@ struct EditUserPasswordView: View {
                     Button {
 						model.userLogic.user.nickname = nickname
 						model.userLogic.user.username = username
-                        keychain.set(repeatPassword, forKey: "storedPassword")
-                        if keychain.set(repeatPassword, forKey: "storedPassword") {
-                            print("Usuario y contraseña cambiados correctamente")
-                        } else {
-                            print("No se guardó la contraseña")
-                        }
+						if let hashed = hashPassword(repeatPassword) {
+							model.userLogic.user.password = hashed
+						}
                         dismiss()
                     } label: {
                         HStack {

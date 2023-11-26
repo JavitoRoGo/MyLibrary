@@ -48,11 +48,11 @@ extension UserConfigView {
 						SecureField("Confirma el borrado con la contraseña", text: $password)
 						Spacer()
 						Button {
-							if password == preferences.storedPassword {
+							if let hashed = hashPassword(password), hashed == model.userLogic.user.password {
 								DispatchQueue.main.async {
 									if deleteOperation == 0 {
 										// Borrar solo datos
-										model.userLogic.user = User(id: model.userLogic.user.id, username: model.userLogic.user.username, nickname: model.userLogic.user.nickname, books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
+										model.userLogic.user = User(id: model.userLogic.user.id, username: model.userLogic.user.username, password: model.userLogic.user.password, nickname: model.userLogic.user.nickname, books: [], ebooks: [], readingDatas: [], nowReading: [], nowWaiting: [], sessions: [], myPlaces: [], myOwners: [])
 										password = ""
 										showingPasswordField = false
 										showingDeleteButtons = false
@@ -60,7 +60,6 @@ extension UserConfigView {
 									} else if deleteOperation == 1 {
 										// Borrar usuario y salir
 										model.userLogic.user = User.emptyUser
-										keychain.delete("storedPassword")
 										password = ""
 										preferences.isBiometricsAllowed = false
 										showingPasswordField = false

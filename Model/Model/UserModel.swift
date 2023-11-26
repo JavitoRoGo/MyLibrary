@@ -15,6 +15,8 @@ struct User: Identifiable, Codable {
     var id: UUID
 	/// The username in email format used to get access.
     var username: String
+	/// The hashed password used to get access.
+	var password: String
 	/// The nickname that is shown on `LockScreenView` and `UserMainView`.
     var nickname: String
 	/// A property to store all the ``Books`` items.

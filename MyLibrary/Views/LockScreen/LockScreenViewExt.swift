@@ -72,7 +72,6 @@ extension LockScreenView {
                 }
 				.onAppear {
 					if isFirstRun {
-						keychain.delete("storedPassword")
 						showingFirstRunAlert = true
 					}
 				}
