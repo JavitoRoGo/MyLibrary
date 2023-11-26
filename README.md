@@ -93,3 +93,6 @@ ConnectivityManager para conectar con iOS.
 * Se cambian las vistas de mapas que muestran la ubicación de los libros según las novedades de iOS 17.
 * Se muestra información sobre cada libro al pulsar sobre su icono en los mapas.
 * Y en el mapa que muestra la ubicación de cada libro, se muestra su portada y la vista lookAround al pinchar sobre el icono.
+* Cambios menores que mejoran el rendimiento de vistas con scroll, al utilizar LazyVStack y LazyHStack.
+* Se eliminan los indicadores de desplazamiento en varios scrolls.
+* Se añade una vista de contenido no disponible a vistas con opción de búsqueda, en caso de no encontrar resultados.

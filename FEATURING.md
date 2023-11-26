@@ -16,10 +16,8 @@
 
 #
 
-# emptyview
+# 
 
-### Sustituir los resultados de búsqueda vacíos por las vistas vacías de iOS 17.
+### 
 
-* ~~Empecé por sustituir los Stack de los ScrollView por LazyStack.~~
-* ~~Pendiente de modificar RDScroll: eliminar ScrollViewReader y sustituir por nuevo scroll id.~~
 
