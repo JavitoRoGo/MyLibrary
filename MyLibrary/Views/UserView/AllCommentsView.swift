@@ -24,7 +24,7 @@ struct AllCommentsView: View {
                 } else {
                     List {
                         Section("\(comments.count) comentarios") {
-                            ForEach(Array(comments.keys), id: \.self) { key in
+							ForEach(Array(comments.keys.sorted(by: { $0.lowercased() < $1.lowercased() })), id: \.self) { key in
                                 VStack(alignment: .leading) {
                                     Text("\(key):")
                                         .font(.caption)
