@@ -26,10 +26,12 @@ struct ChunkedMenuView: View {
 						Text("Autor")
 					}
 				}
-				HStack {
-					Image(systemName: "book")
-						.foregroundColor(.blue)
-					Text("Editorial")
+				NavigationLink(destination: ChunkedByPublisherView()) {
+					HStack {
+						Image(systemName: "building.columns")
+							.foregroundColor(.blue)
+						Text("Editorial")
+					}
 				}
 			}
 			

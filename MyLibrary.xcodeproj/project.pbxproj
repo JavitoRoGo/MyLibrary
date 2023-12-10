@@ -75,6 +75,7 @@
 		443F2F802A9A736400EAE6D3 /* TimelyTargetExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */; };
 		444504F4296327A2001AC434 /* LoginNoBiomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444504F3296327A2001AC434 /* LoginNoBiomView.swift */; };
 		444B00FD2780CFA300530FEC /* AddBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B00FC2780CFA300530FEC /* AddBook.swift */; };
+		444BC81A2B253EDE001D2834 /* ChunkedByPublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444BC8192B253EDE001D2834 /* ChunkedByPublisherView.swift */; };
 		444C3C8527D43C6200C61D36 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C3C8427D43C6200C61D36 /* ProgressRing.swift */; };
 		445121052AAA12CD00E680DE /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445121042AAA12CD00E680DE /* DoubleExtensions.swift */; };
 		445121062AAA12CD00E680DE /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445121042AAA12CD00E680DE /* DoubleExtensions.swift */; };
@@ -385,6 +386,7 @@
 		443F2F7D2A9A700600EAE6D3 /* TimelyTargetExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelyTargetExt.swift; sourceTree = "<group>"; };
 		444504F3296327A2001AC434 /* LoginNoBiomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNoBiomView.swift; sourceTree = "<group>"; };
 		444B00FC2780CFA300530FEC /* AddBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBook.swift; sourceTree = "<group>"; };
+		444BC8192B253EDE001D2834 /* ChunkedByPublisherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkedByPublisherView.swift; sourceTree = "<group>"; };
 		444C3C8427D43C6200C61D36 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		445121042AAA12CD00E680DE /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		445121072AAA132700E680DE /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 				442653A4277E1B440047D75C /* PlaceRow.swift */,
 				44A932CF2B24AC510028CAD8 /* ChunkedMenuView.swift */,
 				44A932D12B24CAF30028CAD8 /* ChunkedByAuthorView.swift */,
+				444BC8192B253EDE001D2834 /* ChunkedByPublisherView.swift */,
 			);
 			path = ChunkedViews;
 			sourceTree = "<group>";
@@ -1466,6 +1469,7 @@
 				4482142028F720500037BE9F /* AnimateChartsHelper.swift in Sources */,
 				44DDA8852A841405000104A1 /* AddBookExt.swift in Sources */,
 				442653AB277E75AE0047D75C /* BookDetail.swift in Sources */,
+				444BC81A2B253EDE001D2834 /* ChunkedByPublisherView.swift in Sources */,
 				4492AC7E28AAA502003CB125 /* EditPlaces.swift in Sources */,
 				445BBA382A86B1A20004B850 /* WeeklyTargetViewExt.swift in Sources */,
 				449410FC28563DCC0055D833 /* RSBarGraph.swift in Sources */,
