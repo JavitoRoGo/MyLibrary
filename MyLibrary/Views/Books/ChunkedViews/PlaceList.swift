@@ -29,7 +29,7 @@ struct PlaceList: View {
                 }
             }
         }
-        .navigationTitle("Libros")
+        .navigationTitle("Ubicación")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

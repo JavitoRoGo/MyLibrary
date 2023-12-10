@@ -17,7 +17,7 @@ struct EBookMainView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView {
                 VStack(spacing: 15) {
 					EachMainViewButton(iconImage: "book.circle.fill", iconColor: .pink, number: model.userLogic.user.ebooks.count, title: "Todos", destination: EBookList(customPreferredGridView: preferences.preferredGridView, filter: .all))
                     HStack(spacing: 15) {
@@ -39,8 +39,6 @@ struct EBookMainView: View {
 						.foregroundColor(areStatsDisabled ? .secondary.opacity(0.2) : .primary)
                 }
                 .foregroundColor(.primary)
-                
-                Spacer()
             }
             .padding(.horizontal, 20)
             .background {

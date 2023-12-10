@@ -20,10 +20,8 @@ struct MainBookView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(spacing: 15) {
                     VStack(spacing: 15) {
-						EachMainViewButton(iconImage: "books.vertical", iconColor: .pink, number: model.userLogic.numberOfBooksAtPlace("all"), title: "Todos", destination: PlaceList())
-                        ScrollByPlace()
+						EachMainViewButton(iconImage: "books.vertical", iconColor: .pink, number: model.userLogic.numberOfBooksAtPlace("all"), title: "Todos", destination: ChunkedMenuView())
                         ScrollByStatus()
                         ScrollByOwner(format: .book)
                         Divider()
@@ -67,7 +65,6 @@ struct MainBookView: View {
                             ButtonBackground()
                         }
                     }
-                }
             }
 			.scrollIndicators(.hidden)
             .modifier(MainBookViewModifier(showingSold: $showingSold, showingDonated: $showingDonated))

@@ -16,8 +16,12 @@
 
 #
 
-# 
+# booksview
 
-### 
+### Cambios en vista Todos de libros
 
-
+* Cambiar también la vista principal de ebooks para incluirla en un scroll.
+* Eliminar el scroll por place de la vista principal de libros.
+* Añadir vista para elegir filtrar por ubicación, autor, editorial, edición, año y año de escritura.
+* Crear la vista por autores, con DisclosureGroup por letra, y autor.
+* Repetir para los otros casos.
