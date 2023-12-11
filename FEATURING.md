@@ -20,8 +20,11 @@
 
 ### Cambios en vista Todos de libros
 
-* Cambiar también la vista principal de ebooks para incluirla en un scroll.
-* Eliminar el scroll por place de la vista principal de libros.
-* Añadir vista para elegir filtrar por ubicación, autor, editorial, edición, año y año de escritura.
-* Crear la vista por autores, con DisclosureGroup por letra, y autor.
-* Repetir para los otros casos.
+* Hecho. Cambiar también la vista principal de ebooks para incluirla en un scroll.
+* Hecho. Eliminar el scroll por place de la vista principal de libros.
+* Hecho. Añadir vista para elegir filtrar por ubicación, autor, editorial, edición, año y año de escritura.
+* Hecho. Crear la vista por autores, con DisclosureGroup por letra, y autor.
+* Hecho. Repetir para los otros casos.
+* En la vista de sesiones de lectura y gráfica, al entrar en el detalle de la lista de sesiones, eliminar el botón para ver la gráfica de la parte superior para los casos de Año y Total del picker.
+* Para Año mostrar el listado de sesiones con disclosure group por mes (y usarlo para obtener también los datos para la gráfica).
+* Para Total mostrar el listado por año y mes (y usar el agrupado por años para la gráfica).
