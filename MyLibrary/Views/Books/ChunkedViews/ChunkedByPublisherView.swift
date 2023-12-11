@@ -10,12 +10,11 @@ import SwiftUI
 
 struct ChunkedByPublisherView: View {
 	@Environment(GlobalViewModel.self) var model
-	@EnvironmentObject var preferences: UserPreferences
 	
 	var booksByPublisherByLetter: [(String, [(String, [Books])])] {
-		let chunkedByPublisher = model.userLogic.activeBooks.sorted { $0.publisher < $1.publisher }
+		let chunkedByPublisher = model.userLogic.activeBooks.sorted { $0.publisher < $1.publisher }.chunked(on: \.publisher)
 		// .map para transformar a [(String, [Books])]
-			.chunked(on: \.publisher).map { ($0, Array($1)) }
+			.map { ($0, Array($1)) }
 		
 		let chunkedByLetter = chunkedByPublisher.chunked(on: \.0.first!)
 		// .map para transformar a [(String, [(String, [Books])])]

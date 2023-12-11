@@ -172,6 +172,10 @@
 		447446AE29678CF40002689B /* AddQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447446AD29678CF40002689B /* AddQuoteView.swift */; };
 		447692A82786266C001A01A7 /* BookStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447692A72786266C001A01A7 /* BookStats.swift */; };
 		447941472A9FFF2A00B09B7E /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F418F92A9FFD5C00A9E9B2 /* DateHelper.swift */; };
+		447B22D92B261FCB00F848F9 /* ChunkedByEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B22D82B261FCB00F848F9 /* ChunkedByEditionView.swift */; };
+		447B22DB2B26274B00F848F9 /* ChunkedByEditionYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B22DA2B26274B00F848F9 /* ChunkedByEditionYearView.swift */; };
+		447B22DD2B262AD700F848F9 /* ChunkedByWritingYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B22DC2B262AD700F848F9 /* ChunkedByWritingYear.swift */; };
+		447B22DF2B266E4500F848F9 /* ChunkedByPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B22DE2B266E4500F848F9 /* ChunkedByPagesView.swift */; };
 		44801F4D28144F84006FC06C /* ReadingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44801F4C28144F83006FC06C /* ReadingTimer.swift */; };
 		4482142028F720500037BE9F /* AnimateChartsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482141F28F720500037BE9F /* AnimateChartsHelper.swift */; };
 		4482142328F724900037BE9F /* MaxAndMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482142228F724900037BE9F /* MaxAndMin.swift */; };
@@ -475,6 +479,10 @@
 		447446AB29678CE50002689B /* QuotesCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesCommentView.swift; sourceTree = "<group>"; };
 		447446AD29678CF40002689B /* AddQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuoteView.swift; sourceTree = "<group>"; };
 		447692A72786266C001A01A7 /* BookStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStats.swift; sourceTree = "<group>"; };
+		447B22D82B261FCB00F848F9 /* ChunkedByEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkedByEditionView.swift; sourceTree = "<group>"; };
+		447B22DA2B26274B00F848F9 /* ChunkedByEditionYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkedByEditionYearView.swift; sourceTree = "<group>"; };
+		447B22DC2B262AD700F848F9 /* ChunkedByWritingYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkedByWritingYear.swift; sourceTree = "<group>"; };
+		447B22DE2B266E4500F848F9 /* ChunkedByPagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkedByPagesView.swift; sourceTree = "<group>"; };
 		44801F4C28144F83006FC06C /* ReadingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTimer.swift; sourceTree = "<group>"; };
 		4482141F28F720500037BE9F /* AnimateChartsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateChartsHelper.swift; sourceTree = "<group>"; };
 		4482142228F724900037BE9F /* MaxAndMin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxAndMin.swift; sourceTree = "<group>"; };
@@ -850,6 +858,10 @@
 				44A932CF2B24AC510028CAD8 /* ChunkedMenuView.swift */,
 				44A932D12B24CAF30028CAD8 /* ChunkedByAuthorView.swift */,
 				444BC8192B253EDE001D2834 /* ChunkedByPublisherView.swift */,
+				447B22D82B261FCB00F848F9 /* ChunkedByEditionView.swift */,
+				447B22DA2B26274B00F848F9 /* ChunkedByEditionYearView.swift */,
+				447B22DC2B262AD700F848F9 /* ChunkedByWritingYear.swift */,
+				447B22DE2B266E4500F848F9 /* ChunkedByPagesView.swift */,
 			);
 			path = ChunkedViews;
 			sourceTree = "<group>";
@@ -1452,6 +1464,7 @@
 				4431C8972AB883E900B705A8 /* UserConfigViewAppearanceExt.swift in Sources */,
 				44E8888F28843509009670D0 /* MainBookView.swift in Sources */,
 				44DDA8992A8450D1000104A1 /* OldLineGraphExt.swift in Sources */,
+				447B22DD2B262AD700F848F9 /* ChunkedByWritingYear.swift in Sources */,
 				4411A4CA2AB74C5C00B59027 /* UserConfigView.swift in Sources */,
 				44DDA88D2A844773000104A1 /* RDCoverModifier.swift in Sources */,
 				4486010227C858F6004E84B0 /* RSList.swift in Sources */,
@@ -1516,6 +1529,7 @@
 				44DDA8922A844F86000104A1 /* MyRing.swift in Sources */,
 				44B4B2182AD8569400CDB5A9 /* EBookModel.swift in Sources */,
 				44F367D22AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift in Sources */,
+				447B22D92B261FCB00F848F9 /* ChunkedByEditionView.swift in Sources */,
 				44C6A62D280256F800EF035A /* StatsView.swift in Sources */,
 				44DDA8972A84506D000104A1 /* OldLineGraph.swift in Sources */,
 				44102C852944D03F00F8E2F1 /* EBookMainView.swift in Sources */,
@@ -1595,6 +1609,7 @@
 				447189EE2A87E69700BE66E5 /* RDDetailCompareSection.swift in Sources */,
 				445BBA592A86FCC20004B850 /* AddBookPhysicsSection.swift in Sources */,
 				4487BF7627827727003C6115 /* AddEBook.swift in Sources */,
+				447B22DF2B266E4500F848F9 /* ChunkedByPagesView.swift in Sources */,
 				447189D22A87B9F500BE66E5 /* EditOwnersExt.swift in Sources */,
 				4407D4EC297087DC006FAC47 /* EditUserPasswordView.swift in Sources */,
 				44CA18FC2A85753C00E9786A /* ActualReadingDetailExt.swift in Sources */,
@@ -1629,6 +1644,7 @@
 				44102C892944F5D600F8E2F1 /* EachMainViewButton.swift in Sources */,
 				4472DFD327832B1C0014CC1C /* RDRow.swift in Sources */,
 				4467B5E82971F442008E4489 /* RingTargetView.swift in Sources */,
+				447B22DB2B26274B00F848F9 /* ChunkedByEditionYearView.swift in Sources */,
 				447189E32A87DF4000BE66E5 /* EBookStatsValuePicker.swift in Sources */,
 				445BBA432A86F2AE0004B850 /* PriceSectionExt.swift in Sources */,
 				44A01F372961003600E34FA8 /* UserLogic.swift in Sources */,
