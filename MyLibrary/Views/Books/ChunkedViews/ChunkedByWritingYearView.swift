@@ -1,5 +1,5 @@
 //
-//  ChunkedByEditionView.swift
+//  ChunkedByWritingYearView.swift
 //  MyLibrary
 //
 //  Created by Javier Rodríguez Gómez on 10/12/23.
@@ -8,20 +8,20 @@
 import Algorithms
 import SwiftUI
 
-struct ChunkedByEditionView: View {
+struct ChunkedByWritingYearView: View {
 	@Environment(GlobalViewModel.self) var model
 	
-	var booksChunkedByEdition: [(Int, [Books])] {
-		model.userLogic.activeBooks.sorted { $0.edition < $1.edition }.chunked(on: \.edition)
+	var booksChunkedByWritingYear: [(Int, [Books])] {
+		model.userLogic.activeBooks.sorted { $0.writingYear < $1.writingYear }.chunked(on: \.writingYear)
 			.map { ($0, Array($1)) }
 	}
 	
-    var body: some View {
+	var body: some View {
 		List {
-			if !booksChunkedByEdition.isEmpty {
-				ForEach(booksChunkedByEdition, id: \.0) { edition in
+			if !booksChunkedByWritingYear.isEmpty {
+				ForEach(booksChunkedByWritingYear, id: \.0) { writingYear in
 					DisclosureGroup {
-						ForEach(edition.1) { book in
+						ForEach(writingYear.1) { book in
 							NavigationLink(destination: BookDetail(book: book)) {
 								HStack {
 									Image(systemName: book.status.iconName)
@@ -32,9 +32,9 @@ struct ChunkedByEditionView: View {
 						}
 					} label: {
 						HStack {
-							Image(systemName: "number")
-								.foregroundStyle(.orange)
-							Text("\(edition.0)ª edición (\(edition.1.count))")
+							Image(systemName: "calendar.badge.clock")
+								.foregroundStyle(.purple)
+							Text("Año \(String(writingYear.0)) (\(writingYear.1.count))")
 						}
 					}
 				}
@@ -42,12 +42,12 @@ struct ChunkedByEditionView: View {
 				ContentUnavailableView("No se han encontrado resultados", systemImage: "magnifyingglass")
 			}
 		}
-		.navigationTitle("Edición")
+		.navigationTitle("Año de escritura")
 		.navigationBarTitleDisplayMode(.inline)
-    }
+	}
 }
 
 #Preview {
-    ChunkedByEditionView()
+    ChunkedByWritingYearView()
 		.environment(GlobalViewModel.preview)
 }

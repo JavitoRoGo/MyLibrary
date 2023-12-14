@@ -23,26 +23,30 @@ struct ChunkedByAuthorView: View {
 	
     var body: some View {
 		List {
-			ForEach(booksByAuthorByLetter, id: \.0) { authorsByLetter in
-				DisclosureGroup {
-					ForEach(authorsByLetter.1, id: \.0) { booksByAuthor in
-						DisclosureGroup {
-							ForEach(booksByAuthor.1) { book in
-								NavigationLink(destination: BookDetail(book: book)) {
-									HStack {
-										Image(systemName: book.status.iconName)
-											.foregroundStyle(book.status.iconColor)
-										Text(book.bookTitle)
+			if !booksByAuthorByLetter.isEmpty {
+				ForEach(booksByAuthorByLetter, id: \.0) { authorsByLetter in
+					DisclosureGroup {
+						ForEach(authorsByLetter.1, id: \.0) { booksByAuthor in
+							DisclosureGroup {
+								ForEach(booksByAuthor.1) { book in
+									NavigationLink(destination: BookDetail(book: book)) {
+										HStack {
+											Image(systemName: book.status.iconName)
+												.foregroundStyle(book.status.iconColor)
+											Text(book.bookTitle)
+										}
 									}
 								}
+							} label: {
+								Label("\(booksByAuthor.0) (\(booksByAuthor.1.count))", systemImage: "person.circle")
 							}
-						} label: {
-							Label("\(booksByAuthor.0) (\(booksByAuthor.1.count))", systemImage: "person.circle")
 						}
+					} label: {
+						Text("\(authorsByLetter.0) (\(authorsByLetter.1.count))")
 					}
-				} label: {
-					Text("\(authorsByLetter.0) (\(authorsByLetter.1.count))")
 				}
+			} else {
+				ContentUnavailableView("No se han encontrado resultados", systemImage: "magnifyingglass")
 			}
 		}
 		.navigationTitle("Autor")

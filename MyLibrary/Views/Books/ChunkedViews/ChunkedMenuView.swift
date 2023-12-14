@@ -50,7 +50,7 @@ struct ChunkedMenuView: View {
 						Text("Año de edición")
 					}
 				}
-				NavigationLink(destination: ChunkedByWritingYear()) {
+				NavigationLink(destination: ChunkedByWritingYearView()) {
 					HStack {
 						Image(systemName: "calendar.badge.clock")
 							.foregroundColor(.purple)

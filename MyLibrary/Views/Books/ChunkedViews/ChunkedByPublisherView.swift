@@ -23,26 +23,30 @@ struct ChunkedByPublisherView: View {
 	
 	var body: some View {
 		List {
-			ForEach(booksByPublisherByLetter, id: \.0) { publishersByLetter in
-				DisclosureGroup {
-					ForEach(publishersByLetter.1, id: \.0) { booksByPublisher in
-						DisclosureGroup {
-							ForEach(booksByPublisher.1) { book in
-								NavigationLink(destination: BookDetail(book: book)) {
-									HStack {
-										Image(systemName: book.status.iconName)
-											.foregroundStyle(book.status.iconColor)
-										Text(book.bookTitle)
+			if !booksByPublisherByLetter.isEmpty {
+				ForEach(booksByPublisherByLetter, id: \.0) { publishersByLetter in
+					DisclosureGroup {
+						ForEach(publishersByLetter.1, id: \.0) { booksByPublisher in
+							DisclosureGroup {
+								ForEach(booksByPublisher.1) { book in
+									NavigationLink(destination: BookDetail(book: book)) {
+										HStack {
+											Image(systemName: book.status.iconName)
+												.foregroundStyle(book.status.iconColor)
+											Text(book.bookTitle)
+										}
 									}
 								}
+							} label: {
+								Label("\(booksByPublisher.0) (\(booksByPublisher.1.count))", systemImage: "building.columns")
 							}
-						} label: {
-							Label("\(booksByPublisher.0) (\(booksByPublisher.1.count))", systemImage: "building.columns")
 						}
+					} label: {
+						Text("\(publishersByLetter.0) (\(publishersByLetter.1.count))")
 					}
-				} label: {
-					Text("\(publishersByLetter.0) (\(publishersByLetter.1.count))")
 				}
+			} else {
+				ContentUnavailableView("No se han encontrado resultados", systemImage: "magnifyingglass")
 			}
 		}
 		.navigationTitle("Editorial")

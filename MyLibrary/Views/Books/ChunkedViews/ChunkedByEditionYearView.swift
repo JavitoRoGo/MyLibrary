@@ -18,24 +18,28 @@ struct ChunkedByEditionYearView: View {
 	
 	var body: some View {
 		List {
-			ForEach(booksChunkedByEditionYear, id: \.0) { editionYear in
-				DisclosureGroup {
-					ForEach(editionYear.1) { book in
-						NavigationLink(destination: BookDetail(book: book)) {
-							HStack {
-								Image(systemName: book.status.iconName)
-									.foregroundStyle(book.status.iconColor)
-								Text(book.bookTitle)
+			if !booksChunkedByEditionYear.isEmpty {
+				ForEach(booksChunkedByEditionYear, id: \.0) { editionYear in
+					DisclosureGroup {
+						ForEach(editionYear.1) { book in
+							NavigationLink(destination: BookDetail(book: book)) {
+								HStack {
+									Image(systemName: book.status.iconName)
+										.foregroundStyle(book.status.iconColor)
+									Text(book.bookTitle)
+								}
 							}
 						}
-					}
-				} label: {
-					HStack {
-						Image(systemName: "calendar")
-							.foregroundStyle(.green)
-						Text("Año \(String(editionYear.0)) (\(editionYear.1.count))")
+					} label: {
+						HStack {
+							Image(systemName: "calendar")
+								.foregroundStyle(.green)
+							Text("Año \(String(editionYear.0)) (\(editionYear.1.count))")
+						}
 					}
 				}
+			} else {
+				ContentUnavailableView("No se han encontrado resultados", systemImage: "magnifyingglass")
 			}
 		}
 		.navigationTitle("Año de edición")
