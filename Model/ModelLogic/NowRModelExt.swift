@@ -5,6 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 25/2/22.
 //
 
+import Algorithms
 import Foundation
 import SwiftUI
 
@@ -132,7 +133,9 @@ extension UserLogic {
                 dataTotalArray.append(book.bookTitle)
             }
         }
-        return (dataTotalArray.uniqued().count, dataTotalArray.uniqued())
+		
+		dataTotalArray = dataTotalArray.uniqued().sorted()
+        return (dataTotalArray.count, dataTotalArray)
     }
     
     func createNewRD(from book: NowReading, rating: Int) -> ReadingData {

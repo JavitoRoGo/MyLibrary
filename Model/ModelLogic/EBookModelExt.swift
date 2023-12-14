@@ -5,6 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 2/1/22.
 //
 
+import Algorithms
 import SwiftUI
 
 // Extension for EbooksModel: handling with ebooks
@@ -19,7 +20,8 @@ extension UserLogic {
             authorTotalArray.append(book.author)
         }
         
-        return (authorTotalArray.uniqued().count, authorTotalArray.uniqued())
+		authorTotalArray = authorTotalArray.uniqued().sorted()
+        return (authorTotalArray.count, authorTotalArray)
     }
 	
 	func ebooksByOwner(_ owner: String) -> [EBooks] {

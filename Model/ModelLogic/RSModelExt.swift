@@ -5,6 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 7/6/22.
 //
 
+import Algorithms
 import SwiftUI
 import WidgetKit
 
@@ -40,11 +41,12 @@ extension UserLogic {
 		return user.sessions
     }
         
-    // Datos para la gráfica global de todas las sesiones
+    // Datos para la gráfica clásica global de todas las sesiones
     
     func graphData(tag: Int) -> [Double] {
         var datas = [Double]()
         let sessions = getSessions(tag: tag)
+		/*
         if tag == 2 {
 			let count = sessions.count
 			var data12 = 0.0
@@ -150,7 +152,7 @@ extension UserLogic {
 					sessions[0...29].forEach { data12 += Double($0.pages) }
 					sessions[30..<count].forEach { data11 += Double($0.pages) }
 				case 1...30:
-					sessions[0..<count].forEach { data11 += Double($0.pages) }
+					sessions[0..<count].forEach { data12 += Double($0.pages) }
 				default:
 					break
 			}
@@ -158,15 +160,29 @@ extension UserLogic {
             datas = [data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12]
 			return datas
         }
+		 */
+		if tag == 2 {
+			let sessionsArrays = sessions.chunked {
+				Calendar.current.isDate($0.date, equalTo: $1.date, toGranularity: .month) &&
+				Calendar.current.isDate($0.date, equalTo: $1.date, toGranularity: .year)
+			}.map { Array($0) }
+			
+			datas = sessionsArrays.map {
+				Double($0.reduce(0) { $0 + $1.pages })
+			}.reversed()
+			
+			return datas
+		}
+		
         if tag == 3 {
 			var years = [Int]()
 			sessions.forEach { session in
 				let year = Calendar.current.component(.year, from: session.date)
 				years.append(year)
 			}
-			let yearsSet = Set(years).sorted()
+			let yearsUniqued = years.uniqued().sorted()
 			
-			yearsSet.forEach { year in
+			yearsUniqued.forEach { year in
 				var yearData = 0.0
 				for session in sessions where Calendar.current.component(.year, from: session.date) == year {
 					yearData += Double(session.pages)
@@ -175,6 +191,7 @@ extension UserLogic {
 			}
 			return datas
         }
+		
         sessions.forEach { session in
             datas.insert(Double(session.pages), at: 0)
         }
@@ -356,7 +373,6 @@ extension UserLogic {
         
         // Obtener las sesiones por mes y sumar las páginas para esas sesiones
         monthArray.forEach { month in
-            var totalPagesPerMonth = 0
             var monthSessions = [ReadingSession]()
             if month != lastMonth {
                 monthSessions = sessions.filter{ calendar.component(.month, from: $0.date) == month }
@@ -366,9 +382,8 @@ extension UserLogic {
                     calendar.component(.year, from: $0.date) == lastYear
                 }
             }
-            monthSessions.forEach { session in
-                totalPagesPerMonth += session.pages
-            }
+			
+			let totalPagesPerMonth = monthSessions.reduce(0) { $0 + $1.pages }
             pagesArray.append(totalPagesPerMonth)
         }
         
@@ -401,11 +416,8 @@ extension UserLogic {
         
         // Obtener las sesiones por año y sumar las páginas para esas sesiones
         yearArray.forEach { year in
-            var totalPagesPerYear = 0
             let yearSessions = sessions.filter{ calendar.component(.year, from: $0.date) == year }
-            yearSessions.forEach { session in
-                totalPagesPerYear += session.pages
-            }
+			let totalPagesPerYear = yearSessions.reduce(0) { $0 + $1.pages }
             // Asignar la suma de páginas al array
             pagesArray.append(totalPagesPerYear)
         }

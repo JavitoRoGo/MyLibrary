@@ -5,6 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 30/12/21.
 //
 
+import Algorithms
 import SwiftUI
 
 // Extension for BooksModel: handling with paper formatt books
@@ -64,7 +65,7 @@ extension UserLogic {
             }
         }
         
-        let uniqueData = arrayOfData.uniqued()
+		let uniqueData = arrayOfData.uniqued().sorted()
         return (uniqueData.count, uniqueData)
     }
     

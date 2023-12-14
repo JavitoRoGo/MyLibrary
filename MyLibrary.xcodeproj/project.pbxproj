@@ -60,6 +60,7 @@
 		442B619529562FA00003537E /* RDStatsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B619429562FA00003537E /* RDStatsMainView.swift */; };
 		442B6197295635BE0003537E /* RDGlobalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B6196295635BE0003537E /* RDGlobalStats.swift */; };
 		442B619929565B1A0003537E /* RDGlobalStatsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B619829565B1A0003537E /* RDGlobalStatsHelper.swift */; };
+		44307ECF2B2A01450076DCB4 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 44307ECE2B2A01450076DCB4 /* Algorithms */; };
 		4431C8972AB883E900B705A8 /* UserConfigViewAppearanceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C8962AB883E900B705A8 /* UserConfigViewAppearanceExt.swift */; };
 		4431C8992AB8847100B705A8 /* UserConfigViewGridExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C8982AB8847100B705A8 /* UserConfigViewGridExt.swift */; };
 		4431C89B2AB884CD00B705A8 /* UserConfigViewIDExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C89A2AB884CD00B705A8 /* UserConfigViewIDExt.swift */; };
@@ -607,6 +608,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44307ECF2B2A01450076DCB4 /* Algorithms in Frameworks */,
 				44E32D47295917F600E06425 /* SwiftUI.framework in Frameworks */,
 				44E32D46295917F600E06425 /* WidgetKit.framework in Frameworks */,
 			);
@@ -1359,6 +1361,9 @@
 			dependencies = (
 			);
 			name = MyLibraryWidgetExtension;
+			packageProductDependencies = (
+				44307ECE2B2A01450076DCB4 /* Algorithms */,
+			);
 			productName = MyLibraryWidgetExtension;
 			productReference = 44E32D45295917F600E06425 /* MyLibraryWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -2141,6 +2146,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		44307ECE2B2A01450076DCB4 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 44A932D32B24CEE10028CAD8 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
 		44A932D42B24CEE10028CAD8 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 44A932D32B24CEE10028CAD8 /* XCRemoteSwiftPackageReference "swift-algorithms" */;

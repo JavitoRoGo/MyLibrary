@@ -5,6 +5,7 @@
 //  Created by Javier Rodríguez Gómez on 26/8/23.
 //
 
+import Algorithms
 import Foundation
 
 // MARK: - OBJETIVOS DE LECTURA:
@@ -133,8 +134,8 @@ extension UserLogic {
 			let year = Calendar.current.component(.year, from: session.date)
 			years.append(year)
 		}
-		// Eliminar duplicados mediante extension .uniqued()
-		years = years.uniqued()
+		// Eliminar duplicados
+		years = years.uniqued().sorted()
 		// Iterar sobre los años
 		years.forEach { year in
 			// Iterar en cada semana del año para crear un array de sesiones de cada año y semana
@@ -175,7 +176,7 @@ extension UserLogic {
 			let year = Calendar.current.component(.year, from: session.date)
 			years.append(year)
 		}
-		years = years.uniqued()
+		years = years.uniqued().sorted()
 		// Comparar el total por mes con el objetivo
 		if target == .pages {
 			// Obtener los grupos o array de sesiones por año y mes
@@ -223,7 +224,7 @@ extension UserLogic {
 			let year = Calendar.current.component(.year, from: session.date)
 			years.append(year)
 		}
-		years = years.uniqued()
+		years = years.uniqued().sorted()
 		if target == .pages {
 			var doubleSessionArray: [[ReadingSession]] = [[]]
 			years.forEach { year in

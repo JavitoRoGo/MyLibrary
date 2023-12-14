@@ -28,11 +28,11 @@ extension Array: RawRepresentable where Element: Codable {
 }
 
 
-// Extension para eliminar elementos duplicados en Array
+// Extension para eliminar elementos duplicados en Array. Sustituido por el uso de Algorithms
 
-extension Array where Element: Hashable {
-    func uniqued() -> [Element] {
-        var seen = Set<Element>()
-        return self.filter { seen.insert($0).inserted }
-    }
-}
+//extension Array where Element: Hashable {
+//    func uniqued() -> [Element] {
+//        var seen = Set<Element>()
+//        return self.filter { seen.insert($0).inserted }
+//    }
+//}
