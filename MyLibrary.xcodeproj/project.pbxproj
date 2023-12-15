@@ -304,6 +304,7 @@
 		44FBADF32AD7109400E32D25 /* EditRDMapViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBADF22AD7109400E32D25 /* EditRDMapViewExt.swift */; };
 		44FD4E4C297B192B00555B82 /* USERDATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USERDATA.json */; };
 		44FD4E4D297B192B00555B82 /* USERDATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FD4E4B297B192B00555B82 /* USERDATA.json */; };
+		44FF0EE62B2BCAE0007C9EA7 /* RDSessionsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF0EE52B2BCAE0007C9EA7 /* RDSessionsExt.swift */; };
 		44FF97B3296DB62100EE1CBC /* AllCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */; };
 		44FF97B5296DF37C00EE1CBC /* CheckingPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */; };
 		44FF97B8296E011700EE1CBC /* UserLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A01F362961003600E34FA8 /* UserLogic.swift */; };
@@ -584,6 +585,7 @@
 		44F9F0B42ABA07C7001EA3C1 /* ExportingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportingHelper.swift; sourceTree = "<group>"; };
 		44FBADF22AD7109400E32D25 /* EditRDMapViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRDMapViewExt.swift; sourceTree = "<group>"; };
 		44FD4E4B297B192B00555B82 /* USERDATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = USERDATA.json; sourceTree = "<group>"; };
+		44FF0EE52B2BCAE0007C9EA7 /* RDSessionsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDSessionsExt.swift; sourceTree = "<group>"; };
 		44FF97B2296DB62100EE1CBC /* AllCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommentsView.swift; sourceTree = "<group>"; };
 		44FF97B4296DF37C00EE1CBC /* CheckingPasswordHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingPasswordHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -815,6 +817,7 @@
 				440246182784B47D003D7338 /* RDScroll.swift */,
 				447189E82A87E58900BE66E5 /* RDDetail */,
 				44EF94CE27CE851300998C27 /* RDSessions.swift */,
+				44FF0EE52B2BCAE0007C9EA7 /* RDSessionsExt.swift */,
 				44BEBB832937C51300D0DD11 /* EditRDView.swift */,
 				4436FD0129CB48C4003BBA2C /* EditRDMapView.swift */,
 				44FBADF22AD7109400E32D25 /* EditRDMapViewExt.swift */,
@@ -1492,6 +1495,7 @@
 				445BBA382A86B1A20004B850 /* WeeklyTargetViewExt.swift in Sources */,
 				449410FC28563DCC0055D833 /* RSBarGraph.swift in Sources */,
 				445BBA572A86FC4F0004B850 /* AddBookPublisherSection.swift in Sources */,
+				44FF0EE62B2BCAE0007C9EA7 /* RDSessionsExt.swift in Sources */,
 				442653A5277E1B440047D75C /* PlaceRow.swift in Sources */,
 				445BBA5E2A87006B0004B850 /* EditPlacesSection1.swift in Sources */,
 				442B619929565B1A0003537E /* RDGlobalStatsHelper.swift in Sources */,

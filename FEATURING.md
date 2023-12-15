@@ -26,6 +26,6 @@
 * Hecho. Crear la vista por autores, con DisclosureGroup por letra, y autor.
 * Hecho. Repetir para los otros casos.
 * En la vista de sesiones de lectura y gráfica, al entrar en el detalle de la lista de sesiones, eliminar el botón para ver la gráfica de la parte superior para los casos de Año y Total del picker.
-* Para Año mostrar el listado de sesiones con disclosure group por mes (y usarlo para obtener también los datos para la gráfica).
-* Para Total mostrar el listado por año y mes (y usar el agrupado por años para la gráfica).
+* Hecho. Para Año mostrar el listado de sesiones con disclosure group por mes (y usarlo para obtener también los datos para la gráfica).
+* Hecho. Para Total mostrar el listado por año y mes (y usar el agrupado por años para la gráfica).
 * Hecho. Añadir vista vacía a las vistas chunked si no hay datos.

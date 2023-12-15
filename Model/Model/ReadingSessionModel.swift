@@ -12,7 +12,7 @@ import Foundation
 /// A struct used to contain a reading session, each period of time the user reads.
 /// Some properties that describes a session are date, duration and so on.
 /// All the properties are required and have to be initialised, with the exception of comment and quotes that can be nil.
-struct ReadingSession: Codable, Identifiable, Equatable {
+struct ReadingSession: Codable, Identifiable, Equatable, Hashable {
 	/// An unique identifier for each reading session, generated using UUID init.
 	let id: UUID
 	/// The date in which the session has taken place.

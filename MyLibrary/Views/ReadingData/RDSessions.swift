@@ -28,18 +28,32 @@ struct RDSessions: View {
     
     var body: some View {
         List {
-            Section(rdata?.bookTitle ?? "") {
-                ForEach(rdsessions) { session in
-                    RSRow(session: session)
-                }
-            }
+			if let rdata {
+				Section(rdata.bookTitle) {
+					ForEach(rdsessions) { session in
+						RSRow(session: session)
+					}
+				}
+			} else {
+				if rdsessions.count > 370 {
+					totalList
+				} else if rdsessions.count > 50 {
+					yearList
+				} else {
+					ForEach(rdsessions) { session in
+						RSRow(session: session)
+					}
+				}
+			}
         }
         .navigationTitle("Sesiones de lectura")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            NavigationLink(destination: RSBarGraph(datas: graphDatas, labels: graphLabels)) {
-                Image(systemName: "chart.bar")
-            }
+			if rdsessions.count < 100 {
+				NavigationLink(destination: RSBarGraph(datas: graphDatas, labels: graphLabels)) {
+					Image(systemName: "chart.bar")
+				}
+			}
         }
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 ///
 /// A struct used to contain a quote from a concrete page of a book. It is also used to store a reading session comment.
 /// All the properties are required and have to be initialised.
-struct Quote: Codable, Equatable {
+struct Quote: Codable, Equatable, Hashable {
 	/// Date when the quote is created.
 	let date: Date
 	/// The title of the book that contains the quote.

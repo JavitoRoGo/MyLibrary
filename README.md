@@ -105,3 +105,6 @@ ConnectivityManager para conectar con iOS.
 ## v2.1
 
 * Se elimina el uso de keychain para guardar la contraseña, que pasa a guardarse junto a los datos de usuario, aplicando un hash.
+* Se cambia la vista principal de eBooks a tipo scroll.
+* En la vista Todos de Libros se crean nuevas vistas con agrupaciones por autor y letra inicial del apellido, editorial e inicial, edición, año de edición, año de escritura, y número de páginas por rango. Agrupaciones hechas con Algorithms.
+* En el listado global de sesiones, en las vistas por año y total, se agrupan las sesiones por año y mes, usando Algorithms.
