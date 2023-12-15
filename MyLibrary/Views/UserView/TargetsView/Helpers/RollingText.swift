@@ -18,7 +18,6 @@ struct RollingText: View, Animatable {
 	
 	var body: some View {
 		Text(value, format: .number)
-			.font(.largeTitle)
 			.foregroundColor(color)
 	}
 }

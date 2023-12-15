@@ -11,6 +11,7 @@ struct ProgressRing: View {
     let book: NowReading
     @State private var showingRing = false
     @State private var showingReadingTimer = false
+	@State private var progress = 0
     
     var body: some View {
         ZStack {
@@ -19,8 +20,11 @@ struct ProgressRing: View {
                 .rotationEffect(.init(degrees: -90))
                 .overlay {
                     VStack {
-                        Text("\(book.progress)%")
-                            .font(.system(size: 60))
+						HStack(spacing: 0) {
+							RollingText(color: .primary, value: progress)
+							Text("%")
+						}
+						.font(.system(size: 60))
                         if !book.isFinished {
                             Text(!book.sessions.isEmpty ? "\(book.nextPage - 1) / \(book.lastPage)" : "0 / \(book.lastPage)")
                             if book.isOnReading {
@@ -46,6 +50,12 @@ struct ProgressRing: View {
                     showingRing = true
                 }
             }
+			progress = 0
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+				withAnimation(.linear(duration: 1.5)) {
+					progress = book.progress
+				}
+			}
         }
         .sheet(isPresented: $showingReadingTimer) {
             NavigationView {

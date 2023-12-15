@@ -82,24 +82,28 @@ struct TargetsMainView: View {
                             .font(.title2.bold())
                         Spacer()
                         RollingText(color: .red, value: numOfAchivedDailyTarget)
+							.font(.largeTitle)
                     }
                     HStack {
                         Text("Semanal")
                             .font(.title2.bold())
                         Spacer()
                         RollingText(color: .orange, value: numOfAchivedWeeklyTarget)
+							.font(.largeTitle)
                     }
                     HStack {
                         Text("Mensual")
                             .font(.title2.bold())
                         Spacer()
                         RollingText(color: .green, value: numOfAchivedMonthlyTarget)
+							.font(.largeTitle)
                     }
                     HStack {
                         Text("Anual")
                             .font(.title2.bold())
                         Spacer()
                         RollingText(color: .blue, value: numOfAchivedYearlyTarget)
+							.font(.largeTitle)
                     }
                 } footer: {
 					Text("Número de veces que se ha conseguido cada objetivo desde el registro de la primera sesión: \((model.userLogic.user.sessions.last?.date ?? .now).toString).")
