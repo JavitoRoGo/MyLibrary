@@ -21,7 +21,7 @@ struct ProgressRing: View {
                 .overlay {
                     VStack {
 						HStack(spacing: 0) {
-							RollingText(color: .primary, value: progress)
+							RollingText(color: book.isOnReading ? .primary : .secondary, value: progress)
 							Text("%")
 						}
 						.font(.system(size: 60))
@@ -45,6 +45,7 @@ struct ProgressRing: View {
         .frame(width: 200, height: 200)
         .padding()
         .onAppear {
+			showingRing = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 withAnimation(.interactiveSpring(response: 1.5, dampingFraction: 1.5, blendDuration: 1).delay(0.1)) {
                     showingRing = true
