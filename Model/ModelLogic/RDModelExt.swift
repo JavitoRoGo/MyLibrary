@@ -129,8 +129,9 @@ extension UserLogic {
     
 	// Colores aleatorios para la gráfica de anillo
 	func getColors() -> [Color] {
+		let num = user.bookFinishingYears.count
 		var colors = [Color]()
-		for _ in 0..<5 {
+		for _ in 0..<num {
 			let red = Double.random(in: 0...255)
 			let green = Double.random(in: 0...255)
 			let blue = Double.random(in: 0...255)
