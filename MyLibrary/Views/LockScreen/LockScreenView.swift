@@ -33,49 +33,41 @@ struct LockScreenView: View {
                         .opacity(0.4)
                     
                     VStack {
-                        Text(
-							!model.userLogic.user.nickname.isEmpty ?
-							"Hola, \(model.userLogic.user.nickname). Haz login para acceder a todo el contenido de la app." :
-                            "Introduce tu usuario para acceder a todo el contenido de la app."
-                        )
-                            .font(.title3)
-                            .multilineTextAlignment(.center)
-                            .padding()
-                            .background(ButtonBackground())
-                            .padding(.horizontal, 10)
                         VStack {
                             EachMainViewButton(iconImage: "eyes", iconColor: .orange, number: 0, title: "Leyendo y en espera", destination: EmptyView())
                             EachMainViewButton(iconImage: "calendar", iconColor: .black, number: 0, title: "Gráfica de sesiones", destination: EmptyView())
                             EachMainViewButton(iconImage: "textformat.abc", iconColor: .blue, number: 0, title: "Registros de lectura", destination: EmptyView())
                             EachMainViewButton(iconImage: "books.vertical", iconColor: .green, number: 0, title: "Libros en papel", destination: EmptyView())
                             EachMainViewButton(iconImage: "book.circle", iconColor: .pink, number: 0, title: "eBooks", destination: EmptyView())
+							EachMainViewButton(iconImage: "chart.xyaxis.line", iconColor: .teal, number: 0, title: "Y mucho más...", destination: EmptyView())
                         }
                         .foregroundColor(.secondary)
                         .disabled(true)
                         .scaleEffect(0.85)
-                        VStack {
-                            Button {
+						.frame(width: 350)
+						
+						Spacer()
+                        
+						Button {
+							if preferences.isBiometricsAllowed {
+								authenticate()
+							} else {
+								showingLoginPage = true
+							}
+						} label: {
+							VStack(spacing: 30) {
 								if preferences.isBiometricsAllowed {
-                                    authenticate()
-                                } else {
-                                    showingLoginPage = true
-                                }
-                            } label: {
-                                VStack(spacing: 30) {
-									if preferences.isBiometricsAllowed {
-                                        if getBioMetricStatus() {
-                                            Image(systemName: LAContext().biometryType == .faceID ? "faceid" : "touchid")
-                                                .font(.system(size: 50))
-                                        }
-                                    }
-                                    Text("Login").bold()
-                                }
-                                .padding()
-                            }
-                            .buttonStyle(.bordered)
-                        }
+									if getBioMetricStatus() {
+										Image(systemName: LAContext().biometryType == .faceID ? "faceid" : "touchid")
+											.font(.system(size: 50))
+									}
+								}
+								Text("Login").bold()
+							}
+							.padding()
+						}
+						.buttonStyle(.bordered)
                     }
-                    .padding(.horizontal, 35)
                 }
                 .modifier(LockScreenViewModifier(showingFirstRunAlert: $showingFirstRunAlert, showingCreateUser: $showingCreateUser, showingLoginPage: $showingLoginPage, showingAlert: $showingAlert, isUnlocked: $isUnlocked, isFirstRun: $isFirstRun))
             }
