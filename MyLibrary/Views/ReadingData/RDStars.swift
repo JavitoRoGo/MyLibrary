@@ -9,30 +9,23 @@ import SwiftUI
 
 struct RDStars: View {
     @Binding var rating: Int
-    
+    @State private var showBounce = false
     var maximumRating = 5
-    var offImage = Image(systemName: "star")
-    var onImage = Image(systemName: "star.fill")
-    var offColor = Color.gray.opacity(0.4)
-    var onColor = Color.orange
     
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(1..<maximumRating + 1, id: \.self) { number in
-                image(for: number)
-                    .foregroundColor(number > rating ? offColor : onColor)
-                    .onTapGesture {
-                        rating = number
+            ForEach(0..<maximumRating, id: \.self) { number in
+                Image(systemName: "star")
+					.foregroundStyle(number < rating ? .orange : .gray.opacity(0.4))
+					.symbolVariant(number < rating ? .fill : .none)
+					.symbolEffect(.bounce, value: showBounce)
+					.onTapGesture {
+						withAnimation(.easeInOut) {
+							rating = number + 1
+							showBounce.toggle()
+						}
                     }
             }
-        }
-    }
-    
-    func image(for number: Int) -> Image {
-        if number > rating {
-            return offImage
-        } else {
-            return onImage
         }
     }
 }
