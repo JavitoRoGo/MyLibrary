@@ -1,5 +1,6 @@
 .DS_Store
 Google*.plist
+USERDATA.json
 
 # Ignore the content of covers directory with all the cover images
 covers/
