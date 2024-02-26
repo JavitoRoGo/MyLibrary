@@ -70,6 +70,7 @@ struct ReadingTimer: View {
                             VStack(spacing: 5) {
                                 Image(systemName: timerIsRunning ? "pause.fill" : "play.fill")
                                     .font(.title)
+									.contentTransition(.symbolEffect(.replace.downUp))
                                 Text(timerIsRunning ? "Pausa" : "Leer")
                                     .font(.body.bold())
                             }
