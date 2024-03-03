@@ -13,8 +13,10 @@ import SwiftUI
 /// It conforms to the new Observation API.
 final class UserLogic {
 	// Patrón singleton: siempre se llamará al shared
-	/// A static property that belongs to the class and uses the singleton pattern.
+	/// A static property that belongs to the class and uses the singleton pattern for production data.
 	static let shared = UserLogic()
+	/// A static property that belongs to the class and uses the singleton pattern for preview data.
+	static let test = UserLogic(persistence: PersistencePreview())
 	
 	/// A property to contain the persistence type, so it can handle preview and production data.
 	let persistence: PersistenceInteractor
@@ -48,7 +50,7 @@ final class UserLogic {
 	
 	/// The init method to initialise the ``persistence`` class property.
 	/// - Parameter persistence: If not defined, by default it is initialised as production data persistence type.
-	init(persistence: PersistenceInteractor = Persistence()) {
+	private init(persistence: PersistenceInteractor = Persistence()) {
 		// Valor de persistencia por defecto para los datos de producción
 		self.persistence = persistence
 		

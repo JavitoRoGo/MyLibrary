@@ -62,5 +62,5 @@ struct PersistencePreview: PersistenceInteractor {
 }
 
 extension GlobalViewModel {
-	static let preview = GlobalViewModel(userLogic: UserLogic(persistence: PersistencePreview()))
+	static let preview = GlobalViewModel(userLogic: UserLogic.test)
 }
