@@ -13,9 +13,14 @@ struct ActualReadingRow: View {
     
     var body: some View {
         HStack {
-            image?
-                .resizable()
-				.modifier(RDCoverModifier(width: 35, height: 50, cornerRadius: 5, lineWidth: 3))
+			if let image {
+				image
+					.resizable()
+					.modifier(RDCoverModifier(width: 35, height: 50, cornerRadius: 5, lineWidth: 3))
+			} else {
+				Text(book.bookTitle)
+					.modifier(RDCoverModifier(width: 35, height: 50, cornerRadius: 5, lineWidth: 3))
+			}
                 
             VStack(alignment: .leading) {
                 Text(book.bookTitle)
@@ -34,8 +39,9 @@ struct ActualReadingRow: View {
         .foregroundColor(book.isOnReading ? .primary : .secondary)
         .onAppear {
             let cover = imageCoverName(from: book.bookTitle)
-            let uiimage = getCoverImage(from: cover)
-            image = Image(uiImage: uiimage)
+			if let uiimage = getCoverImage(from: cover) {
+				image = Image(uiImage: uiimage)
+			}
         }
     }
 }

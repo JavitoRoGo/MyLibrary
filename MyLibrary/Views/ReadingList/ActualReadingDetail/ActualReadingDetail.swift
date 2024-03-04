@@ -29,9 +29,14 @@ struct ActualReadingDetail: View {
                     .font(.title2)
                 HStack(spacing: 20) {
                     VStack {
-                        Image(uiImage: getCoverImage(from: imageCoverName(from: book.bookTitle)))
-                            .resizable()
-							.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+						if let uiimage = getCoverImage(from: imageCoverName(from: book.bookTitle)) {
+						   Image(uiImage: uiimage)
+								.resizable()
+								.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+						} else {
+							Text(book.bookTitle)
+								.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+						}
                             
                         Text(book.formatt.rawValue)
                             .foregroundColor(.gray)

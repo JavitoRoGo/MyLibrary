@@ -75,8 +75,8 @@ func saveJpg(_ image: UIImage, title: String) {
 }
 
 // Función para obtener la portada del Bundle o de Archivos
-func getCoverImage(from cover: String) -> UIImage {
-    var coverToShow = UIImage(systemName: "questionmark")!
+func getCoverImage(from cover: String) -> UIImage? {
+	var coverToShow: UIImage? = nil
     if let existingCover = UIImage(named: cover) {
         coverToShow = existingCover
 	} else {

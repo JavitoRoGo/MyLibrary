@@ -10,13 +10,21 @@ import WidgetKit
 
 struct MediumSizeView: View {
     var entry: SimpleEntry
+	
+	var uiimage: UIImage {
+		if let image = getCoverImage(from: imageCoverName(from: entry.data.bookTitle)) {
+			image
+		} else {
+			UIImage(systemName: "questionmark")!
+		}
+	}
     
     var body: some View {
         if entry.data.bookTitle == "ninguno" {
             Text("Empieza a leer un libro para ver tu progreso.")
         } else {
             HStack(spacing: 50) {
-                Image(uiImage: getCoverImage(from: imageCoverName(from: entry.data.bookTitle)))
+                Image(uiImage: uiimage)
                     .resizable()
                     .frame(width: 120, height: 150)
                     .clipShape(RoundedRectangle(cornerRadius: 30))

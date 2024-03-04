@@ -21,9 +21,14 @@ struct RDCell: View {
     var body: some View {
         VStack(spacing: 8) {
             ZStack(alignment: .topTrailing) {
-                Image(uiImage: getCoverImage(from: rdata.cover))
-                    .resizable()
-                    .modifier(RDCoverModifier(width: 100, height: 120, cornerRadius: 10, lineWidth: 4))
+				if let uiimage = getCoverImage(from: rdata.cover) {
+					Image(uiImage: uiimage)
+						.resizable()
+						.modifier(RDCoverModifier(width: 100, height: 120, cornerRadius: 10, lineWidth: 4))
+				} else {
+					Text(rdata.bookTitle)
+						.modifier(RDCoverModifier(width: 100, height: 120, cornerRadius: 10, lineWidth: 4))
+				}
                 VStack {
                     if isThereAComment {
                         Image(systemName: "quote.bubble")

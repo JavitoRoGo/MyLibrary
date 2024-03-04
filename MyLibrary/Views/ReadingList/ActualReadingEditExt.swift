@@ -22,7 +22,7 @@ extension ActualReadingEdit {
 		lastPage = book.lastPage
 		synopsis = book.synopsis
 		inputImage = getCoverImage(from: imageCoverName(from: book.bookTitle))
-		image = Image(uiImage: inputImage!)
+		image = Image(uiImage: inputImage ?? UIImage(systemName: "questionmark")!)
 		if let comment = book.comment {
 			self.comment = comment
 		}

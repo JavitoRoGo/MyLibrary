@@ -23,9 +23,14 @@ struct EditRDView: View {
                 VStack(alignment: .center, spacing: 30) {
                     Text("Cambia tu valoración del libro:")
                         .font(.title2)
-                    Image(uiImage: getCoverImage(from: book.cover))
-                        .resizable()
-                        .modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+					if let uiimage = getCoverImage(from: book.cover) {
+						Image(uiImage: uiimage)
+							.resizable()
+							.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+					} else {
+						Text(book.bookTitle)
+							.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
+					}
                     RDStars(rating: $rating)
                         .font(.largeTitle)
                 }

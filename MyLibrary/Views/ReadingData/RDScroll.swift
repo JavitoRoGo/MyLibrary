@@ -14,10 +14,18 @@ struct RDScroll: View {
     @State private var buttonTapped = 0
     
 	@State var scrollIndex: ReadingData.ID?
+	
+	var uiimage: UIImage {
+		if let image = getCoverImage(from: rdata.cover) {
+			image
+		} else {
+			UIImage(systemName: "questionmark")!
+		}
+	}
     
     var body: some View {
         VStack {
-            Image(uiImage: getCoverImage(from: rdata.cover))
+            Image(uiImage: uiimage)
                 .resizable()
                 .modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
                 .rotation3DEffect(.degrees(spinAmount), axis: (x: 0, y: 1, z: 0))
@@ -34,7 +42,8 @@ struct RDScroll: View {
 								spinAmount += 360
 							}
 						} label: {
-							Image(uiImage: getCoverImage(from: rdata.cover))
+							let uiimage = getCoverImage(from: rdata.cover) ?? UIImage(systemName: "questionmark")!
+							Image(uiImage: uiimage)
 								.resizable()
 								.frame(width: 50, height: 50)
 								.clipShape(Circle())

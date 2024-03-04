@@ -21,8 +21,9 @@ struct BookDetail: View {
     
     var body: some View {
 		VStack {
-			if let cover = book.cover {
-				Image(uiImage: getCoverImage(from: cover))
+			if let cover = book.cover,
+			   let uiimage = getCoverImage(from: cover) {
+				Image(uiImage: uiimage)
 					.resizable()
 					.modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
 			}
