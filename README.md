@@ -109,3 +109,12 @@ ConnectivityManager para conectar con iOS.
 * En la vista Todos de Libros se crean nuevas vistas con agrupaciones por autor y letra inicial del apellido, editorial e inicial, edición, año de edición, año de escritura, y número de páginas por rango. Agrupaciones hechas con Algorithms.
 * En el listado global de sesiones, en las vistas por año y total, se agrupan las sesiones por año y mes, usando Algorithms.
 * Se añade animación a los números del porcentaje de lectura en la vista detalle.
+
+
+## v2.2
+
+* Se añade una launch screen.
+* Se mejora el funcionamiento del sistema de calificación por estrellas.
+* Se añade animación al botón de play/pause que se muestra durante la sesión de lectura.
+* Cambios internos para usar el patrón singleton para previews.
+* Mejora en la vista de los comentarios a los libros: se añade opción de buscar por título, pantalla en caso de no coincidencias, y se muestra la portada y la calificación por estrellas.
