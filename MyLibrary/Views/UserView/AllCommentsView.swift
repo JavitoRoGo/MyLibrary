@@ -10,18 +10,7 @@ import SwiftUI
 struct AllCommentsView: View {
     @Environment(GlobalViewModel.self) var model
     @State private var showingAlert = false
-	@State private var searchText = ""
-    
-    var comments: [String: String] {
-		model.userLogic.allReadingDataComments.merging(model.userLogic.allBookComments) { (first,_) in first }
-    }
-	
-	var searchComments: [String: String] {
-		guard !searchText.isEmpty else { return comments }
-		return comments.filter {
-			$0.key.lowercased().contains(searchText.lowercased())
-		}
-	}
+	@State var searchText = ""
     
     var body: some View {
         NavigationStack {
@@ -34,12 +23,17 @@ struct AllCommentsView: View {
                     	List {
 							Section("\(searchComments.count) comentarios") {
 								ForEach(Array(searchComments.keys.sorted(by: { $0.lowercased() < $1.lowercased() })), id: \.self) { key in
-									VStack(alignment: .leading) {
-										Text("\(key):")
-											.font(.caption)
-											.foregroundColor(.secondary)
-										Text(comments[key]!)
-											.bold()
+									HStack {
+										imageAndStars(title: key)
+										
+										VStack(alignment: .leading) {
+											Text("\(key):")
+												.font(.caption)
+												.foregroundColor(.secondary)
+											Text(comments[key]!)
+												.bold()
+										}
+										.padding(.leading, 5)
 									}
 									.swipeActions(edge: .trailing) {
 										Button {
