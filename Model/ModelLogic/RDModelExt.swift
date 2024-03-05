@@ -31,10 +31,10 @@ extension UserLogic {
 		rdataPerYear(year, filterBy: filterBy).count
 	}
 	
-	var allReadingDataComments: [String: String] {
-        var dict: [String: String] = [:]
+	var allReadingDataComments: [String: (String, Int)] {
+        var dict: [String: (String, Int)] = [:]
 		for readingData in user.readingDatas where readingData.comment != nil {
-            dict[readingData.bookTitle] = readingData.comment
+			dict[readingData.bookTitle] = (readingData.comment!, readingData.rating)
         }
         return dict
     }

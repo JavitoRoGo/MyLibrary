@@ -23,17 +23,17 @@ struct AllCommentsView: View {
                     	List {
 							Section("\(searchComments.count) comentarios") {
 								ForEach(Array(searchComments.keys.sorted(by: { $0.lowercased() < $1.lowercased() })), id: \.self) { key in
-									HStack {
-										imageAndStars(title: key)
+									let element = searchComments[key, default: ("", 0)]
+									HStack(alignment: .top) {
+										imageAndStars(title: key, rating: element.1)
 										
 										VStack(alignment: .leading) {
 											Text("\(key):")
 												.font(.caption)
 												.foregroundColor(.secondary)
-											Text(comments[key]!)
+											Text(element.0)
 												.bold()
 										}
-										.padding(.leading, 5)
 									}
 									.swipeActions(edge: .trailing) {
 										Button {

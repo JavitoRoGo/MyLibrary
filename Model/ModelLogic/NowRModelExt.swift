@@ -48,13 +48,13 @@ extension UserLogic {
 		}
 	}
     
-    var allBookComments: [String: String] {
-        var dict: [String: String] = [:]
+    var allBookComments: [String: (String, Int)] {
+        var dict: [String: (String, Int)] = [:]
 		for book in user.nowReading where book.comment != nil {
-            dict[book.bookTitle] = book.comment
+			dict[book.bookTitle] = (book.comment!, 0)
         }
 		for book in user.nowWaiting where book.comment != nil {
-            dict[book.bookTitle] = book.comment
+            dict[book.bookTitle] = (book.comment!, 0)
         }
         return dict
     }
