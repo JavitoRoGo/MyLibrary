@@ -18,7 +18,7 @@ struct ActualReading: View {
         NavigationView {
             List {
 				if model.userLogic.user.nowReading.isEmpty && model.userLogic.user.nowWaiting.isEmpty {
-                    Text("Parece que no tienes ninguna lectura entre manos ahora mismo. Pulsa el botón de arriba para añadir tu próxima lectura.")
+                    Text("Parece que no tienes ninguna lectura entre manos ahora mismo. Pulsa el botón de arriba para añadir tu próxima lectura o agrégala desde la biblioteca.")
                 } else {
                     Section("Leyendo") {
 						if model.userLogic.user.nowReading.isEmpty {
