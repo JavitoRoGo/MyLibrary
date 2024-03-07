@@ -15,7 +15,6 @@ struct EditUserPasswordView: View {
     @State private var nickname = ""
     @State private var username = ""
     @State private var repeatPassword = ""
-    @State private var isPasswordVisible = false
     
     var isValidAndEqual: Bool {
         if repeatPassword.isEmpty {
@@ -39,34 +38,9 @@ struct EditUserPasswordView: View {
                 }
                 
                 Section {
-                    HStack {
-                        if isPasswordVisible {
-							TextField("Introduce la nueva contraseña", text: $preferences.password)
-                        } else {
-							SecureField("Introduce la nueva contraseña", text: $preferences.password)
-                        }
-                        Spacer()
-                        Button {
-                            isPasswordVisible.toggle()
-                        } label: {
-                            Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    HStack {
-                        if isPasswordVisible {
-                            TextField("Repite la nueva contraseña", text: $repeatPassword)
-                        } else {
-                            SecureField("Repite la nueva contraseña", text: $repeatPassword)
-                        }
-                        Spacer()
-                        Button {
-                            isPasswordVisible.toggle()
-                        } label: {
-                            Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                .foregroundColor(.secondary)
-                        }
-                    }
+					SecureField("Introduce la nueva contraseña", text: $preferences.password)
+					SecureField("Repite la nueva contraseña", text: $repeatPassword)
+                    
 					List(preferences.validations) { validation in
                         HStack {
                             Image(systemName: validation.state == .success ? "checkmark.circle.fill" : "checkmark.circle")
@@ -99,11 +73,10 @@ struct EditUserPasswordView: View {
                         dismiss()
                     } label: {
                         HStack {
-                            Spacer()
                             Image(systemName: isValidAndEqual ? "lock.open.fill" : "lock.fill")
                             Text("Cambiar")
-                            Spacer()
-                        }
+						}
+						.frame(maxWidth: .infinity)
                     }
                     .disabled(!isValidAndEqual || username.isEmpty || !username.isValidEmail())
                 }
@@ -111,11 +84,8 @@ struct EditUserPasswordView: View {
                     Button {
                         dismiss()
                     } label: {
-                        HStack {
-                            Spacer()
-                            Text("Cancelar")
-                            Spacer()
-                        }
+                        Text("Cancelar")
+							.frame(maxWidth: .infinity)
                     }
                 }
             }

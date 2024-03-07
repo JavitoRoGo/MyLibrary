@@ -16,10 +16,10 @@ struct ActualReadingRow: View {
 			if let image {
 				image
 					.resizable()
-					.modifier(RDCoverModifier(width: 35, height: 50, cornerRadius: 5, lineWidth: 3))
+					.modifier(RDCoverModifier(width: 35, height: 50, cornerRadius: 5, lineWidth: 2))
 			} else {
 				Text(book.bookTitle)
-					.modifier(RDCoverModifier(width: 35, height: 50, cornerRadius: 5, lineWidth: 3))
+					.modifier(RDCoverModifier(width: 35, height: 50, cornerRadius: 5, lineWidth: 2))
 			}
                 
             VStack(alignment: .leading) {

@@ -14,7 +14,6 @@ struct LoginNoBiomView: View {
     
     @State private var username = ""
     @State private var password = ""
-    @State private var isPasswordVisible = false
     @State private var showingCreateUser = false
     @State private var showingAlert = false
     
@@ -36,20 +35,7 @@ struct LoginNoBiomView: View {
                         .opacity(username.isValidEmail() ? 0 : 1)
                 }
                 Section {
-                    HStack {
-                        if isPasswordVisible {
-                            TextField("Contraseña", text: $password)
-                        } else {
-                            SecureField("Contraseña", text: $password)
-                        }
-                        Spacer()
-                        Button {
-                            isPasswordVisible.toggle()
-                        } label: {
-                            Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                .foregroundColor(.secondary)
-                        }
-                    }
+                    SecureField("Contraseña", text: $password)
                 } header: {
                     Text("Contraseña:")
                 } footer: {
@@ -61,11 +47,8 @@ struct LoginNoBiomView: View {
                         Button {
                             showingCreateUser = true
                         } label: {
-                            HStack {
-                                Spacer()
-                                Text("Crea tu usuario y contraseña")
-                                Spacer()
-                            }
+                            Text("Crea tu usuario y contraseña")
+								.frame(maxWidth: .infinity)
                         }
                     } else {
                         Button {
@@ -79,11 +62,8 @@ struct LoginNoBiomView: View {
                                 showingAlert = true
                             }
                         } label: {
-                            HStack {
-                                Spacer()
-                                Text("Login")
-                                Spacer()
-                            }
+                            Text("Login")
+								.frame(maxWidth: .infinity)
                         }
                         .disabled(username.isEmpty || password.isEmpty || !username.isValidEmail())
                         .alert("Acceso denegado.", isPresented: $showingAlert) {
@@ -97,11 +77,8 @@ struct LoginNoBiomView: View {
                     Button {
                         dismiss()
                     } label: {
-                        HStack {
-                            Spacer()
-                            Text("Cancelar")
-                            Spacer()
-                        }
+                        Text("Cancelar")
+							.frame(maxWidth: .infinity)
                     }
                 }
             }

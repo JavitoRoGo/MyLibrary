@@ -19,7 +19,7 @@ struct RDCoverModifier: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(.white, lineWidth: lineWidth)
+					.stroke(.white.opacity(0.8), lineWidth: lineWidth)
             }
             .shadow(color: .gray, radius: 7)
     }

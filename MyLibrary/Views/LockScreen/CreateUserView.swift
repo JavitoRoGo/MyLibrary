@@ -16,7 +16,6 @@ struct CreateUserView: View {
     @State private var nickname = ""
     @State private var username = ""
     @State private var repeatPassword = ""
-    @State private var isPasswordVisible = false
     
     var isValidAndEqual: Bool {
         if repeatPassword.isEmpty {
@@ -42,34 +41,9 @@ struct CreateUserView: View {
                 }
                 
                 Section {
-                    HStack {
-                        if isPasswordVisible {
-							TextField("Introduce la contraseña", text: $preferences.password)
-                        } else {
-							SecureField("Introduce la contraseña", text: $preferences.password)
-                        }
-                        Spacer()
-                        Button {
-                            isPasswordVisible.toggle()
-                        } label: {
-                            Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    HStack {
-                        if isPasswordVisible {
-                            TextField("Repite la contraseña", text: $repeatPassword)
-                        } else {
-                            SecureField("Repite la contraseña", text: $repeatPassword)
-                        }
-                        Spacer()
-                        Button {
-                            isPasswordVisible.toggle()
-                        } label: {
-                            Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                                .foregroundColor(.secondary)
-                        }
-                    }
+                    SecureField("Introduce la contraseña", text: $preferences.password)
+                    SecureField("Repite la contraseña", text: $repeatPassword)
+					
 					List(preferences.validations) { validation in
                         HStack {
                             Image(systemName: validation.state == .success ? "checkmark.circle.fill" : "checkmark.circle")
@@ -104,11 +78,10 @@ struct CreateUserView: View {
                         dismiss()
                     } label: {
                         HStack {
-                            Spacer()
                             Image(systemName: isValidAndEqual ? "lock.open.fill" : "lock.fill")
                             Text("Crear")
-                            Spacer()
                         }
+						.frame(maxWidth: .infinity)
                     }
                     .disabled(!isValidAndEqual || username.isEmpty || !username.isValidEmail())
                 }
@@ -116,11 +89,8 @@ struct CreateUserView: View {
                     Button {
                         dismiss()
                     } label: {
-                        HStack {
-                            Spacer()
-                            Text("Cancelar")
-                            Spacer()
-                        }
+                        Text("Cancelar")
+							.frame(maxWidth: .infinity)
                     }
                 }
             }
