@@ -26,11 +26,18 @@ struct LockScreenView: View {
         } else {
             NavigationStack {
                 ZStack {
-                    Image("opened")
-                        .resizable()
-                        .scaledToFill()
-                        .ignoresSafeArea()
-                        .opacity(0.4)
+                    ZStack {
+						Image(.opened)
+							.resizable()
+							.scaledToFill()
+							.ignoresSafeArea()
+							.opacity(0.3)
+						Image(.launch)
+							.resizable()
+							.frame(maxWidth: .infinity, maxHeight: .infinity)
+							.ignoresSafeArea()
+							.opacity(0.2)
+                    }
                     
                     VStack {
                         VStack {
