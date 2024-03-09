@@ -28,7 +28,7 @@ struct BookRow: View {
 
 struct BookRow_Previews: PreviewProvider {
     static var previews: some View {
-        BookRow(book: Books.dataTest)
+		BookRow(book: Books.example[0])
             .previewLayout(.fixed(width: 400, height: 90))
     }
 }

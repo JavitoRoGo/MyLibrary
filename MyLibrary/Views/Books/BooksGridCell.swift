@@ -38,6 +38,6 @@ struct BooksGridCell: View {
 
 struct BooksGridCell_Previews: PreviewProvider {
     static var previews: some View {
-		BooksGridCell(book: Books.dataTest)
+		BooksGridCell(book: Books.example[0])
     }
 }

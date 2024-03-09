@@ -27,6 +27,6 @@ struct BooksGrid: View {
 
 struct BooksGrid_Previews: PreviewProvider {
     static var previews: some View {
-		BooksGrid(books: [Books.dataTest])
+		BooksGrid(books: Books.example)
     }
 }

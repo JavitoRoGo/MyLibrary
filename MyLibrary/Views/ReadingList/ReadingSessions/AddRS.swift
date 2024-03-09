@@ -112,11 +112,9 @@ struct AddRS: View {
 }
 
 struct AddRS_Previews: PreviewProvider {
-    static let book = NowReading.dataTest
-    
-    static var previews: some View {
+	static var previews: some View {
         NavigationView {
-            AddRS(book: .constant(book), startingPage: book.nextPage, hour: 0, minute: 0)
+			AddRS(book: .constant(NowReading.example[0]), startingPage: NowReading.example[0].nextPage, hour: 0, minute: 0)
 				.environment(GlobalViewModel.preview)
 				.environmentObject(UserPreferences())
         }

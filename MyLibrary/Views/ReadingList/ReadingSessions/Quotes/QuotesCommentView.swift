@@ -61,7 +61,7 @@ struct QuotesCommentView: View {
 
 struct QuotesCommentView_Previews: PreviewProvider {
     static var previews: some View {
-        QuotesCommentView(session: ReadingSession.dataTest)
+        QuotesCommentView(session: ReadingSession.example[0])
 			.environment(GlobalViewModel.preview)
     }
 }

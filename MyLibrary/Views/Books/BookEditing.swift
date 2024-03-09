@@ -72,7 +72,7 @@ struct BookEditing: View {
 
 struct BookEditing_Previews: PreviewProvider {
     static var previews: some View {
-        BookEditing(book: .constant(Books.dataTest), newBookTitle: "Título de prueba", newStatus: .notRead, newOwner: "Yo", newPlace: "A1", newSynopsis: "Resumen de prueba.")
+        BookEditing(book: .constant(Books.example[0]), newBookTitle: "Título de prueba", newStatus: .notRead, newOwner: "Yo", newPlace: "A1", newSynopsis: "Resumen de prueba.")
 			.environment(GlobalViewModel.preview)
     }
 }

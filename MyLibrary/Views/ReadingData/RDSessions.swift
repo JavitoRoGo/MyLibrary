@@ -61,7 +61,7 @@ struct RDSessions: View {
 struct RDSessions_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RDSessions(rdsessions: ReadingData.dataTest.readingSessions, rdata: ReadingData.dataTest)
+            RDSessions(rdsessions: ReadingSession.example, rdata: ReadingData.example[0])
 				.environment(GlobalViewModel.preview)
         }
     }

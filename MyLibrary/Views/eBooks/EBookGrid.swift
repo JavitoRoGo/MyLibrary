@@ -32,7 +32,7 @@ struct EBookGrid: View {
 
 struct EBookGrid_Previews: PreviewProvider {
     static var previews: some View {
-		EBookGrid(ebooks: [EBooks.dataTest])
+		EBookGrid(ebooks: EBooks.example)
 			.environment(GlobalViewModel.preview)
     }
 }

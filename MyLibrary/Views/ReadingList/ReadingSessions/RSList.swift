@@ -40,7 +40,7 @@ struct RSList: View {
 struct RSList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RSList(book: NowReading.dataTest)
+			RSList(book: NowReading.example[0])
 				.environment(GlobalViewModel.preview)
         }
     }

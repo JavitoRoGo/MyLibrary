@@ -74,7 +74,7 @@ struct RDMapView: View {
 struct RDMapView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-			RDMapView(books: [ReadingData.dataTest])
+			RDMapView(books: ReadingData.example)
 				.environmentObject(UserPreferences())
         }
     }

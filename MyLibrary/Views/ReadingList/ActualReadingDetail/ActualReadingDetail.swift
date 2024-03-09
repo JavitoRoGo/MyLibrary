@@ -59,7 +59,7 @@ struct ActualReadingDetail: View {
 struct ActualReadingDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ActualReadingDetail(book: NowReading.dataTest)
+			ActualReadingDetail(book: NowReading.example[0])
 				.environment(GlobalViewModel.preview)
         }
     }

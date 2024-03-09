@@ -97,7 +97,7 @@ struct EditRDView: View {
 
 struct EditRDView_Previews: PreviewProvider {
     static var previews: some View {
-        EditRDView(book: .constant(ReadingData.dataTest))
+        EditRDView(book: .constant(ReadingData.example[0]))
 			.environment(GlobalViewModel.preview)
     }
 }

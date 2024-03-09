@@ -55,7 +55,7 @@ struct RDDetail: View {
 struct RDDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RDDetail(rdata: ReadingData.dataTest)
+			RDDetail(rdata: ReadingData.example[0])
 				.environment(GlobalViewModel.preview)
         }
     }

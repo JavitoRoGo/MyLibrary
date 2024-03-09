@@ -28,7 +28,7 @@ struct EBookRow: View {
 
 struct EBookRow_Previews: PreviewProvider {
     static var previews: some View {
-        EBookRow(ebook: EBooks.dataTest)
+        EBookRow(ebook: EBooks.example[0])
             .previewLayout(.fixed(width: 400, height: 90))
     }
 }

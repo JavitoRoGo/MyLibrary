@@ -142,7 +142,7 @@ struct EBookEditView: View {
 
 struct EBookEditView_Previews: PreviewProvider {
     static var previews: some View {
-		EBookEditView(ebook: .constant(EBooks.dataTest), newStatus: .reading)
+		EBookEditView(ebook: .constant(EBooks.example[0]), newStatus: .reading)
 			.environment(GlobalViewModel.preview)
     }
 }

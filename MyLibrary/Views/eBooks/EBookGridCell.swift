@@ -38,6 +38,6 @@ struct EBookGridCell: View {
 
 struct EBookCell_Previews: PreviewProvider {
     static var previews: some View {
-		EBookGridCell(ebook: EBooks.dataTest)
+		EBookGridCell(ebook: EBooks.example[0])
     }
 }

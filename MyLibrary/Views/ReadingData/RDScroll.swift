@@ -68,7 +68,7 @@ struct RDScroll: View {
 
 struct RDScroll_Previews: PreviewProvider {
     static var previews: some View {
-		RDScroll(rdata: .constant(ReadingData.dataTest))
+		RDScroll(rdata: .constant(ReadingData.example[0]))
 			.environment(GlobalViewModel.preview)
             .previewLayout(.fixed(width: 400, height: 250))
     }
