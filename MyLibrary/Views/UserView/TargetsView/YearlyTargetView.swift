@@ -34,12 +34,7 @@ struct YearlyTargetView: View {
                     .foregroundColor(yearlyTarget == .books ? .primary : .secondary.opacity(0.4))
                     .disabled(yearlyTarget == .pages)
                     Section {
-                        HStack {
-                            Text("Páginas")
-                            Spacer()
-                            TextField("", value: $pages, format: .number)
-                                .multilineTextAlignment(.trailing)
-                        }
+						Stepper("Páginas: \(pages)", value: $pages, in: 1...500_000, step: 100)
                     }
                     .foregroundColor(yearlyTarget == .pages ? .primary : .secondary.opacity(0.4))
                     .disabled(yearlyTarget == .books)

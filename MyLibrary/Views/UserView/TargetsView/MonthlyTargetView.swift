@@ -34,12 +34,7 @@ struct MonthlyTargetView: View {
                     .foregroundColor(monthlyTarget == .books ? .primary : .secondary.opacity(0.4))
                     .disabled(monthlyTarget == .pages)
                     Section {
-                        HStack {
-                            Text("Páginas")
-                            Spacer()
-                            TextField("", value: $pages, format: .number)
-                                .multilineTextAlignment(.trailing)
-                        }
+						Stepper("Páginas: \(pages)", value: $pages, in: 1...30000, step: 50)
                     }
                     .foregroundColor(monthlyTarget == .pages ? .primary : .secondary.opacity(0.4))
                     .disabled(monthlyTarget == .books)

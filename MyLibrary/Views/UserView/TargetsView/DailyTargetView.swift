@@ -25,12 +25,7 @@ struct DailyTargetView: View {
                 .padding()
                 Form {
                     Section {
-                        HStack {
-                            Text("Páginas")
-                            Spacer()
-                            TextField("", value: $pages, format: .number)
-                                .multilineTextAlignment(.trailing)
-                        }
+						Stepper("Páginas: \(pages)", value: $pages, in: 1...100)
                     }
                     .foregroundColor(dailyTarget == .pages ? .primary : .secondary.opacity(0.4))
                     .disabled(dailyTarget == .time)
@@ -64,5 +59,6 @@ struct DailyTargetView_Previews: PreviewProvider {
     static var previews: some View {
         DailyTargetView(dailyTarget: .constant(.pages))
 			.environment(GlobalViewModel.preview)
+			.environmentObject(UserPreferences())
     }
 }

@@ -26,12 +26,7 @@ struct WeeklyTargetView: View {
                 .padding()
                 Form {
                     Section {
-                        HStack {
-                            Text("Páginas")
-                            Spacer()
-                            TextField("", value: $pages, format: .number)
-                                .multilineTextAlignment(.trailing)
-                        }
+						Stepper("Páginas: \(pages)", value: $pages, in: 1...1000, step: 10)
                     }
                     .foregroundColor(weeklyTarget == .pages ? .primary : .secondary.opacity(0.4))
                     .disabled(weeklyTarget == .time)
