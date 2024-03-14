@@ -41,7 +41,7 @@ extension RDDetail {
 				}
 				Spacer()
 				VStack {
-					Text(">50 pág:")
+					Text(">\(preferences.dailyPagesTarget) pág:")
 						.font(.subheadline)
 					Text(String(rdata.over50))
 						.font(.headline)

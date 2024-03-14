@@ -88,7 +88,7 @@ extension RDDetail {
 				let compare = compareWithMean(value: value, mean: mean)
 				
 				VStack {
-					Text(">50 (%):")
+					Text(">\(preferences.dailyPagesTarget) (%):")
 						.font(.subheadline)
 					Text(value.formatted(.number.precision(.fractionLength(0))) + "%")
 						.font(.headline)

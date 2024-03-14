@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OldBarGraph: View {
+	@EnvironmentObject var preferences: UserPreferences
 	let datas: [Double]
 	let labels: [String]
 	var maxData: Double {
@@ -39,7 +40,7 @@ struct OldBarGraph: View {
 							ForEach(datas.indices, id: \.self) { index in
 								Text(labels[index])
 									.font(.caption)
-									.foregroundColor(datas[index] >= 50 ? .green : .primary)
+									.foregroundColor(datas[index] >= Double(preferences.dailyPagesTarget) ? .green : .primary)
 									.frame(width: 30, alignment: .leading)
 							}
 							.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -75,7 +76,7 @@ struct OldBarGraph: View {
 	}
 	
 	func showOver50(index: Int) -> Bool {
-		if datas[index] >= 50 {
+		if datas[index] >= Double(preferences.dailyPagesTarget) {
 			return true
 		}
 		return false

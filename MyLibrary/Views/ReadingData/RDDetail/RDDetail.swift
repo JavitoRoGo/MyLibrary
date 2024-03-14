@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RDDetail: View {
     @Environment(GlobalViewModel.self) var model
+	@EnvironmentObject var preferences: UserPreferences
     
     @State var rdata: ReadingData
     @State var showingLocation = false
@@ -57,6 +58,7 @@ struct RDDetail_Previews: PreviewProvider {
         NavigationView {
 			RDDetail(rdata: ReadingData.example[0])
 				.environment(GlobalViewModel.preview)
+				.environmentObject(UserPreferences())
         }
     }
 }

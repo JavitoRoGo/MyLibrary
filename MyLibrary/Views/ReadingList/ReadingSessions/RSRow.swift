@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RSRow: View {
+	@EnvironmentObject var preferences: UserPreferences
+	
     @State var session: ReadingSession
     @State private var showingQuotes = false
     
@@ -29,7 +31,7 @@ struct RSRow: View {
                 Text(formattedDate)
                     .font(.body)
                 Text("\(session.pages) páginas leídas en \(session.duration) (\(session.startingPage) - \(session.endingPage))")
-                    .foregroundColor(session.pages >= 50 ? .green.opacity(0.9) : .primary)
+					.foregroundColor(session.pages >= preferences.dailyPagesTarget ? .green.opacity(0.9) : .primary)
                 Text("\(session.minPerPag) por página")
             }
             Spacer()
@@ -53,6 +55,7 @@ struct RSRow: View {
 struct RSRow_Previews: PreviewProvider {
     static var previews: some View {
         RSRow(session: ReadingSession.example[0])
+			.environmentObject(UserPreferences())
             .previewLayout(.sizeThatFits)
     }
 }

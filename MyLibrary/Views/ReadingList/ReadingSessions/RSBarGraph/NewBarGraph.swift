@@ -9,6 +9,8 @@ import Charts
 import SwiftUI
 
 struct NewBarGraph: View {
+	@EnvironmentObject var preferences: UserPreferences
+	
 	let datas: [Double]
 	let labels: [String]
 	
@@ -21,7 +23,7 @@ struct NewBarGraph: View {
 					x: .value("Páginas", data.animate ? data.value : 0),
 					y: .value("Día", data.label)
 				)
-				.foregroundStyle(data.value < 50 ? .blue : .green)
+				.foregroundStyle(data.value < Double(preferences.dailyPagesTarget) ? .blue : .green)
 				.annotation(position: .trailing) {
 					Text(data.value.formatted())
 						.font(.caption)
