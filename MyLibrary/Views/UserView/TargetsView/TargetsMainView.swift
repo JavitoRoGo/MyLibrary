@@ -33,8 +33,12 @@ struct TargetsMainView: View {
                                 Text("\(model.userLogic.readToday(dailyTarget).0) / \(model.userLogic.dailyTargetText(dailyTarget))")
                             }
                             Spacer()
-							RingTargetView(color: .red, current: model.userLogic.readToday(dailyTarget).1, target: dailyTarget == .pages ? preferences.dailyPagesTarget : Int(preferences.dailyTimeTarget))
-                                .frame(height: 50)
+							RingTargetView(
+								color: .red,
+								value: model.userLogic.readToday(dailyTarget).1,
+								target: dailyTarget == .pages ? preferences.dailyPagesTarget : Int(preferences.dailyTimeTarget),
+								dwTarget: dailyTarget
+							)
                         }
                     }
                     NavigationLink(destination: WeeklyTargetView(weeklyTarget: $weeklyTarget)) {
@@ -45,8 +49,12 @@ struct TargetsMainView: View {
                                 Text("\(model.userLogic.readThisWeek(weeklyTarget).0) / \(model.userLogic.weeklyTargetText(weeklyTarget))")
                             }
                             Spacer()
-							RingTargetView(color: .orange, current: model.userLogic.readThisWeek(weeklyTarget).1, target: weeklyTarget == .pages ? preferences.weeklyPagesTarget : Int(preferences.weeklyTimeTarget))
-                                .frame(height: 50)
+							RingTargetView(
+								color: .orange,
+								value: model.userLogic.readThisWeek(weeklyTarget).1,
+								target: weeklyTarget == .pages ? preferences.weeklyPagesTarget : Int(preferences.weeklyTimeTarget),
+								dwTarget: weeklyTarget
+							)
                         }
                     }
                     NavigationLink(destination: MonthlyTargetView(monthlyTarget: $monthlyTarget)) {
@@ -57,8 +65,12 @@ struct TargetsMainView: View {
                                 Text("\(model.userLogic.readThisMonth(monthlyTarget).0) / \(model.userLogic.monthlyTargetText(monthlyTarget))")
                             }
                             Spacer()
-							RingTargetView(color: .green, current: model.userLogic.readThisMonth(monthlyTarget).1, target: monthlyTarget == .books ? preferences.monthlyBooksTarget : preferences.monthlyPagesTarget)
-                                .frame(height: 50)
+							RingTargetView(
+								color: .green,
+								value: model.userLogic.readThisMonth(monthlyTarget).1,
+								target: monthlyTarget == .books ? preferences.monthlyBooksTarget : preferences.monthlyPagesTarget,
+								myTarget: monthlyTarget
+							)
                         }
                     }
                     NavigationLink(destination: YearlyTargetView(yearlyTarget: $yearlyTarget)) {
@@ -69,13 +81,18 @@ struct TargetsMainView: View {
                                 Text("\(model.userLogic.readThisYear(yearlyTarget).0) / \(model.userLogic.yearlyTargetText(yearlyTarget))")
                             }
                             Spacer()
-							RingTargetView(color: .blue, current: model.userLogic.readThisYear(yearlyTarget).1, target: yearlyTarget == .books ? preferences.yearlyBooksTarget : preferences.yearlyPagesTarget)
-                                .frame(height: 50)
+							RingTargetView(
+								color: .blue,
+								value: model.userLogic.readThisYear(yearlyTarget).1,
+								target: yearlyTarget == .books ? preferences.yearlyBooksTarget : preferences.yearlyPagesTarget,
+								myTarget: yearlyTarget
+							)
                         }
                     }
                 } footer: {
                     Text("Pulsa sobre cada línea para fijar el valor de tus objetivos.")
                 }
+				
                 Section {
                     HStack {
                         Text("Diario")
