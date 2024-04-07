@@ -136,6 +136,8 @@
 		446983A92AB37770009898B9 /* EBookGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446983A82AB37770009898B9 /* EBookGrid.swift */; };
 		446983AB2AB37CE1009898B9 /* EBookGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446983AA2AB37CE1009898B9 /* EBookGridCell.swift */; };
 		446A6B52286FAE7E00465AED /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = 446A6B4F286FA15100465AED /* explosion.caf */; };
+		446B23BC2BC1C5BD00E4B906 /* USERPreview.json in Resources */ = {isa = PBXBuildFile; fileRef = 441CC8362ABF10C700EB4BB4 /* USERPreview.json */; };
+		446B23BD2BC2077200E4B906 /* RingCircleArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */; };
 		446C35A42790AC6E00532EF9 /* RDGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A32790AC6E00532EF9 /* RDGrid.swift */; };
 		446C35A62790AF3E00532EF9 /* RDMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A52790AF3E00532EF9 /* RDMain.swift */; };
 		446C35A82790B8EA00532EF9 /* RDCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446C35A72790B8EA00532EF9 /* RDCell.swift */; };
@@ -263,7 +265,6 @@
 		44DDA88B2A8442C9000104A1 /* AddEBookExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */; };
 		44DDA88D2A844773000104A1 /* RDCoverModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA88C2A844773000104A1 /* RDCoverModifier.swift */; };
 		44DDA88F2A844BEF000104A1 /* RDDetailExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA88E2A844BEF000104A1 /* RDDetailExt.swift */; };
-		44DDA8922A844F86000104A1 /* MyRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8912A844F86000104A1 /* MyRing.swift */; };
 		44DDA8952A84502E000104A1 /* NewLineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8942A84502E000104A1 /* NewLineGraph.swift */; };
 		44DDA8972A84506D000104A1 /* OldLineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8962A84506D000104A1 /* OldLineGraph.swift */; };
 		44DDA8992A8450D1000104A1 /* OldLineGraphExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDA8982A8450D1000104A1 /* OldLineGraphExt.swift */; };
@@ -557,7 +558,6 @@
 		44DDA88A2A8442C9000104A1 /* AddEBookExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEBookExt.swift; sourceTree = "<group>"; };
 		44DDA88C2A844773000104A1 /* RDCoverModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDCoverModifier.swift; sourceTree = "<group>"; };
 		44DDA88E2A844BEF000104A1 /* RDDetailExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDDetailExt.swift; sourceTree = "<group>"; };
-		44DDA8912A844F86000104A1 /* MyRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRing.swift; sourceTree = "<group>"; };
 		44DDA8942A84502E000104A1 /* NewLineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLineGraph.swift; sourceTree = "<group>"; };
 		44DDA8962A84506D000104A1 /* OldLineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldLineGraph.swift; sourceTree = "<group>"; };
 		44DDA8982A8450D1000104A1 /* OldLineGraphExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldLineGraphExt.swift; sourceTree = "<group>"; };
@@ -1260,7 +1260,6 @@
 			isa = PBXGroup;
 			children = (
 				44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */,
-				44DDA8912A844F86000104A1 /* MyRing.swift */,
 			);
 			path = RingGraph;
 			sourceTree = "<group>";
@@ -1450,6 +1449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44E32D4E295917F800E06425 /* Assets.xcassets in Resources */,
+				446B23BC2BC1C5BD00E4B906 /* USERPreview.json in Resources */,
 				445B62B4298C43560036D140 /* Assets.xcassets in Resources */,
 				44FD4E4D297B192B00555B82 /* USERDATA.json in Resources */,
 			);
@@ -1543,7 +1543,6 @@
 				440F68B6295FB1FB00F01C5F /* LockScreenView.swift in Sources */,
 				44EEC47628F19751000C1843 /* MonthChart.swift in Sources */,
 				44801F4D28144F84006FC06C /* ReadingTimer.swift in Sources */,
-				44DDA8922A844F86000104A1 /* MyRing.swift in Sources */,
 				44B4B2182AD8569400CDB5A9 /* EBookModel.swift in Sources */,
 				44F367D22AA61A2000F00EA3 /* UserConfigViewDeleteExt.swift in Sources */,
 				447B22D92B261FCB00F848F9 /* ChunkedByEditionView.swift in Sources */,
@@ -1731,6 +1730,7 @@
 				44523D412985646C0046E0B5 /* EachMainViewButton.swift in Sources */,
 				446D6C062AB5115F001A6E85 /* PreviewData.swift in Sources */,
 				44B4B2292AD8623A00CDB5A9 /* LocationModel.swift in Sources */,
+				446B23BD2BC2077200E4B906 /* RingCircleArc.swift in Sources */,
 				445121092AAA132700E680DE /* StringExtensions.swift in Sources */,
 				44B4B2192AD8569400CDB5A9 /* EBookModel.swift in Sources */,
 				44B4B2252AD85BC500CDB5A9 /* NowReadingModel.swift in Sources */,
@@ -2059,6 +2059,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "MyLibrary/Preview\\ Content";
 				DEVELOPMENT_TEAM = CHK25YBYJC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLibraryWidget/Info.plist;
@@ -2090,6 +2091,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "MyLibrary/Preview\\ Content";
 				DEVELOPMENT_TEAM = CHK25YBYJC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLibraryWidget/Info.plist;

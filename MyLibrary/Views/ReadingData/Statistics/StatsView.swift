@@ -13,16 +13,19 @@ struct StatsView: View {
     @State var tag = 0
     
     var body: some View {
-		let colors = model.userLogic.getColors()
+		let datas: [SectorChartData] = model.userLogic.datas(tag: tag)
         VStack {
             HStack {
                 Text(graphKey)
                 Spacer()
                 RoundedGraphMenu(graphKey: $graphKey, tag: $tag)
             }
-			RingCircleArc(datas: model.userLogic.datas(tag: tag).1, colors: colors)
-            StatsList(tag: tag, colors: colors)
-            Spacer()
+			if !datas.isEmpty {
+				RingCircleArc(sectorChartDatas: datas, tag: tag)
+				StatsList(datas: datas, tag: tag)
+			} else {
+				ContentUnavailableView("No hay datos", systemImage: "book", description: Text("Registra tu primer libro para ver aquí los datos."))
+			}
         }
         .padding(.horizontal)
         .navigationTitle("Estadísticas")

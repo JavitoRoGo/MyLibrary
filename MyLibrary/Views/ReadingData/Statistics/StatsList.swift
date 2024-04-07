@@ -9,8 +9,8 @@ import SwiftUI
 
 struct StatsList: View {
     @Environment(GlobalViewModel.self) var model
+	let datas: [SectorChartData]
     let tag: Int
-    let colors: [Color]
     var topRange: Int {
         if tag == 3 {
             return Formatt.allCases.count
@@ -20,47 +20,44 @@ struct StatsList: View {
 			return model.userLogic.user.bookFinishingYears.count
         }
     }
-    var datas: ([String], [Int]) {
-		model.userLogic.datas(tag: tag)
-    }
     
     var body: some View {
         if tag == 3 {
             List(0..<topRange, id: \.self) { index in
                 HStack {
                     Capsule()
-                        .fill(colors[index])
+						.fill(datas[index].color)
                         .frame(width: 20, height: 8)
-                    Text(datas.0[index])
+					Text(datas[index].label)
                     Spacer()
-                    Text("\(datas.1[index]) libros")
+					Text("\(datas[index].data) libros")
                 }
             }
         } else if tag == 4 {
             List(0..<topRange, id: \.self) { index in
                 HStack {
                     Capsule()
-                        .fill(colors[index])
+						.fill(datas[index].color)
                         .frame(width: 20, height: 8)
                     RDStars(rating: .constant(index + 1))
                     Spacer()
-                    Text("\(datas.1[index]) libros")
+					Text("\(datas[index].data) libros")
                 }
             }
         } else {
             List(0..<topRange, id: \.self) { index in
                 HStack {
                     Capsule()
-                        .fill(colors[index])
+						.fill(datas[index].color)
                         .frame(width: 20, height: 8)
-                    Text(datas.0[index])
+					Text(datas[index].label)
                     Spacer()
                     if tag == 0 {
-                        Text("\(datas.1[index]) libros")
+						Text("\(datas[index].data) libros")
                     } else if tag == 1 {
-                        Text("\(datas.1[index]) páginas")
+						Text("\(datas[index].data) páginas")
                     } else if tag == 2 {
-                        Text("\(datas.1[index]) pág/día")
+						Text("\(datas[index].data) pág/día")
                     }
                 }
             }
@@ -69,10 +66,16 @@ struct StatsList: View {
 }
 
 struct StatsList_Previews: PreviewProvider {
-    static let colors: [Color] = [.red, .orange, .blue, .green, .yellow]
+	static let datas: [SectorChartData] = [
+		.init(label: "10", data: 10, color: .red),
+		.init(label: "20", data: 20, color: .orange),
+		.init(label: "30", data: 30, color: .green),
+		.init(label: "40", data: 40, color: .blue),
+		.init(label: "50", data: 50, color: .purple)
+	]
     
     static var previews: some View {
-        StatsList(tag: 0, colors: colors)
+		StatsList(datas: datas, tag: 0)
 			.environment(GlobalViewModel.preview)
     }
 }

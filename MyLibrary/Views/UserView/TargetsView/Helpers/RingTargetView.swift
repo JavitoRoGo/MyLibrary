@@ -9,23 +9,43 @@ import SwiftUI
 
 struct RingTargetView: View {
     let color: Color
-    let current: Int
+    let value: Int
     let target: Int
+	var dwTarget: DWTarget?
+	var myTarget: MYTarget?
+	
+	var imageName: String {
+		if let dwTarget {
+			switch dwTarget {
+				case .pages:
+					return "book.pages"
+				case .time:
+					return "hourglass"
+			}
+		}
+		if let myTarget {
+			switch myTarget {
+				case .books:
+					return "books.vertical"
+				case .pages:
+					return "book.pages"
+			}
+		}
+		return ""
+	}
     
-    var body: some View {
-        ZStack {
-            Circle()
-                .stroke(color, lineWidth: 10).opacity(0.1)
-            Circle()
-                .trim(from: 0, to: CGFloat(current) / CGFloat(target))
-                .stroke(color, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
-                .rotationEffect(.init(degrees: -90))
-        }
-    }
+	var body: some View {
+		Gauge(value: Float(value), in: 0...Float(target)) { 
+			Image(systemName: imageName)
+				.foregroundStyle(color.opacity(0.8))
+		}
+		.gaugeStyle(.accessoryCircularCapacity)
+		.tint(color)
+	}
 }
 
 struct RingTargetView_Previews: PreviewProvider {
     static var previews: some View {
-        RingTargetView(color: .red, current: 15, target: 40)
+		RingTargetView(color: .red, value: 15, target: 40, dwTarget: .pages)
     }
 }
