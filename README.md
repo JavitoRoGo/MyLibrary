@@ -118,3 +118,5 @@ ConnectivityManager para conectar con iOS.
 * Se añade animación al botón de play/pause que se muestra durante la sesión de lectura.
 * Cambios internos para usar el patrón singleton para previews.
 * Mejora en la vista de los comentarios a los libros: se añade opción de buscar por título, pantalla en caso de no coincidencias, y se muestra la portada y la calificación por estrellas.
+* Se cambia la vista anillo custom en las celdas de la lista de lectura/en espera, por el componente nativo Gauge. También se hace este cambio en la vista de objetivos dentro del Tab de User y en el widget de objetivos.
+* Se cambia el gráfico de sectores en las estadísticas de ReadingData por el gráfico SectorMark de Charts.
