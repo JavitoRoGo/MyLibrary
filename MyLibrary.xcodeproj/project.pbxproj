@@ -60,7 +60,6 @@
 		442B619529562FA00003537E /* RDStatsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B619429562FA00003537E /* RDStatsMainView.swift */; };
 		442B6197295635BE0003537E /* RDGlobalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B6196295635BE0003537E /* RDGlobalStats.swift */; };
 		442B619929565B1A0003537E /* RDGlobalStatsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B619829565B1A0003537E /* RDGlobalStatsHelper.swift */; };
-		44307ECF2B2A01450076DCB4 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 44307ECE2B2A01450076DCB4 /* Algorithms */; };
 		4431C8972AB883E900B705A8 /* UserConfigViewAppearanceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C8962AB883E900B705A8 /* UserConfigViewAppearanceExt.swift */; };
 		4431C8992AB8847100B705A8 /* UserConfigViewGridExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C8982AB8847100B705A8 /* UserConfigViewGridExt.swift */; };
 		4431C89B2AB884CD00B705A8 /* UserConfigViewIDExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431C89A2AB884CD00B705A8 /* UserConfigViewIDExt.swift */; };
@@ -206,7 +205,8 @@
 		44A36F222B13BE6000DA146D /* HashPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A36F202B13BE6000DA146D /* HashPasswordHelper.swift */; };
 		44A932D02B24AC510028CAD8 /* ChunkedMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A932CF2B24AC510028CAD8 /* ChunkedMenuView.swift */; };
 		44A932D22B24CAF30028CAD8 /* ChunkedByAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A932D12B24CAF30028CAD8 /* ChunkedByAuthorView.swift */; };
-		44A932D52B24CEE10028CAD8 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 44A932D42B24CEE10028CAD8 /* Algorithms */; };
+		44A9B5112BC33C86009224CE /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 44A9B5102BC33C86009224CE /* Algorithms */; };
+		44A9B5132BC33CA0009224CE /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 44A9B5122BC33CA0009224CE /* Algorithms */; };
 		44AA171329A004A900944623 /* RSEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA171229A004A900944623 /* RSEdit.swift */; };
 		44AB0300280A2E2800EAFE45 /* RingCircleArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AB02FF280A2E2800EAFE45 /* RingCircleArc.swift */; };
 		44B0409C284FBA4700C29E22 /* RSModelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0409B284FBA4700C29E22 /* RSModelExt.swift */; };
@@ -599,7 +599,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44A932D52B24CEE10028CAD8 /* Algorithms in Frameworks */,
+				44A9B5112BC33C86009224CE /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +614,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44307ECF2B2A01450076DCB4 /* Algorithms in Frameworks */,
+				44A9B5132BC33CA0009224CE /* Algorithms in Frameworks */,
 				44E32D47295917F600E06425 /* SwiftUI.framework in Frameworks */,
 				44E32D46295917F600E06425 /* WidgetKit.framework in Frameworks */,
 			);
@@ -1334,7 +1334,7 @@
 			);
 			name = MyLibrary;
 			packageProductDependencies = (
-				44A932D42B24CEE10028CAD8 /* Algorithms */,
+				44A9B5102BC33C86009224CE /* Algorithms */,
 			);
 			productName = MyLibrary;
 			productReference = 44265382277DF5020047D75C /* MyLibrary.app */;
@@ -1371,7 +1371,7 @@
 			);
 			name = MyLibraryWidgetExtension;
 			packageProductDependencies = (
-				44307ECE2B2A01450076DCB4 /* Algorithms */,
+				44A9B5122BC33CA0009224CE /* Algorithms */,
 			);
 			productName = MyLibraryWidgetExtension;
 			productReference = 44E32D45295917F600E06425 /* MyLibraryWidgetExtension.appex */;
@@ -1408,7 +1408,7 @@
 			);
 			mainGroup = 44265379277DF5020047D75C;
 			packageReferences = (
-				44A932D32B24CEE10028CAD8 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				44A9B50F2BC33C86009224CE /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 44265383277DF5020047D75C /* Products */;
 			projectDirPath = "";
@@ -2153,7 +2153,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		44A932D32B24CEE10028CAD8 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+		44A9B50F2BC33C86009224CE /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
 			requirement = {
@@ -2164,14 +2164,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		44307ECE2B2A01450076DCB4 /* Algorithms */ = {
+		44A9B5102BC33C86009224CE /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 44A932D32B24CEE10028CAD8 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			package = 44A9B50F2BC33C86009224CE /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
 		};
-		44A932D42B24CEE10028CAD8 /* Algorithms */ = {
+		44A9B5122BC33CA0009224CE /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 44A932D32B24CEE10028CAD8 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			package = 44A9B50F2BC33C86009224CE /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
 		};
 /* End XCSwiftPackageProductDependency section */
