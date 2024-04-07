@@ -77,59 +77,55 @@ extension UserLogic {
     }
     
     // Datos para la gráfica estadística de anillo
-    func datas(tag: Int) -> ([String], [Int]) {
-        var labelArray: [String] = []
-        var datasArray: [Int] = []
-        switch tag {
-        case 1:
-			for year in user.bookFinishingYears {
-                var pages = 0
-                for book in rdataPerYear(year, filterBy: .all) {
-                    pages += book.pages
-                }
-                datasArray.append(pages)
-                labelArray.append(String(year))
-            }
-            return (labelArray, datasArray)
-        case 2:
-			for year in user.bookFinishingYears {
-                var ppday = 0
-                let books = rdataPerYear(year, filterBy: .all)
-                for book in books {
-                    ppday += Int(book.pagPerDay)
-                }
-                let mean = (books.count == 0 ? 0 : ppday / books.count)
-                datasArray.append(mean)
-                labelArray.append(String(year))
-            }
-            return (labelArray, datasArray)
-        case 3:
-            for formatt in Formatt.allCases {
-				let books = numberOfReadingDataPerFormatt(formatt)
-                datasArray.append(books)
-                labelArray.append(formatt.rawValue)
-            }
-            return (labelArray, datasArray)
-        case 4:
-            for rating in 1..<6 {
-				let books = user.readingDatas.filter { $0.rating == rating }.count
-                datasArray.append(books)
-            }
-            return (labelArray, datasArray)
-        default:
-			for year in user.bookFinishingYears {
-                var books = 0
-                books += numberOfReadingDataPerYear(year, filterBy: .all)
-                datasArray.append(books)
-                labelArray.append(String(year))
-            }
-            return (labelArray, datasArray)
-        }
+    func datas(tag: Int) -> [SectorChartData] {
+        var datasArray: [SectorChartData] = []
+		let colors = getColors()
+		switch tag {
+			case 1:
+				for (index, year) in user.bookFinishingYears.enumerated() {
+					var pages = 0
+					for book in rdataPerYear(year, filterBy: .all) {
+						pages += book.pages
+					}
+					datasArray.append(.init(label: String(year), data: pages, color: colors[index]))
+				}
+				return datasArray
+			case 2:
+				for (index, year) in user.bookFinishingYears.enumerated() {
+					var ppday = 0
+					let books = rdataPerYear(year, filterBy: .all)
+					for book in books {
+						ppday += Int(book.pagPerDay)
+					}
+					let mean = (books.count == 0 ? 0 : ppday / books.count)
+					datasArray.append(.init(label: String(year), data: mean, color: colors[index]))
+				}
+				return datasArray
+			case 3:
+				for (index, formatt) in Formatt.allCases.enumerated() {
+					let books = numberOfReadingDataPerFormatt(formatt)
+					datasArray.append(.init(label: formatt.rawValue, data: books, color: colors[index]))
+				}
+				return datasArray
+			case 4:
+				for (index, rating) in (1..<6).enumerated() {
+					let books = user.readingDatas.filter { $0.rating == rating }.count
+					datasArray.append(.init(label: "\(rating) \(rating == 1 ? "estrella" : "estrellas")", data: books, color: colors[index]))
+				}
+				return datasArray
+			default:
+				for (index, year) in user.bookFinishingYears.enumerated() {
+					var books = 0
+					books += numberOfReadingDataPerYear(year, filterBy: .all)
+					datasArray.append(.init(label: String(year), data: books, color: colors[index]))
+				}
+				return datasArray
+		}
     }
     
 	// Colores aleatorios para la gráfica de anillo
 	func getColors() -> [Color] {
-		let num = user.bookFinishingYears.count
+		let num = max(user.bookFinishingYears.count, 5)
 		var colors = [Color]()
 		for _ in 0..<num {
 			let red = Double.random(in: 0...255)
