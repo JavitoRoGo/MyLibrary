@@ -16,6 +16,8 @@ struct EditRDView: View {
     @State private var location: RDLocation?
     @State private var showingLocation = false
     @Binding var book: ReadingData
+	
+	let textLimit = 120
     
     var body: some View {
         Form {
@@ -37,10 +39,22 @@ struct EditRDView: View {
                 .padding(.leading)
             }
             
-            Section("Comentarios al libro") {
+            Section {
                 TextEditor(text: $comment)
-                    .frame(width: 350, height: 150)
-            }
+                    .frame(width: 350, height: 120)
+					.onChange(of: comment) {
+						comment = String(comment.prefix(textLimit))
+					}
+			} header: {
+				Text("Comentarios al libro")
+			} footer: {
+				HStack {
+					Spacer()
+					Text("\(comment.count)/\(textLimit)")
+						.foregroundStyle(comment.count < (textLimit*80/100) ? .secondary : comment.count < textLimit ? Color.orange : Color.red)
+						.fontWeight(comment.count < textLimit ? .regular : .black)
+				}
+			}
             
             Section {
                 Button {
@@ -62,12 +76,14 @@ struct EditRDView: View {
                 Button("Volver") {
                     dismiss()
                 }
-                .padding(.leading, 50)
+				.fixedSize()
+                .padding(.leading, 40)
                 Spacer()
                 Button("Guardar") {
                     saveChanges()
                 }
-                .padding(.trailing, 50)
+				.fixedSize()
+                .padding(.trailing, 40)
             }
             .buttonStyle(.bordered)
         }

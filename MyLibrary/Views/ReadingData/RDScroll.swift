@@ -15,6 +15,8 @@ struct RDScroll: View {
     
 	@State var scrollIndex: ReadingData.ID?
 	
+	@Binding var openningProgress: CGFloat
+	
 	var uiimage: UIImage {
 		if let image = getCoverImage(from: rdata.cover) {
 			image
@@ -25,10 +27,42 @@ struct RDScroll: View {
     
     var body: some View {
         VStack {
-            Image(uiImage: uiimage)
-                .resizable()
-                .modifier(RDCoverModifier(width: 120, height: 150, cornerRadius: 30, lineWidth: 4))
-                .rotation3DEffect(.degrees(spinAmount), axis: (x: 0, y: 1, z: 0))
+			if let comment = rdata.comment {
+				Group {
+					OpenableBookView(config: .init(width: 130, height: 180, progress: openningProgress)) { size in
+						Image(uiImage: uiimage)
+							.resizable()
+					} left: { size in
+						VStack(spacing: 5) {
+							Text(rdata.bookTitle)
+								.fontWidth(.condensed)
+							RDStars(rating: .constant(rdata.rating))
+						}
+						.padding(.horizontal, 3)
+						.frame(maxWidth: .infinity, maxHeight: .infinity)
+						.background(.teal.opacity(0.2))
+					} right: { size in
+						VStack(alignment: .leading, spacing: 8) {
+							Text("Comentario:")
+								.fontWeight(.semibold)
+								.font(.system(size: 14))
+							Text(comment)
+								.font(.caption)
+								.foregroundStyle(.secondary)
+							Spacer()
+						}
+						.padding(.top, 8)
+						.padding(.horizontal, 4)
+						.frame(maxWidth: .infinity, maxHeight: .infinity)
+						.background(.teal.opacity(0.2))
+					}
+				}
+			} else {
+				Image(uiImage: uiimage)
+					.resizable()
+					.modifier(RDCoverModifier(width: 130, height: 180, cornerRadius: 30, lineWidth: 4))
+					.rotation3DEffect(.degrees(spinAmount), axis: (x: 0, y: 1, z: 0))
+			}
             
 			ScrollView(.horizontal) {
 				LazyHStack {
@@ -68,8 +102,8 @@ struct RDScroll: View {
 
 struct RDScroll_Previews: PreviewProvider {
     static var previews: some View {
-		RDScroll(rdata: .constant(ReadingData.example[0]))
+		RDScroll(rdata: .constant(ReadingData.example[0]), openningProgress: .constant(0))
 			.environment(GlobalViewModel.preview)
-            .previewLayout(.fixed(width: 400, height: 250))
+//            .previewLayout(.fixed(width: 400, height: 250))
     }
 }

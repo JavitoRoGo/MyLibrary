@@ -14,11 +14,11 @@ struct RDDetail: View {
     @State var rdata: ReadingData
     @State var showingLocation = false
     @State var showingEditView = false
-    @State var showingCommentsAlert = false
+	@State var openingProgress: CGFloat = 0
     
     var body: some View {
         VStack {
-            RDScroll(rdata: $rdata)
+            RDScroll(rdata: $rdata, openningProgress: $openingProgress)
             
             List {
                 titleSection
@@ -48,7 +48,7 @@ struct RDDetail: View {
                     Text(rdata.synopsis)
                 }
             }
-            .modifier(RDDetailModifier(rdata: $rdata, showingLocation: $showingLocation, showingEditView: $showingEditView, showingCommentsAlert: $showingCommentsAlert, isThereALocation: isThereALocation))
+            .modifier(RDDetailModifier(rdata: $rdata, showingLocation: $showingLocation, showingEditView: $showingEditView, isThereALocation: isThereALocation))
         }
     }
 }

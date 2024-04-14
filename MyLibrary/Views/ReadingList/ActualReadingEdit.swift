@@ -28,6 +28,8 @@ struct ActualReadingEdit: View {
     @State var showingCameraPicker = false
     @State var showingDownloadedImage = false
     @State var showingMapSelection = false
+	
+	let textLimit = 120
     
 	var body: some View {
 		Form {
@@ -92,10 +94,22 @@ struct ActualReadingEdit: View {
                 .buttonStyle(.bordered)
             }
             
-            Section("Comentarios al libro") {
+            Section {
                 TextEditor(text: $comment)
-                    .frame(width: 350, height: 150)
-            }
+                    .frame(width: 350, height: 120)
+					.onChange(of: comment) {
+						comment = String(comment.prefix(textLimit))
+					}
+			} header: {
+				Text("Comentarios al libro")
+			} footer: {
+				HStack {
+					Spacer()
+					Text("\(comment.count)/\(textLimit)")
+						.foregroundStyle(comment.count < (textLimit*80/100) ? .secondary : comment.count < textLimit ? Color.orange : Color.red)
+						.fontWeight(comment.count < textLimit ? .regular : .black)
+				}
+			}
         }
 		.modifier(AREditModifier(book: $book, showingImageSelector: $showingImageSelector, showingImagePicker: $showingImagePicker, showingCameraPicker: $showingCameraPicker, showingMapSelection: $showingMapSelection, showingDownloadedImage: $showingDownloadedImage, inputImage: $inputImage, location: $location, bookTitle: bookTitle, loadData: loadData, loadImage: loadImage, createEditedBook: createEditedBook))
     }

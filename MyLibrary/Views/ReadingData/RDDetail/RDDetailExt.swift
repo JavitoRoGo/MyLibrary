@@ -23,7 +23,6 @@ extension RDDetail {
         @Binding var rdata: ReadingData
         @Binding var showingLocation: Bool
         @Binding var showingEditView: Bool
-        @Binding var showingCommentsAlert: Bool
         
         let isThereALocation: Bool
         
@@ -60,11 +59,6 @@ extension RDDetail {
                 }
                 .sheet(isPresented: $showingEditView) {
                     EditRDView(book: $rdata)
-                }
-                .alert("Comentarios del libro:", isPresented: $showingCommentsAlert) {
-                    Button("OK") { }
-                } message: {
-                    Text(rdata.comment ?? "")
                 }
         }
     }

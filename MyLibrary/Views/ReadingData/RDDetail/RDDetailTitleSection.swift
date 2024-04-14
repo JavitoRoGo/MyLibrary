@@ -20,12 +20,15 @@ extension RDDetail {
 				Spacer()
 				if isThereAComment {
 					Button {
-						showingCommentsAlert = true
+						withAnimation(.snappy(duration: 1)) {
+							openingProgress = (openingProgress == 1 ? 0 : 1)
+						}
 					} label: {
 						Image(systemName: "quote.bubble")
 							.font(.title3)
 							.foregroundColor(.pink)
 					}
+					.buttonStyle(.bordered)
 				}
 			}
 		}

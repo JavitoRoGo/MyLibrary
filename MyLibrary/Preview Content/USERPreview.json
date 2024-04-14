@@ -241,7 +241,8 @@
 		  "bookTitle" : "Headhunters",
 		  "sessions" : 5,
 		  "rating" : 5,
-		  "finishDate" : 576331200
+		  "finishDate" : 576331200,
+		  "comment" : "Comentario de ejemplo para un libro."
 	  }
   ],
   "myOwners" : [
