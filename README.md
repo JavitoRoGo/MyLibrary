@@ -120,3 +120,4 @@ ConnectivityManager para conectar con iOS.
 * Mejora en la vista de los comentarios a los libros: se añade opción de buscar por título, pantalla en caso de no coincidencias, y se muestra la portada y la calificación por estrellas.
 * Se cambia la vista anillo custom en las celdas de la lista de lectura/en espera, por el componente nativo Gauge. También se hace este cambio en la vista de objetivos dentro del Tab de User y en el widget de objetivos.
 * Se cambia el gráfico de sectores en las estadísticas de ReadingData por el gráfico SectorMark de Charts.
+* Se añade un efecto tipo 'apertura de libro' en la vista detalle de los registros, de forma que permiete mostrar los comentarios y la valoración de la lectura como si se abriera un libro. Para que se pueda mostrar todo el comentario en esta nueva vista, se añade un indicador y un límite de 120 caracteres al campo de comentarios.
