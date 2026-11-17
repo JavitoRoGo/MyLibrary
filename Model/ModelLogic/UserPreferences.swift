@@ -23,7 +23,7 @@ final class UserPreferences: ObservableObject {
 	}
 	
 	// Tipo de mapa por defecto
-	@AppStorage ("preferredMapStyle") var preferredStandardMapStyle = true
+	@AppStorage("preferredMapStyle") var preferredStandardMapStyle = true
 	
 	// OBJETIVOS DE LECTURA:
 	
@@ -45,7 +45,7 @@ final class UserPreferences: ObservableObject {
 	@Published var password = ""
 	@Published var validations: [Validation] = []
 	@Published var isValid: Bool = false
-		
+	
 	private var cancellableSet: Set<AnyCancellable> = []
 	
 	init() {

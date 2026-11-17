@@ -489,6 +489,7 @@
 		447B22DA2B26274B00F848F9 /* ChunkedByEditionYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkedByEditionYearView.swift; sourceTree = "<group>"; };
 		447B22DC2B262AD700F848F9 /* ChunkedByWritingYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkedByWritingYearView.swift; sourceTree = "<group>"; };
 		447B22DE2B266E4500F848F9 /* ChunkedByPagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChunkedByPagesView.swift; sourceTree = "<group>"; };
+		447DEB242DECB76D006F532F /* Person.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Person.plist; sourceTree = "<group>"; };
 		44801F4C28144F83006FC06C /* ReadingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTimer.swift; sourceTree = "<group>"; };
 		4482141F28F720500037BE9F /* AnimateChartsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateChartsHelper.swift; sourceTree = "<group>"; };
 		4482142228F724900037BE9F /* MaxAndMin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxAndMin.swift; sourceTree = "<group>"; };
@@ -696,6 +697,7 @@
 		44265379277DF5020047D75C = {
 			isa = PBXGroup;
 			children = (
+				447DEB242DECB76D006F532F /* Person.plist */,
 				44B9FD66295A064700A11206 /* MyLibraryWidgetExtension.entitlements */,
 				44265384277DF5020047D75C /* MyLibrary */,
 				44265394277DF5580047D75C /* Model */,

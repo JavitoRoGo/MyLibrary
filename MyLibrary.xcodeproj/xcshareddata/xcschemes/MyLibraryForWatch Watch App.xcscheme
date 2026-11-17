@@ -46,7 +46,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "445B62B8298C43E10036D140"
             BuildableName = "MyLibraryForWatch Watch App.app"
-            BlueprintName = "MyLibraryForWatch Watch App"
             ReferencedContainer = "container:MyLibrary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +62,6 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "445B62B8298C43E10036D140"
             BuildableName = "MyLibraryForWatch Watch App.app"
-            BlueprintName = "MyLibraryForWatch Watch App"
             ReferencedContainer = "container:MyLibrary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
